@@ -645,20 +645,10 @@ function modules_prepare_head($nbofactivatedmodules, $nboftotalmodules)
 	}
 	$head[$h][2] = 'modules';
 	$h++;
-
-	$head[$h][0] = DOL_URL_ROOT."/admin/modules.php?mode=marketplace";
-	$head[$h][1] = $langs->trans("ModulesMarketPlaces");
-	$head[$h][2] = 'marketplace';
-	$h++;
-
+	
 	$head[$h][0] = DOL_URL_ROOT."/admin/modules.php?mode=deploy";
 	$head[$h][1] = $langs->trans("AddExtensionThemeModuleOrOther");
 	$head[$h][2] = 'deploy';
-	$h++;
-
-	$head[$h][0] = DOL_URL_ROOT."/admin/modules.php?mode=develop";
-	$head[$h][1] = $langs->trans("ModulesDevelopYourModule");
-	$head[$h][2] = 'develop';
 	$h++;
 
 	return $head;

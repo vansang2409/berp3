@@ -26,7 +26,7 @@
 
 
 // Use its own include to not share the include of Dolibarr
-// This is a standalone feature with no information from Dolibarr to show
+// This is a standalone feature with no information from BERP3 to show
 // and no database access to do.
 include_once 'inc.php';
 $uri = preg_replace('/^http(s?):\/\//i', '', $dolibarr_main_url_root);

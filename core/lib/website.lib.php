@@ -237,14 +237,14 @@ function dolWebsiteOutput($content, $contenttype = 'html', $containerid = '')
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 	//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
-	if (defined('USEDOLIBARREDITOR')) {		// REPLACEMENT OF LINKS When page called from Dolibarr editor
+	if (defined('USEDOLIBARREDITOR')) {		// REPLACEMENT OF LINKS When page called from BERP3 editor
 		// We remove the <head> part of content
 		if ($contenttype == 'html') {
 			$content = preg_replace('/<head>.*<\/head>/ims', '', $content);
 			$content = preg_replace('/^.*<body(\s[^>]*)*>/ims', '', $content);
 			$content = preg_replace('/<\/body(\s[^>]*)*>.*$/ims', '', $content);
 		}
-	} elseif (defined('USEDOLIBARRSERVER')) {	// REPLACEMENT OF LINKS When page called from Dolibarr server
+	} elseif (defined('USEDOLIBARRSERVER')) {	// REPLACEMENT OF LINKS When page called from BERP3 server
 		$content = str_replace('<link rel="stylesheet" href="/styles.css', '<link rel="stylesheet" href="styles.css', $content);
 
 		// Protect the link styles.css.php to any replacement that we make after.
@@ -436,7 +436,7 @@ function redirectToContainer($containerref, $containeraliasalt = '', $containeri
 		return;
 	}
 
-	if (defined('USEDOLIBARRSERVER')) {	// When page called from Dolibarr server
+	if (defined('USEDOLIBARRSERVER')) {	// When page called from BERP3 server
 		// Check new container exists
 		if (!$containeraliasalt) {	// If containeraliasalt set, we already did the test
 			include_once DOL_DOCUMENT_ROOT.'/website/class/websitepage.class.php';

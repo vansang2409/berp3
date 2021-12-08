@@ -22,7 +22,7 @@
 
 /**
  *	\file       htdocs/index.php
- *	\brief      Dolibarr home page
+ *	\brief      BERP3 home page
  */
 
 
@@ -74,7 +74,7 @@ if (!isset($form) || !is_object($form)) {
 }
 
 // Title
-$title = $langs->trans("HomeArea").' - Dolibarr '.DOL_VERSION;
+$title = $langs->trans("HomeArea").' - BERP3 '.DOL_VERSION;
 if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 	$title = $langs->trans("HomeArea").' - '.$conf->global->MAIN_APPLICATION_TITLE;
 }
@@ -134,7 +134,7 @@ if ($user->admin && empty($conf->global->MAIN_REMOVE_INSTALL_WARNING)) {
 }
 
 /*
- * Dashboard Dolibarr states (statistics)
+ * Dashboard BERP3 states (statistics)
  * Hidden for external users
  */
 
@@ -144,7 +144,7 @@ $boxstatFromHook = '';
 // Load translation files required by page
 $langs->loadLangs(array('commercial', 'bills', 'orders', 'contracts'));
 
-// Dolibarr Working Board with weather
+// BERP3 Working Board with weather
 
 if (empty($conf->global->MAIN_DISABLE_GLOBAL_WORKBOARD)) {
 	$showweather = (empty($conf->global->MAIN_DISABLE_METEO) || $conf->global->MAIN_DISABLE_METEO == 2) ? 1 : 0;

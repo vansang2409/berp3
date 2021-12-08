@@ -60,7 +60,7 @@ function llxHeader()
 {
 	print '<html>'."\n";
 	print '<head>'."\n";
-	print '<title>Asterisk redirection from Dolibarr...</title>'."\n";
+	print '<title>Asterisk redirection from BERP3...</title>'."\n";
 	print '</head>'."\n";
 }
 

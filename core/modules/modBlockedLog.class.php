@@ -199,7 +199,7 @@ class modBlockedLog extends DolibarrModules
 
 	/**
 	 * Function called when module is disabled.
-	 * The remove function removes tabs, constants, boxes, permissions and menus from Dolibarr database.
+	 * The remove function removes tabs, constants, boxes, permissions and menus from BERP3 database.
 	 * Data directories are not deleted
 	 *
 	 * @param      string	$options    Options when enabling module ('', 'noboxes')

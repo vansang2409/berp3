@@ -4,7 +4,7 @@ Oblyon free theme for Dolibarr ERP & CRM
 ## Installation
 
 This theme is actually composed of two things:
-* a "_regular_" Dolibarr theme (stored in `htdocs/theme`)
+* a "_regular_" BERP3 theme (stored in `htdocs/theme`)
 * a custom Dolibarr module (stored in `htdocs/custom`)
 
 To install Oblyon, you must copy the content of the `htdocs` folder into your Dolibarr `htdocs` folder.

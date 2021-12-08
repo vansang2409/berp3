@@ -65,7 +65,7 @@ if (defined('DOL_INC_FOR_VERSION_ERROR')) {
 // Define vars
 $conffiletoshowshort = "conf.php";
 // Define localization of conf file
-// --- Start of part replaced by Dolibarr packager makepack-dolibarr
+// --- Start of part replaced by BERP3 packager makepack-dolibarr
 $conffile = "conf/conf.php";
 $conffiletoshow = "htdocs/conf/conf.php";
 // For debian/redhat like systems
@@ -74,7 +74,7 @@ $conffiletoshow = "htdocs/conf/conf.php";
 
 
 // Include configuration
-// --- End of part replaced by Dolibarr packager makepack-dolibarr
+// --- End of part replaced by BERP3 packager makepack-dolibarr
 
 
 // Include configuration
@@ -118,7 +118,7 @@ if (!$result && !empty($_SERVER["GATEWAY_INTERFACE"])) {    // If install not do
 	exit;
 }
 
-// Force PHP error_reporting setup (Dolibarr may report warning without this)
+// Force PHP error_reporting setup (BERP3 may report warning without this)
 if (!empty($dolibarr_strict_mode)) {
 	error_reporting(E_ALL | E_STRICT);
 } else {
@@ -179,7 +179,7 @@ if (empty($dolibarr_strict_mode)) {
 define('DOL_DOCUMENT_ROOT', $dolibarr_main_document_root); // Filesystem core php (htdocs)
 
 if (!file_exists(DOL_DOCUMENT_ROOT."/core/lib/functions.lib.php")) {
-	print "Error: Dolibarr config file content seems to be not correctly defined.<br>\n";
+	print "Error: BERP3 config file content seems to be not correctly defined.<br>\n";
 	print "Please run dolibarr setup by calling page <b>/install</b>.<br>\n";
 	exit;
 }
@@ -192,7 +192,7 @@ include_once DOL_DOCUMENT_ROOT.'/core/lib/security.lib.php';
 
 
 // Security: CSRF protection
-// This test check if referrer ($_SERVER['HTTP_REFERER']) is same web site than Dolibarr ($_SERVER['HTTP_HOST'])
+// This test check if referrer ($_SERVER['HTTP_REFERER']) is same web site than BERP3 ($_SERVER['HTTP_HOST'])
 // when we post forms (we allow GET and HEAD to accept direct link from a particular page).
 // Note about $_SERVER[HTTP_HOST/SERVER_NAME]: http://shiflett.org/blog/2006/mar/server-name-versus-http-host
 // See also CSRF protections done into main.inc.php
@@ -220,13 +220,13 @@ if (!defined('NOCSRFCHECK') && empty($dolibarr_nocsrfcheck)) {
 	// Another test is done later on token if option MAIN_SECURITY_CSRF_WITH_TOKEN is on.
 }
 if (empty($dolibarr_main_db_host) && !defined('NOREQUIREDB')) {
-	print '<div class="center">Dolibarr setup is not yet complete.<br><br>'."\n";
-	print '<a href="install/index.php">Click here to finish Dolibarr install process</a> ...</div>'."\n";
+	print '<div class="center">BERP3 setup is not yet complete.<br><br>'."\n";
+	print '<a href="install/index.php">Click here to finish BERP3 install process</a> ...</div>'."\n";
 	die;
 }
 if (empty($dolibarr_main_url_root) && !defined('NOREQUIREVIRTUALURL')) {
 	print 'Value for parameter \'dolibarr_main_url_root\' is not defined in your \'htdocs\conf\conf.php\' file.<br>'."\n";
-	print 'You must add this parameter with your full Dolibarr root Url (Example: http://myvirtualdomain/ or http://mydomain/mydolibarrurl/)'."\n";
+	print 'You must add this parameter with your full BERP3 root Url (Example: http://myvirtualdomain/ or http://mydomain/mydolibarrurl/)'."\n";
 	die;
 }
 
