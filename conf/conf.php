@@ -5,17 +5,17 @@
 // Take a look at conf.php.example file for an example of conf.php file
 // and explanations for all possibles parameters.
 //
-$dolibarr_main_url_root='https://aiosw.com/user5/berp3';
-$dolibarr_main_document_root='/home/aioswcom/public_html/user5/berp3';
+$dolibarr_main_url_root='https://localhost/berp3';
+$dolibarr_main_document_root='C:/xampp/htdocs/berp3';
 $dolibarr_main_url_root_alt='/custom';
-$dolibarr_main_document_root_alt='/home/aioswcom/public_html/user5/berp3/custom';
-$dolibarr_main_data_root='/home/aioswcom/public_html/user5/berp3/documents';
+$dolibarr_main_document_root_alt='C:/xampp/htdocs/berp3/custom';
+$dolibarr_main_data_root='C:/xampp/htdocs/berp3/documents';
 $dolibarr_main_db_host='localhost';
 $dolibarr_main_db_port='3306';
-$dolibarr_main_db_name='aioswcom_db5';
+$dolibarr_main_db_name='berp3';
 $dolibarr_main_db_prefix='erp_';
-$dolibarr_main_db_user='aioswcom_udb5';
-$dolibarr_main_db_pass='cLP77lz182#U';
+$dolibarr_main_db_user='root';
+$dolibarr_main_db_pass='';
 $dolibarr_main_db_type='mysqli';
 $dolibarr_main_db_character_set='utf8';
 $dolibarr_main_db_collation='utf8_unicode_ci';
