@@ -1,0 +1,2 @@
+# Dolibarr language file - Source file is en_US - bills
+CreateOneBillByThird=Create one invoice per third party (otherwise, one invoice per order)
