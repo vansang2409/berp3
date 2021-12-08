@@ -1774,7 +1774,7 @@ class Holiday extends CommonObject
 			}
 		} else {
 			// Si faux donc return array
-			// List for Dolibarr users
+			// List for BERP3 users
 			if ($type) {
 								// If user of Dolibarr
 				$sql = "SELECT";

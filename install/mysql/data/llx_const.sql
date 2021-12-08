@@ -51,7 +51,7 @@ insert into llx_const (name, value, type, note, visible, entity) values ('MAIN_M
 
 insert into llx_const (name, value, type, note, visible, entity) values ('MAIN_MAIL_SMTP_SERVER','','chaine','Host or ip address for SMTP server',0,1);
 insert into llx_const (name, value, type, note, visible, entity) values ('MAIN_MAIL_SMTP_PORT','','chaine','Port for SMTP server',0,1);
-insert into llx_const (name, value, type, note, visible, entity) values ('MAIN_MAIL_EMAIL_FROM','robot@domain.com','chaine','email emitter for Dolibarr automatic emails',0,1);
+insert into llx_const (name, value, type, note, visible, entity) values ('MAIN_MAIL_EMAIL_FROM','robot@domain.com','chaine','email emitter for BERP3 automatic emails',0,1);
 
 --
 -- IHM

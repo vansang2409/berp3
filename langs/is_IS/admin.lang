@@ -268,7 +268,7 @@ SocialNetworks=Social Networks
 SocialNetworkId=Social Network ID
 ForDocumentationSeeWiki=Notandanafn eða skjölum verktaki '(Doc, FAQs ...), <br> kíkið á BERP3 Wiki: <br> <a href="%s" target="_blank"><b> %s </b></a>
 ForAnswersSeeForum=Fyrir einhverjar aðrar spurningar / hjálp, getur þú notað BERP3 spjall: <br> <a href="%s" target="_blank"><b> %s </b></a>
-HelpCenterDesc1=Here are some resources for getting help and support with Dolibarr.
+HelpCenterDesc1=Here are some resources for getting help and support with BERP3.
 HelpCenterDesc2=Some of these resources are only available in <b>english</b>.
 CurrentMenuHandler=Núverandi valmynd dýraþjálfari
 MeasuringUnit=Measuring eining
@@ -1199,7 +1199,7 @@ SetupDescription4b=This software is a suite of many modules/applications. The mo
 AuditedSecurityEvents=Security events that are audited
 NoSecurityEventsAreAduited=No security events are audited. You can enable them from menu %s
 Audit=Security events
-InfoDolibarr=About Dolibarr
+InfoDolibarr=About BERP3
 InfoBrowser=About Browser
 InfoOS=About OS
 InfoWebServer=About Web Server

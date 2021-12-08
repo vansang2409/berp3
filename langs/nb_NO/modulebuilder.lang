@@ -101,7 +101,7 @@ HooksDefDesc=Definer egenskapen <b> module_parts ['hooks'] </b> i modulbeskrivel
 TriggerDefDesc=Definer koden som skal utføres for hver forretningshendelse utført, i triggerfilen.
 SeeIDsInUse=Se IDer som brukes i installasjonen din
 SeeReservedIDsRangeHere=Se område av reserverte IDer
-ToolkitForDevelopers=Verktøy for Dolibarr-utviklere
+ToolkitForDevelopers=Verktøy for BERP3-utviklere
 TryToUseTheModuleBuilder=Hvis du har kunnskap i SQL og PHP, kan du prøve å bruke veiviseren for modulbyggeren. <br>Aktiver modulen<strong>%s</strong> og bruk veiviseren ved å klikke på <span class="fa fa-bug"></span> i øverste høyre meny. <br>Advarsel: Dette er en avansert utviklerfunksjon, <b>IKKE </b>eksperimenter med en produktiv applikasjon!
 SeeTopRightMenu=Se <span class="fa fa-bug"></span> i øverste høyre meny
 AddLanguageFile=Legg til språkfil

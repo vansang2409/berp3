@@ -268,7 +268,7 @@ SocialNetworks=Social Networks
 SocialNetworkId=Social Network ID
 ForDocumentationSeeWiki=Pre používateľov alebo vývojárov dokumentácie (doc, FAQs ...) <br> pozrite sa na BERP3 Wiki: <br> <a href="%s" target="_blank"><b>%s</b></a>
 ForAnswersSeeForum=V prípade akýchkoľvek ďalších otázok / help, môžete použiť fórum Dolibarr: <br> <a href="%s" target="_blank"><b>%s</b></a>
-HelpCenterDesc1=Here are some resources for getting help and support with Dolibarr.
+HelpCenterDesc1=Here are some resources for getting help and support with BERP3.
 HelpCenterDesc2=Some of these resources are only available in <b>english</b>.
 CurrentMenuHandler=Aktuálna ponuka handler
 MeasuringUnit=Meracie prístroje

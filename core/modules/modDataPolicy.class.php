@@ -29,7 +29,7 @@ include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
 
 
 
-// The class name should start with a lower case mod for Dolibarr to pick it up
+// The class name should start with a lower case mod for BERP3 to pick it up
 // so we ignore the Squiz.Classes.ValidClassName.NotCamelCaps rule.
 // @codingStandardsIgnoreStart
 /**

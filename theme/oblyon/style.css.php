@@ -83,7 +83,7 @@ $theme='oblyon';	// Value of theme
 if (! empty($conf->global->MAIN_OVERWRITE_THEME_RES)) { $path='/'.$conf->global->MAIN_OVERWRITE_THEME_RES; $theme=$conf->global->MAIN_OVERWRITE_THEME_RES; }
 
 print '/*'."\n";
-print 'Oblyon theme for Dolibarr'."\n";
+print 'Oblyon theme for BERP3'."\n";
 
 /*------------------------------------*\
 		#Oblyon styles

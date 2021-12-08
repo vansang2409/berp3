@@ -1,5 +1,5 @@
 # Oblyon
-Oblyon free theme for Dolibarr ERP & CRM
+Oblyon free theme for BERP3 ERP & CRM
 
 ## Installation
 

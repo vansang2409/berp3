@@ -35,7 +35,7 @@
 
 /**
  *	\file			htdocs/core/lib/functions.lib.php
- *	\brief			A set of functions for Dolibarr
+ *	\brief			A set of functions for BERP3
  *					This file contains all frequently used functions.
  */
 

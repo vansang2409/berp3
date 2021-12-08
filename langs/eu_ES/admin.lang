@@ -268,7 +268,7 @@ SocialNetworks=Social Networks
 SocialNetworkId=Social Network ID
 ForDocumentationSeeWiki=For user or developer documentation (Doc, FAQs...),<br>take a look at the BERP3 Wiki:<br><b><a href="%s" target="_blank">%s</a></b>
 ForAnswersSeeForum=For any other questions/help, you can use the BERP3 forum:<br><b><a href="%s" target="_blank">%s</a></b>
-HelpCenterDesc1=Here are some resources for getting help and support with Dolibarr.
+HelpCenterDesc1=Here are some resources for getting help and support with BERP3.
 HelpCenterDesc2=Some of these resources are only available in <b>english</b>.
 CurrentMenuHandler=Current menu handler
 MeasuringUnit=Neurri-unitatea
@@ -1199,7 +1199,7 @@ SetupDescription4b=This software is a suite of many modules/applications. The mo
 AuditedSecurityEvents=Security events that are audited
 NoSecurityEventsAreAduited=No security events are audited. You can enable them from menu %s
 Audit=Security events
-InfoDolibarr=About Dolibarr
+InfoDolibarr=About BERP3
 InfoBrowser=About Browser
 InfoOS=About OS
 InfoWebServer=About Web Server

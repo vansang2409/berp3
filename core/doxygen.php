@@ -22,7 +22,7 @@
  *      \ingroup    core
  *		\mainpage	Dolibarr project
  *
- *	    This is source documentation for Dolibarr ERP/CRM.<br>
+ *	    This is source documentation for BERP3 ERP/CRM.<br>
  *      This documentation can be built or updated running the script <b>dolibarr-doxygen-build.pl</b> or from Eclipse with Doxygen plugin.<br>
  *      <br>
  *      Dolibarr official web site: <a href="https://www.dolibarr.org">www.dolibarr.org</a><br>

@@ -31,7 +31,7 @@
 require_once DOL_DOCUMENT_ROOT.'/core/db/DoliDB.class.php';
 
 /**
- *	Class to drive a Postgresql database for Dolibarr
+ *	Class to drive a Postgresql database for BERP3
  */
 class DoliDBPgsql extends DoliDB
 {

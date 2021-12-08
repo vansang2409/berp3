@@ -18,7 +18,7 @@
 
 /**
  *	\file			htdocs/core/lib/functions_ch.lib.php
- *	\brief			A set of swiss functions for Dolibarr
+ *	\brief			A set of swiss functions for BERP3
  *					This file contains rare functions.
  */
 

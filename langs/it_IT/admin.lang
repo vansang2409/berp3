@@ -268,7 +268,7 @@ SocialNetworks=Social Networks
 SocialNetworkId=Social Network ID
 ForDocumentationSeeWiki=La documentazione per utenti e sviluppatori e le FAQ sono disponibili sul wiki di Dolibarr: <br/>Dai un'occhiata a <a href="%s" target="_blank"><b> %s</b></a>
 ForAnswersSeeForum=Per qualsiasi altro problema/domanda, si può utilizzare il forum di Dolibarr: <br> <a href="%s" target="_blank"><b>%s</b></a>
-HelpCenterDesc1=Here are some resources for getting help and support with Dolibarr.
+HelpCenterDesc1=Here are some resources for getting help and support with BERP3.
 HelpCenterDesc2=Alcune di queste risorse sono disponibili solo in <b>inglese</b> .
 CurrentMenuHandler=Attuale gestore menu
 MeasuringUnit=Unità di misura

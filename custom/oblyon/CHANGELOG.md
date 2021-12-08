@@ -94,18 +94,18 @@
  - New: design of login block area (need improvment)
  - New: Dolibarr 4.0 Module Expense Report have moved into menu files
  - New: Css add badge & input for multicompany in login box
- - Fixed: Update bad link in menu Thirdparty for Dolibarr 3.9
+ - Fixed: Update bad link in menu Thirdparty for BERP3 3.9
  - New: 4.0 HRM Area has moved
  - New: 4.0 Add icon for website module
  - New: Try to make the theme more responsive
 
 ### Version 2.2 RC
- - Fixed: Add new search bar for Dolibarr 3.9
+ - Fixed: Add new search bar for BERP3 3.9
  - New: Oblyon theme "forced" when oblyon module activated
  - Fixed: missing top icons with oblyon theme using eldy menu
  - Fixed: missing default logo and logo size
- - Added: user and help top icons for Dolibarr 3.9 (font-oblyon)
- - Added: printer_top.png and logout_top.png icons for Dolibarr 3.9 
+ - Added: user and help top icons for BERP3 3.9 (font-oblyon)
+ - Added: printer_top.png and logout_top.png icons for BERP3 3.9 
  - Added: object_building, object_supplier_proposal, object_task_time and title_hrm
  - Fixed: css
  - Added: Add a button in color tab to restore default colors of Oblyon
@@ -117,7 +117,7 @@
  - Upgraded: Comptability with Dolibarr 3.9-beta (HRM)
  - Added: Possibility to define maincolor & color background of the template in admin color tab
  - Fixed: Add a max-width for logo display (200px max & 180 px with padding)
- - Added: icon helpdoc_top.png for Dolibarr 3.9
+ - Added: icon helpdoc_top.png for BERP3 3.9
  - Fixed: Refactoring admin menu page & add missing language key
  - Added: Review menu of accountancy expert module since 3.7 (Specific development)
 
@@ -140,7 +140,7 @@
 ### Version 2.1
  - Upgraded: Compatibility with Dolibarr 3.7
  - Upgraded: Compatibility with Dolibarr 3.5.x
- - Fixed: Menu entries for Dolibarr 3.5.x, 3.6.x and 3.7
+ - Fixed: Menu entries for BERP3 3.5.x, 3.6.x and 3.7
  - Fixed: Skin of menu entries disabled 
  - Added: New option Eldy icons (v3.7)
  - Fixed: Eldy icons size
@@ -191,7 +191,7 @@
  - Added: Skype icon
  - Added: Reports module icon
  - Changed: Icons size (Left Menu)
- - Upgraded: Compatibility with **[DoliDroid](https://play.google.com/store/apps/details?id=com.nltechno.dolidroidpro "DoliDroid")** for Dolibarr v3.5 and v3.4.x (thanks to Eldy)
+ - Upgraded: Compatibility with **[DoliDroid](https://play.google.com/store/apps/details?id=com.nltechno.dolidroidpro "DoliDroid")** for BERP3 v3.5 and v3.4.x (thanks to Eldy)
 
 ### Version 1.2
  - Stylized: Cashdesk module interface 

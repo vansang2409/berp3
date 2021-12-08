@@ -268,7 +268,7 @@ class Website extends CommonObject
 		}
 
 		if (!$error) {
-			$stringtodolibarrfile = "# Some properties for Dolibarr web site CMS\n";
+			$stringtodolibarrfile = "# Some properties for BERP3 web site CMS\n";
 			$stringtodolibarrfile .= "param=value\n";
 			//print $conf->website->dir_output.'/'.$this->ref.'/.dolibarr';exit;
 			file_put_contents($conf->website->dir_output.'/'.$this->ref.'/.dolibarr', $stringtodolibarrfile);

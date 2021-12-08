@@ -128,7 +128,7 @@ $langs->trans("SaturdayMin")
 );
 
 ?>
-// Javascript libraries for Dolibarr ERP CRM (https://www.dolibarr.org)
+// Javascript libraries for BERP3 ERP CRM (https://www.dolibarr.org)
 
 // For jQuery date picker
 var tradMonths = <?php echo json_encode($tradMonths) ?>;

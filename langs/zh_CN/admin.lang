@@ -268,7 +268,7 @@ SocialNetworks=社交网络
 SocialNetworkId=社交网络ID
 ForDocumentationSeeWiki=用户或开发人员用文档(文档，常见问题…)，<br>参见 BERP3 百科：<br><b><a href="%s" target="_blank">%s</a></b>
 ForAnswersSeeForum=您有任何其他问题/帮助，可以到 BERP3 论坛： <br> <b><a href="%s" target="_blank">%s</a></b>简体中文翻译可到Dolibarr爱好者交流Q群技术交流：206239089
-HelpCenterDesc1=Here are some resources for getting help and support with Dolibarr.
+HelpCenterDesc1=Here are some resources for getting help and support with BERP3.
 HelpCenterDesc2=此资源的一些部分，<b>仅有英文</b> 可用。
 CurrentMenuHandler=当前菜单处理程序
 MeasuringUnit=计量单位

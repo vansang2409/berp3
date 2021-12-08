@@ -239,7 +239,7 @@ if (GETPOST('action', 'aZ09') == 'gotodemo') {     // Action run when we click o
 
 $head = '';
 $head .= '<meta name="keywords" content="demo,online,demonstration,example,test,erp,crm,demos,web">'."\n";
-$head .= '<meta name="description" content="Dolibarr ERP and CRM demo. You can test here several profiles for Dolibarr ERP and CRM demonstration.">'."\n";
+$head .= '<meta name="description" content="Dolibarr ERP and CRM demo. You can test here several profiles for BERP3 ERP and CRM demonstration.">'."\n";
 
 $head .= '
 <script type="text/javascript">
