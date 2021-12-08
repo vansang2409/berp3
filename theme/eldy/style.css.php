@@ -105,7 +105,7 @@ if (!empty($conf->global->MAIN_OVERWRITE_THEME_RES)) {
 }
 
 // Define image path files and other constants
-$fontlist = 'arial,tahoma,verdana,helvetica'; //$fontlist='helvetica, verdana, arial, sans-serif';
+$fontlist = '"Century Gothic"'; //$fontlist='helvetica, verdana, arial, sans-serif';
 //$fontlist='"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;';
 $img_head = '';
 $img_button = dol_buildpath($path.'/theme/'.$theme.'/img/button_bg.png', 1);

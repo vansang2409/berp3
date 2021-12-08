@@ -7,6 +7,7 @@
 /* Default styles                                                                 */
 /* ============================================================================== */
 
+
 :root {
 	--colorbackhmenu1: rgb(<?php print $colorbackhmenu1; ?>);
 	--colorbackvmenu1: rgb(<?php print $colorbackvmenu1; ?>);
@@ -106,6 +107,9 @@ if (!empty($conf->global->THEME_DARKMODEENABLED)) {
 	}
 }
 ?>
+
+/* WINS2 */
+@font-face{ font-family:'Century Gothic';src:url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.eot);src:local("Century Gothic"),local("CenturyGothic"),url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.eot?#iefix) format("embeded-opentype"),url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.woff) format("woff"),url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.ttf) format("truetype")}@font-face{font-family:CenturyGothic;src:url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.eot);src:local("CenturyGothic"),local("CenturyGothic"),url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.eot?#iefix) format("embeded-opentype"),url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.woff) format("woff"),url(<?php print $dolibarr_main_url_root.'/theme/'.$theme ?>/fonts/CenturyGothic.ttf) format("truetype") }
 
 body {
 <?php if (GETPOST('optioncss', 'aZ09') == 'print') {  ?>
