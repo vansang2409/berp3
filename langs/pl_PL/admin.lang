@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=List of directories containing templates files w
 NumberOfModelFilesFound=Liczba plików szablonów ODT/ODS znalezionych w tych katalogach
 ExampleOfDirectoriesForModelGen=Przykłady składni: <br> c:\\myapp\\mydocumentdir\\mysubdir <br> /home/myapp/mydocumentdir/mysubdir <br> DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br> Aby dowiedzieć się jak stworzyć szablony dokumentów odt, przed zapisaniem ich w katalogach, zapoznaj się z dokumentacją wiki:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Pozycja Imienia / Nazwiska
 DescWeather=Poniższe obrazy zostaną wyświetlone na pulpicie nawigacyjnym, gdy liczba późnych działań osiągnie następujące wartości:
 KeyForWebServicesAccess=Kluczem do korzystania z usług internetowych (parametr &quot;dolibarrkey&quot; w webservices)
@@ -1598,7 +1598,7 @@ NotInstalled=Nie zainstalowany.
 NotSlowedDownByThis=Nie jest przez to spowolniony.
 NotRiskOfLeakWithThis=Nie ma z tym ryzyka wycieku.
 ApplicativeCache=Aplikacyjnych cache
-MemcachedNotAvailable=Nie znaleziono cache aplikacyjnych. Możesz zwiększyć wydajność poprzez zainstalowanie serwera cache i Memcached moduł w stanie korzystać z tego serwera cache. <br> Więcej informacji tutaj <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a> . <br> Należy pamiętać, że wiele hosting provider nie zapewnia takiego serwera cache.
+MemcachedNotAvailable=Nie znaleziono cache aplikacyjnych. Możesz zwiększyć wydajność poprzez zainstalowanie serwera cache i Memcached moduł w stanie korzystać z tego serwera cache. <br> Więcej informacji tutaj <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a> . <br> Należy pamiętać, że wiele hosting provider nie zapewnia takiego serwera cache.
 MemcachedModuleAvailableButNotSetup=Moduł memcached dla aplikacyjnej cache znaleźć, ale konfiguracja modułu nie jest kompletna.
 MemcachedAvailableAndSetup=Moduł memcached dedykowane obsłudze serwer memcached jest włączony.
 OPCodeCache=OPCODE cache

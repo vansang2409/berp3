@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=OpenDocument形式のテンプレートファイ
 NumberOfModelFilesFound=これらのディレクトリで見つかったODT / ODSテンプレートファイルの数
 ExampleOfDirectoriesForModelGen=構文の例:<br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br>あなたのODTドキュメントテンプレートを作成する方法を知って、それらのディレクトリに格納する前に、ウィキのドキュメントをお読みください。
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=名/姓の位置
 DescWeather=遅延アクションの数が次の値に達すると、ダッシュボードに次の画像が表示される。
 KeyForWebServicesAccess=Webサービス ( webservicesのパラメータ &quot;dolibarrkey&quot; ) を使用するキー
@@ -1598,7 +1598,7 @@ NotInstalled=インストールされていない。
 NotSlowedDownByThis=これによって遅くなることはない。
 NotRiskOfLeakWithThis=これで漏れのリスクはない。
 ApplicativeCache=適用可能なキャッシュ
-MemcachedNotAvailable=適用可能なキャッシュが見つかりません。キャッシュサーバーMemcachedと、このキャッシュサーバーを使用できるモジュールをインストールすることで、パフォーマンスを向上させることができる。 <br>詳細はこちら<a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http：//wiki.dolibarr.org/index.php/Module_MemCached_EN</a>。 <br>多くのウェブホスティングプロバイダーがそのようなキャッシュサーバーを提供していないことに注意すること。
+MemcachedNotAvailable=適用可能なキャッシュが見つかりません。キャッシュサーバーMemcachedと、このキャッシュサーバーを使用できるモジュールをインストールすることで、パフォーマンスを向上させることができる。 <br>詳細はこちら<a href="http://bonaerp.com/index.php/Module_MemCached_EN">http：//bonaerp.com/index.php/Module_MemCached_EN</a>。 <br>多くのウェブホスティングプロバイダーがそのようなキャッシュサーバーを提供していないことに注意すること。
 MemcachedModuleAvailableButNotSetup=適用キャッシュのモジュールmemcachedが見つかりましたが、モジュールの設定が完了していない。
 MemcachedAvailableAndSetup=memcachedサーバー専用のモジュールmemcachedが有効になっている。
 OPCodeCache=OPCodeキャッシュ

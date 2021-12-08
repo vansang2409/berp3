@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Seznam map, ki vsebujejo predloge v OpenDocument
 NumberOfModelFilesFound=Number of ODT/ODS template files found in these directories
 ExampleOfDirectoriesForModelGen=Examples of syntax:<br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=Z dodatkom takih oznak v predlogo, boste ob kreiranju dokumenta dobili personalizirane vrednosti:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org
+FullListOnOnlineDocumentation=http://bonaerp.com
 FirstnameNamePosition=Položaj imena/priimka
 DescWeather=The following images will be shown on the dashboard when the number of late actions reach the following values:
 KeyForWebServicesAccess=Ključi za uporabo Web storitev (parameter "dolibarrkey" v internetnih storitvah)
@@ -1598,7 +1598,7 @@ NotInstalled=Not installed.
 NotSlowedDownByThis=Not slowed down by this.
 NotRiskOfLeakWithThis=Not risk of leak with this.
 ApplicativeCache=Aplikativni predpomnilnik
-MemcachedNotAvailable=Ni najden aplikativni predpomnilnik. Zmogljivost lahko izboljšate z namestitvijo predpomnilniškega strežnika Memcached in modula, ki zna uporabljati ta predpomnilniški strežnik.<br>Več informacij najdete tukaj <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>.<br>Vedite, da veliko gostiteljev spletnih strani ne zagotavlja takega predpomnilniškega strežnika..
+MemcachedNotAvailable=Ni najden aplikativni predpomnilnik. Zmogljivost lahko izboljšate z namestitvijo predpomnilniškega strežnika Memcached in modula, ki zna uporabljati ta predpomnilniški strežnik.<br>Več informacij najdete tukaj <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>.<br>Vedite, da veliko gostiteljev spletnih strani ne zagotavlja takega predpomnilniškega strežnika..
 MemcachedModuleAvailableButNotSetup=Najden je predpomnilniški modul za aplikativni predpomnilnik, vendar nastavitev modula ni zaključena.
 MemcachedAvailableAndSetup=Vklopljen je predpomnilniški modul za predpomnilniški strežnik.
 OPCodeCache=OPCode predpomnilnik

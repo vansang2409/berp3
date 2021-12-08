@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=OpenDocument formatidagi shablon fayllarini o'z 
 NumberOfModelFilesFound=Ushbu kataloglarda topilgan ODT / ODS shablon fayllari soni
 ExampleOfDirectoriesForModelGen=Sintaksis namunalari: <br> c: \\ myapp \\ mydocumentdir \\ mysubdir <br> / home / myapp / mydocumentdir / mysubdir <br> DOL_DATA_ROOT / ecm / ecmdir
 FollowingSubstitutionKeysCanBeUsed= <br> Odt hujjat shablonlarini qanday yaratishni bilish uchun ularni o'sha kataloglarda saqlashdan oldin wiki hujjatlarini o'qing:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Ism / familiyaning joylashuvi
 DescWeather=Kechiktirilgan harakatlar soni quyidagi qiymatlarga yetganda quyidagi rasmlar panelida ko'rsatiladi:
 KeyForWebServicesAccess=Veb-xizmatlardan foydalanish kaliti (veb-xizmatlarda "dolibarrkey" parametri)
@@ -1598,7 +1598,7 @@ NotInstalled=O'rnatilmagan
 NotSlowedDownByThis=Bu bilan sekinlashmadi.
 NotRiskOfLeakWithThis=Bu bilan sizib chiqish xavfi yo'q.
 ApplicativeCache=Amaliy kesh
-MemcachedNotAvailable=Amaliy kesh topilmadi. Siz Memcached kesh-serverini va ushbu kesh-serverdan foydalanishga qodir bo'lgan modulni o'rnatish orqali ish faoliyatini oshirishingiz mumkin. <br> Qo'shimcha ma'lumot bu erda <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN"> http://wiki.dolibarr.org/index.php/Module_MemCached_EN </a>. <br> E'tibor bering, ko'plab veb-xosting provayderlari bunday kesh-serverni ta'minlamaydilar.
+MemcachedNotAvailable=Amaliy kesh topilmadi. Siz Memcached kesh-serverini va ushbu kesh-serverdan foydalanishga qodir bo'lgan modulni o'rnatish orqali ish faoliyatini oshirishingiz mumkin. <br> Qo'shimcha ma'lumot bu erda <a href="http://bonaerp.com/index.php/Module_MemCached_EN"> http://bonaerp.com/index.php/Module_MemCached_EN </a>. <br> E'tibor bering, ko'plab veb-xosting provayderlari bunday kesh-serverni ta'minlamaydilar.
 MemcachedModuleAvailableButNotSetup=Amaliy kesh uchun memcached moduli topildi, ammo modulni sozlash tugallanmagan.
 MemcachedAvailableAndSetup=Memcached serveridan foydalanishga bag'ishlangan memcached moduli yoqilgan.
 OPCodeCache=OPCode kesh

@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Lijst van de directory's die de templates bevatt
 NumberOfModelFilesFound=Aantal  gevonden ODT/ODS sjabloonbestanden
 ExampleOfDirectoriesForModelGen=Syntax-voorbeeld: <br> c: \\ myapp \\ mydocumentdir \\ mysubdir <br> / home / myapp / mydocumentdir / mysubdir <br> DOL_DATA_ROOT / ecm / ecmdir
 FollowingSubstitutionKeysCanBeUsed=Lees de Wiki documentatie om te weten hoe u uw odt documentsjablonen moet maken voordat u ze in die mappen opslaat
-FullListOnOnlineDocumentation=De complete lijst met beschikbare velden is te vinden in de gebruikersdocumentatie op de Wiki van Dolibar: http://wiki.dolibarr.org.
+FullListOnOnlineDocumentation=De complete lijst met beschikbare velden is te vinden in de gebruikersdocumentatie op de Wiki van Dolibar: http://bonaerp.com.
 FirstnameNamePosition=Positie van voornaam / achternaam
 DescWeather=De volgende afbeeldingen worden op het dashboard weergegeven wanneer het aantal late acties de volgende waarden bereiken:
 KeyForWebServicesAccess=Sleutel om webdiensten te gebruiken (waarde "dolibarrkey" in webdiensten)
@@ -1598,7 +1598,7 @@ NotInstalled=Niet geïnstalleerd.
 NotSlowedDownByThis=Hierdoor niet vertraagd.
 NotRiskOfLeakWithThis=Hiermee geen risico op lekken.
 ApplicativeCache=Applicatieve cache
-MemcachedNotAvailable=Geen applicatieve cache gevonden. U kunt de prestaties verbeteren door een cacheserver Memcached te installeren en een module die deze cacheserver kan gebruiken. <br> Meer informatie hier <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a> . <br> Merk op dat veel webhostingproviders dergelijke cacheserver niet bieden.
+MemcachedNotAvailable=Geen applicatieve cache gevonden. U kunt de prestaties verbeteren door een cacheserver Memcached te installeren en een module die deze cacheserver kan gebruiken. <br> Meer informatie hier <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a> . <br> Merk op dat veel webhostingproviders dergelijke cacheserver niet bieden.
 MemcachedModuleAvailableButNotSetup=Module in memcache voor applicatieve cache gevonden, maar installatie van module is niet voltooid.
 MemcachedAvailableAndSetup=Module memcached gewijd aan het gebruik van memcached server is ingeschakeld.
 OPCodeCache=OPCode cache

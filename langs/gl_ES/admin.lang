@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Listaxe de directorios que conteñen os padróns
 NumberOfModelFilesFound=Número de ficheiros de padróns ODT/ODS atopados nestes directorios
 ExampleOfDirectoriesForModelGen=Exemplos de sintaxe:<br>c:\\mydir<br>/home/mydir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br>Colocando as seguintes etiquetas no padrón, obterá uhna substitución co valor persoalizado ao xerar o documento:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Orde visualización nome/apelidos
 DescWeather=Os seguintes gráficos serán amosados no panel se o número de elementos chega a estes valores:
 KeyForWebServicesAccess=Clave para usar os Web Services (parámetro "dolibarrkey" en webservices)
@@ -1598,7 +1598,7 @@ NotInstalled=Non instalado.
 NotSlowedDownByThis=Non ralentizado por isto.
 NotRiskOfLeakWithThis=Non hai risco de fuga con isto
 ApplicativeCache=Aplicación caché
-MemcachedNotAvailable=Non se atopou aplicación caché. Pode mellorar o rendemento instalando un servidor caché. Memcached é un módulo capaz de usar este servidor caché. <br>Mais información aquí <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>.<br>Teña conta que moitos provedores de hospedaxe web non fornecen ese servidor caché.
+MemcachedNotAvailable=Non se atopou aplicación caché. Pode mellorar o rendemento instalando un servidor caché. Memcached é un módulo capaz de usar este servidor caché. <br>Mais información aquí <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>.<br>Teña conta que moitos provedores de hospedaxe web non fornecen ese servidor caché.
 MemcachedModuleAvailableButNotSetup=Atopouse o módulo memcached para a aplicación caché pero a configuración do módulo non está completa.
 MemcachedAvailableAndSetup=O módulo memcached adicado a usar o servidor memcached está habilitado.
 OPCodeCache=Caché OPCode

@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=قائمة الدلائل التي تحتوي ع
 NumberOfModelFilesFound=Number of ODT/ODS template files found in these directories
 ExampleOfDirectoriesForModelGen=Examples of syntax:<br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br> لمعرفة كيفية إنشاء قوالب المستند ODT، قبل تخزينها في تلك الدلائل، وقراءة وثائق ويكي:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=موقف الإسم / اسم
 DescWeather=الصور التالية سيتم عرضها على لوحة المعلومات عندما يصل عدد الاجرائات المتأخرة للقيم التالية:
 KeyForWebServicesAccess=مفتاح لاستخدام خدمات الشبكة العالمية (المعلمة &quot;dolibarrkey&quot; في webservices)
@@ -1598,7 +1598,7 @@ NotInstalled=Not installed.
 NotSlowedDownByThis=Not slowed down by this.
 NotRiskOfLeakWithThis=Not risk of leak with this.
 ApplicativeCache=مخبأ تطبيقي
-MemcachedNotAvailable=لم يتم العثور على مخبأ تطبيقي. يمكنك تحسين الأداء عن طريق تثبيت أعطها مخبأ خادم وحدة قادرة على استخدام هذا الخادم ذاكرة التخزين المؤقت. <br> مزيد من المعلومات هنا <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN.</a> <br> لاحظ أن الكثير من مزود استضافة المواقع لا توفر مثل هذا الخادم ذاكرة التخزين المؤقت.
+MemcachedNotAvailable=لم يتم العثور على مخبأ تطبيقي. يمكنك تحسين الأداء عن طريق تثبيت أعطها مخبأ خادم وحدة قادرة على استخدام هذا الخادم ذاكرة التخزين المؤقت. <br> مزيد من المعلومات هنا <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN.</a> <br> لاحظ أن الكثير من مزود استضافة المواقع لا توفر مثل هذا الخادم ذاكرة التخزين المؤقت.
 MemcachedModuleAvailableButNotSetup=وحدة أعطها لمخبأ تطبيقي وجدت ولكن الإعداد من وحدة ليست كاملة.
 MemcachedAvailableAndSetup=يتم تمكين أعطها حدة مخصصة لاستخدام الخادم أعطها.
 OPCodeCache=مخبأ شفرة التشغيل

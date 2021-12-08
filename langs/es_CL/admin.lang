@@ -1068,7 +1068,7 @@ ForANonAnonymousAccess=Para un acceso autenticado (para un acceso de escritura, 
 PerfDolibarr=Configuración de rendimiento / informe de optimización
 YouMayFindPerfAdviceHere=Esta página proporciona algunas verificaciones o consejos relacionados con el rendimiento.
 ApplicativeCache=Caché aplicable
-MemcachedNotAvailable=No se encontró caché aplicativo. Puede mejorar el rendimiento instalando un servidor de caché Memcached y un módulo capaz de usar este servidor de caché. Más información aquí <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN"> http: //wiki.dolibarr.org/index.php/Module_MemCached_EN </a>. <br> Tenga en cuenta que muchos proveedores de alojamiento web no proporcionan dicho servidor de caché.
+MemcachedNotAvailable=No se encontró caché aplicativo. Puede mejorar el rendimiento instalando un servidor de caché Memcached y un módulo capaz de usar este servidor de caché. Más información aquí <a href="http://bonaerp.com/index.php/Module_MemCached_EN"> http: //bonaerp.com/index.php/Module_MemCached_EN </a>. <br> Tenga en cuenta que muchos proveedores de alojamiento web no proporcionan dicho servidor de caché.
 MemcachedModuleAvailableButNotSetup=El módulo memcached para la memoria caché aplicativa se encuentra pero la configuración del módulo no está completa.
 MemcachedAvailableAndSetup=El módulo memcached dedicado a usar el servidor memcached está habilitado.
 OPCodeCache=Caché OPCode

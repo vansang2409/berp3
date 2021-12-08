@@ -387,7 +387,7 @@ ListOfDirectoriesForModelGenODT=Liste des répertoires contenant des documents m
 NumberOfModelFilesFound=Nombre de fichiers modèles ODT/ODS trouvés dans ce(s) répertoire(s)
 ExampleOfDirectoriesForModelGen=Exemples de syntaxe : <br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br>Pour savoir comment rédiger des modèles de document odt avant de les placer dans un de ces répertoires, consulter la documentation du wiki :
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Créer_un_modèle_de_document_ODT
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Créer_un_modèle_de_document_ODT
 FirstnameNamePosition=Ordre d'affichage prénom/nom
 DescWeather=Les graphiques suivant seront affichés sur le tableau de bord si le nombre d'éléments en retard atteint ces valeurs :
 KeyForWebServicesAccess=Clé pour utiliser les Web Services (paramètre "dolibarrkey" dans les webservices)
@@ -1240,7 +1240,7 @@ TriggerAlwaysActive=Déclencheurs de ce fichier toujours actifs, quels que soien
 TriggerActiveAsModuleActive=Déclencheurs de ce fichier actifs car le module <b>%s</b> est actif.
 GeneratedPasswordDesc=Définissez ici quelle règle vous voulez utiliser pour générer les mots de passe quand vous demandez à générer un nouveau mot de passe
 DictionaryDesc=Définissez ici les données de référence. Vous pouvez compléter/modifier les données prédéfinies avec les vôtres.
-ConstDesc=Cette page vous permet d'éditer (remplacer) des paramètres non disponibles dans d'autres pages. Il s'agit principalement de paramètres réservés pour les développeurs et dépannage avancé uniquement. <a href="https://wiki.dolibarr.org/index.php/Setup_Other#List_of_known_hidden_options" title="External Site - opens in a new window" target="_blank">Consultez ici</a> la liste des options.
+ConstDesc=Cette page vous permet d'éditer (remplacer) des paramètres non disponibles dans d'autres pages. Il s'agit principalement de paramètres réservés pour les développeurs et dépannage avancé uniquement. <a href="https://bonaerp.com/index.php/Setup_Other#List_of_known_hidden_options" title="External Site - opens in a new window" target="_blank">Consultez ici</a> la liste des options.
 MiscellaneousDesc=Définissez ici les autres paramètres en rapport avec la sécurité.
 LimitsSetup=Configuration des limites et précisions
 LimitsDesc=Vous pouvez définir ici les limites, précisions et optimisations utilisées par Dolibarr
@@ -1607,7 +1607,7 @@ NotInstalled=Non installé.
 NotSlowedDownByThis=Non ralenti par cela.
 NotRiskOfLeakWithThis=Pas de risque de fuite de données avec cela.
 ApplicativeCache=Cache applicatif
-MemcachedNotAvailable=Aucun cache applicatif trouvé. Vous pouvez accélérer les performances de Dolibarr en installant un serveur de cache Memcached et un module de cache applicatif exploitant ce serveur.<br>Plus d'info ici<a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">https://wiki.dolibarr.org/index.php/Module_MemCached</a>.<br>Notez que de nombreux hébergeurs low-cost ne fournissent pas de tels serveurs de cache dans leur infrastructure.
+MemcachedNotAvailable=Aucun cache applicatif trouvé. Vous pouvez accélérer les performances de Dolibarr en installant un serveur de cache Memcached et un module de cache applicatif exploitant ce serveur.<br>Plus d'info ici<a href="http://bonaerp.com/index.php/Module_MemCached_EN">https://bonaerp.com/index.php/Module_MemCached</a>.<br>Notez que de nombreux hébergeurs low-cost ne fournissent pas de tels serveurs de cache dans leur infrastructure.
 MemcachedModuleAvailableButNotSetup=Le module memcached pour le cache applicatif a été trouvé mais la configuration de ce module n'est pas complète.
 MemcachedAvailableAndSetup=Le module memcached dédié à l'utilisation du serveur de cache memcached est activé.
 OPCodeCache=Cache OPCode

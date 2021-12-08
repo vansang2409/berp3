@@ -315,7 +315,13 @@ print 'toolTipFontColor='.$toolTipFontColor."\n";
 print 'conf->global->THEME_SATURATE_RATIO='.(empty($conf->global->THEME_SATURATE_RATIO) ? '' : $conf->global->THEME_SATURATE_RATIO)." (must be between 0 and 1)\n";
 print '*/'."\n";
 
+?>
 
+.backgroundforcompanylogo{
+	background-color: white !important;
+}
+
+<?php
 // Include the global.inc.php that include the badges, btn, info-box, dropdown, progress...
 require __DIR__.'/global.inc.php';
 

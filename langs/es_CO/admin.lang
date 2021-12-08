@@ -1202,7 +1202,7 @@ NotInstalled=No instalado.
 NotSlowedDownByThis=No retrasado por esto.
 NotRiskOfLeakWithThis=No hay riesgo de fugas con esto.
 ApplicativeCache=Caché aplicativo
-MemcachedNotAvailable=No se encontró ningún caché aplicativo. Puede mejorar el rendimiento instalando un servidor de caché Memcached y un módulo capaz de usar este servidor de caché. Más información aquí <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN"> http: //wiki.dolibarr.org/index.php/Module_MemCached_EN </a>. Tenga en cuenta que muchos proveedores de alojamiento web no proporcionan dicho servidor de caché.
+MemcachedNotAvailable=No se encontró ningún caché aplicativo. Puede mejorar el rendimiento instalando un servidor de caché Memcached y un módulo capaz de usar este servidor de caché. Más información aquí <a href="http://bonaerp.com/index.php/Module_MemCached_EN"> http: //bonaerp.com/index.php/Module_MemCached_EN </a>. Tenga en cuenta que muchos proveedores de alojamiento web no proporcionan dicho servidor de caché.
 MemcachedModuleAvailableButNotSetup=Se encontró el módulo memcached para el caché de aplicación, pero la configuración del módulo no está completa.
 MemcachedAvailableAndSetup=El módulo memcached dedicado a usar el servidor de memcached está habilitado.
 OPCodeCache=Caché OPCode

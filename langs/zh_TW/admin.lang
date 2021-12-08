@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=包含具有OpenDocument格式的範本文件的
 NumberOfModelFilesFound=在這些資料夾中找到的ODT / ODS範本文件數
 ExampleOfDirectoriesForModelGen=語法範例:<br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br>要了解如何建立odt文件範本，然後將它們存儲在那些資料夾中，請參閱Wiki文件：
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=名字/姓氏的位置
 DescWeather=當後續操作數達到以下值時，以下圖像將顯示在資訊板上：
 KeyForWebServicesAccess=網頁服務的金鑰（在 WebServices 的參數是“dolibarrkey”）
@@ -1598,7 +1598,7 @@ NotInstalled=未安裝。
 NotSlowedDownByThis=並沒有因此而減慢。
 NotRiskOfLeakWithThis=沒有洩漏的風險。
 ApplicativeCache=應用程式快取
-MemcachedNotAvailable=沒有找到應用程式快取。你可安裝快取伺服器 Memcached 並啟動模組以增加效能。<br>更多的資訊在<a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>。<br>注意多數的伺服器供應商不提供類似的快取伺服器。
+MemcachedNotAvailable=沒有找到應用程式快取。你可安裝快取伺服器 Memcached 並啟動模組以增加效能。<br>更多的資訊在<a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>。<br>注意多數的伺服器供應商不提供類似的快取伺服器。
 MemcachedModuleAvailableButNotSetup=找到應用程式快取的快取模組，但模組設定沒有完成。
 MemcachedAvailableAndSetup=已啟用快取模組以使用 memcached 伺服器
 OPCodeCache=OPCode 快取

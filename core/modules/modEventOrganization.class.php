@@ -28,7 +28,7 @@ include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
 /**
  *  Description and activation class for module EventOrganization
  *  This module is base on this specification :
- *  https://wiki.dolibarr.org/index.php/Draft:Module_Event_Organization
+ *  https://bonaerp.com/index.php/Draft:Module_Event_Organization
  */
 class modEventOrganization extends DolibarrModules
 {

@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Liste over mapper, som indeholder skabeloner fil
 NumberOfModelFilesFound=Antal ODT / ODS-template filer, der findes i disse mapper
 ExampleOfDirectoriesForModelGen=Eksempler på syntaks: <br> c: \\ myapp \\ mydocumentdir \\ mysubdir <br> / home / myapp / mydocumentdir / mysubdir <br> DOL_DATA_ROOT / ecm / ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br> At vide hvordan du opretter dine odt dokumentskabeloner, før gemme dem i disse mapper, skal du læse wiki dokumentation:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Placering af fornavn / navn
 DescWeather=Følgende billeder vises på instrumentbrættet, når antallet af sene handlinger når følgende værdier:
 KeyForWebServicesAccess=Key til at bruge Web Services (parameter &quot;dolibarrkey&quot; i webservices)
@@ -1598,7 +1598,7 @@ NotInstalled=Ikke installeret.
 NotSlowedDownByThis=Ikke bremset af dette.
 NotRiskOfLeakWithThis=Ikke risiko for lækage med dette.
 ApplicativeCache=Applikationsbuffer
-MemcachedNotAvailable=Ingen applikationsbuffer fundet. Du kan forbedre ydeevnen ved at installere en cache-server Memcached og et modul, der kan bruge denne cache-server. <br> Mere information her <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN"> http: //wiki.dolibarr.org/index.php/Module_MemCached_EN </a>. <br> Bemærk, at en masse web hosting udbyder ikke giver sådan cache server.
+MemcachedNotAvailable=Ingen applikationsbuffer fundet. Du kan forbedre ydeevnen ved at installere en cache-server Memcached og et modul, der kan bruge denne cache-server. <br> Mere information her <a href="http://bonaerp.com/index.php/Module_MemCached_EN"> http: //bonaerp.com/index.php/Module_MemCached_EN </a>. <br> Bemærk, at en masse web hosting udbyder ikke giver sådan cache server.
 MemcachedModuleAvailableButNotSetup=Modul memcached for applikationscache fundet, men opsætning af modul er ikke komplet.
 MemcachedAvailableAndSetup=Modul memcached dedikeret til brug memcached server er aktiveret.
 OPCodeCache=OPCode cache

@@ -12,6 +12,6 @@ After enabling this module, you should find features to generate or edit modules
 Documentation
 -------------
 
-[Module tutorial](https://wiki.dolibarr.org/index.php/Module_development)
+[Module tutorial](https://bonaerp.com/index.php/Module_development)
 
-[Dolibarr development](https://wiki.dolibarr.org/index.php/Developer_documentation)
+[Dolibarr development](https://bonaerp.com/index.php/Developer_documentation)

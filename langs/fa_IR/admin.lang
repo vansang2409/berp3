@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=فهرست پوشه‌هائی که دربردا
 NumberOfModelFilesFound=تعداد فایل‌های قالب ODT/ODS پیدا شده در این پوشه‌ها
 ExampleOfDirectoriesForModelGen=Examples of syntax:<br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br> برای اطلاع از طرز ساخت مستندات قالب ODT دلخواه، قبل از این‌که آن‌ها را در این پوشه‌ها ذخیره کنید، مستندات راهنمای ویکی را بخوانید:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=مکان نام/نام‌خانوادگی
 DescWeather=در هنگامی که کارهای عقب‌مانده از حدود تعیین شدۀ زیر فراتر روند، تصاویر زیر در پیشخوان نمایش داده خواهند شد:
 KeyForWebServicesAccess=کلیدواژه برای استفاده در خدمت‌رسان‌وب (مقدار "dolibarrkey" در webservices)
@@ -1598,7 +1598,7 @@ NotInstalled=Not installed.
 NotSlowedDownByThis=Not slowed down by this.
 NotRiskOfLeakWithThis=Not risk of leak with this.
 ApplicativeCache=میان‌گیر عملیاتی
-MemcachedNotAvailable=هیچ میان‌گیر عملیاتی پیدا نشده. شما می‌توانید با نصب سرور میان‌گیر از قبیل Memcached و یک واحد قابل نصب که قابلیت استفاده از این سرور را دارد کارائی را افزایش دهید. <br>اطلاعات بیشتر در این پیوند <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>. <br>نکته این‌که بسیاری از ارائه‌دهندگان خدمات میزبانی از چنین سرویس‌دهندۀ میان‌گیری پشتیبانی نمی‌نمایند.
+MemcachedNotAvailable=هیچ میان‌گیر عملیاتی پیدا نشده. شما می‌توانید با نصب سرور میان‌گیر از قبیل Memcached و یک واحد قابل نصب که قابلیت استفاده از این سرور را دارد کارائی را افزایش دهید. <br>اطلاعات بیشتر در این پیوند <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>. <br>نکته این‌که بسیاری از ارائه‌دهندگان خدمات میزبانی از چنین سرویس‌دهندۀ میان‌گیری پشتیبانی نمی‌نمایند.
 MemcachedModuleAvailableButNotSetup=واحد memcached برای میان‌گیری عملیاتی یافت می‌شود اما پیکربندی آن کامل نیست.
 MemcachedAvailableAndSetup=واحد memcached مختص استفاده از سرور memcached فعال شده است.
 OPCodeCache=میان‌گیری OPCode 

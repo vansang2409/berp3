@@ -3,7 +3,7 @@
 An instruction guide for translating Dolibarr in a new language is
 available on Dolibarr wiki:
 
-English: https://wiki.dolibarr.org/index.php/Translator_documentation
-French:  https://wiki.dolibarr.org/index.php/Documentation_traducteur
-Spanish: https://wiki.dolibarr.org/index.php/Documentaci%C3%B3n_traductores
-German:  https://wiki.dolibarr.org/index.php/Dokumentation_Uebersetzung 
+English: https://bonaerp.com/index.php/Translator_documentation
+French:  https://bonaerp.com/index.php/Documentation_traducteur
+Spanish: https://bonaerp.com/index.php/Documentaci%C3%B3n_traductores
+German:  https://bonaerp.com/index.php/Dokumentation_Uebersetzung 

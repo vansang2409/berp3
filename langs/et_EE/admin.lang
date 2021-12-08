@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=List of directories containing templates files w
 NumberOfModelFilesFound=Nendes kataloogides leiduvate ODT / ODS-malli failide arv
 ExampleOfDirectoriesForModelGen=Examples of syntax:<br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br>Enne dokumendimallide loomist loe wikis olevat dokumentatsiooni:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Nimi/perekonnanimi ametikoht
 DescWeather=Juhtpaneelil kuvatakse järgmised pildid, kui hilisemate toimingute arv on järgmine:
 KeyForWebServicesAccess=Veebiteenuste kasutamise võti (parameeter "dolibarrkey" webservices moodulis)
@@ -1598,7 +1598,7 @@ NotInstalled=Not installed.
 NotSlowedDownByThis=Not slowed down by this.
 NotRiskOfLeakWithThis=Not risk of leak with this.
 ApplicativeCache=Rakenduse vahemälu
-MemcachedNotAvailable=Puhvermälu ei leitud. Jõudluse suurendamiseks paigalda puhverserver Memcached ja selle kasutamist võimaldav moodul.<br>Rohkem infot siit <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>.<br>Pane tähele, et paljud veebimajutused sellist serverit teenusena ei paku.
+MemcachedNotAvailable=Puhvermälu ei leitud. Jõudluse suurendamiseks paigalda puhverserver Memcached ja selle kasutamist võimaldav moodul.<br>Rohkem infot siit <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>.<br>Pane tähele, et paljud veebimajutused sellist serverit teenusena ei paku.
 MemcachedModuleAvailableButNotSetup=Puhvri jaoks kasutatav moodul memcached on olemas, kuid mooduli seadistamine on lõpuni viimata
 MemcachedAvailableAndSetup=Memcached serverit kasutav memcached moodul on sisse lülitatud.
 OPCodeCache=OPCode vahemälu

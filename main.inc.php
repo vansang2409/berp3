@@ -1402,7 +1402,9 @@ function top_httphead($contenttype = 'text/html', $forcenocache = 0)
 function top_htmlhead($head, $title = '', $disablejs = 0, $disablehead = 0, $arrayofjs = '', $arrayofcss = '', $disablejmobile = 0, $disablenofollow = 0)
 {
 	global $db, $conf, $langs, $user, $mysoc, $hookmanager;
-
+	// WINS
+	$conf->global->MAIN_APPLICATION_TITLE = 'BERP3';
+	// $conf->global->MAIN_HTML_TITLE = 'BERP3';
 	top_httphead();
 
 	if (empty($conf->css)) {
@@ -1486,6 +1488,7 @@ function top_htmlhead($head, $title = '', $disablejs = 0, $disablehead = 0, $arr
 		} else {
 			$titletoshow = dol_htmlentities($appli);
 		}
+		$titletoshow = str_replace("Dolibarr", "BERP3", $titletoshow);
 
 		$parameters = array('title'=>$titletoshow);
 		$result = $hookmanager->executeHooks('setHtmlTitle', $parameters); // Note that $action and $object may have been modified by some hooks
@@ -1923,29 +1926,30 @@ function top_menu($head, $title = '', $target = '', $disablejs = 0, $disablehead
 			$mode = $arrayres['mode'];
 
 			// Link to help pages
-			if ($helpbaseurl && $helppage) {
-				$text = '';
-				$title = $langs->trans($mode == 'wiki' ? 'GoToWikiHelpPage' : 'GoToHelpPage').'...';
-				if ($mode == 'wiki') {
-					$title .= '<br>'.$langs->trans("PageWiki").' '.dol_escape_htmltag('"'.strtr($helppage, '_', ' ').'"');
-					if ($helppresent) {
-						$title .= ' <span class="opacitymedium">('.$langs->trans("DedicatedPageAvailable").')</span>';
-					} else {
-						$title .= ' <span class="opacitymedium">('.$langs->trans("HomePage").')</span>';
-					}
-				}
-				$text .= '<a class="help" target="_blank" rel="noopener" href="';
-				if ($mode == 'wiki') {
-					$text .= sprintf($helpbaseurl, urlencode(html_entity_decode($helppage)));
-				} else {
-					$text .= sprintf($helpbaseurl, $helppage);
-				}
-				$text .= '">';
-				$text .= '<span class="fa fa-question-circle atoplogin valignmiddle'.($helppresent ? ' '.$helppresent : '').'"></span>';
-				$text .= '<span class="fa fa-circle helppresentcircle'.($helppresent ? '' : ' unvisible').'"></span>';
-				$text .= '</a>';
-				$toprightmenu .= $form->textwithtooltip('', $title, 2, 1, $text, 'login_block_elem', 2);
-			}
+			// WINS2
+			// if ($helpbaseurl && $helppage) {
+			// 	$text = '';
+			// 	$title = $langs->trans($mode == 'wiki' ? 'GoToWikiHelpPage' : 'GoToHelpPage').'...';
+			// 	if ($mode == 'wiki') {
+			// 		$title .= '<br>'.$langs->trans("PageWiki").' '.dol_escape_htmltag('"'.strtr($helppage, '_', ' ').'"');
+			// 		if ($helppresent) {
+			// 			$title .= ' <span class="opacitymedium">('.$langs->trans("DedicatedPageAvailable").')</span>';
+			// 		} else {
+			// 			$title .= ' <span class="opacitymedium">('.$langs->trans("HomePage").')</span>';
+			// 		}
+			// 	}
+			// 	$text .= '<a class="help" target="_blank" rel="noopener" href="';
+			// 	if ($mode == 'wiki') {
+			// 		$text .= sprintf($helpbaseurl, urlencode(html_entity_decode($helppage)));
+			// 	} else {
+			// 		$text .= sprintf($helpbaseurl, $helppage);
+			// 	}
+			// 	$text .= '">';
+			// 	$text .= '<span class="fa fa-question-circle atoplogin valignmiddle'.($helppresent ? ' '.$helppresent : '').'"></span>';
+			// 	$text .= '<span class="fa fa-circle helppresentcircle'.($helppresent ? '' : ' unvisible').'"></span>';
+			// 	$text .= '</a>';
+			// 	$toprightmenu .= $form->textwithtooltip('', $title, 2, 1, $text, 'login_block_elem', 2);
+			// }
 
 			// Version
 			if (!empty($conf->global->MAIN_SHOWDATABASENAMEINHELPPAGESLINK)) {
@@ -2994,19 +2998,19 @@ function getHelpParamFor($helppagename, $langs)
 		// If WIKI URL
 		$reg = array();
 		if (preg_match('/^es/i', $langs->defaultlang)) {
-			$helpbaseurl = 'http://wiki.dolibarr.org/index.php/%s';
+			$helpbaseurl = 'http://bonaerp.com/index.php/%s';
 			if (preg_match('/ES:([^|]+)/i', $helppagename, $reg)) {
 				$helppage = $reg[1];
 			}
 		}
 		if (preg_match('/^fr/i', $langs->defaultlang)) {
-			$helpbaseurl = 'http://wiki.dolibarr.org/index.php/%s';
+			$helpbaseurl = 'http://bonaerp.com/index.php/%s';
 			if (preg_match('/FR:([^|]+)/i', $helppagename, $reg)) {
 				$helppage = $reg[1];
 			}
 		}
 		if (empty($helppage)) {	// If help page not already found
-			$helpbaseurl = 'http://wiki.dolibarr.org/index.php/%s';
+			$helpbaseurl = 'http://bonaerp.com/index.php/%s';
 			if (preg_match('/EN:([^|]+)/i', $helppagename, $reg)) {
 				$helppage = $reg[1];
 			}

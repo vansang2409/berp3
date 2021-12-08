@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Lista de directoare care conţin fişiere șablo
 NumberOfModelFilesFound=Numărul de fișiere șablon ODT/ODS găsite în aceste directoare
 ExampleOfDirectoriesForModelGen=Exemple de sintaxă:<br> c:\\ myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br> Pentru a şti cum să vă creaţi şabloane de documente ODT, înainte de a le stoca în aceste directoare, citiţi documentaţia wiki:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Poziţia Prenumelui/Numelui
 DescWeather=Următoarele imagini vor fi afișate în tabloul de bord atunci când numărul ultimelor acțiuni va atinge următoarele valori:
 KeyForWebServicesAccess=Cheie utilizare Web Services (parametru "dolibarrkey" în WebServices)
@@ -1598,7 +1598,7 @@ NotInstalled=Neinstalat
 NotSlowedDownByThis=Nu este încetinit de aceasta
 NotRiskOfLeakWithThis=Nu există riscul de divulgare cu aceasta.
 ApplicativeCache=Cache aplicativ
-MemcachedNotAvailable=Niciun cache aplicabil nu a fost găsit. Poți îmbunătăți performanța prin instalarea unui server de cache memcached și unui modul capabil de a utiliza acest server cache. <br>Mai multe informaţii aici <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>.<br>Reține că o mulțime de furnizori de găzduire web nu oferă astfel de server de cache.
+MemcachedNotAvailable=Niciun cache aplicabil nu a fost găsit. Poți îmbunătăți performanța prin instalarea unui server de cache memcached și unui modul capabil de a utiliza acest server cache. <br>Mai multe informaţii aici <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>.<br>Reține că o mulțime de furnizori de găzduire web nu oferă astfel de server de cache.
 MemcachedModuleAvailableButNotSetup=Modulul memcahed pentru aplicare cache a fost găsit dar nu este complet configurat.
 MemcachedAvailableAndSetup=Modulul Memcached dedicat utilizării cu serverul memcached este activat.
 OPCodeCache=Cache OPCode

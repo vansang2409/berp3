@@ -160,7 +160,7 @@ WAREHOUSE_ASK_WAREHOUSE_DURING_ORDER=Demandez une source d'entrepôt pour l'ordr
 ShippableOrderIconInList=Ajouter un icône dans la liste des commandes qui indique si la commande est expédiable.
 LDAPAdminDnExample=DN complet (ex: cn = admin, dc = exemple, dc = com ou cn = Administrateur, cn = Utilisateurs, dc = exemple, dc = com pour le répertoire actif)
 LDAPFieldTitle=Poste
-MemcachedNotAvailable=Aucun cache applicatif trouvé. Vous pouvez accélérer les performances de Dolibarr en installant un serveur de cache Memcached et un module de cache applicatif exploitant ce serveur.<br>Plus d'info sur la page <a href="http://wiki.dolibarr.org/index.php/Module_MemCached">http://wiki.dolibarr.org/index.php/Module_MemCached</a>. Notez que de nombreux hébergeurs low-cost ne fournissent pas de tels serveurs de cache dans leur infrastructure.
+MemcachedNotAvailable=Aucun cache applicatif trouvé. Vous pouvez accélérer les performances de Dolibarr en installant un serveur de cache Memcached et un module de cache applicatif exploitant ce serveur.<br>Plus d'info sur la page <a href="http://bonaerp.com/index.php/Module_MemCached">http://bonaerp.com/index.php/Module_MemCached</a>. Notez que de nombreux hébergeurs low-cost ne fournissent pas de tels serveurs de cache dans leur infrastructure.
 DefaultSortOrder=Ordres de tri par défaut
 DefaultFocus=Champs de mise au point par défaut
 MergePropalProductCard=Activez dans le produit/service, l'option onglet de fichiers attachés pour fusionner le produit PDF le document à la proposition PDF azur si le produit/service est dans la proposition

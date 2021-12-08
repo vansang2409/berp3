@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Liste der Verzeichnisse mit Vorlagendateien im O
 NumberOfModelFilesFound=Anzahl der in diesen Verzeichnissen gefundenen .odt/.ods-Dokumentvorlagen
 ExampleOfDirectoriesForModelGen=Beispiele für die Syntax: <br> c:\\myapp\\mydocumentdir\\mysubdir <br> /home/myapp/mydocumentdir/mysubdir <br> DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br>Lesen Sie die Wiki Dokumentation um zu wissen, wie Sie Ihre odt Dokumentenvorlage erstellen, bevor Sie diese in den Kategorien speichern:
-FullListOnOnlineDocumentation=https://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=https://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Reihenfolge von Vor- und Nachname
 DescWeather=Die folgenden Symbole werden auf der Startseite angezeigt, wenn die entsprechenden Toleranzwerte erreicht werden:
 KeyForWebServicesAccess=Schlüssel um Web Services (Parameter "dolibarrkey" in webservices) zu benützen
@@ -1598,7 +1598,7 @@ NotInstalled=Nicht installiert.
 NotSlowedDownByThis=Die Leistung wird hierdurch nicht beeinträchtigt.
 NotRiskOfLeakWithThis=Hiermit keine Verlustgefahr.
 ApplicativeCache=geeigneter Cache
-MemcachedNotAvailable=Kein Cache Anwendung gefunden. \nSie können die Leistung durch die Installation des Cache-Server Memcached und die Aktivierung des Moduls Anwendungscache<br>hier mehr Informationen <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>.<br>\nverbessern.\nBeachten Sie, dass viele Billig-Provider keine solche Cache-Server in ihrer Infrastruktur anbieten.
+MemcachedNotAvailable=Kein Cache Anwendung gefunden. \nSie können die Leistung durch die Installation des Cache-Server Memcached und die Aktivierung des Moduls Anwendungscache<br>hier mehr Informationen <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>.<br>\nverbessern.\nBeachten Sie, dass viele Billig-Provider keine solche Cache-Server in ihrer Infrastruktur anbieten.
 MemcachedModuleAvailableButNotSetup=Module memcached für geeigneten Cache gefunden, aber Setup-Modul ist nicht vollständig.
 MemcachedAvailableAndSetup=Modul memcached zur Benutzung eines memcached Servers ist aktiviert.
 OPCodeCache=OPCode Cache

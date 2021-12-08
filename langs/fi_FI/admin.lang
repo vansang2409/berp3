@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Luettelo hakemistoista, jotka sisältävät mall
 NumberOfModelFilesFound=Näistä hakemistoista löydettyjen ODT / ODS-mallitiedostojen määrä
 ExampleOfDirectoriesForModelGen=Esimerkkejä syntaksista: <br> c:\\myapp\\mydocumentdir\\mysubdir <br> /home/myapp/mydocumentdir/mysubdir <br> DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br> Jos haluat tietää, miten voit luoda odt asiakirjamalleja, ennen kuin laitat ne näistä hakemistoista, lue wiki dokumentaatio:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Etunimi/Sukunimi - sijainti
 DescWeather=The following images will be shown on the dashboard when the number of late actions reach the following values:
 KeyForWebServicesAccess=Avain käyttää Web Services (parametri &quot;dolibarrkey&quot; in WebServices)
@@ -1598,7 +1598,7 @@ NotInstalled=Ei asennettu.
 NotSlowedDownByThis=Ei hidasta tätä.
 NotRiskOfLeakWithThis=Ei vuotoriskiä tällä.
 ApplicativeCache=Applicative cache
-MemcachedNotAvailable=No applicative cache found. You can enhance performance by installing a cache server Memcached and a module able to use this cache server.<br>More information here <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>.<br>Note that a lot of web hosting provider does not provide such cache server.
+MemcachedNotAvailable=No applicative cache found. You can enhance performance by installing a cache server Memcached and a module able to use this cache server.<br>More information here <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>.<br>Note that a lot of web hosting provider does not provide such cache server.
 MemcachedModuleAvailableButNotSetup=Module memcached for applicative cache found but setup of module is not complete.
 MemcachedAvailableAndSetup=Module memcached dedicated to use memcached server is enabled.
 OPCodeCache=OPCode cache

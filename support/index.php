@@ -99,15 +99,15 @@ print '<td align="center" valign="middle">';
 
 print '<table class="nocellnopadd">';
 print '<tr><td align="center">';
-$urlwiki = 'https://wiki.dolibarr.org';
+$urlwiki = 'https://bonaerp.com';
 if (preg_match('/fr/i', $langs->defaultlang)) {
-	$urlwiki = 'https://wiki.dolibarr.org/index.php/Accueil';
+	$urlwiki = 'https://bonaerp.com/index.php/Accueil';
 }
 if (preg_match('/es/i', $langs->defaultlang)) {
-	$urlwiki = 'https://wiki.dolibarr.org/index.php/Portada';
+	$urlwiki = 'https://bonaerp.com/index.php/Portada';
 }
 if (preg_match('/de/i', $langs->defaultlang)) {
-	$urlwiki = 'https://wiki.dolibarr.org/index.php/Hauptseite';
+	$urlwiki = 'https://bonaerp.com/index.php/Hauptseite';
 }
 print '<br>'.$langs->trans("ForDocumentationSeeWiki", $urlwiki, $urlwiki);
 print '<br>';

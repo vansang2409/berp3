@@ -3125,7 +3125,7 @@ if (!GETPOST('hide_websitemenu')) {
 
 		print '<span class="websitehelp">';
 		if ($action == 'editsource' || $action == 'editcontent' || GETPOST('editsource', 'alpha') || GETPOST('editcontent', 'alpha')) {
-			$url = 'https://wiki.dolibarr.org/index.php/Module_Website';
+			$url = 'https://bonaerp.com/index.php/Module_Website';
 
 			$htmltext = $langs->transnoentitiesnoconv("YouCanEditHtmlSource", $url);
 			$htmltext .= $langs->transnoentitiesnoconv("YouCanEditHtmlSource2", $url);

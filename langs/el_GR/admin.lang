@@ -388,7 +388,7 @@ ListOfDirectoriesForModelGenODT=Λίστα καταλόγων που περιέ�
 NumberOfModelFilesFound=Αριθμός αρχείων προτύπου ODT / ODS που βρέθηκαν σε αυτούς τους καταλόγους
 ExampleOfDirectoriesForModelGen=Examples of syntax:<br>c:\\myapp\\mydocumentdir\\mysubdir<br>/home/myapp/mydocumentdir/mysubdir<br>DOL_DATA_ROOT/ecm/ecmdir
 FollowingSubstitutionKeysCanBeUsed=<br>Για να μάθετε πως να δημιουργήσετε τα δικά σας αρχεία προτύπων, πριν τα αποθηκεύσετε σε αυτούς τους φακέλους, διαβάστε την τεκμηρίωση στο wiki:
-FullListOnOnlineDocumentation=http://wiki.dolibarr.org/index.php/Create_an_ODT_document_template
+FullListOnOnlineDocumentation=http://bonaerp.com/index.php/Create_an_ODT_document_template
 FirstnameNamePosition=Θέση ονόματος/επιθέτου
 DescWeather=Οι παρακάτω εικόνες θα εμφανίζονται στον πίνακα οργάνων όταν ο αριθμός των καθυστερημένων ενεργειών φτάσει τις ακόλουθες τιμές:
 KeyForWebServicesAccess=Key to use Web Services (parameter "dolibarrkey" in webservices)
@@ -1598,7 +1598,7 @@ NotInstalled=Not installed.
 NotSlowedDownByThis=Not slowed down by this.
 NotRiskOfLeakWithThis=Not risk of leak with this.
 ApplicativeCache=Εφαρμογή Cache
-MemcachedNotAvailable=Δεν βρέθηκε applicative προσωρινή μνήμη. Μπορείτε να βελτιώσετε την απόδοση με την εγκατάσταση ενός Memcached διακομιστή προσωρινής μνήμης και ένα module θα είναι σε θέση να χρησιμοποίηση το διακομιστή προσωρινής μνήμης.<br>Περισσότερες πληροφορίες εδώ <a href="http://wiki.dolibarr.org/index.php/Module_MemCached_EN">http://wiki.dolibarr.org/index.php/Module_MemCached_EN</a>.<br>Σημειώστε ότι πολλοί πάροχοι web hosting δεν παρέχουν διακομιστή cache.
+MemcachedNotAvailable=Δεν βρέθηκε applicative προσωρινή μνήμη. Μπορείτε να βελτιώσετε την απόδοση με την εγκατάσταση ενός Memcached διακομιστή προσωρινής μνήμης και ένα module θα είναι σε θέση να χρησιμοποίηση το διακομιστή προσωρινής μνήμης.<br>Περισσότερες πληροφορίες εδώ <a href="http://bonaerp.com/index.php/Module_MemCached_EN">http://bonaerp.com/index.php/Module_MemCached_EN</a>.<br>Σημειώστε ότι πολλοί πάροχοι web hosting δεν παρέχουν διακομιστή cache.
 MemcachedModuleAvailableButNotSetup=Το module memcached για εφαρμογή cache βρέθηκε, αλλά η εγκατάσταση του module δεν είναι πλήρης.
 MemcachedAvailableAndSetup=Το module memcache προορίζεται για χρήση memcached του διακομιστή όταν είναι ενεργοποιημένη.
 OPCodeCache=OPCode cache
