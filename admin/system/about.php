@@ -116,24 +116,24 @@ if (preg_match('/^de_/i', $langs->getDefaultLang()))
 	print '<a target="_blank" href="https://www.dolibarr.de/" rel="external">'.$langs->trans("OfficialWebSiteLocal", $langs->transnoentitiesnoconv("Germany")).'</a>';
 	print '</li>';
 }*/
-print '<li>';
-print '<a target="_blank" href="https://bonaerp.com/" rel="external">'.$langs->trans("OfficialWiki").'</a>';
-print '</li>';
-print '</ul>';
+// print '<li>';
+// print '<a target="_blank" href="https://bonaerp.com/" rel="external">'.$langs->trans("OfficialWiki").'</a>';
+// print '</li>';
+// print '</ul>';
 
-print $langs->trans("Demo").':';
-print '<ul>';
-print '<li>';
-print '<a target="_blank" href="https://www.dolibarr.org/onlinedemo/" rel="external">'.$langs->trans("OfficialDemo").'</a>';
-print '</li>';
-print '</ul>';
+// print $langs->trans("Demo").':';
+// print '<ul>';
+// print '<li>';
+// print '<a target="_blank" href="https://www.dolibarr.org/onlinedemo/" rel="external">'.$langs->trans("OfficialDemo").'</a>';
+// print '</li>';
+// print '</ul>';
 
-print $langs->trans("ModulesMarketPlaces").':';
-print '<ul>';
-print '<li>';
-print '<a target="_blank" href="https://www.dolistore.com" rel="external">'.$langs->trans("OfficialMarketPlace").'</a>';
-print '</li>';
-print '</ul>';
+// print $langs->trans("ModulesMarketPlaces").':';
+// print '<ul>';
+// print '<li>';
+// print '<a target="_blank" href="https://www.dolistore.com" rel="external">'.$langs->trans("OfficialMarketPlace").'</a>';
+// print '</li>';
+// print '</ul>';
 
 
 print '</div><div class="fichehalfright">';
