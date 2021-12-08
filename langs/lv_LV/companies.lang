@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Uzņēmuma nosaukums %s jau pastāv. Izvēlieties citu.
 ErrorSetACountryFirst=Izvēlieties vispirms valsti
 SelectThirdParty=Izvēlieties trešo pusi
@@ -360,7 +360,7 @@ CapitalOf=%s kapitāls
 EditCompany=Labot uzņēmumu
 ThisUserIsNot=Šis lietotājs nav potenciālais pircējs, klients vai pārdevējs
 VATIntraCheck=Pārbaudīt
-VATIntraCheckDesc=PVN ID ir jāiekļauj valsts prefikss. Saite <b> %s </b> izmanto Eiropas PVN pārbaudes pakalpojumu (VIES), kas pieprasa interneta piekļuvi no Dolibarr servera.
+VATIntraCheckDesc=PVN ID ir jāiekļauj valsts prefikss. Saite <b> %s </b> izmanto Eiropas PVN pārbaudes pakalpojumu (VIES), kas pieprasa interneta piekļuvi no BERP3 servera.
 VATIntraCheckURL=http://ec.europa.eu/taxation_customs/vies/vieshome.do
 VATIntraCheckableOnEUSite=Pārbaudiet Kopienas iekšējo PVN identifikācijas numuru Eiropas Komisijas tīmekļa vietnē
 VATIntraManualCheck=Jūs varat manuāli pārbaudīt arī Eiropas Komisijas vietnē <a href="%s" target="_blank">%s</a>
@@ -406,8 +406,8 @@ ProspectsByStatus=Perspektīvu statuss
 NoParentCompany=Nav
 ExportCardToFormat=Eksportēt karti uz formātu
 ContactNotLinkedToCompany=Kontakts nav saistīts ar trešajām personām
-DolibarrLogin=Dolibarr pieteikšanās
-NoDolibarrAccess=Nav Dolibarr piekļuve
+DolibarrLogin=BERP3 pieteikšanās
+NoDolibarrAccess=Nav BERP3 piekļuve
 ExportDataset_company_1=Trešās puses (uzņēmumi/fondi/fiziskie cilvēki) un to īpašības
 ExportDataset_company_2=Kontakti un to īpašības
 ImportDataset_company_1=Trešās puses un to īpašības

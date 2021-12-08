@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=Espace RH
 UserCard=Fiche utilisateur
 GroupCard=Fiche groupe
@@ -90,8 +90,8 @@ UserDeleted=Suppression utilisateur %s
 NewGroupCreated=Création groupe %s
 GroupModified=Groupe %s modifié
 GroupDeleted=Suppression groupe %s
-ConfirmCreateContact=Êtes-vous sûr de vouloir créer un compte Dolibarr pour ce contact ?
-ConfirmCreateLogin=Êtes-vous sûr de vouloir créer un compte Dolibarr pour cet adhérent ?
+ConfirmCreateContact=Êtes-vous sûr de vouloir créer un compte BERP3 pour ce contact ?
+ConfirmCreateLogin=Êtes-vous sûr de vouloir créer un compte BERP3 pour cet adhérent ?
 ConfirmCreateThirdParty=Êtes-vous sûr de vouloir créer un tiers pour cet adhérent ?
 LoginToCreate=Identifiant à créer
 NameToCreate=Nom du tiers à créer

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=人力資源區域
 UserCard=用戶卡
 GroupCard=集團卡
@@ -62,11 +62,11 @@ ListOfUsersInGroup=此群組內用戶清單
 ListOfGroupsForUser=此用戶的群組清單
 LinkToCompanyContact=連線成為第三方(客戶/供應商)的連絡人
 LinkedToDolibarrMember=連結到會員
-LinkedToDolibarrUser=連線成為 Dolibarr 用戶
-LinkedToDolibarrThirdParty=連線成為 Dolibarr 的合作方
+LinkedToDolibarrUser=連線成為 BERP3 用戶
+LinkedToDolibarrThirdParty=連線成為 BERP3 的合作方
 CreateDolibarrLogin=建立一位用戶
 CreateDolibarrThirdParty=建立一位合作方(客戶/供應商)
-LoginAccountDisableInDolibarr=在 Dolibarr 中帳戶已關閉。
+LoginAccountDisableInDolibarr=在 BERP3 中帳戶已關閉。
 UsePersonalValue=使用個人設定值
 InternalUser=內部用戶
 ExportDataset_user_1=用戶及其屬性

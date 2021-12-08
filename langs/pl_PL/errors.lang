@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Nie ma błędu, zobowiązujemy
@@ -49,7 +49,7 @@ ErrorFoundBadEmailInFile=Znaleziono nieprawidłową składnię adresu email dla 
 ErrorUserCannotBeDelete=Nie można usunąć użytkownika. Może jest to związane z podmiotami Dolibarr.
 ErrorFieldsRequired=Niektóre wymagane pola zostały puste.
 ErrorSubjectIsRequired=Temat wiadomości e-mail jest wymagany
-ErrorFailedToCreateDir=Nie można utworzyć katalogu. Sprawdź, czy serwer WWW użytkownik ma uprawnienia do zapisu do katalogu dokumentów Dolibarr. Jeśli parametr <b>safe_mode</b> jest włączona w tym PHP, czy posiada Dolibarr php pliki do serwera internetowego użytkownika (lub grupy).
+ErrorFailedToCreateDir=Nie można utworzyć katalogu. Sprawdź, czy serwer WWW użytkownik ma uprawnienia do zapisu do katalogu dokumentów Dolibarr. Jeśli parametr <b>safe_mode</b> jest włączona w tym PHP, czy posiada BERP3 php pliki do serwera internetowego użytkownika (lub grupy).
 ErrorNoMailDefinedForThisUser=Nie określono adresu email dla tego użytkownika
 ErrorSetupOfEmailsNotComplete=Konfiguracja e-maili nie została zakończona
 ErrorFeatureNeedJavascript=Ta funkcja wymaga do pracy aktywowanego JavaScript. Zmień to w konfiguracji - wyświetlanie.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s jest przypisany do innego państwa
 ErrorFailedToSendPassword=Nie można wysłać hasła
 ErrorFailedToLoadRSSFile=Nie dostać kanału RSS. Spróbuj dodać stałą MAIN_SIMPLEXMLLOAD_DEBUG czy komunikaty o błędach nie zawiera wystarczających informacji.
 ErrorForbidden=Brak dostępu. <br> Próby uzyskania dostępu do strony, strefy lub funkcji modułu niepełnosprawnej lub bez w uwierzytelnionej sesji lub że nie jest dozwolone do użytkownika.
-ErrorForbidden2=Wykorzystanie tej nazwie może być zdefiniowana przez administratora z menu Dolibarr %s-> %s.
-ErrorForbidden3=Wydaje się, że Dolibarr nie jest używany przez uwierzytelniane sesji. Rzuć okiem na Dolibarr konfiguracji dokumentacji wiedzieć, jak zarządzać authentications (htaccess, mod_auth lub innych ...).
+ErrorForbidden2=Wykorzystanie tej nazwie może być zdefiniowana przez administratora z menu BERP3 %s-> %s.
+ErrorForbidden3=Wydaje się, że BERP3 nie jest używany przez uwierzytelniane sesji. Rzuć okiem na BERP3 konfiguracji dokumentacji wiedzieć, jak zarządzać authentications (htaccess, mod_auth lub innych ...).
 ErrorNoImagickReadimage=Funkcja imagick_readimage nie jest w tej PHP. Podgląd może być dostępny. Administratorzy mogą wyłączyć tę zakładkę z menu Ustawienia - Ekran.
 ErrorRecordAlreadyExists=Wpis już istnieje
 ErrorLabelAlreadyExists=Ta etykieta już istnieje
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=Data musi być wcześniejsza niż dzisiaj
 ErrorDateMustBeInFuture=Data musi być późniejsza niż dzisiaj
 ErrorPaymentModeDefinedToWithoutSetup=Tryb płatność została ustawiona na typ% s, ale konfiguracja modułu faktury nie została zakończona do określenia informacji, aby pokazać tym trybie płatności.
 ErrorPHPNeedModule=Błąd, PHP musi mieć zainstalowany moduł <b>%s</b>, aby korzystać z tej funkcji.
-ErrorOpenIDSetupNotComplete=Ty konfiguracji Dolibarr plik konfiguracyjny, aby umożliwić uwierzytelnianie OpenID, ale adres URL usługi OpenID nie jest zdefiniowany w stałej% s
+ErrorOpenIDSetupNotComplete=Ty konfiguracji BERP3 plik konfiguracyjny, aby umożliwić uwierzytelnianie OpenID, ale adres URL usługi OpenID nie jest zdefiniowany w stałej% s
 ErrorWarehouseMustDiffers=magazyn źródłowy i docelowy musi być różny
 ErrorBadFormat=Zły format!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Błąd, ten członek nie jest jeszcze powiązany z żadnym kontrahentem. Połącz członka z istniejącym kontrahentem lub utwórz nowego kontrahenta przed utworzeniem subskrypcji z fakturą.

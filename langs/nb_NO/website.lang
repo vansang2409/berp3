@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - website
+# BERP3 language file - Source file is en_US - website
 Shortname=Kode
 WebsiteSetupDesc=Opprett de nettstedene du ønsker å bruke her. Deretter går du inn i meny Nettsteder for å redigere dem.
 DeleteWebsite=Slett wedside
@@ -45,7 +45,7 @@ ViewWebsiteInProduction=Vis webside ved hjelp av  hjemme-URL
 SetHereVirtualHost=<u>Bruk med Apache/NGinx/...</u><br>Opprett på webserveren din (Apache, Nginx, ...) en dedikert virtuell vert med PHP aktivert og en rotkatalog på <br><strong>%s</strong>
 ExampleToUseInApacheVirtualHostConfig=Eksempel på Apache virtuelt vertsoppsett:
 YouCanAlsoTestWithPHPS= <u> Bruk med PHP-innebygd server </u> <br> I utviklingsmiljø kan du foretrekke å teste nettstedet med PHP-innebygd webserver (PHP 5.5 nødvendig) ved å kjøre <br> <strong> php -S 0.0.0.0:8080 -t %s </strong>
-YouCanAlsoDeployToAnotherWHP=<u>Kjør nettstedet ditt med en annen leverandør av Dolibarr Hosting</u> <br> Hvis du ikke har en webserver som Apache eller NGinx tilgjengelig på internett, kan du eksportere og importere nettstedet til en annen Dolibarr-forekomst levert av en annen Dolibarr-leverandør som gir full integrasjon med nettstedsmodulen. Du kan finne en liste over noen Dolibarr-vertsleverandører på <a href="https://saas.dolibarr.org" target="_blank">https://saas.dolibarr.org</a>
+YouCanAlsoDeployToAnotherWHP=<u>Kjør nettstedet ditt med en annen leverandør av BERP3 Hosting</u> <br> Hvis du ikke har en webserver som Apache eller NGinx tilgjengelig på internett, kan du eksportere og importere nettstedet til en annen Dolibarr-forekomst levert av en annen Dolibarr-leverandør som gir full integrasjon med nettstedsmodulen. Du kan finne en liste over noen Dolibarr-vertsleverandører på <a href="https://bonaerp.com" target="_blank">https://bonaerp.com</a>
 CheckVirtualHostPerms=Sjekk også at den virtuelle vertsbrukeren (for eksempel www-data) har <strong>%s</strong> tillatelser på filer i<br><strong>%s</strong>
 ReadPerm=Les
 WritePerm=Skriv

@@ -1,8 +1,8 @@
-# Dolibarr language file - Source file is en_US - stripe
+# BERP3 language file - Source file is en_US - stripe
 StripeSetup=Stripe modulini sozlash
-StripeDesc=<a href="http://www.stripe.com" target="_blank"> Stripe </a> orqali mijozlarga kredit / cebit kartalar bilan to'lovlarni amalga oshirish uchun Stripe onlayn to'lov sahifasini taklif eting. Bu sizning mijozlaringizga vaqtinchalik to'lovlarni amalga oshirishda yoki ma'lum bir Dolibarr ob'ekti bilan bog'liq to'lovlarda (faktura, buyurtma, ...) ruxsat berish uchun ishlatilishi mumkin.
+StripeDesc=<a href="http://www.stripe.com" target="_blank"> Stripe </a> orqali mijozlarga kredit / cebit kartalar bilan to'lovlarni amalga oshirish uchun Stripe onlayn to'lov sahifasini taklif eting. Bu sizning mijozlaringizga vaqtinchalik to'lovlarni amalga oshirishda yoki ma'lum bir BERP3 ob'ekti bilan bog'liq to'lovlarda (faktura, buyurtma, ...) ruxsat berish uchun ishlatilishi mumkin.
 StripeOrCBDoPayment=Kredit karta yoki Stripe orqali to'lash
-FollowingUrlAreAvailableToMakePayments=Dolibarr ob'ektlarida to'lovni amalga oshirish uchun xaridorga sahifani taklif qilish uchun quyidagi URL manzillar mavjud
+FollowingUrlAreAvailableToMakePayments=BERP3 ob'ektlarida to'lovni amalga oshirish uchun xaridorga sahifani taklif qilish uchun quyidagi URL manzillar mavjud
 PaymentForm=To'lov shakli
 WelcomeOnPaymentPage=Onlayn to'lov xizmatimizga xush kelibsiz
 ThisScreenAllowsYouToPay=Ushbu ekran sizga %s raqamiga onlayn to'lovni amalga oshirishga imkon beradi.

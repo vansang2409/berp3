@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,7 +61,7 @@ ErrorNoRequestInError=В ошибке нет никаких запросов
 ErrorServiceUnavailableTryLater=Служба недоступна. Попробуйте позже.
 ErrorDuplicateField=Повторяющееся значение в уникальном поле
 ErrorSomeErrorWereFoundRollbackIsDone=Были обнаружены некоторые ошибки. Изменения были отменены.
-ErrorConfigParameterNotDefined=Параметр <b>%s</b> не определен в конфигурационном файле Dolibarr <b>conf.php</b> .
+ErrorConfigParameterNotDefined=Параметр <b>%s</b> не определен в конфигурационном файле BERP3 <b>conf.php</b> .
 ErrorCantLoadUserFromDolibarrDatabase=Не удалось найти пользователя <b>%s</b> в базе данных Dolibarr.
 ErrorNoVATRateDefinedForSellerCountry=Ошибка, ставки НДС не установлены для страны '%s'.
 ErrorNoSocialContributionForSellerCountry=Ошибка, не определен тип социальных/налоговых взносов для страны %s.
@@ -94,7 +94,7 @@ RecordDeleted=Запись удалена
 RecordGenerated=Запись сгенерирована
 LevelOfFeature=Уровень возможностей
 NotDefined=Неопределено
-DolibarrInHttpAuthenticationSoPasswordUseless=Режим аутентификации Dolibarr установлен в <b>%s</b> в файле конфигурации <b>conf.php</b>. <br>Это означает, что Dolibarr хранит пароли во внешней базе, поэтому изменение этого поля может не помочь.
+DolibarrInHttpAuthenticationSoPasswordUseless=Режим аутентификации BERP3 установлен в <b>%s</b> в файле конфигурации <b>conf.php</b>. <br>Это означает, что BERP3 хранит пароли во внешней базе, поэтому изменение этого поля может не помочь.
 Administrator=Администратор
 Undefined=Неопределено
 PasswordForgotten=Забыли пароль?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Менеджер типов баз данных
 RequestLastAccessInError=Ошибка при последнем запросе доступа к базе данных
 ReturnCodeLastAccessInError=Код ошибки при последнем запросе доступа к базе данных
 InformationLastAccessInError=Информация по ошибкам при последнем запросе доступа к базе данных
-DolibarrHasDetectedError=Dolibarr обнаружил техническую ошибку
+DolibarrHasDetectedError=BERP3 обнаружил техническую ошибку
 YouCanSetOptionDolibarrMainProdToZero=Вы можете прочитать файл журнала или установить опцию $dolibarr_main_prod в '0' в свой файл конфигурации, чтобы получить дополнительную информацию.
 InformationToHelpDiagnose=Эта информация может быть полезна для диагностических целей (вы можете установить опцию $dolibarr_main_prod на «1», чтобы удалить такие уведомления)
 MoreInformation=Подробнее
@@ -121,7 +121,7 @@ TechnicalID=Технический идентификатор
 LineID=ID линии
 NotePublic=Примечание (публичное)
 NotePrivate=Примечание (личное)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr был настроен на ограничение точности цены единицы до <b>%s</b> десятых.
+PrecisionUnitIsLimitedToXDecimals=BERP3 был настроен на ограничение точности цены единицы до <b>%s</b> десятых.
 DoTest=Проверка
 ToFilter=Фильтр
 NoFilter=Нет фильтра
@@ -729,7 +729,7 @@ MenuAWStats=AWStats
 MenuMembers=Участники
 MenuAgendaGoogle=Google agenda
 MenuTaxesAndSpecialExpenses=Налоги | Особые расходы
-ThisLimitIsDefinedInSetup=Лимит Dolibarr (Меню Главная-Настройки-Безопасность): %s Кб, лимит PHP: %s Кб
+ThisLimitIsDefinedInSetup=Лимит BERP3 (Меню Главная-Настройки-Безопасность): %s Кб, лимит PHP: %s Кб
 ThisLimitIsDefinedInSetupAt=Лимит долибарра (меню %s): %s Kb, лимит PHP (параметр %s): %s Kb
 NoFileFound=Документы не загружены
 CurrentUserLanguage=Текущий язык
@@ -905,7 +905,7 @@ ViewFlatList=Вид плоским списком
 ViewAccountList=Посмотреть бухгалтерскую книгу
 ViewSubAccountList=Просмотр книги вспомогательного счета
 RemoveString=Удалить строку '%s'
-SomeTranslationAreUncomplete=Некоторые из предлагаемых языков пакетов могут быть переведены только частично или могут содержать ошибки. Пожалуйста, помогите исправить ваш язык, зарегистрировавшись по адресу <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/,</a> чтобы добавить свои улучшения.
+SomeTranslationAreUncomplete=Некоторые из предлагаемых языков пакетов могут быть переведены только частично или могут содержать ошибки. Пожалуйста, помогите исправить ваш язык, зарегистрировавшись по адресу <a href="https://bonaerp.com/" target="_blank">dolibarr/,</a> чтобы добавить свои улучшения.
 DirectDownloadLink=Публичная ссылка для скачивания
 PublicDownloadLinkDesc=Для скачивания файла требуется только ссылка
 DirectDownloadInternalLink=Частная ссылка для скачивания

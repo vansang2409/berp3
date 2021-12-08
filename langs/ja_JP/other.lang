@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - other
+# BERP3 language file - Source file is en_US - other
 SecurityCode=セキュリティコード
 NumberingShort=番号
 Tools=ツール
@@ -182,7 +182,7 @@ BackToLoginPage=ログインページに戻る
 AuthenticationDoesNotAllowSendNewPassword=認証モードは<b>%s</b> です。 <br>このモードではDolibarr上でパスワードの表示も変更もできません。 <br>パスワードを変更したい場合はシステム管理者に連絡して下さい。
 EnableGDLibraryDesc=このオプションを使用するには、PHPインストールでGDライブラリをインストールまたは有効にする。
 ProfIdShortDesc=<b>教授イド%sは、</b>サードパーティの国に応じて情報 。 <br>たとえば、国<b>%s</b>のために、それはコード<b>%s</b> 。
-DolibarrDemo=Dolibarr ERP / CRMデモ
+DolibarrDemo=BERP3 ERP / CRMデモ
 StatsByNumberOfUnits=製品/サービスの数量の合計の統計
 StatsByNumberOfEntities=参照エンティティの数の統計（請求書または注文の数...）
 NumberOfProposals=提案数

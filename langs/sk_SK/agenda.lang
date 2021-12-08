@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - agenda
+# BERP3 language file - Source file is en_US - agenda
 IdAgenda=ID udalosti
 Actions=Udalosti
 Agenda=Program rokovania
@@ -31,10 +31,10 @@ ViewWeek=Zobraziť týždeň
 ViewPerUser=Podľa zobrazenia uživateľa
 ViewPerType=Podľa typu zobrazenia
 AutoActions= Automatické plnenie
-AgendaAutoActionDesc= Here you may define events which you want Dolibarr to create automatically  in Agenda. If nothing is checked, only manual actions will be included in logs and displayed in Agenda. Automatic tracking of business actions done on objects (validation, status change) will not be saved.
-AgendaSetupOtherDesc= This page provides options to allow the export of your Dolibarr events into an external calendar (Thunderbird, Google Calendar etc...)
+AgendaAutoActionDesc= Here you may define events which you want BERP3 to create automatically  in Agenda. If nothing is checked, only manual actions will be included in logs and displayed in Agenda. Automatic tracking of business actions done on objects (validation, status change) will not be saved.
+AgendaSetupOtherDesc= This page provides options to allow the export of your BERP3 events into an external calendar (Thunderbird, Google Calendar etc...)
 AgendaExtSitesDesc=Táto stránka umožňuje deklarovať externé zdroje kalendárov vidieť svoje akcie do programu Dolibarr.
-ActionsEvents=Udalosti, pre ktoré Dolibarr vytvorí akciu v programe automaticky
+ActionsEvents=Udalosti, pre ktoré BERP3 vytvorí akciu v programe automaticky
 EventRemindersByEmailNotEnabled=Event reminders by email was not enabled into %s module setup.
 ##### Agenda event labels #####
 NewCompanyToDolibarr=Tretia strana %s vytvorená

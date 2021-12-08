@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Nazwa firmy %s już istnieje. Wybierz inną.
 ErrorSetACountryFirst=Najpierw wybierz kraj
 SelectThirdParty=Wybierz kontrahenta
@@ -406,7 +406,7 @@ ProspectsByStatus=Potencjalni klienci według statusu
 NoParentCompany=Żaden
 ExportCardToFormat=Eksport karty do formatu
 ContactNotLinkedToCompany=Kontakt nie połączony z żadnym kontrahentem
-DolibarrLogin=Dolibarr login
+DolibarrLogin=BERP3 login
 NoDolibarrAccess=Brak dostępu do Dolibarr
 ExportDataset_company_1=Kontrahenci (firmy/fundacje/osoby fizyczne) i ich własności
 ExportDataset_company_2=Kontakty i ich właściwości

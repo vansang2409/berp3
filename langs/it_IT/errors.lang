@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Nessun errore, committiamo
@@ -46,10 +46,10 @@ ErrorBadDateFormat=Il valore '%s' ha un formato della data sbagliato
 ErrorWrongDate=La data non è corretta!
 ErrorFailedToWriteInDir=Impossibile scrivere nella directory %s
 ErrorFoundBadEmailInFile=Sintassi email errata nelle righe %s del file (ad esempio alla riga %s con email = %s)
-ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to Dolibarr entities.
+ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to BERP3 entities.
 ErrorFieldsRequired=Mancano alcuni campi obbligatori.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=Impossibile creare la directory. Verifica che l'utente del server Web abbia i permessi per scrivere nella directory Dolibarr. Se il parametro <b>safe_mode</b> è abilitato in PHP, verifica che i file php di Dolibarr appartengano all'utente o al gruppo del server web (per esempio www-data).
+ErrorFailedToCreateDir=Impossibile creare la directory. Verifica che l'utente del server Web abbia i permessi per scrivere nella directory Dolibarr. Se il parametro <b>safe_mode</b> è abilitato in PHP, verifica che i file php di BERP3 appartengano all'utente o al gruppo del server web (per esempio www-data).
 ErrorNoMailDefinedForThisUser=Nessun indirizzo memorizzato per questo utente
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=Questa funzione necessita di javascript per essere attivata. Modificare questa impostazione nel menu Impostazioni - layout di visualizzazione.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s è già assegnato
 ErrorFailedToSendPassword=Impossibile inviare la password
 ErrorFailedToLoadRSSFile=Impossibile ottenere feed RSS. Se i messaggi di errore non forniscono informazioni sufficienti, prova ad ativare il debug con MAIN_SIMPLEXMLLOAD_DEBUG.
 ErrorForbidden=Accesso negato.<br>Tentativo di accesso ad una pagina, area o funzionalità di un modulo disabilitato; oppure in una sessione non autenticata o comunque non consentita.
-ErrorForbidden2=L'autorizzazione all'accesso per questi dati può essere impostata dall'amministratore di Dolibarr tramite il menu %s - %s.
-ErrorForbidden3=Sembra che Dolibarr non venga utilizzato tramite una sessione autenticata. Dai un'occhiata alla documentazione di installazione Dolibarr per sapere come gestire le autenticazioni (htaccess, mod_auth o altri...).
+ErrorForbidden2=L'autorizzazione all'accesso per questi dati può essere impostata dall'amministratore di BERP3 tramite il menu %s - %s.
+ErrorForbidden3=Sembra che BERP3 non venga utilizzato tramite una sessione autenticata. Dai un'occhiata alla documentazione di installazione BERP3 per sapere come gestire le autenticazioni (htaccess, mod_auth o altri...).
 ErrorNoImagickReadimage=La funzione Imagick_readimage non è stata trovato nel PHP. L'anteprima non è disponibile. Gli amministratori possono disattivare questa scheda dal menu <b>Impostazioni - Schermo</b>
 ErrorRecordAlreadyExists=Il record esiste già
 ErrorLabelAlreadyExists=Etichetta già esistente
@@ -133,7 +133,7 @@ ErrorNoActivatedBarcode=Nessun tipo di codice a barre attivato
 ErrUnzipFails=Estrazione dell'archivio %s con ZipArchive fallita
 ErrNoZipEngine=La funzione di compressione zip/unzip per il file %s non è disponibile in questa installazione di PHP
 ErrorFileMustBeADolibarrPackage=Il file %s deve essere un archivio zip Dolibarr
-ErrorModuleFileRequired=You must select a Dolibarr module package file
+ErrorModuleFileRequired=You must select a BERP3 module package file
 ErrorPhpCurlNotInstalled=PHP CURL non risulta installato, ma è necessario per comunicare con Paypal
 ErrorFailedToAddToMailmanList=Impossibile aggiungere il dato %s alla Mailman lista %s o SPIP base
 ErrorFailedToRemoveToMailmanList=Impossibile rimuovere il dato %s alla Mailman lista %s o SPIP base
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=La data deve essere inferiore a quella odierna
 ErrorDateMustBeInFuture=La data deve essere maggiore di quella odierna
 ErrorPaymentModeDefinedToWithoutSetup=Un metodo di pagamento è stato impostato come %s ma il setup del modulo Fattura non è stato completato per definire le impostazioni da mostrare per questo metodo di pagamento.
 ErrorPHPNeedModule=Errore, il tuo PHP deve avere il modulo <b>%s</b> installato per usare questa funzionalità.
-ErrorOpenIDSetupNotComplete=Hai impostato il config file di Dolibarr per permettere l'autenticazione tramite OpenID, ma l'URL del service di OpenID non è definita nella costante %s
+ErrorOpenIDSetupNotComplete=Hai impostato il config file di BERP3 per permettere l'autenticazione tramite OpenID, ma l'URL del service di OpenID non è definita nella costante %s
 ErrorWarehouseMustDiffers=Il magazzino di origine e quello di destinazione devono essere differenti
 ErrorBadFormat=Formato non valido!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Errore, questo membro non è stato ancora collegato a nessuna terza parte. Collega il membro ad una delle terze parti esistenti o creane una nuova prima di creare sottoscrizioni con fattura.

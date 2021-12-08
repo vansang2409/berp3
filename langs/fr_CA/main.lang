@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 FONTFORPDF=helvetica
 FONTSIZEFORPDF=10
@@ -27,7 +27,7 @@ NotAuthorized=Vous n'êtes pas autorisé à le faire.
 SeeHere=Regardez ici
 ClickHere=Cliquez ici
 GoToWikiHelpPage=Lire l'aide en ligne (accès Internet nécessaire)
-DolibarrInHttpAuthenticationSoPasswordUseless=Le mode d'authentification Dolibarr est défini sur <b>%s</b> dans le fichier de configuration <b>conf.php</b>.<br> Cela signifie que la base de données de mots de passe est externe à Dolibarr, donc changer ce champ peut ne pas avoir d'effet .
+DolibarrInHttpAuthenticationSoPasswordUseless=Le mode d'authentification BERP3 est défini sur <b>%s</b> dans le fichier de configuration <b>conf.php</b>.<br> Cela signifie que la base de données de mots de passe est externe à Dolibarr, donc changer ce champ peut ne pas avoir d'effet .
 PasswordForgotten=Mot de passe oublié?
 AuthenticationMode=Mode d'authentification
 RequestedUrl=URL requise

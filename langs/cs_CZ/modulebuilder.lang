@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=Tento nástroj musí používat pouze zkušení uživatelé nebo vývojáři. Poskytuje nástroje pro sestavení nebo úpravu vlastního modulu. Dokumentace pro alternativní <a href="%s" target="_blank">manuální vývoj je zde</a> .
 EnterNameOfModuleDesc=Zadejte název modulu/aplikace pro vytvoření bez mezer. Použijte velká slova k oddělení slov (například: MyModule, EcommerceForShop, SyncWithMySystem ...)
 EnterNameOfObjectDesc=Zadejte název objektu, který chcete vytvořit, bez mezer. Použijte velká písmena pro oddělení slov (například: MyObject, Student, Teacher ...). Bude vygenerován soubor třídy CRUD, ale také soubor API, stránky pro zápis / přidání / úpravy / odstranění objektů a souborů SQL.

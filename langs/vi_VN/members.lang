@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - members
+# BERP3 language file - Source file is en_US - members
 MembersArea=Khu vực thành viên
 MemberCard=Thẻ thành viên
 SubscriptionCard=Thẻ đăng ký
@@ -101,7 +101,7 @@ ConfirmValidateMember=Bạn có chắc chắn muốn xác nhận thành viên n�
 FollowingLinksArePublic=Các liên kết sau đây là các trang mở không được bảo vệ bởi bất kỳ sự cho phép của Dolibarr. Chúng không phải là các trang được định dạng, được cung cấp làm ví dụ để hiển thị cách liệt kê cơ sở dữ liệu thành viên.
 PublicMemberList=Danh sách thành viên công khai
 BlankSubscriptionForm=Biểu mẫu tự đăng ký công khai
-BlankSubscriptionFormDesc=Dolibarr có thể cung cấp cho bạn một URL / trang web công khai để cho phép khách truy cập bên ngoài yêu cầu đăng ký vào nền tảng. Nếu một mô-đun thanh toán trực tuyến được bật, một hình thức thanh toán cũng có thể được cung cấp tự động.
+BlankSubscriptionFormDesc=BERP3 có thể cung cấp cho bạn một URL / trang web công khai để cho phép khách truy cập bên ngoài yêu cầu đăng ký vào nền tảng. Nếu một mô-đun thanh toán trực tuyến được bật, một hình thức thanh toán cũng có thể được cung cấp tự động.
 EnablePublicSubscriptionForm=Cho phép trang web công cộng với biểu mẫu tự đăng ký
 ForceMemberType=Ép buộc loại thành viên
 ExportDataset_member_1=Thành viên và đăng ký

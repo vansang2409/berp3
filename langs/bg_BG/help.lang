@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - help
+# BERP3 language file - Source file is en_US - help
 CommunitySupport=Форум / Wiki поддръжка
 EMailSupport=Имейл поддръжка
 RemoteControlSupport=Онлайн в реално време / дистанционна поддръжка
@@ -17,7 +17,7 @@ TypeHelpOnly=Само помощ
 TypeHelpDev=Помощ + разработка
 TypeHelpDevForm=Помощ + разработка + обучение
 BackToHelpCenter=В противен случай <a href="%s">се върнете в началната страница на центърът за помощ</a>.
-LinkToGoldMember=Може да се обадите на някой от обучаващите, предварително посочени от Dolibarr за вашия език (%s), като кликнете върху тяхната джаджа (статуса и максималната цена са автоматично актуализирани):
+LinkToGoldMember=Може да се обадите на някой от обучаващите, предварително посочени от BERP3 за вашия език (%s), като кликнете върху тяхната джаджа (статуса и максималната цена са автоматично актуализирани):
 PossibleLanguages=Поддържани езици
 SubscribeToFoundation=Помогнете на проекта Dolibarr, като се присъедините към фондацията.
-SeeOfficalSupport=За официална поддръжка на Dolibarr на вашия език: <br><b><a href="%s" target="_blank">%s</a></b>
+SeeOfficalSupport=За официална поддръжка на BERP3 на вашия език: <br><b><a href="%s" target="_blank">%s</a></b>

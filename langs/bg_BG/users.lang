@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=Секция с човешки ресурси
 UserCard=Карта
 GroupCard=Карта
@@ -62,8 +62,8 @@ ListOfUsersInGroup=Списък на потребителите в тази гр
 ListOfGroupsForUser=Списък на групите за този потребител
 LinkToCompanyContact=Връзка към контрагент / контакт
 LinkedToDolibarrMember=Връзка към член
-LinkedToDolibarrUser=Връзка към Dolibarr потребител
-LinkedToDolibarrThirdParty=Връзка към Dolibarr контрагент
+LinkedToDolibarrUser=Връзка към BERP3 потребител
+LinkedToDolibarrThirdParty=Връзка към BERP3 контрагент
 CreateDolibarrLogin=Създаване на потребител
 CreateDolibarrThirdParty=Създаване на контрагент
 LoginAccountDisableInDolibarr=Профилът е деактивиран в системата.
@@ -90,8 +90,8 @@ UserDeleted=Потребител %s е премахнат
 NewGroupCreated=Група %s е създадена
 GroupModified=Група %s е променена
 GroupDeleted=Група %s е премахната
-ConfirmCreateContact=Сигурни ли сте, че искате да създадете Dolibarr профил за този контакт?
-ConfirmCreateLogin=Сигурни ли сте, че искате да създадете Dolibarr профил за този член?
+ConfirmCreateContact=Сигурни ли сте, че искате да създадете BERP3 профил за този контакт?
+ConfirmCreateLogin=Сигурни ли сте, че искате да създадете BERP3 профил за този член?
 ConfirmCreateThirdParty=Сигурни ли сте, че искате да създадете контрагент за този член?
 LoginToCreate=Потребителско име
 NameToCreate=Име на контрагент за създаване

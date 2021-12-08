@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - cashdesk
+# BERP3 language file - Source file is en_US - cashdesk
 CashDeskBankCash=Bankrekening (cash)
 CashDeskBankCheque=Bankrekening (cheque)
 CashdeskShowServices=Verkoop van diensten
@@ -7,6 +7,6 @@ TotalTicket=Totale ticketprijs
 BankToPay=Betalingsaccount
 ShowCompany=Toon bedrijf
 ShowStock=Toon magazijn
-DolibarrReceiptPrinter=Dolibarr Ontvangsten Printer
+DolibarrReceiptPrinter=BERP3 Ontvangsten Printer
 NotAvailableWithBrowserPrinter=Not available when printer for receipt is set to browser:
 Receipt=Ontvangst

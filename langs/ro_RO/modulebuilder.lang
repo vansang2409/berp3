@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=Acest instrument poate fi folosit doar de utilizatori cu experiență sau dezvoltatori de software. Oferă facilităţi pentru a vă construi sau edita propriul modul. Documentația pentru <a href="%s" target="_blank">dezvoltare software alternativă se găsește aici</a>. 
 EnterNameOfModuleDesc=Introduceți numele modulului/aplicației care va fi creat, fără spații. Utilizați majusculă pentru a separa cuvintele (De exemplu: MyModule, EcommerceForShop, SyncWithMySystem ...)
 EnterNameOfObjectDesc=Introduceți numele obiectului de creat fără spații. Utilizează majusculă pentru a separa cuvintele (De exemplu: MyObject, Student, Profesor ...). Se va genera și fișierul clasă CRUD, dar și fișierul API, paginile de listare/adăugare/editare/ștergere ale obiectului și fișierele SQL.

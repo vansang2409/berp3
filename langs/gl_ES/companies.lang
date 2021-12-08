@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=O nome da empresa %s xa existe. Escolla outro.
 ErrorSetACountryFirst=Defina en primeiro lugar o país
 SelectThirdParty=Seleccionar un terceiro
@@ -360,7 +360,7 @@ CapitalOf=Capital de %s
 EditCompany=Modificar empresa
 ThisUserIsNot=Este usuario non é nin un cliente potencial, nin un cliente, nin un provedor
 VATIntraCheck=Verificar
-VATIntraCheckDesc=El enlace <b>%s</b> permite consultar no servizo europeo de control de números de IVE intracomunitario (VIES). Requírese acceso a internet dende o servidor Dolibarr para o servizo.
+VATIntraCheckDesc=El enlace <b>%s</b> permite consultar no servizo europeo de control de números de IVE intracomunitario (VIES). Requírese acceso a internet dende o servidor BERP3 para o servizo.
 VATIntraCheckURL=http://ec.europa.eu/taxation_customs/vies/vieshome.do
 VATIntraCheckableOnEUSite=Verificar o CIF/NIF intracomunitario na web da Comisión Europea
 VATIntraManualCheck=Pode tamén verificar manualmente na web da Comisión Europea <a href="%s" target="_blank">%s</a>

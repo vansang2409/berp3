@@ -14,8 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ModuleZapierForDolibarrName = Zapier priekš Dolibarr
-ModuleZapierForDolibarrDesc = Par zapier Dolibarr moduli
+ModuleZapierForDolibarrDesc = Par zapier BERP3 moduli
 ZapierForDolibarrSetup=Zapier iestatīšana Dolibarr
 ZapierDescription=Saskarne ar Zapier
 ZapierAbout=Par moduli Zapier
-ZapierSetupPage=Lai izmantotu Zapier, Dolibarr pusē nav nepieciešama iestatīšana. Tomēr, lai varētu izmantot Zapier ar Dolibarr, jums ir jāizveido un jāpublicē pakete zapier. Skatiet šīs wiki lapas <a href="https://bonaerp.com/index.php/Module_Zapier"> dokumentāciju </a>.
+ZapierSetupPage=Lai izmantotu Zapier, BERP3 pusē nav nepieciešama iestatīšana. Tomēr, lai varētu izmantot Zapier ar Dolibarr, jums ir jāizveido un jāpublicē pakete zapier. Skatiet šīs wiki lapas <a href="https://bonaerp.com/index.php/Module_Zapier"> dokumentāciju </a>.

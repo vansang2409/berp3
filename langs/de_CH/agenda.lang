@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - agenda
+# BERP3 language file - Source file is en_US - agenda
 IdAgenda=ID Veranstaltung
 Agenda=Terminplanung
 Agendas=Tagesordnungen
@@ -21,7 +21,7 @@ MemberModifiedInDolibarr=Mitglied %s bearbeitet
 MemberResiliatedInDolibarr=Mitlglied %s geschlossen.
 MemberSubscriptionAddedInDolibarr=Abonnement %s für Mitlglied %s hinzugefügt
 MemberSubscriptionModifiedInDolibarr=Abonnement %s für Mitglied %s bearbeitet
-ShipmentValidatedInDolibarr=Versand %s in Dolibarr geprüft
+ShipmentValidatedInDolibarr=Versand %s in BERP3 geprüft
 ShipmentClassifyClosedInDolibarr=Lieferung %s auf verrechnet gesetzt
 ShipmentUnClassifyCloseddInDolibarr=Lieferung %s auf wiedereröffnet gesetzt
 ShipmentBackToDraftInDolibarr=Lieferung %s ist wieder im Entwurfsstatus.

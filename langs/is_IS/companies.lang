@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Company name %s  er þegar til. Veldu annað.
 ErrorSetACountryFirst=Setja í landinu fyrst
 SelectThirdParty=Veldu þriðja aðila
@@ -360,7 +360,7 @@ CapitalOf=Capital af %s
 EditCompany=Breyta fyrirtæki
 ThisUserIsNot=This user is not a prospect, customer or vendor
 VATIntraCheck=Athuga
-VATIntraCheckDesc=The VAT ID must include the country prefix. The link <b>%s</b> uses the European VAT checker service (VIES) which requires internet access from the Dolibarr server.
+VATIntraCheckDesc=The VAT ID must include the country prefix. The link <b>%s</b> uses the European VAT checker service (VIES) which requires internet access from the BERP3 server.
 VATIntraCheckURL=http://ec.europa.eu/taxation_customs/vies/vieshome.do
 VATIntraCheckableOnEUSite=Check the intra-Community VAT ID on the European Commission website
 VATIntraManualCheck=You can also check manually on the European Commission website <a href="%s" target="_blank">%s</a>
@@ -406,8 +406,8 @@ ProspectsByStatus=Horfur eftir stöðu
 NoParentCompany=None
 ExportCardToFormat=Útflutningur kort til snið
 ContactNotLinkedToCompany=Hafðu tengist ekki til þriðja aðila
-DolibarrLogin=Dolibarr Innskráning
-NoDolibarrAccess=Nei Dolibarr aðgang
+DolibarrLogin=BERP3 Innskráning
+NoDolibarrAccess=Nei BERP3 aðgang
 ExportDataset_company_1=Third-parties (companies/foundations/physical people) and their properties
 ExportDataset_company_2=Contacts and their properties
 ImportDataset_company_1=Third-parties and their properties

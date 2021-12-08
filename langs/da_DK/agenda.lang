@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - agenda
+# BERP3 language file - Source file is en_US - agenda
 IdAgenda=ID for begivenhed
 Actions=Begivenheder
 Agenda=Tidsplan
@@ -31,10 +31,10 @@ ViewWeek=Ugevisning
 ViewPerUser=Per brugervisning
 ViewPerType=Per typevisning
 AutoActions= Automatisk udfyldning
-AgendaAutoActionDesc= Her kan du definere events som du vil have Dolibarr til skabe automatically i Agenda. Hvis intet er valgt, vil kun manuelle handlinger blive inkluderet i logfiler and, der vises i Agenda. Automatisk sporing af forretningshandlinger udført på objekter (validation, status ændring) bliver ikke gemt.
-AgendaSetupOtherDesc= Denne side giver mulighed for at tillade eksport af dine Dolibarr events i en ekstern kalender (Thunderbird, Google Kalender osv. ..)
+AgendaAutoActionDesc= Her kan du definere events som du vil have BERP3 til skabe automatically i Agenda. Hvis intet er valgt, vil kun manuelle handlinger blive inkluderet i logfiler and, der vises i Agenda. Automatisk sporing af forretningshandlinger udført på objekter (validation, status ændring) bliver ikke gemt.
+AgendaSetupOtherDesc= Denne side giver mulighed for at tillade eksport af dine BERP3 events i en ekstern kalender (Thunderbird, Google Kalender osv. ..)
 AgendaExtSitesDesc=Denne side giver mulighed for at angive eksterne kalendere, så deres begivenheder kan ses i tidsplanen i Dolibarr.
-ActionsEvents=Begivenheder, for hvilke Dolibarr vil skabe en indsats på dagsordenen automatisk
+ActionsEvents=Begivenheder, for hvilke BERP3 vil skabe en indsats på dagsordenen automatisk
 EventRemindersByEmailNotEnabled=Hændelsesindkaldelser via e-mail blev ikke aktiveret til %s modulopsætning.
 ##### Agenda event labels #####
 NewCompanyToDolibarr=Tredjepart %s oprettet

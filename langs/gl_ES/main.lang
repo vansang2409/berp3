@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,7 +61,7 @@ ErrorNoRequestInError=Ningunha petición con erro
 ErrorServiceUnavailableTryLater=Servizo non dispoñible actualmente. Ténteo de novo mais tarde.
 ErrorDuplicateField=Valor duplicado nun único campo
 ErrorSomeErrorWereFoundRollbackIsDone=Atopáronse algúns erros. Modificacións desfeitas.
-ErrorConfigParameterNotDefined=O parámetro <b>%s</b> no está definido no ficheiro de configuración Dolibarr <b>conf.php</b>.
+ErrorConfigParameterNotDefined=O parámetro <b>%s</b> no está definido no ficheiro de configuración BERP3 <b>conf.php</b>.
 ErrorCantLoadUserFromDolibarrDatabase=Imposible atopar ao usuario <b>%s</b> na base de datos Dolibarr.
 ErrorNoVATRateDefinedForSellerCountry=Error, ningún tipo de IVE definido para o país '%s'.
 ErrorNoSocialContributionForSellerCountry=Erro, ningún tipo de taxa social/fiscal definida para o país '%s'.
@@ -94,7 +94,7 @@ RecordDeleted=Rexistro eliminado
 RecordGenerated=Registro xerado
 LevelOfFeature=Nivel de funcións
 NotDefined=Non definido
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr está configurado no modo de autenticación <b>%s</b> no ficheiro de configuración <b>conf.php</b>.<br> Iso significa que a base de datos dos contrasinais é externa a Dolibarr, por iso toda modificación deste campo pode non ter efecto.
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 está configurado no modo de autenticación <b>%s</b> no ficheiro de configuración <b>conf.php</b>.<br> Iso significa que a base de datos dos contrasinais é externa a Dolibarr, por iso toda modificación deste campo pode non ter efecto.
 Administrator=Administrador
 Undefined=Non definido
 PasswordForgotten=¿Esqueceu o seu contrasinal?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Tipo de xestor de base de datos
 RequestLastAccessInError=Último acceso á base de datos con erro na solicitude
 ReturnCodeLastAccessInError=Código de retorno de acceso á base de datos con erro para a última petición
 InformationLastAccessInError=Información do último erro de petición de acceso de base de datos
-DolibarrHasDetectedError=Dolibarr detectou un erro técnico
+DolibarrHasDetectedError=BERP3 detectou un erro técnico
 YouCanSetOptionDolibarrMainProdToZero=Pode ler o ficheiro log ou establecer a opción $dolibarr_main_prod a '0' no seu ficheiro de configuración para obter mais información.
 InformationToHelpDiagnose=Esta información pode ser útil para propstas de diagnóstico (pode configurar a opción $dolibarr_main_prod to '1' para eliminar as notificacións)
 MoreInformation=Mais información
@@ -121,7 +121,7 @@ TechnicalID=ID Técnica
 LineID=ID de liña
 NotePublic=Nota (pública)
 NotePrivate=Nota (privada)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr está configurado para limitar a precisión dos prezos unitarios a <b>%s</b> decimais.
+PrecisionUnitIsLimitedToXDecimals=BERP3 está configurado para limitar a precisión dos prezos unitarios a <b>%s</b> decimais.
 DoTest=Probar
 ToFilter=Filtrar
 NoFilter=Sen filtro
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Membros
 MenuAgendaGoogle=Axenda Google
 MenuTaxesAndSpecialExpenses=Taxas | Gastos especiais
-ThisLimitIsDefinedInSetup=Límite Dolibarr (Menú Inicio-configuración-seguridade): %s Kb, PHP limit: %s Kb
-ThisLimitIsDefinedInSetupAt=Límite Dolibarr (Menu %s): %s Kb PHP límite (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=Límite BERP3 (Menú Inicio-configuración-seguridade): %s Kb, PHP limit: %s Kb
+ThisLimitIsDefinedInSetupAt=Límite BERP3 (Menu %s): %s Kb PHP límite (Param %s): %s Kb
 NoFileFound=Non se cargaron documentos
 CurrentUserLanguage=Idioma actual
 CurrentTheme=Tema actual
@@ -905,7 +905,7 @@ ViewFlatList=Ver listaxe plana
 ViewAccountList=Ver Libro Maior
 ViewSubAccountList=Ver subconta Libro Maior
 RemoveString=Eliminar cadea '%s'
-SomeTranslationAreUncomplete=Algúns dos idiomas ofrecidos poden estar parcialmente traducidos ou poden conter erros. Axuda a corrixir teu idioma rexistrándose en <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">http://transifex.com/projects/p/dolibarr/</a>.
+SomeTranslationAreUncomplete=Algúns dos idiomas ofrecidos poden estar parcialmente traducidos ou poden conter erros. Axuda a corrixir teu idioma rexistrándose en <a href="https://bonaerp.com/" target="_blank">http://transifex.com/projects/p/berp3</a>.
 DirectDownloadLink=Ligazón pública de descarga
 PublicDownloadLinkDesc=Só é precisa a ligazón para descargar o ficheiro
 DirectDownloadInternalLink=Ligazón privada de descarga

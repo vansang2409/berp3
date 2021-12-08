@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Společnost %s již existuje. Zadejte jiný název.
 ErrorSetACountryFirst=Nejprve vyberte zemi.
 SelectThirdParty=Vyberte subjekt
@@ -360,7 +360,7 @@ CapitalOf=Hlavní město %s
 EditCompany=Upravit společnost
 ThisUserIsNot=Tento uživatel není cílem, zákazníkem ani prodejcem
 VATIntraCheck=Kontrola
-VATIntraCheckDesc=Kód DPH ID musí obsahovat předčíslí země. Odkaz <b> %s </b> používá službu European VAT Checker (VIES), která vyžaduje přístup na internet z Dolibarr serveru.
+VATIntraCheckDesc=Kód DPH ID musí obsahovat předčíslí země. Odkaz <b> %s </b> používá službu European VAT Checker (VIES), která vyžaduje přístup na internet z BERP3 serveru.
 VATIntraCheckURL=http://ec.europa.eu/taxation_customs/vies/vieshome.do
 VATIntraCheckableOnEUSite=Zkontrolujte ID DPH uvnitř Společenství na webových stránkách Evropské komise
 VATIntraManualCheck=Můžete také zkontrolovat ručně na evropských stránkách <a href="%s" target="_blank">%s</a>

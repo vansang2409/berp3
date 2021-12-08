@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 NoErrorCommitIsDone=Aucune erreur, nous nous engageons
 ErrorButCommitIsDone=Erreurs trouvées, mais nous validons malgré cela
 ErrorBadValueForParamNotAString=Valeur incorrecte pour votre paramètre. Il ajoute généralement lorsque la traduction est manquante.
@@ -26,7 +26,7 @@ ErrorBadDateFormat=La valeur '%s' a un mauvais format de date
 ErrorWrongDate=La date n'est pas correcte!
 ErrorFailedToWriteInDir=Erreur d'écriture dans le répertoire %s
 ErrorFoundBadEmailInFile=Trouver une syntaxe de courrier électronique incorrecte pour les lignes %s dans le fichier (ligne d'exemple %s avec email = %s)
-ErrorFailedToCreateDir=Impossible de créer un répertoire. Vérifiez que l'utilisateur du serveur Web a la permission d'écrire dans le répertoire de documents Dolibarr. Si le paramètre <b> safe_mode </ b> est activé sur ce PHP, vérifiez que les fichiers Dolibarr php appartiennent à l'utilisateur du serveur Web (ou au groupe).
+ErrorFailedToCreateDir=Impossible de créer un répertoire. Vérifiez que l'utilisateur du serveur Web a la permission d'écrire dans le répertoire de documents Dolibarr. Si le paramètre <b> safe_mode </ b> est activé sur ce PHP, vérifiez que les fichiers BERP3 php appartiennent à l'utilisateur du serveur Web (ou au groupe).
 ErrorNoMailDefinedForThisUser=Aucun courrier défini pour cet utilisateur
 ErrorFeatureNeedJavascript=Cette fonctionnalité nécessite l'activation de JavaScript pour fonctionner. Modifiez ceci dans la configuration - l'affichage.
 ErrorTopMenuMustHaveAParentWithId0=Un menu de type 'Top' ne peut pas contenir un menu parent. Mettez 0 dans le menu parent ou choisissez un menu de type 'Gauche'.
@@ -58,8 +58,8 @@ ErrorCounterMustHaveMoreThan3Digits=Le compteur doit avoir plus de 3 chiffres
 ErrorProdIdAlreadyExist=%s est affecté à un autre tiers
 ErrorFailedToLoadRSSFile=Impossible d'obtenir un flux RSS. Essayez d'ajouter constante MAIN_SIMPLEXMLLOAD_DEBUG si les messages d'erreur ne fournissent pas suffisamment d'informations.
 ErrorForbidden=Accès refusé. <br> Vous essayez d'accéder à une page, zone ou fonctionnalité d'un module désactivé ou sans être dans une session authentifiée ou non autorisée pour votre utilisateur.
-ErrorForbidden2=La permission de cette connexion peut être définie par votre administrateur Dolibarr à partir du menu %s-> %s.
-ErrorForbidden3=Il semble que Dolibarr ne soit pas utilisé par une session authentifiée. Consultez la documentation d'installation de Dolibarr pour savoir comment gérer les authentifications (htaccess, mod_auth ou autre ...).
+ErrorForbidden2=La permission de cette connexion peut être définie par votre administrateur BERP3 à partir du menu %s-> %s.
+ErrorForbidden3=Il semble que BERP3 ne soit pas utilisé par une session authentifiée. Consultez la documentation d'installation de BERP3 pour savoir comment gérer les authentifications (htaccess, mod_auth ou autre ...).
 ErrorNoImagickReadimage=Class Imagick n'est pas trouvé dans cette PHP. Aucun aperçu ne peut être disponible. Les administrateurs peuvent désactiver cet onglet dans le menu Configuration - Affichage.
 ErrorRecordAlreadyExists=L'enregistrement existe déjà
 ErrorCantReadFile=Impossible de lire le fichier '%s'
@@ -85,7 +85,7 @@ ErrorNewValueCantMatchOldValue=Une nouvelle valeur ne peut pas être égale à l
 ErrorFailedToValidatePasswordReset=Impossible de réinitialiser le mot de passe. Peut-être que le reinit était déjà fait (ce lien ne peut être utilisé qu'une seule fois). Sinon, essayez de redémarrer le processus de réinitialisation.
 ErrorFailedToAddContact=Impossible d'ajouter un contact
 ErrorPaymentModeDefinedToWithoutSetup=Un mode de paiement a été configuré pour taper %s mais la configuration du module La facture n'a pas été complétée pour définir les informations à afficher pour ce mode de paiement.
-ErrorOpenIDSetupNotComplete=Vous configurez le fichier de configuration Dolibarr pour autoriser l'authentification OpenID, mais l'URL du service OpenID n'est pas définie en constante %s
+ErrorOpenIDSetupNotComplete=Vous configurez le fichier de configuration BERP3 pour autoriser l'authentification OpenID, mais l'URL du service OpenID n'est pas définie en constante %s
 ErrorWarehouseMustDiffers=Les entrepôts source et cible doivent être différents
 ErrorBadFormat=Mauvais format!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Erreur, ce membre n'est pas encore lié à un tiers. Associez le membre à un tiers existant ou créez un nouveau tiers avant de créer une souscription avec facture.

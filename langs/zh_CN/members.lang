@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - members
+# BERP3 language file - Source file is en_US - members
 MembersArea=会员专区
 MemberCard=会员卡
 SubscriptionCard=认购证
@@ -98,7 +98,7 @@ ConfirmDeleteSubscription=您确定要删除此订阅吗？
 Filehtpasswd=htpasswd文件
 ValidateMember=验证会员
 ConfirmValidateMember=您确定要验证此会员吗？
-FollowingLinksArePublic=The following links are open pages not protected by any Dolibarr permission. They are not formatted pages, provided as example to show how to list members database.
+FollowingLinksArePublic=The following links are open pages not protected by any BERP3 permission. They are not formatted pages, provided as example to show how to list members database.
 PublicMemberList=公共会员名录
 BlankSubscriptionForm=公开自我订阅表格
 BlankSubscriptionFormDesc=Dolibarr可以为您提供公共URL /网站，以允许外部访问者要求订阅基金会。如果启用了在线支付模块，则还可以自动提供支付表格。

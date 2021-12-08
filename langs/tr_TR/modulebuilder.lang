@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=Bu araç yalnızca deneyimli kullanıcılar veya geliştiriciler tarafından kullanılmalıdır. Kendi modülünüzü oluşturmak veya düzenlemek için yardımcı programlar sağlar. Alternatif <a href="%s" target="_blank"> manuel geliştirme belgeleri burada </a>.
 EnterNameOfModuleDesc=Oluşturulacak modül/uygulamanın adını boşluksuz girin. Kelimeleri ayırmak için büyük harf kullanın (Örneğin: MyModule, EcommerceForShop, SyncWithMySystem ...)
 EnterNameOfObjectDesc=Enter name of the object to create with no spaces. Use uppercase to separate words (For example: MyObject, Student, Teacher...). The CRUD class file, but also API file, pages to list/add/edit/delete object and SQL files will be generated.
@@ -101,7 +101,7 @@ HooksDefDesc=Define in the <b>module_parts['hooks']</b> property, in the module 
 TriggerDefDesc=Define in the trigger file the code you want to execute for each business event executed.
 SeeIDsInUse=See IDs in use in your installation
 SeeReservedIDsRangeHere=See range of reserved IDs
-ToolkitForDevelopers=Dolibarr geliştiricileri için araç seti
+ToolkitForDevelopers=BERP3 geliştiricileri için araç seti
 TryToUseTheModuleBuilder=Eğer SQL ve PHP hakkında bilginiz varsa, yerel modül oluşturucu sihirbazını kullanabilirsiniz.<br><strong>%s</strong> modülünü etkinleştirin ve sağ üst menüde yer alan <span class="fa fa-bug"></span> simgesine tıklayarak sihirbazı kullanın.<br>Uyarı: Bu gelişmiş bir geliştirici özelliğidir, bu nedenle aktif kullandığınız siteniz üzerinde deneme <b>yapmayın</b>!
 SeeTopRightMenu=Sağ üst menüde yer alan <span class="fa fa-bug"></span> simgesine bakın
 AddLanguageFile=Dil dosyası ekle

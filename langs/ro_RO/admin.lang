@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - admin
+# BERP3 language file - Source file is en_US - admin
 Foundation=Fundaţie
 Version=Versiune
 Publisher=Editor
@@ -48,7 +48,7 @@ ClientCharset=Set de caractere client
 ClientSortingCharset=Îmbinare client
 WarningModuleNotActive=Modulul <b> %s </b> trebuie să fie activat
 WarningOnlyPermissionOfActivatedModules=Numai permisiunile legate de modulele activate sunt prezentate aici. Aveţi posibilitatea să activaţi alte module în Acasă->Setări->Module.
-DolibarrSetup=Dolibarr instalare sau actualizare
+DolibarrSetup=BERP3 instalare sau actualizare
 InternalUser=Utilizator intern
 ExternalUser=Utilizator extern
 InternalUsers=Utilizatori interni
@@ -68,7 +68,7 @@ PHPSetup=Configuraţie PHP
 OSSetup=Configuraţie sistem de operare
 SecurityFilesDesc=Definiți aici opțiunile legate de securitatea încărcării fișierelor.
 ErrorModuleRequirePHPVersion=Eroare, acest modul necesită versiunea PHP  %s sau mai nouă
-ErrorModuleRequireDolibarrVersion=Eroare, acest modul necesită versiunea Dolibarr %s sau mai nouă
+ErrorModuleRequireDolibarrVersion=Eroare, acest modul necesită versiunea BERP3 %s sau mai nouă
 ErrorDecimalLargerThanAreForbidden=Eroare, o precizie mai mare de <b>%s</b> nu este suportată.
 DictionarySetup=Setări dicţionar
 Dictionary=Dicţionare
@@ -158,7 +158,7 @@ SystemInfo=Informaţii sistem
 SystemToolsArea=Instrumente sistem
 SystemToolsAreaDesc=Această zonă oferă funcții de administrare. Utilizați meniul pentru a alege caracteristica cerută.
 Purge=Curăţenie
-PurgeAreaDesc=Această pagină vă permite să ștergeți toate fișierele generate sau stocate de Dolibarr (fișiere temporare sau toate fișierele din directorul <b>%s</b>). Utilizarea acestei funcții nu este în mod normal necesară. Este oferită ca soluție pentru utilizatorii care găzduiesc Dolibarr la un furnizor care nu oferă permisiuni de ștergere a fișierelor generate de serverul web.
+PurgeAreaDesc=Această pagină vă permite să ștergeți toate fișierele generate sau stocate de BERP3 (fișiere temporare sau toate fișierele din directorul <b>%s</b>). Utilizarea acestei funcții nu este în mod normal necesară. Este oferită ca soluție pentru utilizatorii care găzduiesc BERP3 la un furnizor care nu oferă permisiuni de ștergere a fișierelor generate de serverul web.
 PurgeDeleteLogFile=Ștergeți fișierele din jurnal, inclusiv <b> %s </b> definite pentru modulul Syslog (fără risc de pierdere a datelor)
 PurgeDeleteTemporaryFiles=Ștergeți toate fișierele jurnal și temporare (fără risc de pierdere a datelor). Parametrul poate fi 'tempfilesold', 'logfiles' sau ambele 'tempfilesold + logfiles'. Notă: Ștergerea fișierelor temporare se face numai dacă directorul temporar a fost creat acum mai mult de 24 de ore. 
 PurgeDeleteTemporaryFilesShort=Ștergeți fișierele jurnal și temporare
@@ -221,16 +221,16 @@ DOLISTOREdescriptionLong=În loc să porniți site-ul web <a href="https://www.d
 NewModule=Modul nou
 FreeModule=Liber
 CompatibleUpTo=Compatibil cu versiunea %s
-NotCompatible=Acest modul nu pare compatibil cu Dolibarr %s (Min %s - Max %s).
-CompatibleAfterUpdate=Acest modul necesită o actualizare la Dolibarr %s (Min %s - Max %s).
+NotCompatible=Acest modul nu pare compatibil cu BERP3 %s (Min %s - Max %s).
+CompatibleAfterUpdate=Acest modul necesită o actualizare la BERP3 %s (Min %s - Max %s).
 SeeInMarkerPlace=Consultați pe Market place
 SeeSetupOfModule=Vezi setările modului %s
 SetOptionTo=Setează opţiunea <b>%s</b> la %s
 Updated=Updatat
 AchatTelechargement=Cumpărați / Descărcați
 GoModuleSetupArea=Pentru a implementa/instala un nou modul, accesați zona de configurare a modulelor: <a href="%s">%s</a>.
-DoliStoreDesc=DoliStore, marketplace oficial pentru module externe Dolibarr ERP/CRM
-DoliPartnersDesc=Lista companiilor care furnizează module sau funcții dezvoltate personalizat.<br>Notă: Având în vedere că Dolibarr este o aplicație open source, <i>orice</i> utilizator experimentat în programarea PHP ar trebui să poată dezvolta un modul
+DoliStoreDesc=DoliStore, marketplace oficial pentru module externe BERP3 ERP/CRM
+DoliPartnersDesc=Lista companiilor care furnizează module sau funcții dezvoltate personalizat.<br>Notă: Având în vedere că BERP3 este o aplicație open source, <i>orice</i> utilizator experimentat în programarea PHP ar trebui să poată dezvolta un modul
 WebSiteDesc=Site-uri externe pentru module suplimentare (non-core) ...
 DevelopYourModuleDesc=Unele soluții pentru a vă dezvolta propriul modul...
 URL=URL
@@ -257,8 +257,8 @@ DolibarrLicense=Licenţă
 Developpers=Dezvoltatori/contributori
 OfficialWebSite=Site-ul oficial Dolibarr
 OfficialWebSiteLocal=Site-ul web local (%s)
-OfficialWiki=Documentația Dolibarr / Wiki
-OfficialDemo=Dolibarr demo online
+OfficialWiki=Documentația BERP3 / Wiki
+OfficialDemo=BERP3 demo online
 OfficialMarketPlace=Marketplace-ul oficial al modulelor/suplimentelor externe
 OfficialWebHostingService=Referinţă Servicii de web hosting (Cloud hosting)
 ReferencedPreferredPartners=Parteneri preferaţi
@@ -266,8 +266,8 @@ OtherResources=Alte resurse
 ExternalResources=Resurse externe
 SocialNetworks=Reţele sociale
 SocialNetworkId=ID reţea socială
-ForDocumentationSeeWiki=Pentru utilizator sau developer documentaţia (doc, FAQs ...), <br> este disponibilă la Dolibarr Wiki: <br> <a href="%s" target="_blank"><b> %s</b></a>
-ForAnswersSeeForum=Pentru orice alte întrebări/ajutor, se poate utiliza Dolibarr forum: <br> <a href="%s" target="_blank"><b> %s</b></a>
+ForDocumentationSeeWiki=Pentru utilizator sau developer documentaţia (doc, FAQs ...), <br> este disponibilă la BERP3 Wiki: <br> <a href="%s" target="_blank"><b> %s</b></a>
+ForAnswersSeeForum=Pentru orice alte întrebări/ajutor, se poate utiliza BERP3 forum: <br> <a href="%s" target="_blank"><b> %s</b></a>
 HelpCenterDesc1=Iată câteva resurse pentru a obține ajutor și asistență cu Dolibarr.
 HelpCenterDesc2=Unele dintre aceste resurse sunt disponibile numai în <b>engleză</b>.
 CurrentMenuHandler=Gestionar meniu curent
@@ -315,8 +315,8 @@ UserEmail=Email utilizator
 CompanyEmail=Email companie
 FeatureNotAvailableOnLinux=Caracteristică indisponibilă pe sistemele tip Unix. Testaţi-vă programul sendmail la nivel local.
 FixOnTransifex=Remediază traducerea pe platforma de traducere online a proiectului 
-SubmitTranslation=Dacă traducerea pentru această limbă nu este completă sau dacă găsiți erori, puteți corecta aceasta prin editarea fișierelor din directorul <b> langs / %s </b> și trimiteți modificarea la www.transifex.com/dolibarr-association/dolibarr/
-SubmitTranslationENUS=Dacă traducerea pentru această limbă nu este completă sau găsiți erori, puteți corecta aceasta modificând fișierele din directorul <b>langs/%s</b> şi trimiţând fişierele modificate la dolibarr.org/forum sau, dacă eşti developer cu un PR la github.com/Dolibarr/dolibarr
+SubmitTranslation=Dacă traducerea pentru această limbă nu este completă sau dacă găsiți erori, puteți corecta aceasta prin editarea fișierelor din directorul <b> langs / %s </b> și trimiteți modificarea la https://bonaerp.com
+SubmitTranslationENUS=Dacă traducerea pentru această limbă nu este completă sau găsiți erori, puteți corecta aceasta modificând fișierele din directorul <b>langs/%s</b> şi trimiţând fişierele modificate la bonaerp.com/forum sau, dacă eşti developer cu un PR la bonaerp.com
 ModuleSetup=Configurare modul
 ModulesSetup=Configurare Module/Aplicație
 ModuleFamilyBase=Sistem
@@ -345,9 +345,9 @@ UnpackPackageInModulesRoot=Pentru a implementa/instala un modul extern, despache
 SetupIsReadyForUse=Implementarea modulului a fost terminată. Cu toate acestea, trebuie să activați și să configurați modulul în aplicația dvs. accesând modulele de configurare a paginii: <a href="%s">%s</a>.
 NotExistsDirect=Directorul rădăcină alternativ nu este atribuit unui director existent. <br>
 InfDirAlt=De la versiunea 3, este posibil să se definească un director rădăcină alternativ. Acest lucru vă permite să stocați, într-un director dedicat, plug-in-uri și șabloane personalizate. <br> Doar creați un director in rădăcina sistemului (de exemplu: personalizat).<br>
-InfDirExample=<br> Atunci declarați în fișierul <strong>conf.php</strong> <br> $dolibarr_main_url_root_alt='/ custom' <br> $dolibarr_main_document_root_alt = '/path/of/dolibarr/htdocs/custom' <br> Dacă aceste linii sunt comentate cu "#", pentru a le activa, doar anulaţi comentarea prin eliminarea caracterului "#".
+InfDirExample=<br> Atunci declarați în fișierul <strong>conf.php</strong> <br> $dolibarr_main_url_root_alt='/ custom' <br> $dolibarr_main_document_root_alt = '/path/of/berp3/htdocs/custom' <br> Dacă aceste linii sunt comentate cu "#", pentru a le activa, doar anulaţi comentarea prin eliminarea caracterului "#".
 YouCanSubmitFile=Poţi încărca un fişier .zip al pachetului de modul de aici:
-CurrentVersion=Dolibarr versiunea curentă
+CurrentVersion=BERP3 versiunea curentă
 CallUpdatePage=Navigați la pagina care actualizează structura și datele din baza de date: %s.
 LastStableVersion=Ultima versiune stabilă
 LastActivationDate=Ultima dată de activare
@@ -592,9 +592,9 @@ Module200Desc=Sincronizarea directorului LDAP
 Module210Name=PostNuke
 Module210Desc=Integrare PostNuke
 Module240Name=Export date
-Module240Desc=Instrument pentru export date din Dolibarr (asistat) 
+Module240Desc=Instrument pentru export date din BERP3 (asistat) 
 Module250Name=Import date
-Module250Desc=Instrument pentru import date în Dolibarr (asistat) 
+Module250Desc=Instrument pentru import date în BERP3 (asistat) 
 Module310Name=Membri
 Module310Desc=Managementul membrilor unei fundaţii
 Module320Name=Feed RSS
@@ -660,7 +660,7 @@ Module5000Desc=Vă permite să administraţi mai multe companii
 Module6000Name=Flux de lucru inter-module
 Module6000Desc=Gestionarea fluxului de lucru între diferite module (crearea automată a obiectului și/sau schimbarea automată a stării)
 Module10000Name=Site-uri
-Module10000Desc=Creați site-uri web (publice) cu un editor WYSIWYG. Acesta este un CMS  pentru webmasteri sau dezvoltatori (este recomandat  să cunoașteți limbajul HTML și CSS). Trebuie doar să configurați serverul web (Apache, Nginx, ...) pentru a indica directorul Dolibarr dedicat pentru a-l avea online pe internet cu propriul nume de domeniu. 
+Module10000Desc=Creați site-uri web (publice) cu un editor WYSIWYG. Acesta este un CMS  pentru webmasteri sau dezvoltatori (este recomandat  să cunoașteți limbajul HTML și CSS). Trebuie doar să configurați serverul web (Apache, Nginx, ...) pentru a indica directorul BERP3 dedicat pentru a-l avea online pe internet cu propriul nume de domeniu. 
 Module20000Name=Managementul cererilor de concediu
 Module20000Desc=Definiți și urmăriți cererile de concediu pentru angajați
 Module39000Name=Loturi de producţie
@@ -1168,7 +1168,7 @@ DoNotSuggestPaymentMode=Nu sugera
 NoActiveBankAccountDefined=Niciun cont bancar activ definit
 OwnerOfBankAccount=Titularul contului bancar %s
 BankModuleNotActive=Modulul Conturi bancare nu este activat
-ShowBugTrackLink=Defineşte link-ul "<strong>%s</strong>" (gol pentru a nu afișa acest link, 'github' pentru link-ul către proiectul Dolibarr sau definiți direct o adresă URL 'https: // ...')
+ShowBugTrackLink=Defineşte link-ul "<strong>%s</strong>" (gol pentru a nu afișa acest link, 'github' pentru link-ul către proiectul BERP3 sau definiți direct o adresă URL 'https: // ...')
 Alerts=Alerte
 DelaysOfToleranceBeforeWarning=Durată înainte de afișarea unei alerte pentru:
 DelaysOfToleranceDesc=Setați întârzierea înainte ca o pictogramă de alertă %s să apară pe ecran pentru ultimul element.
@@ -1253,7 +1253,7 @@ BackupDescX=Directorul arhivat trebuie să fie stocat într-un loc sigur.
 BackupDescY=Fişierul dump generat trebuie să fie stocat într-un loc sigur.
 BackupPHPWarning=Copia backup nu poate fi garantată prin această metodă. Copia anterioră este recomandată.
 RestoreDesc=Pentru a restabili o copie de rezervă a sistemului, sunt necesari doi pași.
-RestoreDesc2=Restauraţi backup-ul (de exemplu, fișierul zip) al directorului "documente" la o nouă instalare de Dolibarr sau în acest director de documente curent (<b>%s</b>).
+RestoreDesc2=Restauraţi backup-ul (de exemplu, fișierul zip) al directorului "documente" la o nouă instalare de BERP3 sau în acest director de documente curent (<b>%s</b>).
 RestoreDesc3=Restaurați structura bazei de date și datele dintr-un fișier de backup pentru o nouă instalare de sistem sau pentru instalarea curentă (<b>%s</b>). Atenţie, odată ce restaurarea este completă, trebuie să utilizați o autentificare care a existat la momentul backup-ului. <br> Pentru a restabili baza de date din backup în această instalare , poţi urma acest asistent.
 RestoreMySQL=Import MySQL
 ForcedToByAModule=Această regulă este forţată la <b>%s</b> de către un modul activat
@@ -1306,7 +1306,7 @@ AlphaNumOnlyLowerCharsAndNoSpace=numai caractere minuscule, alfanumerice fără 
 SendmailOptionNotComplete=Atenţie, pe unele sisteme Linux, pentru a trimite email, configurarea de execuţie sendmail trebuie să conţină opţiunea -ba (parametrul mail.force_extra_parameters în fişierul php.ini). Dacă unii din destinatari nu primesc email-urile deloc, încearcă să editezi acest parametru PHP cu mail.force_extra_parameters = -ba).
 PathToDocuments=Cale documente
 PathDirectory=Director
-SendmailOptionMayHurtBuggedMTA=Funcția de trimitere a e-mailurilor utilizând metoda "PHP mail direct" va genera un mesaj email care ar putea să nu fie analizat corect de către unele servere de email . Rezultatul este că unele email-uri nu pot fi citite de persoanele găzduite de acele platforme cu probleme. Acesta este cazul pentru unii furnizori de Internet (Ex: Orange în Franța). Aceasta nu este o problemă de sistem sau de PHP, ci cu server-ul de mail. Cu toate acestea, puteți adăuga o opțiune MAIN_FIX_FOR_BUGGED_MTA la 1 din Setări  - Alte setări ca Dolibarr să poată evita acest lucru. Cu toate acestea, este posibil să întâmpinați probleme cu alte servere care utilizează strict standardul SMTP. Cealaltă soluție (recomandată) este utilizarea metodei "SMTP socket library" care nu are aceste dezavantaje.
+SendmailOptionMayHurtBuggedMTA=Funcția de trimitere a e-mailurilor utilizând metoda "PHP mail direct" va genera un mesaj email care ar putea să nu fie analizat corect de către unele servere de email . Rezultatul este că unele email-uri nu pot fi citite de persoanele găzduite de acele platforme cu probleme. Acesta este cazul pentru unii furnizori de Internet (Ex: Orange în Franța). Aceasta nu este o problemă de sistem sau de PHP, ci cu server-ul de mail. Cu toate acestea, puteți adăuga o opțiune MAIN_FIX_FOR_BUGGED_MTA la 1 din Setări  - Alte setări ca BERP3 să poată evita acest lucru. Cu toate acestea, este posibil să întâmpinați probleme cu alte servere care utilizează strict standardul SMTP. Cealaltă soluție (recomandată) este utilizarea metodei "SMTP socket library" care nu are aceste dezavantaje.
 TranslationSetup=Configurare traducere
 TranslationKeySearch=Căutați o cheie sau un șir de traducere 
 TranslationOverwriteKey=Suprascrieți un șir de traducere
@@ -1462,7 +1462,7 @@ LDAPMembersTypesSynchro=Tipuri membri
 LDAPSynchronization=Sincronizare LDAP
 LDAPFunctionsNotAvailableOnPHP=Funcţiile LDAP nu sunt disponibile în PHP
 LDAPToDolibarr=LDAP -> Dolibarr
-DolibarrToLDAP=Dolibarr -> LDAP
+DolibarrToLDAP=BERP3 -> LDAP
 LDAPNamingAttribute=Cheie în LDAP
 LDAPSynchronizeUsers=Organizare utilizatori în LDAP
 LDAPSynchronizeGroups=Organizare grupuri în LDAP
@@ -1487,7 +1487,7 @@ LDAPGroupDnExample=FQDN (ex: ou=groups,dc=example,dc=com)
 LDAPServerExample=Adresa serverului (ex: localhost, 192.168.0.2, ldaps://ldap.example.com/)
 LDAPServerDnExample=FQDN (ex: dc=example,dc=com)
 LDAPDnSynchroActive=Sincronizare de utilizatori şi grupuri
-LDAPDnSynchroActiveExample=Sincronizare LDAP către Dolibarr sau Dolibarr către LDAP
+LDAPDnSynchroActiveExample=Sincronizare LDAP către BERP3 sau BERP3 către LDAP
 LDAPDnContactActive=Sincronizare contacte
 LDAPDnContactActiveExample=Sicronizare activată/neactivată
 LDAPDnMemberActive=Sincronizare membri
@@ -1913,7 +1913,7 @@ EnterAnyCode=Acest câmp conține o referință pentru identificarea liniei. Int
 Enter0or1=Introdu 0 sau 1
 UnicodeCurrency=Introdu aici între paranteze, lista de octeți care reprezintă simbolul monedei. De exemplu: pentru $, introdu [36] - pentru Real brazilian R$ [82,36] - pentru €, introdu [8364]
 ColorFormat=Culoarea RGB este în format HEX , de exemplu: FF0000
-PictoHelp=Numele pictogramei în format dolibarr ('image.png' dacă se află în directorul temei actuale, 'image.png@nume_modul' dacă se află în directorul /img/ al unui modul)
+PictoHelp=Numele pictogramei în format berp3 ('image.png' dacă se află în directorul temei actuale, 'image.png@nume_modul' dacă se află în directorul /img/ al unui modul)
 PositionIntoComboList=Poziția linei în listele combo
 SellTaxRate=Cota taxei de vânzare
 RecuperableOnly=Da pentru TVA "neperceput, dar recuperabil" dedicat pentru unele regiuni din Franța. Mențineți valoarea "Nu" în toate celelalte cazuri.
@@ -1950,8 +1950,8 @@ ByDefaultInList=Afișați în mod implicit în vizualizarea listei
 YouUseLastStableVersion=Utilizați ultima versiune stabilă
 TitleExampleForMajorRelease=Exemplu de mesaj pe care îl puteți utiliza pentru a anunța această lansare majoră (nu ezitați să o utilizați pe site-urile dvs.)
 TitleExampleForMaintenanceRelease=Exemplu de mesaj pe care îl puteți utiliza pentru a anunța această versiune de întreţinere majoră (nu ezitați să o utilizați pe site-uri)
-ExampleOfNewsMessageForMajorRelease=Dolibarr ERP & CRM %s este disponibil. Versiunea %s este o versiune majoră cu o mulţime de caracteristici noi atât pentru utilizatori cât şi pentru dezvoltatori . Puteți să o descărcați de la https://www.dolibarr.org (subdirectorul versiuni stabile). Puteți consulta <a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog">ChangeLog</a> pentru lista completă a modificărilor.
-ExampleOfNewsMessageForMaintenanceRelease=Dolibarr ERP & CRM %s este disponibil. Versiunea %s este o versiune de întreținere, deci conține doar corecții de erori. Recomandăm tuturor să facă actualizarea la această versiune. O versiune de întreținere nu introduce noi caracteristici sau modificări la baza de date. Puteți să o descărcați din https://www.dolibarr.org (subdirector versiuni stabile). Puteți să citiţi<a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog">ChangeLog</a> pentru lista completă a modificărilor.
+ExampleOfNewsMessageForMajorRelease=BERP3 ERP & CRM %s este disponibil. Versiunea %s este o versiune majoră cu o mulţime de caracteristici noi atât pentru utilizatori cât şi pentru dezvoltatori . Puteți să o descărcați de la https://www.bonaerp.com (subdirectorul versiuni stabile). Puteți consulta <a href="https://bonaerp.com">ChangeLog</a> pentru lista completă a modificărilor.
+ExampleOfNewsMessageForMaintenanceRelease=BERP3 ERP & CRM %s este disponibil. Versiunea %s este o versiune de întreținere, deci conține doar corecții de erori. Recomandăm tuturor să facă actualizarea la această versiune. O versiune de întreținere nu introduce noi caracteristici sau modificări la baza de date. Puteți să o descărcați din https://www.bonaerp.com (subdirector versiuni stabile). Puteți să citiţi<a href="https://bonaerp.com">ChangeLog</a> pentru lista completă a modificărilor.
 MultiPriceRuleDesc=Când opțiunea "Mai multe niveluri de prețuri pe produs/serviciu" este activată, puteți defini diferite prețuri (câte unul pentru fiecare nivel de preț) pentru fiecare produs. Pentru a economisi timp, aici poţi introduce o regulă de calcul automat a unui preț pentru fiecare nivel, pe baza prețului primului nivel, astfel încât va trebui să introduceți un preț pentru primul nivel pentru fiecare produs. Această pagină are rolul de a economisi timp, dar este utilă numai dacă prețurile pentru fiecare nivel sunt relative la primul nivel. În majoritatea cazurilor, puteți ignora această pagină.
 ModelModulesProduct=Șabloane documente pentru produs
 WarehouseModelModules=Şabloane pentru documentele de depozit
@@ -2107,7 +2107,7 @@ RESTRICT_ON_IP=Permiteți accesul doar la un anumit IP gazdă (caracterul wildca
 IPListExample=127.0.0.1 192.168.0.2 [::1]
 BaseOnSabeDavVersion=Bazat pe o versiune a librăriei SabreDAV
 NotAPublicIp=IP non-public
-MakeAnonymousPing=Trimiteţi un Ping anonim '+1' către serverul fundației Dolibarr ( 1 dată numai după instalare) pentru a permite fundației să numere numărul de instalări Dolibarr.
+MakeAnonymousPing=Trimiteţi un Ping anonim '+1' către serverul fundației BERP3 ( 1 dată numai după instalare) pentru a permite fundației să numere numărul de instalări Dolibarr.
 FeatureNotAvailableWithReceptionModule=Funcţionalitatea nu este disponibilă când modulul Recepţie este activat
 EmailTemplate=Şablon pentru email
 EMailsWillHaveMessageID=E-mailuri care conţin eticheta „Referințe” care se potrivesc cu această expresie

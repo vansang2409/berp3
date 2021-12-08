@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -62,7 +62,7 @@ ErrorServiceUnavailableTryLater=Service momenteel niet beschikbaar. Probeer het 
 ErrorDuplicateField=Dubbele waarde in een uniek veld
 ErrorSomeErrorWereFoundRollbackIsDone=Er zijn enkele fouten gevonden. Wijzigingen zijn teruggedraaid.
 ErrorConfigParameterNotDefined=Parameter <b>%s</b> is niet gedefinieerd in het Dolibarr-configuratiebestand <b>conf.php</b> .
-ErrorCantLoadUserFromDolibarrDatabase=Kan <b>gebruiker %s</b> niet in de Dolibarr database vinden.
+ErrorCantLoadUserFromDolibarrDatabase=Kan <b>gebruiker %s</b> niet in de BERP3 database vinden.
 ErrorNoVATRateDefinedForSellerCountry=Fout, geen BTW-tarieven voor land '%s'.
 ErrorNoSocialContributionForSellerCountry=Fout, geen sociale/fiscale belastingtypen gedefinieerd voor land '%s'.
 ErrorFailedToSaveFile=Fout, bestand opslaan mislukt.
@@ -94,7 +94,7 @@ RecordDeleted=Item verwijderd
 RecordGenerated=Record gegenereerd
 LevelOfFeature=Niveau van de functionaliteiten
 NotDefined=Niet gedefinieerd
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr Authenticatie modus is ingesteld op <b>%s</b> in configuratiebestand <b>conf.php</b>. <br>Dit betekent dat de wachtwoorddatabase extern is van Dolibarr. Dit veld wijzigen heeft mogelijk geen effect .
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 Authenticatie modus is ingesteld op <b>%s</b> in configuratiebestand <b>conf.php</b>. <br>Dit betekent dat de wachtwoorddatabase extern is van Dolibarr. Dit veld wijzigen heeft mogelijk geen effect .
 Administrator=Beheerder
 Undefined=Ongedefineerd
 PasswordForgotten=Wachtwoord vergeten?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Database Type Manager
 RequestLastAccessInError=Database fout bij laatste verzoek
 ReturnCodeLastAccessInError=Retourcode voor de meest recente fout bij het toegangsverzoek voor de database
 InformationLastAccessInError=Informatie voor de meest recente database-toegangsverzoekfout
-DolibarrHasDetectedError=Dolibarr heeft een technische fout gedetecteerd
+DolibarrHasDetectedError=BERP3 heeft een technische fout gedetecteerd
 YouCanSetOptionDolibarrMainProdToZero=U kunt het logbestand lezen of de optie $dolibarr_main_prod instellen op '0' in uw configuratiebestand voor meer informatie.
 InformationToHelpDiagnose=Deze informatie kan nuttig zijn voor diagnostische doeleinden (u kunt optie $dolibarr_main_prod instellen op '1' om dergelijke kennisgevingen te verwijderen)
 MoreInformation=Meer informatie
@@ -121,7 +121,7 @@ TechnicalID=Technische ID
 LineID=Lijn ID
 NotePublic=Notitie (publiek)
 NotePrivate=Notitie (privé)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr is geconfigureerd om de precisie van de stuksprijzen op <b>%s</b> decimalen te beperken.
+PrecisionUnitIsLimitedToXDecimals=BERP3 is geconfigureerd om de precisie van de stuksprijzen op <b>%s</b> decimalen te beperken.
 DoTest=Test
 ToFilter=Filter
 NoFilter=Geen filter
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Leden
 MenuAgendaGoogle=Google-agenda
 MenuTaxesAndSpecialExpenses=Belastingen | Bijzondere kosten
-ThisLimitIsDefinedInSetup=Dolibarr limiet (Menu Home-Instellingen-Beveiliging): %s Kb, PHP grens: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limiet (Menu %s): %s Kb, PHP limiet (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=BERP3 limiet (Menu Home-Instellingen-Beveiliging): %s Kb, PHP grens: %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limiet (Menu %s): %s Kb, PHP limiet (Param %s): %s Kb
 NoFileFound=Geen documenten geüpload
 CurrentUserLanguage=Huidige taal
 CurrentTheme=Actuele thema
@@ -905,7 +905,7 @@ ViewFlatList=Weergeven als lijst
 ViewAccountList=Grootboek bekijken
 ViewSubAccountList=Bekijk het grootboek van de subrekening
 RemoveString='%s' string verwijderen
-SomeTranslationAreUncomplete=Sommige aangeboden talen zijn mogelijk slechts gedeeltelijk vertaald of kunnen fouten bevatten. Help ons om uw taal te corrigeren door u te registreren op <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> om uw verbeteringen toe te voegen.
+SomeTranslationAreUncomplete=Sommige aangeboden talen zijn mogelijk slechts gedeeltelijk vertaald of kunnen fouten bevatten. Help ons om uw taal te corrigeren door u te registreren op <a href="https://bonaerp.com/" target="_blank">berp3</a> om uw verbeteringen toe te voegen.
 DirectDownloadLink=Openbare downloadlink
 PublicDownloadLinkDesc=Alleen de link is vereist om het bestand te downloaden
 DirectDownloadInternalLink=Privé downloadlink

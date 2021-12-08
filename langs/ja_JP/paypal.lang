@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - paypal
+# BERP3 language file - Source file is en_US - paypal
 PaypalSetup=ペイパルモジュールのセットアップ
 PaypalDesc=このモジュールでは、<a href="http://www.paypal.com" target="_blank"> PayPal</a>を介した顧客による支払いが可能です。これは、アドホック支払いまたはDolibarrオブジェクト(請求書、注文など)に関連する支払いに使用できる。
 PaypalOrCBDoPayment=PayPalで支払う(カードまたはPayPal)

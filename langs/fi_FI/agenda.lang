@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - agenda
+# BERP3 language file - Source file is en_US - agenda
 IdAgenda=ID event
 Actions=Toimet
 Agenda=Agenda
@@ -31,10 +31,10 @@ ViewWeek=Viikkonäkymä
 ViewPerUser=Per user view
 ViewPerType=Per type view
 AutoActions= Automaattinen täyttö Esityslistan
-AgendaAutoActionDesc= Here you may define events which you want Dolibarr to create automatically  in Agenda. If nothing is checked, only manual actions will be included in logs and displayed in Agenda. Automatic tracking of business actions done on objects (validation, status change) will not be saved.
-AgendaSetupOtherDesc= This page provides options to allow the export of your Dolibarr events into an external calendar (Thunderbird, Google Calendar etc...)
-AgendaExtSitesDesc=Tällä sivulla voit ilmoittaa ulkoisten kalenterien näkemään tapahtumiin otetaan Dolibarr asialistalle.
-ActionsEvents=Tapahtumat, joista Dolibarr luo toimia esityslistan automaattisesti
+AgendaAutoActionDesc= Here you may define events which you want BERP3 to create automatically  in Agenda. If nothing is checked, only manual actions will be included in logs and displayed in Agenda. Automatic tracking of business actions done on objects (validation, status change) will not be saved.
+AgendaSetupOtherDesc= This page provides options to allow the export of your BERP3 events into an external calendar (Thunderbird, Google Calendar etc...)
+AgendaExtSitesDesc=Tällä sivulla voit ilmoittaa ulkoisten kalenterien näkemään tapahtumiin otetaan BERP3 asialistalle.
+ActionsEvents=Tapahtumat, joista BERP3 luo toimia esityslistan automaattisesti
 EventRemindersByEmailNotEnabled=Event reminders by email was not enabled into %s module setup.
 ##### Agenda event labels #####
 NewCompanyToDolibarr=Third party %s created

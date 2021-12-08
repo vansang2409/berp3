@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - exports
+# BERP3 language file - Source file is en_US - exports
 ExportsArea=صادرات
 ImportArea=واردات
 NewExport=صادرات جدید
@@ -59,7 +59,7 @@ ChooseFormatOfFileToImport=انتخاب نوع فایل برای استفاده 
 ChooseFileToImport=فایل را بالاگذاری کرده و سپس روی نشانک %s کلیک کرده تا به‌عنوان فایل منبع واردات استفاده شود.
 SourceFileFormat=نوع فایل منبع
 FieldsInSourceFile=بخش‌های فایل منبع
-FieldsInTargetDatabase=بخش‌های مقصد در پایگاه‌دادۀ Dolibarr (پررنگ=الزامی)
+FieldsInTargetDatabase=بخش‌های مقصد در پایگاه‌دادۀ BERP3 (پررنگ=الزامی)
 Field=بخش
 NoFields=بخشی وجود ندارد
 MoveField=جابجائی شماره ستون بخش %s 

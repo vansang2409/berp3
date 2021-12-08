@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - admin
+# BERP3 language file - Source file is en_US - admin
 DisableJavascriptNote=Note: For test or debug purpose. For optimization for blind person or text browsers, you may prefer to use the setup on the profile of user
 DisableLinkToHelpCenter=Hide link "<b>Need help or support</b>" on login page
 DisableLinkToHelp=Hide link to online help "<b>%s</b>"

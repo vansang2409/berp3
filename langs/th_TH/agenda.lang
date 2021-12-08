@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - agenda
+# BERP3 language file - Source file is en_US - agenda
 IdAgenda=รหัสเหตุการณ์
 Actions=เหตุการณ์ที่เกิดขึ้น
 Agenda=ระเบียบวาระการประชุม
@@ -31,10 +31,10 @@ ViewWeek=มุมมองสัปดาห์
 ViewPerUser=ต่อมุมมองของผู้ใช้
 ViewPerType=Per type view
 AutoActions= บรรจุอัตโนมัติ
-AgendaAutoActionDesc= Here you may define events which you want Dolibarr to create automatically  in Agenda. If nothing is checked, only manual actions will be included in logs and displayed in Agenda. Automatic tracking of business actions done on objects (validation, status change) will not be saved.
-AgendaSetupOtherDesc= This page provides options to allow the export of your Dolibarr events into an external calendar (Thunderbird, Google Calendar etc...)
+AgendaAutoActionDesc= Here you may define events which you want BERP3 to create automatically  in Agenda. If nothing is checked, only manual actions will be included in logs and displayed in Agenda. Automatic tracking of business actions done on objects (validation, status change) will not be saved.
+AgendaSetupOtherDesc= This page provides options to allow the export of your BERP3 events into an external calendar (Thunderbird, Google Calendar etc...)
 AgendaExtSitesDesc=หน้านี้จะช่วยให้การประกาศแหล่งภายนอกของปฏิทินเพื่อดูกิจกรรมของพวกเขาเข้าสู่วาระการประชุม Dolibarr
-ActionsEvents=กิจกรรมสำหรับ Dolibarr ซึ่งจะสร้างการดำเนินการในวาระการประชุมโดยอัตโนมัติ
+ActionsEvents=กิจกรรมสำหรับ BERP3 ซึ่งจะสร้างการดำเนินการในวาระการประชุมโดยอัตโนมัติ
 EventRemindersByEmailNotEnabled=Event reminders by email was not enabled into %s module setup.
 ##### Agenda event labels #####
 NewCompanyToDolibarr=Third party %s created

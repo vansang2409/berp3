@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 FONTFORPDF=helvetica
 FONTSIZEFORPDF=10
@@ -44,7 +44,7 @@ ErrorNoRequestInError=Ninguna solicitud por error
 ErrorServiceUnavailableTryLater=Servicio no disponible en este momento. Inténtalo de nuevo más tarde.
 ErrorDuplicateField=Valor duplicado en un campo único
 ErrorSomeErrorWereFoundRollbackIsDone=Se encontraron algunos errores. Los cambios se han revertido.
-ErrorConfigParameterNotDefined=El parámetro <b> %s </b> no está definido en el archivo de configuración de Dolibarr <b>conf.php</b>.
+ErrorConfigParameterNotDefined=El parámetro <b> %s </b> no está definido en el archivo de configuración de BERP3 <b>conf.php</b>.
 ErrorCantLoadUserFromDolibarrDatabase=No se pudo encontrar el usuario <b>%s</b> en la base de datos Dolibarr.
 ErrorNoVATRateDefinedForSellerCountry=Error, no hay tipos de IVA definidos para el país '%s'.
 ErrorNoSocialContributionForSellerCountry=Error, no hay ningun tipo de impuesto fiscal definido para el país '%s'.
@@ -66,7 +66,7 @@ NbOfEntries=Numero de entradas
 GoToWikiHelpPage=Lea la ayuda en línea (acceso a Internet es necesario)
 GoToHelpPage=Leer la ayuda
 HomePage=Página Principal
-DolibarrInHttpAuthenticationSoPasswordUseless=El modo de autenticación Dolibarr está configurado en <b>%s</b> en el archivo de configuración <b>conf.php</b>. <br> Esto significa que la base de datos de contraseñas es externa a Dolibarr, por lo que cambiar este campo puede no tener efecto.
+DolibarrInHttpAuthenticationSoPasswordUseless=El modo de autenticación BERP3 está configurado en <b>%s</b> en el archivo de configuración <b>conf.php</b>. <br> Esto significa que la base de datos de contraseñas es externa a Dolibarr, por lo que cambiar este campo puede no tener efecto.
 Undefined=Indefinido
 PasswordForgotten=¿Contraseña olvidada?
 NoAccount=Sin cuenta?
@@ -85,7 +85,7 @@ InformationToHelpDiagnose=Esta información puede ser útil para fines de diagn�
 TechnicalID=Identificación técnico
 LineID=Identificación de línea
 NotePublic=Nota (público)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr fue configurado para limitar la precisión de los precios unitarios a <b>%s</b> decimales.
+PrecisionUnitIsLimitedToXDecimals=BERP3 fue configurado para limitar la precisión de los precios unitarios a <b>%s</b> decimales.
 DoTest=Prueba
 ToFilter=Filtro
 WarningYouHaveAtLeastOneTaskLate=Advertencia, tiene al menos un elemento que ha excedido el tiempo de tolerancia.
@@ -393,7 +393,7 @@ YouCanSetDefaultValueInModuleSetup=Puede configurar el valor predeterminado util
 Documents=Archivos enlazados
 UploadDisabled=Carga inhabilitada
 MenuAgendaGoogle=Agenda de google
-ThisLimitIsDefinedInSetup=límite de Dolibarr (Menú Inicio-setup-seguridad): %s Kb, límite de PHP: %s Kb
+ThisLimitIsDefinedInSetup=límite de BERP3 (Menú Inicio-setup-seguridad): %s Kb, límite de PHP: %s Kb
 CurrentMenuManager=Gestor de menú actual
 Layout=Diseño
 DisabledModules=Módulos deshabilitados
@@ -485,7 +485,7 @@ AllExportedMovementsWereRecordedAsExported=Todos los movimientos exportados se r
 NotAllExportedMovementsCouldBeRecordedAsExported=No todos los movimientos exportados pueden registrarse como exportados
 Miscellaneous=Varios
 GroupBy=Agrupar por...
-SomeTranslationAreUncomplete=Algunos de los idiomas ofrecidos pueden estar solo parcialmente traducidos o pueden contener errores. Ayude a corregir su idioma registrándose en <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> para agregar sus mejoras.
+SomeTranslationAreUncomplete=Algunos de los idiomas ofrecidos pueden estar solo parcialmente traducidos o pueden contener errores. Ayude a corregir su idioma registrándose en <a href="https://bonaerp.com/" target="_blank">berp3</a> para agregar sus mejoras.
 DownloadDocument=Descargar documento
 ActualizeCurrency=Actualizar tipo de cambio
 ModuleBuilder=Módulo y generador de aplicaciones

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,8 +61,8 @@ ErrorNoRequestInError=Nema upita sa greškom
 ErrorServiceUnavailableTryLater=Service not available at the moment. Try again later.
 ErrorDuplicateField=Dupla vrednost u jedinstvenom polju
 ErrorSomeErrorWereFoundRollbackIsDone=Some errors were found. Changes have been rolled back.
-ErrorConfigParameterNotDefined=Parameter <b>%s</b> is not defined in the Dolibarr config file <b>conf.php</b>.
-ErrorCantLoadUserFromDolibarrDatabase=Korisnik <b>%s</b> nije pronađen u Dolibarr bazi.
+ErrorConfigParameterNotDefined=Parameter <b>%s</b> is not defined in the BERP3 config file <b>conf.php</b>.
+ErrorCantLoadUserFromDolibarrDatabase=Korisnik <b>%s</b> nije pronađen u BERP3 bazi.
 ErrorNoVATRateDefinedForSellerCountry=Greška, PDV stopa nije definisana za zemlju "%s".
 ErrorNoSocialContributionForSellerCountry=Greška, nema poreskih stopa definisanih za zemlju "%s".
 ErrorFailedToSaveFile=Greška, nemoguće sačuvati fajl.
@@ -94,7 +94,7 @@ RecordDeleted=Linija obrisana
 RecordGenerated=Record generated
 LevelOfFeature=Nivo funkcionalnosti
 NotDefined=Nije definisano
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr authentication mode is set to <b>%s</b> in configuration file <b>conf.php</b>.<br>This means that the password database is external to Dolibarr, so changing this field may have no effect.
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 authentication mode is set to <b>%s</b> in configuration file <b>conf.php</b>.<br>This means that the password database is external to Dolibarr, so changing this field may have no effect.
 Administrator=Administrator
 Undefined=Nedefinisano
 PasswordForgotten=Password forgotten?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Manager tipa baze
 RequestLastAccessInError=Latest database access request error
 ReturnCodeLastAccessInError=Return code for latest database access request error
 InformationLastAccessInError=Information for latest database access request error
-DolibarrHasDetectedError=Dolibarr je detektovao tehničku grešku
+DolibarrHasDetectedError=BERP3 je detektovao tehničku grešku
 YouCanSetOptionDolibarrMainProdToZero=You can read log file or set option $dolibarr_main_prod to '0' in your config file to get more information.
 InformationToHelpDiagnose=This information can be useful for diagnostic purposes (you can set option $dolibarr_main_prod to '1' to remove such notices)
 MoreInformation=Više informacija
@@ -121,7 +121,7 @@ TechnicalID=Tehnički ID
 LineID=Line ID
 NotePublic=Beleška (javna)
 NotePrivate=Beleška (privatna)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr je podešen da zaokružuje cene na <b>%s</b> decimala.
+PrecisionUnitIsLimitedToXDecimals=BERP3 je podešen da zaokružuje cene na <b>%s</b> decimala.
 DoTest=Test
 ToFilter=Filter
 NoFilter=Nema filtera
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Članovi
 MenuAgendaGoogle=Google agenda
 MenuTaxesAndSpecialExpenses=Taxes | Special expenses
-ThisLimitIsDefinedInSetup=Dolibarr limit (Meni home-podešavanja-bezbednost): %s Kb, PHP limit: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=BERP3 limit (Meni home-podešavanja-bezbednost): %s Kb, PHP limit: %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=No documents uploaded
 CurrentUserLanguage=Aktivni jezik
 CurrentTheme=Aktivna tema
@@ -905,7 +905,7 @@ ViewFlatList=View flat list
 ViewAccountList=View ledger
 ViewSubAccountList=View subaccount ledger
 RemoveString=Remove string '%s'
-SomeTranslationAreUncomplete=Some of the languages offered may be only partially translated or may contain errors. Please help to correct your language by registering at <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> to add your improvements.
+SomeTranslationAreUncomplete=Some of the languages offered may be only partially translated or may contain errors. Please help to correct your language by registering at <a href="https://bonaerp.com/" target="_blank">berp3</a> to add your improvements.
 DirectDownloadLink=Public download link
 PublicDownloadLinkDesc=Only the link is required to download the file
 DirectDownloadInternalLink=Private download link

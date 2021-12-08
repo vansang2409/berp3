@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=ชื่อ% s บริษัท มีอยู่แล้ว ให้เลือกอีกหนึ่ง
 ErrorSetACountryFirst=ตั้งประเทศเป็นครั้งแรก
 SelectThirdParty=เลือกบุคคลที่สาม
@@ -360,7 +360,7 @@ CapitalOf=เมืองหลวงของ% s
 EditCompany=แก้ไข บริษัท
 ThisUserIsNot=This user is not a prospect, customer or vendor
 VATIntraCheck=ตรวจสอบ
-VATIntraCheckDesc=The VAT ID must include the country prefix. The link <b>%s</b> uses the European VAT checker service (VIES) which requires internet access from the Dolibarr server.
+VATIntraCheckDesc=The VAT ID must include the country prefix. The link <b>%s</b> uses the European VAT checker service (VIES) which requires internet access from the BERP3 server.
 VATIntraCheckURL=http://ec.europa.eu/taxation_customs/vies/vieshome.do
 VATIntraCheckableOnEUSite=Check the intra-Community VAT ID on the European Commission website
 VATIntraManualCheck=You can also check manually on the European Commission website <a href="%s" target="_blank">%s</a>

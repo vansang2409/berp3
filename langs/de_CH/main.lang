@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 FONTFORPDF=helvetica
 FONTSIZEFORPDF=10
@@ -61,7 +61,7 @@ FilesDeleted=Daten erfolgreich gelöscht
 NbOfEntries=Anz. Einträge
 GoToWikiHelpPage=Onlinehilfe (Internetzugang notwendig)
 RecordGenerated=Datensatz erzeugt
-DolibarrInHttpAuthenticationSoPasswordUseless=Der Dolibarr Authentifizierungsmodus steht auf <b>%s</b> in der Konfigurationsdatei. Das heisst, dass Änderungen in diesem Feld keine Auswirkung haben werden, weil die Passwort - Datenbank ausserhalb der Dolibarr - Umgebung liegt.
+DolibarrInHttpAuthenticationSoPasswordUseless=Der BERP3 Authentifizierungsmodus steht auf <b>%s</b> in der Konfigurationsdatei. Das heisst, dass Änderungen in diesem Feld keine Auswirkung haben werden, weil die Passwort - Datenbank ausserhalb der BERP3 - Umgebung liegt.
 PasswordForgotten=Hast du dein Passwort vergessen?
 NoAccount=Ich habe kein Benutzerkonto
 LastConnexion=Zuletzt gesehen am:
@@ -242,7 +242,7 @@ RootOfMedias=Stammverzeichnis für öffentliche Bilder (/medias)
 FreeLineOfType=Freitext vom Typ
 ReGeneratePDF=PDF erneut erzeugen
 DocumentModelStandardPDF=Standardvorlage (PDF)
-WarningYouAreInMaintenanceMode=Obacht, wir sind im Wartungsmodus. Nur der Benutzer "<b>%s</b>" kann Dolibarr im Moment nutzen.
+WarningYouAreInMaintenanceMode=Obacht, wir sind im Wartungsmodus. Nur der Benutzer "<b>%s</b>" kann BERP3 im Moment nutzen.
 CoreErrorMessage=Hoppla, es ist ein Fehler aufgetreten. Dein Administrator kann mehr herausfinden, indem er die Logdateien durchgeht (oder in der Systemkonfiguration $dolibarr_main_prod auf '0' setzen)
 CreditOrDebitCard=Kredit- oder Debitkarte
 FieldsWithIsForPublic=Alle Felder mit "<b>%s</b>" sind in der öffentlichen Mitgliederliste sichtbar. Das kannst du durch Anwählen der Checkbox "Öffentlich" unterbinden.
@@ -299,7 +299,7 @@ Calendar=Kalender
 GroupBy=Sortieren nach
 ViewFlatList=Einfache Liste anzeigen
 RemoveString=Entferne die Zeichenfolge '%s'
-SomeTranslationAreUncomplete=Du siehst ungenaue Übersetzungen oder unvollständig Übersetzte Sprachen? Hilf uns, das zu verbessern und registriere dich in der <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">Dolibarr - Übersetzungsumgebung</a>, Danke!
+SomeTranslationAreUncomplete=Du siehst ungenaue Übersetzungen oder unvollständig Übersetzte Sprachen? Hilf uns, das zu verbessern und registriere dich in der <a href="https://bonaerp.com/" target="_blank">BERP3 - Übersetzungsumgebung</a>, Danke!
 ActualizeCurrency=Aktualisiere Währung
 ModuleBuilder=Modul und Applikationsentwicklungsumgebung
 SetMultiCurrencyCode=Setze Währung

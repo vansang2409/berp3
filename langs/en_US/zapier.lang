@@ -14,8 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ModuleZapierForDolibarrName = Zapier for Dolibarr
-ModuleZapierForDolibarrDesc = Zapier for Dolibarr module
+ModuleZapierForDolibarrDesc = Zapier for BERP3 module
 ZapierForDolibarrSetup=Setup of Zapier for Dolibarr
 ZapierDescription=Interface with Zapier
 ZapierAbout=About the module Zapier
-ZapierSetupPage=There is no need for a setup on Dolibarr side to use Zapier. However, you must generate and publish a package on zapier to be able to use Zapier with Dolibarr. See documentation on <a href="https://bonaerp.com/index.php/Module_Zapier">this wiki page</a>.
+ZapierSetupPage=There is no need for a setup on BERP3 side to use Zapier. However, you must generate and publish a package on zapier to be able to use Zapier with Dolibarr. See documentation on <a href="https://bonaerp.com/index.php/Module_Zapier">this wiki page</a>.

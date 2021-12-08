@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Ime tvrtke %s već postoji. Odaberite drugo.
 ErrorSetACountryFirst=Prvo odaberite državu
 SelectThirdParty=Odaberi treću osobu
@@ -360,7 +360,7 @@ CapitalOf=Temeljna vrijednost %s
 EditCompany=Uredi tvrtku
 ThisUserIsNot=This user is not a prospect, customer or vendor
 VATIntraCheck=Ček
-VATIntraCheckDesc=The VAT ID must include the country prefix. The link <b>%s</b> uses the European VAT checker service (VIES) which requires internet access from the Dolibarr server.
+VATIntraCheckDesc=The VAT ID must include the country prefix. The link <b>%s</b> uses the European VAT checker service (VIES) which requires internet access from the BERP3 server.
 VATIntraCheckURL=http://ec.europa.eu/taxation_customs/vies/vieshome.do
 VATIntraCheckableOnEUSite=Check the intra-Community VAT ID on the European Commission website
 VATIntraManualCheck=You can also check manually on the European Commission website <a href="%s" target="_blank">%s</a>
@@ -406,7 +406,7 @@ ProspectsByStatus=Mogući kupci po statusu
 NoParentCompany=Ništa
 ExportCardToFormat=Izvezi karticu u formatu
 ContactNotLinkedToCompany=Kontakt nije povezan ni sa jednim komitentom
-DolibarrLogin=Dolibarr korisničko ime
+DolibarrLogin=BERP3 korisničko ime
 NoDolibarrAccess=Nema pristup Dolibarr-u
 ExportDataset_company_1=Treće osobe\n(tvrtke/zaklade/fizičke osobe) i njihove osobine
 ExportDataset_company_2=Contacts and their properties

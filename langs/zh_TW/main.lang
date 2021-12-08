@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -62,7 +62,7 @@ ErrorServiceUnavailableTryLater=服務目前無法使用。稍後再試。
 ErrorDuplicateField=在唯一的欄位有重覆的值
 ErrorSomeErrorWereFoundRollbackIsDone=找到一些錯誤。變更已經回復。
 ErrorConfigParameterNotDefined=參數<b>%s</b>沒有在Dolibarr設定檔案<b>conf.php</b>中定義。
-ErrorCantLoadUserFromDolibarrDatabase=在 Dolibarr 資料庫中無法找到用戶<b>%s</b>。
+ErrorCantLoadUserFromDolibarrDatabase=在 BERP3 資料庫中無法找到用戶<b>%s</b>。
 ErrorNoVATRateDefinedForSellerCountry=錯誤，沒有定義 '%s' 國家的營業稅率。
 ErrorNoSocialContributionForSellerCountry=錯誤，在 '%s' 國家中沒有定義社會/財務稅務類別。
 ErrorFailedToSaveFile=錯誤，無法儲存檔案。
@@ -94,7 +94,7 @@ RecordDeleted=記錄已刪除
 RecordGenerated=記錄已產生
 LevelOfFeature=功能等級
 NotDefined=未定義
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr 認證模式是在設定檔案<b> conf.php </b> 中設定成 <b>%s</b>。<br>即密碼資料庫是位於外部並連線到 Dolibarr，所以變更此欄位是沒有效果的。
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 認證模式是在設定檔案<b> conf.php </b> 中設定成 <b>%s</b>。<br>即密碼資料庫是位於外部並連線到 Dolibarr，所以變更此欄位是沒有效果的。
 Administrator=管理員
 Undefined=未定義
 PasswordForgotten=忘記密碼？
@@ -112,7 +112,7 @@ DatabaseTypeManager=資料庫類型管理器
 RequestLastAccessInError=最新資料庫訪問請求錯誤
 ReturnCodeLastAccessInError=最新的數據庫訪問請求錯誤返回代碼
 InformationLastAccessInError=最新資料庫訪問請求錯誤的資訊
-DolibarrHasDetectedError=Dolibarr 偵測到一個技術性錯誤
+DolibarrHasDetectedError=BERP3 偵測到一個技術性錯誤
 YouCanSetOptionDolibarrMainProdToZero=您可以讀取 log 檔案或是在編好設定檔案中設定  $dolibarr_main_prod 選項的值為 0，以取得更多資訊。
 InformationToHelpDiagnose=此資訊對於診斷錯誤很有用 ( 您可以在 $dolibarr_main_prod 選項中設定為 1  移除類似的警告)
 MoreInformation=更多資訊
@@ -121,7 +121,7 @@ TechnicalID=技術ID
 LineID=行ID
 NotePublic=備註（公開）
 NotePrivate=備註（不公開）
-PrecisionUnitIsLimitedToXDecimals=Dolibarr 已設定每單位價格的小數位數可到 <b>%s</b> 位。
+PrecisionUnitIsLimitedToXDecimals=BERP3 已設定每單位價格的小數位數可到 <b>%s</b> 位。
 DoTest=測試
 ToFilter=篩選器
 NoFilter=沒有篩選器
@@ -729,7 +729,7 @@ MenuAWStats=AWStats 軟體
 MenuMembers=會員
 MenuAgendaGoogle=Google 行事曆
 MenuTaxesAndSpecialExpenses=稅金|特別費用
-ThisLimitIsDefinedInSetup=Dolibarr 的限制（選單 首頁 - 設定 - 安全）： %s Kb, PHP的限制：%s Kb
+ThisLimitIsDefinedInSetup=BERP3 的限制（選單 首頁 - 設定 - 安全）： %s Kb, PHP的限制：%s Kb
 ThisLimitIsDefinedInSetupAt=Dolibarr限制 (選單%s): %s Kb, PHP限制(參數 %s): %s Kb
 NoFileFound=沒有上傳文件
 CurrentUserLanguage=目前語言
@@ -905,7 +905,7 @@ ViewFlatList=檢視平面清單
 ViewAccountList=檢視總帳
 ViewSubAccountList=檢視子帳戶總帳
 RemoveString=移除字串‘%s’
-SomeTranslationAreUncomplete=提供的某些語言可能僅被部分翻譯，或者可能包含錯誤。請通過註冊<a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a>來進行改進，以幫助修正您的語言。
+SomeTranslationAreUncomplete=提供的某些語言可能僅被部分翻譯，或者可能包含錯誤。請通過註冊<a href="https://bonaerp.com/" target="_blank">berp3</a>來進行改進，以幫助修正您的語言。
 DirectDownloadLink=公共下載連結
 PublicDownloadLinkDesc=只需要連結即可下載檔案
 DirectDownloadInternalLink=私人下載連結

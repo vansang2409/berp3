@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=エラーなし、コミットする
@@ -49,7 +49,7 @@ ErrorFoundBadEmailInFile=ファイル内の%s線の発見誤った電子メー�
 ErrorUserCannotBeDelete=ユーザーを削除することはできない。多分それはDolibarrエンティティに関連付けられている。
 ErrorFieldsRequired=一部の必須フィールドは空白のままになっている。
 ErrorSubjectIsRequired=メールの件名が必要 
-ErrorFailedToCreateDir=ディレクトリの作成に失敗した。そのWebサーバのユーザがDolibarrのドキュメントディレクトリに書き込む権限を持って確認すること。パラメータ の<b>safe_modeが</b>このPHPが有効になっている場合、Dolibarr PHPファイルは、Webサーバーのユーザー(またはグループ)に所有していることを確認すること。
+ErrorFailedToCreateDir=ディレクトリの作成に失敗した。そのWebサーバのユーザがDolibarrのドキュメントディレクトリに書き込む権限を持って確認すること。パラメータ の<b>safe_modeが</b>このPHPが有効になっている場合、BERP3 PHPファイルは、Webサーバーのユーザー(またはグループ)に所有していることを確認すること。
 ErrorNoMailDefinedForThisUser=このユーザーに定義されたメールはない
 ErrorSetupOfEmailsNotComplete=メールの設定が完了していない
 ErrorFeatureNeedJavascript=この機能が動作するようにアクティブにするjavascriptをする必要がある。セットアップでこれを変更 - 表示される。

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 FONTFORPDF=helvetica
 FONTSIZEFORPDF=10
@@ -49,7 +49,7 @@ ErrorNoRequestInError=Ningún pedido en error
 ErrorServiceUnavailableTryLater=El servicio no está disponible al momento. Intente nuevamente luego.
 ErrorDuplicateField=Valor duplicado en un campo único.
 ErrorSomeErrorWereFoundRollbackIsDone=Se encontró algunos errores. Los cambios fueron echados para atrás.
-ErrorConfigParameterNotDefined=El parámetro <b>%s</b> no está definido en el archivo de configuración de Dolibarr <b>conf.php</b>.
+ErrorConfigParameterNotDefined=El parámetro <b>%s</b> no está definido en el archivo de configuración de BERP3 <b>conf.php</b>.
 ErrorCantLoadUserFromDolibarrDatabase=Falló la busqueda del usuario <b>%s</b> en la base de datos de Dolibarr.
 ErrorNoVATRateDefinedForSellerCountry=Error, no se ha definido tasa de IVA para el país '%s'.
 ErrorNoSocialContributionForSellerCountry=Error, no se ha definido tasa de impuestos sociales/fiscales para el país '%s'.
@@ -73,7 +73,7 @@ GoToWikiHelpPage=Leer ayuda en línea (Se necesita acceso a Internet)
 GoToHelpPage=Leer ayuda
 LevelOfFeature=Nivel de características
 NotDefined=Sin definir
-DolibarrInHttpAuthenticationSoPasswordUseless=El modo de autenticación en Dolibarr se configuro a <b>%s</b> en el archivo de configuración <b>conf.php</b>. <br>Esto significa que la base de datos de las contraseñas es externa a Dolibarr, por lo que el cambio de este campo puede no tener efecto.
+DolibarrInHttpAuthenticationSoPasswordUseless=El modo de autenticación en BERP3 se configuro a <b>%s</b> en el archivo de configuración <b>conf.php</b>. <br>Esto significa que la base de datos de las contraseñas es externa a Dolibarr, por lo que el cambio de este campo puede no tener efecto.
 Undefined=Indefinido
 PasswordForgotten=¿Olvidó la contraseña?'
 NoAccount=¿No tiene cuenta?
@@ -91,7 +91,7 @@ YouCanSetOptionDolibarrMainProdToZero=Puede leer el archivo log o establecer la 
 InformationToHelpDiagnose=Esta información puede ser útil para propósitos de diagnóstico (puede poner la opción $dolibarr_main_prod a '1' para sacar dichas noticias)
 TechnicalID=ID técnico
 LineID=ID línea
-PrecisionUnitIsLimitedToXDecimals=Dolibarr fue configurada para limitar la precisión en el precio de la unidad a <b>%s</b> decimales.
+PrecisionUnitIsLimitedToXDecimals=BERP3 fue configurada para limitar la precisión en el precio de la unidad a <b>%s</b> decimales.
 DoTest=Prueba
 ToFilter=Filtro
 WarningYouHaveAtLeastOneTaskLate=Atención, usted tiene al menos un elemento que a excedido el tiempo de tolerancia.
@@ -406,7 +406,7 @@ YouCanChangeValuesForThisListFrom=Ud. puede cambiar los valores de esta lista\nd
 YouCanSetDefaultValueInModuleSetup=Ud. puede establecer el valor predeterminado cuando se\ncrea un nuevo registro en la configuración del módulo
 Documents=Archivos enlazados
 UploadDisabled=Carga deshabilitada
-ThisLimitIsDefinedInSetup=Límite Dolibarr (Menú inicio-configuración-seguridad):\n%s KB, Límite PHP: %s Kb
+ThisLimitIsDefinedInSetup=Límite BERP3 (Menú inicio-configuración-seguridad):\n%s KB, Límite PHP: %s Kb
 CurrentMenuManager=Administrador de menú actual
 Layout=Diseño
 DisabledModules=Deshabilitar módulos
@@ -507,7 +507,7 @@ NotAllExportedMovementsCouldBeRecordedAsExported=No todos los movimientos de exp
 Miscellaneous=Miscelanias
 GroupBy=Agrupar por...
 RemoveString=Quitar cadena '%s'
-SomeTranslationAreUncomplete=Alguno de los idiomas ofertados pueden estar traducidos parcialmente o pueden contener errores. Por favor ayude a corregir su idioma registrándose en  <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> para agregar sus mejoras.
+SomeTranslationAreUncomplete=Alguno de los idiomas ofertados pueden estar traducidos parcialmente o pueden contener errores. Por favor ayude a corregir su idioma registrándose en  <a href="https://bonaerp.com/" target="_blank">berp3</a> para agregar sus mejoras.
 DownloadDocument=Descargar documento
 ActualizeCurrency=Actualizar tipo de cambio
 ModuleBuilder=Constructor de Módulos y Aplicaciones

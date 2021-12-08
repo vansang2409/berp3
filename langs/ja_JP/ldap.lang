@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - ldap
+# BERP3 language file - Source file is en_US - ldap
 YouMustChangePassNextLogon=ドメイン<b>%s</b>のユーザ<b>%s</b>のパスワードを変更する必要がある。
 UserMustChangePassNextLogon=ユーザは、ドメイン%sにパスワードを変更する必要がある。
 LDAPInformationsForThisContact=この連絡先のLDAPデータベース内の情報
@@ -22,6 +22,6 @@ GroupSynchronized=グループを同期した
 MemberSynchronized=メンバーを同期した
 MemberTypeSynchronized=同期されたメンバータイプ
 ContactSynchronized=連絡先を同期した
-ForceSynchronize=強制的に同期 Dolibarr -> LDAP
+ForceSynchronize=強制的に同期 BERP3 -> LDAP
 ErrorFailedToReadLDAP=LDAPデータベースの読み込みに失敗した。 LDAPモジュールの設定とデータベースのアクセシビリティをチェックする。
 PasswordOfUserInLDAP=LDAPのユーザのパスワード

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - website
+# BERP3 language file - Source file is en_US - website
 Shortname=Kod
 WebsiteSetupDesc=Tu utwórz witryny, które chcesz użyć. Następnie, przejdź do menu Witryny, aby je edytować.
 DeleteWebsite=Skasuj stronę
@@ -45,7 +45,7 @@ ViewWebsiteInProduction=Zobacz stronę używając linków ze strony głównej
 SetHereVirtualHost= <u> Użyj z Apache / NGinx / ... </u> <br> Utwórz na swoim serwerze internetowym (Apache, Nginx, ...) dedykowany wirtualny host z włączoną obsługą PHP i katalog główny na <br> <strong>%s</strong>
 ExampleToUseInApacheVirtualHostConfig=Przykład do użycia w konfiguracji hosta wirtualnego Apache:
 YouCanAlsoTestWithPHPS=<u> Używaj z wbudowanym serwerem PHP </u> <br>Gdy w środowisku rozwojowym preferujesz testowanie web strony z web serwerem wbudowanym w PHP (wymagane PHP 5.5 lub nowsze), to uruchamiaj<br> <strong> php -S 0.0.0.0:8080 -t %s</strong>
-YouCanAlsoDeployToAnotherWHP=<u>Uruchom swoją witrynę u innego dostawcy wystąpień Dolibarr</u><br>Jeśli nie masz dostępnego w internecie web serwera, takiego jak Apache lub NGinx, to możesz eksportować i importować swoją witrynę do innego wystąpienia Dolibarr u kogoś oferującego wystąpienia Dolibarr mające moduł Website w pełni zintegrowany z web serwerem. Listę niektórych dostawców wystąpień Dolibarr znajdziesz w <a href="https://saas.dolibarr.org" target="_blank">https://saas.dolibarr.org</a>
+YouCanAlsoDeployToAnotherWHP=<u>Uruchom swoją witrynę u innego dostawcy wystąpień Dolibarr</u><br>Jeśli nie masz dostępnego w internecie web serwera, takiego jak Apache lub NGinx, to możesz eksportować i importować swoją witrynę do innego wystąpienia BERP3 u kogoś oferującego wystąpienia BERP3 mające moduł Website w pełni zintegrowany z web serwerem. Listę niektórych dostawców wystąpień BERP3 znajdziesz w <a href="https://bonaerp.com" target="_blank">https://bonaerp.com</a>
 CheckVirtualHostPerms=Sprawdź również, czy użytkownik wirtualnego hosta (na przykład dane www) ma <strong> %s </strong> uprawnienia do plików w <br> <strong> %s</strong>
 ReadPerm=Czytanie
 WritePerm=Zapis

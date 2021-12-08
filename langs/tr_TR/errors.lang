@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Hata yok, taahüt ediyoruz
@@ -46,10 +46,10 @@ ErrorBadDateFormat=%s değeri yanlış tarih biçiminde
 ErrorWrongDate=Tarih doğru değil!
 ErrorFailedToWriteInDir=%s dizinine yazılamadı
 ErrorFoundBadEmailInFile=Dosyadaki %s satırları için hatalı e-posta sözdizimi bulundu (örneğin e-posta=%s ile satır %s)
-ErrorUserCannotBeDelete=Kullanıcı silinemiyor. Dolibarr varlıklarıyla ilişkili olabilir.
+ErrorUserCannotBeDelete=Kullanıcı silinemiyor. BERP3 varlıklarıyla ilişkili olabilir.
 ErrorFieldsRequired=Some required fields have been left blank.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=Dizin oluşturulamadı. Web sunucusu kullanıcısının Dolibarr belgeleri dizinine yazma izinlerini denetleyin. Eğer bu parametre <b>guvenli_mod</b> bu PHP üzerinde etkinleştirilmişse, Dolibarr php dosyalarının web sunucusu kullanıcısına (ya da grubuna) sahip olduğunu denetleyin.
+ErrorFailedToCreateDir=Dizin oluşturulamadı. Web sunucusu kullanıcısının BERP3 belgeleri dizinine yazma izinlerini denetleyin. Eğer bu parametre <b>guvenli_mod</b> bu PHP üzerinde etkinleştirilmişse, BERP3 php dosyalarının web sunucusu kullanıcısına (ya da grubuna) sahip olduğunu denetleyin.
 ErrorNoMailDefinedForThisUser=Bu kullanıcı için tanımlı posta yok
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=Bu özelliğin çalışması için JavaScriptin etkinleştirilmesi gerekir. Bunu Kurulum - Ekran menüsünden değiştirebilirsiniz.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s diğer bir üçüncüye görevlendirilmiş
 ErrorFailedToSendPassword=Parola gönderilemedi
 ErrorFailedToLoadRSSFile=RSS beslemesi alınamıyor. Eğer hata mesajları yeterli bilgi sağlamıyorsa MAIN_SIMPLEXMLLOAD_DEBUG değişmezini eklemeyi deneyin.
 ErrorForbidden=Erişim reddedildi. <br>Devre dışı bir modül alanına ya da özelliğine veya kimlik doğrulaması yapmadan ya da kullanıcınızın izini olmadan bir sayfaya erişmek istediniz.
-ErrorForbidden2=Bu oturum açma için izin Dolibarr yöneticiniz tarafından %s->%s menüsünden tanımlanabilir.
-ErrorForbidden3=Dolibarr bir kimlik doğrulama oturumu üzerinden kullanılmamış gibi görünüyor. Kimlik doğrulama nasıl yönetileceğini öğrenmek Dolibarr kurulum belgelerine bir göz atın (htaccess, mod_auth veya diğer ...).
+ErrorForbidden2=Bu oturum açma için izin BERP3 yöneticiniz tarafından %s->%s menüsünden tanımlanabilir.
+ErrorForbidden3=BERP3 bir kimlik doğrulama oturumu üzerinden kullanılmamış gibi görünüyor. Kimlik doğrulama nasıl yönetileceğini öğrenmek BERP3 kurulum belgelerine bir göz atın (htaccess, mod_auth veya diğer ...).
 ErrorNoImagickReadimage=Bu PHP Class Imagick yok. Önizleme kullanılır olmayabilir. Yöneticiler Kurulum - Ekran menüsünde bu sekmeyi devre dışı bırakabilir.
 ErrorRecordAlreadyExists=Kayıt zaten var
 ErrorLabelAlreadyExists=Bu etiket zaten var
@@ -132,8 +132,8 @@ ErrorWebServerUserHasNotPermission=Web sunucusunu çalıştırmak için kullanı
 ErrorNoActivatedBarcode=Etkinleştirilmiş barkod türü yok
 ErrUnzipFails=% ZipArchive ile sıkıştırılamıyor
 ErrNoZipEngine=No engine to zip/unzip %s file in this PHP
-ErrorFileMustBeADolibarrPackage=Bu %s dosyası bir Dolibarr zip paketi olmalıdır
-ErrorModuleFileRequired=Bir Dolibarr modül paket dosyası seçmelisiniz
+ErrorFileMustBeADolibarrPackage=Bu %s dosyası bir BERP3 zip paketi olmalıdır
+ErrorModuleFileRequired=Bir BERP3 modül paket dosyası seçmelisiniz
 ErrorPhpCurlNotInstalled=PHP CURL kurulu değil, Bu PayPal ile iletişim kurmak için gereklidir
 ErrorFailedToAddToMailmanList=Mailman listesine ya da SPIP tabanına kayıt eklenemiyor
 ErrorFailedToRemoveToMailmanList=%s kaydının Mailman %s listesine ya da SPIP tabanına taşınmasında hata
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=The date must be lower than today
 ErrorDateMustBeInFuture=The date must be greater than today
 ErrorPaymentModeDefinedToWithoutSetup=Bir ödeme biçimi %s türüne ayarlanmış, ancak fatura modülü kurulumu bu ödeme biçimi için tanımlanan bilgiyi gösterecek tamamlanmamış.
 ErrorPHPNeedModule=Hata, bu özelliği kulanmak için PHP nizde <b>%s</b> modülü kurulu olmalıdır.
-ErrorOpenIDSetupNotComplete=Dolibarr yapılandırma dosyasını OpenID kimlik doğrulamaya izin verecek şekilde ayarladınız, ancak OpenID hizmetine ait URL, %s değişmezine tanımlanmamıştır
+ErrorOpenIDSetupNotComplete=BERP3 yapılandırma dosyasını OpenID kimlik doğrulamaya izin verecek şekilde ayarladınız, ancak OpenID hizmetine ait URL, %s değişmezine tanımlanmamıştır
 ErrorWarehouseMustDiffers=Kaynak ve hedef depo farklı olmalıdır
 ErrorBadFormat=Hatalı biçim!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Hata, bu üye henüz henüz hiç bir üçüncü tarafa bağlantılanmamış. Üyeyi mevcut olan bir üçüncü tarafa bağlantılayın veya bu faturayla yeni bir abonelik oluşturmadan önce yeni bir üçüncü taraf oluşturun.

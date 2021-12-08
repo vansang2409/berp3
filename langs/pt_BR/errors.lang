@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 NoErrorCommitIsDone=Sem erros, garantimos
 ErrorButCommitIsDone=Erros foram encontrados mas, apesar disso, validamos
 ErrorBadValueForParamNotAString=Valor ruim para o seu parâmetro por falta, possivelmente, de tradução.
@@ -31,7 +31,7 @@ ErrorBadDateFormat=O valor '%s' tem o formato de data errada
 ErrorWrongDate=A data não está correta!
 ErrorFailedToWriteInDir=Houve uma falha ao escrever no diretório %s
 ErrorFoundBadEmailInFile=Encontrado uma sintaxe de e-mail incorreta para as linhas %s no arquivo (por exemplo, linha %s com e-mail = %s)
-ErrorFailedToCreateDir=Error na creação de uma carpeta. Compruebe que 0 usuario del servidor Web tiene derechos de escritura en las carpetas de documentos de Dolibarr. Si 0  parámetro <b>safe_mode</b> está ativo en este PHP, Compruebe que los archivos php dolibarr pertencen ao usuario del servidor Web.
+ErrorFailedToCreateDir=Error na creação de uma carpeta. Compruebe que 0 usuario del servidor Web tiene derechos de escritura en las carpetas de documentos de Dolibarr. Si 0  parámetro <b>safe_mode</b> está ativo en este PHP, Compruebe que los archivos php berp3 pertencen ao usuario del servidor Web.
 ErrorNoMailDefinedForThisUser=Nenhum e-mail definido para este usuário
 ErrorFeatureNeedJavascript=Esta funcionalidade requer que o javascript seja ativado para funcionar. Altere isto em Configuração >> Aparência.
 ErrorTopMenuMustHaveAParentWithId0=Um menu do tipo 'Topo' não pode ter um menu pai. Coloque 0 no menu pai ou opte por um menu do tipo 'Esquerdo'.
@@ -78,8 +78,8 @@ ErrorSelectAtLeastOne=Erro, selecione pelo menos uma entrada.
 ErrorProdIdAlreadyExist=%s é atribuído a outro terço
 ErrorFailedToSendPassword=Houve uma falha no envio da senha
 ErrorForbidden=Acesso negado. <br> Você tenta acessar a uma página, área ou característica de um módulo desativado ou sem estar em uma sessão autenticada ou que não é permitido para o usuário.
-ErrorForbidden2=Os permissões para este usuário podem ser designados por o administrador Dolibarr mediante o menu %s-> %s.
-ErrorForbidden3=Dolibarr não parece funcionar em uma Sessão autentificada. Consulte a documentação de Instalação de Dolibarr para saber cómo administrar as autenticaciones (htaccess, mod_auth u outro...).
+ErrorForbidden2=Os permissões para este usuário podem ser designados por o administrador BERP3 mediante o menu %s-> %s.
+ErrorForbidden3=BERP3 não parece funcionar em uma Sessão autentificada. Consulte a documentação de Instalação de BERP3 para saber cómo administrar as autenticaciones (htaccess, mod_auth u outro...).
 ErrorNoImagickReadimage=a função imagick_readimage não está presente nesta Instalação de PHP. a resenha não está pois disponível. Os administradores podem desativar esta separador ao menu configuração - visualização.
 ErrorRecordAlreadyExists=O registro já existe
 ErrorCantReadFile=Houve uma falha ao ler o arquivo '%s'
@@ -107,7 +107,7 @@ ErrorDateMustBeBeforeToday=A data deve ser menor que hoje
 ErrorDateMustBeInFuture=A data deve ser maior que hoje
 ErrorPaymentModeDefinedToWithoutSetup=A modalidade de pagamento foi definido para tipo% s mas a configuração do módulo de fatura não foi concluída para definir as informações para mostrar para esta modalidade de pagamento.
 ErrorPHPNeedModule=Erro, o PHP deve ter <b>módulo% s</b> instalado para usar este recurso.
-ErrorOpenIDSetupNotComplete=Você arquivo de configuração Dolibarr configuração para permitir a autenticação OpenID, mas a URL de serviço OpenID não está definido em constante% s
+ErrorOpenIDSetupNotComplete=Você arquivo de configuração BERP3 configuração para permitir a autenticação OpenID, mas a URL de serviço OpenID não está definido em constante% s
 ErrorWarehouseMustDiffers=A conta origem e destino devem ser diferentes
 ErrorBadFormat=Formato ruim!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Erro, este membro não está ainda conectado a qualquer terceiro. Conectar o membro a um terceiro existente ou criar um novo terceiro antes de criar uma assinatura com fatura.

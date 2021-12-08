@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - members
+# BERP3 language file - Source file is en_US - members
 MembersArea=Felhasználói terület
 MemberCard=Tagkártya
 SubscriptionCard=Előfizetés kártya
@@ -13,7 +13,7 @@ ListOfValidatedPublicMembers=Hitelesített nyilvános tagok listája
 ErrorThisMemberIsNotPublic=Nem nyilvános tag
 ErrorMemberIsAlreadyLinkedToThisThirdParty=Egy másik tag (név: <b>%s,</b> bejelentkezés: <b>%s)</b> már kapcsolódik egy harmadik fél <b>%s.</b> Vegye meg ezt a linket elsősorban azért, mert egy harmadik fél nem köthető csak egy tag (és fordítva).
 ErrorUserPermissionAllowsToLinksToItselfOnly=Biztonsági okokból, meg kell szerkeszteni engedéllyel rendelkezik a minden felhasználó számára, hogy képes összekapcsolni egy tag a felhasználó, hogy nem a tiéd.
-SetLinkToUser=Link a Dolibarr felhasználó
+SetLinkToUser=Link a BERP3 felhasználó
 SetLinkToThirdParty=Link egy harmadik fél Dolibarr
 MembersCards=Business cards for members
 MembersList=A tagok listája
@@ -98,10 +98,10 @@ ConfirmDeleteSubscription=Valóban törölni szeretné ezt az előfizetést?
 Filehtpasswd=htpasswd fájl
 ValidateMember=Tag érvényesítése
 ConfirmValidateMember=Valóban érvényesíteni szeretné ezt a tagot?
-FollowingLinksArePublic=A következő hivatkozások olyan oldalakat fognak megnyitni, amelyek nem védettek semmilyen Dolibarr jogosultsággal. Ezek nem formázott oldalak. Példaként szolgálnak, hogy bemutassák a tagok adatbázisának listáját.
+FollowingLinksArePublic=A következő hivatkozások olyan oldalakat fognak megnyitni, amelyek nem védettek semmilyen BERP3 jogosultsággal. Ezek nem formázott oldalak. Példaként szolgálnak, hogy bemutassák a tagok adatbázisának listáját.
 PublicMemberList=Nyilvános lista tagja
 BlankSubscriptionForm=Nyilvános önfeliratkozó űrlap
-BlankSubscriptionFormDesc=A Dolibarr nyilvános URL-t / weboldalt szolgáltathat Önnek. Ez lehetővé teszi a külső látogatók számára a feliratkozást. Ha engedélyezve van az online fizetési modul, akkor a fizetési űrlap automatikusan elérhetővé válik.
+BlankSubscriptionFormDesc=A BERP3 nyilvános URL-t / weboldalt szolgáltathat Önnek. Ez lehetővé teszi a külső látogatók számára a feliratkozást. Ha engedélyezve van az online fizetési modul, akkor a fizetési űrlap automatikusan elérhetővé válik.
 EnablePublicSubscriptionForm=Engedélyezze a nyilvános weboldalt az önfeliratkozó űrlapon
 ForceMemberType=Tagtipus kikényszerítése.
 ExportDataset_member_1=Tagok és előfizetések

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - other
+# BERP3 language file - Source file is en_US - other
 SecurityCode=Güvenlik kodu
 NumberingShort=N°
 Tools=Araçlar
@@ -179,10 +179,10 @@ SizeUnitpoint=nokta
 BugTracker=Hata izleyici
 SendNewPasswordDesc=Bu form yeni bir parola istemenizi sağlar. Yeni parolanız e-posta adresinize gönderilecektir. <br>Gelen e-postadaki onay bağlantısını tıkladığınızda değişiklik gerçekleşecektir.<br>Gelen kutunuzu kontrol edin.
 BackToLoginPage=Oturum açma sayfasına geri dön
-AuthenticationDoesNotAllowSendNewPassword=Kimlik doğrulama modu <b>%s</b>.<br>bu modda, Dolibarr parolanızı bilemez ve değiştiremez.<br>Parola değiştirmek istiyorsanız sistem yöneticinize danışın.
+AuthenticationDoesNotAllowSendNewPassword=Kimlik doğrulama modu <b>%s</b>.<br>bu modda, BERP3 parolanızı bilemez ve değiştiremez.<br>Parola değiştirmek istiyorsanız sistem yöneticinize danışın.
 EnableGDLibraryDesc=Bu seçeneği kullanmak için PHP nizdeki GD kütüphanesini kurun ya da etkinleştirin.
 ProfIdShortDesc=<b>Uzman no %s</b> üçüncü parti ülkesine bağlı bir bilgidir.<br>Örneğin, <b>%s</b> ülkesi için kodu<b>%s</b>dir.
-DolibarrDemo=Dolibarr ERP/CRM demosu
+DolibarrDemo=BERP3 ERP/CRM demosu
 StatsByNumberOfUnits=Ürün/hizmet miktarının toplamı için istatistikler
 StatsByNumberOfEntities=Statistics for number of referring entities (no. of invoices, or orders...)
 NumberOfProposals=Teklif sayısı

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -112,7 +112,7 @@ DatabaseTypeManager=Databasetype manager
 RequestLastAccessInError=Siste database adgangsfeil
 ReturnCodeLastAccessInError=Returkode for siste database adgangsfeil
 InformationLastAccessInError=Informasjom om siste database adgangsfeil
-DolibarrHasDetectedError=Dolibarr oppdaget en teknisk feil
+DolibarrHasDetectedError=BERP3 oppdaget en teknisk feil
 YouCanSetOptionDolibarrMainProdToZero=Du kan lese loggfilen eller angi alternativet $dolibarr_main_prod til '0' i konfigurasjonsfilen din for å få mer informasjon.
 InformationToHelpDiagnose=Denne informasjonen kan være nyttig for diagnostiske formål (du kan angi alternativ $dolibarr_main_prod til '1' for å fjerne slike merknader)
 MoreInformation=Mer informasjon
@@ -121,7 +121,7 @@ TechnicalID=Teknisk ID
 LineID=Linje-ID
 NotePublic=Notat (offentlig)
 NotePrivate=Notat (privat)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr er satt opp til å bruke priser med <b>%s</b> desimaler.
+PrecisionUnitIsLimitedToXDecimals=BERP3 er satt opp til å bruke priser med <b>%s</b> desimaler.
 DoTest=Test
 ToFilter=Filter
 NoFilter=Ingen filter
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Medlemmer
 MenuAgendaGoogle=Google agenda
 MenuTaxesAndSpecialExpenses=Avgifter | Spesielle utgifter
-ThisLimitIsDefinedInSetup=Dolibarr grense (Menu home-setup-security): %s Kb, PHP grense: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=BERP3 grense (Menu home-setup-security): %s Kb, PHP grense: %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=Ingen dokumenter lastet opp
 CurrentUserLanguage=Gjeldende språk
 CurrentTheme=Gjeldende tema
@@ -905,7 +905,7 @@ ViewFlatList=Vis liste
 ViewAccountList=Vis hovedbok
 ViewSubAccountList=Vis underkonto hovedbok
 RemoveString=Fjern strengen '%s'
-SomeTranslationAreUncomplete=Noen av språkene som tilbys kan bare oversettes delvis eller kan inneholde feil. Vennligst hjelp å korrigere språket ditt ved å registrere deg på <a href="https://transifex.com/projects/p/dolibarr/" target="_blank"> https://transifex.com/projects/p/dolibarr/ </a> for å legge til forbedringene dine.
+SomeTranslationAreUncomplete=Noen av språkene som tilbys kan bare oversettes delvis eller kan inneholde feil. Vennligst hjelp å korrigere språket ditt ved å registrere deg på <a href="https://bonaerp.com/" target="_blank"> dolibarr/ </a> for å legge til forbedringene dine.
 DirectDownloadLink=Offentlig nedlastingskobling
 PublicDownloadLinkDesc=Kun koblingen kreves for å laste ned filen
 DirectDownloadInternalLink=Privat nedlastningskobling

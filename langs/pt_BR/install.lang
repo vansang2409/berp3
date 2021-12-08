@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - install
+# BERP3 language file - Source file is en_US - install
 InstallEasy=Apenas siga as instruções passo a passo.
 MiscellaneousChecks=Verificando pré-requisitos
 ConfFileExists=O arquivo de configuração <b>conf.php</b> existe.
@@ -42,9 +42,9 @@ OtherKeysCreation=Criação de chaves estrangeiras e índices...
 FunctionsCreation=Criação de Funções...
 AdminAccountCreation=Criando login do Administrador
 SystemIsInstalled=Instalação completa.
-SystemIsUpgraded=Dolibarr foi atualizado com êxito.
-YouNeedToPersonalizeSetup=Você precisa configurar o Dolibarr para atender às suas necessidades (aspecto, funcionalidades, ...). Para isto clique no seguinte link:
-AdminLoginCreatedSuccessfuly=Login de administrador Dolibarr '<b>%s</b>' criado com sucesso.
+SystemIsUpgraded=BERP3 foi atualizado com êxito.
+YouNeedToPersonalizeSetup=Você precisa configurar o BERP3 para atender às suas necessidades (aspecto, funcionalidades, ...). Para isto clique no seguinte link:
+AdminLoginCreatedSuccessfuly=Login de administrador BERP3 '<b>%s</b>' criado com sucesso.
 GoToDolibarr=ir para Dolibarr
 GoToSetupArea=Ir para a área de configuração
 GoToUpgradePage=Vai para a pagina de atualizaçao novamente
@@ -57,7 +57,7 @@ DatabaseMigration=Migração de banco de dados (estrutura + alguns dados)
 ProcessMigrateScript=Processamento de Script
 ChooseYourSetupMode=Escolha o seu modo de configuração e clique em "Iniciar" ...
 FreshInstall=Nova instalação
-UpgradeDesc=Use este modo se você substituiu arquivos antigos do Dolibarr por arquivos de uma versão mais recente. Isto irá atualizar seu banco de dados e dados instalados.
+UpgradeDesc=Use este modo se você substituiu arquivos antigos do BERP3 por arquivos de uma versão mais recente. Isto irá atualizar seu banco de dados e dados instalados.
 InstallNotAllowed=Instalação não permitidas pelas permissões no <b>conf.php</b>
 YouMustCreateWithPermission=Você deve criar o arquivo %s e definir permissões de escrita sobre ele para instalar o servidor web durante o processo.
 AlreadyDone=Migração OK

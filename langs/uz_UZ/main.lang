@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -62,7 +62,7 @@ ErrorServiceUnavailableTryLater=Ayni paytda xizmat mavjud emas. Keyinroq qayta u
 ErrorDuplicateField=Noyob maydonda takroriy qiymat
 ErrorSomeErrorWereFoundRollbackIsDone=Ba'zi xatolar topildi. O'zgarishlar orqaga qaytarildi.
 ErrorConfigParameterNotDefined=<b> %s </b> parametri <b> conf.php </b> konfiguratsiya faylida aniqlanmagan.
-ErrorCantLoadUserFromDolibarrDatabase=Dolibarr ma'lumotlar bazasida <b> %s </b> foydalanuvchisi topilmadi.
+ErrorCantLoadUserFromDolibarrDatabase=BERP3 ma'lumotlar bazasida <b> %s </b> foydalanuvchisi topilmadi.
 ErrorNoVATRateDefinedForSellerCountry=Xato, '%s' mamlakati uchun QQS stavkalari aniqlanmagan.
 ErrorNoSocialContributionForSellerCountry=Xato, '%s' mamlakati uchun ijtimoiy / soliq soliqlari turi aniqlanmagan.
 ErrorFailedToSaveFile=Xato, faylni saqlab bo'lmadi.
@@ -94,7 +94,7 @@ RecordDeleted=Yozuv o'chirildi
 RecordGenerated=Yozuv yaratildi
 LevelOfFeature=Xususiyatlar darajasi
 NotDefined=Belgilanmagan
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr autentifikatsiya qilish rejimi <b> conf.php </b> konfiguratsiya faylida <b> %s </b> ga o'rnatildi. <br> bu shuni anglatadiki, parol ma'lumotlar bazasi Dolibarr uchun tashqi, shuning uchun bu maydonni o'zgartirish hech qanday ta'sir ko'rsatmasligi mumkin.
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 autentifikatsiya qilish rejimi <b> conf.php </b> konfiguratsiya faylida <b> %s </b> ga o'rnatildi. <br> bu shuni anglatadiki, parol ma'lumotlar bazasi BERP3 uchun tashqi, shuning uchun bu maydonni o'zgartirish hech qanday ta'sir ko'rsatmasligi mumkin.
 Administrator=Ma'mur
 Undefined=Aniqlanmagan
 PasswordForgotten=Parol unutdingizmi?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Ma'lumotlar bazasi turi menejeri
 RequestLastAccessInError=Ma'lumotlar bazasiga kirish uchun so'nggi so'rov xatosi
 ReturnCodeLastAccessInError=So'nggi ma'lumotlar bazasiga kirish uchun so'rov xatosi uchun qaytarish kodi
 InformationLastAccessInError=So'nggi ma'lumotlar bazasiga kirish so'rovining xatosi haqida ma'lumot
-DolibarrHasDetectedError=Dolibarr texnik xatolikni aniqladi
+DolibarrHasDetectedError=BERP3 texnik xatolikni aniqladi
 YouCanSetOptionDolibarrMainProdToZero=Qo'shimcha ma'lumot olish uchun log faylini o'qishingiz yoki konfiguratsiya faylingizda $ dolibarr_main_prod parametrini '0' ga o'rnatishingiz mumkin.
 InformationToHelpDiagnose=Ushbu ma'lumot diagnostika maqsadida foydali bo'lishi mumkin (bunday xabarnomalarni olib tashlash uchun $ dolibarr_main_prod parametrini '1' ga o'rnatishingiz mumkin)
 MoreInformation=Qo'shimcha ma'lumot
@@ -121,7 +121,7 @@ TechnicalID=Texnik guvohnoma
 LineID=Qator identifikatori
 NotePublic=Izoh (ommaviy)
 NotePrivate=Izoh (xususiy)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr birlik narxlarining aniqligini <b> %s </b> o'nliklariga cheklash uchun o'rnatildi.
+PrecisionUnitIsLimitedToXDecimals=BERP3 birlik narxlarining aniqligini <b> %s </b> o'nliklariga cheklash uchun o'rnatildi.
 DoTest=Sinov
 ToFilter=Filtr
 NoFilter=Filtr yo‘q
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=A'zolar
 MenuAgendaGoogle=Google kun tartibi
 MenuTaxesAndSpecialExpenses=Soliqlar | Maxsus xarajatlar
-ThisLimitIsDefinedInSetup=Dolibarr limiti (menyuda uyni sozlash-xavfsizlik): %s Kb, PHP limit: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limiti (Menyu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=BERP3 limiti (menyuda uyni sozlash-xavfsizlik): %s Kb, PHP limit: %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limiti (Menyu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=Hech qanday hujjat yuklanmadi
 CurrentUserLanguage=Joriy til
 CurrentTheme=Joriy mavzu
@@ -905,7 +905,7 @@ ViewFlatList=Yassi ro'yxatni ko'rish
 ViewAccountList=Hisob kitobini ko'rish
 ViewSubAccountList=Hisob osti daftarini ko'rish
 RemoveString='%s' qatorini olib tashlash
-SomeTranslationAreUncomplete=Taklif qilinadigan ba'zi tillar qisman tarjima qilinishi yoki xatolarga yo'l qo'yishi mumkin. Iltimos, yaxshilangan narsalaringizni qo'shish uchun <a href="https://transifex.com/projects/p/dolibarr/" target="_blank"> https://transifex.com/projects/p/dolibarr/ </a> ro'yxatdan o'tib, tilingizni to'g'rilashga yordam bering.
+SomeTranslationAreUncomplete=Taklif qilinadigan ba'zi tillar qisman tarjima qilinishi yoki xatolarga yo'l qo'yishi mumkin. Iltimos, yaxshilangan narsalaringizni qo'shish uchun <a href="https://bonaerp.com/" target="_blank"> dolibarr/ </a> ro'yxatdan o'tib, tilingizni to'g'rilashga yordam bering.
 DirectDownloadLink=Umumiy yuklab olish havolasi
 PublicDownloadLinkDesc=Faylni yuklab olish uchun faqat havola kerak
 DirectDownloadInternalLink=Shaxsiy yuklab olish havolasi

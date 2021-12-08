@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Geen fout, wij bevestigen
@@ -49,7 +49,7 @@ ErrorFoundBadEmailInFile=Onjuist e-mail syntax gevonden voor %s regels in het be
 ErrorUserCannotBeDelete=Gebruiker kan niet worden verwijderd. Misschien is het geassocieerd met Dolibarr-entiteiten.
 ErrorFieldsRequired=Sommige verplichte velden zijn leeg gelaten.
 ErrorSubjectIsRequired=Het e-mailonderwerp is verplicht
-ErrorFailedToCreateDir=Creëren van een map mislukt. Controleer of de Webservergebruiker toestemming heeft om te schrijven in Dolibarr documentenmap. Wanneer de parameter <b>safe_mode</b> is ingeschakeld in PHP, controleer dan dat de Dolibarr php bestanden eigendom zijn van de de webserve gebruiker (of groep).
+ErrorFailedToCreateDir=Creëren van een map mislukt. Controleer of de Webservergebruiker toestemming heeft om te schrijven in BERP3 documentenmap. Wanneer de parameter <b>safe_mode</b> is ingeschakeld in PHP, controleer dan dat de BERP3 php bestanden eigendom zijn van de de webserve gebruiker (of groep).
 ErrorNoMailDefinedForThisUser=Geen e-mailadres ingesteld voor deze gebruiker
 ErrorSetupOfEmailsNotComplete=Het instellen van e-mails is niet voltooid
 ErrorFeatureNeedJavascript=Voor deze functie moet Javascript geactiveerd zijn. Verander dit in het Instellingen - scherm.
@@ -110,7 +110,7 @@ ErrorFailedToSendPassword=Mislukt om het wachtwoord te sturen
 ErrorFailedToLoadRSSFile=Niet in slaagt om RSS feed. Probeer een constante MAIN_SIMPLEXMLLOAD_DEBUG toe te voegen als foutmeldingen niet voldoende informatie.
 ErrorForbidden=Toegang geweigerd. <br> U probeert toegang te krijgen tot een pagina, gebied of functie van een uitgeschakelde module of zonder dat u zich in een geverifieerde sessie bevindt of dat is niet toegestaan voor uw gebruiker.
 ErrorForbidden2=Toestemming voor deze aanmelding kan worden ingesteld door de Dolibarr-beheerder vanaf het menu %s -> %s.
-ErrorForbidden3=Het lijkt erop dat Dolibarr niet wordt gebruikt met een geverifieerde sessie. Kijk eens naar de Dolibarr installatiedocumentatie om te weten hoe het beheer van verificaties (htaccess, mod_auth of andere) werkt.
+ErrorForbidden3=Het lijkt erop dat BERP3 niet wordt gebruikt met een geverifieerde sessie. Kijk eens naar de BERP3 installatiedocumentatie om te weten hoe het beheer van verificaties (htaccess, mod_auth of andere) werkt.
 ErrorNoImagickReadimage=Functie imagick_readimage is niet gevonden in deze PHP installatie. Er kunnen geen voorbeelden gemaakt worden. Beheerders kunnen dit tabblad uitschakelen vanaf het menu Home->Instellingen->Scherm.
 ErrorRecordAlreadyExists=Tabelregel bestaat al
 ErrorLabelAlreadyExists=Dit label bestaat al
@@ -132,7 +132,7 @@ ErrorWebServerUserHasNotPermission=User account <b>%s</b> gebruikt om web-server
 ErrorNoActivatedBarcode=Geen geactiveerde barcode soort
 ErrUnzipFails=uitpakken %s mislukt met ZipArchive
 ErrNoZipEngine=Geen engine om een ​​%s bestand in dit PHP te zip / unzippen
-ErrorFileMustBeADolibarrPackage=Het bestand %s moet een Dolibarr zip-pakket zijn
+ErrorFileMustBeADolibarrPackage=Het bestand %s moet een BERP3 zip-pakket zijn
 ErrorModuleFileRequired=U moet een Dolibarr-modulepakketbestand selecteren
 ErrorPhpCurlNotInstalled=De PHP CURL is niet geïnstalleerd, dit is van essentieel belang met Paypal te communiceren
 ErrorFailedToAddToMailmanList=Kan record %s niet toevoegen aan Mailman-lijst %s of SPIP-basis

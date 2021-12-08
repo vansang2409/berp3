@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Nema greške, commit.
@@ -46,10 +46,10 @@ ErrorBadDateFormat=Vrednost "%s" ima pogrešan format datma
 ErrorWrongDate=Datum nije ispravan!
 ErrorFailedToWriteInDir=Greška prilikom pisanja u folder %s
 ErrorFoundBadEmailInFile=Pronađeni su mailovi sa pogrešnom sintaksom za %s linija u fajlu (primer linija %s sa mailom %s)
-ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to Dolibarr entities.
+ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to BERP3 entities.
 ErrorFieldsRequired=Some required fields have been left blank.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=Greška prilikom kreacije foldera. Proverite da li Web server nalog ima prava da piše u Dolibarr documents folderu. Ako je parametar <b>safe_mode</b> aktivan u PHP-u, proverite da li Dolibarr php fajlovi pripadaju korisniku (ili grupi) Web server naloga.
+ErrorFailedToCreateDir=Greška prilikom kreacije foldera. Proverite da li Web server nalog ima prava da piše u BERP3 documents folderu. Ako je parametar <b>safe_mode</b> aktivan u PHP-u, proverite da li BERP3 php fajlovi pripadaju korisniku (ili grupi) Web server naloga.
 ErrorNoMailDefinedForThisUser=Mail nije definisan za ovog korisnika
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=Za ovu funkcionalnost morate aktivirati javascript.
@@ -132,8 +132,8 @@ ErrorWebServerUserHasNotPermission=Korisnik <b>%s</b> nema prava za izvršavanje
 ErrorNoActivatedBarcode=Barcode tip nije aktiviran
 ErrUnzipFails=Greška prilikom dekompresije %s
 ErrNoZipEngine=No engine to zip/unzip %s file in this PHP
-ErrorFileMustBeADolibarrPackage=Fajl %s mora biti Dolibarr zip paket
-ErrorModuleFileRequired=You must select a Dolibarr module package file
+ErrorFileMustBeADolibarrPackage=Fajl %s mora biti BERP3 zip paket
+ErrorModuleFileRequired=You must select a BERP3 module package file
 ErrorPhpCurlNotInstalled=PHP CURL nije instaliran, ovo je neophodno za Paypal
 ErrorFailedToAddToMailmanList=Greška prilikom dodavanja linije %s Mailman listi %s ili SPIP bazi
 ErrorFailedToRemoveToMailmanList=Greška prilikom uklanjanja linije %s iz Mailman liste %s ili SPIP baze

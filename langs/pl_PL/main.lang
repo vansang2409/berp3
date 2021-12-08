@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,7 +61,7 @@ ErrorNoRequestInError=Nie wykryto żadneog błednego zapytania.
 ErrorServiceUnavailableTryLater=Serwis w tej chwili jest niedostępny. Spróbuj później.
 ErrorDuplicateField=Zduplikuj niepowtarzalną wartość w polu
 ErrorSomeErrorWereFoundRollbackIsDone=Znaleziono błędy. Zmiany zostały wycofane.
-ErrorConfigParameterNotDefined=Parametr <b> %s </b> nie jest zdefiniowany w pliku konfiguracyjnym Dolibarr <b> conf.php </b>.
+ErrorConfigParameterNotDefined=Parametr <b> %s </b> nie jest zdefiniowany w pliku konfiguracyjnym BERP3 <b> conf.php </b>.
 ErrorCantLoadUserFromDolibarrDatabase=Nie można znaleźć <b>użytkownika %s</b> Dolibarra w bazie danych.
 ErrorNoVATRateDefinedForSellerCountry=Błąd, nie określono stawki VAT dla kraju " %s".
 ErrorNoSocialContributionForSellerCountry=Błąd, brak określonej stopy podatkowej dla kraju '%s'.
@@ -94,7 +94,7 @@ RecordDeleted=Rekord usunięty
 RecordGenerated=Rekord wygenerowany
 LevelOfFeature=możliwości funkcji
 NotDefined=Nie zdefiniowany
-DolibarrInHttpAuthenticationSoPasswordUseless=Tryb uwierzytelniania Dolibarr jest ustawiony na <b>%s</b> w pliku konfiguracyjnym <b>conf.php</b>.<br> Oznacza to, że baza danych haseł jest na zewnątrz Dolibarr, więc zmiana tego pola może nie mieć wpływu.
+DolibarrInHttpAuthenticationSoPasswordUseless=Tryb uwierzytelniania BERP3 jest ustawiony na <b>%s</b> w pliku konfiguracyjnym <b>conf.php</b>.<br> Oznacza to, że baza danych haseł jest na zewnątrz Dolibarr, więc zmiana tego pola może nie mieć wpływu.
 Administrator=Administrator
 Undefined=Niezdefiniowano
 PasswordForgotten=Zapomniałeś hasła?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Typ managera bazy danych
 RequestLastAccessInError=Ostatni błąd zgłoszeń o dostępie do bazy danych
 ReturnCodeLastAccessInError=Kod zwrotny ostatniego błędu żądania dostępu do bazy danych
 InformationLastAccessInError=Informacje o najnowszym błędzie żądania dostępu do bazy danych
-DolibarrHasDetectedError=Dolibarr wykrył błąd techniczny
+DolibarrHasDetectedError=BERP3 wykrył błąd techniczny
 YouCanSetOptionDolibarrMainProdToZero=Możesz przeczytać plik dziennika lub ustawić opcję $ dolibarr_main_prod na „0” w pliku konfiguracyjnym, aby uzyskać więcej informacji.
 InformationToHelpDiagnose=Te informacje mogą być przydatne do celów diagnostycznych (możesz ustawić opcję $ dolibarr_main_prod na „1”, aby usunąć takie powiadomienia)
 MoreInformation=Więcej informacji
@@ -121,7 +121,7 @@ TechnicalID=Techniczne ID
 LineID=ID linii
 NotePublic=Uwaga (publiczna)
 NotePrivate=Uwaga (prywatna)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr ustawił ograniczenia dokładności cen jednostkowych <b>do %s</b> miejsc po przecinku.
+PrecisionUnitIsLimitedToXDecimals=BERP3 ustawił ograniczenia dokładności cen jednostkowych <b>do %s</b> miejsc po przecinku.
 DoTest=Test
 ToFilter=Filtr
 NoFilter=Brak filtra
@@ -905,7 +905,7 @@ ViewFlatList=Zobacz płaską listę
 ViewAccountList=Wyświetl księgę
 ViewSubAccountList=Wyświetl księgę subkontową
 RemoveString=Usuń ciąg '%s'
-SomeTranslationAreUncomplete=Niektóre z oferowanych języków mogą być przetłumaczone tylko częściowo lub mogą zawierać błędy. Pomóż poprawić język, rejestrując się pod adresem <a href="https://transifex.com/projects/p/dolibarr/" target="_blank"> https://transifex.com/projects/p/dolibarr/ </a> w celu dodania ulepszeń.
+SomeTranslationAreUncomplete=Niektóre z oferowanych języków mogą być przetłumaczone tylko częściowo lub mogą zawierać błędy. Pomóż poprawić język, rejestrując się pod adresem <a href="https://bonaerp.com/" target="_blank"> dolibarr/ </a> w celu dodania ulepszeń.
 DirectDownloadLink=Publiczny link do pobrania
 PublicDownloadLinkDesc=Do pobrania pliku wymagane jest tylko łącze
 DirectDownloadInternalLink=Prywatny link do pobrania

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=我們保證沒有錯誤
@@ -49,7 +49,7 @@ ErrorFoundBadEmailInFile=找到電子郵件文件中的%s行語法不正確（�
 ErrorUserCannotBeDelete=無法刪除用戶。也許它與Dolibarr實體相關。
 ErrorFieldsRequired=一些必填欄位已留空。
 ErrorSubjectIsRequired=電子郵件主題為必填
-ErrorFailedToCreateDir=無法建立資料夾。檢查網頁伺服器中的用戶有權限寫入Dolibarr檔案資料夾。如果PHP使用了參數<b>safe_mode</b>，檢查網頁伺服器的用戶（或群組）擁有Dolibarr php檔案。
+ErrorFailedToCreateDir=無法建立資料夾。檢查網頁伺服器中的用戶有權限寫入Dolibarr檔案資料夾。如果PHP使用了參數<b>safe_mode</b>，檢查網頁伺服器的用戶（或群組）擁有BERP3 php檔案。
 ErrorNoMailDefinedForThisUser=沒有此用戶的定義郵件
 ErrorSetupOfEmailsNotComplete=電子郵件設定未完成
 ErrorFeatureNeedJavascript=此功能需要啟動Javascript。需要變更請前往設定 - 顯示。

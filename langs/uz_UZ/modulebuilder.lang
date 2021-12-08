@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=Ushbu vositadan faqat tajribali foydalanuvchilar yoki ishlab chiquvchilar foydalanishi kerak. O'zingizning modulingizni yaratish yoki tahrirlash uchun yordam dasturlarini taqdim etadi. Muqobil <a href="%s" target="_blank"> qo'lda ishlab chiqish uchun hujjatlar bu erda </a>.
 EnterNameOfModuleDesc=Bo'sh joysiz yaratish uchun modul / dastur nomini kiriting. So'zlarni ajratish uchun katta harflardan foydalaning (Masalan: MyModule, EcommerceForShop, SyncWithMySystem ...)
 EnterNameOfObjectDesc=Bo'sh joysiz yaratish uchun ob'ekt nomini kiriting. So'zlarni ajratish uchun katta harflardan foydalaning (Masalan: MyObject, Student, Teacher ...). CRUD sinf fayli, shuningdek API fayli, ro'yxat / qo'shish / tahrirlash / o'chirish sahifalari va SQL fayllari yaratiladi.
@@ -101,7 +101,7 @@ HooksDefDesc=<b> module_parts ['ilgaklar'] </b> xususiyatida, modul identifikato
 TriggerDefDesc=Trigger faylida bajarilgan har bir ishbilarmonlik hodisasi uchun siz bajarmoqchi bo'lgan kodni aniqlang.
 SeeIDsInUse=O'rnatishda foydalanilayotgan identifikatorlarni ko'ring
 SeeReservedIDsRangeHere=Saqlangan identifikatorlar qatorini ko'ring
-ToolkitForDevelopers=Dolibarr dasturchilari uchun qo'llanma
+ToolkitForDevelopers=BERP3 dasturchilari uchun qo'llanma
 TryToUseTheModuleBuilder=Agar siz SQL va PHP haqida ma'lumotga ega bo'lsangiz, mahalliy modul yaratuvchisi sehrgaridan foydalanishingiz mumkin. <br> <strong> %s </strong> modulini yoqing va ustadan <span class="fa fa-bug"> </span> o'ng menyusida bosing. <br> Ogohlantirish: Bu ishlab chiquvchining rivojlangan xususiyati, ishlab chiqarish saytida </b> emas, balki <b> tajribasini bajaring!
 SeeTopRightMenu=Yuqoridagi o'ng menyuda <span class="fa fa-bug"> </span> ga qarang.
 AddLanguageFile=Til faylini qo'shing

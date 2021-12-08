@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -905,7 +905,7 @@ ViewFlatList=フラットリストを表示
 ViewAccountList=元帳を表示
 ViewSubAccountList=補助科目元帳を表示
 RemoveString=文字列 '%s'を削除します
-SomeTranslationAreUncomplete=提供された言語の一部において、翻訳がほんの部分的だったり誤っていたりなの。自分の言語の訂正を助けたい人は、<a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> に登録して、改善案を追加してね。
+SomeTranslationAreUncomplete=提供された言語の一部において、翻訳がほんの部分的だったり誤っていたりなの。自分の言語の訂正を助けたい人は、<a href="https://bonaerp.com/" target="_blank">berp3</a> に登録して、改善案を追加してね。
 DirectDownloadLink=公開ダウンロードリンク
 PublicDownloadLinkDesc=ファイルのダウンロードにはリンクのみが必要
 DirectDownloadInternalLink=プライベートダウンロードリンク

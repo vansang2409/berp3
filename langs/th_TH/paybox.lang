@@ -1,6 +1,6 @@
-# Dolibarr language file - Source file is en_US - paybox
+# BERP3 language file - Source file is en_US - paybox
 PayBoxSetup=PayBox ติดตั้งโมดูล
-PayBoxDesc=หน้าเสนอโมดูลนี้จะอนุญาตให้มีการชำระเงินใน <a href="http://www.paybox.com" target="_blank">Paybox</a> จากลูกค้า นี้สามารถใช้สำหรับการชำระเงินฟรีหรือการชำระเงินบนวัตถุโดยเฉพาะอย่างยิ่ง Dolibarr (ใบแจ้งหนี้การสั่งซื้อ ... )
+PayBoxDesc=หน้าเสนอโมดูลนี้จะอนุญาตให้มีการชำระเงินใน <a href="http://www.paybox.com" target="_blank">Paybox</a> จากลูกค้า นี้สามารถใช้สำหรับการชำระเงินฟรีหรือการชำระเงินบนวัตถุโดยเฉพาะอย่างยิ่ง BERP3 (ใบแจ้งหนี้การสั่งซื้อ ... )
 FollowingUrlAreAvailableToMakePayments=URL ต่อไปนี้จะพร้อมที่จะให้หน้าให้กับลูกค้าที่จะทำให้การชำระเงินบนวัตถุ Dolibarr
 PaymentForm=รูปแบบการชำระเงิน
 WelcomeOnPaymentPage=Welcome to our online payment service

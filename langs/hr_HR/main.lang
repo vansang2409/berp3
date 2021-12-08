@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -112,7 +112,7 @@ DatabaseTypeManager=Vrsta upravitelja bazom podataka
 RequestLastAccessInError=Zadnja pogreška prilikom pristupa bazi
 ReturnCodeLastAccessInError=Povratni podatak zadnje greške pristupa bazi
 InformationLastAccessInError=Podaci o zadnjoj grešci pristupa bazi
-DolibarrHasDetectedError=Dolibarr je pronašao tehničku grešku
+DolibarrHasDetectedError=BERP3 je pronašao tehničku grešku
 YouCanSetOptionDolibarrMainProdToZero=Za više informacija pročitajte datoteku sa zapisima ili namjestite opciju $dolibarr_main_prod na "0" u datoteci s postavkama
 InformationToHelpDiagnose=Ovaj podatak može biti koristan za traženje kvara (možete namjestiti opciju $dolibarr_main_prod na '1' kako bi isključili takva upozorenja)
 MoreInformation=Više podataka
@@ -121,7 +121,7 @@ TechnicalID=Tehnička iskaznica
 LineID=Line ID
 NotePublic=Bilješka (javna)
 NotePrivate=Bilješka (unutarnja)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr je podešen tako da prikazuje jedinične cijene na <b>%s</b> decimala.
+PrecisionUnitIsLimitedToXDecimals=BERP3 je podešen tako da prikazuje jedinične cijene na <b>%s</b> decimala.
 DoTest=Test
 ToFilter=Filter
 NoFilter=Bez filtera
@@ -730,7 +730,7 @@ MenuMembers=Članovi
 MenuAgendaGoogle=Google agenda
 MenuTaxesAndSpecialExpenses=Taxes | Special expenses
 ThisLimitIsDefinedInSetup=Granična vrijednost Dolibarra (Mapa početna->postavke->sigurnost): %s Kb, PHP granična vrijednost: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=No documents uploaded
 CurrentUserLanguage=Trenutni jezik
 CurrentTheme=Trenutna tema
@@ -905,7 +905,7 @@ ViewFlatList=Pregledaj popis bez grananja
 ViewAccountList=View ledger
 ViewSubAccountList=View subaccount ledger
 RemoveString=Ukloni redak '%s'
-SomeTranslationAreUncomplete=Neki od ponuđenih jezika možda su djelomično prevedeni ili sadrže greške. Molim vas pomozite ispraviti vaš jezik prijavom na <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a>. Ne budite pizde!
+SomeTranslationAreUncomplete=Neki od ponuđenih jezika možda su djelomično prevedeni ili sadrže greške. Molim vas pomozite ispraviti vaš jezik prijavom na <a href="https://bonaerp.com/" target="_blank">berp3</a>. Ne budite pizde!
 DirectDownloadLink=Public download link
 PublicDownloadLinkDesc=Only the link is required to download the file
 DirectDownloadInternalLink=Private download link

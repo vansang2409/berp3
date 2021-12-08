@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - other
+# BERP3 language file - Source file is en_US - other
 SecurityCode=Suojakoodi
 NumberingShort=N°
 Tools=Työkalut
@@ -101,7 +101,7 @@ PredefinedMailContentSendFichInter=__(Hello)__\n\nPlease find intervention __REF
 PredefinedMailContentLink=You can click on the link below to make your payment if it is not already done.\n\n%s\n\n
 PredefinedMailContentGeneric=__(Hello)__\n\n\n__(Sincerely)__\n\n__USER_SIGNATURE__
 PredefinedMailContentSendActionComm=Event reminder "__EVENT_LABEL__" on __EVENT_DATE__ at __EVENT_TIME__<br><br>This is an automatic message, please do not reply.
-DemoDesc=Dolibarr is a compact ERP/CRM supporting several business modules. A demo showcasing all modules makes no sense as this scenario never occurs (several hundred available). So, several demo profiles are available.
+DemoDesc=BERP3 is a compact ERP/CRM supporting several business modules. A demo showcasing all modules makes no sense as this scenario never occurs (several hundred available). So, several demo profiles are available.
 ChooseYourDemoProfil=Choose the demo profile that best suits your needs...
 ChooseYourDemoProfilMore=...or build your own profile<br>(manual module selection)
 DemoFundation=Hallitse jäseniä säätiön
@@ -179,10 +179,10 @@ SizeUnitpoint=point
 BugTracker=Bug tracker
 SendNewPasswordDesc=This form allows you to request a new password. It will be sent to your email address.<br>Change will become effective once you click on the confirmation link in the email.<br>Check your inbox.
 BackToLoginPage=Takaisin kirjautumissivulle
-AuthenticationDoesNotAllowSendNewPassword=Authentication mode <b>on %s.</b> <br> Tässä tilassa Dolibarr ei voi tietää, eikä vaihtaa salasanasi. <br> Ota yhteyttä järjestelmän ylläpitäjään, jos haluat vaihtaa salasanasi.
+AuthenticationDoesNotAllowSendNewPassword=Authentication mode <b>on %s.</b> <br> Tässä tilassa BERP3 ei voi tietää, eikä vaihtaa salasanasi. <br> Ota yhteyttä järjestelmän ylläpitäjään, jos haluat vaihtaa salasanasi.
 EnableGDLibraryDesc=Install or enable GD library on your PHP installation to use this option.
 ProfIdShortDesc=<b>Prof Id %s</b> on tietojen mukaan kolmannen osapuolen maassa. <br> Esimerkiksi <b>maa %s,</b> se <b>koodi %s.</b>
-DolibarrDemo=Dolibarr ERP / CRM-demo
+DolibarrDemo=BERP3 ERP / CRM-demo
 StatsByNumberOfUnits=Statistics for sum of qty of products/services
 StatsByNumberOfEntities=Statistics for number of referring entities (no. of invoices, or orders...)
 NumberOfProposals=Number of proposals

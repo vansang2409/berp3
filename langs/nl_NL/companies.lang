@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=De bedrijfsnaam %s bestaat al. kies een andere.
 ErrorSetACountryFirst=Stel eerst het land in
 SelectThirdParty=Selecteer een derde
@@ -406,8 +406,8 @@ ProspectsByStatus=Prospecten per status
 NoParentCompany=Geen
 ExportCardToFormat=Export details naar formaat
 ContactNotLinkedToCompany=Contact niet gekoppeld aan enige Klant
-DolibarrLogin=Dolibarr login
-NoDolibarrAccess=Geen Dolibarr toegang
+DolibarrLogin=BERP3 login
+NoDolibarrAccess=Geen BERP3 toegang
 ExportDataset_company_1=Derden (bedrijven / stichtingen / fysieke mensen) en hun eigenschappen
 ExportDataset_company_2=Contacten en hun eigenschappen
 ImportDataset_company_1=Relaties en hun eigenschappen

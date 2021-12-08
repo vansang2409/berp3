@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=أي خطأ، ونحن نلزم
@@ -46,10 +46,10 @@ ErrorBadDateFormat='%s' قيمة له خاطئ تنسيق التاريخ
 ErrorWrongDate=تاريخ غير صحيح!
 ErrorFailedToWriteInDir=لم يكتب في دليل ٪ ق
 ErrorFoundBadEmailInFile=Found incorrect email syntax for %s lines in file (example line %s with email=العثور على بريد إلكتروني صحيح لتركيب خطوط ق ٪ في ملف (على سبيل المثال خط ٪ ق= ٪ مع البريد الإلكتروني)
-ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to Dolibarr entities.
+ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to BERP3 entities.
 ErrorFieldsRequired=Some required fields have been left blank.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=فشل إنشاء دليل. تأكد من أن خادم الويب المستخدم أذونات لكتابة وثائق Dolibarr في الدليل. إذا تم تمكين المعلم <b>safe_mode</b> على هذا PHP ، تحقق من أن ملفات Dolibarr php تملك لخدمة الويب المستخدم (أو مجموعة).
+ErrorFailedToCreateDir=فشل إنشاء دليل. تأكد من أن خادم الويب المستخدم أذونات لكتابة وثائق BERP3 في الدليل. إذا تم تمكين المعلم <b>safe_mode</b> على هذا PHP ، تحقق من أن ملفات BERP3 php تملك لخدمة الويب المستخدم (أو مجموعة).
 ErrorNoMailDefinedForThisUser=البريد لا يعرف لهذا المستخدم
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=هذه الميزة تحتاج إلى تفعيل جافا سكريبت في العمل. هذا التغيير في البنية -- عرض.
@@ -77,7 +77,7 @@ ErrorFieldCanNotContainSpecialNorUpperCharacters=The field <b>%s</b> must not co
 ErrorFieldMustHaveXChar=The field <b>%s</b> must have at least %s characters.
 ErrorNoAccountancyModuleLoaded=أي وحدة المحاسبة وتفعيل
 ErrorExportDuplicateProfil=هذا الاسم الشخصي موجود مسبقا لهذه المجموعة التصدير.
-ErrorLDAPSetupNotComplete=Dolibarr - LDAP المطابقة وليس كاملا.
+ErrorLDAPSetupNotComplete=BERP3 - LDAP المطابقة وليس كاملا.
 ErrorLDAPMakeManualTest=ألف. ldif الملف قد ولدت في الدليل ٪ s. انها محاولة لتحميل يدويا من سطر في الحصول على مزيد من المعلومات عن الأخطاء.
 ErrorCantSaveADoneUserWithZeroPercentage=Can't save an action with "status not started" if field "done by" is also filled.
 ErrorRefAlreadyExists=Reference <b>%s</b> already exists.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=يتم تعيين ثلث آخر إلى %s
 ErrorFailedToSendPassword=لم ترسل كلمة السر
 ErrorFailedToLoadRSSFile=فشل في الحصول على آر إس إس. محاولة إضافة MAIN_SIMPLEXMLLOAD_DEBUG ثابت إذا رسائل الخطأ لا توفر ما يكفي من المعلومات.
 ErrorForbidden=تم الرفض. <br> محاولة الوصول إلى صفحة أو منطقة أو ميزة من وحدة نمطية تعطيل أو دون أن تكون في جلسة مصادقة أو الذي لا يسمح له المستخدم الخاص بك.
-ErrorForbidden2=ويمكن تعريف إذن لهذا الدخول من قبل المسؤول Dolibarr الخاص بك من القائمة %s-> %s.
-ErrorForbidden3=يبدو أن لا يتم استخدام Dolibarr خلال جلسة المصادقة. نلقي نظرة على وثائق الإعداد Dolibarr لمعرفة كيفية إدارة المصادقة (تاكيس، mod_auth أو غيرها ...).
+ErrorForbidden2=ويمكن تعريف إذن لهذا الدخول من قبل المسؤول BERP3 الخاص بك من القائمة %s-> %s.
+ErrorForbidden3=يبدو أن لا يتم استخدام BERP3 خلال جلسة المصادقة. نلقي نظرة على وثائق الإعداد BERP3 لمعرفة كيفية إدارة المصادقة (تاكيس، mod_auth أو غيرها ...).
 ErrorNoImagickReadimage=لم يتم العثور على فئة Imagick في هذا PHP. لا يمكن لمعاينة تكون متاحة. يمكن للمسؤولين تعطيل هذا التبويب من إعداد القائمة - عرض.
 ErrorRecordAlreadyExists=سجل موجود بالفعل
 ErrorLabelAlreadyExists=This label already exists
@@ -133,7 +133,7 @@ ErrorNoActivatedBarcode=لا يوجد نوع الباركود تفعيلها
 ErrUnzipFails=فشل بفك٪ الصورة مع ZipArchive
 ErrNoZipEngine=No engine to zip/unzip %s file in this PHP
 ErrorFileMustBeADolibarrPackage=يجب أن يكون الملف٪ s حزمة البريدي Dolibarr
-ErrorModuleFileRequired=You must select a Dolibarr module package file
+ErrorModuleFileRequired=You must select a BERP3 module package file
 ErrorPhpCurlNotInstalled=وPHP الضفيرة لم يتم تثبيت، وهذا أمر ضروري لاجراء محادثات مع باي بال
 ErrorFailedToAddToMailmanList=فشل لاضافة التسجيلة٪ s إلى قائمة ميلمان٪ الصورة أو قاعدة SPIP
 ErrorFailedToRemoveToMailmanList=فشل لإزالة سجل٪ s إلى قائمة ميلمان٪ الصورة أو قاعدة SPIP
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=The date must be lower than today
 ErrorDateMustBeInFuture=The date must be greater than today
 ErrorPaymentModeDefinedToWithoutSetup=وتم تشكيل لطريقة الدفع لكتابة٪ الصورة ولكن لم يكتمل الإعداد من وحدة الفاتورة لتحديد المعلومات لاظهار هذه طريقة الدفع.
 ErrorPHPNeedModule=خطأ، يجب PHP الخاص بتثبيت <b>وحدة٪ s إلى</b> استخدام هذه الميزة.
-ErrorOpenIDSetupNotComplete=يمكنك إعداد Dolibarr ملف التكوين للسماح بالمصادقة رض، ولكن لم يتم تعريف URL الخدمة رض إلى المستمر٪ الصورة
+ErrorOpenIDSetupNotComplete=يمكنك إعداد BERP3 ملف التكوين للسماح بالمصادقة رض، ولكن لم يتم تعريف URL الخدمة رض إلى المستمر٪ الصورة
 ErrorWarehouseMustDiffers=يجب المصدر والهدف يختلف المستودعات
 ErrorBadFormat=شكل سيئة!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Error, this member is not yet linked to any third party. Link member to an existing third party or create a new third party before creating subscription with invoice.

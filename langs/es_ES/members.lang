@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - members
+# BERP3 language file - Source file is en_US - members
 MembersArea=Área miembros
 MemberCard=Ficha miembro
 SubscriptionCard=Ficha cotización
@@ -101,7 +101,7 @@ ConfirmValidateMember=¿Está seguro de querer validar a este miembro?
 FollowingLinksArePublic=Los siguientes enlaces son páginas abiertas que no están protegidas por ningún permiso de Dolibarr. No son páginas con formato, se proporcionan como ejemplo para mostrar cómo enumerar la base de datos de miembros.
 PublicMemberList=Listado público de miembros
 BlankSubscriptionForm=Formulario público de auto-inscripción
-BlankSubscriptionFormDesc=Dolibarr puede proporcionar una página pública para que los visitantes externos puedan solicitar afiliarse. Si se encuentra activo un módulo de pago en línea, se propondrá automáticamente un formulario de pago.
+BlankSubscriptionFormDesc=BERP3 puede proporcionar una página pública para que los visitantes externos puedan solicitar afiliarse. Si se encuentra activo un módulo de pago en línea, se propondrá automáticamente un formulario de pago.
 EnablePublicSubscriptionForm=Activar el formulario público de auto-inscripción
 ForceMemberType=Forzar el tipo de miembro
 ExportDataset_member_1=Miembros y afiliaciones

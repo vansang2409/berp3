@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Tên công ty %s đã tồn tại. Chọn tên khác khác.
 ErrorSetACountryFirst=Thiết lập quốc gia trước
 SelectThirdParty=Chọn một bên thứ ba

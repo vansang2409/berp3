@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Sense errors, és vàlid
@@ -49,7 +49,7 @@ ErrorFoundBadEmailInFile=S'ha trobat una sintaxi incorrecta del correu electròn
 ErrorUserCannotBeDelete=No es pot eliminar l'usuari. És possible que estigui relacionat amb entitats de Dolibarr.
 ErrorFieldsRequired=Alguns camps obligatoris s'han deixat en blanc.
 ErrorSubjectIsRequired=L'assumpte del correu electrònic és obligatori
-ErrorFailedToCreateDir=Error en la creació d'una carpeta. Comprovi que l'usuari del servidor web té drets d'escriptura en les carpetes de documents de Dolibarr. Si el paràmetre <b>safe_mode</b> està actiu en aquest PHP, Comproveu que els fitxers php dolibarr pertanyen a l'usuari del servidor web.
+ErrorFailedToCreateDir=Error en la creació d'una carpeta. Comprovi que l'usuari del servidor web té drets d'escriptura en les carpetes de documents de Dolibarr. Si el paràmetre <b>safe_mode</b> està actiu en aquest PHP, Comproveu que els fitxers php berp3 pertanyen a l'usuari del servidor web.
 ErrorNoMailDefinedForThisUser=E-Mail no definit per a aquest usuari
 ErrorSetupOfEmailsNotComplete=La configuració dels correus electrònics no s'ha completat
 ErrorFeatureNeedJavascript=Aquesta funcionalitat requereix javascript actiu per funcionar. Modifiqueu en configuració->entorn.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s es troba assignat a altre tercer
 ErrorFailedToSendPassword=Error en l'enviament de la contrasenya
 ErrorFailedToLoadRSSFile=Error en la recuperació del flux RSS. Afegiu la constant MAIN_SIMPLEXMLLOAD_DEBUG si el missatge d'error no és molt explícit.
 ErrorForbidden=Accés denegat. <br> Intentes accedir a una pàgina, àrea o funcionalitat d'un mòdul amb desactivat o sense estar en una sessió autenticada o que no se li permet al seu usuari.
-ErrorForbidden2=Els permisos per a aquest usuari poden ser assignats per l'administrador Dolibarr mitjançant el menú  %s-> %s.
-ErrorForbidden3=Dolibarr no sembla funcionar en una sessió autentificada. Consulteu la documentació d'instal lació de Dolibarr per saber com administrar les autenticacions (htacces, mod_auth o altre ...).
+ErrorForbidden2=Els permisos per a aquest usuari poden ser assignats per l'administrador BERP3 mitjançant el menú  %s-> %s.
+ErrorForbidden3=BERP3 no sembla funcionar en una sessió autentificada. Consulteu la documentació d'instal lació de BERP3 per saber com administrar les autenticacions (htacces, mod_auth o altre ...).
 ErrorNoImagickReadimage=No s'ha trobat la classe Imagick en aquesta instal lació PHP. La previsualització no està disponible. Els administradors poden deshabilitar aquesta pestanya en el menú Configuració - Entorn.
 ErrorRecordAlreadyExists=Registre ja existent
 ErrorLabelAlreadyExists=Aquesta etiqueta ja existeix
@@ -132,7 +132,7 @@ ErrorWebServerUserHasNotPermission=El compte d'execució del servidor web <b>%s<
 ErrorNoActivatedBarcode=No hi ha activat cap tipus de codi de barres
 ErrUnzipFails=No s'ha pogut descomprimir el fitxer %s amb ZipArchive
 ErrNoZipEngine=No engine to zip/unzip %s file in this PHP
-ErrorFileMustBeADolibarrPackage=El fitxer %s ha de ser un paquet Dolibarr en format zip
+ErrorFileMustBeADolibarrPackage=El fitxer %s ha de ser un paquet BERP3 en format zip
 ErrorModuleFileRequired=Ha de seleccionar un arxiu del paquet del mòdul de Dolibarr
 ErrorPhpCurlNotInstalled=L'extensió PHP CURL no es troba instal·lada, és indispensable per dialogar amb Paypal.
 ErrorFailedToAddToMailmanList=S'ha produït un error en intentar afegir un registre a la llista Mailman o base de dades SPIP
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=La data ha de ser inferior a la d’avui
 ErrorDateMustBeInFuture=La data ha de ser major que avui
 ErrorPaymentModeDefinedToWithoutSetup=S'ha definit una forma de pagament al tipus %s, però la configuració del mòdul de factures no s'ha completat per a definir la informació que es mostrarà per a aquesta forma de pagament.
 ErrorPHPNeedModule=Error, el vostre PHP ha de tenir instal·lat el mòdul <b>%s</b> per a utilitzar aquesta funció.
-ErrorOpenIDSetupNotComplete=Heu configurat el fitxer de configuració Dolibarr per a permetre l'autenticació OpenID, però l'URL del servei OpenID no es defineix en constant %s
+ErrorOpenIDSetupNotComplete=Heu configurat el fitxer de configuració BERP3 per a permetre l'autenticació OpenID, però l'URL del servei OpenID no es defineix en constant %s
 ErrorWarehouseMustDiffers=El magatzem d'origen i destí han de ser diferents
 ErrorBadFormat=El format és incorrecte!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Error, aquest soci encara no s'ha enllaçat a un tercer. Enllaça el soci a un tercer existent o crea un tercer nou abans de crear la quota amb factura.

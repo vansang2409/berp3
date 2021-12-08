@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=To narzędzie może być używane tylko przez doświadczonych użytkowników lub programistów. Udostępnia narzędzia do tworzenia lub edycji własnego modułu. Dokumentacja alternatywnego rozwoju ręcznego <a href="%s" target="_blank"> jest tutaj </a>.
 EnterNameOfModuleDesc=Wpisz nazwę bez spacji modułu/aplikacji do utworzenia. Używaj wielkich liter do oddzielania słów (na przykład: MyModule, EcommerceForShop, SyncWithMySystem, ...)
 EnterNameOfObjectDesc=Wpisz nazwę (bez spacji) obiektu do utworzenia. Używaj wielkich liter do oddzielania słów (na przykład: MyObject, Student, Teacher, ...). Zostanie wygenerowany plik klasy CRUD, ale także plik API, strony do wyświetlenia/dodania/edycji/usunięcia obiektu oraz pliki SQL.

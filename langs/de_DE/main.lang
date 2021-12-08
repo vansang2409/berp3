@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -94,7 +94,7 @@ RecordDeleted=Eintrag gelöscht
 RecordGenerated=Eintrag erzeugt
 LevelOfFeature=Funktionslevel
 NotDefined=Nicht definiert
-DolibarrInHttpAuthenticationSoPasswordUseless=Der Dolibarr Authentifizierungsmodus wurde mit dem Wert <b>%s</b> in der Konfigurationsdatei <b>conf.php.</b> definiert\n<br> Das bedeutet, dass die Dolibarr Passwörter extern gespeichert werden, und somit Änderungen dieser Felder unwirksam sein können.
+DolibarrInHttpAuthenticationSoPasswordUseless=Der BERP3 Authentifizierungsmodus wurde mit dem Wert <b>%s</b> in der Konfigurationsdatei <b>conf.php.</b> definiert\n<br> Das bedeutet, dass die BERP3 Passwörter extern gespeichert werden, und somit Änderungen dieser Felder unwirksam sein können.
 Administrator=Administrator
 Undefined=Nicht definiert
 PasswordForgotten=Passwort vergessen?
@@ -905,7 +905,7 @@ ViewFlatList=Listenansicht zeigen
 ViewAccountList=Hauptbuch anzeigen
 ViewSubAccountList=Unterkonten-Buch anzeigen
 RemoveString=Entfernen Sie die Zeichenfolge '%s'
-SomeTranslationAreUncomplete=Einige Sprachen sind nur teilweise übersetzt oder enthalten Fehler. Wenn Sie dies feststellen, können Sie die Übersetzungen unter <a href="https://www.transifex.com/dolibarr-association/dolibarr/translate/#de_DE/" target="_blank">https://www.transifex.com/dolibarr-association/dolibarr/translate/#de_DE/</a> verbessern bzw. ergänzen.
+SomeTranslationAreUncomplete=Einige Sprachen sind nur teilweise übersetzt oder enthalten Fehler. Wenn Sie dies feststellen, können Sie die Übersetzungen unter <a href="https://bonaerp.com/#de_DE/" target="_blank">https://bonaerp.com/#de_DE/</a> verbessern bzw. ergänzen.
 DirectDownloadLink=Öffentlicher Download-Link
 PublicDownloadLinkDesc=Zum Herunterladen der Datei ist nur der Link erforderlich
 DirectDownloadInternalLink=Privater Download-Link

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Yrityksen nimi %s on jo olemassa. Valitse toinen.
 ErrorSetACountryFirst=Aseta ensin maa
 SelectThirdParty=Valitse sidosryhmä
@@ -406,8 +406,8 @@ ProspectsByStatus=Prospektit tilan mukaan
 NoParentCompany=Ei mitään
 ExportCardToFormat=Vienti kortin muodossa
 ContactNotLinkedToCompany=Yhteystiedot eivät liity minkään kolmannen osapuolen
-DolibarrLogin=Dolibarr sisäänkirjoittautumissivuksesi
-NoDolibarrAccess=Ei Dolibarr pääsyä
+DolibarrLogin=BERP3 sisäänkirjoittautumissivuksesi
+NoDolibarrAccess=Ei BERP3 pääsyä
 ExportDataset_company_1=Sidosryhmät (yritykset, yhteisöt, ihmiset) ja niiden ominaisuudet
 ExportDataset_company_2=Contacts and their properties
 ImportDataset_company_1=Third-parties and their properties

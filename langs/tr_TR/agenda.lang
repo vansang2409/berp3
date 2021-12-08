@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - agenda
+# BERP3 language file - Source file is en_US - agenda
 IdAgenda=Etkinlik kimliği
 Actions=Etkinlikler
 Agenda=Gündem
@@ -32,8 +32,8 @@ ViewPerUser=Kullanıcıya göre görünüm
 ViewPerType=Türe göre görünüm
 AutoActions= Otomatik doldurma
 AgendaAutoActionDesc= Dolibarr'ın Gündem içerisinde otomatik olarak oluşturmasını istediğiniz etkinlikleri burada tanımlayabilirsiniz. Eğer hiçbiri seçilmemişse, kayıtlara sadece manuel eylemler dahil edilecek ve Gündem içerisinde gösterilecektir. Nesneler üzerinde gerçekleştirilen ticari faaliyetlerin (doğrulama, durum değişikliği) otomatik takibi kaydedilmeyecektir.
-AgendaSetupOtherDesc= Bu sayfa, Dolibarr etkinliklerinizi harici bir takvim (Thunderbird, Google Calendar vb...) için dışa aktarmanızı sağlayan seçenekleri sunar
-AgendaExtSitesDesc=Bu sayfa, takvimlerin dış kaynaklarını girmenize ve onları Dolibarr gündemi içerisinde görüntülemenize imkan sağlar.
+AgendaSetupOtherDesc= Bu sayfa, BERP3 etkinliklerinizi harici bir takvim (Thunderbird, Google Calendar vb...) için dışa aktarmanızı sağlayan seçenekleri sunar
+AgendaExtSitesDesc=Bu sayfa, takvimlerin dış kaynaklarını girmenize ve onları BERP3 gündemi içerisinde görüntülemenize imkan sağlar.
 ActionsEvents=Dolibarr'ın gündem içerisinde otomatik olarak bir eylem oluşturacağı etkinlikler
 EventRemindersByEmailNotEnabled=%s modül kurulumunda e-posta yoluyla etkinik hatırlatıcı etkinleştirilmedi.
 ##### Agenda event labels #####

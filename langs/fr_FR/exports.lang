@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - exports
+# BERP3 language file - Source file is en_US - exports
 ExportsArea=Exports
 ImportArea=Espace import
 NewExport=Nouvel export
@@ -59,7 +59,7 @@ ChooseFormatOfFileToImport=Choisissez le format de fichier à importer en cliqua
 ChooseFileToImport=Ajoutez le fichier à importer puis cliquez sur le pictogramme %s pour le sélectionner comme fichier source d'import…
 SourceFileFormat=Format du fichier source
 FieldsInSourceFile=Champs dans le fichier source
-FieldsInTargetDatabase=Champs cibles dans la base Dolibarr (gras=obligatoire)
+FieldsInTargetDatabase=Champs cibles dans la base BERP3 (gras=obligatoire)
 Field=Champ
 NoFields=Aucun champ
 MoveField=Déplacer champ colonne numéro %s

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - bills
+# BERP3 language file - Source file is en_US - bills
 BillsLate=Verspätete Zahlungen
 DisabledBecauseNotErasable=Deaktiviert, weil es nicht gelöscht werden kann
 InvoiceStandardDesc=Dies ist die übliche Rechnungsart.

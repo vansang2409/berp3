@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=Área Recursos Humanos
 UserCard=Tarjeta de usuario
 GroupCard=Tarjeta de grupo
@@ -44,7 +44,7 @@ ListOfGroupsForUser=Lista de grupos de este usuario
 LinkToCompanyContact=Enlace a un tercero / contacto
 LinkedToDolibarrMember=Enlace al miembro
 LinkedToDolibarrUser=Enlace al usuario de Dolibarr
-LinkedToDolibarrThirdParty=Enlace a Dolibarr terceros
+LinkedToDolibarrThirdParty=Enlace a BERP3 terceros
 CreateDolibarrLogin=Crear un usuario
 LoginAccountDisableInDolibarr=Cuenta desactivada en Dolibarr.
 UsePersonalValue=Usar valor personal
@@ -60,8 +60,8 @@ EventUserModified=El usuario %s modificado
 UserDisabled=El usuario %s inhabilitado
 UserEnabled=El usuario %s está activado
 UserDeleted=El usuario %s eliminado
-ConfirmCreateContact=¿Estás seguro de que quieres crear una cuenta Dolibarr para este contacto?
-ConfirmCreateLogin=¿Estás seguro de que quieres crear una cuenta de Dolibarr para este miembro?
+ConfirmCreateContact=¿Estás seguro de que quieres crear una cuenta BERP3 para este contacto?
+ConfirmCreateLogin=¿Estás seguro de que quieres crear una cuenta de BERP3 para este miembro?
 ConfirmCreateThirdParty=¿Estás seguro de que quieres crear un tercero para este miembro?
 LoginToCreate=Ingresar para crear
 NameToCreate=Nombre del tercero para crear

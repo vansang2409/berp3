@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - stripe
+# BERP3 language file - Source file is en_US - stripe
 StripeSetup=Stripe モジュールのセットアップ
 StripeDesc=<a href="http://www.stripe.com" target="_blank"> Stripe </a>を介して、クレジット/セビットカードでの支払い用のStripeオンライン支払いページを顧客に提供します。これは、顧客が臨時の支払いを行えるようにするため、または特定のDolibarrオブジェクト(請求書、注文など)に関連する支払いのために使用できる。
 StripeOrCBDoPayment=クレジットカードまたはStripeで支払う

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Το όνομα τις εταιρίας %s υπάρχει ήδη. Επιλέξτε κάποιο άλλο.
 ErrorSetACountryFirst=Πρώτα πρέπει να οριστεί η χώρα
 SelectThirdParty=Επιλέξτε ένα Πελ./Προμ.

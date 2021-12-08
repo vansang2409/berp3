@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - products
+# BERP3 language file - Source file is en_US - products
 ProductRef=Produkt čj.
 ProductLabel=Štítek produktu
 ProductLabelTranslated=Přeložený štítek produktu
@@ -298,7 +298,7 @@ MinSupplierPrice=Minimální nákupní cena
 MinCustomerPrice=Minimální prodejní cena
 NoDynamicPrice=No dynamic price
 DynamicPriceConfiguration=Dynamická konfigurace cen
-DynamicPriceDesc=Můžete definovat matematické vzorce pro výpočet cen zákazníků nebo prodejců. Takové vzorce mohou používat všechny matematické operátory, některé konstanty a proměnné. Zde můžete definovat proměnné, které chcete použít. Pokud proměnná potřebuje automatickou aktualizaci, můžete definovat externí URL, aby Dolibarr umožnil automatickou aktualizaci hodnoty.
+DynamicPriceDesc=Můžete definovat matematické vzorce pro výpočet cen zákazníků nebo prodejců. Takové vzorce mohou používat všechny matematické operátory, některé konstanty a proměnné. Zde můžete definovat proměnné, které chcete použít. Pokud proměnná potřebuje automatickou aktualizaci, můžete definovat externí URL, aby BERP3 umožnil automatickou aktualizaci hodnoty.
 AddVariable=Přidat proměnnou
 AddUpdater=Přidat Update
 GlobalVariables=Globální proměnné

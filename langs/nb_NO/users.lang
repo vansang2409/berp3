@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=HRM-område
 UserCard=Brukerkort
 GroupCard=Gruppekort
@@ -62,8 +62,8 @@ ListOfUsersInGroup=Oversikt over brukere i denne gruppen
 ListOfGroupsForUser=Oversikt over grupper for denne brukeren
 LinkToCompanyContact=Lenke til tredjepart / kontakt
 LinkedToDolibarrMember=Lenke til medlem
-LinkedToDolibarrUser=Lenke til Dolibarr brukeren
-LinkedToDolibarrThirdParty=Lenke til Dolibarr tredjepart
+LinkedToDolibarrUser=Lenke til BERP3 brukeren
+LinkedToDolibarrThirdParty=Lenke til BERP3 tredjepart
 CreateDolibarrLogin=Lag Dolibarrkonto
 CreateDolibarrThirdParty=Lag en tredjepart
 LoginAccountDisableInDolibarr=Kontoen er deaktivert i Dolibarr.

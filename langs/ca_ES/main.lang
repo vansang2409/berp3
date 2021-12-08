@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,7 +61,7 @@ ErrorNoRequestInError=Cap petició en error
 ErrorServiceUnavailableTryLater=Servei no disponible actualment. Torni a intentar més tard.
 ErrorDuplicateField=Duplicat en un camp únic
 ErrorSomeErrorWereFoundRollbackIsDone=S'han trobat alguns errors. Modificacions desfetes.
-ErrorConfigParameterNotDefined=El paràmetre <b>%s</b> no està definit en el fitxer de configuració Dolibarr <b>conf.php</b>.
+ErrorConfigParameterNotDefined=El paràmetre <b>%s</b> no està definit en el fitxer de configuració BERP3 <b>conf.php</b>.
 ErrorCantLoadUserFromDolibarrDatabase=Impossible trobar l'usuari <b>%s</b> a la base de dades Dolibarr.
 ErrorNoVATRateDefinedForSellerCountry=Error, cap tipus d'IVA definit per al país '%s'.
 ErrorNoSocialContributionForSellerCountry=Error, cap tipus d'impost varis definit per al país '%s'.
@@ -94,7 +94,7 @@ RecordDeleted=Registre eliminat
 RecordGenerated=Registre generat
 LevelOfFeature=Nivell de funcions
 NotDefined=No definida
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr està configurat en mode d'autenticació <b>%s</b> al fitxer de configuració <b>conf.php</b>.<br> Això significa que la contrasenya de la base de dades és externa a Dolibarr, de manera que canviar aquest camp pot no tenir cap efecte.
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 està configurat en mode d'autenticació <b>%s</b> al fitxer de configuració <b>conf.php</b>.<br> Això significa que la contrasenya de la base de dades és externa a Dolibarr, de manera que canviar aquest camp pot no tenir cap efecte.
 Administrator=Administrador
 Undefined=No definit
 PasswordForgotten=Heu oblidat la contrasenya?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Tipus de gestor de base de dades
 RequestLastAccessInError=Últimes peticions d'accés a la base de dades amb error
 ReturnCodeLastAccessInError=Retorna el codi per les últimes peticions d'accés a la base de dades amb error
 InformationLastAccessInError=Informació de les últimes peticions d'accés a la base de dades amb error
-DolibarrHasDetectedError=Dolibarr ha trobat un error tècnic
+DolibarrHasDetectedError=BERP3 ha trobat un error tècnic
 YouCanSetOptionDolibarrMainProdToZero=Podeu llegir el fitxer de registre o establir l'opció $dolibarr_main_prod a '0' al fitxer de configuració per a obtenir més informació.
 InformationToHelpDiagnose=Aquesta informació pot ser útil per a fer diagnòstics (podeu configurar l'opció $dolibarr_main_prod a '1' per a eliminar aquestes notificacions)
 MoreInformation=Més informació
@@ -121,7 +121,7 @@ TechnicalID=ID Tècnic
 LineID=ID de línia
 NotePublic=Nota (pública)
 NotePrivate=Nota (privada)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr està configurat per limitar la precisió dels preus unitaris a <b>%s </b> decimals.
+PrecisionUnitIsLimitedToXDecimals=BERP3 està configurat per limitar la precisió dels preus unitaris a <b>%s </b> decimals.
 DoTest=Provar
 ToFilter=Filtre
 NoFilter=Sense filtre
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Socis
 MenuAgendaGoogle=Agenda Google
 MenuTaxesAndSpecialExpenses=Impostos | Despeses especials
-ThisLimitIsDefinedInSetup=Límit Dolibarr (Menú inici-configuració-seguretat): %s Kb, límit PHP: %s Kb
-ThisLimitIsDefinedInSetupAt=Límit Dolibarr (menú %s): %s Kb, límit PHP (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=Límit BERP3 (Menú inici-configuració-seguretat): %s Kb, límit PHP: %s Kb
+ThisLimitIsDefinedInSetupAt=Límit BERP3 (menú %s): %s Kb, límit PHP (Param %s): %s Kb
 NoFileFound=No s'ha penjat cap document
 CurrentUserLanguage=Idioma actual
 CurrentTheme=Tema actual
@@ -905,7 +905,7 @@ ViewFlatList=Veure llista plana
 ViewAccountList=Veure llibre major
 ViewSubAccountList=Vegeu el subcompte del llibre major
 RemoveString=Eliminar cadena '%s'
-SomeTranslationAreUncomplete=Alguns idiomes poden estar traduïts parcialment o poden tenir errors. Si detectes algun, pots corregir els fitxers d'idiomes registrant-te a <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a>.
+SomeTranslationAreUncomplete=Alguns idiomes poden estar traduïts parcialment o poden tenir errors. Si detectes algun, pots corregir els fitxers d'idiomes registrant-te a <a href="https://bonaerp.com/" target="_blank">berp3</a>.
 DirectDownloadLink=Enllaç de descàrrega públic
 PublicDownloadLinkDesc=Per baixar el fitxer només es necessita l'enllaç
 DirectDownloadInternalLink=Enllaç de descàrrega privat

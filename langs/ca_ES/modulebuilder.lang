@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=Aquesta eina només l’han d’utilitzar usuaris o desenvolupadors experimentats. Proporciona utilitats per a construir o editar el vostre propi mòdul. La documentació per al desenvolupament manual alternatiu <a href="%s" target="_blank"> és aquí </a>.
 EnterNameOfModuleDesc=Introduïu el nom del mòdul/aplicació per a crear sense espais. Utilitzeu majúscules per separar paraules (per exemple: MyModule, EcommerceForShop, SyncWithMySystem ...)
 EnterNameOfObjectDesc=Introduïu el nom de l'objecte que voleu crear sense espais. Utilitzeu majúscules per separar paraules (Per exemple: MyObject, Estudiant, Professor...). El fitxer de classes CRUD, però també el fitxer API, pàgines per a llistar/afegir/editar/eliminar objectes i els fitxers SQL es generaran.

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - website
+# BERP3 language file - Source file is en_US - website
 Shortname=Kod
 WebsiteSetupDesc=Skapa här de webbplatser du vill använda. Gå sedan till menyn webbplatser för att redigera dem.
 DeleteWebsite=Ta bort webbplats
@@ -45,7 +45,7 @@ ViewWebsiteInProduction=Visa webbplats med hjälp av hemadresser
 SetHereVirtualHost=<u>Use with Apache/NGinx/...</u><br>Create on your web server (Apache, Nginx, ...) a dedicated Virtual Host with PHP enabled and a Root directory on<br><strong>%s</strong>
 ExampleToUseInApacheVirtualHostConfig=Exempel att använda i Apache virtuell värdinställning:
 YouCanAlsoTestWithPHPS= <u> Använd med PHP-inbäddad server </u> <br> På utvecklingsmiljö kan du föredra att testa webbplatsen med PHP-inbäddad webbserver (PHP 5.5 krävs) genom att köra <br> <strong> php -S 0.0.0.0:8080 -t %s </strong>
-YouCanAlsoDeployToAnotherWHP= <u> Kör din webbplats med en annan Dolibarr Hosting-leverantör </u> <br> Om du inte har en webbserver som Apache eller NGinx tillgänglig på internet kan du exportera och importera din webbplats till en annan Dolibarr-instans som tillhandahålls av en annan Dolibarr-värdleverantör integration med webbplatsmodulen. Du hittar en lista med några Dolibarr-värdleverantörer på <a href="https://saas.dolibarr.org" target="_blank"> https://saas.dolibarr.org </a>
+YouCanAlsoDeployToAnotherWHP= <u> Kör din webbplats med en annan BERP3 Hosting-leverantör </u> <br> Om du inte har en webbserver som Apache eller NGinx tillgänglig på internet kan du exportera och importera din webbplats till en annan Dolibarr-instans som tillhandahålls av en annan Dolibarr-värdleverantör integration med webbplatsmodulen. Du hittar en lista med några Dolibarr-värdleverantörer på <a href="https://bonaerp.com" target="_blank"> https://bonaerp.com </a>
 CheckVirtualHostPerms=Check also that the virtual host user (for example www-data) has <strong>%s</strong> permissions on files into<br><strong>%s</strong>
 ReadPerm=Läsa
 WritePerm=Skriva

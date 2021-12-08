@@ -1,7 +1,7 @@
 --- Translation How to --- 
 
-An instruction guide for translating Dolibarr in a new language is
-available on Dolibarr wiki:
+An instruction guide for translating BERP3 in a new language is
+available on BERP3 wiki:
 
 English: https://bonaerp.com/index.php/Translator_documentation
 French:  https://bonaerp.com/index.php/Documentation_traducteur

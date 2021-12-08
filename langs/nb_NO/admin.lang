@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - admin
+# BERP3 language file - Source file is en_US - admin
 Foundation=Organisasjon
 Version=Versjon
 Publisher=Utgiver
@@ -48,7 +48,7 @@ ClientCharset=Klien karaktersett
 ClientSortingCharset=Klientsammenstilling
 WarningModuleNotActive=Modulen <b>%s</b> må være slått på
 WarningOnlyPermissionOfActivatedModules=Bare tillateleser for aktiverte moduler vises her. Du kan slå på andre moduler ved å gå inn på Oppsett - Moduler.
-DolibarrSetup=Dolibarr oppsett
+DolibarrSetup=BERP3 oppsett
 InternalUser=Intern bruker
 ExternalUser=Ekstern bruker
 InternalUsers=Interne brukere
@@ -68,7 +68,7 @@ PHPSetup=PHP-oppsett
 OSSetup=OS setup
 SecurityFilesDesc=Her defineres valg relatert til sikkerhet ved opplasting av filer.
 ErrorModuleRequirePHPVersion=Feil: Denne modulen krever PHP versjon %s eller høyere
-ErrorModuleRequireDolibarrVersion=Feil: Denne modulen krever Dolibarr versjon %s eller høyere
+ErrorModuleRequireDolibarrVersion=Feil: Denne modulen krever BERP3 versjon %s eller høyere
 ErrorDecimalLargerThanAreForbidden=Feil: Presisjon over <b>%s</b> støttes ikke.
 DictionarySetup=Oppsett av ordliste
 Dictionary=Ordlister
@@ -158,7 +158,7 @@ SystemInfo=Systeminformasjon
 SystemToolsArea=Område for systemverktøy
 SystemToolsAreaDesc=Dette området viser administrasjonsfunksjoner. Bruk menyen til å velge ønsket funksjon.
 Purge=Utrenskning
-PurgeAreaDesc=Denne siden lar deg slette alle filer som er generert eller lagret av Dolibarr (midlertidige filer eller alle filer i katalogen <b> %s </b>). Bruk av denne funksjonen er normalt ikke nødvendig. Den leveres som en løsning for brukere hvis Dolibarr er vert for en leverandør som ikke tilbyr tillatelser for å slette filer generert av webserveren.
+PurgeAreaDesc=Denne siden lar deg slette alle filer som er generert eller lagret av BERP3 (midlertidige filer eller alle filer i katalogen <b> %s </b>). Bruk av denne funksjonen er normalt ikke nødvendig. Den leveres som en løsning for brukere hvis BERP3 er vert for en leverandør som ikke tilbyr tillatelser for å slette filer generert av webserveren.
 PurgeDeleteLogFile=Slett loggfiler, inkludert <b>%s</b> definert for Syslog-modulen (ingen risiko for å miste data)
 PurgeDeleteTemporaryFiles=Slett alle logg- og midlertidige filer (ingen risiko for å miste data). Parameteren kan være 'tempfilesold', 'logfiles' eller begge 'tempfilesold + logfiles'. Merk: Sletting av midlertidige filer gjøres bare hvis temp-katalogen ble opprettet for mer enn 24 timer siden.
 PurgeDeleteTemporaryFilesShort=Slett loggfiler og midlertidige filer
@@ -221,16 +221,16 @@ DOLISTOREdescriptionLong=I stedet for å slå på <a href="https://www.dolistore
 NewModule=Ny modul
 FreeModule=Gratis
 CompatibleUpTo=Kompatibel med versjon %s
-NotCompatible=Denne modulenser ikke ut til å være kompatibel med Dolibarr %s (Min %s - Max %s).
-CompatibleAfterUpdate=Denne modulen krever en oppdatering av Dolibarr %s (Min %s - Max %s).
+NotCompatible=Denne modulenser ikke ut til å være kompatibel med BERP3 %s (Min %s - Max %s).
+CompatibleAfterUpdate=Denne modulen krever en oppdatering av BERP3 %s (Min %s - Max %s).
 SeeInMarkerPlace=Se på Markedsplass
 SeeSetupOfModule=Se oppsett av modul %s
 SetOptionTo=Set option <b>%s</b> to %s
 Updated=Oppdatert
 AchatTelechargement=Kjøp/Last ned
 GoModuleSetupArea=For å distribuere/installere en ny modul, gå til området for Moduloppsett på <a href="%s">%s</a>.
-DoliStoreDesc=DoliStore, den offisielle markedsplassen for eksterne moduler til Dolibarr ERP/CRM 
-DoliPartnersDesc=Liste over selskaper som tilbyr spesialutviklede moduler eller funksjoner. <br> Merk: Siden Dolibarr er et program med åpen kildekode, bør <i> alle </i> med erfaring i PHP-programmering kunne utvikle en modul.
+DoliStoreDesc=DoliStore, den offisielle markedsplassen for eksterne moduler til BERP3 ERP/CRM 
+DoliPartnersDesc=Liste over selskaper som tilbyr spesialutviklede moduler eller funksjoner. <br> Merk: Siden BERP3 er et program med åpen kildekode, bør <i> alle </i> med erfaring i PHP-programmering kunne utvikle en modul.
 WebSiteDesc=Eksterne nettsteder for flere tilleggs- (ikke-kjerne) moduler ...
 DevelopYourModuleDesc=Noen løsninger for å utvikle din egen modul...
 URL=URL
@@ -255,10 +255,10 @@ ProtectAndEncryptPdfFilesDesc=Beskyttelse av et PDF-dokument gjør det tilgjenge
 Feature=Funksjon
 DolibarrLicense=Lisens
 Developpers=Utviklere/bidragsytere
-OfficialWebSite=Dolibarr offisiell nettside
+OfficialWebSite=BERP3 offisiell nettside
 OfficialWebSiteLocal=Lokal webside(%s).
-OfficialWiki=Dolibarr dokumentasjon/Wiki
-OfficialDemo=Dolibarr online demonstrasjon
+OfficialWiki=BERP3 dokumentasjon/Wiki
+OfficialDemo=BERP3 online demonstrasjon
 OfficialMarketPlace=Offisiell markedsplass for eksterne moduler/tillegg
 OfficialWebHostingService=Referert webhosting service (Cloud hosting)
 ReferencedPreferredPartners=Foretrukne Partnere
@@ -266,8 +266,8 @@ OtherResources=Andre ressurser
 ExternalResources=Eksterne ressurser
 SocialNetworks=Sosiale nettverk
 SocialNetworkId=Sosialt nettverk ID
-ForDocumentationSeeWiki=For bruker- eller utviklerdokumentasjon (Doc, FAQs ...), <br> ta en titt på Dolibarr Wiki: <br> <a href="%s" target="_blank"><b>%s</b></a>
-ForAnswersSeeForum=For andre spørsmål/hjelp, kan du bruke Dolibarr forumet: <br> <a href="%s" target="_blank"><b>%s</b></a>
+ForDocumentationSeeWiki=For bruker- eller utviklerdokumentasjon (Doc, FAQs ...), <br> ta en titt på BERP3 Wiki: <br> <a href="%s" target="_blank"><b>%s</b></a>
+ForAnswersSeeForum=For andre spørsmål/hjelp, kan du bruke BERP3 forumet: <br> <a href="%s" target="_blank"><b>%s</b></a>
 HelpCenterDesc1=Her er noen ressurser for å få hjelp og støtte med Dolibarr.
 HelpCenterDesc2=Noen av disse ressursene er bare tilgjengelige på <b> engelsk </b>.
 CurrentMenuHandler=Gjeldende menyen behandler
@@ -315,8 +315,8 @@ UserEmail=Bruker-epost
 CompanyEmail=Firma epost
 FeatureNotAvailableOnLinux=Funksjonen er ikke tilgjengelig på Unix/Linux. Test sendmail lokalt.
 FixOnTransifex=Rett oversettelsen på prosjektets online oversettelsesplattform
-SubmitTranslation=Hvis oversettelsen for dette språket ikke er fullført, eller du finner feil, kan du rette opp dette ved å redigere filer i katalogen <b>langs/%s</b> og sende inn endringen til www.transifex.com/dolibarr-association/dolibarr/
-SubmitTranslationENUS=Hvis oversettelsen for dette språket ikke er komplett eller du finner feil, kan du rette dette ved å redigere filer i katalogen <b> langs/%s </b> og sende endrede filer til dolibarr.org/forum, eller, hvis du er en utvikler, med en PR på github .com / Dolibarr / dolibarr
+SubmitTranslation=Hvis oversettelsen for dette språket ikke er fullført, eller du finner feil, kan du rette opp dette ved å redigere filer i katalogen <b>langs/%s</b> og sende inn endringen til https://bonaerp.com
+SubmitTranslationENUS=Hvis oversettelsen for dette språket ikke er komplett eller du finner feil, kan du rette dette ved å redigere filer i katalogen <b> langs/%s </b> og sende endrede filer til bonaerp.com/forum, eller, hvis du er en utvikler, med en PR på github .com / BERP3 / dolibarr
 ModuleSetup=Modulinnstillinger
 ModulesSetup=Moduler/Applikasjonsoppsett
 ModuleFamilyBase=System
@@ -344,10 +344,10 @@ UnpackPackageInDolibarrRoot=Pakk ut filene til serverkatalogen til Dolibarr: <b>
 UnpackPackageInModulesRoot=For å distribuere/installere en ekstern modul, pakk ut de pakkede filene i serverkatalogen dedikert til eksterne moduler: <br> <b> %s </b>
 SetupIsReadyForUse=Moduldistribusjon er ferdig. Du må imidlertid aktivere og sette opp modulen i programmet ved å gå til siden: <a href="%s">%s</a>.
 NotExistsDirect=Alternativ rotkatalog er ikke definert til en eksisterende katalog.<br>
-InfDirAlt=Fra versjon 3 er det mulig å definere en alternativ rotkatalog. Dette gjør det mulig å lagre plug-ins og egendefinerte maler.<br>Opprett en katalog i roten til Dolibarr (f.eks min katalog).<br>
-InfDirExample=<br> Deklarer det i filen <strong>conf.php</strong> <br> $ dolibarr_main_url_root_alt='/custom' <br>$dolibarr_main_document_root_alt='/path/of/dolibarr/htdocs/tilpasset' <br> Hvis disse linjene er kommentert med "#", er det bare å fjerne tegnet "#" for å aktivere linjene.
+InfDirAlt=Fra versjon 3 er det mulig å definere en alternativ rotkatalog. Dette gjør det mulig å lagre plug-ins og egendefinerte maler.<br>Opprett en katalog i roten til BERP3 (f.eks min katalog).<br>
+InfDirExample=<br> Deklarer det i filen <strong>conf.php</strong> <br> $ dolibarr_main_url_root_alt='/custom' <br>$dolibarr_main_document_root_alt='/path/of/berp3/htdocs/tilpasset' <br> Hvis disse linjene er kommentert med "#", er det bare å fjerne tegnet "#" for å aktivere linjene.
 YouCanSubmitFile=Du kan laste opp .zip-filen til modulpakken herfra:
-CurrentVersion=Gjeldende versjon av Dolibarr 
+CurrentVersion=Gjeldende versjon av BERP3 
 CallUpdatePage=Gå til siden som oppdaterer databasestrukturen og dataene: %s.
 LastStableVersion=Siste stabile versjon
 LastActivationDate=Siste aktiveringsdato
@@ -594,7 +594,7 @@ Module210Desc=PostNuke integrasjon
 Module240Name=Dataeksport
 Module240Desc=Verktøy for å eksportere Dolibarr-data (med assistanse)
 Module250Name=Dataimport
-Module250Desc=Verktøy for å importere data til Dolibarr (med assistanse)
+Module250Desc=Verktøy for å importere data til BERP3 (med assistanse)
 Module310Name=Medlemmer
 Module310Desc=Behandling av organisasjonsmedlemmer
 Module320Name=RSS nyhetsstrøm
@@ -643,7 +643,7 @@ Module2600Desc=Aktiver Dolibarrs SOAP-server for å kunne bruke API-tjenester
 Module2610Name=API/Web tjenester (REST server)
 Module2610Desc=Aktiver Dolibarrs REST-server for å kunne bruke API-tjenester
 Module2660Name=Kall webtjenester (SOAP klient)
-Module2660Desc=Aktiver Dolibarr webtjenesteklient (Kan brukes til å sende data/forespørsler til eksterne servere. Bare innkjøpsordre støttes for øyeblikket)
+Module2660Desc=Aktiver BERP3 webtjenesteklient (Kan brukes til å sende data/forespørsler til eksterne servere. Bare innkjøpsordre støttes for øyeblikket)
 Module2700Name=Gravatar
 Module2700Desc=Bruk elektronisk Gravatar-tjeneste (www.gravatar.com) for å vise bilde av brukere/medlemmer (funnet med e-post). Du trenger internett-tilgang
 Module2800Desc=FTP-klient
@@ -1214,11 +1214,11 @@ SecurityEventsPurged=Sikkerhetshendelser renset
 LogEventDesc=Aktiver logging av bestemte sikkerhetshendelser. Administratorer når loggen via menyen <b> %s - %s </b>. Advarsel, denne funksjonen kan generere store mengder data i databasen.
 AreaForAdminOnly=Oppsettparametere kan bare angis av <b> administratorbrukere </b>.
 SystemInfoDesc=Systeminformasjon er diverse teknisk informasjon som kun vises i skrivebeskyttet modus, og som kun er synlig for administratorer.
-SystemAreaForAdminOnly=Dette området er kun tilgjengelig for administratorbrukere. Dolibarr brukerrettigheter kan ikke endre denne begrensningen.
+SystemAreaForAdminOnly=Dette området er kun tilgjengelig for administratorbrukere. BERP3 brukerrettigheter kan ikke endre denne begrensningen.
 CompanyFundationDesc=Rediger informasjonen til din bedrift/organisasjon. Klikk på "%s" -knappen nederst på siden når du er ferdig.
 AccountantDesc=Hvis du har en ekstern revisor/regnskapsholder, kan du endre dennes informasjon her.
 AccountantFileNumber=Regnskapsførerkode
-DisplayDesc=Parametre som påvirker utseende og oppførsel av Dolibarr kan endres her.
+DisplayDesc=Parametre som påvirker utseende og oppførsel av BERP3 kan endres her.
 AvailableModules=Tilgjengelige apper/moduler
 ToActivateModule=Gå til innstillinger for å aktivere moduler.
 SessionTimeOut=Tidsgrense for økter
@@ -1277,7 +1277,7 @@ MeteoPercentageMod=Prosentmodus
 MeteoPercentageModEnabled=Prosentmodus aktivert
 MeteoUseMod=Klikk for å bruke %s
 TestLoginToAPI=Test-innlogging til API
-ProxyDesc=Noen funksjoner i Dolibarr krever internettilgang. Her definerer du parametrene for nettverksforbindelse, for eksempel tilgang via en proxy-server om nødvendig.
+ProxyDesc=Noen funksjoner i BERP3 krever internettilgang. Her definerer du parametrene for nettverksforbindelse, for eksempel tilgang via en proxy-server om nødvendig.
 ExternalAccess=Ekstern/Internett-tilgang
 MAIN_PROXY_USE=Bruk en proxy-server (ellers direkte tilgang til internett)
 MAIN_PROXY_HOST=Proxy-server: Navn/adresse
@@ -1306,7 +1306,7 @@ AlphaNumOnlyLowerCharsAndNoSpace=kun alfanumeriske tegn og små bokstaver uten m
 SendmailOptionNotComplete=Advarsel, på noen Linux-systemer, for å sende fra din e-post, må oppsettet av sendmail-kjøring inneholde opsjon -ba (parameter mail.force_extra_parameters i din php.ini fil). Hvis noen mottakere aldri mottar e-post, kan du prøve å redigere PHP parameter med mail.force_extra_parameters = -ba).
 PathToDocuments=Bane til dokumenter
 PathDirectory=Mappe
-SendmailOptionMayHurtBuggedMTA=Funksjonen for å sende e-post ved hjelp av metoden "PHP mail direct" vil generere en melding som kanskje ikke blir oversatt riktig av enkelte e-postservere. Resultatet er at enkelte e-poster ikke kan leses av personer som mottar e-post gjennom disse serverene (f.eks Orange i Frankrike). Dette er ikke et Dolibarr-problem i, heller ikke PHP, men på mottakende e-postserver. Du kan imidlertid legge til alternativet MAIN_FIX_FOR_BUGGED_MTA til 1 i oppsettet, heller enn å endre Dolibarr for å unngå dette. Du kan oppleve problemer med andre servere som følger SMTP-standarden nøyaktig. Den andre løsningen (anbefales) er å bruke metoden "SMTP socket library" som ikke har noen ulemper.
+SendmailOptionMayHurtBuggedMTA=Funksjonen for å sende e-post ved hjelp av metoden "PHP mail direct" vil generere en melding som kanskje ikke blir oversatt riktig av enkelte e-postservere. Resultatet er at enkelte e-poster ikke kan leses av personer som mottar e-post gjennom disse serverene (f.eks Orange i Frankrike). Dette er ikke et Dolibarr-problem i, heller ikke PHP, men på mottakende e-postserver. Du kan imidlertid legge til alternativet MAIN_FIX_FOR_BUGGED_MTA til 1 i oppsettet, heller enn å endre BERP3 for å unngå dette. Du kan oppleve problemer med andre servere som følger SMTP-standarden nøyaktig. Den andre løsningen (anbefales) er å bruke metoden "SMTP socket library" som ikke har noen ulemper.
 TranslationSetup=Oppsett av oversettelse
 TranslationKeySearch=Søk etter oversettelsesnøkkel eller -streng
 TranslationOverwriteKey=Overskriv oversettelse
@@ -1462,11 +1462,11 @@ LDAPMembersTypesSynchro=Medlemstyper
 LDAPSynchronization=LDAP synkronisering
 LDAPFunctionsNotAvailableOnPHP=LDAP funksjoner er ikke tilgjengelig i din PHP
 LDAPToDolibarr=LDAP -> Dolibarr
-DolibarrToLDAP=Dolibarr -> LDAP
+DolibarrToLDAP=BERP3 -> LDAP
 LDAPNamingAttribute=Nøkkel i LDAP
-LDAPSynchronizeUsers=Synkroniser Dolibarr brukere med LDAP
-LDAPSynchronizeGroups=Synkroniser Dolibarr grupper med LDAP
-LDAPSynchronizeContacts=Synkroniser Dolibarr kontakter med LDAP
+LDAPSynchronizeUsers=Synkroniser BERP3 brukere med LDAP
+LDAPSynchronizeGroups=Synkroniser BERP3 grupper med LDAP
+LDAPSynchronizeContacts=Synkroniser BERP3 kontakter med LDAP
 LDAPSynchronizeMembers=Organiser medlemmer i LDAP
 LDAPSynchronizeMembersTypes=Organisering av bedriftens medlemstyper i LDAP
 LDAPPrimaryServer=Primærserver
@@ -1487,7 +1487,7 @@ LDAPGroupDnExample=Komplett DN (eks: ou=grupper,dc=eksempel,dc=com)
 LDAPServerExample=Server-adresse (eks: localhost, 192.168.0.2, ldaps://ldap.example.com/)
 LDAPServerDnExample=Komplett DN (eks: dc=eksempel,dc=com)
 LDAPDnSynchroActive=Synkronisering av brukere og grupper
-LDAPDnSynchroActiveExample=LDAP til Dolibarr eller Dolibarr til LDAP synkronisering
+LDAPDnSynchroActiveExample=LDAP til BERP3 eller BERP3 til LDAP synkronisering
 LDAPDnContactActive=Synkronisering av kontakter
 LDAPDnContactActiveExample=Aktivert/Ikke aktivert synkronisering
 LDAPDnMemberActive=Synkronisering av medlemmer
@@ -1500,7 +1500,7 @@ LDAPMemberDn=Dolibarr-medlemmers DN
 LDAPMemberDnExample=Komplett DN (eks: ou=medlemmer,dc=eksempel,dc=com)
 LDAPMemberObjectClassList=Liste over objectClass
 LDAPMemberObjectClassListExample=Liste over objectClass som definerer postattributter (eks: topp, inetOrgPerson eller topp, bruker for ActiveDirectory)
-LDAPMemberTypeDn=Dolibarr medlemmer DN-typer 
+LDAPMemberTypeDn=BERP3 medlemmer DN-typer 
 LDAPMemberTypepDnExample=Komplett DN (eks: ou=medlemstyper, dc=eksempel, dc=com)
 LDAPMemberTypeObjectClassList=Liste over objectClass
 LDAPMemberTypeObjectClassListExample=Liste over objectClass som definerer postattributter (eks: topp, groupOfUniqueNames)
@@ -1526,7 +1526,7 @@ LDAPBindOK=Tilkobling/Autentisering til LDAP server var vellykket (Server=%s, Po
 LDAPBindKO=Tilkobling/Autentisering til LDAP server feilet (Server=%s, Port=%s, Admin=%s, Passord=%s)
 LDAPSetupForVersion3=LDAP server konfigurert for versjon 3
 LDAPSetupForVersion2=LDAP server konfigurert for versjon 2
-LDAPDolibarrMapping=Dolibarr Mapping
+LDAPDolibarrMapping=BERP3 Mapping
 LDAPLdapMapping=LDAP Mapping
 LDAPFieldLoginUnix=Login (unix)
 LDAPFieldLoginExample=Eksempel: uid
@@ -1585,10 +1585,10 @@ LDAPFieldHomedirectoryExample=Eksempel: hjemmekatalog
 LDAPFieldHomedirectoryprefix=Hjemmekatalog prefiks
 LDAPSetupNotComplete=Oppsett av LDAP er ikke komplett (andre faner)
 LDAPNoUserOrPasswordProvidedAccessIsReadOnly=Ingen administrator eller passord. LDAP-tilgang vil være anonym og i skrivebeskyttet modus.
-LDAPDescContact=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet i Dolibarr kontakter.
-LDAPDescUsers=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet på Dolibarr brukere.
-LDAPDescGroups=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet på Dolibarr grupper.
-LDAPDescMembers=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet på Dolibarr medlemmer.
+LDAPDescContact=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet i BERP3 kontakter.
+LDAPDescUsers=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet på BERP3 brukere.
+LDAPDescGroups=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet på BERP3 grupper.
+LDAPDescMembers=Denne siden lar deg definere LDAP-attributtnavn i LDAP-tre for alle data funnet på BERP3 medlemmer.
 LDAPDescMembersTypes=Denne siden lar deg definere LDAP attributtnavn i LDAP-tre for hver data som finnes på Dolibarr-medlemstyper.
 LDAPDescValues=Eksempelverdier er designet for <b>OpenLDAP</b> med følgende lastede skjemaer: <b> core.schema, cosine.schema, inetorgperson.schema</b>). Hvis du bruker disse verdiene og OpenLDAP, endre LDAP configfilen <b> slapd.conf </b> for å ha alle disse skjemaene lastet.
 ForANonAnonymousAccess=For autentisert tilgang (f.eks skrivetilgang)
@@ -1647,7 +1647,7 @@ SyslogOutput=Loggoppføringer
 SyslogFacility=Fasilitet
 SyslogLevel=Nivå
 SyslogFilename=Filnavn og bane
-YouCanUseDOL_DATA_ROOT=Du kan bruke DOL_DATA_ROOT / dolibarr.log som loggfil i Dolibarr "dokumenter"-mappen. Du kan angi en annen bane for å lagre denne filen.
+YouCanUseDOL_DATA_ROOT=Du kan bruke DOL_DATA_ROOT / dolibarr.log som loggfil i BERP3 "dokumenter"-mappen. Du kan angi en annen bane for å lagre denne filen.
 ErrorUnknownSyslogConstant=Konstant %s er ikke en kjent syslog-konstant
 OnlyWindowsLOG_USER=I Windows støttes bare LOG_USER-funksjonen
 CompressSyslogs=Komprimering og sikkerhetskopiering av feilsøkingsloggfiler (generert av modulen Log for debug)
@@ -1808,12 +1808,12 @@ BookmarkDesc=Med denne modulen kan du administrere bokmerker. Du kan også legge
 NbOfBoomarkToShow=Maksimalt antall bokmerker som skal vises i venstre meny
 ##### WebServices #####
 WebServicesSetup=Oppsett av webservices-modul
-WebServicesDesc=Ved å aktivere denne modulen, vil Dolibarr bli en webtjeneste-server og tilby diverse web-tjenester.
+WebServicesDesc=Ved å aktivere denne modulen, vil BERP3 bli en webtjeneste-server og tilby diverse web-tjenester.
 WSDLCanBeDownloadedHere=WSDL beskrivelsefil for tilbydte tjenester kan lastes ned her
-EndPointIs=SOAP-klienter må sende sine forespørsler til Dolibarr endepunkt tilgjengelig på URL
+EndPointIs=SOAP-klienter må sende sine forespørsler til BERP3 endepunkt tilgjengelig på URL
 ##### API ####
 ApiSetup=Oppsett av API-modul
-ApiDesc=Ved å  aktivere denne modulen, blir Dolibarr en REST-server for diverse web-tjenester
+ApiDesc=Ved å  aktivere denne modulen, blir BERP3 en REST-server for diverse web-tjenester
 ApiProductionMode=Aktiver produksjonsmodus (dette vil aktivere bruk av en buffer for tjenestehåndtering)
 ApiExporerIs=Du kan utforske og teste API'ene på URL
 OnlyActiveElementsAreExposed=Bare elementer fra aktiverte moduler er vist
@@ -1950,8 +1950,8 @@ ByDefaultInList=Vis som standard for liste
 YouUseLastStableVersion=Du bruker siste stabile versjon
 TitleExampleForMajorRelease=Eksempel på melding du kan bruke for å annonsere større oppdateringer (du kan bruke denne på dine websider)
 TitleExampleForMaintenanceRelease=Eksempel på beskjed du kan bruke for å annonsere denne vedlikeholdsversjonen (du kan bruke den på dine websider)
-ExampleOfNewsMessageForMajorRelease=Dolibarr ERP & CRM %s er tilgjengelig. Versjon %s er en stor utgivelse med en rekke nye funksjoner for både brukere og utviklere. Du kan laste ned fra nedlastingsområdet https://www.dolibarr.org portal (underkatalog Stabile versjoner). Du kan lese <a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog">Endringslogg</a> for en komplett liste over endringer.
-ExampleOfNewsMessageForMaintenanceRelease=Dolibarr ERP & CRM %s er tilgjengelig. Versjon %s er en vedlikeholdsversjon, så den inneholder bare feilrettinger. Vi anbefaler alle brukere å oppgradere til denne versjonen. En vedlikeholdsløsning introduserer ikke nye funksjoner eller endringer i databasen. Du kan laste den ned fra nedlastingsområdet på https://www.dolibarr.org portal (underkatalog Stable versions). Du kan lese <a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog"> ChangeLog </a> for fullstendig liste over endringer.
+ExampleOfNewsMessageForMajorRelease=BERP3 ERP & CRM %s er tilgjengelig. Versjon %s er en stor utgivelse med en rekke nye funksjoner for både brukere og utviklere. Du kan laste ned fra nedlastingsområdet https://www.bonaerp.com portal (underkatalog Stabile versjoner). Du kan lese <a href="https://bonaerp.com">Endringslogg</a> for en komplett liste over endringer.
+ExampleOfNewsMessageForMaintenanceRelease=BERP3 ERP & CRM %s er tilgjengelig. Versjon %s er en vedlikeholdsversjon, så den inneholder bare feilrettinger. Vi anbefaler alle brukere å oppgradere til denne versjonen. En vedlikeholdsløsning introduserer ikke nye funksjoner eller endringer i databasen. Du kan laste den ned fra nedlastingsområdet på https://www.bonaerp.com portal (underkatalog Stable versions). Du kan lese <a href="https://bonaerp.com"> ChangeLog </a> for fullstendig liste over endringer.
 MultiPriceRuleDesc=Når alternativet "Flere prisnivået pr. vare/tjeneste" er på, kan du definere forskjellige priser (ett pr prisnivå) for hvert produkt. For å spare tid, kan du lage en regel som gir pris for hvert nivå autokalkulert i forhold til prisen på første nivå, slik at du bare legger inn en pris for hvert produkt. Denne siden er laget for å spare tid og kan være nyttig hvis prisene for hvert nivå står i forhold til første nivå. Du kan ignorere denne siden i de fleste tilfeller.
 ModelModulesProduct=Maler for produkt-dokumenter
 WarehouseModelModules=Maler for varehusdokumenter
@@ -2107,7 +2107,7 @@ RESTRICT_ON_IP=Tillat tilgang til noen verts-IP (jokertegn er ikke tillatt, bruk
 IPListExample=127.0.0.1 192.168.0.2 [::1]
 BaseOnSabeDavVersion=Basert på biblioteket SabreDAV versjon
 NotAPublicIp=Ikke en offentlig IP
-MakeAnonymousPing=Utfør et anonymt Ping '+1' til Dolibarr foundation-serveren (utført en gang bare etter installasjon) for å la stiftelsen telle antall Dolibarr-installasjoner.
+MakeAnonymousPing=Utfør et anonymt Ping '+1' til BERP3 foundation-serveren (utført en gang bare etter installasjon) for å la stiftelsen telle antall Dolibarr-installasjoner.
 FeatureNotAvailableWithReceptionModule=Funksjonen er ikke tilgjengelig når modulen Mottak er aktivert
 EmailTemplate=Mal for e-post
 EMailsWillHaveMessageID=E-postmeldinger vil være merket 'Referanser' som samsvarer med denne syntaksen

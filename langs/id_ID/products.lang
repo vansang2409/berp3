@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - products
+# BERP3 language file - Source file is en_US - products
 ProductRef=Item ref.
 ProductLabel=Item label
 ProductLabelTranslated=Label produk yang diterjemahkan
@@ -298,7 +298,7 @@ MinSupplierPrice=Harga beli minimal
 MinCustomerPrice=Harga jual minimum
 NoDynamicPrice=No dynamic price
 DynamicPriceConfiguration=Konfigurasi harga dinamis
-DynamicPriceDesc=Anda dapat menentukan rumus matematika untuk menghitung harga Pelanggan atau Vendor. Rumus tersebut dapat menggunakan semua operator matematika, beberapa konstanta dan variabel. Anda dapat mendefinisikan di sini variabel yang ingin Anda gunakan. Jika variabel memerlukan pembaruan otomatis, Anda dapat menentukan URL eksternal untuk memungkinkan Dolibarr memperbarui nilai secara otomatis.
+DynamicPriceDesc=Anda dapat menentukan rumus matematika untuk menghitung harga Pelanggan atau Vendor. Rumus tersebut dapat menggunakan semua operator matematika, beberapa konstanta dan variabel. Anda dapat mendefinisikan di sini variabel yang ingin Anda gunakan. Jika variabel memerlukan pembaruan otomatis, Anda dapat menentukan URL eksternal untuk memungkinkan BERP3 memperbarui nilai secara otomatis.
 AddVariable=Tambahkan Variabel
 AddUpdater=Tambahkan Updater
 GlobalVariables=Variabel global
@@ -377,7 +377,7 @@ NewProductAttribute=Atribut baru
 NewProductAttributeValue=Nilai atribut baru
 ErrorCreatingProductAttributeValue=Ada kesalahan saat membuat nilai atribut. Bisa jadi karena sudah ada nilai yang ada dengan referensi itu
 ProductCombinationGeneratorWarning=Jika Anda melanjutkan, sebelum membuat varian baru, semua yang sebelumnya akan DIHAPUS. Yang sudah ada akan diperbarui dengan nilai-nilai baru
-TooMuchCombinationsWarning=Menghasilkan banyak varian dapat menyebabkan CPU tinggi, penggunaan memori dan Dolibarr tidak dapat membuatnya. Mengaktifkan opsi "%s" dapat membantu mengurangi penggunaan memori.
+TooMuchCombinationsWarning=Menghasilkan banyak varian dapat menyebabkan CPU tinggi, penggunaan memori dan BERP3 tidak dapat membuatnya. Mengaktifkan opsi "%s" dapat membantu mengurangi penggunaan memori.
 DoNotRemovePreviousCombinations=Jangan hapus varian sebelumnya
 UsePercentageVariations=Gunakan variasi persentase
 PercentageVariation=Variasi persentase

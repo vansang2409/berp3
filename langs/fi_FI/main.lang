@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,8 +61,8 @@ ErrorNoRequestInError=N: o pyynnöstä virhe
 ErrorServiceUnavailableTryLater=Palvelu ei käytettävissä tällä hetkellä. Yritä myöhemmin uudestaan.
 ErrorDuplicateField=Päällekkäinen arvo ainutlaatuisella alalla
 ErrorSomeErrorWereFoundRollbackIsDone=Virhe havaittu. Muutetut tiedot palautettu alkuperäisiksi
-ErrorConfigParameterNotDefined=Parameter <b>%s</b> is not defined in the Dolibarr config file <b>conf.php</b>.
-ErrorCantLoadUserFromDolibarrDatabase=Ei onnistunut löytämään <b>käyttäjän %s</b> Dolibarr tietokantaan.
+ErrorConfigParameterNotDefined=Parameter <b>%s</b> is not defined in the BERP3 config file <b>conf.php</b>.
+ErrorCantLoadUserFromDolibarrDatabase=Ei onnistunut löytämään <b>käyttäjän %s</b> BERP3 tietokantaan.
 ErrorNoVATRateDefinedForSellerCountry=Virhe ei alv määritellään maa ' %s'.
 ErrorNoSocialContributionForSellerCountry=Virhe, ei sosiaalisia tai fiskaalisia verotyyppejä, jotka on määritelty maata "%s" varten.
 ErrorFailedToSaveFile=Virhe, ei tallenna tiedosto.
@@ -112,7 +112,7 @@ DatabaseTypeManager=Database Type Manager
 RequestLastAccessInError=Virhe viimeisimmästä tietokannan pääsypyynnöstä
 ReturnCodeLastAccessInError=Viimeisin tietokannan käyttöoikeuspyyntövirheen palautekoodi
 InformationLastAccessInError=Tiedot viimeisimmän tietokannan käyttöoikeuspyynnön virheestä
-DolibarrHasDetectedError=Dolibarr on havaittu tekninen virhe
+DolibarrHasDetectedError=BERP3 on havaittu tekninen virhe
 YouCanSetOptionDolibarrMainProdToZero=Voit lukea lokitiedoston tai asettaa asetustiedoston $ dolibarr_main_prod arvoksi '0' saadaksesi lisätietoja.
 InformationToHelpDiagnose=Nämä tiedot voivat olla hyödyllisiä vianmääritystarkoituksiin (voit asettaa vaihtoehdon $ dolibarr_main_prod arvoon '1' poistamaan tällaiset ilmoitukset)
 MoreInformation=Lisätietoa
@@ -121,7 +121,7 @@ TechnicalID=Tekninen tunniste
 LineID=Line ID
 NotePublic=Huomautus (julkinen)
 NotePrivate=Huomautus (yksityinen)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr oli asetettu raja tarkkuus <b>yksikköhinnat %s</b> desimaalit.
+PrecisionUnitIsLimitedToXDecimals=BERP3 oli asetettu raja tarkkuus <b>yksikköhinnat %s</b> desimaalit.
 DoTest=Testi
 ToFilter=Suodata
 NoFilter=Ei suodatinta
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Jäsenet
 MenuAgendaGoogle=Google agenda
 MenuTaxesAndSpecialExpenses=Taxes | Special expenses
-ThisLimitIsDefinedInSetup=Dolibarr raja (Valikko koti-setup-turvallisuus): %s Kb, PHP raja: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=BERP3 raja (Valikko koti-setup-turvallisuus): %s Kb, PHP raja: %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=No documents uploaded
 CurrentUserLanguage=Nykyinen kieli
 CurrentTheme=Nykyinen teema
@@ -905,7 +905,7 @@ ViewFlatList=View flat list
 ViewAccountList=View ledger
 ViewSubAccountList=View subaccount ledger
 RemoveString=Remove string '%s'
-SomeTranslationAreUncomplete=Some of the languages offered may be only partially translated or may contain errors. Please help to correct your language by registering at <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> to add your improvements.
+SomeTranslationAreUncomplete=Some of the languages offered may be only partially translated or may contain errors. Please help to correct your language by registering at <a href="https://bonaerp.com/" target="_blank">berp3</a> to add your improvements.
 DirectDownloadLink=Public download link
 PublicDownloadLinkDesc=Only the link is required to download the file
 DirectDownloadInternalLink=Private download link

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -94,7 +94,7 @@ RecordDeleted=Rekam dihapus
 RecordGenerated=Rekaman dihasilkan
 LevelOfFeature=Tingkat fitur
 NotDefined=Tidak terdefinisikan
-DolibarrInHttpAuthenticationSoPasswordUseless=Mode autentikasi Dolibarr diatur ke<b>%s</b>dalam file konfigurasi<b>conf.php </b>. <br> Ini berarti bahwa basis data kata sandi di luar Dolibarr, jadi mengubah bidang ini mungkin tidak berpengaruh.
+DolibarrInHttpAuthenticationSoPasswordUseless=Mode autentikasi BERP3 diatur ke<b>%s</b>dalam file konfigurasi<b>conf.php </b>. <br> Ini berarti bahwa basis data kata sandi di luar Dolibarr, jadi mengubah bidang ini mungkin tidak berpengaruh.
 Administrator=Administrator
 Undefined=Tidak terdefinisi
 PasswordForgotten=Lupa kata sandi?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Manajer tipe basis data
 RequestLastAccessInError=Kesalahan permintaan akses basis data terbaru
 ReturnCodeLastAccessInError=Kembalikan kode untuk kesalahan permintaan akses database terbaru
 InformationLastAccessInError=Informasi untuk kesalahan permintaan akses database terbaru
-DolibarrHasDetectedError=Dolibarr telah mendeteksi kesalahan teknis
+DolibarrHasDetectedError=BERP3 telah mendeteksi kesalahan teknis
 YouCanSetOptionDolibarrMainProdToZero=Anda dapat membaca file log atau mengatur opsi $ dolibarr_main_prod ke '0' di file konfigurasi Anda untuk mendapatkan informasi lebih lanjut.
 InformationToHelpDiagnose=Informasi ini dapat berguna untuk tujuan diagnostik (Anda dapat mengatur opsi $ dolibarr_main_prod ke '1' untuk menghapus pemberitahuan tersebut)
 MoreInformation=Informasi lebih lanjut
@@ -121,7 +121,7 @@ TechnicalID=ID Teknis
 LineID=ID baris
 NotePublic=Catatan (publik)
 NotePrivate=Catatan (pribadi)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr disiapkan untuk membatasi presisi harga satuan hingga desimal<b>%s </b>.
+PrecisionUnitIsLimitedToXDecimals=BERP3 disiapkan untuk membatasi presisi harga satuan hingga desimal<b>%s </b>.
 DoTest=Uji
 ToFilter=Saring
 NoFilter=Tanpa filter
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Anggota
 MenuAgendaGoogle=Agenda Google
 MenuTaxesAndSpecialExpenses=Pajak | Pengeluaran khusus
-ThisLimitIsDefinedInSetup=Batas Dolibarr (Menu home-setup-security): %s Kb, batas PHP: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=Batas BERP3 (Menu home-setup-security): %s Kb, batas PHP: %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=Tidak ada dokumen yang diunggah
 CurrentUserLanguage=Bahasa saat ini
 CurrentTheme=Tema saat ini
@@ -905,7 +905,7 @@ ViewFlatList=Lihat daftar datar
 ViewAccountList=Lihat buku besar
 ViewSubAccountList=Lihat buku besar sub-akun
 RemoveString=Hapus string '%s'
-SomeTranslationAreUncomplete=Beberapa bahasa yang ditawarkan mungkin hanya diterjemahkan sebagian atau mengandung kesalahan. Tolong bantu untuk memperbaiki bahasa Anda dengan mendaftar di <a href="https://transifex.com/projects/p/dolibarr/" target="_blank"> https://transifex.com/projects/p/dolibarr/</a> untuk menambahkan perbaikan dari Anda.
+SomeTranslationAreUncomplete=Beberapa bahasa yang ditawarkan mungkin hanya diterjemahkan sebagian atau mengandung kesalahan. Tolong bantu untuk memperbaiki bahasa Anda dengan mendaftar di <a href="https://bonaerp.com/" target="_blank"> berp3</a> untuk menambahkan perbaikan dari Anda.
 DirectDownloadLink=Tautan unduhan publik
 PublicDownloadLinkDesc=Hanya tautan yang diperlukan untuk mengunduh file
 DirectDownloadInternalLink=Tautan unduhan pribadi

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - products
+# BERP3 language file - Source file is en_US - products
 ProductRef=Termék ref#.
 ProductLabel=Termék neve
 ProductLabelTranslated=Lefordított termékcímke
@@ -298,7 +298,7 @@ MinSupplierPrice=Minimális vételár
 MinCustomerPrice=Minimális eladási ár
 NoDynamicPrice=No dynamic price
 DynamicPriceConfiguration=Dinamikus árkonfiguráció
-DynamicPriceDesc=Megadhat matematikai képleteket a vevői vagy a szállítói árak kiszámításához. Az ilyen képletek felhasználhatják az összes matematikai operátort, néhány állandót és változót. Itt meghatározhatja azokat a változókat, amelyeket használni kíván. Ha a változónak automatikus frissítésre van szüksége, megadhatja a külső URL-t, hogy a Dolibarr automatikusan frissítse az értéket.
+DynamicPriceDesc=Megadhat matematikai képleteket a vevői vagy a szállítói árak kiszámításához. Az ilyen képletek felhasználhatják az összes matematikai operátort, néhány állandót és változót. Itt meghatározhatja azokat a változókat, amelyeket használni kíván. Ha a változónak automatikus frissítésre van szüksége, megadhatja a külső URL-t, hogy a BERP3 automatikusan frissítse az értéket.
 AddVariable=Változó hozzáadása
 AddUpdater=Frissítő hozzáadása
 GlobalVariables=Globális változók
@@ -377,7 +377,7 @@ NewProductAttribute=Új attribútum
 NewProductAttributeValue=Új attribútumérték
 ErrorCreatingProductAttributeValue=Hiba történt az attribútumérték létrehozása során. Lehetséges, hogy már van egy létező érték ezzel a hivatkozással
 ProductCombinationGeneratorWarning=If you continue, before generating new variants, all previous ones will be DELETED. Already existing ones will be updated with the new values
-TooMuchCombinationsWarning=Túl sok variáció létrehozása nagy processzor terhelést és memória-használatot eredményezhet és a Dolibarr hibára futhat. A "%s" opció bekapcsolásával csökkentheti a túlzott memória foglalást.
+TooMuchCombinationsWarning=Túl sok variáció létrehozása nagy processzor terhelést és memória-használatot eredményezhet és a BERP3 hibára futhat. A "%s" opció bekapcsolásával csökkentheti a túlzott memória foglalást.
 DoNotRemovePreviousCombinations=Ne távolítsa el a korábbi változatokat
 UsePercentageVariations=Százalékos variációk használata
 PercentageVariation=Százalékos variáció

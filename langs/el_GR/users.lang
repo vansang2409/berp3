@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=Περιοχή HRM
 UserCard=Καρτέλα Χρήστη
 GroupCard=Καρτέλα Ομάδας
@@ -62,8 +62,8 @@ ListOfUsersInGroup=List of users in this group
 ListOfGroupsForUser=List of groups for this user
 LinkToCompanyContact=Link to third party / contact
 LinkedToDolibarrMember=Link to member
-LinkedToDolibarrUser=Link to Dolibarr user
-LinkedToDolibarrThirdParty=Link to Dolibarr third party
+LinkedToDolibarrUser=Link to BERP3 user
+LinkedToDolibarrThirdParty=Link to BERP3 third party
 CreateDolibarrLogin=Create a user
 CreateDolibarrThirdParty=Create a third party
 LoginAccountDisableInDolibarr=Account disabled in Dolibarr.
@@ -90,8 +90,8 @@ UserDeleted=User %s removed
 NewGroupCreated=Group %s created
 GroupModified=Ομάδα %s τροποποιημένη
 GroupDeleted=Group %s removed
-ConfirmCreateContact=Είστε σίγουρος ότι θέλετε να δημιουργήσετε καινούριο λογαριασμό Dolibarr γι΄ αυτή την επαφή;
-ConfirmCreateLogin=Είστε σίγουρος ότι θέλετε να δημιουργήσετε καινούριο λογαριασμό Dolibarr γι΄ αυτό το μέλος;
+ConfirmCreateContact=Είστε σίγουρος ότι θέλετε να δημιουργήσετε καινούριο λογαριασμό BERP3 γι΄ αυτή την επαφή;
+ConfirmCreateLogin=Είστε σίγουρος ότι θέλετε να δημιουργήσετε καινούριο λογαριασμό BERP3 γι΄ αυτό το μέλος;
 ConfirmCreateThirdParty=Είστε βέβαιοι ότι θέλετε να δημιουργήσετε ένα τρίτο μέρος για αυτό το μέλος;
 LoginToCreate=Login to create
 NameToCreate=Name of third party to create

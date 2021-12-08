@@ -1,11 +1,11 @@
-# Dolibarr language file - Source file is en_US - help
+# BERP3 language file - Source file is en_US - help
 CommunitySupport=Forum/Wiki desteği
 EMailSupport=E-posta desteği
 RemoteControlSupport=Çevrimiçi gerçek zamanlı/uzaktan destek
 OtherSupport=Diğer destek
 ToSeeListOfAvailableRessources=Mevcut kaynaklarla iletişim kurmak/görmek için:
 HelpCenter=Yardım Merkezi
-DolibarrHelpCenter=Dolibarr Yardım ve Destek Merkezi
+DolibarrHelpCenter=BERP3 Yardım ve Destek Merkezi
 ToGoBackToDolibarr=Aksi takdirde, <a href="%s">Dolibarr'ı kullanmaya devam etmek için buraya tıklayın</a>.
 TypeOfSupport=Destek türü
 TypeSupportCommunauty=Topluluk (ücretsiz)
@@ -19,5 +19,5 @@ TypeHelpDevForm=Yardım + Geliştirme + Eğitim
 BackToHelpCenter=Aksi takdirde, <a href="%s">Yardım Merkezi ana sayfasına geri dönün</a>.
 LinkToGoldMember=Dolibar tarafından diliniz (%s) için önceden belirlenmiş eğitmenlerden birini onların ekran etiketlerine tıklayarak arayabilirsiniz (durum ve maksimum fiyat otomatik olarak güncellenir):
 PossibleLanguages=Desteklenen diller
-SubscribeToFoundation=Dolibarr projesine yardımcı olun, vakfa abone olun
-SeeOfficalSupport=Kendi dilinizde Dolibarr desteği için: <br><b><a href="%s" target="_blank">%s</a></b>
+SubscribeToFoundation=BERP3 projesine yardımcı olun, vakfa abone olun
+SeeOfficalSupport=Kendi dilinizde BERP3 desteği için: <br><b><a href="%s" target="_blank">%s</a></b>

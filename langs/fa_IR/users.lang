@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=بخش مدیریت منابع انسانی HRM
 UserCard=کارت کاربر
 GroupCard=کارت گروه
@@ -37,7 +37,7 @@ SuperAdministratorDesc=administrator  همگانی
 AdministratorDesc=مدیر
 DefaultRights=مجوزهای پیش‌فرض
 DefaultRightsDesc=در این قسمت مجوزهای <u>پیش‌فرض</u> را که به طور خودکار به یک کاربر <u>جدید</u> اعطا می‌شود وارد نمائید. (برای ویرایش مجوز برای کاربرهای جدید، به کارت کاربر مربوطه مراجعه نمائید).
-DolibarrUsers=Dolibarr کاربران
+DolibarrUsers=BERP3 کاربران
 LastName=نام خانوادگی
 FirstName=نام اول
 ListOfGroups=لیست گروهها
@@ -66,7 +66,7 @@ LinkedToDolibarrUser=پیوند به یک کاربر Dolibarr 
 LinkedToDolibarrThirdParty=پیوند به یک شخص‌سوم Dolibarr 
 CreateDolibarrLogin=ساختن یک کاربر
 CreateDolibarrThirdParty=ایجاد یک شخص‌سوم
-LoginAccountDisableInDolibarr=حساب در Dolibarr غیرفعال است
+LoginAccountDisableInDolibarr=حساب در BERP3 غیرفعال است
 UsePersonalValue=استفاده از مقداردهی شخصی
 InternalUser=کاربر داخلی
 ExportDataset_user_1=کاربران و مشخصات آنها
@@ -90,8 +90,8 @@ UserDeleted=کاربر %s پاک کشد
 NewGroupCreated=گروه %s ساخته شد
 GroupModified=گروه %s تغییر یافت
 GroupDeleted=گروه %s حذف شد
-ConfirmCreateContact=آیا مطمئنید می‌خواهید حساب Dolibarr این طرف‌تماس را حذف کنید؟ 
-ConfirmCreateLogin=آیا مطمئن هستید می‌خواهید یک حساب Dolibarr برای این عضو ایجاد کنید؟
+ConfirmCreateContact=آیا مطمئنید می‌خواهید حساب BERP3 این طرف‌تماس را حذف کنید؟ 
+ConfirmCreateLogin=آیا مطمئن هستید می‌خواهید یک حساب BERP3 برای این عضو ایجاد کنید؟
 ConfirmCreateThirdParty=آیا مطمئن هستید می‌خواهید یک «شخص‌سوم» برای این عضو ایجاد کنید؟
 LoginToCreate=شناسۀ‌کاربری برای ایجاد
 NameToCreate=نام شخص‌سوم برای ایجاد

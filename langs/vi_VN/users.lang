@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=Khu vực HRM
 UserCard=Thẻ người dùng
 GroupCard=Thẻ Nhóm
@@ -37,7 +37,7 @@ SuperAdministratorDesc=Quản trị toàn cầu
 AdministratorDesc=Quản trị
 DefaultRights=Quyền mặc định
 DefaultRightsDesc=Xác định ở đây các quyền <u>mặc định</u> được tự động cấp cho người dùng <u>mới</u> (để sửa đổi quyền cho người dùng hiện tại, chuyển đến thẻ người dùng).
-DolibarrUsers=Dolibarr users
+DolibarrUsers=BERP3 users
 LastName=Họ
 FirstName=Họ
 ListOfGroups=Danh sách nhóm
@@ -90,8 +90,8 @@ UserDeleted=Người dùng %s đã bị gỡ bỏ
 NewGroupCreated=Nhóm %s đã được tạo
 GroupModified=Nhóm %s đã được điều chỉnh
 GroupDeleted=Nhóm %s đã bị gỡ bỏ
-ConfirmCreateContact=Bạn có chắc chắn muốn tạo tài khoản Dolibarr cho liên lạc này không?
-ConfirmCreateLogin=Bạn có chắc chắn muốn tạo tài khoản Dolibarr cho thành viên này không?
+ConfirmCreateContact=Bạn có chắc chắn muốn tạo tài khoản BERP3 cho liên lạc này không?
+ConfirmCreateLogin=Bạn có chắc chắn muốn tạo tài khoản BERP3 cho thành viên này không?
 ConfirmCreateThirdParty=Bạn có chắc chắn muốn tạo một bên thứ ba cho thành viên này?
 LoginToCreate=Đăng nhập để tạo
 NameToCreate=Tên của bên thứ ba để tạo

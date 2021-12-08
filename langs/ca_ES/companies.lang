@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=El nom de l'empresa %s ja existeix. Indica un altre.
 ErrorSetACountryFirst=Indica en primer lloc el país
 SelectThirdParty=Seleccionar un tercer

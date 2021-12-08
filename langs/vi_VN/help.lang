@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - help
+# BERP3 language file - Source file is en_US - help
 CommunitySupport=Diễn đàn / hỗ trợ Wiki
 EMailSupport=Email hỗ trợ
 RemoteControlSupport=Hỗ trợ từ xa / thời gian thực trực tuyến
@@ -17,7 +17,7 @@ TypeHelpOnly=Chỉ giúp
 TypeHelpDev=Trợ giúp + Phát triển
 TypeHelpDevForm=Trợ giúp + Phát triển + Đào tạo
 BackToHelpCenter=Nếu không, <a href="%s">hãy quay lại trang chủ của trung tâm trợ giúp</a> .
-LinkToGoldMember=Bạn có thể gọi một trong những giảng viên được Dolibarr chọn trước cho ngôn ngữ của bạn (%s) bằng cách nhấp vào Widget của họ (trạng thái và giá tối đa được tự động cập nhật):
+LinkToGoldMember=Bạn có thể gọi một trong những giảng viên được BERP3 chọn trước cho ngôn ngữ của bạn (%s) bằng cách nhấp vào Widget của họ (trạng thái và giá tối đa được tự động cập nhật):
 PossibleLanguages=Ngôn ngữ được hỗ trợ
 SubscribeToFoundation=Giúp dự án Dolibarr, đăng ký vào sáng lập
-SeeOfficalSupport=Để được hỗ trợ Dolibarr chính thức ngôn ngữ của bạn: <br> <a href="%s" target="_blank"><b>% S</b></a>
+SeeOfficalSupport=Để được hỗ trợ BERP3 chính thức ngôn ngữ của bạn: <br> <a href="%s" target="_blank"><b>% S</b></a>

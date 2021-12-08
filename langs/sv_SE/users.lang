@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=HRM område
 UserCard=Användarkort
 GroupCard=Grupp kort
@@ -37,7 +37,7 @@ SuperAdministratorDesc=Administratör med alla rättigheter
 AdministratorDesc=Administratör
 DefaultRights=Standardbehörigheter
 DefaultRightsDesc=Definiera här <u> standard </u> behörigheter som automatiskt ges till en <u> ny </u> användare (för att ändra behörigheter för befintliga användare, gå till användarkortet).
-DolibarrUsers=Dolibarr användare
+DolibarrUsers=BERP3 användare
 LastName=Efternamn
 FirstName=Förnamn
 ListOfGroups=Lista över grupper
@@ -62,8 +62,8 @@ ListOfUsersInGroup=Lista över användare i denna grupp
 ListOfGroupsForUser=Lista över grupper för denna användare
 LinkToCompanyContact=Länk till tredje part / kontakt
 LinkedToDolibarrMember=Länk till medlem
-LinkedToDolibarrUser=Länk till Dolibarr användare
-LinkedToDolibarrThirdParty=Länk till Dolibarr tredje part
+LinkedToDolibarrUser=Länk till BERP3 användare
+LinkedToDolibarrThirdParty=Länk till BERP3 tredje part
 CreateDolibarrLogin=Skapa en användare
 CreateDolibarrThirdParty=Skapa en tredje part
 LoginAccountDisableInDolibarr=Konto funktionshindrade i Dolibarr.
@@ -72,7 +72,7 @@ InternalUser=Intern användare
 ExportDataset_user_1=Användare och deras egenskaper
 DomainUser=Domän användare %s
 Reactivate=Återaktivera
-CreateInternalUserDesc=I det här formuläret kan du skapa en intern användare i ditt företag / organisation. För att skapa en extern användare (kund, leverantör etc.), använd knappen "Create Dolibarr User" från den tredje partens kontaktkort.
+CreateInternalUserDesc=I det här formuläret kan du skapa en intern användare i ditt företag / organisation. För att skapa en extern användare (kund, leverantör etc.), använd knappen "Create BERP3 User" från den tredje partens kontaktkort.
 InternalExternalDesc=En <b> intern </b>-användare är en användare som ingår i ditt företag / organisation, eller är en partneranvändare utanför din organisation som kan behöva se mer data än data relaterade till sitt företag (tillståndssystemet definierar vad han kan eller kan inte se eller göra). <br> En <b> extern </b> användare är en kund, leverantör eller annan som måste se ENDAST data relaterade till sig själv (Skapa en extern användare för en tredje part kan göras från tredjeparts kontaktposter). <br> <br> I båda fallen måste du bevilja behörighet för de funktioner som användaren behöver.
 PermissionInheritedFromAGroup=Tillstånd beviljas, eftersom ärvt från en av en användares grupp.
 Inherited=Ärvda

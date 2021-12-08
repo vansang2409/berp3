@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=Area HRM
 UserCard=Kartu pengguna
 GroupCard=Kartu grup
@@ -90,8 +90,8 @@ UserDeleted=Pengguna %s dihapus
 NewGroupCreated=Grup %s dibuat
 GroupModified=Grup %s dimodifikasi
 GroupDeleted=Grup %s dihapus
-ConfirmCreateContact=Apakah Anda yakin ingin membuat akun Dolibarr untuk kontak ini?
-ConfirmCreateLogin=Apakah Anda yakin ingin membuat akun Dolibarr untuk anggota ini?
+ConfirmCreateContact=Apakah Anda yakin ingin membuat akun BERP3 untuk kontak ini?
+ConfirmCreateLogin=Apakah Anda yakin ingin membuat akun BERP3 untuk anggota ini?
 ConfirmCreateThirdParty=Apakah Anda yakin ingin membuat pihak ketiga untuk anggota ini?
 LoginToCreate=Login untuk membuat
 NameToCreate=Nama pihak ketiga yang akan dibuat

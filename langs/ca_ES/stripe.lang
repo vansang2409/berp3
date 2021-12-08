@@ -1,6 +1,6 @@
-# Dolibarr language file - Source file is en_US - stripe
+# BERP3 language file - Source file is en_US - stripe
 StripeSetup=Configuració del mòdul Stripe
-StripeDesc=Ofereix als clients una pàgina de pagaments en línia de Stripe per als pagaments amb targetes de crèdit/dèbit mitjançant <a href="http://www.stripe.com" target="_blank">Stripe</a>. Es pot utilitzar per a permetre als clients fer pagaments ad-hoc o per a pagaments relacionats amb un objecte Dolibarr concret (factura, comanda, ...)
+StripeDesc=Ofereix als clients una pàgina de pagaments en línia de Stripe per als pagaments amb targetes de crèdit/dèbit mitjançant <a href="http://www.stripe.com" target="_blank">Stripe</a>. Es pot utilitzar per a permetre als clients fer pagaments ad-hoc o per a pagaments relacionats amb un objecte BERP3 concret (factura, comanda, ...)
 StripeOrCBDoPayment=Pagar amb targeta de crèdit o Stripe
 FollowingUrlAreAvailableToMakePayments=Les següents URL estan disponibles per a permetre a un client fer un cobrament en objectes de Dolibarr
 PaymentForm=Formulari de pagament

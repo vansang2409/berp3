@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Nav kļūda, mēs apstiprinam
@@ -46,10 +46,10 @@ ErrorBadDateFormat=Vērtībai '%s' ir nepareizs datuma formāts
 ErrorWrongDate=Datums nav pareizs
 ErrorFailedToWriteInDir=Neizdevās ierakstīt direktorijā %s
 ErrorFoundBadEmailInFile=Atrasts nepareiza e-pasta sintakse %s līnijām failā (piemērs line %s ar e-pasta = %s)
-ErrorUserCannotBeDelete=Lietotāju nevar izdzēst. Varbūt tas ir saistīts ar Dolibarr vienībām.
+ErrorUserCannotBeDelete=Lietotāju nevar izdzēst. Varbūt tas ir saistīts ar BERP3 vienībām.
 ErrorFieldsRequired=Daži obligāti aizpildāmie lauki ir atstāti tukši.
 ErrorSubjectIsRequired=Nepieciešama e-pasta tēma
-ErrorFailedToCreateDir=Neizdevās izveidot direktoriju. Pārbaudiet, vai Web servera lietotājam ir tiesības rakstīt uz Dolibarr dokumentus direktorijā. Ja parametrs <b>safe_mode</b> ir iespējots uz šo PHP, pārbaudiet, Dolibarr php faili pieder web servera lietotājam (vai grupa).
+ErrorFailedToCreateDir=Neizdevās izveidot direktoriju. Pārbaudiet, vai Web servera lietotājam ir tiesības rakstīt uz BERP3 dokumentus direktorijā. Ja parametrs <b>safe_mode</b> ir iespējots uz šo PHP, pārbaudiet, BERP3 php faili pieder web servera lietotājam (vai grupa).
 ErrorNoMailDefinedForThisUser=Nav definēts e-pasts šim lietotājam
 ErrorSetupOfEmailsNotComplete=E-pastu iestatīšana nav pabeigta
 ErrorFeatureNeedJavascript=Šai funkcijai ir nepieciešams aktivizēt javascript. Mainīt to var iestatījumi - attēlojums.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s piešķirta citai trešajai
 ErrorFailedToSendPassword=Neizdevās nosūtīt paroli
 ErrorFailedToLoadRSSFile=Nespēj iegūt RSS barotni. Centieties, lai pievienotu pastāvīgu MAIN_SIMPLEXMLLOAD_DEBUG ja kļūdu ziņojumi nesniedz pietiekamu informāciju.
 ErrorForbidden=Access denied.<br>You try to access to a page, area or feature of a disabled module or without being in an authenticated session or that is not allowed to your user.
-ErrorForbidden2=Atļaujas šajā lapā var definēt Dolibarr administrators no izvēlnes %s->%s.
-ErrorForbidden3=Šķiet, ka Dolibarr netiek izmantota, izmantojot autentiskums sesiju. Ieskatieties Dolibarr uzstādīšanas dokumentācijas zināt, kā pārvaldīt apstiprinājumi (Htaccess, mod_auth vai citu ...).
+ErrorForbidden2=Atļaujas šajā lapā var definēt BERP3 administrators no izvēlnes %s->%s.
+ErrorForbidden3=Šķiet, ka BERP3 netiek izmantota, izmantojot autentiskums sesiju. Ieskatieties BERP3 uzstādīšanas dokumentācijas zināt, kā pārvaldīt apstiprinājumi (Htaccess, mod_auth vai citu ...).
 ErrorNoImagickReadimage=Klases Imagick nav atrodams šajā PHP. Priekšskatījums nav, var būt pieejamas. Administratori var atspējot šo uzlīmi no izvēlnes Setup - displejs.
 ErrorRecordAlreadyExists=Ieraksts jau eksistē
 ErrorLabelAlreadyExists=Šis nosaukums jau pastāv
@@ -132,8 +132,8 @@ ErrorWebServerUserHasNotPermission=Lietotāja kontam <b>%s</b> kas tiek izmantot
 ErrorNoActivatedBarcode=Nav svītrkodu veids aktivizēts
 ErrUnzipFails=Neizdevās atarhivēt %s izmantojot ZipArchive
 ErrNoZipEngine=Nav dzinēja, lai zip / unzip %s failu šajā PHP
-ErrorFileMustBeADolibarrPackage=Failam %s jābūt Dolibarr zip
-ErrorModuleFileRequired=Jums ir jāizvēlas Dolibarr moduļa pakotnes fails
+ErrorFileMustBeADolibarrPackage=Failam %s jābūt BERP3 zip
+ErrorModuleFileRequired=Jums ir jāizvēlas BERP3 moduļa pakotnes fails
 ErrorPhpCurlNotInstalled=PHP CURL nav uzstādīts, tas ir svarīgi saziņai ar Paypal
 ErrorFailedToAddToMailmanList=Neizdevās pievienot ierakstu %s, lai pastnieks saraksta %s vai SPIP bāze
 ErrorFailedToRemoveToMailmanList=Neizdevās noņemt ierakstu %s, lai pastnieks saraksta %s vai SPIP bāze
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=Datumam jābūt mazākam par šodienu
 ErrorDateMustBeInFuture=Datumam jābūt lielākam nekā šodien
 ErrorPaymentModeDefinedToWithoutSetup=Maksājumu režīms tika noteikts rakstīt %s, bet uzstādīšana moduļa rēķins netika pabeigts, lai noteiktu informāciju, lai parādītu šo maksājumu režīmā.
 ErrorPHPNeedModule=Kļūda, jūsu PHP ir jābūt moduli <b>%s</b> uzstādītas, lai izmantotu šo funkciju.
-ErrorOpenIDSetupNotComplete=Jūs uzstādīšana Dolibarr config failu, lai ļautu OpenID autentifikācijas, bet OpenID pakalpojuma URL nav definēts spēkā salīdzināmajās %s
+ErrorOpenIDSetupNotComplete=Jūs uzstādīšana BERP3 config failu, lai ļautu OpenID autentifikācijas, bet OpenID pakalpojuma URL nav definēts spēkā salīdzināmajās %s
 ErrorWarehouseMustDiffers=Avota un mērķa noliktavas jābūt atšķiras
 ErrorBadFormat=Nepareizs formāts
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Kļūda, šis dalībnieks vēl nav saistīts ar kādu trešo pusi. Saistiet esošās trešās personas biedru vai izveidojiet jaunu trešo pusi, pirms izveidojat abonementu ar rēķinu.

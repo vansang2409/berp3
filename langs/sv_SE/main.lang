@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,8 +61,8 @@ ErrorNoRequestInError=Ingen begäran av misstag
 ErrorServiceUnavailableTryLater=Tjänsten är inte tillgänglig just nu. Försök igen senare.
 ErrorDuplicateField=Dublett-värde i ett unikt fält
 ErrorSomeErrorWereFoundRollbackIsDone=Några fel hittades. Ändringar har rullats tillbaka.
-ErrorConfigParameterNotDefined=Parameter <b> %s </b> definieras inte i Dolibarr config-filen <b> conf.php </b>.
-ErrorCantLoadUserFromDolibarrDatabase=Det gick inte att hitta användare <b>%s</b> i Dolibarr databas.
+ErrorConfigParameterNotDefined=Parameter <b> %s </b> definieras inte i BERP3 config-filen <b> conf.php </b>.
+ErrorCantLoadUserFromDolibarrDatabase=Det gick inte att hitta användare <b>%s</b> i BERP3 databas.
 ErrorNoVATRateDefinedForSellerCountry=Fel, ingen moms har definierats för landet '%s'.
 ErrorNoSocialContributionForSellerCountry=Fel, ingen social / skatteskatt typ definierad för land "%s".
 ErrorFailedToSaveFile=Fel, kunde inte spara filen.
@@ -112,7 +112,7 @@ DatabaseTypeManager=Database Type Manager
 RequestLastAccessInError=Senaste databasåtkomstförfrågan fel
 ReturnCodeLastAccessInError=Returkod för senaste databasåtkomstbegäran
 InformationLastAccessInError=Information för senaste databasåtkomstbegäran
-DolibarrHasDetectedError=Dolibarr har upptäckt ett tekniskt fel
+DolibarrHasDetectedError=BERP3 har upptäckt ett tekniskt fel
 YouCanSetOptionDolibarrMainProdToZero=Du kan läsa loggfilen eller ange alternativ $ dolibarr_main_prod till '0' i din config-fil för att få mer information.
 InformationToHelpDiagnose=Denna information kan vara användbar för diagnostiska ändamål (du kan ange alternativ $ dolibarr_main_prod till '1' för att ta bort sådana meddelanden)
 MoreInformation=Mer information
@@ -121,7 +121,7 @@ TechnicalID=Tekniskt ID
 LineID=Linje-ID
 NotePublic=Anteckning (offentlig)
 NotePrivate=Anteckning (privat)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr har ställts in för att ange enhetspriser med <b>%s</b> decimaler.
+PrecisionUnitIsLimitedToXDecimals=BERP3 har ställts in för att ange enhetspriser med <b>%s</b> decimaler.
 DoTest=Test
 ToFilter=Filter
 NoFilter=Inget filter
@@ -729,7 +729,7 @@ MenuAWStats=AWStats
 MenuMembers=Medlemmar
 MenuAgendaGoogle=Google dagordning
 MenuTaxesAndSpecialExpenses=Skatter | Särskilda utgifter
-ThisLimitIsDefinedInSetup=Dolibarr gräns (meny hem-inställning-säkerhet): %s Kb, PHP gräns: %s Kb
+ThisLimitIsDefinedInSetup=BERP3 gräns (meny hem-inställning-säkerhet): %s Kb, PHP gräns: %s Kb
 ThisLimitIsDefinedInSetupAt=Dolibarr-gräns (meny %s): %s Kb, PHP-gräns (Param %s): %s Kb
 NoFileFound=Inga dokument laddade upp
 CurrentUserLanguage=Nuvarande språk
@@ -905,7 +905,7 @@ ViewFlatList=Visa plattlista
 ViewAccountList=Visa huvudbok
 ViewSubAccountList=Visa underkontokonto
 RemoveString=Ta bort strängen '%s'
-SomeTranslationAreUncomplete=Några av de språk som erbjuds kan bara översättas delvis eller kan innehålla fel. Snälla hjälp att korrigera ditt språk genom att registrera dig på <a href="https://transifex.com/projects/p/dolibarr/" target="_blank"> https://transifex.com/projects/p/dolibarr/ </a> för att lägga till dina förbättringar.
+SomeTranslationAreUncomplete=Några av de språk som erbjuds kan bara översättas delvis eller kan innehålla fel. Snälla hjälp att korrigera ditt språk genom att registrera dig på <a href="https://bonaerp.com/" target="_blank"> dolibarr/ </a> för att lägga till dina förbättringar.
 DirectDownloadLink=Offentlig nedladdningslänk
 PublicDownloadLinkDesc=Endast länken krävs för att ladda ner filen
 DirectDownloadInternalLink=Privat nedladdningslänk

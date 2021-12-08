@@ -1,8 +1,8 @@
-# Dolibarr language file - Source file is en_US - stripe
+# BERP3 language file - Source file is en_US - stripe
 StripeSetup=Настройка модуля Stripe
-StripeDesc=Предложите клиентам страницу онлайн-платежей Stripe для платежей с помощью кредитных / cebit карт через <a href="http://www.stripe.com" target="_blank"> Stripe </a>. Это может быть использовано, чтобы позволить вашим клиентам совершать специальные платежи или для платежей, связанных с конкретным объектом Dolibarr (счет-фактура, заказ, ...)
+StripeDesc=Предложите клиентам страницу онлайн-платежей Stripe для платежей с помощью кредитных / cebit карт через <a href="http://www.stripe.com" target="_blank"> Stripe </a>. Это может быть использовано, чтобы позволить вашим клиентам совершать специальные платежи или для платежей, связанных с конкретным объектом BERP3 (счет-фактура, заказ, ...)
 StripeOrCBDoPayment=Оплата кредитной картой или Stripe
-FollowingUrlAreAvailableToMakePayments=После URL, можно предложить страницу к клиенту сделать платеж по Dolibarr объектов
+FollowingUrlAreAvailableToMakePayments=После URL, можно предложить страницу к клиенту сделать платеж по BERP3 объектов
 PaymentForm=Форма оплаты
 WelcomeOnPaymentPage=Добро пожаловать в нашу службу онлайн-платежей
 ThisScreenAllowsYouToPay=На этом экране можно сделать онлайн-платежей для %s.

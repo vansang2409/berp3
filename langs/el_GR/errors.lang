@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Κανένα σφάλμα
@@ -49,7 +49,7 @@ ErrorFoundBadEmailInFile=Βρέθηκε εσφαλμένη σύνταξη e-mail
 ErrorUserCannotBeDelete=Ο χρήστης δεν μπορεί να διαγραφεί. Ίσως σχετίζεται με οντότητες Dolibarr.
 ErrorFieldsRequired=Some required fields have been left blank.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=Αποτυχία δημιουργίας φακέλου. Βεβαιωθείτε ότι ο Web server χρήστης έχει δικαιώματα να γράψει στο φάκελο εγγράφων του Dolibarr. Αν η <b>safe_mode</b> παράμετρος είναι ενεργοποιημένη για την PHP, ελέγξτε ότι τα αρχεία php του Dolibarr ανήκουν στον web server χρήστη (ή ομάδα).
+ErrorFailedToCreateDir=Αποτυχία δημιουργίας φακέλου. Βεβαιωθείτε ότι ο Web server χρήστης έχει δικαιώματα να γράψει στο φάκελο εγγράφων του Dolibarr. Αν η <b>safe_mode</b> παράμετρος είναι ενεργοποιημένη για την PHP, ελέγξτε ότι τα αρχεία php του BERP3 ανήκουν στον web server χρήστη (ή ομάδα).
 ErrorNoMailDefinedForThisUser=Δεν έχει οριστεί mail για αυτόν το χρήστη
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=Αυτό το χαρακτηριστικό χρειάζεται ενεργοποιημένη την javascript. Αλλάξτε την ρύθμιση στο Ρυθμίσεις - Εμφάνιση.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s έχει ανατεθεί σε άλλη τρίτη
 ErrorFailedToSendPassword=Αποτυχία αποστολής κωδικού
 ErrorFailedToLoadRSSFile=Αποτυγχάνει να πάρει RSS feed. Προσπαθήστε να προσθέσετε σταθερή MAIN_SIMPLEXMLLOAD_DEBUG εάν τα μηνύματα λάθους δεν παρέχει αρκετές πληροφορίες.
 ErrorForbidden=Access denied.<br>You try to access to a page, area or feature of a disabled module or without being in an authenticated session or that is not allowed to your user.
-ErrorForbidden2=Η άδεια για αυτή τη σύνδεση μπορεί να οριστεί από το διαχειριστή σας Dolibarr από το μενού %s-> %s.
-ErrorForbidden3=Φαίνεται ότι Dolibarr δεν χρησιμοποιείται μέσω επικυρωμένο συνεδρία. Ρίξτε μια ματιά στην τεκμηρίωση της εγκατάστασης Dolibarr να ξέρει πώς να διαχειριστεί authentications (htaccess, mod_auth ή άλλα ...).
+ErrorForbidden2=Η άδεια για αυτή τη σύνδεση μπορεί να οριστεί από το διαχειριστή σας BERP3 από το μενού %s-> %s.
+ErrorForbidden3=Φαίνεται ότι BERP3 δεν χρησιμοποιείται μέσω επικυρωμένο συνεδρία. Ρίξτε μια ματιά στην τεκμηρίωση της εγκατάστασης BERP3 να ξέρει πώς να διαχειριστεί authentications (htaccess, mod_auth ή άλλα ...).
 ErrorNoImagickReadimage=Κατηγορία imagick δεν βρίσκεται σε αυτό το PHP. Δεν προεπισκόπηση μπορεί να είναι διαθέσιμες. Οι διαχειριστές μπορούν να απενεργοποιήσουν αυτή την καρτέλα από το πρόγραμμα Εγκατάστασης μενού - Οθόνη.
 ErrorRecordAlreadyExists=Εγγραφή υπάρχει ήδη
 ErrorLabelAlreadyExists=Αυτή η ετικέτα υπάρχει ήδη
@@ -132,8 +132,8 @@ ErrorWebServerUserHasNotPermission=Λογαριασμό χρήστη <b>%s</b> �
 ErrorNoActivatedBarcode=Δεν ενεργοποιείται τύπου barcode
 ErrUnzipFails=Failed to unzip %s with ZipArchive
 ErrNoZipEngine=No engine to zip/unzip %s file in this PHP
-ErrorFileMustBeADolibarrPackage=The file %s must be a Dolibarr zip package
-ErrorModuleFileRequired=You must select a Dolibarr module package file
+ErrorFileMustBeADolibarrPackage=The file %s must be a BERP3 zip package
+ErrorModuleFileRequired=You must select a BERP3 module package file
 ErrorPhpCurlNotInstalled=The PHP CURL is not installed, this is essential to talk with Paypal
 ErrorFailedToAddToMailmanList=Failed to add record %s to Mailman list %s or SPIP base
 ErrorFailedToRemoveToMailmanList=Failed to remove record %s to Mailman list %s or SPIP base
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=The date must be lower than today
 ErrorDateMustBeInFuture=The date must be greater than today
 ErrorPaymentModeDefinedToWithoutSetup=A payment mode was set to type %s but setup of module Invoice was not completed to define information to show for this payment mode.
 ErrorPHPNeedModule=Σφάλμα, η PHP σας πρέπει να έχει το module <b>%s</ b> εγκατεστημένο για να χρησιμοποιήσετε αυτήν τη δυνατότητα.
-ErrorOpenIDSetupNotComplete=Μπορείτε να ρυθμίσετε το Dolibarr αρχείο config να επιτρέψει OpenID ταυτότητα, αλλά το URL OpenID υπηρεσίας δεν ορίζεται σε συνεχή %s
+ErrorOpenIDSetupNotComplete=Μπορείτε να ρυθμίσετε το BERP3 αρχείο config να επιτρέψει OpenID ταυτότητα, αλλά το URL OpenID υπηρεσίας δεν ορίζεται σε συνεχή %s
 ErrorWarehouseMustDiffers=Η πηγή και ο στόχος των αποθηκών πρέπει να είναι διαφορετικός.
 ErrorBadFormat=Κακή μορφή!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Error, this member is not yet linked to any third party. Link member to an existing third party or create a new third party before creating subscription with invoice.

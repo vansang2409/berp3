@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Biz xato qilamiz
@@ -46,10 +46,10 @@ ErrorBadDateFormat="%s" qiymati noto'g'ri sana formatiga ega
 ErrorWrongDate=Sana to'g'ri emas!
 ErrorFailedToWriteInDir=%s katalogiga yozib bo'lmadi
 ErrorFoundBadEmailInFile=Faylda %s satrlari uchun noto'g'ri elektron pochta sintaksisini topdi (masalan, %s qatori elektron pochta bilan = %s)
-ErrorUserCannotBeDelete=Foydalanuvchini o'chirib bo'lmaydi. Ehtimol, bu Dolibarr sub'ektlari bilan bog'liq.
+ErrorUserCannotBeDelete=Foydalanuvchini o'chirib bo'lmaydi. Ehtimol, bu BERP3 sub'ektlari bilan bog'liq.
 ErrorFieldsRequired=Ba'zi majburiy maydonlar bo'sh qoldirildi.
 ErrorSubjectIsRequired=Elektron pochta mavzusi talab qilinadi
-ErrorFailedToCreateDir=Katalog yaratilmadi. Veb-server foydalanuvchisida Dolibarr hujjatlar katalogiga yozish uchun ruxsat borligini tekshiring. Agar ushbu PHP-da <b> safe_mode </b> parametri yoqilgan bo'lsa, Dolibarr php fayllari veb-server foydalanuvchisiga (yoki guruhiga) tegishli ekanligini tekshiring.
+ErrorFailedToCreateDir=Katalog yaratilmadi. Veb-server foydalanuvchisida BERP3 hujjatlar katalogiga yozish uchun ruxsat borligini tekshiring. Agar ushbu PHP-da <b> safe_mode </b> parametri yoqilgan bo'lsa, BERP3 php fayllari veb-server foydalanuvchisiga (yoki guruhiga) tegishli ekanligini tekshiring.
 ErrorNoMailDefinedForThisUser=Ushbu foydalanuvchi uchun hech qanday pochta belgilanmagan
 ErrorSetupOfEmailsNotComplete=Elektron pochta xabarlarini sozlash tugallanmagan
 ErrorFeatureNeedJavascript=Ushbu xususiyatni ishga tushirish uchun javascript kerak. Buni sozlash - displeyda o'zgartiring.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s yana uchdan biriga tayinlangan
 ErrorFailedToSendPassword=Parolni yuborib bo'lmadi
 ErrorFailedToLoadRSSFile=RSS tasmasini ololmadi. Xato xabarlari etarli ma'lumot bermasa, doimiy ravishda MAIN_SIMPLEXMLLOAD_DEBUG qo'shishga harakat qiling.
 ErrorForbidden=Ruxsat yo'q. <br> Siz o'chirib qo'yilgan modulning sahifasiga, maydoniga yoki xususiyatiga yoki autentifikatsiya qilingan sessiyada bo'lmasdan yoki foydalanuvchingizga ruxsat berilmagan holda kirishga harakat qilasiz.
-ErrorForbidden2=Ushbu kirish uchun ruxsat sizning Dolibarr administratoringiz tomonidan %s-> %s menyusidan aniqlanishi mumkin.
-ErrorForbidden3=Dolibarr autentifikatsiya qilingan seans orqali ishlatilmaydi. Autentifikatsiyani qanday boshqarishni bilish uchun Dolibarrni sozlash bo'yicha hujjatlarni ko'rib chiqing (htaccess, mod_auth yoki boshqa ...).
+ErrorForbidden2=Ushbu kirish uchun ruxsat sizning BERP3 administratoringiz tomonidan %s-> %s menyusidan aniqlanishi mumkin.
+ErrorForbidden3=BERP3 autentifikatsiya qilingan seans orqali ishlatilmaydi. Autentifikatsiyani qanday boshqarishni bilish uchun Dolibarrni sozlash bo'yicha hujjatlarni ko'rib chiqing (htaccess, mod_auth yoki boshqa ...).
 ErrorNoImagickReadimage=Imagick sinfi ushbu PHP-da mavjud emas. Hech qanday oldindan ko'rish mumkin emas. Administrator ushbu yorliqni O'rnatish - Displey menyusidan o'chirib qo'yishi mumkin.
 ErrorRecordAlreadyExists=Yozuv allaqachon mavjud
 ErrorLabelAlreadyExists=Ushbu yorliq allaqachon mavjud
@@ -132,8 +132,8 @@ ErrorWebServerUserHasNotPermission=Veb-serverni amalga oshirish uchun foydalanil
 ErrorNoActivatedBarcode=Shtrixli kod yoqilmagan
 ErrUnzipFails=%s ni ZipArchive bilan ochib bo'lmadi
 ErrNoZipEngine=Ushbu PHP-da %s faylini ziplash / ochish uchun vosita yo'q
-ErrorFileMustBeADolibarrPackage=%s fayli Dolibarr zip to'plami bo'lishi kerak
-ErrorModuleFileRequired=Dolibarr moduli to'plami faylini tanlashingiz kerak
+ErrorFileMustBeADolibarrPackage=%s fayli BERP3 zip to'plami bo'lishi kerak
+ErrorModuleFileRequired=BERP3 moduli to'plami faylini tanlashingiz kerak
 ErrorPhpCurlNotInstalled=PHP CURL o'rnatilmagan, bu Paypal bilan suhbatlashish uchun juda muhimdir
 ErrorFailedToAddToMailmanList=%s yoki MailIP ro'yxatiga %s yozuvini yoki SPIP bazasini qo'shib bo'lmadi
 ErrorFailedToRemoveToMailmanList=%s yozuvini %s yoki SPIP bazasini pochtachilar ro'yxatiga o'chirib bo'lmadi
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=Sana bugundan pastroq bo'lishi kerak
 ErrorDateMustBeInFuture=Sana bugundan kattaroq bo'lishi kerak
 ErrorPaymentModeDefinedToWithoutSetup=%s yozish uchun to'lov rejimi o'rnatildi, ammo ushbu to'lov rejimi uchun ma'lumotni aniqlash uchun fakturani moduli o'rnatilmagan.
 ErrorPHPNeedModule=Xato, PHP-da ushbu funktsiyadan foydalanish uchun <b> %s </b> moduli o'rnatilgan bo'lishi kerak.
-ErrorOpenIDSetupNotComplete=OpenID autentifikatsiyasiga ruxsat berish uchun Dolibarr konfiguratsiya faylini o'rnatdingiz, ammo OpenID xizmatining URL manzili doimiy ravishda %s shaklida aniqlanmagan
+ErrorOpenIDSetupNotComplete=OpenID autentifikatsiyasiga ruxsat berish uchun BERP3 konfiguratsiya faylini o'rnatdingiz, ammo OpenID xizmatining URL manzili doimiy ravishda %s shaklida aniqlanmagan
 ErrorWarehouseMustDiffers=Manba va maqsadli omborlar farq qilishi kerak
 ErrorBadFormat=Noto'g'ri format!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Xato, bu a'zo hali hech qanday uchinchi tomon bilan bog'lanmagan. Hisob-faktura bilan obuna yaratishdan oldin a'zoni mavjud bo'lgan uchinchi tomon bilan bog'lang yoki yangi uchinchi tomonni yarating.

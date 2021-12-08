@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=This tool must be used only by experienced users or developers. It provides utilities to build or edit your own module. Documentation for alternative <a href="%s" target="_blank">manual development is here</a>.
 EnterNameOfModuleDesc=输入要创建的模块/应用的名称，不含空格。使用大写字母分隔单词（例如：MyModule，EcommerceForShop，SyncWithMySystem ......）
 EnterNameOfObjectDesc=输入要创建的对象的名称，不包含空格。使用大写字母分隔单词（例如：MyObject，Student，Teacher ...）。将会生成包含CRUD方法的类文件，同时生成API文件，同时生成"列表/添加/编辑/删除"对象的页面和SQL文件。

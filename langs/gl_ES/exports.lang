@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - exports
+# BERP3 language file - Source file is en_US - exports
 ExportsArea=Área exportación
 ImportArea=Área importación
 NewExport=Nova exportación
@@ -59,7 +59,7 @@ ChooseFormatOfFileToImport=Escolla o formato de ficheiro que desexa importar e p
 ChooseFileToImport=Escolla o ficheiro de importación e faga clic na imaxe %s para seleccionalo como ficheiro orixe de importación...
 SourceFileFormat=Formato do ficheiro orixe
 FieldsInSourceFile=Campos no ficheiro orixe
-FieldsInTargetDatabase=Campos destino na base de datos Dolibarr (*=obrigatorio)
+FieldsInTargetDatabase=Campos destino na base de datos BERP3 (*=obrigatorio)
 Field=Campo
 NoFields=Ningún campo
 MoveField=Mover campo columna número %s

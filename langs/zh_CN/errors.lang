@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=没有错误，我们承诺
@@ -46,10 +46,10 @@ ErrorBadDateFormat=值“%s”有错误的日期格式
 ErrorWrongDate=日期不正确！
 ErrorFailedToWriteInDir=无法写在目录%s
 ErrorFoundBadEmailInFile=找到%S的语法不正确的电子邮件文件中的行（例如行%的电子邮件s =%s）的
-ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to Dolibarr entities.
+ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to BERP3 entities.
 ErrorFieldsRequired=Some required fields have been left blank.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=无法创建一个目录。检查Web服务器的用户有权限写入Dolibarr文件目录。如果参数<b>safe_mode设置</b>为启用这个PHP，检查Dolibarr php文件到Web服务器的用户拥有（或组）。
+ErrorFailedToCreateDir=无法创建一个目录。检查Web服务器的用户有权限写入Dolibarr文件目录。如果参数<b>safe_mode设置</b>为启用这个PHP，检查BERP3 php文件到Web服务器的用户拥有（或组）。
 ErrorNoMailDefinedForThisUser=没有邮件定义该用户
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=此功能需要Javascript被激活才能工作。更改此设置 - 显示。
@@ -77,7 +77,7 @@ ErrorFieldCanNotContainSpecialNorUpperCharacters=The field <b>%s</b> must not co
 ErrorFieldMustHaveXChar=The field <b>%s</b> must have at least %s characters.
 ErrorNoAccountancyModuleLoaded=没有激活启用任何财务会计模块
 ErrorExportDuplicateProfil=导出设定配置名称已存在
-ErrorLDAPSetupNotComplete=Dolibarr - LDAP的匹配是不完整的。
+ErrorLDAPSetupNotComplete=BERP3 - LDAP的匹配是不完整的。
 ErrorLDAPMakeManualTest=甲。LDIF文件已经生成在目录%s的尝试加载命令行手动有更多的错误信息。
 ErrorCantSaveADoneUserWithZeroPercentage=Can't save an action with "status not started" if field "done by" is also filled.
 ErrorRefAlreadyExists=Reference <b>%s</b> already exists.
@@ -132,7 +132,7 @@ ErrorWebServerUserHasNotPermission=<b>%s</b>用来执行Web服务器用户帐户
 ErrorNoActivatedBarcode=没有激活的条码类型
 ErrUnzipFails=%s 无法解压缩与解压缩
 ErrNoZipEngine=没有引擎在这个PHP中压缩/解压缩%s文件
-ErrorFileMustBeADolibarrPackage=%s 文件必须是Dolibarr zip格式包
+ErrorFileMustBeADolibarrPackage=%s 文件必须是BERP3 zip格式包
 ErrorModuleFileRequired=您必须选择Dolibarr模块包文件
 ErrorPhpCurlNotInstalled=PHP Curl没有安装，这需要与支付宝协调
 ErrorFailedToAddToMailmanList=Failed to add record %s to Mailman list %s or SPIP base

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=法人名 %s は既存です。別のを選択してください。
 ErrorSetACountryFirst=始めに国を設定する
 SelectThirdParty=取引先を選択します

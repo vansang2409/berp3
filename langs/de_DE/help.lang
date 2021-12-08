@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - help
+# BERP3 language file - Source file is en_US - help
 CommunitySupport=Forum-/Wiki-Unterstützung
 EMailSupport=E-Mail-Unterstützung
 RemoteControlSupport=Online- / Fernwartungssupport
@@ -6,7 +6,7 @@ OtherSupport=Weitere Unterstützung
 ToSeeListOfAvailableRessources=Verfügbare Ressourcen:
 HelpCenter=Hilfebereich
 DolibarrHelpCenter=Hilfe- und Supportbereich
-ToGoBackToDolibarr=Um zur Startseite von Dolibarr zurückzukehren klicken Sie bitte <a href="%s">hier</a>.
+ToGoBackToDolibarr=Um zur Startseite von BERP3 zurückzukehren klicken Sie bitte <a href="%s">hier</a>.
 TypeOfSupport=Art des Supports
 TypeSupportCommunauty=Community (kostenlos)
 TypeSupportCommercial=Kommerzieller Support

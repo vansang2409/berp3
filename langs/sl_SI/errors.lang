@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=No error, we commit
@@ -46,10 +46,10 @@ ErrorBadDateFormat=Vrednost '%s &quot;je napačen zapis datuma
 ErrorWrongDate=Date is not correct!
 ErrorFailedToWriteInDir=Napaka pri pisanju v mapo %s
 ErrorFoundBadEmailInFile=Napačna email sintaksa v vrstici %s v datoteki (naprimer vrstica %s z emailom=%s)
-ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to Dolibarr entities.
+ErrorUserCannotBeDelete=User cannot be deleted. Maybe it is associated to BERP3 entities.
 ErrorFieldsRequired=Some required fields have been left blank.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=Kreiranje mape ni uspelo. Preverite, če ima uporabnik internetne strani dovoljenje za pisanje v mapo z Dolibarr dokumenti. Če je parameter <b>safe_mode</b> v tem PHP omogočen, preverite če je lastnik Dolibarr php datotek uporabnik web strežnika (ali skupina).
+ErrorFailedToCreateDir=Kreiranje mape ni uspelo. Preverite, če ima uporabnik internetne strani dovoljenje za pisanje v mapo z BERP3 dokumenti. Če je parameter <b>safe_mode</b> v tem PHP omogočen, preverite če je lastnik BERP3 php datotek uporabnik web strežnika (ali skupina).
 ErrorNoMailDefinedForThisUser=Ta uporabnik nima določenega Email naslova
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=Za aktiviranje ali delovanje te funkcije je potreben javascript. Spremenite »Nastavitve – Prikaz«.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s je dodeljen v drugo tretjo
 ErrorFailedToSendPassword=Ni bilo mogoče poslati gesla
 ErrorFailedToLoadRSSFile=Ne Knjiga. Poskusite dodati stalno MAIN_SIMPLEXMLLOAD_DEBUG sporočila o napakah, če ne zagotavlja dovolj informacij.
 ErrorForbidden=Access denied.<br>You try to access to a page, area or feature of a disabled module or without being in an authenticated session or that is not allowed to your user.
-ErrorForbidden2=Dovoljenje za to prijavo se lahko opredeli skrbnik Dolibarr iz menija %s-> %s.
-ErrorForbidden3=Zdi se, da je Dolibarr ne uporablja prek overjeno sejo. Oglejte si namestitveno dokumentacijo Dolibarr vedeti, kako upravljati authentications (htaccess, mod_auth ali drugo ...).
+ErrorForbidden2=Dovoljenje za to prijavo se lahko opredeli skrbnik BERP3 iz menija %s-> %s.
+ErrorForbidden3=Zdi se, da je BERP3 ne uporablja prek overjeno sejo. Oglejte si namestitveno dokumentacijo BERP3 vedeti, kako upravljati authentications (htaccess, mod_auth ali drugo ...).
 ErrorNoImagickReadimage=Razred Imagick ni mogoče najti v tem PHP. Št Predogled je lahko na voljo. Skrbniki lahko onemogočite to kartico od Setup meniju - Display.
 ErrorRecordAlreadyExists=Zapis že obstaja
 ErrorLabelAlreadyExists=This label already exists
@@ -132,8 +132,8 @@ ErrorWebServerUserHasNotPermission=Uporabniški račun <b>%s</b> uporablja za iz
 ErrorNoActivatedBarcode=Noben tip črtne kode ni aktiviran
 ErrUnzipFails=Failed to unzip %s with ZipArchive
 ErrNoZipEngine=No engine to zip/unzip %s file in this PHP
-ErrorFileMustBeADolibarrPackage=The file %s must be a Dolibarr zip package
-ErrorModuleFileRequired=You must select a Dolibarr module package file
+ErrorFileMustBeADolibarrPackage=The file %s must be a BERP3 zip package
+ErrorModuleFileRequired=You must select a BERP3 module package file
 ErrorPhpCurlNotInstalled=The PHP CURL is not installed, this is essential to talk with Paypal
 ErrorFailedToAddToMailmanList=Failed to add record %s to Mailman list %s or SPIP base
 ErrorFailedToRemoveToMailmanList=Failed to remove record %s to Mailman list %s or SPIP base
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=The date must be lower than today
 ErrorDateMustBeInFuture=The date must be greater than today
 ErrorPaymentModeDefinedToWithoutSetup=A payment mode was set to type %s but setup of module Invoice was not completed to define information to show for this payment mode.
 ErrorPHPNeedModule=Error, your PHP must have module <b>%s</b> installed to use this feature.
-ErrorOpenIDSetupNotComplete=You setup Dolibarr config file to allow OpenID authentication, but URL of OpenID service is not defined into constant %s
+ErrorOpenIDSetupNotComplete=You setup BERP3 config file to allow OpenID authentication, but URL of OpenID service is not defined into constant %s
 ErrorWarehouseMustDiffers=Source and target warehouses must differs
 ErrorBadFormat=Bad format!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Error, this member is not yet linked to any third party. Link member to an existing third party or create a new third party before creating subscription with invoice.

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - admin
+# BERP3 language file - Source file is en_US - admin
 Foundation=Stiftung
 Version=Version
 Publisher=Verfasser
@@ -48,7 +48,7 @@ ClientCharset=Client-Zeichensatz
 ClientSortingCharset=Client Sortierreihenfolge
 WarningModuleNotActive=Modul <b>%s</b> muss aktiviert sein
 WarningOnlyPermissionOfActivatedModules=Achtung, hier werden nur Berechtigungen im Zusammenhang mit aktivierten Module angezeigt. Weitere Module können Sie unter Start->Einstellungen-Module aktivieren.
-DolibarrSetup=Dolibarr Installation oder Upgrade
+DolibarrSetup=BERP3 Installation oder Upgrade
 InternalUser=Interner Benutzer
 ExternalUser=Externer Benutzer
 InternalUsers=Interne Benutzer
@@ -68,7 +68,7 @@ PHPSetup=PHP-Einstellungen
 OSSetup=Betriebssystem-Einstellungen
 SecurityFilesDesc=Sicherheitseinstellungen für Dateiupload festlegen
 ErrorModuleRequirePHPVersion=Fehler: Dieses Modul benötigt die PHP Version %s oder höher
-ErrorModuleRequireDolibarrVersion=Fehler: Dieses Moduls benötigt die Dolibarr Version %s oder höher
+ErrorModuleRequireDolibarrVersion=Fehler: Dieses Moduls benötigt die BERP3 Version %s oder höher
 ErrorDecimalLargerThanAreForbidden=Fehler: Eine höhere Genauigkeit als <b>%s</b> wird nicht unterstützt.
 DictionarySetup=Stammdaten
 Dictionary=Stammdaten
@@ -93,7 +93,7 @@ ShowHideDetails=Details ein-/ausblenden
 PreviewNotAvailable=Vorschau nicht verfügbar
 ThemeCurrentlyActive=derzeit aktivierte grafische Oberfläche
 MySQLTimeZone=Aktuelle Zeitzone der SQL-Datenbank
-TZHasNoEffect=Daten werden vom Datenbank-Server gespeichert und zurückgeliefert, als würde der eingegebene String abgelegt werden. Die Zeitzone hat nur dann eine Auswirkung, wenn die UNIX_TIMESTAMP-Funktion benutzt wird (Dolibarr nutzt diese nicht, daher sollte die Datenbank-TZ keine Rolle spielen, selbst wenn diese nach Dateneingabe geändert wird).
+TZHasNoEffect=Daten werden vom Datenbank-Server gespeichert und zurückgeliefert, als würde der eingegebene String abgelegt werden. Die Zeitzone hat nur dann eine Auswirkung, wenn die UNIX_TIMESTAMP-Funktion benutzt wird (BERP3 nutzt diese nicht, daher sollte die Datenbank-TZ keine Rolle spielen, selbst wenn diese nach Dateneingabe geändert wird).
 Space=Platz
 Table=Tabelle
 Fields=Felder
@@ -158,7 +158,7 @@ SystemInfo=Systeminformationen
 SystemToolsArea=Systemwerkzeugsübersicht
 SystemToolsAreaDesc=In diesem Bereich finden Sie die Verwaltungsfunktionen. Verwenden Sie das Menü zur Auswahl der gesuchten Funktion. 
 Purge=Bereinigen
-PurgeAreaDesc=Auf dieser Seite können Sie alle von Dolibarr erzeugten oder gespeicherten Dateien (temporäre Dateien oder alle Dateien im Verzeichnis <b>%s</b> ) löschen. Die Verwendung dieser Funktion ist in der Regel nicht erforderlich. Es wird als Workaround für Benutzer bereitgestellt, deren Dolibarr von einem Anbieter gehostet wird, der keine Berechtigungen zum löschen von Dateien anbietet, die vom Webserver erzeugt wurden.
+PurgeAreaDesc=Auf dieser Seite können Sie alle von BERP3 erzeugten oder gespeicherten Dateien (temporäre Dateien oder alle Dateien im Verzeichnis <b>%s</b> ) löschen. Die Verwendung dieser Funktion ist in der Regel nicht erforderlich. Es wird als Workaround für Benutzer bereitgestellt, deren BERP3 von einem Anbieter gehostet wird, der keine Berechtigungen zum löschen von Dateien anbietet, die vom Webserver erzeugt wurden.
 PurgeDeleteLogFile=Löschen der Protokolldateien, einschließlich <b>%s</b>, die für das Syslog-Modul definiert wurden (kein Risiko Daten zu verlieren)
 PurgeDeleteTemporaryFiles=Löscht alle Protokoll- und temporären Dateien (kein Risiko, Daten zu verlieren). Parameter können 'tempfilesold', 'logfiles' oder beide 'tempfilesold + logfiles' sein. Hinweis: Das Löschen temporärer Dateien erfolgt nur, wenn das temporäre Verzeichnis vor mehr als 24 Stunden erstellt wurde.
 PurgeDeleteTemporaryFilesShort=Protokoll- und temporäre Dateien löschen
@@ -221,16 +221,16 @@ DOLISTOREdescriptionLong=Anstatt die Website <a href="https://www.dolistore.com"
 NewModule=Neues Modul
 FreeModule=Frei
 CompatibleUpTo=Kompatibel mit Version  %s
-NotCompatible=Dieses Modul scheint nicht mit ihrer Dolibarr Version %s kompatibel zu sein. (Min %s - Max %s).
-CompatibleAfterUpdate=Dieses Modul benötigt ein Upgrade ihrer Dolibarr Installation %s  (Min %s - Max %s).
+NotCompatible=Dieses Modul scheint nicht mit ihrer BERP3 Version %s kompatibel zu sein. (Min %s - Max %s).
+CompatibleAfterUpdate=Dieses Modul benötigt ein Upgrade ihrer BERP3 Installation %s  (Min %s - Max %s).
 SeeInMarkerPlace=siehe Marktplatz
 SeeSetupOfModule=Finden Sie im Modul-Setup %s
 SetOptionTo=Setzt die Option <b> %s </b> auf %s
 Updated=Aktualisiert
 AchatTelechargement=Kaufen / Herunterladen
 GoModuleSetupArea=Um ein neues Modul zu installieren/verteilen, gehen Sie in den Modul-Setup Bereich <a href="%s">%s</a>.
-DoliStoreDesc=DoliStore, der offizielle Marktplatz für dolibarr Module/Erweiterungen
-DoliPartnersDesc=Liste der Unternehmen, die speziell entwickelte Module oder Funktionen bereitstellen. <br> Hinweis: Da Dolibarr eine Open Source-Anwendung ist, kann <i>jeder, der</i> Erfahrung mit PHP-Programmierung hat, ein Modul entwickeln.
+DoliStoreDesc=DoliStore, der offizielle Marktplatz für berp3 Module/Erweiterungen
+DoliPartnersDesc=Liste der Unternehmen, die speziell entwickelte Module oder Funktionen bereitstellen. <br> Hinweis: Da BERP3 eine Open Source-Anwendung ist, kann <i>jeder, der</i> Erfahrung mit PHP-Programmierung hat, ein Modul entwickeln.
 WebSiteDesc=Externe Webseiten mit zusätzlichen Add-on (nicht zum Grundumfang gehörend) Modulen ...
 DevelopYourModuleDesc=einige Lösungen um eigene Module zu entwickeln ...
 URL=Link
@@ -255,9 +255,9 @@ ProtectAndEncryptPdfFilesDesc=Die Aktivierung des PDF-Dokumentschutzes erhält d
 Feature=Funktion
 DolibarrLicense=Lizenz
 Developpers=Entwickler / Mitwirkende
-OfficialWebSite=Offizielle Dolibarr Website
+OfficialWebSite=Offizielle BERP3 Website
 OfficialWebSiteLocal=lokale Website (%s)
-OfficialWiki=Dolibarr Dokumentation / Wiki
+OfficialWiki=BERP3 Dokumentation / Wiki
 OfficialDemo=Offizielle Dolibarr-Demos
 OfficialMarketPlace=Offizieller Marktplatz für Module / Erweiterungen
 OfficialWebHostingService=Offizielle Hosting-Services (Cloud Hosting und SaaS)
@@ -315,8 +315,8 @@ UserEmail=E-Mail des Benutzers
 CompanyEmail=Unternehmens-E-Mail 
 FeatureNotAvailableOnLinux=Diese Funktion ist auf Unix-Umgebungen nicht verfügbar. Testen Sie Ihr Programm sendmail lokal.
 FixOnTransifex=Die Übersetzung in der Online-Übersetzungs-Plattform des Projektes korrigieren
-SubmitTranslation=Wenn die Übersetzung für diese Sprache nicht vollständig ist oder Sie Fehler finden, können Sie dies korrigieren, indem Sie Dateien im Verzeichnis <b>langs/%s</b> bearbeiten und Ihre Änderung an www.transifex.com/dolibarr-association/dolibarr/ senden.
-SubmitTranslationENUS=Ist die Übersetzung für diese Sprache nicht vollständig oder fehlerhaft, kann das durch editieren der Dateien im Verzeichnis  <b>langs/%s</b> korrigiert werden und modifizierte Dateien sollen auch auf dolibarr.org/forum gepostet oder, als Entwickler, mit einer PR auf github.com/Dolibarr/dolibarr bekanntgeben werden
+SubmitTranslation=Wenn die Übersetzung für diese Sprache nicht vollständig ist oder Sie Fehler finden, können Sie dies korrigieren, indem Sie Dateien im Verzeichnis <b>langs/%s</b> bearbeiten und Ihre Änderung an https://bonaerp.com senden.
+SubmitTranslationENUS=Ist die Übersetzung für diese Sprache nicht vollständig oder fehlerhaft, kann das durch editieren der Dateien im Verzeichnis  <b>langs/%s</b> korrigiert werden und modifizierte Dateien sollen auch auf bonaerp.com/forum gepostet oder, als Entwickler, mit einer PR auf bonaerp.com bekanntgeben werden
 ModuleSetup=Moduleinstellung
 ModulesSetup=Modul-/Anwendungseinstellungen
 ModuleFamilyBase=System
@@ -344,8 +344,8 @@ UnpackPackageInDolibarrRoot=Entpacken des Pakets in das Verzeichnis der Systemin
 UnpackPackageInModulesRoot=Um eine externes Modul bereit zu stellen, entpacken Sie die gepackten Dateien in das Verzeichnis für Module: <br><b>%s</b>
 SetupIsReadyForUse=Modul Installation abgeschlossen, das Modul muss aber noch aktiviert und konfiguriert werden: <a href="%s">%s</a>.
 NotExistsDirect=Das alternative Stammverzeichnis ist nicht zu einem existierenden Verzeichnis definiert.<br>
-InfDirAlt=Seit Version 3 ist es möglich, ein alternatives Stammverzeichnis anzugeben. Dies ermöglicht, Erweiterungen und eigene Templates am gleichen Ort zu speichern.<br>Erstellen Sie einfach ein Verzeichis im Hauptverzeichnis von Dolibarr an (z.B. "custom").<br>
-InfDirExample=<br>Danach in der Datei <strong>conf.php</strong> deklarieren<br> $dolibarr_main_root_alt='/custom'<br>$dolibarr_main_document_root_alt='/path/of/dolibarr/htdocs/custom'<br>Wenn diese Zeilen mit "#" auskommentiert sind, um sie zu aktivieren, einfach das Zeichen "#" entfernen.
+InfDirAlt=Seit Version 3 ist es möglich, ein alternatives Stammverzeichnis anzugeben. Dies ermöglicht, Erweiterungen und eigene Templates am gleichen Ort zu speichern.<br>Erstellen Sie einfach ein Verzeichis im Hauptverzeichnis von BERP3 an (z.B. "custom").<br>
+InfDirExample=<br>Danach in der Datei <strong>conf.php</strong> deklarieren<br> $dolibarr_main_root_alt='/custom'<br>$dolibarr_main_document_root_alt='/path/of/berp3/htdocs/custom'<br>Wenn diese Zeilen mit "#" auskommentiert sind, um sie zu aktivieren, einfach das Zeichen "#" entfernen.
 YouCanSubmitFile=Die ZIP-Datei des Modulpakets kann von hier hochgeladen werden:
 CurrentVersion=Aktuelle dolibarr-Version
 CallUpdatePage=Zur Aktualisierung der Daten und Datenbankstrukturen zur Seite %s gehen.
@@ -639,9 +639,9 @@ Module2400Desc=Modul zur Terminplanung und Ereignissaufzeichnung:  Protokolliere
 Module2500Name=DMS / ECM
 Module2500Desc=Speicherung und Verteilung von Dokumenten. Automatische organisation der generierten oder gespeicherten Dokumente. Teilen Sie sie bei Bedarf.
 Module2600Name=API/Webservice (SOAP Server)
-Module2600Desc=Aktivieren Sie Dolibarr SOAP Server,  unterstütztes API-Service.
+Module2600Desc=Aktivieren Sie BERP3 SOAP Server,  unterstütztes API-Service.
 Module2610Name=API/Web Services (REST Server)
-Module2610Desc=Aktiviere der Dolibarr REST Serverdienst
+Module2610Desc=Aktiviere der BERP3 REST Serverdienst
 Module2660Name=WebServices aufrufen (SOAP Client)
 Module2660Desc=Aktivieren des Dolibarr-Webdienst-Clients \n(Kann verwendet werden, um Daten / Anforderungen an externe Server zu senden. Derzeit werden nur Bestellungen unterstützt.)
 Module2700Name=Gravatar
@@ -1188,7 +1188,7 @@ Delays_MAIN_DELAY_MEMBERS=Verspäteter Mitgliedsbeitrag
 Delays_MAIN_DELAY_CHEQUES_TO_DEPOSIT=Scheckeinreichung nicht erfolgt
 Delays_MAIN_DELAY_EXPENSEREPORTS=zu genehmigende Spesenabrechnung
 Delays_MAIN_DELAY_HOLIDAYS=Zu genehmigende Urlaubsanträge
-SetupDescription1=Bevor Sie mit Dolibarr arbeiten können müssen grundlegende Einstellungen getätigt und Module freigeschalten / konfiguriert werden.
+SetupDescription1=Bevor Sie mit BERP3 arbeiten können müssen grundlegende Einstellungen getätigt und Module freigeschalten / konfiguriert werden.
 SetupDescription2=Die folgenden zwei Punkte sind obligatorisch:
 SetupDescription3=<a href="%s"> %s -> %s </a> <br> <br> Grundlegende Parameter zum Anpassen des Standardverhaltens Ihrer Anwendung (z. B. für länderbezogene Funktionen).
 SetupDescription4=<a href="%s"> %s -> %s </a> <br> <br> Diese Software ist eine Suite vieler Module / Anwendungen. Die auf Ihre Bedürfnisse bezogenen Module müssen aktiviert und konfiguriert sein. Menüeinträge werden mit der Aktivierung dieser Module angezeigt.
@@ -1218,7 +1218,7 @@ SystemAreaForAdminOnly=Dieser Bereich steht ausschließlich Administratoren zur 
 CompanyFundationDesc=Bearbeiten Sie die Informationen Ihres Unternehmens / Ihrer Organisation. Klicken Sie unten auf der Seite auf die Schaltfläche "%s", wenn Sie fertig sind.
 AccountantDesc=Falls Sie einen externen Buchhalter/Treuhänder haben, können Sie hier dessen Informationen hinterlegen.
 AccountantFileNumber=Buchhalter-Code
-DisplayDesc=Hier können Parameter zum Aussehen und Verhalten von Dolibarr angepasst werden.
+DisplayDesc=Hier können Parameter zum Aussehen und Verhalten von BERP3 angepasst werden.
 AvailableModules=Verfügbare Module
 ToActivateModule=Zum Aktivieren von Modulen gehen Sie zu Start->Einstellungen->Module
 SessionTimeOut=Sitzungszeitbegrenzung
@@ -1235,7 +1235,7 @@ DictionaryDesc=Alle Standardwerte einfügen. Sie können eigene Werte zu den Sta
 ConstDesc=Diese Seite erlaubt es alle anderen Parameter einzustellen (überschreiben), die auf anderen Seiten nicht verfügbar sind. Diese sind meist spezielle Parameter für Entwickler oder für die erweiterte Fehlersuche.
 MiscellaneousDesc=Alle anderen sicherheitsrelevanten Parameter werden hier eingestellt.
 LimitsSetup=Limits und Genauigkeit Einstellungen
-LimitsDesc=Hier können Sie die von Dolibarr verwendeten Grenzwerte, Genauigkeiten und Optimierungen definieren
+LimitsDesc=Hier können Sie die von BERP3 verwendeten Grenzwerte, Genauigkeiten und Optimierungen definieren
 MAIN_MAX_DECIMALS_UNIT=Maximale Anzahl an Dezimalstellen für Stückpreise
 MAIN_MAX_DECIMALS_TOT=Maximale Anzahl an Dezimalstellen für Gesamtsummen
 MAIN_MAX_DECIMALS_SHOWN=Maximal auf dem Bildschirm angezeigte Anzahl an Dezimalstellen für Preise (Fügen Sie <b>...</b> nach dieser Nummer ein, wenn Sie <b>...</b> sehen wollen, falls ein Bildschirmpreis abgeschnitten wurde.
@@ -1306,7 +1306,7 @@ AlphaNumOnlyLowerCharsAndNoSpace=nur Kleinbuchstaben und Zahlen, keine Leerzeich
 SendmailOptionNotComplete=Achtung: Auf einigen Linux-Systemen muss die Einrichtung von sendmail die Option -ba ethalten, um E-Mail versenden zu können (Parameter mail.force_extra_parameters in der php.ini-Datei). Wenn einige Empfänger niemals E-Mails erhalten, verändern Sie den PHP Parameter folgendermaßen mail.force_extra_parameters =-ba.
 PathToDocuments=Dokumentenpfad
 PathDirectory=Verzeichnispfad
-SendmailOptionMayHurtBuggedMTA=Die Mail-Sende-Funktion "PHP mail function" erzeugt Nachrichten, die möglicherweise von einigen (Empfangs-) Mailservern nicht richtig verarbeitet werden. Das kann dazu führen, daß einige Mails von Menschen nicht gelesen werden können, die diese fehlerhaften Plattformen benutzen. Dies ist der Fall für einige Internet Anbieter (z.B. Orange in Frankreich). Das ist kein Problem von Dolibarr oder PHP, sondern des empfangenen Mailservers. Allerdings kann man in den Erweiterten Einstellungen die Option MAIN_FIX_FOR_BUGGED_MTA mit dem Wert 1 eintragen, um das Problem zu vermeiden. Dies wiederum kann zu Problemen mit anderen Mailservern führen, die sich genau an den SMTP-Standard halten. Die andere (bessere) Lösung ist es, die Methode "SMTP socket library" zu verwenden. Diese hat keine Nachteile.
+SendmailOptionMayHurtBuggedMTA=Die Mail-Sende-Funktion "PHP mail function" erzeugt Nachrichten, die möglicherweise von einigen (Empfangs-) Mailservern nicht richtig verarbeitet werden. Das kann dazu führen, daß einige Mails von Menschen nicht gelesen werden können, die diese fehlerhaften Plattformen benutzen. Dies ist der Fall für einige Internet Anbieter (z.B. Orange in Frankreich). Das ist kein Problem von BERP3 oder PHP, sondern des empfangenen Mailservers. Allerdings kann man in den Erweiterten Einstellungen die Option MAIN_FIX_FOR_BUGGED_MTA mit dem Wert 1 eintragen, um das Problem zu vermeiden. Dies wiederum kann zu Problemen mit anderen Mailservern führen, die sich genau an den SMTP-Standard halten. Die andere (bessere) Lösung ist es, die Methode "SMTP socket library" zu verwenden. Diese hat keine Nachteile.
 TranslationSetup=Konfiguration der Übersetzung
 TranslationKeySearch=Übersetzungsschlüssel oder -Zeichenkette suchen
 TranslationOverwriteKey=Überschreiben der Übersetzung
@@ -1487,20 +1487,20 @@ LDAPGroupDnExample=Vollständige DN (zB: ou=users,dc=society,dc=com)
 LDAPServerExample=Server-Adresse (zB: localhost, 192.168.0.2, ldaps://ldap.example.com/)
 LDAPServerDnExample=Kompletter DN (zB: dc=firma,dc=com)
 LDAPDnSynchroActive=Benutzer und Gruppensynchronisation
-LDAPDnSynchroActiveExample=LDAP zu dolibarr oder dolibarr zu LDAP-Synchronisation
+LDAPDnSynchroActiveExample=LDAP zu berp3 oder berp3 zu LDAP-Synchronisation
 LDAPDnContactActive=Kontaktesynchronisation
 LDAPDnContactActiveExample=Aktivierte/Deaktivierte Synchronisation
 LDAPDnMemberActive=Mitgliedersynchronisation
 LDAPDnMemberActiveExample=Aktivierte/Deaktivierte Synchronisation
 LDAPDnMemberTypeActive=Mitgliedsarten Synchronisieren
 LDAPDnMemberTypeActiveExample=Aktivierte/Deaktivierte Synchronisation
-LDAPContactDn=Dolibarr Kontakte DN
+LDAPContactDn=BERP3 Kontakte DN
 LDAPContactDnExample=Vollständige DN (zB: ou=users,dc=society,dc=com)
-LDAPMemberDn=Dolibarr Mitglieder DN
+LDAPMemberDn=BERP3 Mitglieder DN
 LDAPMemberDnExample=Vollständige DN (zB: ou=members,dc=example,dc=com)
 LDAPMemberObjectClassList=Liste der objectClass
 LDAPMemberObjectClassListExample=Liste der objectClass-definierenden Eintragsattribute (z.B.: top,inetOrgPerson oder top,user für ActiveDirectory)
-LDAPMemberTypeDn=Dolibarr Mitgliedsarten DN
+LDAPMemberTypeDn=BERP3 Mitgliedsarten DN
 LDAPMemberTypepDnExample=Komplette DN (z.B.: ou=membertypes,dc=example,dc=com)
 LDAPMemberTypeObjectClassList=Liste der objectClass
 LDAPMemberTypeObjectClassListExample=Liste der objectClass-definierenden Eintragsattribute(z.B.: top, groupOfUniqueNames)
@@ -1526,7 +1526,7 @@ LDAPBindOK=Verbindung/Authentifizierung am LDAP-Server erfolgreich (Server=%s, P
 LDAPBindKO=Verbindung/Authentifizierung am LDAP-Server fehlgeschlagen (Server=%s, Port=%s, Admin=%s, Password=%s)
 LDAPSetupForVersion3=LDAP-Server für Version 3 konfiguriert
 LDAPSetupForVersion2=LDAP-Server für Version 2 konfiguriert
-LDAPDolibarrMapping=Dolibarr Mapping
+LDAPDolibarrMapping=BERP3 Mapping
 LDAPLdapMapping=LDAP-Mapping
 LDAPFieldLoginUnix=Benutzername (Unix)
 LDAPFieldLoginExample=Beispiel: uid
@@ -1589,7 +1589,7 @@ LDAPDescContact=Auf dieser Seite definieren Sie die LDAP-Attribute im LDAP-Baum 
 LDAPDescUsers=Auf dieser Seite definieren Sie die LDAP-Attribute im LDAP-Baum für jeden Datensatz zu dolibarr-Benutzern.
 LDAPDescGroups=Auf dieser Seite definieren Sie die LDAP-Attribute im LDAP-Baum für jeden Datensatz zu dolibarr-Gruppen.
 LDAPDescMembers=Auf dieser Seite definieren Sie die LDAP-Attribute im LDAP-Baum für jeden Datensatz zu dolibarr-Mitgliedern.
-LDAPDescMembersTypes=Auf dieser Seiten kann man die LDAP Attributnamen aus dem LDAP System für alle Daten im Dolibarr System einstellen.
+LDAPDescMembersTypes=Auf dieser Seiten kann man die LDAP Attributnamen aus dem LDAP System für alle Daten im BERP3 System einstellen.
 LDAPDescValues=Die Beispielwerte für <b>OpenLDAP</b> verfügen über folgende Muster: <b>core.schema, cosine.schema, inetorgperson.schema</b>. Wenn Sie diese Werte für OpenLDAP verwenden möchten, passen Sie bitte die LDAP-Konfigurationsdatei <b>slapd.conf</b> entsprechend an, damit all diese Muster geladen werden.
 ForANonAnonymousAccess=Für einen authentifizierten Zugang (z.B. für Schreibzugriff)
 PerfDolibarr=Leistungs-Einstellungen/Optimierungsreport
@@ -1808,12 +1808,12 @@ BookmarkDesc=Dieses Modul ermöglicht die Verwaltung von Lesezeichen. Außerdem 
 NbOfBoomarkToShow=Maximale Anzeigeanzahl Lesezeichen im linken Menü
 ##### WebServices #####
 WebServicesSetup=Webservices-Moduleinstellungen
-WebServicesDesc=Über Aktivierung dieses Moduls können Sie dolibarr zur Anbindung an externe Webservices konfigurieren
+WebServicesDesc=Über Aktivierung dieses Moduls können Sie berp3 zur Anbindung an externe Webservices konfigurieren
 WSDLCanBeDownloadedHere=Die WSDL-Datei der verfügbaren Webservices können Sie hier herunterladen
-EndPointIs=SOAP-Clients müssen ihre Anfragen an den Dolibarr Endpunkt verfügbar unter URL senden
+EndPointIs=SOAP-Clients müssen ihre Anfragen an den BERP3 Endpunkt verfügbar unter URL senden
 ##### API ####
 ApiSetup=Modul API - Einstellungen
-ApiDesc=Wenn dieses Modul aktiviert ist, wird Dolibarr zum REST Server für diverse web services.
+ApiDesc=Wenn dieses Modul aktiviert ist, wird BERP3 zum REST Server für diverse web services.
 ApiProductionMode=Echtbetrieb aktivieren (dadurch wird ein Cache für Service-Management aktiviert)
 ApiExporerIs=Sie können das API unter dieser URL anschauen/testen
 OnlyActiveElementsAreExposed=Nur Elemente aus aktiven Modulen sind ungeschützt
@@ -1890,7 +1890,7 @@ BackupZipWizard=Assistent zum Erstellen des Dokumentenarchivverzeichnisses
 SomethingMakeInstallFromWebNotPossible=Die Installation von dem externen Modul ist aus folgenden Gründen vom Web-Interface nicht möglich:
 SomethingMakeInstallFromWebNotPossible2=Aus diesem Grund ist der hier beschriebene Aktualisierungsvorgang ein manueller Vorgang, den nur ein privilegierter Benutzer ausführen kann.
 InstallModuleFromWebHasBeenDisabledByFile=Installieren von externen Modul aus der Anwendung wurde von Ihrem Administrator deaktiviert. \nSie müssen ihn bitten, die Datei<strong>%s</strong> zu entfernen, um diese Funktion zu ermöglichen.
-ConfFileMustContainCustom=Um ein externes Modul zu erstellen oder installieren, müssen die Modul Dateien im Verzeichnis <strong>%s</strong> gespeichert werden. Damit dieses Verzeichnis durch Dolibarr verwendet wird, muss in den Einstellungen <strong>conf/conf.php</strong> die folgenden 2 Zeilen hinzugefügt werden:<br><strong>$dolibarr_main_url_root_alt='/custom';</strong><br><strong>$dolibarr_main_document_root_alt='%s/custom';</strong>
+ConfFileMustContainCustom=Um ein externes Modul zu erstellen oder installieren, müssen die Modul Dateien im Verzeichnis <strong>%s</strong> gespeichert werden. Damit dieses Verzeichnis durch BERP3 verwendet wird, muss in den Einstellungen <strong>conf/conf.php</strong> die folgenden 2 Zeilen hinzugefügt werden:<br><strong>$dolibarr_main_url_root_alt='/custom';</strong><br><strong>$dolibarr_main_document_root_alt='%s/custom';</strong>
 HighlightLinesOnMouseHover=Zeilen hervorheben bei Mouseover
 HighlightLinesColor=Farbe zum Hervorheben der Zeile, wenn die Maus darüberfahrt (verwenden Sie 'ffffff' für keine Hervorhebung)
 HighlightLinesChecked=Farbe zum Hervorheben der Zeile, wenn die Zeile ausgewählt ist (verwenden Sie 'ffffff' für keine Hervorhebung)
@@ -1950,8 +1950,8 @@ ByDefaultInList=Standardanzeige als Listenansicht
 YouUseLastStableVersion=Sie verwenden die letzte stabile Version
 TitleExampleForMajorRelease=Beispielnachricht, die Sie nutzen können, um eine Hauptversion anzukündigen. Sie können diese auf Ihrer Website verwenden.
 TitleExampleForMaintenanceRelease=Beispielnachricht, die Sie nutzen können, um ein Wartungsupdate anzukündigen. Sie können diese auf Ihrer Website verwenden.
-ExampleOfNewsMessageForMajorRelease=Dolibarr ERP & CRM %s ist verfügbar. Version %s ist eine Hauptversion mit vielen neuen Features für Benutzer und Entwickler. Sie können die Version aus dem Download-Bereich des Portals https://www.dolibarr.org laden (Unterverzeichnis "stabile Versionen"). Lesen Sie die komplette Liste der <a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog">Änderungen</a>.
-ExampleOfNewsMessageForMaintenanceRelease=Dolibarr ERP & CRM %s ist verfügbar. Version %s ist ein Wartungsupdate, das nur Fehlerbereinigungen enthält. Wir empfehlen allen Benutzern ein Upgrade auf diese Version. Wie bei jedem Wartungsupdate sind keinen neuen Features oder Änderungen in den Datenstrukturen enthalten. Sie können die Version aus dem Downloadbereich des Portals https://www.dolibarr.org laden (Unterverzeichnis &quot;stabile Versionen&quot;). Lesen Sie die komplette Liste der Änderungen im <a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog">ChangeLog</a>.
+ExampleOfNewsMessageForMajorRelease=BERP3 ERP & CRM %s ist verfügbar. Version %s ist eine Hauptversion mit vielen neuen Features für Benutzer und Entwickler. Sie können die Version aus dem Download-Bereich des Portals https://www.bonaerp.com laden (Unterverzeichnis "stabile Versionen"). Lesen Sie die komplette Liste der <a href="https://bonaerp.com">Änderungen</a>.
+ExampleOfNewsMessageForMaintenanceRelease=BERP3 ERP & CRM %s ist verfügbar. Version %s ist ein Wartungsupdate, das nur Fehlerbereinigungen enthält. Wir empfehlen allen Benutzern ein Upgrade auf diese Version. Wie bei jedem Wartungsupdate sind keinen neuen Features oder Änderungen in den Datenstrukturen enthalten. Sie können die Version aus dem Downloadbereich des Portals https://www.bonaerp.com laden (Unterverzeichnis &quot;stabile Versionen&quot;). Lesen Sie die komplette Liste der Änderungen im <a href="https://bonaerp.com">ChangeLog</a>.
 MultiPriceRuleDesc=Wenn die Option "Mehrere Preisstufen pro Produkt / Dienstleistung" aktiviert ist, können Sie für jedes Produkt unterschiedliche Preise definieren (einen pro Preisstufe). Um Zeit zu sparen, können Sie hier eine Regel eingeben, um einen Preis für jede Ebene auf der Grundlage des Preises der ersten Ebene automatisch zu berechnen, sodass Sie für jedes Produkt nur einen Preis für die erste Ebene eingeben müssen. Diese Seite soll Ihnen Zeit sparen, ist jedoch nur dann nützlich, wenn Ihre Preise für jedes Level im Verhältnis zum ersten Level stehen. Sie können diese Seite in den meisten Fällen ignorieren.
 ModelModulesProduct=Vorlagen für Produktdokumente
 WarehouseModelModules=Vorlagen für Lagerdokumente
@@ -2043,10 +2043,10 @@ CodeLastResult=Letzter Resultatcode
 NbOfEmailsInInbox=Anzahl E-Mails im Quellverzeichnis
 LoadThirdPartyFromName=Drittanbieter-Suche auf %s laden (nur laden)
 LoadThirdPartyFromNameOrCreate=Drittanbieter-Suche auf %s laden (erstellen, wenn nicht gefunden)
-WithDolTrackingID=Nachricht einer Unterhaltung die durch eine erste von Dolibarr gesendete E-Mail initiiert wurde 
-WithoutDolTrackingID=Nachricht einer Unterhaltung die NICHT durch eine erste von Dolibarr gesendete E-Mail initiiert wurde 
-WithDolTrackingIDInMsgId=Nachricht von Dolibarr gesendet
-WithoutDolTrackingIDInMsgId=Nachricht NICHT von Dolibarr gesendet
+WithDolTrackingID=Nachricht einer Unterhaltung die durch eine erste von BERP3 gesendete E-Mail initiiert wurde 
+WithoutDolTrackingID=Nachricht einer Unterhaltung die NICHT durch eine erste von BERP3 gesendete E-Mail initiiert wurde 
+WithDolTrackingIDInMsgId=Nachricht von BERP3 gesendet
+WithoutDolTrackingIDInMsgId=Nachricht NICHT von BERP3 gesendet
 CreateCandidature=Stellen-Bewerbung erstellen
 FormatZip=PLZ
 MainMenuCode=Menüpunktcode (Hauptmenü)

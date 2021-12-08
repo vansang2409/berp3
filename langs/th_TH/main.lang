@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,7 +61,7 @@ ErrorNoRequestInError=คำขอในไม่มีข้อผิดพล�
 ErrorServiceUnavailableTryLater=Service not available at the moment. Try again later.
 ErrorDuplicateField=ค่าที่ซ้ำกันในสนามที่ไม่ซ้ำกัน
 ErrorSomeErrorWereFoundRollbackIsDone=Some errors were found. Changes have been rolled back.
-ErrorConfigParameterNotDefined=Parameter <b>%s</b> is not defined in the Dolibarr config file <b>conf.php</b>.
+ErrorConfigParameterNotDefined=Parameter <b>%s</b> is not defined in the BERP3 config file <b>conf.php</b>.
 ErrorCantLoadUserFromDolibarrDatabase=<b>ไม่พบผู้ใช้% s</b> ในฐานข้อมูล Dolibarr
 ErrorNoVATRateDefinedForSellerCountry=ข้อผิดพลาดอัตราภาษีมูลค่าเพิ่มไม่มีกำหนดสำหรับประเทศ '% s'
 ErrorNoSocialContributionForSellerCountry=ข้อผิดพลาดที่ไม่มีทางสังคม / ประเภทภาษีทางการคลังที่กำหนดไว้สำหรับประเทศ '% s'
@@ -94,7 +94,7 @@ RecordDeleted=บันทึกลบ
 RecordGenerated=Record generated
 LevelOfFeature=ระดับของคุณสมบัติ
 NotDefined=ไม่กำหนด
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr authentication mode is set to <b>%s</b> in configuration file <b>conf.php</b>.<br>This means that the password database is external to Dolibarr, so changing this field may have no effect.
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 authentication mode is set to <b>%s</b> in configuration file <b>conf.php</b>.<br>This means that the password database is external to Dolibarr, so changing this field may have no effect.
 Administrator=ผู้บริหาร
 Undefined=ตะคุ่ม
 PasswordForgotten=ลืมรหัสผ่าน?
@@ -112,7 +112,7 @@ DatabaseTypeManager=ผู้จัดการฐานข้อมูลปร
 RequestLastAccessInError=Latest database access request error
 ReturnCodeLastAccessInError=Return code for latest database access request error
 InformationLastAccessInError=Information for latest database access request error
-DolibarrHasDetectedError=Dolibarr ตรวจพบข้อผิดพลาดทางเทคนิค
+DolibarrHasDetectedError=BERP3 ตรวจพบข้อผิดพลาดทางเทคนิค
 YouCanSetOptionDolibarrMainProdToZero=You can read log file or set option $dolibarr_main_prod to '0' in your config file to get more information.
 InformationToHelpDiagnose=This information can be useful for diagnostic purposes (you can set option $dolibarr_main_prod to '1' to remove such notices)
 MoreInformation=ข้อมูลเพิ่มเติม
@@ -121,7 +121,7 @@ TechnicalID=Technical ID
 LineID=Line ID
 NotePublic=หมายเหตุ (มหาชน)
 NotePrivate=หมายเหตุ (เอกชน)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr ถูกติดตั้งเพื่อ จำกัด <b>แม่นยำของราคาต่อหน่วย% s</b> ทศนิยม
+PrecisionUnitIsLimitedToXDecimals=BERP3 ถูกติดตั้งเพื่อ จำกัด <b>แม่นยำของราคาต่อหน่วย% s</b> ทศนิยม
 DoTest=ทดสอบ
 ToFilter=กรอง
 NoFilter=No filter
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=สมาชิก
 MenuAgendaGoogle=วาระการประชุมของ Google
 MenuTaxesAndSpecialExpenses=Taxes | Special expenses
-ThisLimitIsDefinedInSetup=Dolibarr ขีด จำกัด (เมนูที่บ้านการตั้งค่าการรักษาความปลอดภัย):% s Kb, PHP ขีด จำกัด :% s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=BERP3 ขีด จำกัด (เมนูที่บ้านการตั้งค่าการรักษาความปลอดภัย):% s Kb, PHP ขีด จำกัด :% s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=No documents uploaded
 CurrentUserLanguage=ภาษาปัจจุบัน
 CurrentTheme=รูปแบบปัจจุบัน
@@ -905,7 +905,7 @@ ViewFlatList=View flat list
 ViewAccountList=View ledger
 ViewSubAccountList=View subaccount ledger
 RemoveString=Remove string '%s'
-SomeTranslationAreUncomplete=Some of the languages offered may be only partially translated or may contain errors. Please help to correct your language by registering at <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> to add your improvements.
+SomeTranslationAreUncomplete=Some of the languages offered may be only partially translated or may contain errors. Please help to correct your language by registering at <a href="https://bonaerp.com/" target="_blank">berp3</a> to add your improvements.
 DirectDownloadLink=Public download link
 PublicDownloadLinkDesc=Only the link is required to download the file
 DirectDownloadInternalLink=Private download link

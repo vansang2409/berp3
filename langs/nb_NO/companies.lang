@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Firmanavnet %s finnes allerede. Velg et annet!
 ErrorSetACountryFirst=Angi land først
 SelectThirdParty=Velg en tredjepart
@@ -406,7 +406,7 @@ ProspectsByStatus=Prospekter etter status
 NoParentCompany=Ingen
 ExportCardToFormat=Eksporter kort til format
 ContactNotLinkedToCompany=Kontaktpersonen er ikke lenket til noen tredjepart
-DolibarrLogin=Dolibarr innlogging
+DolibarrLogin=BERP3 innlogging
 NoDolibarrAccess=Ingen tilgang til Dolibarr
 ExportDataset_company_1=Tredjeparter (Selskaper/organisasjoner/fysiske personer) og deres egenskaper
 ExportDataset_company_2=Kontakter og deres egenskaper

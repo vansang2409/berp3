@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - users
+# BERP3 language file - Source file is en_US - users
 HRMArea=Area de Recursos Humanos
 UserCard=Ficha del Usuario
 GroupCard=Ficha del Grupo
@@ -56,8 +56,8 @@ IdPhoneCaller=Identificador de llamadas
 NewUserCreated=Usuario %s creado
 NewUserPassword=Cambio de contraseña para %s
 UserDisabled=Usuario %s desactivado
-ConfirmCreateContact=¿Estás seguro que quieres crear una cuenta Dolibarr para este contacto?
-ConfirmCreateLogin=¿Estás seguro que quieres crear una cuenta Dolibarr para este miembro?
+ConfirmCreateContact=¿Estás seguro que quieres crear una cuenta BERP3 para este contacto?
+ConfirmCreateLogin=¿Estás seguro que quieres crear una cuenta BERP3 para este miembro?
 ConfirmCreateThirdParty=¿Estás seguro que quieres crear un tercero para este miembro?
 LoginToCreate=Usuario a crear
 NameToCreate=Nombre del tercero para crear

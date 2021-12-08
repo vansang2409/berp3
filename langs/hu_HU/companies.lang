@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Cégnév %s már létezik. Válasszon egy másikat.
 ErrorSetACountryFirst=Először állítsa be az országot
 SelectThirdParty=Válasszon egy partnert
@@ -360,7 +360,7 @@ CapitalOf=%s tőkéje
 EditCompany=Cég szerkesztése
 ThisUserIsNot=Ez a felhasználó nem lehetséges partner, vevő vagy eladó
 VATIntraCheck=Csekk
-VATIntraCheckDesc=Az ÁFA-azonosítónak tartalmaznia kell az ország előtagot. Az <b> %s </b> link az Európai ÁFA-ellenőrző szolgáltatást (VIES) használja, amely internet-hozzáférést igényel a Dolibarr szerverről.
+VATIntraCheckDesc=Az ÁFA-azonosítónak tartalmaznia kell az ország előtagot. Az <b> %s </b> link az Európai ÁFA-ellenőrző szolgáltatást (VIES) használja, amely internet-hozzáférést igényel a BERP3 szerverről.
 VATIntraCheckURL=http://ec.europa.eu/taxation_customs/vies/vieshome.do
 VATIntraCheckableOnEUSite=Ellenőrizze a Közösségen belüli ÁFA-azonosítót az Európai Bizottság weboldalán
 VATIntraManualCheck=Manuálisan ellenőrizheti az Európai Bizottság webhelyén <a href="%s" target="_blank"> %s </a>
@@ -406,8 +406,8 @@ ProspectsByStatus=Jelentkezők állapot szerint
 NoParentCompany=Egyik sem
 ExportCardToFormat=Kártya exportálása formázással
 ContactNotLinkedToCompany=Kapcsolat nincs partnerhez csatolva
-DolibarrLogin=Dolibarr bejelentkezés
-NoDolibarrAccess=Nem Dolibarr hozzáférés
+DolibarrLogin=BERP3 bejelentkezés
+NoDolibarrAccess=Nem BERP3 hozzáférés
 ExportDataset_company_1=Partnerek (társaságok/alapítványok/személyek) és azok adatai
 ExportDataset_company_2=Kapcsolatok és azok adatai
 ImportDataset_company_1=Partnerek és azok adatai

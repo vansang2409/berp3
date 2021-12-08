@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - admin
+# BERP3 language file - Source file is en_US - admin
 Module20Name=Devis
 Module30Name=Factures
 NotificationsDescGlobal=* or by setting global email addresses in this setup page.

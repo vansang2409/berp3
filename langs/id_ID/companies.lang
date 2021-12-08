@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Nama Perusahaan %s telah terdaftar. Silahkan masukan nama lain.
 ErrorSetACountryFirst=Set Negara dulu
 SelectThirdParty=Pilih Pihak Ketiga

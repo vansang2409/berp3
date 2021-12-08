@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - members
+# BERP3 language file - Source file is en_US - members
 MembersArea=Área de miembros
 MemberCard=Tarjeta de miembro
 SubscriptionCard=Tarjeta de suscripción
@@ -64,7 +64,7 @@ ConfirmValidateMember=¿Está seguro de que desea validar este miembro?
 FollowingLinksArePublic=Los siguientes enlaces son páginas abiertas no protegidas por ningún permiso de Dolibarr. No son páginas formateadas, proporcionadas como ejemplo para mostrar cómo enumerar la base de datos de miembros.
 PublicMemberList=Lista pública de miembros
 BlankSubscriptionForm=Formulario público de auto-suscripción
-BlankSubscriptionFormDesc=Dolibarr puede proporcionarle una URL / sitio web público para permitir que los visitantes externos soliciten suscribirse a la fundación. Si se habilita un módulo de pago en línea, también se puede proporcionar un formulario de pago automáticamente.
+BlankSubscriptionFormDesc=BERP3 puede proporcionarle una URL / sitio web público para permitir que los visitantes externos soliciten suscribirse a la fundación. Si se habilita un módulo de pago en línea, también se puede proporcionar un formulario de pago automáticamente.
 EnablePublicSubscriptionForm=Habilite el sitio web público con el formulario de auto-suscripción
 ExportDataset_member_1=Miembros y suscripciones
 LastMembersModified=Últimos miembros modificados %s

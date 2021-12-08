@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - website
+# BERP3 language file - Source file is en_US - website
 Shortname=Kode
 WebsiteSetupDesc=Buat di sini situs web yang ingin Anda gunakan. Kemudian masuk ke menu Website untuk mengeditnya.
 DeleteWebsite=Hapus situs web
@@ -45,13 +45,13 @@ ViewWebsiteInProduction=Lihat situs web menggunakan URL beranda
 SetHereVirtualHost= <u>Gunakan dengan Apache / NGinx /...</u><br> Buat di server web Anda (Apache, Nginx, ...) Host Virtual khusus dengan PHP yang diaktifkan dan direktori Root pada <br><strong>%s</strong>
 ExampleToUseInApacheVirtualHostConfig=Contoh untuk digunakan dalam pengaturan host virtual Apache:
 YouCanAlsoTestWithPHPS= <u>Gunakan dengan server yang telah tertanam PHP</u> <br>Pada lingkungan pengembangan software, Anda dapat memilih untuk menguji situs dengan server web yang tertanam PHP (PHP 5.5 diperlukan) dengan menjalankan<br><strong>php -S 0.0.0.0:8080 -t %s</strong>
-YouCanAlsoDeployToAnotherWHP= <u> Jalankan situs web Anda dengan penyedia Hosting Dolibarr lain integrasi dengan modul Situs web. Anda dapat menemukan daftar beberapa penyedia hosting Dolibarr di <a href="https://saas.dolibarr.org" target="_blank"> https://saas.dolibarr.org </a>
+YouCanAlsoDeployToAnotherWHP= <u> Jalankan situs web Anda dengan penyedia Hosting BERP3 lain integrasi dengan modul Situs web. Anda dapat menemukan daftar beberapa penyedia hosting BERP3 di <a href="https://bonaerp.com" target="_blank"> https://bonaerp.com </a>
 CheckVirtualHostPerms=Check also that the virtual host user (for example www-data) has <strong>%s</strong> permissions on files into<br><strong>%s</strong>
 ReadPerm=Baca
 WritePerm=Menulis
 TestDeployOnWeb=Uji / gunakan di web
 PreviewSiteServedByWebServer= <u>Pratinjau %s di tab baru.</u><br><br>%s akan dilayani oleh server web eksternal (seperti Apache, Nginx, IIS). Anda harus menginstal dan mengatur server ini sebelum merujuk pada direktori:<br><strong>%s</strong><br>URL dilayani oleh server eksternal: <br><strong>%s</strong>
-PreviewSiteServedByDolibarr=<u>Preview %s in a new tab.</u><br><br>The %s will be served by Dolibarr server so it does not need any extra web server (like Apache, Nginx, IIS) to be installed.<br>The inconvenient is that the URLs of pages are not user friendly and start with the path of your Dolibarr.<br>URL served by Dolibarr:<br><strong>%s</strong><br><br>To use your own external web server to serve this web site, create a virtual host on your web server that points on directory<br><strong>%s</strong><br>then enter the name of this virtual server in the properties of this website and click on the link "Test/Deploy on the web".
+PreviewSiteServedByDolibarr=<u>Preview %s in a new tab.</u><br><br>The %s will be served by BERP3 server so it does not need any extra web server (like Apache, Nginx, IIS) to be installed.<br>The inconvenient is that the URLs of pages are not user friendly and start with the path of your Dolibarr.<br>URL served by Dolibarr:<br><strong>%s</strong><br><br>To use your own external web server to serve this web site, create a virtual host on your web server that points on directory<br><strong>%s</strong><br>then enter the name of this virtual server in the properties of this website and click on the link "Test/Deploy on the web".
 VirtualHostUrlNotDefined=URL dari host virtual yang dilayani oleh server web eksternal tidak ditentukan
 NoPageYet=Belum ada halaman
 YouCanCreatePageOrImportTemplate=Anda dapat membuat halaman baru atau mengimpor template situs web lengkap

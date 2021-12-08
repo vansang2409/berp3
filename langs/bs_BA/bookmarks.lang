@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - marque pages
+# BERP3 language file - Source file is en_US - marque pages
 AddThisPageToBookmarks=Dodaj ovu stranicu u bookmark
 Bookmark=Bookmark
 Bookmarks=Bookmarks
@@ -15,6 +15,6 @@ UrlOrLink=Link
 BehaviourOnClick=Ponašanje kada se klikne na link
 CreateBookmark=Kreiraj bookmark
 SetHereATitleForLink=Postavi naslov za bookmark
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Koristi ekterni http link ili relativni Dolibarr link
+UseAnExternalHttpLinkOrRelativeDolibarrLink=Koristi ekterni http link ili relativni BERP3 link
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Choose if linked page must open in new window or not
 BookmarksManagement=Upravljanje bookmark-ima

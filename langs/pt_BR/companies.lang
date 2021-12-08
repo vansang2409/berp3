@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=Já existe uma empresa com o nome %s. Escolha um outro.
 ErrorSetACountryFirst=Defina o país primeiro
 DeleteContact=Excluir um contato/endereço

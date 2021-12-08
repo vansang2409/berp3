@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - loan
+# BERP3 language file - Source file is en_US - loan
 ModuleBuilderDesc=Esta herramienta debe ser usada por usuarios experimentados o desarrolladores. Te facilitará utilidades para construir o editar tu propio módulo (Documentación para un manual alternativo de desarrollo <a href="%s" target="_blank">aquí</a>).
 EnterNameOfModuleDesc=Introduce el nombre del módulo/aplicación a crear sin espacios. Utilice mayúsculas para separar palabras (Por ejemplo: MiModulo, EcommerceParaTienda, SincronizarConMiSistema...)
 EnterNameOfObjectDesc=Introduce el nombre del objeto a crear sin espacios. Usa mayúsculas para separar palabras (Por ejemplo: MiObjeto, Estudiante, Profesor...). El archivo de clase CRUD, pero también archivo API, páginas para listar/añadir/editar/eliminar objetos y archivos SQL serán generados.

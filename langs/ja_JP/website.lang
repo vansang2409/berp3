@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - website
+# BERP3 language file - Source file is en_US - website
 Shortname=コー​​ド
 WebsiteSetupDesc=使用したいウェブサイトをここに作成する。次に、メニューのWebサイトに移動して編集する。
 DeleteWebsite=ウェブサイトを削除
@@ -45,7 +45,7 @@ ViewWebsiteInProduction=ホームURLを使用してWebサイトを表示する
 SetHereVirtualHost=<u>Apache/NGinx/...で使用 </u><br>専用の仮想ホストをWEBサーバ (Apache, Nginx, ...) 上に作成し、PHP 使用可で、ルートディレクトリを以下に指定する<br><strong>%s</strong>
 ExampleToUseInApacheVirtualHostConfig=Apache仮想ホストのセットアップで使用する例：
 YouCanAlsoTestWithPHPS=<u>PHP組み込みサーバーでの使用</u><br>開発環境では、 PHP組み込みWebサーバ (PHP 5.5 が必要) でサイトをテストするのが都合がいいなら、次のコマンドを動かす<br><strong>php -S 0.0.0.0:8080 -t %s</strong>
-YouCanAlsoDeployToAnotherWHP= <u>別のDolibarrホスティングプロバイダーでWebサイトを実行する</u><br>インターネット上でApacheやNGinxなどのWebサーバーを利用できない場合は、完全なDolibarrホスティングプロバイダーが提供する別のDolibarrインスタンスにWebサイトをエクスポートおよびインポートできる。ウェブサイトモジュールとの統合。いくつかのDolibarrホスティングプロバイダーのリストは、<a href="https://saas.dolibarr.org" target="_blank"> https：//saas.dolibarr.org</a>にある。
+YouCanAlsoDeployToAnotherWHP= <u>別のDolibarrホスティングプロバイダーでWebサイトを実行する</u><br>インターネット上でApacheやNGinxなどのWebサーバーを利用できない場合は、完全なDolibarrホスティングプロバイダーが提供する別のDolibarrインスタンスにWebサイトをエクスポートおよびインポートできる。ウェブサイトモジュールとの統合。いくつかのDolibarrホスティングプロバイダーのリストは、<a href="https://bonaerp.com" target="_blank"> https：//saas.bonaerp.com</a>にある。
 CheckVirtualHostPerms=また、仮想ホストユーザー（www-dataなど）が、 <strong> %s </strong> 権限があり、ファイルに対して<br><strong>%s</strong>へが可能であることをも確認する。
 ReadPerm=読む
 WritePerm=書く

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - errors
+# BERP3 language file - Source file is en_US - errors
 
 # No errors
 NoErrorCommitIsDone=Tidak ada kesalahan, kami berkomitmen
@@ -49,7 +49,7 @@ ErrorFoundBadEmailInFile=Ditemukan sintaks email yang salah untuk baris %s dalam
 ErrorUserCannotBeDelete=Pengguna tidak dapat dihapus. Mungkin itu terkait dengan entitas Dolibarr.
 ErrorFieldsRequired=Some required fields have been left blank.
 ErrorSubjectIsRequired=The email subject is required
-ErrorFailedToCreateDir=Gagal membuat direktori. Periksa apakah pengguna server Web memiliki izin untuk menulis ke direktori dokumen Dolibarr. Jika parameter<b>safe_mode</b>diaktifkan pada PHP ini, periksa apakah file-file Dolibarr php milik pengguna web server (atau grup).
+ErrorFailedToCreateDir=Gagal membuat direktori. Periksa apakah pengguna server Web memiliki izin untuk menulis ke direktori dokumen Dolibarr. Jika parameter<b>safe_mode</b>diaktifkan pada PHP ini, periksa apakah file-file BERP3 php milik pengguna web server (atau grup).
 ErrorNoMailDefinedForThisUser=Tidak ada surat yang ditentukan untuk pengguna ini
 ErrorSetupOfEmailsNotComplete=Setup of emails is not complete
 ErrorFeatureNeedJavascript=Fitur ini perlu javascript untuk diaktifkan agar berfungsi. Ubah ini dalam pengaturan - tampilan.
@@ -109,8 +109,8 @@ ErrorProdIdAlreadyExist=%s ditugaskan ke sepertiga lainnya
 ErrorFailedToSendPassword=Gagal mengirim kata sandi
 ErrorFailedToLoadRSSFile=Gagal mendapatkan umpan RSS. Coba tambahkan MAIN_SIMPLEXMLLOAD_DEBUG konstan jika pesan kesalahan tidak memberikan informasi yang cukup.
 ErrorForbidden=Akses ditolak. <br> Anda mencoba mengakses halaman, area atau fitur modul yang dinonaktifkan atau tanpa sesi yang diautentikasi atau yang tidak diizinkan untuk pengguna Anda.
-ErrorForbidden2=Izin untuk login ini dapat ditentukan oleh administrator Dolibarr Anda dari menu %s-> %s.
-ErrorForbidden3=Tampaknya Dolibarr tidak digunakan melalui sesi yang diautentikasi. Lihatlah dokumentasi pengaturan Dolibarr untuk mengetahui cara mengelola otentikasi (htaccess, mod_auth atau lainnya ...).
+ErrorForbidden2=Izin untuk login ini dapat ditentukan oleh administrator BERP3 Anda dari menu %s-> %s.
+ErrorForbidden3=Tampaknya BERP3 tidak digunakan melalui sesi yang diautentikasi. Lihatlah dokumentasi pengaturan BERP3 untuk mengetahui cara mengelola otentikasi (htaccess, mod_auth atau lainnya ...).
 ErrorNoImagickReadimage=Kelas Imagick tidak ditemukan di PHP ini. Pratinjau tidak tersedia. Administrator dapat menonaktifkan tab ini dari menu Pengaturan - Tampilan.
 ErrorRecordAlreadyExists=Rekor sudah ada
 ErrorLabelAlreadyExists=Label ini sudah ada
@@ -145,7 +145,7 @@ ErrorDateMustBeBeforeToday=Tanggal harus lebih rendah dari hari ini
 ErrorDateMustBeInFuture=Tanggal harus lebih besar dari hari ini
 ErrorPaymentModeDefinedToWithoutSetup=Mode pembayaran ditetapkan untuk mengetik %s tetapi pengaturan modul Faktur tidak selesai untuk menentukan informasi yang akan ditampilkan untuk mode pembayaran ini.
 ErrorPHPNeedModule=Kesalahan, PHP Anda harus memiliki modul<b>%s</b>diinstal untuk menggunakan fitur ini.
-ErrorOpenIDSetupNotComplete=Anda menyiapkan file konfigurasi Dolibarr untuk mengizinkan otentikasi OpenID, tetapi URL layanan OpenID tidak didefinisikan ke dalam konstanta %s
+ErrorOpenIDSetupNotComplete=Anda menyiapkan file konfigurasi BERP3 untuk mengizinkan otentikasi OpenID, tetapi URL layanan OpenID tidak didefinisikan ke dalam konstanta %s
 ErrorWarehouseMustDiffers=Gudang sumber dan target harus berbeda
 ErrorBadFormat=Format salah!
 ErrorMemberNotLinkedToAThirpartyLinkOrCreateFirst=Kesalahan, anggota ini belum tertaut ke pihak ketiga mana pun. Tautkan anggota ke pihak ketiga yang ada atau buat pihak ketiga yang baru sebelum membuat langganan dengan faktur.

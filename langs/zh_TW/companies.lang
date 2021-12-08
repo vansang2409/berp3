@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - companies
+# BERP3 language file - Source file is en_US - companies
 ErrorCompanyNameAlreadyExists=公司名稱%s已經存在。請選擇另一個。
 ErrorSetACountryFirst=請先設定國家
 SelectThirdParty=選擇一個合作方
@@ -406,7 +406,7 @@ ProspectsByStatus=依狀態排序的潛在方
 NoParentCompany=無
 ExportCardToFormat=匯出格式
 ContactNotLinkedToCompany=連絡人沒有連結到任何合作方
-DolibarrLogin=Dolibarr 登入
+DolibarrLogin=BERP3 登入
 NoDolibarrAccess=無Dolibarr存取
 ExportDataset_company_1=合作方（公司/基金會/自然人）及屬性
 ExportDataset_company_2=聯絡人及其屬性

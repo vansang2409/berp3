@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=rtl
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,8 +61,8 @@ ErrorNoRequestInError=در خطا درخواستی نیست
 ErrorServiceUnavailableTryLater=در حال حاضر امکان ارائۀ خدمات وجود ندارد. بعدا دوباره تلاش کنید.
 ErrorDuplicateField=مقدار تکراری در بخش منحصربه‌فرد
 ErrorSomeErrorWereFoundRollbackIsDone=چند خطا پیدا شده. تغییرات عقب‌گرد خواهد شد.
-ErrorConfigParameterNotDefined=مؤلفۀ <b>%s</b> در فایل پیکربندی Dolibarr یهمی <b>conf.php</b> تعریف نشده است.
-ErrorCantLoadUserFromDolibarrDatabase=کاربر <b>%s</b> در پایگاه دادۀ Dolibarr پیدا نشد.
+ErrorConfigParameterNotDefined=مؤلفۀ <b>%s</b> در فایل پیکربندی BERP3 یهمی <b>conf.php</b> تعریف نشده است.
+ErrorCantLoadUserFromDolibarrDatabase=کاربر <b>%s</b> در پایگاه دادۀ BERP3 پیدا نشد.
 ErrorNoVATRateDefinedForSellerCountry=خطا، نرخ م‌ب‌اا برای کشور "%s" پیدا نشد.
 ErrorNoSocialContributionForSellerCountry=خطا، مالیات‌های اجتماعی/سیاست‌های مالی برای کشور "%s" تعریف نشده است.
 ErrorFailedToSaveFile=خطا، امکان ذخیرۀ فایل وجود نداشت.
@@ -94,7 +94,7 @@ RecordDeleted=ردیف، حذف شد
 RecordGenerated=ردیف، تولید شد
 LevelOfFeature=سطح قابلیت‌ها
 NotDefined=تعریف نشده
-DolibarrInHttpAuthenticationSoPasswordUseless=حالت اعتبارسنجی Dolibarr در فایل پیکربندی <b>conf.php</b> به <b>%s</b> تنظیم شده است.<br> این به معنای آن است که پایگاه‌دادۀ گذرواژه نسبت به Dolibarr، خارجی است پس تغییر این بخش اثر نخواهد داشت.
+DolibarrInHttpAuthenticationSoPasswordUseless=حالت اعتبارسنجی BERP3 در فایل پیکربندی <b>conf.php</b> به <b>%s</b> تنظیم شده است.<br> این به معنای آن است که پایگاه‌دادۀ گذرواژه نسبت به Dolibarr، خارجی است پس تغییر این بخش اثر نخواهد داشت.
 Administrator=مدیر
 Undefined=تعریف نشده
 PasswordForgotten=گذرواژه فراموش شده
@@ -112,7 +112,7 @@ DatabaseTypeManager=نوع مدیریت پایگاه‌داده
 RequestLastAccessInError=آخرین خطای دسترسی به پایگاه‌داده
 ReturnCodeLastAccessInError=کد آخرین خطای دسترسی به پایگاه‌داده
 InformationLastAccessInError=اطلاعات مربوط به آخرین خطای دسترسی به پایگاه داده
-DolibarrHasDetectedError=Dolibarr با یک خطای فنی مواجه شده است
+DolibarrHasDetectedError=BERP3 با یک خطای فنی مواجه شده است
 YouCanSetOptionDolibarrMainProdToZero=شما می‌توانید فایل گزارش‌کار را مطالعه کرده یا در فایل پیکربندی گزینۀ $dolibarr_main_prod را برای دریافت اطلاعات بیشتر به '0' تغییر دهید
 InformationToHelpDiagnose=این اطلاعات برای اهداف تحلیل و بررسی قابل استفاده خواهد بود ( شما همچنان می‌توانید گزینۀ $dolibarr_main_prod را برای حذف این یادداشت‌ها به '1' تغییر دهید.
 MoreInformation=اطلاعات بیشتر
@@ -121,7 +121,7 @@ TechnicalID=شناسۀ فنی
 LineID=Line ID
 NotePublic=یادداشت (عمومی)
 NotePrivate=یادداشت (خصوصی)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr طوری تنظیم شده است که دقت واحد مبالغ با <b>%s</b> عدد اعشاری باشد.
+PrecisionUnitIsLimitedToXDecimals=BERP3 طوری تنظیم شده است که دقت واحد مبالغ با <b>%s</b> عدد اعشاری باشد.
 DoTest=آزمایش
 ToFilter=گزینش/صافی
 NoFilter=بدون گزینش/صافی
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=اعضاء
 MenuAgendaGoogle=دستورکار گوگل
 MenuTaxesAndSpecialExpenses=Taxes | Special expenses
-ThisLimitIsDefinedInSetup=محدودیت Dolibarr  (فهرست خانه-برپاسازی-امنیت):  %s کیلوبایت، محدودیت PHP برابر با: %s کیلوبایت
-ThisLimitIsDefinedInSetupAt=Dolibarr limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=محدودیت BERP3  (فهرست خانه-برپاسازی-امنیت):  %s کیلوبایت، محدودیت PHP برابر با: %s کیلوبایت
+ThisLimitIsDefinedInSetupAt=BERP3 limit (Menu %s): %s Kb, PHP limit (Param %s): %s Kb
 NoFileFound=No documents uploaded
 CurrentUserLanguage=زبان کنونی
 CurrentTheme=پوستۀ کنونی
@@ -905,7 +905,7 @@ ViewFlatList=نمایش فهرست خطی
 ViewAccountList=View ledger
 ViewSubAccountList=View subaccount ledger
 RemoveString=حذف عبارت '%s'
-SomeTranslationAreUncomplete=برخی از زبان‌های قابل انتخاب ممکن است تنها به شکل ناقص ترجمه شده باشد یا دارای خطا باشند. لطفا برای تکمیل و تصحیح زبان مورد نظر خود در <a href="https://transifex.com/projects/p/dolibarr/" target="_blank">https://transifex.com/projects/p/dolibarr/</a> ثبت نام نمائید و اصلاحات مورد نظر خود را انجام دهید.
+SomeTranslationAreUncomplete=برخی از زبان‌های قابل انتخاب ممکن است تنها به شکل ناقص ترجمه شده باشد یا دارای خطا باشند. لطفا برای تکمیل و تصحیح زبان مورد نظر خود در <a href="https://bonaerp.com/" target="_blank">berp3</a> ثبت نام نمائید و اصلاحات مورد نظر خود را انجام دهید.
 DirectDownloadLink=Public download link
 PublicDownloadLinkDesc=Only the link is required to download the file
 DirectDownloadInternalLink=Private download link

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - website
+# BERP3 language file - Source file is en_US - website
 Shortname=Kod
 WebsiteSetupDesc=Bu erda siz foydalanmoqchi bo'lgan veb-saytlarni yarating. Keyin ularni tahrirlash uchun veb-saytlar menyusiga o'ting.
 DeleteWebsite=Veb-saytni o'chirish
@@ -45,13 +45,13 @@ ViewWebsiteInProduction=Uy manzillaridan foydalangan holda veb-saytni ko'ring
 SetHereVirtualHost=<u>Use with Apache/NGinx/...</u><br>Create on your web server (Apache, Nginx, ...) a dedicated Virtual Host with PHP enabled and a Root directory on<br><strong>%s</strong>
 ExampleToUseInApacheVirtualHostConfig=Apache virtual xostini o'rnatishda foydalanish uchun misol:
 YouCanAlsoTestWithPHPS=<u>Use with PHP embedded server</u><br>On develop environment, you may prefer to test the site with the PHP embedded web server (PHP 5.5 required) by running<br><strong>php -S 0.0.0.0:8080 -t %s</strong>
-YouCanAlsoDeployToAnotherWHP= <u> Veb-saytingizni boshqa Dolibarr Hosting provayderi bilan boshqaring </u> <br> Agar Internetda mavjud bo'lgan Apache yoki NGinx kabi veb-serveringiz bo'lmasa, veb-saytingizni boshqa Dolibarr xost-provayderi tomonidan taqdim etilgan boshqa Dolibarr nusxasi orqali eksport qilishingiz va import qilishingiz mumkin. veb-sayt moduli bilan integratsiya. <a href="https://saas.dolibarr.org" target="_blank"> saytida ba'zi Dolibarr hosting provayderlari ro'yxatini topishingiz mumkin https://saas.dolibarr.org </a>
+YouCanAlsoDeployToAnotherWHP= <u> Veb-saytingizni boshqa BERP3 Hosting provayderi bilan boshqaring </u> <br> Agar Internetda mavjud bo'lgan Apache yoki NGinx kabi veb-serveringiz bo'lmasa, veb-saytingizni boshqa BERP3 xost-provayderi tomonidan taqdim etilgan boshqa BERP3 nusxasi orqali eksport qilishingiz va import qilishingiz mumkin. veb-sayt moduli bilan integratsiya. <a href="https://bonaerp.com" target="_blank"> saytida ba'zi BERP3 hosting provayderlari ro'yxatini topishingiz mumkin https://bonaerp.com </a>
 CheckVirtualHostPerms=Check also that the virtual host user (for example www-data) has <strong>%s</strong> permissions on files into<br><strong>%s</strong>
 ReadPerm=O'qing
 WritePerm=Yozing
 TestDeployOnWeb=Internetda sinov / tarqatish
 PreviewSiteServedByWebServer=<u>Preview %s in a new tab.</u><br><br>The %s will be served by an external web server (like Apache, Nginx, IIS). You must install and setup this server before to point to directory:<br><strong>%s</strong><br>URL served by external server:<br><strong>%s</strong>
-PreviewSiteServedByDolibarr= <u> %s-ni yangi varoqda oldindan ko'rib chiqing. </u> <br> <br> %s-ga Dolibarr server tomonidan xizmat ko'rsatiladi, shuning uchun qo'shimcha veb-server (Apache, Nginx, IIS kabi) o'rnatilishi shart emas. <br> Noqulay narsa shundaki, sahifalarning URL manzillari foydalanuvchilar uchun qulay emas va Dolibarr-ning yo'lidan boshlanadi. <br> URL Dolibarr tomonidan xizmat: <br> <strong> %s </strong> <br> <br>, bu veb-sayt xizmat veb-serverda bir virtual mezbon yaratish uchun o'z tashqi veb-server foydalanish uchun, bu katalog ball <br> <strong> %s </strong> <br> keyin bu virtual server nomini kiriting ushbu veb-saytning xususiyatlarida va "Internetda sinash / tarqatish" havolasini bosing.
+PreviewSiteServedByDolibarr= <u> %s-ni yangi varoqda oldindan ko'rib chiqing. </u> <br> <br> %s-ga BERP3 server tomonidan xizmat ko'rsatiladi, shuning uchun qo'shimcha veb-server (Apache, Nginx, IIS kabi) o'rnatilishi shart emas. <br> Noqulay narsa shundaki, sahifalarning URL manzillari foydalanuvchilar uchun qulay emas va Dolibarr-ning yo'lidan boshlanadi. <br> URL BERP3 tomonidan xizmat: <br> <strong> %s </strong> <br> <br>, bu veb-sayt xizmat veb-serverda bir virtual mezbon yaratish uchun o'z tashqi veb-server foydalanish uchun, bu katalog ball <br> <strong> %s </strong> <br> keyin bu virtual server nomini kiriting ushbu veb-saytning xususiyatlarida va "Internetda sinash / tarqatish" havolasini bosing.
 VirtualHostUrlNotDefined=Tashqi veb-server tomonidan xizmat ko'rsatiladigan virtual xost manzili aniqlanmagan
 NoPageYet=Hali sahifalar yo'q
 YouCanCreatePageOrImportTemplate=Siz yangi sahifa yaratishingiz yoki to'liq veb-sayt shablonini import qilishingiz mumkin

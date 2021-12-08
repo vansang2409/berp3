@@ -1,6 +1,6 @@
-# Dolibarr language file - Source file is en_US - stripe
+# BERP3 language file - Source file is en_US - stripe
 StripeSetup=Stripe模块设置
-StripeDesc=Offer customers a Stripe online payment page for payments with credit/cebit cards via <a href="http://www.stripe.com" target="_blank">Stripe</a>. This can be used to allow your customers to make ad-hoc payments or for payments related to a particular Dolibarr object (invoice, order, ...)
+StripeDesc=Offer customers a Stripe online payment page for payments with credit/cebit cards via <a href="http://www.stripe.com" target="_blank">Stripe</a>. This can be used to allow your customers to make ad-hoc payments or for payments related to a particular BERP3 object (invoice, order, ...)
 StripeOrCBDoPayment=使用信用卡或Stripe付款
 FollowingUrlAreAvailableToMakePayments=以下网址可提供给客户的网页上，能够作出Dolibarr支付对象
 PaymentForm=付款方式

@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - members
+# BERP3 language file - Source file is en_US - members
 MembersArea=Àrea de socis
 MemberCard=Fitxa de soci
 SubscriptionCard=Fitxa cotització
@@ -101,7 +101,7 @@ ConfirmValidateMember=Vols validar aquest soci?
 FollowingLinksArePublic=Els següents enllaços són pàgines obertes que no estan protegides per cap permís de Dolibarr. No són pàgines amb format, són proporcionades com a exemple per a mostrar com llistar la base de dades de socis.
 PublicMemberList=Llistat públic de socis
 BlankSubscriptionForm=Formulari públic d'auto-subscripció
-BlankSubscriptionFormDesc=Dolibarr us pot proporcionar una URL/lloc web públic per a permetre que els visitants externs sol·licitin subscriure's a la fundació. Si un mòdul de pagament en línia està habilitat, també es pot proporcionar automàticament un formulari de pagament.
+BlankSubscriptionFormDesc=BERP3 us pot proporcionar una URL/lloc web públic per a permetre que els visitants externs sol·licitin subscriure's a la fundació. Si un mòdul de pagament en línia està habilitat, també es pot proporcionar automàticament un formulari de pagament.
 EnablePublicSubscriptionForm=Activa el lloc web públic amb el formulari d'auto-subscripció
 ForceMemberType=Força el tipus de soci
 ExportDataset_member_1=Socis i quotes

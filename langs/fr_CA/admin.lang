@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - admin
+# BERP3 language file - Source file is en_US - admin
 Publisher=Éditeur
 VersionLastInstall=Version d'installation initiale
 VersionLastUpgrade=Version de la dernière mise à jour
@@ -34,8 +34,8 @@ FeatureAvailableOnlyOnStable=La fonctionnalité est uniquement disponible sur le
 ModulesMarketPlaceDesc=Vous pouvez trouver plus de modules à télécharger sur des sites Web externes sur Internet ...
 ModulesMarketPlaces=Trouver des applications / modules externes
 ModulesDevelopYourModule=Développez votre propre application / modules
-NotCompatible=Ce module ne semble pas compatible avec votre Dolibarr %s (Min %s - Max %s).
-CompatibleAfterUpdate=Ce module nécessite une mise à jour de votre Dolibarr %s (Min %s - Max %s).
+NotCompatible=Ce module ne semble pas compatible avec votre BERP3 %s (Min %s - Max %s).
+CompatibleAfterUpdate=Ce module nécessite une mise à jour de votre BERP3 %s (Min %s - Max %s).
 SeeInMarkerPlace=Voir dans Market place
 Updated=Mis à jour
 AchatTelechargement=Acheter / Télécharger
@@ -55,7 +55,7 @@ ModuleFamilyHr=Gestion des ressources humaines (GRH)
 ModuleFamilyInterface=Interfaces avec les systèmes externes
 ThisIsAlternativeProcessToFollow=Il s'agit d'une configuration alternative à traiter manuellement:
 NotExistsDirect=Le répertoire racine alternatif n'est pas défini dans un répertoire existant.
-InfDirAlt=Depuis la version 3, il est possible de définir un autre répertoire racine. Cela vous permet de stocker, dans un répertoire dédié, des plug-ins et des modèles personnalisés. <br> Créez simplement un répertoire à la racine de Dolibarr (par exemple: personnalisé).
+InfDirAlt=Depuis la version 3, il est possible de définir un autre répertoire racine. Cela vous permet de stocker, dans un répertoire dédié, des plug-ins et des modèles personnalisés. <br> Créez simplement un répertoire à la racine de BERP3 (par exemple: personnalisé).
 LastStableVersion=Dernière version stable
 LastActivationDate=Dernière date d'activation
 LastActivationAuthor=Dernier auteur d'activation
@@ -160,7 +160,7 @@ WAREHOUSE_ASK_WAREHOUSE_DURING_ORDER=Demandez une source d'entrepôt pour l'ordr
 ShippableOrderIconInList=Ajouter un icône dans la liste des commandes qui indique si la commande est expédiable.
 LDAPAdminDnExample=DN complet (ex: cn = admin, dc = exemple, dc = com ou cn = Administrateur, cn = Utilisateurs, dc = exemple, dc = com pour le répertoire actif)
 LDAPFieldTitle=Poste
-MemcachedNotAvailable=Aucun cache applicatif trouvé. Vous pouvez accélérer les performances de Dolibarr en installant un serveur de cache Memcached et un module de cache applicatif exploitant ce serveur.<br>Plus d'info sur la page <a href="http://bonaerp.com/index.php/Module_MemCached">http://bonaerp.com/index.php/Module_MemCached</a>. Notez que de nombreux hébergeurs low-cost ne fournissent pas de tels serveurs de cache dans leur infrastructure.
+MemcachedNotAvailable=Aucun cache applicatif trouvé. Vous pouvez accélérer les performances de BERP3 en installant un serveur de cache Memcached et un module de cache applicatif exploitant ce serveur.<br>Plus d'info sur la page <a href="http://bonaerp.com/index.php/Module_MemCached">http://bonaerp.com/index.php/Module_MemCached</a>. Notez que de nombreux hébergeurs low-cost ne fournissent pas de tels serveurs de cache dans leur infrastructure.
 DefaultSortOrder=Ordres de tri par défaut
 DefaultFocus=Champs de mise au point par défaut
 MergePropalProductCard=Activez dans le produit/service, l'option onglet de fichiers attachés pour fusionner le produit PDF le document à la proposition PDF azur si le produit/service est dans la proposition
@@ -179,9 +179,9 @@ OptionVatMode=TPS/TVH due
 AGENDA_SHOW_LINKED_OBJECT=Afficher l'objet lié dans la vue d'agenda
 ClickToDialUrlDesc=Url appelle quand un clic sur le picto du téléphone est terminé. Dans l'URL, vous pouvez utiliser des tags sur <b> __ PHONETO __ </ b> qui sera remplacé par le numéro de téléphone de la personne à appeler <b> __ PHONEFROM __ </ b> qui sera remplacé par le numéro de téléphone de l'appel Personne (votre) <br> <b> __ LOGIN __ </ b> qui sera remplacé par login clicktodial (défini sur la carte utilisateur) <br> <b> __ PASS __ </ b> qui sera remplacé par le mot de passe clicktodial (défini sur l'utilisateur carte).
 ClickToDialUseTelLink=Utilisez juste un lien "tel: " sur les numéros de téléphone
-EndPointIs=Les clients SOAP doivent envoyer leurs demandes au point d'extrémité Dolibarr disponible à l'URL
+EndPointIs=Les clients SOAP doivent envoyer leurs demandes au point d'extrémité BERP3 disponible à l'URL
 ApiSetup=Configuration du module API
-ApiDesc=En activant ce module , Dolibarr devenir un serveur REST pour fournir des services Web divers .
+ApiDesc=En activant ce module , BERP3 devenir un serveur REST pour fournir des services Web divers .
 ApiProductionMode=Activer le mode de production (cela active l'utilisation d'un cache pour la gestion des services)
 ApiExporerIs=Vous pouvez explorer et tester les API à l'URL
 OnlyActiveElementsAreExposed=Seuls les éléments de modules activés sont exposés
@@ -221,7 +221,7 @@ MailToMember=Membres
 ByDefaultInList=Afficher par défaut sur la liste vue
 TitleExampleForMajorRelease=Exemple de message que vous pouvez utiliser pour annoncer cette version majeure ( se sentir libre de l'utiliser sur vos sites web )
 TitleExampleForMaintenanceRelease=Exemple de message que vous pouvez utiliser pour annoncer cette version de maintenance ( se sentir libre de l'utiliser sur vos sites web )
-ExampleOfNewsMessageForMajorRelease=Dolibarr ERP & CRM %s est disponible. La version %s est une version majeure avec beaucoup de nouvelles fonctionnalités pour les utilisateurs et les développeurs. Vous pouvez le télécharger à partir de la zone de téléchargement du https://www.dolibarr.org portal (sous-répertoire Stable versions). Vous pouvez lire <a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog"> ChangeLog </a> pour obtenir la liste complète des modifications.
+ExampleOfNewsMessageForMajorRelease=BERP3 ERP & CRM %s est disponible. La version %s est une version majeure avec beaucoup de nouvelles fonctionnalités pour les utilisateurs et les développeurs. Vous pouvez le télécharger à partir de la zone de téléchargement du https://www.bonaerp.com portal (sous-répertoire Stable versions). Vous pouvez lire <a href="https://bonaerp.com"> ChangeLog </a> pour obtenir la liste complète des modifications.
 ModelModulesProduct=Modèles de documents produits
 SeeSubstitutionVars=Voir la note * pour la liste des variables de substitution possibles
 AddRemoveTabs=Ajouter ou supprimer des onglets

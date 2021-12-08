@@ -1,4 +1,4 @@
-# Dolibarr language file - Source file is en_US - main
+# BERP3 language file - Source file is en_US - main
 DIRECTION=ltr
 # Note for Chinese:
 # msungstdlight or cid0ct are for traditional Chinese (traditional does not render with Ubuntu pdf reader)
@@ -61,8 +61,8 @@ ErrorNoRequestInError=Nav pieprasījums kļūdā
 ErrorServiceUnavailableTryLater=Pakalpojums pašlaik nav pieejams. Pamēģini vēlreiz vēlāk.
 ErrorDuplicateField=Dubulta vērtība unikālā laukā
 ErrorSomeErrorWereFoundRollbackIsDone=Dažas kļūdas tika atrastas. Atgriezām atpakaļ visu sākuma stāvoklī.
-ErrorConfigParameterNotDefined=Parametrs <b>%s</b> nav definēts Dolibarr konfigurācijas failā <b>conf.php</b>.
-ErrorCantLoadUserFromDolibarrDatabase=Neizdevās atrast lietotāju <b>%s</b> Dolibarr datu bāzē.
+ErrorConfigParameterNotDefined=Parametrs <b>%s</b> nav definēts BERP3 konfigurācijas failā <b>conf.php</b>.
+ErrorCantLoadUserFromDolibarrDatabase=Neizdevās atrast lietotāju <b>%s</b> BERP3 datu bāzē.
 ErrorNoVATRateDefinedForSellerCountry=Kļūda, PVN likme nav definēta sekojošai valstij '%s'.
 ErrorNoSocialContributionForSellerCountry=Kļūda, sociālā/fiskālā rakstura nodokļi nav definēti valstī “%s”.
 ErrorFailedToSaveFile=Kļūda, neizdevās saglabāt failu.
@@ -94,7 +94,7 @@ RecordDeleted=Ieraksts dzēsts
 RecordGenerated=Ieraksts izveidots
 LevelOfFeature=Līmeņa funkcijas
 NotDefined=Nav definēts
-DolibarrInHttpAuthenticationSoPasswordUseless=Dolibarr authentication mode is set to <b>%s</b> in configuration file <b>conf.php</b>.<br>This means that the password database is external to Dolibarr, so changing this field may have no effect.
+DolibarrInHttpAuthenticationSoPasswordUseless=BERP3 authentication mode is set to <b>%s</b> in configuration file <b>conf.php</b>.<br>This means that the password database is external to Dolibarr, so changing this field may have no effect.
 Administrator=Administrators
 Undefined=Nav definēts
 PasswordForgotten=Aizmirsāt paroli?
@@ -112,7 +112,7 @@ DatabaseTypeManager=Datu bāzes menedžeris
 RequestLastAccessInError=Jaunākās datubāzes piekļuves pieprasījuma kļūdas
 ReturnCodeLastAccessInError=Atgriešanas kods jaunākās datu bāzes piekļuves pieprasījuma kļūdai
 InformationLastAccessInError=Information for latest database access request error
-DolibarrHasDetectedError=Dolibarr ir atklājis tehnisku kļūdu
+DolibarrHasDetectedError=BERP3 ir atklājis tehnisku kļūdu
 YouCanSetOptionDolibarrMainProdToZero=Jūs varat izlasīt žurnāla failu vai iestatīt opciju $ dolibarr_main_prod uz '0' savā konfigurācijas failā, lai iegūtu vairāk informācijas.
 InformationToHelpDiagnose=Šī informācija var būt noderīga diagnostikas nolūkos (jūs varat iestatīt iespēju $ dolibarr_main_prod uz "1", lai noņemtu šādus paziņojumus).
 MoreInformation=Vairāk informācijas
@@ -121,7 +121,7 @@ TechnicalID=Tehniskais ID
 LineID=Līnijas ID
 NotePublic=Piezīme (publiska)
 NotePrivate=Piezīme (privāta)
-PrecisionUnitIsLimitedToXDecimals=Dolibarr iestatīts, lai ierobežotu vienības cenu <b>%s</b> zīmēm aiz komata.
+PrecisionUnitIsLimitedToXDecimals=BERP3 iestatīts, lai ierobežotu vienības cenu <b>%s</b> zīmēm aiz komata.
 DoTest=Pārbaude
 ToFilter=Filtrs
 NoFilter=Bez filtra
@@ -729,8 +729,8 @@ MenuAWStats=AWStats
 MenuMembers=Dalībnieki
 MenuAgendaGoogle=Google darba kārtība
 MenuTaxesAndSpecialExpenses=Nodokļi | Īpašie izdevumi
-ThisLimitIsDefinedInSetup=Dolibarr robeža (Menu mājas uzstādīšana-drošība): %s Kb, PHP robeža: %s Kb
-ThisLimitIsDefinedInSetupAt=Dolibarr limits (izvēlne %s): %s Kb, PHP ierobežojums (Param %s): %s Kb
+ThisLimitIsDefinedInSetup=BERP3 robeža (Menu mājas uzstādīšana-drošība): %s Kb, PHP robeža: %s Kb
+ThisLimitIsDefinedInSetupAt=BERP3 limits (izvēlne %s): %s Kb, PHP ierobežojums (Param %s): %s Kb
 NoFileFound=Nav augšupielādēts neviens dokuments
 CurrentUserLanguage=Pašreizējā valoda
 CurrentTheme=Pašreizējā tēma
@@ -905,7 +905,7 @@ ViewFlatList=Skatīt plakanu sarakstu
 ViewAccountList=Skatīt virsgrāmatu
 ViewSubAccountList=Skatīt apakškonta virsgrāmatu
 RemoveString=Noņemt virkni '%s'
-SomeTranslationAreUncomplete=Dažas piedāvātās valodas var būt tikai daļēji tulkotas vai var saturēt kļūdas. Lūdzu, palīdziet labot savu valodu, reģistrējoties <a href="https://transifex.com/projects/p/dolibarr/" target="_blank"> https://transifex.com/projects/p/dolibarr/ </a>, lai pievienotu savus uzlabojumus.
+SomeTranslationAreUncomplete=Dažas piedāvātās valodas var būt tikai daļēji tulkotas vai var saturēt kļūdas. Lūdzu, palīdziet labot savu valodu, reģistrējoties <a href="https://bonaerp.com/" target="_blank"> dolibarr/ </a>, lai pievienotu savus uzlabojumus.
 DirectDownloadLink=Publiska lejupielādes saite
 PublicDownloadLinkDesc=Lai lejupielādētu failu, nepieciešama tikai saite
 DirectDownloadInternalLink=Privāta lejupielādes saite
