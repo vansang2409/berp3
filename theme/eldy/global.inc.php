@@ -2435,7 +2435,7 @@ div.menu_titre {
 {
 	padding-<?php print $left; ?>: 2px;
 	padding-<?php print $right; ?>: 2px;
-	font-family: Roboto,<?php echo $fontlist; ?>;
+	font-family: <?php echo $fontlist; ?>;
 	font-weight: 400;
 }
 
