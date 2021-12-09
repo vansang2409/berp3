@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Behaviour when a bookmark URL is selected
 CreateBookmark=Izradi zabilješku
 SetHereATitleForLink=Set a name for the bookmark
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Use an external/absolute link (https://URL) or an internal/relative link (/DOLIBARR_ROOT/htdocs/...)
+UseAnExternalHttpLinkOrRelativeBerp3Link=Use an external/absolute link (https://URL) or an internal/relative link (/BERP3_ROOT/htdocs/...)
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Choose if the linked page should open in the current tab or a new tab
 BookmarksManagement=Upravljanje zabilješkama

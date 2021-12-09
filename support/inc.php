@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2004      Sebastien DiCintio   <sdicintio@ressource-toi.org>
- * Copyright (C) 2007-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004             
+ * Copyright (C) 2004         
+ * Copyright (C) 2007-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,8 +60,8 @@ $conffile = "../conf/conf.php";
 $conffiletoshow = "htdocs/conf/conf.php";
 // For debian/redhat like systems
 if (!file_exists($conffile)) {
-	$conffile = "/etc/dolibarr/conf.php";
-	$conffiletoshow = "/etc/dolibarr/conf.php";
+	$conffile = "/etc/berp3/conf.php";
+	$conffiletoshow = "/etc/berp3/conf.php";
 }
 
 
@@ -69,57 +69,57 @@ if (!file_exists($conffile)) {
 if (!defined('DONOTLOADCONF') && file_exists($conffile) && filesize($conffile) > 8) { // Test on filesize is to ensure that conf file is more that an empty template with just <?php in first line
 	$result = include_once $conffile; // Load conf file
 	if ($result) {
-		if (empty($dolibarr_main_db_type)) {
-			$dolibarr_main_db_type = 'mysql'; // For backward compatibility
+		if (empty($berp3_main_db_type)) {
+			$berp3_main_db_type = 'mysql'; // For backward compatibility
 		}
 
 		//Mysql driver support has been removed in favor of mysqli
-		if ($dolibarr_main_db_type == 'mysql') {
-			$dolibarr_main_db_type = 'mysqli';
+		if ($berp3_main_db_type == 'mysql') {
+			$berp3_main_db_type = 'mysqli';
 		}
 
-		if (empty($dolibarr_main_db_port) && ($dolibarr_main_db_type == 'mysqli')) {
-			$dolibarr_main_db_port = '3306'; // For backward compatibility
+		if (empty($berp3_main_db_port) && ($berp3_main_db_type == 'mysqli')) {
+			$berp3_main_db_port = '3306'; // For backward compatibility
 		}
 
 		// Clean parameters
-		$dolibarr_main_data_root        = isset($dolibarr_main_data_root) ?trim($dolibarr_main_data_root) : '';
-		$dolibarr_main_url_root         = isset($dolibarr_main_url_root) ?trim($dolibarr_main_url_root) : '';
-		$dolibarr_main_url_root_alt     = isset($dolibarr_main_url_root_alt) ?trim($dolibarr_main_url_root_alt) : '';
-		$dolibarr_main_document_root    = isset($dolibarr_main_document_root) ?trim($dolibarr_main_document_root) : '';
-		$dolibarr_main_document_root_alt = isset($dolibarr_main_document_root_alt) ?trim($dolibarr_main_document_root_alt) : '';
+		$berp3_main_data_root        = isset($berp3_main_data_root) ?trim($berp3_main_data_root) : '';
+		$berp3_main_url_root         = isset($berp3_main_url_root) ?trim($berp3_main_url_root) : '';
+		$berp3_main_url_root_alt     = isset($berp3_main_url_root_alt) ?trim($berp3_main_url_root_alt) : '';
+		$berp3_main_document_root    = isset($berp3_main_document_root) ?trim($berp3_main_document_root) : '';
+		$berp3_main_document_root_alt = isset($berp3_main_document_root_alt) ?trim($berp3_main_document_root_alt) : '';
 
 		// Remove last / or \ on directories or url value
-		if (!empty($dolibarr_main_document_root) && !preg_match('/^[\\/]+$/', $dolibarr_main_document_root)) {
-			$dolibarr_main_document_root = preg_replace('/[\\/]+$/', '', $dolibarr_main_document_root);
+		if (!empty($berp3_main_document_root) && !preg_match('/^[\\/]+$/', $berp3_main_document_root)) {
+			$berp3_main_document_root = preg_replace('/[\\/]+$/', '', $berp3_main_document_root);
 		}
-		if (!empty($dolibarr_main_url_root) && !preg_match('/^[\\/]+$/', $dolibarr_main_url_root)) {
-			$dolibarr_main_url_root = preg_replace('/[\\/]+$/', '', $dolibarr_main_url_root);
+		if (!empty($berp3_main_url_root) && !preg_match('/^[\\/]+$/', $berp3_main_url_root)) {
+			$berp3_main_url_root = preg_replace('/[\\/]+$/', '', $berp3_main_url_root);
 		}
-		if (!empty($dolibarr_main_data_root) && !preg_match('/^[\\/]+$/', $dolibarr_main_data_root)) {
-			$dolibarr_main_data_root = preg_replace('/[\\/]+$/', '', $dolibarr_main_data_root);
+		if (!empty($berp3_main_data_root) && !preg_match('/^[\\/]+$/', $berp3_main_data_root)) {
+			$berp3_main_data_root = preg_replace('/[\\/]+$/', '', $berp3_main_data_root);
 		}
-		if (!empty($dolibarr_main_document_root_alt) && !preg_match('/^[\\/]+$/', $dolibarr_main_document_root_alt)) {
-			$dolibarr_main_document_root_alt = preg_replace('/[\\/]+$/', '', $dolibarr_main_document_root_alt);
+		if (!empty($berp3_main_document_root_alt) && !preg_match('/^[\\/]+$/', $berp3_main_document_root_alt)) {
+			$berp3_main_document_root_alt = preg_replace('/[\\/]+$/', '', $berp3_main_document_root_alt);
 		}
-		if (!empty($dolibarr_main_url_root_alt) && !preg_match('/^[\\/]+$/', $dolibarr_main_url_root_alt)) {
-			$dolibarr_main_url_root_alt = preg_replace('/[\\/]+$/', '', $dolibarr_main_url_root_alt);
+		if (!empty($berp3_main_url_root_alt) && !preg_match('/^[\\/]+$/', $berp3_main_url_root_alt)) {
+			$berp3_main_url_root_alt = preg_replace('/[\\/]+$/', '', $berp3_main_url_root_alt);
 		}
 
 		// Create conf object
-		if (!empty($dolibarr_main_document_root)) {
-			$result = conf($dolibarr_main_document_root);
+		if (!empty($berp3_main_document_root)) {
+			$result = conf($berp3_main_document_root);
 		}
 		// Load database driver
 		if ($result) {
-			if (!empty($dolibarr_main_document_root) && !empty($dolibarr_main_db_type)) {
-				$result = include_once $dolibarr_main_document_root."/core/db/".$dolibarr_main_db_type.'.class.php';
+			if (!empty($berp3_main_document_root) && !empty($berp3_main_db_type)) {
+				$result = include_once $berp3_main_document_root."/core/db/".$berp3_main_db_type.'.class.php';
 				if (!$result) {
-					$includeconferror = 'ErrorBadValueForDolibarrMainDBType';
+					$includeconferror = 'ErrorBadValueForBerp3MainDBType';
 				}
 			}
 		} else {
-			$includeconferror = 'ErrorBadValueForDolibarrMainDocumentRoot';
+			$includeconferror = 'ErrorBadValueForBerp3MainDocumentRoot';
 		}
 	} else {
 		$includeconferror = 'ErrorBadFormatForConfFile';
@@ -128,41 +128,41 @@ if (!defined('DONOTLOADCONF') && file_exists($conffile) && filesize($conffile) >
 $conf->global->MAIN_LOGTOHTML = 1;
 
 // Define prefix
-if (!isset($dolibarr_main_db_prefix) || !$dolibarr_main_db_prefix) {
-	$dolibarr_main_db_prefix = 'llx_';
+if (!isset($berp3_main_db_prefix) || !$berp3_main_db_prefix) {
+	$berp3_main_db_prefix = 'llx_';
 }
-define('MAIN_DB_PREFIX', (isset($dolibarr_main_db_prefix) ? $dolibarr_main_db_prefix : ''));
+define('MAIN_DB_PREFIX', (isset($berp3_main_db_prefix) ? $berp3_main_db_prefix : ''));
 
 define('DOL_CLASS_PATH', 'class/'); // Filsystem path to class dir
-define('DOL_DATA_ROOT', (isset($dolibarr_main_data_root) ? $dolibarr_main_data_root : ''));
-define('DOL_MAIN_URL_ROOT', (isset($dolibarr_main_url_root) ? $dolibarr_main_url_root : '')); // URL relative root
+define('DOL_DATA_ROOT', (isset($berp3_main_data_root) ? $berp3_main_data_root : ''));
+define('DOL_MAIN_URL_ROOT', (isset($berp3_main_url_root) ? $berp3_main_url_root : '')); // URL relative root
 $uri = preg_replace('/^http(s?):\/\//i', '', constant('DOL_MAIN_URL_ROOT')); // $uri contains url without http*
 $suburi = strstr($uri, '/'); // $suburi contains url without domain
 if ($suburi == '/') {
 	$suburi = ''; // If $suburi is /, it is now ''
 }
-define('DOL_URL_ROOT', $suburi); // URL relative root ('', '/dolibarr', ...)
+define('DOL_URL_ROOT', $suburi); // URL relative root ('', '/berp3', ...)
 
 if (empty($character_set_client)) {
 	$character_set_client = "UTF-8";
 }
 $conf->file->character_set_client = strtoupper($character_set_client);
-if (empty($dolibarr_main_db_character_set)) {
-	$dolibarr_main_db_character_set = ($conf->db->type == 'mysqli' ? 'utf8' : ''); // Old installation
+if (empty($berp3_main_db_character_set)) {
+	$berp3_main_db_character_set = ($conf->db->type == 'mysqli' ? 'utf8' : ''); // Old installation
 }
-$conf->db->character_set = $dolibarr_main_db_character_set;
-if (empty($dolibarr_main_db_collation)) {
-	$dolibarr_main_db_collation = ($conf->db->type == 'mysqli' ? 'utf8_unicode_ci' : ''); // Old installation
+$conf->db->character_set = $berp3_main_db_character_set;
+if (empty($berp3_main_db_collation)) {
+	$berp3_main_db_collation = ($conf->db->type == 'mysqli' ? 'utf8_unicode_ci' : ''); // Old installation
 }
-$conf->db->dolibarr_main_db_collation = $dolibarr_main_db_collation;
-if (empty($dolibarr_main_db_encryption)) {
-	$dolibarr_main_db_encryption = 0;
+$conf->db->berp3_main_db_collation = $berp3_main_db_collation;
+if (empty($berp3_main_db_encryption)) {
+	$berp3_main_db_encryption = 0;
 }
-$conf->db->dolibarr_main_db_encryption = $dolibarr_main_db_encryption;
-if (empty($dolibarr_main_db_cryptkey)) {
-	$dolibarr_main_db_cryptkey = '';
+$conf->db->berp3_main_db_encryption = $berp3_main_db_encryption;
+if (empty($berp3_main_db_cryptkey)) {
+	$berp3_main_db_cryptkey = '';
 }
-$conf->db->dolibarr_main_db_cryptkey = $dolibarr_main_db_cryptkey;
+$conf->db->berp3_main_db_cryptkey = $berp3_main_db_cryptkey;
 
 if (empty($conf->db->user)) {
 	$conf->db->user = '';
@@ -184,35 +184,35 @@ $bc[true] = ' class="bg2"';
 /**
  *	Load conf file (file must exists)
  *
- *	@param	string	$dolibarr_main_document_root		Root directory of Dolibarr bin files
+ *	@param	string	$berp3_main_document_root		Root directory of Berp3 bin files
  *	@return	int											<0 if KO, >0 if OK
  */
-function conf($dolibarr_main_document_root)
+function conf($berp3_main_document_root)
 {
 	global $conf;
-	global $dolibarr_main_db_type;
-	global $dolibarr_main_db_host;
-	global $dolibarr_main_db_port;
-	global $dolibarr_main_db_name;
-	global $dolibarr_main_db_user;
-	global $dolibarr_main_db_pass;
+	global $berp3_main_db_type;
+	global $berp3_main_db_host;
+	global $berp3_main_db_port;
+	global $berp3_main_db_name;
+	global $berp3_main_db_user;
+	global $berp3_main_db_pass;
 	global $character_set_client;
 
-	$return = include_once $dolibarr_main_document_root.'/core/class/conf.class.php';
+	$return = include_once $berp3_main_document_root.'/core/class/conf.class.php';
 	if (!$return) {
 		return -1;
 	}
 
 	$conf = new Conf();
-	$conf->db->type = trim($dolibarr_main_db_type);
-	$conf->db->host = trim($dolibarr_main_db_host);
-	$conf->db->port = trim($dolibarr_main_db_port);
-	$conf->db->name = trim($dolibarr_main_db_name);
-	$conf->db->user = trim($dolibarr_main_db_user);
-	$conf->db->pass = trim($dolibarr_main_db_pass);
+	$conf->db->type = trim($berp3_main_db_type);
+	$conf->db->host = trim($berp3_main_db_host);
+	$conf->db->port = trim($berp3_main_db_port);
+	$conf->db->name = trim($berp3_main_db_name);
+	$conf->db->user = trim($berp3_main_db_user);
+	$conf->db->pass = trim($berp3_main_db_pass);
 
-	if (empty($conf->db->dolibarr_main_db_collation)) {
-		$conf->db->dolibarr_main_db_collation = 'utf8_unicode_ci';
+	if (empty($conf->db->berp3_main_db_collation)) {
+		$conf->db->berp3_main_db_collation = 'utf8_unicode_ci';
 	}
 
 	return 1;
@@ -243,10 +243,10 @@ function pHeader($soutitre, $next, $action = 'none')
 	print '<meta http-equiv="content-type" content="text/html; charset='.$conf->file->character_set_client.'">'."\n";
 	print '<meta name="robots" content="index,follow">'."\n";
 	print '<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";
-	print '<meta name="keywords" content="help, center, dolibarr, doliwamp">'."\n";
-	print '<meta name="description" content="Dolibarr help center">'."\n";
+	print '<meta name="keywords" content="help, center, berp3, berp3wamp">'."\n";
+	print '<meta name="description" content="Berp3 help center">'."\n";
 	print '<link rel="stylesheet" type="text/css" href="../install/default.css">'."\n";
-	print '<title>'.$langs->trans("DolibarrHelpCenter").'</title>'."\n";
+	print '<title>'.$langs->trans("Berp3HelpCenter").'</title>'."\n";
 	print '</head>'."\n";
 
 	print '<body class="center">'."\n";

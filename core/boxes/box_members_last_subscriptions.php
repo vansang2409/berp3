@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2015-2020 Frederic France      <frederic.france@netlogic.fr>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2017 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2015-2020       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ class box_members_last_subscriptions extends ModeleBoxes
 	public $depends = array("adherent");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -52,7 +52,7 @@ class box_members_last_subscriptions extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB	$db      	Database handler
+	 *  @param  Berp3DB	$db      	Database handler
 	 *  @param	string	$param		More parameters
 	 */
 	public function __construct($db, $param = '')

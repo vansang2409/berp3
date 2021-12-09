@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2001-2002	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Jean-Louis Bergamo		<jlb@j1b.org>
- * Copyright (C) 2004-2011	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2013		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2015		Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2019		Thibault Foucart		<support@ptibogxiv.net>
- * Copyright (C) 2020		Josep Lluís Amador		<joseplluis@lliuretic.cat>
- * Copyright (C) 2021		Waël Almoman			<info@almoman.com>
+/* Copyright (C) 2001-2002	
+ * Copyright (C) 2003		
+ * Copyright (C) 2004-2011	
+ * Copyright (C) 2005-2017	
+ * Copyright (C) 2013		
+ * Copyright (C) 2015		
+ * Copyright (C) 2019				
+ * Copyright (C) 2020				
+ * Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -394,12 +394,12 @@ if ($action == 'create') {
 
 	print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('comment', $object->note, '', 200, 'dolibarr_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
+	$doleditor = new DolEditor('comment', $object->note, '', 200, 'berp3_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
 	$doleditor->Create();
 
 	print '<tr><td class="tdtop">'.$langs->trans("WelcomeEMail").'</td><td>';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('mail_valid', $object->mail_valid, '', 250, 'dolibarr_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
+	$doleditor = new DolEditor('mail_valid', $object->mail_valid, '', 250, 'berp3_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
 	$doleditor->Create();
 	print '</td></tr>';
 
@@ -823,12 +823,12 @@ if ($rowid > 0) {
 
 		print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 		require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor('comment', $object->note, '', 280, 'dolibarr_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
+		$doleditor = new DolEditor('comment', $object->note, '', 280, 'berp3_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
 		$doleditor->Create();
 		print "</td></tr>";
 
 		print '<tr><td class="tdtop">'.$langs->trans("WelcomeEMail").'</td><td>';
-		$doleditor = new DolEditor('mail_valid', $object->mail_valid, '', 280, 'dolibarr_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
+		$doleditor = new DolEditor('mail_valid', $object->mail_valid, '', 280, 'berp3_notes', '', false, true, empty($conf->fckeditor->enabled) ? false : $conf->fckeditor->enabled, 15, '90%');
 		$doleditor->Create();
 		print "</td></tr>";
 

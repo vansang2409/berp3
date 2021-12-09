@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017-2020	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2017-2018	Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2017-2020		
+ * Copyright (C) 2017-2018			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -107,9 +107,9 @@ if (GETPOST('button_removefilter_x', 'alpha') || GETPOST('button_removefilter.x'
 
 if ($action == 'setMAIN_ENABLE_DEFAULT_VALUES') {
 	if (GETPOST('value')) {
-		dolibarr_set_const($db, 'MAIN_ENABLE_DEFAULT_VALUES', 1, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'MAIN_ENABLE_DEFAULT_VALUES', 1, 'chaine', 0, '', $conf->entity);
 	} else {
-		dolibarr_set_const($db, 'MAIN_ENABLE_DEFAULT_VALUES', 0, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'MAIN_ENABLE_DEFAULT_VALUES', 0, 'chaine', 0, '', $conf->entity);
 	}
 }
 

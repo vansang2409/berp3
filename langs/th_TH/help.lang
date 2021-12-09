@@ -5,8 +5,8 @@ RemoteControlSupport=ออนไลน์เรียลไทม์ / สน�
 OtherSupport=การสนับสนุนอื่น ๆ
 ToSeeListOfAvailableRessources=หากต้องการติดต่อ / ดูทรัพยากรที่มีอยู่:
 HelpCenter=ศูนย์ช่วยเหลือ
-DolibarrHelpCenter=BERP3 Help and Support Center
-ToGoBackToDolibarr=Otherwise, <a href="%s">click here to continue to use Dolibarr</a>.
+Berp3HelpCenter=BERP3 Help and Support Center
+ToGoBackToBerp3=Otherwise, <a href="%s">click here to continue to use Berp3</a>.
 TypeOfSupport=Type of support
 TypeSupportCommunauty=ชุมชน (ฟรี)
 TypeSupportCommercial=เชิงพาณิชย์

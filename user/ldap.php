@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2006-2017 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2012 
+ * Copyright (C) 2006-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,7 +63,7 @@ if ($reshook < 0) {
 }
 
 if (empty($reshook)) {
-	if ($action == 'dolibarr2ldap') {
+	if ($action == 'berp32ldap') {
 		$ldap = new Ldap();
 		$result = $ldap->connect_bind();
 
@@ -112,7 +112,7 @@ print '<table class="border centpercent">';
 // Login
 print '<tr><td class="titlefield">'.$langs->trans("Login").'</td>';
 if ($object->ldap_sid) {
-	print '<td class="warning">'.$langs->trans("LoginAccountDisableInDolibarr").'</td>';
+	print '<td class="warning">'.$langs->trans("LoginAccountDisableInBerp3").'</td>';
 } else {
 	print '<td>'.$object->login.'</td>';
 }
@@ -153,13 +153,13 @@ print dol_get_fiche_end();
  */
 print '<div class="tabsAction">';
 
-if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'dolibarr2ldap') {
-	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=dolibarr2ldap">'.$langs->trans("ForceSynchronize").'</a>';
+if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'berp32ldap') {
+	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=berp32ldap">'.$langs->trans("ForceSynchronize").'</a>';
 }
 
 print "</div>\n";
 
-if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'dolibarr2ldap') {
+if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'berp32ldap') {
 	print "<br>\n";
 }
 

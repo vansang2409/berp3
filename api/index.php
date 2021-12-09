@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2015	Jean-François Ferry		<jfefe@aternatik.fr>
- * Copyright (C) 2016	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2017	Regis Houssin			<regis.houssin@inodbox.com>
+/* Copyright (C) 2015	
+ * Copyright (C) 2016	
+ * Copyright (C) 2017	
  * Copyright (C) 2021	Alexis LAURIER			<contact@alexislaurier.fr>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
  */
 
 /**
- * 	\defgroup   api     Module DolibarrApi
+ * 	\defgroup   api     Module Berp3Api
  *  \brief      API loader
  *				Search files htdocs/<module>/class/api_<module>.class.php
  *  \file       htdocs/api/index.php
@@ -95,7 +95,7 @@ if (!empty($conf->global->MAIN_NGINX_FIX)) {
 // Enable and test if module Api is enabled
 if (empty($conf->global->MAIN_MODULE_API)) {
 	$langs->load("admin");
-	dol_syslog("Call of Dolibarr API interfaces with module API REST are disabled");
+	dol_syslog("Call of Berp3 API interfaces with module API REST are disabled");
 	print $langs->trans("WarningModuleNotActive", 'Api').'.<br><br>';
 	print $langs->trans("ToActivateModule");
 	//session_destroy();
@@ -105,7 +105,7 @@ if (empty($conf->global->MAIN_MODULE_API)) {
 // Test if explorer is not disabled
 if (preg_match('/api\/index\.php\/explorer/', $url) && !empty($conf->global->API_EXPLORER_DISABLED)) {
 	$langs->load("admin");
-	dol_syslog("Call Dolibarr API interfaces with module REST disabled");
+	dol_syslog("Call Berp3 API interfaces with module REST disabled");
 	print $langs->trans("WarningAPIExplorerDisabled").'.<br><br>';
 	//session_destroy();
 	exit(0);
@@ -140,7 +140,7 @@ if (!empty($reg[1]) && $reg[1] == 'explorer' && ($reg[2] == '/swagger.json' || $
 	$refreshcache = true;
 }
 
-$api = new DolibarrApi($db, '', $refreshcache);
+$api = new Berp3Api($db, '', $refreshcache);
 //var_dump($api->r->apiVersionMap);
 
 // Enable the Restler API Explorer.
@@ -148,7 +148,7 @@ $api = new DolibarrApi($db, '', $refreshcache);
 $api->r->addAPIClass('Luracast\\Restler\\Explorer');
 
 $api->r->setSupportedFormats('JsonFormat', 'XmlFormat', 'UploadFormat'); // 'YamlFormat'
-$api->r->addAuthenticationClass('DolibarrApiAccess', '');
+$api->r->addAuthenticationClass('Berp3ApiAccess', '');
 
 // Define accepted mime types
 UploadFormat::$allowedMimeTypes = array('image/jpeg', 'image/png', 'text/plain', 'application/octet-stream');

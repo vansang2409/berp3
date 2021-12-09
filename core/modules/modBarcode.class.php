@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2015      Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2005      
+ * Copyright (C) 2005-2008 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2015      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,18 +26,18 @@
  *	\brief      Description and activation file for the module barcode
  */
 
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *	Class to describe Barcode
  */
-class modBarcode extends DolibarrModules
+class modBarcode extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -48,8 +48,8 @@ class modBarcode extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Gestion des codes barres";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'barcode';
 
@@ -129,7 +129,7 @@ class modBarcode extends DolibarrModules
 
 	/**
 	 *      Function called when module is enabled.
-	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *      It also creates data directories.
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')
@@ -148,7 +148,7 @@ class modBarcode extends DolibarrModules
 			array('sql'=>"INSERT INTO ".MAIN_DB_PREFIX."c_barcode_type (code, libelle, coder, example, entity) VALUES ('C39', 'Code 39', 0, '1234567890', __ENTITY__)", 'ignoreerror'=>1),
 			array('sql'=>"INSERT INTO ".MAIN_DB_PREFIX."c_barcode_type (code, libelle, coder, example, entity) VALUES ('C128', 'Code 128', 0, 'ABCD1234567890', __ENTITY__)", 'ignoreerror'=>1),
 			array('sql'=>"INSERT INTO ".MAIN_DB_PREFIX."c_barcode_type (code, libelle, coder, example, entity) VALUES ('DATAMATRIX', 'Datamatrix', 0, '1234567xyz', __ENTITY__)", 'ignoreerror'=>1),
-			array('sql'=>"INSERT INTO ".MAIN_DB_PREFIX."c_barcode_type (code, libelle, coder, example, entity) VALUES ('QRCODE', 'Qr Code', 0, 'www.dolibarr.org', __ENTITY__)", 'ignoreerror'=>1)
+			array('sql'=>"INSERT INTO ".MAIN_DB_PREFIX."c_barcode_type (code, libelle, coder, example, entity) VALUES ('QRCODE', 'Qr Code', 0, 'www.berp3.org', __ENTITY__)", 'ignoreerror'=>1)
 		);
 
 		return $this->_init($sql, $options);

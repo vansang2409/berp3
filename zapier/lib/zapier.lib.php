@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2019 Frédéric FRANCE <frederic.france@free.fr>
+/* Copyright (C) 2019 Frédéric FRANCE 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 /**
  * \file    zapier/lib/zapier.lib.php
  * \ingroup zapier
- * \brief   Library files with common functions for ZapierForDolibarr
+ * \brief   Library files with common functions for ZapierForBerp3
  */
 
 /**

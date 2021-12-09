@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2010      Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2017 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014      Marcos García       <marcosgdf@gmail.com>
+/* Copyright (C) 2010             
+ * Copyright (C) 2011-2017 
+ * Copyright (C) 2014             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,19 +23,19 @@
  *  \brief      Trigger file for workflows
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for workflow module
  */
 
-class InterfaceWorkflowManager extends DolibarrTriggers
+class InterfaceWorkflowManager extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -44,13 +44,13 @@ class InterfaceWorkflowManager extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "core";
 		$this->description = "Triggers of this module allows to manage workflows";
-		// 'development', 'experimental', 'dolibarr' or version
-		$this->version = self::VERSION_DOLIBARR;
+		// 'development', 'experimental', 'berp3' or version
+		$this->version = self::VERSION_BERP3;
 		$this->picto = 'technic';
 	}
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file is inside directory htdocs/core/triggers or htdocs/module/code/triggers (and declared)
 	 *
 	 * @param string		$action		Event action code
@@ -358,7 +358,7 @@ class InterfaceWorkflowManager extends DolibarrTriggers
 	}
 
 	/**
-	 * @param Object $conf                  Dolibarr settings object
+	 * @param Object $conf                  Berp3 settings object
 	 * @param float $totalonlinkedelements  Sum of total amounts (excl VAT) of
 	 *                                      invoices linked to $object
 	 * @param float $object_total_ht        The total amount (excl VAT) of the object

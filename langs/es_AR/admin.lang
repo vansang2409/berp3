@@ -14,7 +14,7 @@ LocalSignature=Firma local embebida (menos confiable)
 RemoteSignature=Firma remota remota (más confiable)
 FilesMissing=Archivos perdidos
 FilesAdded=Archivos Agregados
-FileCheckDolibarr=Comprobar la integridad de los archivos de la aplicación.
+FileCheckBerp3=Comprobar la integridad de los archivos de la aplicación.
 AvailableOnlyOnPackagedVersions=El archivo local para la verificación de integridad solo está disponible cuando la aplicación se instala desde un paquete oficial
 XmlNotFound=Archivo de integridad xml de aplicación no encontrada
 SessionId=ID de sesión
@@ -33,7 +33,7 @@ DBSortingCharset=Codificación de caracteres de base de datos para ordenar los d
 ClientCharset=Codificación de caracteres del cliente
 WarningModuleNotActive=El módulo <b> %s </b> debe estar habilitado
 WarningOnlyPermissionOfActivatedModules=Aquí solo se muestran los permisos relacionados con los módulos activados. Puede activar otros módulos en la página Inicio-> Configuración-> Módulos.
-DolibarrSetup=BERP3 instala o actualiza
+Berp3Setup=BERP3 instala o actualiza
 GUISetup=Interfaz Gráfica
 UploadNewTemplate=Subir nueva (s) plantilla (s)
 FormToTestFileUploadForm=Formulario para probar la carga de archivos (según la configuración)
@@ -43,7 +43,7 @@ RestoreLock=Restaure el archivo <b> %s </b>, solo con permiso de lectura, para d
 SecuritySetup=Configuración de seguridad
 SecurityFilesDesc=Define aquí las opciones relacionadas con la seguridad sobre la carga de archivos.
 ErrorModuleRequirePHPVersion=Error, este módulo requiere la versión de PHP %s o superior
-ErrorModuleRequireDolibarrVersion=Error, este módulo requiere la versión de BERP3 %s o superior
+ErrorModuleRequireBerp3Version=Error, este módulo requiere la versión de BERP3 %s o superior
 ErrorDecimalLargerThanAreForbidden=Error, no se admite una precisión mayor que <b> %s </b>.
 DictionarySetup=Configuración del diccionario
 Dictionary=Los diccionarios
@@ -153,12 +153,12 @@ ModulesDeployDesc=Si los permisos en su sistema de archivos lo permiten, puede u
 ModulesMarketPlaces=Encuentra aplicaciones / módulos externos
 ModulesDevelopYourModule=Desarrolle su propia aplicación / módulos
 ModulesDevelopDesc=También puede desarrollar su propio módulo o encontrar un socio para desarrollar uno para usted.
-DOLISTOREdescriptionLong=En lugar de activar el sitio web <a href="https://www.dolistore.com"> www.dolistore.com </a> para encontrar un módulo externo, puede utilizar esta herramienta integrada que realizará la búsqueda en el Mercado externo para usted (puede ser lento, necesita un acceso a Internet) ...
+BERPSTOREdescriptionLong=En lugar de activar el sitio web <a href="https://www.berp3store.com"> www.berp3store.com </a> para encontrar un módulo externo, puede utilizar esta herramienta integrada que realizará la búsqueda en el Mercado externo para usted (puede ser lento, necesita un acceso a Internet) ...
 NotCompatible=Este modulo no parece ser compatible con su BERP3 %s (Min %s - Max %s).
 SeeSetupOfModule=Ver la configuración del módulo %s
 AchatTelechargement=Comprar / Descargar
 GoModuleSetupArea=Para implementar/instalar un nuevo módulo, vaya al área de configuración del Módulo: <a href="%s">%s</a>.
-DoliStoreDesc=DoliStore, la tienda oficial para adquirir módulos externos de BERP3 ERP/CRM
+Berp3StoreDesc=Berp3Store, la tienda oficial para adquirir módulos externos de BERP3 ERP/CRM
 WebSiteDesc=Sitios web externos para más módulos adicionales (no básicos)...
 DevelopYourModuleDesc=Algunas soluciones para desarrollar su propio módulo...
 RelativeURL=URL relativa
@@ -171,20 +171,20 @@ Required=Requeridos
 UsedOnlyWithTypeOption=Utilizado solo por alguna opción de agenda
 DoNotStoreClearPassword=Cifrar las contraseñas almacenadas en la base de datos (NO como texto plano). Se recomienda encarecidamente activar esta opción.
 MainDbPasswordFileConfEncrypted=Cifre la contraseña de la base de datos almacenada en conf.php. Se recomienda encarecidamente activar esta opción.
-InstrucToEncodePass=Para tener una contraseña cifrada en el archivo <b>conf.php</b>, reemplace la línea <br><b>$ dolibarr_main_db_pass="...";</b><br>por<br><b>$ dolibarr_main_db_pass="crypted:%s";</b>
-InstrucToClearPass=Para descifrar (limpiar) la contraseña en el archivo <b>conf.php</b>, reemplace la línea <br><b>$ dolibarr_main_db_pass="crypted: ...";</b> <br>por<br><b>$ dolibarr_main_db_pass="%s";</b>
+InstrucToEncodePass=Para tener una contraseña cifrada en el archivo <b>conf.php</b>, reemplace la línea <br><b>$ berp3_main_db_pass="...";</b><br>por<br><b>$ berp3_main_db_pass="crypted:%s";</b>
+InstrucToClearPass=Para descifrar (limpiar) la contraseña en el archivo <b>conf.php</b>, reemplace la línea <br><b>$ berp3_main_db_pass="crypted: ...";</b> <br>por<br><b>$ berp3_main_db_pass="%s";</b>
 ProtectAndEncryptPdfFiles=Proteger los archivos PDF generados. Esto NO se recomienda ya que interrumpe la generación masiva de PDF.
 ProtectAndEncryptPdfFilesDesc=Al proteger un documento PDF, está disponible para leer e imprimir con cualquier navegador. Sin embargo, editar y copiar ya no es posible. Tenga en cuenta que el uso de esta función hace que la creación de archivos PDF combinados globales no funcione.
 Feature=Funcionalidad
 Developpers=Desarrolladores/contrubuyentes
 OfficialWiki=Documentación BERP3 / Wiki
-OfficialDemo=Demo online Dolibarr
+OfficialDemo=Demo online Berp3
 OfficialMarketPlace=Mercado oficial de módulos externos/complementos
 OfficialWebHostingService=Servicios de alojamiento web referenciados (alojamiento en la nube)
 ReferencedPreferredPartners=Socios preferidos
-ForDocumentationSeeWiki=Para la documentación del usuario o desarrollador (Doc, preguntas frecuentes ...), <br> consulte la Wiki de Dolibarr: <br><b> <a href="%s" target="_blank"> %s </a> </b>
-ForAnswersSeeForum=Para cualquier otra pregunta o ayuda, puede utilizar el foro de Dolibarr: <br> <b> <a href="%s" target="_blank"> %s </a> </b>
-HelpCenterDesc1=Aquí hay algunos recursos para obtener ayuda y apoyo con Dolibarr.
+ForDocumentationSeeWiki=Para la documentación del usuario o desarrollador (Doc, preguntas frecuentes ...), <br> consulte la Wiki de Berp3: <br><b> <a href="%s" target="_blank"> %s </a> </b>
+ForAnswersSeeForum=Para cualquier otra pregunta o ayuda, puede utilizar el foro de Berp3: <br> <b> <a href="%s" target="_blank"> %s </a> </b>
+HelpCenterDesc1=Aquí hay algunos recursos para obtener ayuda y apoyo con Berp3.
 HelpCenterDesc2=Algunos de estos recursos solo están disponibles en <b> inglés </b>.
 CurrentMenuHandler=Controlador de menú actual
 SpaceX=Espacio X
@@ -235,12 +235,12 @@ DoNotUseInProduction=No utilizar en producción.
 ThisIsAlternativeProcessToFollow=Esta es una configuración alternativa para procesar manualmente:
 FindPackageFromWebSite=Encuentre un paquete que proporcione las funciones que necesita (por ejemplo, en el sitio web oficial %s).
 DownloadPackageFromWebSite=Descargue el paquete (por ejemplo, desde el sitio web oficial %s).
-UnpackPackageInDolibarrRoot=Desempaquetar / descomprima los archivos empaquetados en su directorio del servidor Dolibarr: <b> %s </b>
+UnpackPackageInBerp3Root=Desempaquetar / descomprima los archivos empaquetados en su directorio del servidor Berp3: <b> %s </b>
 UnpackPackageInModulesRoot=Para implementar / instalar un módulo externo, desempaquete / descomprima los archivos empaquetados en el directorio del servidor dedicado a los módulos externos: <br> <b> %s </b>
 SetupIsReadyForUse=El despliegue del módulo ha finalizado. Sin embargo, debe habilitar y configurar el módulo en su aplicación ingresando a los módulos de configuración de la página: <a href="%s"> %s </a>.
 NotExistsDirect=El directorio raíz alternativo no está definido en un directorio existente. <br>
 InfDirAlt=Desde la versión 3, es posible definir un directorio raíz alternativo. Esto le permite almacenar, en un directorio dedicado, complementos y plantillas personalizadas. <br> Simplemente cree un directorio en la raíz de BERP3 (por ejemplo: personalizado). <br>
-InfDirExample=<br> Luego declara en el archivo <strong> conf.php </strong> <br> $ dolibarr_main_url_root_alt = '/ personalizado' <br> $ dolibarr_main_document_root_alt = '/ path / of / berp3 / htdocs / custom' <br> Si estas líneas están comentadas con "#", para habilitarlas, simplemente elimine el comentario eliminando el carácter "#".
+InfDirExample=<br> Luego declara en el archivo <strong> conf.php </strong> <br> $ berp3_main_url_root_alt = '/ personalizado' <br> $ berp3_main_document_root_alt = '/ path / of / berp3 / htdocs / custom' <br> Si estas líneas están comentadas con "#", para habilitarlas, simplemente elimine el comentario eliminando el carácter "#".
 YouCanSubmitFile=Puedes cargar el archivo .zip del paquete del módulo desde aquí:
 CallUpdatePage=Vaya a la página que actualiza la estructura y la información la base de datos: %s.
 LastStableVersion=Ultima versión estable
@@ -313,7 +313,7 @@ DatabasePort=Puerto de base de datos
 DatabaseUser=Usuario de la base de datos
 NbOfRecord=No. de registros
 SummarySystem=Resumen de información del sistema
-SummaryConst=Lista de todos los parámetros de configuración de Dolibarr
+SummaryConst=Lista de todos los parámetros de configuración de Berp3
 MenuCompanySetup=Empresa / Organización
 DefaultMenuManager=Gestor de menú estándar
 DefaultMenuSmartphoneManager=Gestor de menú de smartphone
@@ -342,7 +342,7 @@ BackupDesc3=Realice una copia de seguridad de la estructura y el contenido de su
 BackupDescX=El directorio archivado debe almacenarse en un lugar seguro.
 BackupDescY=El archivo de volcado generado debe almacenarse en un lugar seguro.
 BackupPHPWarning=La copia de seguridad no se puede garantizar con este método. Anterior recomendado.
-RestoreDesc=Para restaurar una copia de seguridad de Dolibarr, se requieren dos pasos.
+RestoreDesc=Para restaurar una copia de seguridad de Berp3, se requieren dos pasos.
 RestoreDesc2=Restaure el archivo de copia de seguridad (archivo zip, por ejemplo) del directorio "documentos" a una nueva instalación de BERP3 o en este directorio de documentos actual (<b> %s </b>).
 RestoreDesc3=Restaure la estructura de la base de datos y los datos de un archivo de volcado de respaldo en la base de datos de la nueva instalación de BERP3 o en la base de datos de esta instalación actual (<b> %s </b>). Advertencia: una vez que se complete la restauración, debe usar un nombre de usuario / contraseña, que existía desde el momento de la copia de seguridad / instalación para volver a conectarse. <br> Para restaurar una base de datos de copia de seguridad en esta instalación actual, puede seguir a este asistente.
 ForcedToByAModule=Esta regla es forzada a <b> %s </b> por un módulo activado
@@ -415,7 +415,7 @@ HRMSetup=Configuración del módulo HRM
 CompanySetup=Configuración del módulo de empresas.
 CompanyCodeChecker=Opciones para la generación automática de códigos de clientes / proveedores.
 AccountCodeManager=Opciones para la generación automática de códigos contables de clientes / proveedores.
-NotificationsDesc=Las notificaciones por correo electrónico se pueden enviar automáticamente para algunos eventos de Dolibarr. <br> Los destinatarios de las notificaciones se pueden definir:
+NotificationsDesc=Las notificaciones por correo electrónico se pueden enviar automáticamente para algunos eventos de Berp3. <br> Los destinatarios de las notificaciones se pueden definir:
 NotificationsDescUser=* por usuario, un usuario a la vez.
 NotificationsDescGlobal=* o configurando direcciones de correo electrónico globales en esta página de configuración.
 DocumentModelOdt=Genere documentos desde plantillas de OpenDocument (archivos .ODT / .ODS de LibreOffice, OpenOffice, KOffice, TextEdit, ...)
@@ -571,7 +571,7 @@ DetectionNotPossible=No es posible la deteccion
 UrlToGetKeyToUseAPIs=Url para obtener el token para utilizar la API (una vez que se ha recibido, se guarda en la tabla de usuarios de la base de datos y debe proporcionarse en cada llamada a la API)
 ListOfAvailableAPIs=Lista de APIs disponibles
 activateModuleDependNotSatisfied=El módulo "%s" depende del módulo "%s", que falta, por lo que es posible que el módulo "%1$s" no funcione correctamente. Instale el módulo "%2$s" o deshabilite el módulo "%1$s" si quiere estar a salvo de alguna sorpresa
-CommandIsNotInsideAllowedCommands=El comando que está intentando ejecutar no está en la lista de comandos permitidos definidos en el parámetro <strong> $ dolibarr_main_restrict_os_commands </strong> en el archivo <strong> conf.php </strong>.
+CommandIsNotInsideAllowedCommands=El comando que está intentando ejecutar no está en la lista de comandos permitidos definidos en el parámetro <strong> $ berp3_main_restrict_os_commands </strong> en el archivo <strong> conf.php </strong>.
 LandingPage=Página de inicio
 SamePriceAlsoForSharedCompanies=Si utiliza un módulo de varias empresas, con la opción "Precio único", el precio también será el mismo para todas las empresas si los productos se comparten entre entornos.
 ModuleEnabledAdminMustCheckRights=Se ha activado el módulo. Los permisos para los módulos activados se otorgaron solo a los usuarios administrativos. Es posible que deba otorgar permisos a otros usuarios o grupos manualmente si es necesario.

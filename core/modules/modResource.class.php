@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2013-2014 Jean-François Ferry <jfefe@aternatik.fr>
- * Copyright (C) 2015      Laurent Destailleur <eldy@users.sourceforge.net>
+/*   
+ * Copyright (C) 2015      
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
- * Module to manage resources into Dolibarr ERP/CRM
+ * Module to manage resources into Berp3 ERP/CRM
  */
 
 /**
@@ -25,18 +25,18 @@
  * 	\ingroup	resource
  * 	\brief		Description and activation file for the module Resource
  */
-include_once DOL_DOCUMENT_ROOT."/core/modules/DolibarrModules.class.php";
+include_once DOL_DOCUMENT_ROOT."/core/modules/Berp3Modules.class.php";
 
 /**
  * Description and activation class for module Resource
  */
-class modResource extends DolibarrModules
+class modResource extends Berp3Modules
 {
 
 	/**
 	 * 	Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * 	@param	DoliDB		$db	Database handler
+	 * 	@param	Berp3DB		$db	Database handler
 	 */
 	public function __construct($db)
 	{
@@ -46,7 +46,7 @@ class modResource extends DolibarrModules
 
 		// Id for module (must be unique).
 		// Use a free id here
-		// (See in Home -> System information -> Dolibarr for list of used modules id).
+		// (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 63000;
 
 		// Key text used to identify module (for permissions, menus, etc...)
@@ -65,7 +65,7 @@ class modResource extends DolibarrModules
 		// (where XXX is value of numeric property 'numero' of module)
 		$this->description = "Manage resources (printers, cars, room, ...) you can then share into events";
 		// Possible values for version are: 'development', 'experimental' or version
-		$this->version = 'dolibarr';
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled
 		// (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
@@ -291,7 +291,7 @@ class modResource extends DolibarrModules
 	/**
 	 * Function called when module is enabled.
 	 * The init function add constants, boxes, permissions and menus
-	 * (defined in constructor) into Dolibarr database.
+	 * (defined in constructor) into Berp3 database.
 	 * It also creates data directories
 	 *
 	 * 	@param		string	$options	Options when enabling module ('', 'noboxes')

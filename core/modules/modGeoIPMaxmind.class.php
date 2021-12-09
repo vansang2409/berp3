@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2009 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,19 +23,19 @@
  *	\brief      Description and activation file for the module geoipmaxmind
  */
 
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to describe and enable module Import
  */
-class modGeoIPMaxmind extends DolibarrModules
+class modGeoIPMaxmind extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -49,8 +49,8 @@ class modGeoIPMaxmind extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "GeoIP Maxmind conversions capabilities";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -71,7 +71,7 @@ class modGeoIPMaxmind extends DolibarrModules
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with
 		$this->phpmin = array(5, 6);
 		$this->phpmax = array();
-		$this->need_dolibarr_version = array(2, 7, -1); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(2, 7, -1); // Minimum version of Berp3 required by module
 		$this->need_javascript_ajax = 1;
 
 		// Constants

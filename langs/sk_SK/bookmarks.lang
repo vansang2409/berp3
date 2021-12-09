@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Behaviour when a bookmark URL is selected
 CreateBookmark=Vytvoriť záložku
 SetHereATitleForLink=Nastavte názov pre záložku
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Použite externú http adresu URL alebo relatívnu adresu URL Dolibarr
+UseAnExternalHttpLinkOrRelativeBerp3Link=Použite externú http adresu URL alebo relatívnu adresu URL Berp3
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Zvolte či sa odkaz na stránku má otvoriť na novej krate alebo nie 
 BookmarksManagement=Záložky riadenie

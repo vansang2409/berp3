@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2010-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2006-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2012      Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2013      Cédric Salvador      <csalvador@gpcsolutions.fr>
+/* Copyright (C) 2010-2012 
+ * Copyright (C) 2006-2012 
+ * Copyright (C) 2012      
+ * Copyright (C) 2013            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2017  
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software; you can redistribute it and/or modify
@@ -181,9 +181,9 @@ class ConferenceOrBoothAttendee extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 
@@ -1087,7 +1087,7 @@ class ConferenceOrBoothAttendee extends CommonObject
 	{
 		global $conf, $langs;
 
-		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/dolibarr_mydedicatedlofile.log';
+		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/berp3_mydedicatedlofile.log';
 
 		$error = 0;
 		$this->output = '';
@@ -1109,12 +1109,12 @@ class ConferenceOrBoothAttendee extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'eventorganization_conferenceorboothattendee'
@@ -1143,9 +1143,9 @@ class ConferenceOrBoothAttendeeLine extends CommonObjectLine
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}

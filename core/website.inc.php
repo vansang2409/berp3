@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017-2019 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2017-2019 
  *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -68,7 +68,7 @@ if ($pageid > 0) {
 	$weblangs->setDefaultLang(GETPOSTISSET('lang') ? GETPOST('lang', 'aZ09') : (empty($_COOKIE['weblangs-shortcode']) ? 'auto' : preg_replace('/[^a-zA-Z0-9_\-]/', '', $_COOKIE['weblangs-shortcode'])));
 	$pagelangs->setDefaultLang($websitepage->lang ? $websitepage->lang : $weblangs->shortlang);
 
-	if (!defined('USEDOLIBARREDITOR') && (in_array($websitepage->type_container, array('menu', 'other')) || empty($websitepage->status))) {
+	if (!defined('USEBERP3EDITOR') && (in_array($websitepage->type_container, array('menu', 'other')) || empty($websitepage->status))) {
 		$weblangs->load("website");
 		http_response_code(404);
 		print '<center><br><br>'.$weblangs->trans("YouTryToAccessToAFileThatIsNotAWebsitePage", $websitepage->pageurl, $websitepage->type_container, $websitepage->status).'</center>';
@@ -76,7 +76,7 @@ if ($pageid > 0) {
 	}
 }
 
-if (!defined('USEDOLIBARRSERVER') && !defined('USEDOLIBARREDITOR')) {
+if (!defined('USEBERP3SERVER') && !defined('USEBERP3EDITOR')) {
 	header("X-Content-Type-Options: nosniff");
 	if (empty($websitepage->allowed_in_frames) && empty($conf->global->WEBSITE_ALLOW_FRAMES_ON_ALL_PAGES)) {
 		header("X-Frame-Options: SAMEORIGIN");
@@ -88,7 +88,7 @@ if (GETPOST('l', 'aZ09')) {
 	$weblangs->setDefaultLang(GETPOST('l', 'aZ09'));
 }
 // A lang was forced, so we check to find if we must make a redirect on translation page
-if ($_SERVER['PHP_SELF'] != DOL_URL_ROOT.'/website/index.php') {	// If we browsing page using Dolibarr server or a Native web server
+if ($_SERVER['PHP_SELF'] != DOL_URL_ROOT.'/website/index.php') {	// If we browsing page using Berp3 server or a Native web server
 	//print_r(get_defined_constants(true));exit;
 	if (GETPOST('l', 'aZ09')) {
 		$sql = "SELECT wp.rowid, wp.lang, wp.pageurl, wp.fk_page";
@@ -107,7 +107,7 @@ if ($_SERVER['PHP_SELF'] != DOL_URL_ROOT.'/website/index.php') {	// If we browsi
 			if ($obj) {
 				$newpageid = $obj->rowid;
 				if ($newpageid != $pageid) { 		// To avoid to make a redirect on same page (infinite loop)
-					if (defined('USEDOLIBARRSERVER')) {
+					if (defined('USEBERP3SERVER')) {
 						header("Location: ".DOL_URL_ROOT.'/public/website/index.php?website='.$websitekey.'&pageid='.$newpageid.'&l='.GETPOST('l', 'aZ09'));
 						exit;
 					} else {
@@ -122,7 +122,7 @@ if ($_SERVER['PHP_SELF'] != DOL_URL_ROOT.'/website/index.php') {	// If we browsi
 }
 
 // Show off line message
-if (!defined('USEDOLIBARREDITOR') && empty($website->status)) {
+if (!defined('USEBERP3EDITOR') && empty($website->status)) {
 	$weblangs->load("website");
 	http_response_code(503);
 	print '<center><br><br>'.$weblangs->trans("SorryWebsiteIsCurrentlyOffLine").'</center>';

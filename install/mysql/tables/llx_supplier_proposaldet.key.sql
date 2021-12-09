@@ -1,6 +1,6 @@
 -- ===================================================================
--- Copyright (C) 2009-2011 Regis Houssin  <regis.houssin@inodbox.com>
--- Copyright (C) 2012      Cédric Salvador      <csalvador@gpcsolutions.fr>
+-- Copyright (C) 2009-2011   
+-- Copyright (C) 2012            
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

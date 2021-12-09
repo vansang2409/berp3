@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2001-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2019 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2017      Pierre-Henry Favre   <support@atm-consulting.fr>
- * Copyright (C) 2020      Maxime DEMAREST      <maxime@indelog.fr>
- * Copyright (C) 2021      Gauthier VERDOL      <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2001-2006 
+ * Copyright (C) 2004-2019 
+ * Copyright (C) 2017         
+ * Copyright (C) 2020            
+ * Copyright (C) 2021            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

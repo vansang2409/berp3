@@ -1,10 +1,5 @@
 <?php
-/* Copyright (C) 2004-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005      Simon Tosser         <simon@kornog-computing.com>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010	   Pierre Morin         <pierre.morin@auguria.net>
- * Copyright (C) 2010	   Juanjo Menent        <jmenent@2byte.es>
+/*
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +21,7 @@
  *  \brief      Wrapper to download data files
  *  \remarks    Call of this wrapper is made with URL:
  * 				DOL_URL_ROOT.'/document.php?modulepart=repfichierconcerne&file=relativepathoffile'
- * 				DOL_URL_ROOT.'/document.php?modulepart=logs&file=dolibarr.log'
+ * 				DOL_URL_ROOT.'/document.php?modulepart=logs&file=berp3.log'
  * 				DOL_URL_ROOT.'/document.php?hashp=sharekey'
  */
 
@@ -54,7 +49,7 @@ if (isset($_GET["hashp"]) && !defined("NOLOGIN")) {
 		define("NOCSRFCHECK", 1); // We accept to go on this page from external web site.
 	}
 	if (!defined("NOIPCHECK")) {
-		define("NOIPCHECK", 1); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+		define("NOIPCHECK", 1); // Do not check IP defined into conf $berp3_main_restrict_ip
 	}
 }
 // Some value of modulepart can be used to get resources that are public so no login are required.
@@ -66,7 +61,7 @@ if ((isset($_GET["modulepart"]) && $_GET["modulepart"] == 'medias')) {
 		define("NOCSRFCHECK", 1); // We accept to go on this page from external web site.
 	}
 	if (!defined("NOIPCHECK")) {
-		define("NOIPCHECK", 1); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+		define("NOIPCHECK", 1); // Do not check IP defined into conf $berp3_main_restrict_ip
 	}
 }
 

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2009-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2009-2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/pdf.lib.php';
 /**
  * Function to build a compiled PDF
  *
- * @param	DoliDB		$db						Database handler
+ * @param	Berp3DB		$db						Database handler
  * @param	Translate	$langs					Object langs
  * @param	Conf		$conf					Object conf
  * @param	string		$diroutputpdf			Dir to output file

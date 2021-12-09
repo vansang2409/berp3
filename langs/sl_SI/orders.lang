@@ -120,8 +120,8 @@ ConfirmCloneOrder=Ali želite klonirati naročilo <b>%s</b>?
 DispatchSupplierOrder=Prejemanje po nabavnem nalogu %s
 FirstApprovalAlreadyDone=Prva odobritev je že narejena
 SecondApprovalAlreadyDone=Druga odobritev je že narejena
-SupplierOrderReceivedInDolibarr=Nabavni nalog %s prejet %s
-SupplierOrderSubmitedInDolibarr=Nabavni nalog oddan %s
+SupplierOrderReceivedInBerp3=Nabavni nalog %s prejet %s
+SupplierOrderSubmitedInBerp3=Nabavni nalog oddan %s
 SupplierOrderClassifiedBilled=Nabavni nalog %s zaračunan
 OtherOrders=Ostala naročila
 ##### Types de contacts #####

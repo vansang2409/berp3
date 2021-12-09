@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2004-2017	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2006		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2007-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011		Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2012		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2015		Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2018       Ferran Marcet           <fmarcet@2byte.es>
+/* Copyright (C) 2004-2017	
+ * Copyright (C) 2006		
+ * Copyright (C) 2007-2017	
+ * Copyright (C) 2011		
+ * Copyright (C) 2012		
+ * Copyright (C) 2015		
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -78,8 +78,8 @@ if (empty($user->id) && !empty($_SESSION['dol_login'])) {
 
 // Define css type
 top_httphead('text/css');
-// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-if (empty($dolibarr_nocache)) {
+// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+if (empty($berp3_nocache)) {
 	header('Cache-Control: max-age=10800, public, must-revalidate');
 } else {
 	header('Cache-Control: no-cache');
@@ -5781,7 +5781,7 @@ span#select2-boxbookmark-container, span#select2-boxcombo-container {
 }
 
 /* To emulate select 2 style */
-.select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr {
+.select2-container-multi-berp3 .select2-choices-berp3 .select2-search-choice-berp3 {
   padding: 2px 5px 1px 5px;
   margin: 0 0 2px 3px;
   position: relative;
@@ -5804,14 +5804,14 @@ span#select2-boxbookmark-container, span#select2-boxcombo-container {
   background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
   background-image: linear-gradient(to bottom, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
 }
-.select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr a {
+.select2-container-multi-berp3 .select2-choices-berp3 .select2-search-choice-berp3 a {
 	font-weight: normal;
 }
-.select2-container-multi-dolibarr .select2-choices-dolibarr li {
+.select2-container-multi-berp3 .select2-choices-berp3 li {
   float: left;
   list-style: none;
 }
-.select2-container-multi-dolibarr .select2-choices-dolibarr {
+.select2-container-multi-berp3 .select2-choices-berp3 {
   height: auto !important;
   height: 1%;
   margin: 0;

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2020 Gauthier VERDOL <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2004-2017 
+ * Copyright (C) 2020  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  * \brief   Workstation setup page.
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require "../main.inc.php";
 
 // Libraries
@@ -66,7 +66,7 @@ if ($action == 'updateMask') {
 	$maskorder = GETPOST('maskWorkstation', 'alpha');
 
 	if ($maskconstorder) {
-		$res = dolibarr_set_const($db, $maskconstorder, $maskorder, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstorder, $maskorder, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -123,14 +123,14 @@ if ($action == 'updateMask') {
 	if ($ret > 0) {
 		$constforval = strtoupper($tmpobjectkey).'_ADDON_PDF';
 		if ($conf->global->$constforval == "$value") {
-			dolibarr_del_const($db, $constforval, $conf->entity);
+			berp3_del_const($db, $constforval, $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
 	$tmpobjectkey = GETPOST('object');
 	$constforval = strtoupper($tmpobjectkey).'_ADDON_PDF';
-	if (dolibarr_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity)) {
 		// The constant that was read before the new set
 		// We therefore requires a variable to have a coherent view
 		$conf->global->$constforval = $value;
@@ -146,7 +146,7 @@ if ($action == 'updateMask') {
 	// by calling method canBeActivated
 	$tmpobjectkey = GETPOST('object');
 	$constforval = 'WORKSTATION_'.strtoupper($tmpobjectkey)."_ADDON";
-	dolibarr_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity);
 }
 
 

@@ -1,5 +1,5 @@
-# Security policies of Dolibarr ERP CRM project
-Contact: mailto:security@dolibarr.org
+# Security policies of Berp3 ERP CRM project
+Contact: mailto:security@berp3.org
 Preferred-Languages: en
-Policy: https://github.com/Dolibarr/dolibarr/security/policy
+Policy: https://github.com/Berp3/berp3/security/policy
 Expires: Sat, 31 Dec 2050 00:00:00 GMT

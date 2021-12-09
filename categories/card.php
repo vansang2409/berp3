@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2005		Matthieu Valleton	<mv@seeschloss.org>
- * Copyright (C) 2006-2021	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2014	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2007		Patrick Raguin		<patrick.raguin@gmail.com>
- * Copyright (C) 2013		Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2020       Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2005			
+ * Copyright (C) 2006-2021		
+ * Copyright (C) 2005-2014			
+ * Copyright (C) 2007				
+ * Copyright (C) 2013		
+ * Copyright (C) 2015       
+ * Copyright (C) 2020       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -246,7 +246,7 @@ if ($user->rights->categorie->creer) {
 		// Description
 		print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 		require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor('description', $description, '', 160, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_5, '90%');
+		$doleditor = new DolEditor('description', $description, '', 160, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_5, '90%');
 		$doleditor->Create();
 		print '</td></tr>';
 

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2017  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -138,9 +138,9 @@ class ActionCommReminder extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf;
 

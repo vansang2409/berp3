@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2017  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -220,9 +220,9 @@ class EmailCollector extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 
@@ -960,7 +960,7 @@ class EmailCollector extends CommonObject
 	{
 		global $conf, $langs, $user;
 
-		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/dolibarr_mydedicatedlofile.log';
+		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/berp3_mydedicatedlofile.log';
 
 		require_once DOL_DOCUMENT_ROOT.'/comm/action/class/actioncomm.class.php';
 
@@ -1415,9 +1415,9 @@ class EmailCollector extends CommonObject
 				$contactid = 0; $thirdpartyid = 0; $projectid = 0; $ticketid = 0;
 
 				// Analyze TrackId in field References. For example:
-				// References: <1542377954.SMTPs-dolibarr-thi649@8f6014fde11ec6cdec9a822234fc557e>
-				// References: <1542377954.SMTPs-dolibarr-tic649@8f6014fde11ec6cdec9a822234fc557e>
-				// References: <1542377954.SMTPs-dolibarr-abc649@8f6014fde11ec6cdec9a822234fc557e>
+				// References: <1542377954.SMTPs-berp3-thi649@8f6014fde11ec6cdec9a822234fc557e>
+				// References: <1542377954.SMTPs-berp3-tic649@8f6014fde11ec6cdec9a822234fc557e>
+				// References: <1542377954.SMTPs-berp3-abc649@8f6014fde11ec6cdec9a822234fc557e>
 				$trackid = '';
 				$objectid = 0;
 				$objectemail = null;
@@ -1430,8 +1430,8 @@ class EmailCollector extends CommonObject
 
 					foreach ($arrayofreferences as $reference) {
 						//print "Process mail ".$iforemailloop." email_msgid ".$msgid.", date ".dol_print_date($date, 'dayhour').", subject ".$subject.", reference ".dol_escape_htmltag($reference)."<br>\n";
-						if (preg_match('/dolibarr-([a-z]+)([0-9]+)@'.preg_quote($host, '/').'/', $reference, $reg)) {
-							// This is a Dolibarr reference
+						if (preg_match('/berp3-([a-z]+)([0-9]+)@'.preg_quote($host, '/').'/', $reference, $reg)) {
+							// This is a Berp3 reference
 							$trackid = $reg[1].$reg[2];
 
 							$objectid = $reg[2];
@@ -1660,7 +1660,7 @@ class EmailCollector extends CommonObject
 
 					// Make Operation
 					dol_syslog("Execute action ".$operation['type']." actionparam=".$operation['actionparam'].' thirdpartystatic->id='.$thirdpartystatic->id.' contactstatic->id='.$contactstatic->id.' projectstatic->id='.$projectstatic->id);
-					dol_syslog("Execute action fk_element_id=".$fk_element_id." fk_element_type=".$fk_element_type);	// If a Dolibarr tracker id is found, we should now the id of object
+					dol_syslog("Execute action fk_element_id=".$fk_element_id." fk_element_type=".$fk_element_type);	// If a Berp3 tracker id is found, we should now the id of object
 
 					$actioncode = 'EMAIL_IN';
 					// If we scan the Sent box, we use the code for out email

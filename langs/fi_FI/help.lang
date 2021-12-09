@@ -5,8 +5,8 @@ RemoteControlSupport=Online reaaliajassa / etätuki
 OtherSupport=Muut tuet
 ToSeeListOfAvailableRessources=Voit ottaa yhteyttä / nähdä käytettävissä olevat varat:
 HelpCenter=Ohjekeskukseen
-DolibarrHelpCenter=BERP3 Help and Support Center
-ToGoBackToDolibarr=Otherwise, <a href="%s">click here to continue to use Dolibarr</a>.
+Berp3HelpCenter=BERP3 Help and Support Center
+ToGoBackToBerp3=Otherwise, <a href="%s">click here to continue to use Berp3</a>.
 TypeOfSupport=Type of support
 TypeSupportCommunauty=Yhteisössä (vapaa)
 TypeSupportCommercial=Kaupalliset

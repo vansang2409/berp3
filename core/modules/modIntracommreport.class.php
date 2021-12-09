@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@capnetworks.com>
- * Copyright (C) 2019       Open-DSI                <support@open-dsi.fr>
+/* Copyright (C) 2003       
+ * Copyright (C) 2004-2012  
+ * Copyright (C) 2005-2012             <regis.houssin@capnetworks.com>
+ * Copyright (C) 2019                       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,18 +23,18 @@
  * 	\ingroup    Intracomm report
  *	\brief      Description and activation file for the module intracomm report
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module intracommreport
  */
-class modIntracommreport extends DolibarrModules
+class modIntracommreport extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -49,7 +49,7 @@ class modIntracommreport extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Intracomm report management (Support for French DEB/DES format)";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or 'dolibarr_deprecated' or version
+		// Possible values for version are: 'development', 'experimental', 'berp3' or 'berp3_deprecated' or version
 		$this->version = 'experimental';
 
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
@@ -66,7 +66,7 @@ class modIntracommreport extends DolibarrModules
 		$this->requiredby = array(); // List of modules id to disable if this one is disabled
 		$this->conflictwith = array(); // List of modules id this module is in conflict with
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(13, 0, -5); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(13, 0, -5); // Minimum version of Berp3 required by module
 		$this->langfiles = array("intracommreport");
 
 		// Constants

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017   Laurent Destailleur  <eldy@users.sourcefore.net>
- * Copyright (C) 2018   Nicolas ZABOURI   <info@inovea-conseil.com>
+/* Copyright (C) 2017     <eldy@users.sourcefore.net>
+ * Copyright (C) 2018      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,17 +23,17 @@
  *  \ingroup    blockedlog
  *  \brief      Description and activation file for the module ModuleBuilder
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *	Class to describe a ModuleBuilder module
  */
-class modModuleBuilder extends DolibarrModules
+class modModuleBuilder extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -49,8 +49,8 @@ class modModuleBuilder extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "A RAD (Rapid Application Development) tool to help developers to build their own module.";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.

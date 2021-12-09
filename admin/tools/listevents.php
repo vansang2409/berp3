@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004-2020  Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2004-2020  	
+ * Copyright (C) 2005-2012  		
  * Copyright (C) 2015       Bahfir Abbes		<bafbes@gmail.com>
- * Copyright (C) 2018       Frédéric France     <frederic.france@netlogic.fr>
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -304,13 +304,13 @@ if ($result) {
 	// Check some parameters
 	// TODO Add a tab with this and other information
 	/*
-	global $dolibarr_main_prod, $dolibarr_nocsrfcheck;
-	if (empty($dolibarr_main_prod)) {
-		print $langs->trans("Warning").' dolibarr_main_prod = '.$dolibarr_main_prod;
+	global $berp3_main_prod, $berp3_nocsrfcheck;
+	if (empty($berp3_main_prod)) {
+		print $langs->trans("Warning").' berp3_main_prod = '.$berp3_main_prod;
 		print ' '.img_warning($langs->trans('SwitchThisForABetterSecurity', 1)).'<br>';
 	}
-	if (!empty($dolibarr_nocsrfcheck)) {
-		print $langs->trans("Warning").' dolibarr_nocsrfcheck = '.$dolibarr_nocsrfcheck;
+	if (!empty($berp3_nocsrfcheck)) {
+		print $langs->trans("Warning").' berp3_nocsrfcheck = '.$berp3_nocsrfcheck;
 		print ' '.img_warning($langs->trans('SwitchThisForABetterSecurity', 0)).'<br>';
 	}
 	*/

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015       ATM Consulting          <support@atm-consulting.fr>
- * Copyright (C) 2019-2020  Open-DSI                <support@open-dsi.fr>
+/* Copyright (C) 2015                 
+ * Copyright (C) 2019-2020                  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,7 +90,7 @@ if (empty($action)) {
 	$action = 'list';
 }
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $canvas = GETPOST("canvas");
 $objcanvas = null;
 if (!empty($canvas)) {

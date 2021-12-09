@@ -1117,7 +1117,7 @@ var CsoundOrchestraHighlightRules = function(embeddedRulePrefix) {
         "STKFMVoices",
         "STKFlute",
         "STKHevyMetl",
-        "STKMandolin",
+        "STKManberp3n",
         "STKModalBar",
         "STKMoog",
         "STKPercFlut",

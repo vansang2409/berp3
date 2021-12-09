@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2015       ATM Consulting          <support@atm-consulting.fr>
- * Copyright (C) 2019-2020  Open-DSI                <support@open-dsi.fr>
- * Copyright (C) 2020       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2015                 
+ * Copyright (C) 2019-2020                  
+ * Copyright (C) 2020       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -73,9 +73,9 @@ class IntracommReport extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handle
+	 * @param Berp3DB $db Database handle
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 		$this->exporttype = 'deb';
@@ -146,7 +146,7 @@ class IntracommReport extends CommonObject
 		$party->addAttribute('partyRole', $conf->global->INTRACOMMREPORT_ROLE_ACTEUR);
 		$party->addChild('partyId', $party_id);
 		$party->addChild('partyName', $declarant);
-		$enveloppe->addChild('softwareUsed', 'Dolibarr');
+		$enveloppe->addChild('softwareUsed', 'Berp3');
 		$declaration = $enveloppe->addChild('Declaration');
 		$declaration->addChild('declarationId', $id_declaration);
 		$declaration->addChild('referencePeriod', $period_reference);

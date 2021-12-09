@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2014-2017  Alexandre Spangaro	<aspangaro@open-dsi.fr>
+/* Copyright (C) 2014-2017  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ if ($action == 'update') {
 	foreach ($list as $constname) {
 		$constvalue = GETPOST($constname, 'alpha');
 
-		if (!dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	}

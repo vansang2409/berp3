@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2002-2003  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003  Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2004-2013  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2009       Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2012       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2002-2003  
+ * Copyright (C) 2002-2003        
+ * Copyright (C) 2004-2013  
+ * Copyright (C) 2004            
+ * Copyright (C) 2004                 
+ * Copyright (C) 2009       
+ * Copyright (C) 2012       
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/date.lib.php';
 class MailmanSpip
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -63,7 +63,7 @@ class MailmanSpip
 	/**
 	 *	Constructor
 	 *
-	 *	@param 		DoliDB		$db		Database handler
+	 *	@param 		Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -103,11 +103,11 @@ class MailmanSpip
 	/**
 	 * Function used to connect to SPIP
 	 *
-	 * @return boolean|DoliDB		Boolean of DoliDB
+	 * @return boolean|Berp3DB		Boolean of Berp3DB
 	 */
 	public function connectSpip()
 	{
-		$resource = getDoliDBInstance('mysql', ADHERENT_SPIP_SERVEUR, ADHERENT_SPIP_USER, ADHERENT_SPIP_PASS, ADHERENT_SPIP_DB, ADHERENT_SPIP_PORT);
+		$resource = getBerp3DBInstance('mysql', ADHERENT_SPIP_SERVEUR, ADHERENT_SPIP_USER, ADHERENT_SPIP_PASS, ADHERENT_SPIP_DB, ADHERENT_SPIP_PORT);
 
 		if ($resource->ok) {
 			return $resource;

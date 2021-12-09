@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2018-2018 Andre Schild        <a.schild@aarboard.ch>
- * Copyright (C) 2005-2010 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin       <regis.houssin@inodbox.com>
+/* Copyright (C) 2018-2018         
+ * Copyright (C) 2005-2010 
+ * Copyright (C) 2005-2009        
  *
  * This file is an example to follow to add your own email selector inside
- * the Dolibarr email tool.
+ * the Berp3 email tool.
  * Follow instructions given in README file to know what to change to build
  * your own emailing list selector.
  * Code that need to be changed in this file are marked by "CHANGE THIS" tag.
@@ -37,7 +37,7 @@ class mailing_thirdparties extends MailingTargets
 	public $picto = 'company';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -45,7 +45,7 @@ class mailing_thirdparties extends MailingTargets
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

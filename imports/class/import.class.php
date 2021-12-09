@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2011       Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2016       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2011       
+ * Copyright (C) 2016       
  * Copyright (C) 2020		Ahmad Jamaly Rabib	<rabib@metroworks.co.jp>
- * Copyright (C) 2021		Frédéric France		<frederic.france@netlogic.fr>
+ * Copyright (C) 2021		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ class Import
 	/**
 	 *    Constructor
 	 *
-	 *    @param  	DoliDB		$db		Database handler
+	 *    @param  	Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{

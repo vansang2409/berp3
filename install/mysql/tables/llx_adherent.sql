@@ -1,8 +1,8 @@
 -- ===================================================================
--- Copyright (C) 2002-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2002-2003 Jean-Louis Bergamo   <jlb@j1b.org>
--- Copyright (C) 2006-2009 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2009      Regis Houssin        <regis.houssin@inodbox.com>
+-- Copyright (C) 2002-2004 
+-- Copyright (C) 2002-2003    
+-- Copyright (C) 2006-2009 
+-- Copyright (C) 2009      
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ create table llx_adherent
   rowid            integer AUTO_INCREMENT PRIMARY KEY,
   ref              varchar(30) NOT NULL,        -- member reference number
   entity           integer DEFAULT 1 NOT NULL,  -- multi company id
-  ref_ext          varchar(128),                -- reference into an external system (not used by dolibarr)
+  ref_ext          varchar(128),                -- reference into an external system (not used by berp3)
 
   gender           varchar(10),
   civility         varchar(6),

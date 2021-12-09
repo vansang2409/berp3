@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2003-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
+/* Copyright (C) 2003-2004 
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2004                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/functions.lib.php';
 class MailingTargets // This can't be abstract as it is used for some method
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -47,7 +47,7 @@ class MailingTargets // This can't be abstract as it is used for some method
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -161,7 +161,7 @@ class MailingTargets // This can't be abstract as it is used for some method
 	public function addTargetsToDatabase($mailing_id, $cibles)
 	{
 		global $conf;
-		global $dolibarr_main_instance_unique_id;
+		global $berp3_main_instance_unique_id;
 
 		$this->db->begin();
 
@@ -184,7 +184,7 @@ class MailingTargets // This can't be abstract as it is used for some method
 				$sql .= "'".$this->db->escape($targetarray['other'])."',";
 				$sql .= "'".$this->db->escape($targetarray['source_url'])."',";
 				$sql .= (empty($targetarray['source_id']) ? 'null' : "'".$this->db->escape($targetarray['source_id'])."'").",";
-				$sql .= "'".$this->db->escape(dol_hash($dolibarr_main_instance_unique_id.";".$targetarray['email'].";".$targetarray['lastname'].";".$mailing_id.";".$conf->global->MAILING_EMAIL_UNSUBSCRIBE_KEY, 'md5'))."',";
+				$sql .= "'".$this->db->escape(dol_hash($berp3_main_instance_unique_id.";".$targetarray['email'].";".$targetarray['lastname'].";".$mailing_id.";".$conf->global->MAILING_EMAIL_UNSUBSCRIBE_KEY, 'md5'))."',";
 				$sql .= "'".$this->db->escape($targetarray['source_type'])."')";
 				dol_syslog(__METHOD__, LOG_DEBUG);
 				$result = $this->db->query($sql);

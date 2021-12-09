@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2016 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2016 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 class Cstate // extends CommonObject
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -71,7 +71,7 @@ class Cstate // extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb		$db      Database handler
+	 *  @param      Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

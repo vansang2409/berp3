@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2020		Tobias Sekan		<tobias.sekan@startmail.com>
- * Copyright (C) 2020-2021	Frédéric France		<frederic.france@netlogic.fr>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004-2010 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2020				
+ * Copyright (C) 2020-2021	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -83,9 +83,9 @@ if ($object->socid) {
 
 // We create VCard
 $v = new vCard();
-$v->setProdId('Dolibarr '.DOL_VERSION);
+$v->setProdId('Berp3 '.DOL_VERSION);
 
-$v->setUid('DOLIBARR-ADHERENTID-'.$object->id);
+$v->setUid('BERP3-ADHERENTID-'.$object->id);
 $v->setName($object->lastname, $object->firstname, "", $object->civility, "");
 $v->setFormattedName($object->getFullName($langs, 1));
 

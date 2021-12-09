@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2013-2016  Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2014-2018  Frederic France      <frederic.france@netlogic.fr>
- * Copyright (C) 2020		Nicolas ZABOURI      <info@inovea-conseil.com>
+/* Copyright (C) 2013-2016  
+ * Copyright (C) 2014-2018        
+ * Copyright (C) 2020		      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ require '../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/oauth.lib.php'; // This define $list
 require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-use OAuth\Common\Storage\DoliStorage;
+use OAuth\Common\Storage\Berp3Storage;
 
 // Load translation files required by the page
 $langs->loadLangs(array('admin', 'printing', 'oauth'));
@@ -76,7 +76,7 @@ if ($action == 'setconst' && $user->admin) {
 		$consttype = dol_escape_htmltag($setupconst['type']);
 		$constnote = dol_escape_htmltag($setupconst['note']);
 
-		$result = dolibarr_set_const($db, $constname, $constvalue, $consttype, 0, $constnote, $conf->entity);
+		$result = berp3_set_const($db, $constname, $constvalue, $consttype, 0, $constnote, $conf->entity);
 		if (!$result > 0) {
 			$error++;
 		}
@@ -95,7 +95,7 @@ if ($action == 'setconst' && $user->admin) {
 if ($action == 'setvalue' && $user->admin) {
 	$db->begin();
 
-	$result = dolibarr_set_const($db, $varname, $value, 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $varname, $value, 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
@@ -116,7 +116,7 @@ if ($action == 'setvalue' && $user->admin) {
  */
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -191,8 +191,8 @@ if ($mode == 'setup' && $user->admin) {
 		// Token
 		require_once DOL_DOCUMENT_ROOT.'/includes/OAuth/bootstrap.php';
 		require_once DOL_DOCUMENT_ROOT.'/includes/OAuth/bootstrap.php';
-		// Dolibarr storage
-		$storage = new DoliStorage($db, $conf);
+		// Berp3 storage
+		$storage = new Berp3Storage($db, $conf);
 		try {
 			$tokenobj = $storage->retrieveAccessToken($OAUTH_SERVICENAME);
 		} catch (Exception $e) {

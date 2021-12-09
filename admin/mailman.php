@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2011 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2013 Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2003      
+ * Copyright (C) 2003         
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2005-2011 
+ * Copyright (C) 2011-2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -62,7 +62,7 @@ if ($action == 'update' || $action == 'add') {
 			$constvalue = $tmparray[$key];
 			$consttype = $tmparray[$key];
 			$constnote = $tmparray[$key];
-			$res = dolibarr_set_const($db, $constname, $constvalue, $type[$consttype], 0, $constnote, $conf->entity);
+			$res = berp3_set_const($db, $constname, $constvalue, $type[$consttype], 0, $constnote, $conf->entity);
 
 			if (!($res > 0)) {
 				$error++;
@@ -79,7 +79,7 @@ if ($action == 'update' || $action == 'add') {
 
 // Action activation d'un sous module du module adherent
 if ($action == 'set') {
-	$result = dolibarr_set_const($db, $_GET["name"], $_GET["value"], '', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $_GET["name"], $_GET["value"], '', 0, '', $conf->entity);
 	if ($result < 0) {
 		dol_print_error($db);
 	}
@@ -87,7 +87,7 @@ if ($action == 'set') {
 
 // Action desactivation d'un sous module du module adherent
 if ($action == 'unset') {
-	$result = dolibarr_del_const($db, $_GET["name"], $conf->entity);
+	$result = berp3_del_const($db, $_GET["name"], $conf->entity);
 	if ($result < 0) {
 		dol_print_error($db);
 	}

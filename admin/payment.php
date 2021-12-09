@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015  Juanjo Menent				<jmenent@2byte.es>
- * Copyright (C) 2020  Maxime DEMAREST              <maxime@indelog.fr>
+/* Copyright (C) 2015  
+ * Copyright (C) 2020                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ if ($action == 'updateMask') {
 	$maskconstpayment = GETPOST('maskconstpayment', 'alpha');
 	$maskpayment = GETPOST('maskpayment', 'alpha');
 	if ($maskconstpayment) {
-		$res = dolibarr_set_const($db, $maskconstpayment, $maskpayment, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstpayment, $maskpayment, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -68,17 +68,17 @@ if ($action == 'updateMask') {
 }
 
 if ($action == 'setmod') {
-	dolibarr_set_const($db, "PAYMENT_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "PAYMENT_ADDON", $value, 'chaine', 0, '', $conf->entity);
 }
 
 if ($action == 'setparams') {
 	$freetext = GETPOST('FACTURE_PAYMENTS_ON_DIFFERENT_THIRDPARTIES_BILLS', 'restricthtml'); // No alpha here, we want exact string
-	$res = dolibarr_set_const($db, "FACTURE_PAYMENTS_ON_DIFFERENT_THIRDPARTIES_BILLS", $freetext, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FACTURE_PAYMENTS_ON_DIFFERENT_THIRDPARTIES_BILLS", $freetext, 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
 
-	$res = dolibarr_set_const($db, "PAYMENTS_REPORT_GROUP_BY_MOD", GETPOST('PAYMENTS_REPORT_GROUP_BY_MOD', 'int'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PAYMENTS_REPORT_GROUP_BY_MOD", GETPOST('PAYMENTS_REPORT_GROUP_BY_MOD', 'int'), 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}

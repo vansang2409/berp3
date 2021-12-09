@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Elgsena kada pasirenkamas žymeklio URL
 CreateBookmark=Sukurti žymeklį
 SetHereATitleForLink=Nustatykite žymeklio pavadinimą
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Naudoti išorinį http URL arba susijusį BERP3 URL
+UseAnExternalHttpLinkOrRelativeBerp3Link=Naudoti išorinį http URL arba susijusį BERP3 URL
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Pasirinkite, ar susietas puslapis turi būti atidarytas naujame lange, ar ne
 BookmarksManagement=Žymeklių valdymas

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015-2019  Open-DSI            <support@open-dsi.fr>
+/* Copyright (C) 2015-2019              
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
  * 	\brief		Login color Page < Oblyon Theme Configurator >
  */
 
-// Dolibarr environment
+// Berp3 environment
 $res = @include("../../main.inc.php"); // From htdocs directory
 if (! $res) {
   $res = @include("../../../main.inc.php"); // From "custom" directory
@@ -63,29 +63,29 @@ if ($action == 'update') {
 		$constvalue = GETPOST($constname, 'alpha');
 		$constvalue = '#'.$constvalue;
 
-		if (! dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (! berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error ++;
 		}
 	}
 
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_TXT1', GETPOST('OBLYON_LOGIN_TXT1'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_URL1', GETPOST('OBLYON_LOGIN_URL1'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_FAICON1', GETPOST('OBLYON_LOGIN_FAICON1'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_TXT1', GETPOST('OBLYON_LOGIN_TXT1'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_URL1', GETPOST('OBLYON_LOGIN_URL1'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_FAICON1', GETPOST('OBLYON_LOGIN_FAICON1'),'chaine',0,'',$conf->entity);
 
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_TXT2', GETPOST('OBLYON_LOGIN_TXT2'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_URL2', GETPOST('OBLYON_LOGIN_URL2'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_FAICON2', GETPOST('OBLYON_LOGIN_FAICON2'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_TXT2', GETPOST('OBLYON_LOGIN_TXT2'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_URL2', GETPOST('OBLYON_LOGIN_URL2'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_FAICON2', GETPOST('OBLYON_LOGIN_FAICON2'),'chaine',0,'',$conf->entity);
 
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_TXT3', GETPOST('OBLYON_LOGIN_TXT3'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_URL3', GETPOST('OBLYON_LOGIN_URL3'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_LOGIN_FAICON3', GETPOST('OBLYON_LOGIN_FAICON3'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_TXT3', GETPOST('OBLYON_LOGIN_TXT3'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_URL3', GETPOST('OBLYON_LOGIN_URL3'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_LOGIN_FAICON3', GETPOST('OBLYON_LOGIN_FAICON3'),'chaine',0,'',$conf->entity);
 
-    $res = dolibarr_set_const($db, 'OBLYON_SOCIAL_TWITTER', GETPOST('OBLYON_SOCIAL_TWITTER'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_SOCIAL_FACEBOOK', GETPOST('OBLYON_SOCIAL_FACEBOOK'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_SOCIAL_LINKEDIN', GETPOST('OBLYON_SOCIAL_LINKEDIN'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_SOCIAL_INSTAGRAM', GETPOST('OBLYON_SOCIAL_INSTAGRAM'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_SOCIAL_YOUTUBE', GETPOST('OBLYON_SOCIAL_YOUTUBE'),'chaine',0,'',$conf->entity);
-    $res = dolibarr_set_const($db, 'OBLYON_SOCIAL_GITHUB', GETPOST('OBLYON_SOCIAL_GITHUB'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_SOCIAL_TWITTER', GETPOST('OBLYON_SOCIAL_TWITTER'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_SOCIAL_FACEBOOK', GETPOST('OBLYON_SOCIAL_FACEBOOK'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_SOCIAL_LINKEDIN', GETPOST('OBLYON_SOCIAL_LINKEDIN'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_SOCIAL_INSTAGRAM', GETPOST('OBLYON_SOCIAL_INSTAGRAM'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_SOCIAL_YOUTUBE', GETPOST('OBLYON_SOCIAL_YOUTUBE'),'chaine',0,'',$conf->entity);
+    $res = berp3_set_const($db, 'OBLYON_SOCIAL_GITHUB', GETPOST('OBLYON_SOCIAL_GITHUB'),'chaine',0,'',$conf->entity);
 
     if (! $res > 0) $error++;
 
@@ -106,10 +106,10 @@ if ($action == 'settheme') {
         $_SESSION['dol_resetcache']=dol_print_date(dol_now(),'dayhourlog');
         $mesg = "<span class='ok'>".$langs->trans("ThemeLoginDarkApplied")."</span>";
 
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_RIGHT", '#2a2a2a','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_LEFT", '#d51123','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_TXT_RIGHT", '#FFFFFF','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_TXT_INPUT", '#FFFFFF','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_RIGHT", '#2a2a2a','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_LEFT", '#d51123','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_TXT_RIGHT", '#FFFFFF','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_TXT_INPUT", '#FFFFFF','chaine',0,'',$conf->entity);
     }
 
     // Login Light
@@ -118,10 +118,10 @@ if ($action == 'settheme') {
         $mesg = "<span class='ok'>".$langs->trans("ThemeLoginLightApplied")."</span>";
 
 
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_RIGHT", '#FFFFFF','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_LEFT", '#d51123','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_TXT_RIGHT", '#444444','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_TXT_INPUT", '#555555','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_RIGHT", '#FFFFFF','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD_LEFT", '#d51123','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_TXT_RIGHT", '#444444','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_LOGIN_TXT_INPUT", '#555555','chaine',0,'',$conf->entity);
     }
 
 }

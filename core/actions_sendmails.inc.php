@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2013 Laurent Destailleur  <eldy@users.sourceforge.net>
-*  Copyright (C) 2013 Juanjo Menent		   <jmenent@2byte.es>
+/* Copyright (C) 2013 
+*  Copyright (C) 2013 		   
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -262,7 +262,7 @@ if (($action == 'send' || $action == 'relance') && !$_POST['addfile'] && !$_POST
 
 		if (dol_strlen($sendto)) {
 			// Define $urlwithroot
-			$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+			$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 			$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 			//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -301,7 +301,7 @@ if (($action == 'send' || $action == 'relance') && !$_POST['addfile'] && !$_POST
 			$subject = GETPOST('subject', 'restricthtml');
 
 			// Make a change into HTML code to allow to include images from medias directory with an external reabable URL.
-			// <img alt="" src="/dolibarr_dev/htdocs/viewimage.php?modulepart=medias&amp;entity=1&amp;file=image/ldestailleur_166x166.jpg" style="height:166px; width:166px" />
+			// <img alt="" src="/berp3_dev/htdocs/viewimage.php?modulepart=medias&amp;entity=1&amp;file=image/ldestailleur_166x166.jpg" style="height:166px; width:166px" />
 			// become
 			// <img alt="" src="'.$urlwithroot.'viewimage.php?modulepart=medias&amp;entity=1&amp;file=image/ldestailleur_166x166.jpg" style="height:166px; width:166px" />
 			$message = preg_replace('/(<img.*src=")[^\"]*viewimage\.php([^\"]*)modulepart=medias([^\"]*)file=([^\"]*)("[^\/]*\/>)/', '\1'.$urlwithroot.'/viewimage.php\2modulepart=medias\3file=\4\5', $message);

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2005-2020  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2007       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2007-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015-2019  Frederic France         <frederic.france@netlogic.fr>
- * Copyright (C) 2017       Nicolas ZABOURI         <info@inovea-conseil.com>
+/* Copyright (C) 2005-2020  
+ * Copyright (C) 2007       
+ * Copyright (C) 2007-2012  
+ * Copyright (C) 2015-2019           
+ * Copyright (C) 2017                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 
 /**
  *  \file       htdocs/admin/system/filecheck.php
- *  \brief      Page to check Dolibarr files integrity
+ *  \brief      Page to check Berp3 files integrity
  */
 
 require '../../main.inc.php';
@@ -45,7 +45,7 @@ $error = 0;
 
 llxHeader();
 
-print load_fiche_titre($langs->trans("FileCheckDolibarr"), '', 'title_setup');
+print load_fiche_titre($langs->trans("FileCheckBerp3"), '', 'title_setup');
 
 print '<span class="opacitymedium">'.$langs->trans("FileCheckDesc").'</span><br><br>';
 
@@ -95,7 +95,7 @@ if (empty($xmlremote) && !empty($conf->global->$param)) {
 	$xmlremote = $conf->global->$param;
 }
 if (empty($xmlremote)) {
-	$xmlremote = 'https://www.dolibarr.org/files/stable/signatures/filelist-'.DOL_VERSION.'.xml';
+	$xmlremote = 'https://www.berp3.org/files/stable/signatures/filelist-'.DOL_VERSION.'.xml';
 }
 if ($xmlremote && !preg_match('/^https?:\/\//', $xmlremote)) {
 	$langs->load("errors");
@@ -186,7 +186,7 @@ if (empty($error) && !empty($xml)) {
 	$out = '';
 
 	// Forced constants
-	if (is_object($xml->dolibarr_constants[0])) {
+	if (is_object($xml->berp3_constants[0])) {
 		$out .= load_fiche_titre($langs->trans("ForcedConstants"));
 
 		$out .= '<div class="div-table-responsive-no-min">';
@@ -199,7 +199,7 @@ if (empty($error) && !empty($xml)) {
 		$out .= '</tr>'."\n";
 
 		$i = 0;
-		foreach ($xml->dolibarr_constants[0]->constant as $constant) {    // $constant is a simpleXMLElement
+		foreach ($xml->berp3_constants[0]->constant as $constant) {    // $constant is a simpleXMLElement
 			$constname = $constant['name'];
 			$constvalue = (string) $constant;
 			$constvalue = (empty($constvalue) ? '0' : $constvalue);
@@ -231,9 +231,9 @@ if (empty($error) && !empty($xml)) {
 	}
 
 	// Scan htdocs
-	if (is_object($xml->dolibarr_htdocs_dir[0])) {
-		//var_dump($xml->dolibarr_htdocs_dir[0]['includecustom']);exit;
-		$includecustom = (empty($xml->dolibarr_htdocs_dir[0]['includecustom']) ? 0 : $xml->dolibarr_htdocs_dir[0]['includecustom']);
+	if (is_object($xml->berp3_htdocs_dir[0])) {
+		//var_dump($xml->berp3_htdocs_dir[0]['includecustom']);exit;
+		$includecustom = (empty($xml->berp3_htdocs_dir[0]['includecustom']) ? 0 : $xml->berp3_htdocs_dir[0]['includecustom']);
 
 		// Define qualified files (must be same than into generate_filelist_xml.php and in api_setup.class.php)
 		$regextoinclude = '\.(php|php3|php4|php5|phtml|phps|phar|inc|css|scss|html|xml|js|json|tpl|jpg|jpeg|png|gif|ico|sql|lang|txt|yml|bak|md|mp3|mp4|wav|mkv|z|gz|zip|rar|tar|less|svg|eot|woff|woff2|ttf|manifest)$';
@@ -241,7 +241,7 @@ if (empty($error) && !empty($xml)) {
 		$scanfiles = dol_dir_list(DOL_DOCUMENT_ROOT, 'files', 1, $regextoinclude, $regextoexclude);
 
 		// Fill file_list with files in signature, new files, modified files
-		$ret = getFilesUpdated($file_list, $xml->dolibarr_htdocs_dir[0], '', DOL_DOCUMENT_ROOT, $checksumconcat); // Fill array $file_list
+		$ret = getFilesUpdated($file_list, $xml->berp3_htdocs_dir[0], '', DOL_DOCUMENT_ROOT, $checksumconcat); // Fill array $file_list
 		// Complete with list of new files
 		foreach ($scanfiles as $keyfile => $valfile) {
 			$tmprelativefilename = preg_replace('/^'.preg_quote(DOL_DOCUMENT_ROOT, '/').'/', '', $valfile['fullname']);
@@ -388,24 +388,24 @@ if (empty($error) && !empty($xml)) {
 		$out .= '</table>';
 		$out .= '</div>';
 	} else {
-		print 'Error: Failed to found dolibarr_htdocs_dir into XML file '.$xmlfile;
+		print 'Error: Failed to found berp3_htdocs_dir into XML file '.$xmlfile;
 		$error++;
 	}
 
 
 	// Scan scripts
 	/*
-	if (is_object($xml->dolibarr_script_dir[0]))
+	if (is_object($xml->berp3_script_dir[0]))
 	{
 		$file_list = array();
-		$ret = getFilesUpdated($file_list, $xml->dolibarr_htdocs_dir[0], '', ???, $checksumconcat);		// Fill array $file_list
+		$ret = getFilesUpdated($file_list, $xml->berp3_htdocs_dir[0], '', ???, $checksumconcat);		// Fill array $file_list
 	}*/
 
 
 	asort($checksumconcat); // Sort list of checksum
 	//var_dump($checksumconcat);
 	$checksumget = md5(join(',', $checksumconcat));
-	$checksumtoget = trim((string) $xml->dolibarr_htdocs_dir_checksum);
+	$checksumtoget = trim((string) $xml->berp3_htdocs_dir_checksum);
 
 	/*var_dump(count($file_list['added']));
 	var_dump($checksumget);

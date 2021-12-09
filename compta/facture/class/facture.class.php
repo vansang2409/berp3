@@ -1,22 +1,22 @@
 <?php
-/* Copyright (C) 2002-2007 Rodolphe Quiedeville  <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2013 Laurent Destailleur   <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio   <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier        <benoit.mortier@opensides.be>
- * Copyright (C) 2005      Marc Barilley / Ocebo <marc@ocebo.com>
- * Copyright (C) 2005-2014 Regis Houssin         <regis.houssin@inodbox.com>
- * Copyright (C) 2006      Andre Cianfarani      <acianfa@free.fr>
+/* Copyright (C) 2002-2007 
+ * Copyright (C) 2004-2013 
+ * Copyright (C) 2004         
+ * Copyright (C) 2004              
+ * Copyright (C) 2005      
+ * Copyright (C) 2005-2014 
+ * Copyright (C) 2006      
  * Copyright (C) 2007      Franky Van Liedekerke <franky.van.liedekerke@telenet.be>
- * Copyright (C) 2010-2020 Juanjo Menent         <jmenent@2byte.es>
- * Copyright (C) 2012-2014 Christophe Battarel   <christophe.battarel@altairis.fr>
- * Copyright (C) 2012-2015 Marcos García         <marcosgdf@gmail.com>
- * Copyright (C) 2012      Cédric Salvador       <csalvador@gpcsolutions.fr>
- * Copyright (C) 2012-2014 Raphaël Doursenaud    <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2013      Cedric Gross          <c.gross@kreiz-it.fr>
- * Copyright (C) 2013      Florian Henry         <florian.henry@open-concept.pro>
- * Copyright (C) 2016      Ferran Marcet         <fmarcet@2byte.es>
- * Copyright (C) 2018      Alexandre Spangaro    <aspangaro@open-dsi.fr>
- * Copyright (C) 2018      Nicolas ZABOURI        <info@inovea-conseil.com>
+ * Copyright (C) 2010-2020 
+ * Copyright (C) 2012-2014 
+ * Copyright (C) 2012-2015          
+ * Copyright (C) 2012      
+ * Copyright (C) 2012-2014     
+ * Copyright (C) 2013      Cedric Gross          
+ * Copyright (C) 2013      
+ * Copyright (C) 2016      
+ * Copyright (C) 2018      
+ * Copyright (C) 2018              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -423,7 +423,7 @@ class Facture extends CommonInvoice
 	/**
 	 * 	Constructor
 	 *
-	 * 	@param	DoliDB		$db			Database handler
+	 * 	@param	Berp3DB		$db			Database handler
 	 */
 	public function __construct($db)
 	{
@@ -2314,9 +2314,9 @@ class Facture extends CommonInvoice
 						$mouvP->origin = &$this;
 						// We decrease stock for product
 						if ($this->type == self::TYPE_CREDIT_NOTE) {
-							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceDeleteDolibarr", $this->ref));
+							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceDeleteBerp3", $this->ref));
 						} else {
-							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("InvoiceDeleteDolibarr", $this->ref)); // we use 0 for price, to not change the weighted average value
+							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("InvoiceDeleteBerp3", $this->ref)); // we use 0 for price, to not change the weighted average value
 						}
 					}
 				}
@@ -2750,7 +2750,7 @@ class Facture extends CommonInvoice
 							$mouvP->origin = &$this;
 							// We decrease stock for product
 							if ($this->type == self::TYPE_CREDIT_NOTE) {
-								$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("InvoiceValidatedInDolibarr", $num));
+								$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("InvoiceValidatedInBerp3", $num));
 								if ($result < 0) {
 									$error++;
 									$this->error = $mouvP->error;
@@ -2799,7 +2799,7 @@ class Facture extends CommonInvoice
 													// not enough (take all in batch)
 													$product_batch_qty = $batch->qty;
 												}
-												$result = $mouvP->livraison($user, $productStatic->id, $idwarehouse, $product_batch_qty, $this->lines[$i]->subprice, $langs->trans('InvoiceValidatedInDolibarr', $num), '', '', '', $batch->batch);
+												$result = $mouvP->livraison($user, $productStatic->id, $idwarehouse, $product_batch_qty, $this->lines[$i]->subprice, $langs->trans('InvoiceValidatedInBerp3', $num), '', '', '', $batch->batch);
 												if ($result < 0) {
 													$error++;
 													$this->error = $mouvP->error;
@@ -2817,7 +2817,7 @@ class Facture extends CommonInvoice
 												if ($conf->global->STOCK_ALLOW_NEGATIVE_TRANSFER) {
 													// take in the first batch
 													$batch = $batchList[0];
-													$result = $mouvP->livraison($user, $productStatic->id, $idwarehouse, $product_qty_remain, $this->lines[$i]->subprice, $langs->trans('InvoiceValidatedInDolibarr', $num), '', '', '', $batch->batch);
+													$result = $mouvP->livraison($user, $productStatic->id, $idwarehouse, $product_qty_remain, $this->lines[$i]->subprice, $langs->trans('InvoiceValidatedInBerp3', $num), '', '', '', $batch->batch);
 													if ($result < 0) {
 														$error++;
 														$this->error = $mouvP->error;
@@ -2835,7 +2835,7 @@ class Facture extends CommonInvoice
 								}
 
 								if (!$is_batch_line) {
-									$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceValidatedInDolibarr", $num));
+									$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceValidatedInBerp3", $num));
 									if ($result < 0) {
 										$error++;
 										$this->error = $mouvP->error;
@@ -3042,9 +3042,9 @@ class Facture extends CommonInvoice
 						$mouvP->origin = &$this;
 						// We decrease stock for product
 						if ($this->type == self::TYPE_CREDIT_NOTE) {
-							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceBackToDraftInDolibarr", $this->ref));
+							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceBackToDraftInBerp3", $this->ref));
 						} else {
-							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("InvoiceBackToDraftInDolibarr", $this->ref)); // we use 0 for price, to not change the weighted average value
+							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("InvoiceBackToDraftInBerp3", $this->ref)); // we use 0 for price, to not change the weighted average value
 						}
 					}
 				}
@@ -4724,12 +4724,12 @@ class Facture extends CommonInvoice
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param  DoliDB  $db             Database handler
+	 * @param  Berp3DB  $db             Database handler
 	 * @param  int     $origin_id      Old third-party id
 	 * @param  int     $dest_id        New third-party id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'facture'

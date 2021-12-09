@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2015 	Laurent Destailleur   	<eldy@users.sourceforge.net>
- * Copyright (C) 2015 		Florian HENRY 			<florian.henry@open-concept.pro>
+/* Copyright (C) 2004-2015 	   	
+ * Copyright (C) 2015 		Florian HENRY 			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ class Propalmergepdfproduct extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDb		$db      Database handler
+	 *  @param	Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

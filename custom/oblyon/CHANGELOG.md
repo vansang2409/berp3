@@ -1,21 +1,21 @@
 ## Changelog ##
 
 ### Version 12.0.0 - 2020 06 30
- - Comptability Dolibarr v12
+ - Comptability Berp3 v12
 
 ### Version 11.0.0 - 2020 02 03
- - Comptability Dolibarr v11
+ - Comptability Berp3 v11
  
 ### Version 10.0 beta 3 - 2019 09 04
  - Fix Icon ticket module is missing
 
 ### Version 10.0 beta 2 - 2019 08 26
- - Standardize code & update - Compatibility with Dolibarr 10.0
+ - Standardize code & update - Compatibility with Berp3 10.0
  - New Add possibility in admin colors menu to manage colors of the buttons
  - WIP New Add Sticky bar for left menu
  
 ### Version 10.0 beta 1 - 2019 06 08
- - Standardize code & update - Compatibility with Dolibarr 10.0
+ - Standardize code & update - Compatibility with Berp3 10.0
 
 ### Version 9.1.2 - 2019 08 22
  - CSS | Add level3 for menu
@@ -34,8 +34,8 @@
  - Fix issue in admin menu display
 
 ### Version 9.0 - 2018 12 05
- - Standardize code & update - Compatibility with Dolibarr 9.0
- - Update copyright for Alexandre -> Open-DSI
+ - Standardize code & update - Compatibility with Berp3 9.0
+ - Update copyright for Alexandre -> 
  - Some improvement to display menu
 
 ### Version 8.1.1 - 2019 04 21
@@ -51,16 +51,16 @@
  - Added: install / usage info and move changelog to module
 
 ### Version 8.0 - 2018 10 29
- - Standardize code & update - Compatibility with Dolibarr 8.0
+ - Standardize code & update - Compatibility with Berp3 8.0
 
 ### Version 8.0 beta 1 - 2018 07 22
- - Standardize code & update - Compatibility with Dolibarr 8.0
+ - Standardize code & update - Compatibility with Berp3 8.0
 
 ### Version 7.0 beta 1 - 2018 03 08
- - Standardize code & update - Compatibility with Dolibarr 7.0 (Fix #13)
+ - Standardize code & update - Compatibility with Berp3 7.0 (Fix #13)
 
 ### Version 6.0 beta 1 - 2017 11 17
- - Standardize code & update - Compatibility with Dolibarr 6.0
+ - Standardize code & update - Compatibility with Berp3 6.0
 
 ### Version 4.0.0
  - Fixed: 4.0 Correct link to projects
@@ -79,8 +79,8 @@
 
 ### Version 4.0 beta 1
  - Added: Add template Oblyon Green & new options to configurate colors
- - Added: Compatibility with Dolibarr 4.0
- - Increase number version to align to Dolibarr version
+ - Added: Compatibility with Berp3 4.0
+ - Increase number version to align to Berp3 version
  - Fixed: When the menu is inverted, search bar don't show
  - New: 4.0 Add icon external.png
 
@@ -92,7 +92,7 @@
  - Fixed: missing default logo when menu inverted
  - Fixed: missing icons in login area (Multicompany compatibility)
  - New: design of login block area (need improvment)
- - New: Dolibarr 4.0 Module Expense Report have moved into menu files
+ - New: Berp3 4.0 Module Expense Report have moved into menu files
  - New: Css add badge & input for multicompany in login box
  - Fixed: Update bad link in menu Thirdparty for BERP3 3.9
  - New: 4.0 HRM Area has moved
@@ -113,8 +113,8 @@
 ### Version 2.2 beta 3
  - Updated: About page
  - Fixed: Missing language file for accountancy module
- - Fixed: Some links are modified for customers invoices in Dolibarr 3.8
- - Upgraded: Comptability with Dolibarr 3.9-beta (HRM)
+ - Fixed: Some links are modified for customers invoices in Berp3 3.8
+ - Upgraded: Comptability with Berp3 3.9-beta (HRM)
  - Added: Possibility to define maincolor & color background of the template in admin color tab
  - Fixed: Add a max-width for logo display (200px max & 180 px with padding)
  - Added: icon helpdoc_top.png for BERP3 3.9
@@ -122,14 +122,14 @@
  - Added: Review menu of accountancy expert module since 3.7 (Specific development)
 
 ### Version 2.2 beta 2
- - Upgraded: Compatibility with Dolibarr 3.9-beta
+ - Upgraded: Compatibility with Berp3 3.9-beta
  - Upgraded: Modify link for donation module
  - Added: a tab color in admin
 	* Possibility to define color logo background
 
 ### Version 2.2 beta 1
- - Upgraded: Compatibility with Dolibarr 3.9-beta
- - Upgraded: Compatibility with Dolibarr 3.8
+ - Upgraded: Compatibility with Berp3 3.9-beta
+ - Upgraded: Compatibility with Berp3 3.8
  - Fixed: Replace constant $conf->global->MAIN_VERSION_LAST_UPGRADE by DOL_VERSION in Oblyon Menu
 	* The first constant are empty when it's a fresh install
  - Added: an entry in the menu for the new module expense report in hrm 
@@ -138,8 +138,8 @@
  - Fixed: Typo Dictionnary -> Dictionary
 
 ### Version 2.1
- - Upgraded: Compatibility with Dolibarr 3.7
- - Upgraded: Compatibility with Dolibarr 3.5.x
+ - Upgraded: Compatibility with Berp3 3.7
+ - Upgraded: Compatibility with Berp3 3.5.x
  - Fixed: Menu entries for BERP3 3.5.x, 3.6.x and 3.7
  - Fixed: Skin of menu entries disabled 
  - Added: New option Eldy icons (v3.7)
@@ -171,7 +171,7 @@
  - Updated: New license CC BY-NC 4.0	
 
 ### Version 1.6
- - Upgraded: Compatibility with Dolibarr 3.6 (thanks to A. Spangaro)
+ - Upgraded: Compatibility with Berp3 3.6 (thanks to A. Spangaro)
  
 ### Version 1.5
  - Added: Define Colors Feature (see style.css.php file, section Define Colors)
@@ -191,7 +191,7 @@
  - Added: Skype icon
  - Added: Reports module icon
  - Changed: Icons size (Left Menu)
- - Upgraded: Compatibility with **[DoliDroid](https://play.google.com/store/apps/details?id=com.nltechno.dolidroidpro "DoliDroid")** for BERP3 v3.5 and v3.4.x (thanks to Eldy)
+ - Upgraded: Compatibility with **[Berp3Droid](https://play.google.com/store/apps/details?id=com.nltechno.berp3droidpro "Berp3Droid")** for BERP3 v3.5 and v3.4.x (thanks to Eldy)
 
 ### Version 1.2
  - Stylized: Cashdesk module interface 

@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2013 Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2011 Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2004      Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2010-2013 Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2011-2018 Philippe Grand          <philippe.grand@atoo-net.com>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2013 
+ * Copyright (C) 2005-2011 
+ * Copyright (C) 2004           
+ * Copyright (C) 2004                
+ * Copyright (C) 2010-2013 
+ * Copyright (C) 2011-2018           
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,13 +65,13 @@ if ($action == 'updateMask') {
 	$maskdeposit = GETPOST('maskdeposit', 'alpha');
 
 	if ($maskconstinvoice) {
-		$res = dolibarr_set_const($db, $maskconstinvoice, $maskinvoice, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstinvoice, $maskinvoice, 'chaine', 0, '', $conf->entity);
 	}
 	if ($maskconstcredit) {
-		$res = dolibarr_set_const($db, $maskconstcredit, $maskcredit, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstcredit, $maskcredit, 'chaine', 0, '', $conf->entity);
 	}
 	if ($maskconstdeposit) {
-		$res = dolibarr_set_const($db, $maskconstdeposit, $maskdeposit, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstdeposit, $maskdeposit, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -127,12 +127,12 @@ if ($action == 'specimen') {  // For invoices
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->INVOICE_SUPPLIER_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'INVOICE_SUPPLIER_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'INVOICE_SUPPLIER_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "INVOICE_SUPPLIER_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "INVOICE_SUPPLIER_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->INVOICE_SUPPLIER_ADDON_PDF = $value;
@@ -144,14 +144,14 @@ if ($action == 'specimen') {  // For invoices
 		$ret = addDocumentModel($value, $type, $label, $scandir);
 	}
 } elseif ($action == 'unsetdoc') {
-	dolibarr_del_const($db, "INVOICE_SUPPLIER_ADDON_PDF", $conf->entity);
+	berp3_del_const($db, "INVOICE_SUPPLIER_ADDON_PDF", $conf->entity);
 }
 
 if ($action == 'setmod') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "INVOICE_SUPPLIER_ADDON_NUMBER", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "INVOICE_SUPPLIER_ADDON_NUMBER", $value, 'chaine', 0, '', $conf->entity);
 }
 
 if ($action == 'addcat') {
@@ -162,7 +162,7 @@ if ($action == 'addcat') {
 if ($action == 'set_SUPPLIER_INVOICE_FREE_TEXT') {
 	$freetext = GETPOST('SUPPLIER_INVOICE_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
 
-	$res = dolibarr_set_const($db, "SUPPLIER_INVOICE_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "SUPPLIER_INVOICE_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -460,7 +460,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td><td class="right">';

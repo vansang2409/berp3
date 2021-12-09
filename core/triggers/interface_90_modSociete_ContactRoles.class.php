@@ -1,10 +1,10 @@
 <?php
 /*
- * Copyright (C) 2005-2017 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2009-2017 Regis Houssin <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2014 Juanjo Menent <jmenent@2byte.es>
- * Copyright (C) 2013 Cedric GROSS <c.gross@kreiz-it.fr>
- * Copyright (C) 2014 Marcos García <marcosgdf@gmail.com>
+ * Copyright (C) 2005-2017 
+ * Copyright (C) 2009-2017  
+ * Copyright (C) 2011-2014  
+ * Copyright (C) 2013 Cedric GROSS 
+ * Copyright (C) 2014  
  * Copyright (C) 2015 Bahfir Abbes <bafbes@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -26,17 +26,17 @@
  * \ingroup agenda
  * \brief Trigger file for company - contactroles
  */
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 /**
  * Class of triggered functions for agenda module
  */
-class InterfaceContactRoles extends DolibarrTriggers
+class InterfaceContactRoles extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -45,13 +45,13 @@ class InterfaceContactRoles extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "agenda";
 		$this->description = "Triggers of this module auto link contact to company.";
-		// 'development', 'experimental', 'dolibarr' or version
-		$this->version = self::VERSION_DOLIBARR;
+		// 'development', 'experimental', 'berp3' or version
+		$this->version = self::VERSION_BERP3;
 		$this->picto = 'company';
 	}
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file is inside directory htdocs/core/triggers or htdocs/module/code/triggers (and declared)
 	 *
 	 * Following properties may be set before calling trigger. The may be completed by this trigger to be used for writing the event into database:

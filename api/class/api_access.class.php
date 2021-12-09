@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2015   
+ * Copyright (C) 2016	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,12 +36,12 @@ use \Luracast\Restler\Defaults;
 use \Luracast\Restler\RestException;
 
 /**
- * Dolibarr API access class
+ * Berp3 API access class
  *
  */
-class DolibarrApiAccess implements iAuthenticate
+class Berp3ApiAccess implements iAuthenticate
 {
-	const REALM = 'Restricted Dolibarr API';
+	const REALM = 'Restricted Berp3 API';
 
 	/**
 	 * @var array $requires	role required by API method		user / external / admin
@@ -168,7 +168,7 @@ class DolibarrApiAccess implements iAuthenticate
 		}
 
 		$userClass::setCacheIdentifier(static::$role);
-		Resources::$accessControlFunction = 'DolibarrApiAccess::verifyAccess';
+		Resources::$accessControlFunction = 'Berp3ApiAccess::verifyAccess';
 		$requirefortest = static::$requires;
 		if (!is_array($requirefortest)) {
 			$requirefortest = explode(',', $requirefortest);
@@ -196,8 +196,8 @@ class DolibarrApiAccess implements iAuthenticate
 	 */
 	public static function verifyAccess(array $m)
 	{
-		$requires = isset($m['class']['DolibarrApiAccess']['properties']['requires'])
-				? $m['class']['DolibarrApiAccess']['properties']['requires']
+		$requires = isset($m['class']['Berp3ApiAccess']['properties']['requires'])
+				? $m['class']['Berp3ApiAccess']['properties']['requires']
 				: false;
 
 

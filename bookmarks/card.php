@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2001-2003 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2014      Marcos García        <marcosgdf@gmail.com>
+/* Copyright (C) 2001-2003 
+ * Copyright (C) 2005-2015 
+ * Copyright (C) 2014      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -164,7 +164,7 @@ if ($action == 'create') {
 	dol_set_focus('#titlebookmark');
 
 	// Url
-	print '<tr><td class="fieldrequired">'.$langs->trans("UrlOrLink").'</td><td><input class="flat quatrevingtpercent minwidth500" name="url" value="'.dol_escape_htmltag($url).'"></td><td class="hideonsmartphone"><span class="opacitymedium">'.$langs->trans("UseAnExternalHttpLinkOrRelativeDolibarrLink").'</span></td></tr>';
+	print '<tr><td class="fieldrequired">'.$langs->trans("UrlOrLink").'</td><td><input class="flat quatrevingtpercent minwidth500" name="url" value="'.dol_escape_htmltag($url).'"></td><td class="hideonsmartphone"><span class="opacitymedium">'.$langs->trans("UseAnExternalHttpLinkOrRelativeBerp3Link").'</span></td></tr>';
 
 	// Target
 	print '<tr><td>'.$langs->trans("BehaviourOnClick").'</td><td>';

@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2007-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2009      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013 	   Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2020      Frédéric France      <frederic.france@netlogic.fr>
+/* Copyright (C) 2007-2011 
+ * Copyright (C) 2009      
+ * Copyright (C) 2013 	   
+ * Copyright (C) 2020      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,11 +50,11 @@ $substitutionarrayfortest = array(
  */
 
 if ($action == 'update' && !$cancel) {
-	dolibarr_set_const($db, "MAIN_DISABLE_ALL_SMS", GETPOST("MAIN_DISABLE_ALL_SMS", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_DISABLE_ALL_SMS", GETPOST("MAIN_DISABLE_ALL_SMS", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 
-	dolibarr_set_const($db, "MAIN_SMS_SENDMODE", GETPOST("MAIN_SMS_SENDMODE", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_SMS_SENDMODE", GETPOST("MAIN_SMS_SENDMODE", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 
-	dolibarr_set_const($db, "MAIN_MAIL_SMS_FROM", GETPOST("MAIN_MAIL_SMS_FROM", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_MAIL_SMS_FROM", GETPOST("MAIN_MAIL_SMS_FROM", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 
 	header("Location: ".$_SERVER["PHP_SELF"]."?mainmenu=home&leftmenu=setup");
 	exit;
@@ -155,8 +155,8 @@ $listofmethods = (is_array($conf->modules_parts['sms']) ? $conf->modules_parts['
 asort($listofmethods);
 
 if (!count($listofmethods)) {
-	$descnosms = $langs->trans("NoSmsEngine", '{Dolistore}');
-	$descnosms = str_replace('{Dolistore}', '<a href="https://www.dolistore.com/search.php?orderby=position&orderway=desc&search_query=smsmanager">DoliStore</a>', $descnosms);
+	$descnosms = $langs->trans("NoSmsEngine", '{Berp3store}');
+	$descnosms = str_replace('{Berp3store}', '<a href="https://www.berp3store.com/search.php?orderby=position&orderway=desc&search_query=smsmanager">Berp3Store</a>', $descnosms);
 	print '<div class="warning">'.$descnosms.'</div>';
 }
 

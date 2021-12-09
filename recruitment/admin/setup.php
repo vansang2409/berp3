@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2020 Adminson Alicealalalamdskfldmjgdfgdfhfghgfh <testldr9@dolicloud.com>
+/* Copyright (C) 2004-2017 
+ * Copyright (C) 2020 Adminson Alicealalalamdskfldmjgdfgdfhfghgfh <testldr9@berp3cloud.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  * \brief   Recruitment setup page.
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 $res = 0;
 // Try main.inc.php into web root known defined into CONTEXT_DOCUMENT_ROOT (not always defined)
 if (!$res && !empty($_SERVER["CONTEXT_DOCUMENT_ROOT"])) {
@@ -96,7 +96,7 @@ if ($action == 'updateMask') {
 	$maskorder = GETPOST('maskorder', 'alpha');
 
 	if ($maskconstorder) {
-		$res = dolibarr_set_const($db, $maskconstorder, $maskorder, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstorder, $maskorder, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -153,7 +153,7 @@ if ($action == 'updateMask') {
 		if (!empty($tmpobjectkey)) {
 			$constforval = 'RECRUITMENT_'.strtoupper($tmpobjectkey).'_ADDON_PDF';
 			if ($conf->global->$constforval == "$value") {
-				dolibarr_del_const($db, $constforval, $conf->entity);
+				berp3_del_const($db, $constforval, $conf->entity);
 			}
 		}
 	}
@@ -163,14 +163,14 @@ if ($action == 'updateMask') {
 	if (!empty($tmpobjectkey)) {
 		$constforval = 'RECRUITMENT_'.strtoupper($tmpobjectkey)."_ADDON";
 
-		dolibarr_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity);
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
 	$tmpobjectkey = GETPOST('object');
 	if (!empty($tmpobjectkey)) {
 		$constforval = 'RECRUITMENT_'.strtoupper($tmpobjectkey).'_ADDON_PDF';
-		if (dolibarr_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity)) {
+		if (berp3_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity)) {
 			// The constant that was read before the new set
 			// We therefore requires a variable to have a coherent view
 			$conf->global->$constforval = $value;
@@ -186,7 +186,7 @@ if ($action == 'updateMask') {
 	$tmpobjectkey = GETPOST('object');
 	if (!empty($tmpobjectkey)) {
 		$constforval = 'RECRUITMENT_'.strtoupper($tmpobjectkey).'_ADDON_PDF';
-		dolibarr_del_const($db, $constforval, $conf->entity);
+		berp3_del_const($db, $constforval, $conf->entity);
 	}
 }
 

@@ -1,20 +1,20 @@
 <?php
-/* Copyright (C) 2001-2007  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2014	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2015	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2006		Andre Cianfarani		<acianfa@free.fr>
+/* Copyright (C) 2001-2007  
+ * Copyright (C) 2004-2014	
+ * Copyright (C) 2005-2015	
+ * Copyright (C) 2006				
  * Copyright (C) 2007-2011	Jean Heimburger			<jean@tiaris.info>
- * Copyright (C) 2010-2018	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2012       Cedric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2013-2014	Cedric GROSS			<c.gross@kreiz-it.fr>
- * Copyright (C) 2013-2016	Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2011-2021	Open-DSI				<support@open-dsi.fr>
- * Copyright (C) 2014		Henry Florian			<florian.henry@open-concept.pro>
- * Copyright (C) 2014-2016	Philippe Grand			<philippe.grand@atoo-net.com>
+ * Copyright (C) 2010-2018	
+ * Copyright (C) 2012       Cedric Salvador         
+ * 	Cedric GROSS			
+ * Copyright (C) 2013-2016				
+ * Copyright (C) 2011-2021					
+ * Copyright (C) 2014					
+ * Copyright (C) 2014-2016	
  * Copyright (C) 2014		Ion agorria			    <ion@agorria.com>
- * Copyright (C) 2016-2018	Ferran Marcet			<fmarcet@2byte.es>
+ * Copyright (C) 2016-2018				
  * Copyright (C) 2017		Gustavo Novaro
- * Copyright (C) 2019-2021  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2019-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -516,7 +516,7 @@ class Product extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -678,7 +678,7 @@ class Product extends CommonObject
 
 		$this->db->begin();
 
-		// For automatic creation during create action (not used by Dolibarr GUI, can be used by scripts)
+		// For automatic creation during create action (not used by Berp3 GUI, can be used by scripts)
 		if ($this->barcode == -1) {
 			$this->barcode = $this->get_barcode($this, $this->barcode_type_code);
 		}
@@ -5882,12 +5882,12 @@ class Product extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param  DoliDB $db        Database handler
+	 * @param  Berp3DB $db        Database handler
 	 * @param  int    $origin_id Old thirdparty id
 	 * @param  int    $dest_id   New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'product_customer_price',

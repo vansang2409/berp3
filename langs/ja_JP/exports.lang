@@ -59,7 +59,7 @@ ChooseFormatOfFileToImport=%sアイコンをクリックして選択し、イン
 ChooseFileToImport=ファイルをアップロードし、%sアイコンをクリックして、ソースインポートファイルとしてファイルを選択する。
 SourceFileFormat=ソースファイルの形式
 FieldsInSourceFile=ソースファイル内のフィールド
-FieldsInTargetDatabase=Dolibarrデータベースのターゲットフィールド(太字=必須)
+FieldsInTargetDatabase=Berp3データベースのターゲットフィールド(太字=必須)
 Field=フィールド
 NoFields=Noフィールド
 MoveField=フィールドの列番号%sを移動

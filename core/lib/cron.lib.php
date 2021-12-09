@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2012 Nicolas Villa aka Boyquotes http://informetic.fr
- * Copyright (C) 2013 Florian Henry <florian.henry@opn-concept.pro>
+ * Copyright (C) 2013  <florian.henry@opn-concept.pro>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -89,10 +89,10 @@ function cron_prepare_head(Cronjob $object)
 function dol_print_cron_urls()
 {
 	global $conf, $langs, $user;
-	global $dolibarr_main_url_root;
+	global $berp3_main_url_root;
 
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 	//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 

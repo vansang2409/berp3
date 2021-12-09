@@ -1,10 +1,10 @@
 <?php
 /* Copyright (C) 2001		Fabien Seisen			<seisen@linuxfr.org>
- * Copyright (C) 2002-2007	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2006		Andre Cianfarani		<acianfa@free.fr>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2014-2015  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+ * Copyright (C) 2002-2007	
+ * Copyright (C) 2004-2011	
+ * Copyright (C) 2006				
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2014-2015  Raphaël Doursenaud      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
  */
 
 /**
- *    Class to manage Dolibarr database access for an SQL database
+ *    Class to manage Berp3 database access for an SQL database
  */
 interface Database
 {
@@ -413,17 +413,17 @@ interface Database
 	/**
 	 * Create a user and privileges to connect to database (even if database does not exists yet)
 	 *
-	 * @param    string $dolibarr_main_db_host 	Server IP
-	 * @param    string $dolibarr_main_db_user 	Username to create
-	 * @param    string $dolibarr_main_db_pass 	User password to create
-	 * @param    string $dolibarr_main_db_name 	Database name where user must be granted
+	 * @param    string $berp3_main_db_host 	Server IP
+	 * @param    string $berp3_main_db_user 	Username to create
+	 * @param    string $berp3_main_db_pass 	User password to create
+	 * @param    string $berp3_main_db_name 	Database name where user must be granted
 	 * @return   int                            <0 if KO, >=0 if OK
 	 */
 	public function DDLCreateUser(
-		$dolibarr_main_db_host,
-		$dolibarr_main_db_user,
-		$dolibarr_main_db_pass,
-		$dolibarr_main_db_name
+		$berp3_main_db_host,
+		$berp3_main_db_user,
+		$berp3_main_db_pass,
+		$berp3_main_db_name
 	);
 	// phpcs:enable
 

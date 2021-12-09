@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2009 Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2004	   Eric Seigne			<eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2009 Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2005 
+ * Copyright (C) 2004-2009 	
+ * Copyright (C) 2004	   			
+ * Copyright (C) 2005-2009 		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ class ModelePDFCards
 	/**
 	 *	Return list of active generation modules
 	 *
-	 *	@param	DoliDB	$db					Database handler
+	 *	@param	Berp3DB	$db					Database handler
 	 *	@param	integer	$maxfilenamelength	Max length of value to show
 	 *	@return	array						List of templates
 	 */
@@ -68,7 +68,7 @@ class ModelePDFCards
 /**
  *	Cree un fichier de cartes de visites en fonction du modele de ADHERENT_CARDS_ADDON_PDF
  *
- *	@param	DoliDB		$db				Database handler
+ *	@param	Berp3DB		$db				Database handler
  *	@param	array		$arrayofmembers	Array of members
  *	@param	string		$modele			Force modele to use ('' to not force)
  *	@param	Translate	$outputlangs	Object langs to use for translation

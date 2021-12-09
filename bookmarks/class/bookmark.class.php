@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2015 Marcos García       <marcosgdf@gmail.com>
+/* Copyright (C) 2005 
+ * Copyright (C) 2015        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ class Bookmark extends CommonObject
 	public $picto = 'bookmark';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -97,7 +97,7 @@ class Bookmark extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -254,12 +254,12 @@ class Bookmark extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'bookmark'

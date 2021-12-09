@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2010 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004 
+ * Copyright (C) 2010 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,10 +36,10 @@ class mod_codecompta_panicum extends ModeleAccountancyCode
 	public $name = 'Panicum';
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	public $position = 10;
 
@@ -80,7 +80,7 @@ class mod_codecompta_panicum extends ModeleAccountancyCode
 	/**
 	 *  Set accountancy account code for a third party into this->code
 	 *
-	 *  @param	DoliDB	$db              Database handler
+	 *  @param	Berp3DB	$db              Database handler
 	 *  @param  Societe	$societe         Third party object
 	 *  @param  int		$type			'customer' or 'supplier'
 	 *  @return	int						>=0 if OK, <0 if KO

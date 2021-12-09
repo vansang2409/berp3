@@ -4,7 +4,7 @@ EMailSupport=Soporte por correos electrónicos
 RemoteControlSupport=Soporte en línea en tiempo real / remoto
 OtherSupport=Otro soporte
 HelpCenter=Centro de ayuda
-DolibarrHelpCenter=Centro de Ayuda y Soporte Dolibarr
+Berp3HelpCenter=Centro de Ayuda y Soporte Berp3
 TypeOfSupport=Tipo de apoyo
 TypeSupportCommunauty=Comunidad (gratis)
 NeedHelpCenter=¿Necesita ayuda o apoyo?
@@ -14,5 +14,5 @@ TypeHelpDevForm=Ayuda + Desarrollo + Entrenamiento
 BackToHelpCenter=De lo contrario, <a href="%s">vuelva a la página de inicio del centro de ayuda</a>.
 LinkToGoldMember=Puede llamar a uno de los capacitadores preseleccionados por BERP3 para su idioma (%s) haciendo clic en su Widget (el estado y el precio máximo se actualizan automáticamente):
 PossibleLanguages=Idiomas admitidos
-SubscribeToFoundation=Ayuda al proyecto Dolibarr, suscríbete a la fundación.
+SubscribeToFoundation=Ayuda al proyecto Berp3, suscríbete a la fundación.
 SeeOfficalSupport=Para soporte oficial de BERP3 en tu idioma: <br><b><a href="%s" target="_blank">%s</a></b>

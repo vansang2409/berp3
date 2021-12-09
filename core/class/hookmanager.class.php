@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2010-2016 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2010-2014 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2011 Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2010-2016 
+ * Copyright (C) 2010-2014 
+ * Copyright (C) 2010-2011 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
 class HookManager
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -60,7 +60,7 @@ class HookManager
 	/**
 	 * Constructor
 	 *
-	 * @param	DoliDB		$db		Database handler
+	 * @param	Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{

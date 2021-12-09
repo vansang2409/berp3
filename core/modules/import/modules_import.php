@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2012	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2005-2012		
+ * Copyright (C) 2005-2012			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/functions.lib.php';
 class ModeleImports
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -55,10 +55,10 @@ class ModeleImports
 	public $extension; // Extension of files imported by driver
 
 	/**
-	 * Dolibarr version of driver
+	 * Berp3 version of driver
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	public $label_lib; // Label of external lib used by driver
 
@@ -159,7 +159,7 @@ class ModeleImports
 	/**
 	 *  Charge en memoire et renvoie la liste des modeles actifs
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */

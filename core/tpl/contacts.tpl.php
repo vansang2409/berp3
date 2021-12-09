@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2012      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2015-2016 Charlie BENKE 	<charlie@patas-monkey.com>
- * Copyright (C) 2021       Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2012      
+ * Copyright (C) 2013-2015 
+ * Copyright (C) 2015-2016 Charlie BENKE 	
+ * Copyright (C) 2021       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

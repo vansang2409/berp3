@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2010-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2011		Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2012-2018  Philippe Grand      <philippe.grand@atoo-net.com>
+/* Copyright (C) 2010-2012			
+ * Copyright (C) 2011			
+ * Copyright (C) 2012-2018        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ class ActionsAdherentCardDefault extends ActionsAdherentCardCommon
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB	$db				Handler acces data base
+	 *	@param	Berp3DB	$db				Handler acces data base
 	 *	@param	string	$dirmodule		Name of directory of module
 	 *	@param	string	$targetmodule	Name of directory of module where canvas is stored
 	 *	@param	string	$canvas			Name of canvas

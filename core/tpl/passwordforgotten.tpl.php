@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2009-2010 Regis Houssin <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2013 Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2009-2010  
+ * Copyright (C) 2011-2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -210,7 +210,7 @@ if (!empty($morelogincontent)) {
 
 
 <div class="center login_main_home divpasswordmessagedesc paddingtopbottom<?php echo empty($conf->global->MAIN_LOGIN_BACKGROUND) ? '' : ' backgroundsemitransparent boxshadow'; ?>" style="max-width: 70%">
-<?php if ($mode == 'dolibarr' || !$disabled) { ?>
+<?php if ($mode == 'berp3' || !$disabled) { ?>
 	<span class="passwordmessagedesc">
 	<?php echo $langs->trans('SendNewPasswordDesc'); ?>
 	</span>

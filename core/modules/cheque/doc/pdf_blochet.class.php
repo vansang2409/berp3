@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2006      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2009-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2016      Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2006      
+ * Copyright (C) 2009-2015 
+ * Copyright (C) 2016      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ class BordereauChequeBlochet extends ModeleChequeReceipts
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB	$db		Database handler
+	 *	@param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -152,7 +152,7 @@ class BordereauChequeBlochet extends ModeleChequeReceipts
 
 		$pdf->SetTitle($outputlangs->transnoentities("CheckReceipt")." ".$number);
 		$pdf->SetSubject($outputlangs->transnoentities("CheckReceipt"));
-		$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+		$pdf->SetCreator("Berp3 ".DOL_VERSION);
 		$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 		$pdf->SetKeyWords($outputlangs->transnoentities("CheckReceipt")." ".$number);
 		if (!empty($conf->global->MAIN_DISABLE_PDF_COMPRESSION)) {

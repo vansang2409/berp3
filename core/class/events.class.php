@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2019 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2007-2019 
+ * Copyright (C) 2005-2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ class Events // extends CommonObject
 	public $id;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -121,7 +121,7 @@ class Events // extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

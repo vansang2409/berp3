@@ -36,7 +36,7 @@ abstract class ModelePdfReception extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */
@@ -133,7 +133,7 @@ abstract class ModelNumRefReception
 			return $langs->trans("VersionDevelopment");
 		} elseif ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
-		} elseif ($this->version == 'dolibarr') {
+		} elseif ($this->version == 'berp3') {
 			return DOL_VERSION;
 		} elseif ($this->version) {
 			return $this->version;

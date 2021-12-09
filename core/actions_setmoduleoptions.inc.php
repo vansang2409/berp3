@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2014-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2014-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ if ($action == 'update' && is_array($arrayofparameters)) {
 				$val_const = GETPOST($key, 'alpha');
 			}
 
-			$result = dolibarr_set_const($db, $key, $val_const, 'chaine', 0, '', $conf->entity);
+			$result = berp3_set_const($db, $key, $val_const, 'chaine', 0, '', $conf->entity);
 			if ($result < 0) {
 				$error++;
 				break;
@@ -76,7 +76,7 @@ if ($action == 'setModuleOptions') {
 				$param = GETPOST("param".$reg[1], 'alpha');
 				$value = GETPOST("value".$reg[1], 'alpha');
 				if ($param) {
-					$res = dolibarr_set_const($db, $param, $value, 'chaine', 0, '', $conf->entity);
+					$res = berp3_set_const($db, $param, $value, 'chaine', 0, '', $conf->entity);
 					if (!($res > 0)) {
 						$error++;
 					}

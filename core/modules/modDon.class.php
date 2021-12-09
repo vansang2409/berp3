@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2005	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2011	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2015		Alexandre Spangaro		<aspangaro@open-dsi.fr>
+/* Copyright (C) 2003-2005	
+ * Copyright (C) 2004-2010	
+ * Copyright (C) 2005-2011	
+ * Copyright (C) 2015		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,19 +26,19 @@
  *	\brief      Description and activation file for the module Donation
  */
 
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to describe and enable module Donation
  */
-class modDon extends DolibarrModules
+class modDon extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -49,8 +49,8 @@ class modDon extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Gestion des dons";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of png file (without png) used for this module.
 		// Png file must be in theme/yourtheme/img directory under name object_pictovalue.png.
@@ -145,7 +145,7 @@ class modDon extends DolibarrModules
 
 	/**
 	 *		Function called when module is enabled.
-	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *		It also creates data directories
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2019 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2018      Alexandre Spangaro   <aspangaro@open-dsi.fr>
+/* Copyright (C) 2004-2019 
+ * Copyright (C) 2018      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,18 +24,18 @@
  *  \ingroup    asset
  *  \brief      Description and activation file for the module assets
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module FixedAssets
  */
-class modAsset extends DolibarrModules
+class modAsset extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -44,7 +44,7 @@ class modAsset extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 51000; // TODO Go on page https://bonaerp.com/index.php/List_of_modules_id to reserve id number for your module
 
 		// Family can be 'crm','financial','hr','projects','products','ecm','technic','interface','other'
@@ -60,9 +60,9 @@ class modAsset extends DolibarrModules
 		// Module description, used if translation string 'ModuleAssetsDesc' not found (MyModue is name of module).
 		$this->description = "Assets module";
 		// Used only if file README.md and README-LL.md not found.
-		$this->descriptionlong = "Assets module to manage assets module and depreciation charge on Dolibarr";
+		$this->descriptionlong = "Assets module to manage assets module and depreciation charge on Berp3";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
+		// Possible values for version are: 'development', 'experimental', 'berp3', 'berp3_deprecated' or a version string like 'x.y.z'
 		$this->version = 'development';
 		// Key used in llx_const table to save module status enabled/disabled (where ASSETS is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
@@ -91,7 +91,7 @@ class modAsset extends DolibarrModules
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with
 		$this->langfiles = array("assets");
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(7, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(7, 0); // Minimum version of Berp3 required by module
 		$this->warnings_activation = array(); // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		$this->warnings_activation_ext = array(); // Warning to show when we activate an external module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		//$this->automatic_activation = array('FR'=>'AssetsWasAutomaticallyActivatedBecauseOfYourCountryChoice');
@@ -207,7 +207,7 @@ class modAsset extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories
 	 *
 	 *  @param      string	$options    Options when enabling module ('', 'noboxes')

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2020       Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2020       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 class ExtraLanguages
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -56,7 +56,7 @@ class ExtraLanguages
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

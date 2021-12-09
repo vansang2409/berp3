@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2006-2011 Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2006-2011 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/security/generate/modules_genpassw
 
 /**
  *	    \class      modGeneratePassStandard
- *		\brief      Class to generate a password according to a dolibarr standard rule (8 random chars)
+ *		\brief      Class to generate a password according to a berp3 standard rule (8 random chars)
  */
 class modGeneratePassStandard extends ModeleGenPassword
 {
@@ -39,7 +39,7 @@ class modGeneratePassStandard extends ModeleGenPassword
 	public $length;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -51,7 +51,7 @@ class modGeneratePassStandard extends ModeleGenPassword
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db			Database handler
+	 *  @param		Berp3DB		$db			Database handler
 	 *	@param		Conf		$conf		Handler de conf
 	 *	@param		Translate	$langs		Handler de langue
 	 *	@param		User		$user		Handler du user connecte

@@ -1,9 +1,9 @@
 <?php
 /* Copyright (C) 2005       Marc Barilley / Ocebo   <marc@ocebo.com>
- * Copyright (C) 2005-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2011  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2010       Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2015-2016  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+ * Copyright (C) 2005-2018  
+ * Copyright (C) 2005-2011  
+ * Copyright (C) 2010       
+ * Copyright (C) 2015-2016        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,17 +40,17 @@
 
 include_once 'inc.php';
 if (!file_exists($conffile)) {
-	print 'Error: Dolibarr config file was not found. This may means that Dolibarr is not installed yet. Please call the page "/install/index.php" instead of "/install/upgrade.php").';
+	print 'Error: Berp3 config file was not found. This may means that Berp3 is not installed yet. Please call the page "/install/index.php" instead of "/install/upgrade.php").';
 }
 require_once $conffile;
-require_once $dolibarr_main_document_root.'/compta/facture/class/facture.class.php';
-require_once $dolibarr_main_document_root.'/comm/propal/class/propal.class.php';
-require_once $dolibarr_main_document_root.'/contrat/class/contrat.class.php';
-require_once $dolibarr_main_document_root.'/commande/class/commande.class.php';
-require_once $dolibarr_main_document_root.'/fourn/class/fournisseur.commande.class.php';
-require_once $dolibarr_main_document_root.'/core/lib/price.lib.php';
-require_once $dolibarr_main_document_root.'/core/class/menubase.class.php';
-require_once $dolibarr_main_document_root.'/core/lib/files.lib.php';
+require_once $berp3_main_document_root.'/compta/facture/class/facture.class.php';
+require_once $berp3_main_document_root.'/comm/propal/class/propal.class.php';
+require_once $berp3_main_document_root.'/contrat/class/contrat.class.php';
+require_once $berp3_main_document_root.'/commande/class/commande.class.php';
+require_once $berp3_main_document_root.'/fourn/class/fournisseur.commande.class.php';
+require_once $berp3_main_document_root.'/core/lib/price.lib.php';
+require_once $berp3_main_document_root.'/core/class/menubase.class.php';
+require_once $berp3_main_document_root.'/core/lib/files.lib.php';
 
 global $langs;
 
@@ -78,20 +78,20 @@ $enablemodules = GETPOST("enablemodules", 'alpha', 3) ?GETPOST("enablemodules", 
 
 $langs->loadLangs(array("admin", "install", "bills", "suppliers"));
 
-if ($dolibarr_main_db_type == 'mysqli') {
+if ($berp3_main_db_type == 'mysqli') {
 	$choix = 1;
 }
-if ($dolibarr_main_db_type == 'pgsql') {
+if ($berp3_main_db_type == 'pgsql') {
 	$choix = 2;
 }
-if ($dolibarr_main_db_type == 'mssql') {
+if ($berp3_main_db_type == 'mssql') {
 	$choix = 3;
 }
 
 
-dolibarr_install_syslog("--- upgrade2: entering upgrade2.php page ".$versionfrom." ".$versionto." ".$enablemodules);
+berp3_install_syslog("--- upgrade2: entering upgrade2.php page ".$versionfrom." ".$versionto." ".$enablemodules);
 if (!is_object($conf)) {
-	dolibarr_install_syslog("upgrade2: conf file not initialized", LOG_ERR);
+	berp3_install_syslog("upgrade2: conf file not initialized", LOG_ERR);
 }
 
 
@@ -123,49 +123,49 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 	print '<table border="0" width="100%">';
 
 	// If password is encoded, we decode it
-	if (preg_match('/crypted:/i', $dolibarr_main_db_pass) || !empty($dolibarr_main_db_encrypted_pass)) {
-		require_once $dolibarr_main_document_root.'/core/lib/security.lib.php';
-		if (preg_match('/crypted:/i', $dolibarr_main_db_pass)) {
-			$dolibarr_main_db_pass = preg_replace('/crypted:/i', '', $dolibarr_main_db_pass);
-			$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_pass);
-			$dolibarr_main_db_encrypted_pass = $dolibarr_main_db_pass; // We need to set this as it is used to know the password was initially crypted
+	if (preg_match('/crypted:/i', $berp3_main_db_pass) || !empty($berp3_main_db_encrypted_pass)) {
+		require_once $berp3_main_document_root.'/core/lib/security.lib.php';
+		if (preg_match('/crypted:/i', $berp3_main_db_pass)) {
+			$berp3_main_db_pass = preg_replace('/crypted:/i', '', $berp3_main_db_pass);
+			$berp3_main_db_pass = dol_decode($berp3_main_db_pass);
+			$berp3_main_db_encrypted_pass = $berp3_main_db_pass; // We need to set this as it is used to know the password was initially crypted
 		} else {
-			$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_encrypted_pass);
+			$berp3_main_db_pass = dol_decode($berp3_main_db_encrypted_pass);
 		}
 	}
 
 	// $conf is already instancied inside inc.php
-	$conf->db->type = $dolibarr_main_db_type;
-	$conf->db->host = $dolibarr_main_db_host;
-	$conf->db->port = $dolibarr_main_db_port;
-	$conf->db->name = $dolibarr_main_db_name;
-	$conf->db->user = $dolibarr_main_db_user;
-	$conf->db->pass = $dolibarr_main_db_pass;
+	$conf->db->type = $berp3_main_db_type;
+	$conf->db->host = $berp3_main_db_host;
+	$conf->db->port = $berp3_main_db_port;
+	$conf->db->name = $berp3_main_db_name;
+	$conf->db->user = $berp3_main_db_user;
+	$conf->db->pass = $berp3_main_db_pass;
 
-	$db = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+	$db = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 
 	if (!$db->connected) {
 		print '<tr><td colspan="4">'.$langs->trans("ErrorFailedToConnectToDatabase", $conf->db->name).'</td><td class="right">'.$langs->trans('Error').'</td></tr>';
-		dolibarr_install_syslog('upgrade2: failed to connect to database :'.$conf->db->name.' on '.$conf->db->host.' for user '.$conf->db->user, LOG_ERR);
+		berp3_install_syslog('upgrade2: failed to connect to database :'.$conf->db->name.' on '.$conf->db->host.' for user '.$conf->db->user, LOG_ERR);
 		$error++;
 	}
 
 	if (!$error) {
 		if ($db->database_selected) {
-			dolibarr_install_syslog('upgrade2: database connection successful :'.$dolibarr_main_db_name);
+			berp3_install_syslog('upgrade2: database connection successful :'.$berp3_main_db_name);
 		} else {
 			$error++;
 		}
 	}
 
-	if (empty($dolibarr_main_db_encryption)) {
-		$dolibarr_main_db_encryption = 0;
+	if (empty($berp3_main_db_encryption)) {
+		$berp3_main_db_encryption = 0;
 	}
-	$conf->db->dolibarr_main_db_encryption = $dolibarr_main_db_encryption;
-	if (empty($dolibarr_main_db_cryptkey)) {
-		$dolibarr_main_db_cryptkey = '';
+	$conf->db->berp3_main_db_encryption = $berp3_main_db_encryption;
+	if (empty($berp3_main_db_cryptkey)) {
+		$berp3_main_db_cryptkey = '';
 	}
-	$conf->db->dolibarr_main_db_cryptkey = $dolibarr_main_db_cryptkey;
+	$conf->db->berp3_main_db_cryptkey = $berp3_main_db_cryptkey;
 
 	// Chargement config
 	if (!$error) {
@@ -193,7 +193,7 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 	if (!$error) {
 		// Current version is $conf->global->MAIN_VERSION_LAST_UPGRADE
 		// Version to install is DOL_VERSION
-		$dolibarrlastupgradeversionarray = preg_split('/[\.-]/', isset($conf->global->MAIN_VERSION_LAST_UPGRADE) ? $conf->global->MAIN_VERSION_LAST_UPGRADE : (isset($conf->global->MAIN_VERSION_LAST_INSTALL) ? $conf->global->MAIN_VERSION_LAST_INSTALL : ''));
+		$berp3lastupgradeversionarray = preg_split('/[\.-]/', isset($conf->global->MAIN_VERSION_LAST_UPGRADE) ? $conf->global->MAIN_VERSION_LAST_UPGRADE : (isset($conf->global->MAIN_VERSION_LAST_INSTALL) ? $conf->global->MAIN_VERSION_LAST_INSTALL : ''));
 
 		// Chaque action de migration doit renvoyer une ligne sur 4 colonnes avec
 		// dans la 1ere colonne, la description de l'action a faire
@@ -203,7 +203,7 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 		$versionranarray = explode('.', DOL_VERSION);
 
 
-		// Force to execute this at begin to avoid the new core code into Dolibarr to be broken.
+		// Force to execute this at begin to avoid the new core code into Berp3 to be broken.
 		$sql = 'ALTER TABLE '.MAIN_DB_PREFIX.'user ADD COLUMN birth date';
 		$db->query($sql, 1);
 		$sql = 'ALTER TABLE '.MAIN_DB_PREFIX.'user ADD COLUMN dateemployment date';
@@ -628,9 +628,9 @@ $ret = 0;
 if ($error && isset($argv[1])) {
 	$ret = 1;
 }
-dolibarr_install_syslog("Exit ".$ret);
+berp3_install_syslog("Exit ".$ret);
 
-dolibarr_install_syslog("--- upgrade2: end");
+berp3_install_syslog("--- upgrade2: end");
 pFooter($error ? 2 : 0, $setuplang);
 
 if ($db->connected) {
@@ -647,7 +647,7 @@ if ($ret) {
 /**
  * Reporte liens vers une facture de paiements sur table de jointure (lien n-n paiements factures)
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -668,7 +668,7 @@ function migrate_paiements($db, $langs, $conf)
 
 		$resql = $db->query($sql);
 
-		dolibarr_install_syslog("upgrade2::migrate_paiements");
+		berp3_install_syslog("upgrade2::migrate_paiements");
 		if ($resql) {
 			$i = 0;
 			$row = array();
@@ -726,7 +726,7 @@ function migrate_paiements($db, $langs, $conf)
  * Pour verifier s'il reste des orphelins:
  * select * from llx_paiement as p left join llx_paiement_facture as pf on pf.fk_paiement=p.rowid WHERE pf.rowid IS NULL AND (p.fk_facture = 0 OR p.fk_facture IS NULL)
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -753,7 +753,7 @@ function migrate_paiements_orphelins_1($db, $langs, $conf)
 
 		$resql = $db->query($sql);
 
-		dolibarr_install_syslog("upgrade2::migrate_paiements_orphelins_1");
+		berp3_install_syslog("upgrade2::migrate_paiements_orphelins_1");
 		$row = array();
 		if ($resql) {
 			$i = $j = 0;
@@ -836,7 +836,7 @@ function migrate_paiements_orphelins_1($db, $langs, $conf)
  * Pour verifier s'il reste des orphelins:
  * select * from llx_paiement as p left join llx_paiement_facture as pf on pf.fk_paiement=p.rowid WHERE pf.rowid IS NULL AND (p.fk_facture = 0 OR p.fk_facture IS NULL)
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -862,7 +862,7 @@ function migrate_paiements_orphelins_2($db, $langs, $conf)
 
 		$resql = $db->query($sql);
 
-		dolibarr_install_syslog("upgrade2::migrate_paiements_orphelins_2");
+		berp3_install_syslog("upgrade2::migrate_paiements_orphelins_2");
 		$row = array();
 		if ($resql) {
 			$i = $j = 0;
@@ -960,7 +960,7 @@ function migrate_paiements_orphelins_2($db, $langs, $conf)
 /**
  * Mise a jour des contrats (gestion du contrat + detail de contrat)
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -984,7 +984,7 @@ function migrate_contracts_det($db, $langs, $conf)
 	$sql .= " WHERE cd.rowid IS NULL AND p.rowid IS NOT NULL";
 	$resql = $db->query($sql);
 
-	dolibarr_install_syslog("upgrade2::migrate_contracts_det");
+	berp3_install_syslog("upgrade2::migrate_contracts_det");
 	if ($resql) {
 		$i = 0;
 		$row = array();
@@ -1045,7 +1045,7 @@ function migrate_contracts_det($db, $langs, $conf)
 /**
  * Function to migrate links into llx_bank_url
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1067,7 +1067,7 @@ function migrate_links_transfert($db, $langs, $conf)
 	$sql .= " AND bu.fk_bank IS NULL";
 	$resql = $db->query($sql);
 
-	dolibarr_install_syslog("upgrade2::migrate_links_transfert");
+	berp3_install_syslog("upgrade2::migrate_links_transfert");
 	if ($resql) {
 		$i = 0;
 		$row = array();
@@ -1088,7 +1088,7 @@ function migrate_links_transfert($db, $langs, $conf)
 				$sql .= ")";
 
 				//print $sql.'<br>';
-				dolibarr_install_syslog("migrate_links_transfert");
+				berp3_install_syslog("migrate_links_transfert");
 
 				if (!$db->query($sql)) {
 					dol_print_error($db);
@@ -1119,7 +1119,7 @@ function migrate_links_transfert($db, $langs, $conf)
 /**
  * Mise a jour des date de contrats non renseignees
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1132,7 +1132,7 @@ function migrate_contracts_date1($db, $langs, $conf)
 	print '<b>'.$langs->trans('MigrationContractsEmptyDatesUpdate')."</b><br>\n";
 
 	$sql = "update ".MAIN_DB_PREFIX."contrat set date_contrat=tms where date_contrat is null";
-	dolibarr_install_syslog("upgrade2::migrate_contracts_date1");
+	berp3_install_syslog("upgrade2::migrate_contracts_date1");
 	$resql = $db->query($sql);
 	if (!$resql) {
 		dol_print_error($db);
@@ -1144,7 +1144,7 @@ function migrate_contracts_date1($db, $langs, $conf)
 	}
 
 	$sql = "update ".MAIN_DB_PREFIX."contrat set datec=tms where datec is null";
-	dolibarr_install_syslog("upgrade2::migrate_contracts_date1");
+	berp3_install_syslog("upgrade2::migrate_contracts_date1");
 	$resql = $db->query($sql);
 	if (!$resql) {
 		dol_print_error($db);
@@ -1161,7 +1161,7 @@ function migrate_contracts_date1($db, $langs, $conf)
 /**
  * Update contracts with date min real if service date is lower
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Language
  * @param	Conf		$conf	Conf
  * @return	void
@@ -1182,7 +1182,7 @@ function migrate_contracts_date2($db, $langs, $conf)
 	$sql .= " GROUP BY c.rowid, c.date_contrat";
 	$resql = $db->query($sql);
 
-	dolibarr_install_syslog("upgrade2::migrate_contracts_date2");
+	berp3_install_syslog("upgrade2::migrate_contracts_date2");
 	if ($resql) {
 		$i = 0;
 		$row = array();
@@ -1229,7 +1229,7 @@ function migrate_contracts_date2($db, $langs, $conf)
 /**
  * Mise a jour des dates de creation de contrat
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1242,7 +1242,7 @@ function migrate_contracts_date3($db, $langs, $conf)
 	print '<b>'.$langs->trans('MigrationContractsIncoherentCreationDateUpdate')."</b><br>\n";
 
 	$sql = "update ".MAIN_DB_PREFIX."contrat set datec=date_contrat where datec is null or datec > date_contrat";
-	dolibarr_install_syslog("upgrade2::migrate_contracts_date3");
+	berp3_install_syslog("upgrade2::migrate_contracts_date3");
 	$resql = $db->query($sql);
 	if (!$resql) {
 		dol_print_error($db);
@@ -1259,7 +1259,7 @@ function migrate_contracts_date3($db, $langs, $conf)
 /**
  * Reouverture des contrats qui ont au moins une ligne non fermee
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1273,7 +1273,7 @@ function migrate_contracts_open($db, $langs, $conf)
 
 	$sql = "SELECT c.rowid as cref FROM ".MAIN_DB_PREFIX."contrat as c, ".MAIN_DB_PREFIX."contratdet as cd";
 	$sql .= " WHERE cd.statut = 4 AND c.statut=2 AND c.rowid=cd.fk_contrat";
-	dolibarr_install_syslog("upgrade2::migrate_contracts_open");
+	berp3_install_syslog("upgrade2::migrate_contracts_open");
 	$resql = $db->query($sql);
 	if (!$resql) {
 		dol_print_error($db);
@@ -1322,7 +1322,7 @@ function migrate_contracts_open($db, $langs, $conf)
 /**
  * Factures fournisseurs
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1346,7 +1346,7 @@ function migrate_paiementfourn_facturefourn($db, $langs, $conf)
 		$select_sql .= ' FROM '.MAIN_DB_PREFIX.'paiementfourn';
 		$select_sql .= ' WHERE fk_facture_fourn IS NOT NULL';
 
-		dolibarr_install_syslog("upgrade2::migrate_paiementfourn_facturefourn");
+		berp3_install_syslog("upgrade2::migrate_paiementfourn_facturefourn");
 		$select_resql = $db->query($select_sql);
 		if ($select_resql) {
 			$select_num = $db->num_rows($select_resql);
@@ -1420,7 +1420,7 @@ function migrate_paiementfourn_facturefourn($db, $langs, $conf)
 /**
  * Update total of invoice lines
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1447,7 +1447,7 @@ function migrate_price_facture($db, $langs, $conf)
 	$sql .= " AND (((fd.total_ttc = 0 AND fd.remise_percent != 100) or fd.total_ttc IS NULL) or f.total_ttc IS NULL)";
 	//print $sql;
 
-	dolibarr_install_syslog("upgrade2::migrate_price_facture");
+	berp3_install_syslog("upgrade2::migrate_price_facture");
 	$resql = $db->query($sql);
 	if ($resql) {
 		$num = $db->num_rows($resql);
@@ -1478,7 +1478,7 @@ function migrate_price_facture($db, $langs, $conf)
 				$facligne->total_tva = $total_tva;
 				$facligne->total_ttc = $total_ttc;
 
-				dolibarr_install_syslog("upgrade2: line ".$rowid.": facid=".$obj->facid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global." -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
+				berp3_install_syslog("upgrade2: line ".$rowid.": facid=".$obj->facid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global." -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
 				print ". ";
 				$facligne->update_total();
 
@@ -1525,7 +1525,7 @@ function migrate_price_facture($db, $langs, $conf)
 /**
  * Update total of proposal lines
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1549,7 +1549,7 @@ function migrate_price_propal($db, $langs, $conf)
 	$sql .= " WHERE pd.fk_propal = p.rowid";
 	$sql .= " AND ((pd.total_ttc = 0 AND pd.remise_percent != 100) or pd.total_ttc IS NULL)";
 
-	dolibarr_install_syslog("upgrade2::migrate_price_propal");
+	berp3_install_syslog("upgrade2::migrate_price_propal");
 	$resql = $db->query($sql);
 	if ($resql) {
 		$num = $db->num_rows($resql);
@@ -1579,7 +1579,7 @@ function migrate_price_propal($db, $langs, $conf)
 				$propalligne->total_tva = $total_tva;
 				$propalligne->total_ttc = $total_ttc;
 
-				dolibarr_install_syslog("upgrade2: Line ".$rowid.": propalid=".$obj->rowid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global." -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
+				berp3_install_syslog("upgrade2: Line ".$rowid.": propalid=".$obj->rowid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global." -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
 				print ". ";
 				$propalligne->update_total();
 
@@ -1626,7 +1626,7 @@ function migrate_price_propal($db, $langs, $conf)
 /**
  * Update total of contract lines
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1653,7 +1653,7 @@ function migrate_price_contrat($db, $langs, $conf)
 	$sql .= " WHERE cd.fk_contrat = c.rowid";
 	$sql .= " AND ((cd.total_ttc = 0 AND cd.remise_percent != 100 AND cd.subprice > 0) or cd.total_ttc IS NULL)";
 
-	dolibarr_install_syslog("upgrade2::migrate_price_contrat");
+	berp3_install_syslog("upgrade2::migrate_price_contrat");
 	$resql = $db->query($sql);
 	if ($resql) {
 		$num = $db->num_rows($resql);
@@ -1683,7 +1683,7 @@ function migrate_price_contrat($db, $langs, $conf)
 				$contratligne->total_tva = $total_tva;
 				$contratligne->total_ttc = $total_ttc;
 
-				dolibarr_install_syslog("upgrade2: Line ".$rowid.": contratdetid=".$obj->rowid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent."  -> ".$total_ht.", ".$total_tva." , ".$total_ttc);
+				berp3_install_syslog("upgrade2: Line ".$rowid.": contratdetid=".$obj->rowid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent."  -> ".$total_ht.", ".$total_tva." , ".$total_ttc);
 				print ". ";
 				$contratligne->update_total();
 
@@ -1710,7 +1710,7 @@ function migrate_price_contrat($db, $langs, $conf)
 /**
  * Update total of sales order lines
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1734,7 +1734,7 @@ function migrate_price_commande($db, $langs, $conf)
 	$sql .= " WHERE cd.fk_commande = c.rowid";
 	$sql .= " AND ((cd.total_ttc = 0 AND cd.remise_percent != 100) or cd.total_ttc IS NULL)";
 
-	dolibarr_install_syslog("upgrade2::migrate_price_commande");
+	berp3_install_syslog("upgrade2::migrate_price_commande");
 	$resql = $db->query($sql);
 	if ($resql) {
 		$num = $db->num_rows($resql);
@@ -1764,7 +1764,7 @@ function migrate_price_commande($db, $langs, $conf)
 				$commandeligne->total_tva = $total_tva;
 				$commandeligne->total_ttc = $total_ttc;
 
-				dolibarr_install_syslog("upgrade2: Line ".$rowid." : commandeid=".$obj->rowid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global."  -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
+				berp3_install_syslog("upgrade2: Line ".$rowid." : commandeid=".$obj->rowid." pu=".$pu." qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global."  -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
 				print ". ";
 				$commandeligne->update_total();
 
@@ -1820,7 +1820,7 @@ function migrate_price_commande($db, $langs, $conf)
 /**
  * Update total of purchase order lines
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1844,7 +1844,7 @@ function migrate_price_commande_fournisseur($db, $langs, $conf)
 	$sql .= " WHERE cd.fk_commande = c.rowid";
 	$sql .= " AND ((cd.total_ttc = 0 AND cd.remise_percent != 100) or cd.total_ttc IS NULL)";
 
-	dolibarr_install_syslog("upgrade2::migrate_price_commande_fournisseur");
+	berp3_install_syslog("upgrade2::migrate_price_commande_fournisseur");
 	$resql = $db->query($sql);
 	if ($resql) {
 		$num = $db->num_rows($resql);
@@ -1874,7 +1874,7 @@ function migrate_price_commande_fournisseur($db, $langs, $conf)
 				$commandeligne->total_tva = $total_tva;
 				$commandeligne->total_ttc = $total_ttc;
 
-				dolibarr_install_syslog("upgrade2: Line ".$rowid.": commandeid=".$obj->rowid." pu=".$pu."  qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global." -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
+				berp3_install_syslog("upgrade2: Line ".$rowid.": commandeid=".$obj->rowid." pu=".$pu."  qty=".$qty." vatrate=".$vatrate." remise_percent=".$remise_percent." remise_global=".$remise_percent_global." -> ".$total_ht.", ".$total_tva.", ".$total_ttc);
 				print ". ";
 				$commandeligne->update_total();
 
@@ -1930,7 +1930,7 @@ function migrate_price_commande_fournisseur($db, $langs, $conf)
 /**
  * Mise a jour des modeles selectionnes
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -1940,7 +1940,7 @@ function migrate_modeles($db, $langs, $conf)
 	//print '<br>';
 	//print '<b>'.$langs->trans('UpdateModelsTable')."</b><br>\n";
 
-	dolibarr_install_syslog("upgrade2::migrate_modeles");
+	berp3_install_syslog("upgrade2::migrate_modeles");
 
 	if (!empty($conf->facture->enabled)) {
 		include_once DOL_DOCUMENT_ROOT.'/core/modules/facture/modules_facture.php';
@@ -1988,14 +1988,14 @@ function migrate_modeles($db, $langs, $conf)
 /**
  * Correspondance des expeditions et des commandes clients dans la table llx_co_exp
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_commande_expedition($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_commande_expedition");
+	berp3_install_syslog("upgrade2::migrate_commande_expedition");
 
 	print '<tr><td colspan="4">';
 
@@ -2053,14 +2053,14 @@ function migrate_commande_expedition($db, $langs, $conf)
 /**
  * Correspondance des livraisons et des commandes clients dans la table llx_co_liv
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_commande_livraison($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_commande_livraison");
+	berp3_install_syslog("upgrade2::migrate_commande_livraison");
 
 	print '<tr><td colspan="4">';
 
@@ -2133,14 +2133,14 @@ function migrate_commande_livraison($db, $langs, $conf)
 /**
  * Migration des details commandes dans les details livraisons
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_detail_livraison($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_detail_livraison");
+	berp3_install_syslog("upgrade2::migrate_detail_livraison");
 
 	print '<tr><td colspan="4">';
 
@@ -2235,14 +2235,14 @@ function migrate_detail_livraison($db, $langs, $conf)
 /**
  * Migration du champ stock dans produits
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_stocks($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_stocks");
+	berp3_install_syslog("upgrade2::migrate_stocks");
 
 	print '<tr><td colspan="4">';
 
@@ -2297,14 +2297,14 @@ function migrate_stocks($db, $langs, $conf)
  * Migration of menus (use only 1 table instead of 3)
  * 2.6 -> 2.7
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_menus($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_menus");
+	berp3_install_syslog("upgrade2::migrate_menus");
 
 	print '<tr><td colspan="4">';
 
@@ -2364,14 +2364,14 @@ function migrate_menus($db, $langs, $conf)
  * Migration du champ fk_adresse_livraison dans expedition
  * 2.6 -> 2.7
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_commande_deliveryaddress($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_commande_deliveryaddress");
+	berp3_install_syslog("upgrade2::migrate_commande_deliveryaddress");
 
 	print '<tr><td colspan="4">';
 
@@ -2434,18 +2434,18 @@ function migrate_commande_deliveryaddress($db, $langs, $conf)
  * Migration du champ fk_remise_except dans llx_facturedet doit correspondre a
  * lien dans llx_societe_remise_except vers llx_facturedet
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	integer|null
  */
 function migrate_restore_missing_links($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_restore_missing_links");
+	berp3_install_syslog("upgrade2::migrate_restore_missing_links");
 
 	if (($db->type == 'mysql' || $db->type == 'mysqli')) {
 		if (versioncompare($db->getVersionArray(), array(4, 0)) < 0) {
-			dolibarr_install_syslog("upgrade2::migrate_restore_missing_links Version of database too old to make this migrate action");
+			berp3_install_syslog("upgrade2::migrate_restore_missing_links Version of database too old to make this migrate action");
 			return 0;
 		}
 	}
@@ -2469,7 +2469,7 @@ function migrate_restore_missing_links($db, $langs, $conf)
 	$sql .= " (SELECT t2.rowid FROM ".MAIN_DB_PREFIX.$table2." as t2";
 	$sql .= " WHERE t1.rowid = t2.".$field2.")";
 
-	dolibarr_install_syslog("upgrade2::migrate_restore_missing_links DIRECTION 1");
+	berp3_install_syslog("upgrade2::migrate_restore_missing_links DIRECTION 1");
 	$resql = $db->query($sql);
 	if ($resql) {
 		$i = 0;
@@ -2526,7 +2526,7 @@ function migrate_restore_missing_links($db, $langs, $conf)
 	$sql .= " (SELECT t2.rowid FROM ".MAIN_DB_PREFIX.$table2." as t2";
 	$sql .= " WHERE t1.rowid = t2.".$field2.")";
 
-	dolibarr_install_syslog("upgrade2::migrate_restore_missing_links DIRECTION 2");
+	berp3_install_syslog("upgrade2::migrate_restore_missing_links DIRECTION 2");
 	$resql = $db->query($sql);
 	if ($resql) {
 		$i = 0;
@@ -2569,14 +2569,14 @@ function migrate_restore_missing_links($db, $langs, $conf)
 /**
  * Migration du champ fk_user_resp de llx_projet vers llx_element_contact
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_project_user_resp($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_project_user_resp");
+	berp3_install_syslog("upgrade2::migrate_project_user_resp");
 
 	print '<tr><td colspan="4">';
 
@@ -2650,14 +2650,14 @@ function migrate_project_user_resp($db, $langs, $conf)
 /**
  * Migration de la table llx_projet_task_actors vers llx_element_contact
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_project_task_actors($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_project_task_actors");
+	berp3_install_syslog("upgrade2::migrate_project_task_actors");
 
 	print '<tr><td colspan="4">';
 
@@ -2727,7 +2727,7 @@ function migrate_project_task_actors($db, $langs, $conf)
 /**
  * Migration des tables de relation
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @param	string		$table			Table name
@@ -2747,7 +2747,7 @@ function migrate_relationship_tables($db, $langs, $conf, $table, $fk_source, $so
 	$error = 0;
 
 	if ($db->DDLInfoTable(MAIN_DB_PREFIX.$table)) {
-		dolibarr_install_syslog("upgrade2::migrate_relationship_tables table = ".MAIN_DB_PREFIX.$table);
+		berp3_install_syslog("upgrade2::migrate_relationship_tables table = ".MAIN_DB_PREFIX.$table);
 
 		$db->begin();
 
@@ -2811,14 +2811,14 @@ function migrate_relationship_tables($db, $langs, $conf, $table, $fk_source, $so
 /**
  * Migrate duration in seconds
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
  */
 function migrate_project_task_time($db, $langs, $conf)
 {
-	dolibarr_install_syslog("upgrade2::migrate_project_task_time");
+	berp3_install_syslog("upgrade2::migrate_project_task_time");
 
 	print '<tr><td colspan="4">';
 
@@ -2916,7 +2916,7 @@ function migrate_project_task_time($db, $langs, $conf)
 /**
  * Migrate order ref_customer and date_delivery fields to llx_expedition
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -2935,7 +2935,7 @@ function migrate_customerorder_shipping($db, $langs, $conf)
 	$obj1 = $db->fetch_object($result1);
 	$obj2 = $db->fetch_object($result2);
 	if (!$obj1 && !$obj2) {
-		dolibarr_install_syslog("upgrade2::migrate_customerorder_shipping");
+		berp3_install_syslog("upgrade2::migrate_customerorder_shipping");
 
 		$db->begin();
 
@@ -3000,7 +3000,7 @@ function migrate_customerorder_shipping($db, $langs, $conf)
 /**
  * Migrate link stored into fk_expedition into llx_element_element
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -3017,7 +3017,7 @@ function migrate_shipping_delivery($db, $langs, $conf)
 	$result = $db->DDLDescTable(MAIN_DB_PREFIX."livraison", "fk_expedition");
 	$obj = $db->fetch_object($result);
 	if ($obj) {
-		dolibarr_install_syslog("upgrade2::migrate_shipping_delivery");
+		berp3_install_syslog("upgrade2::migrate_shipping_delivery");
 
 		$db->begin();
 
@@ -3095,7 +3095,7 @@ function migrate_shipping_delivery($db, $langs, $conf)
  * We try to complete field ref_customer and date_delivery that are empty into llx_livraison.
  * We set them with value from llx_expedition.
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -3109,7 +3109,7 @@ function migrate_shipping_delivery2($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_shipping_delivery2");
+	berp3_install_syslog("upgrade2::migrate_shipping_delivery2");
 
 	$db->begin();
 
@@ -3168,7 +3168,7 @@ function migrate_shipping_delivery2($db, $langs, $conf)
 /**
  * Migrate link stored into fk_xxxx into fk_element and elementtype
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -3193,7 +3193,7 @@ function migrate_actioncomm_element($db, $langs, $conf)
 		$result = $db->DDLDescTable(MAIN_DB_PREFIX."actioncomm", $field);
 		$obj = $db->fetch_object($result);
 		if ($obj) {
-			dolibarr_install_syslog("upgrade2::migrate_actioncomm_element field=".$field);
+			berp3_install_syslog("upgrade2::migrate_actioncomm_element field=".$field);
 
 			$db->begin();
 
@@ -3227,7 +3227,7 @@ function migrate_actioncomm_element($db, $langs, $conf)
 /**
  * Migrate link stored into fk_mode_reglement
  *
- * @param	DoliDB		$db		Database handler
+ * @param	Berp3DB		$db		Database handler
  * @param	Translate	$langs	Object langs
  * @param	Conf		$conf	Object conf
  * @return	void
@@ -3250,7 +3250,7 @@ function migrate_mode_reglement($db, $langs, $conf)
 	foreach ($elements['old_id'] as $key => $old_id) {
 		$error = 0;
 
-		dolibarr_install_syslog("upgrade2::migrate_mode_reglement code=".$elements['code'][$key]);
+		berp3_install_syslog("upgrade2::migrate_mode_reglement code=".$elements['code'][$key]);
 
 		$sqlSelect = "SELECT id";
 		$sqlSelect .= " FROM ".MAIN_DB_PREFIX."c_paiement";
@@ -3317,7 +3317,7 @@ function migrate_mode_reglement($db, $langs, $conf)
 /**
  * Delete duplicates in table categorie_association
  *
- * @param	DoliDB		$db			Database handler
+ * @param	Berp3DB		$db			Database handler
  * @param	Translate	$langs		Object langs
  * @param	Conf		$conf		Object conf
  * @return	void
@@ -3332,7 +3332,7 @@ function migrate_clean_association($db, $langs, $conf)
 			$filles = array();
 			$sql = "SELECT fk_categorie_mere, fk_categorie_fille";
 			$sql .= " FROM ".MAIN_DB_PREFIX."categorie_association";
-			dolibarr_install_syslog("upgrade: search duplicate");
+			berp3_install_syslog("upgrade: search duplicate");
 			$resql = $db->query($sql);
 			if ($resql) {
 				$num = $db->num_rows($resql);
@@ -3345,7 +3345,7 @@ function migrate_clean_association($db, $langs, $conf)
 					}
 				}
 
-				dolibarr_install_syslog("upgrade: result is num=".$num." count(couples)=".count($couples));
+				berp3_install_syslog("upgrade: result is num=".$num." count(couples)=".count($couples));
 
 				// If there is duplicates couples or child with two parents
 				if (count($couples) > 0 && $num > count($couples)) {
@@ -3355,14 +3355,14 @@ function migrate_clean_association($db, $langs, $conf)
 
 					// We delete all
 					$sql = "DELETE FROM ".MAIN_DB_PREFIX."categorie_association";
-					dolibarr_install_syslog("upgrade: delete association");
+					berp3_install_syslog("upgrade: delete association");
 					$resqld = $db->query($sql);
 					if ($resqld) {
 						// And we insert only each record once
 						foreach ($couples as $key => $val) {
 							$sql = "INSERT INTO ".MAIN_DB_PREFIX."categorie_association(fk_categorie_mere,fk_categorie_fille)";
 							$sql .= " VALUES(".((int) $val['mere']).", ".((int) $val['fille']).")";
-							dolibarr_install_syslog("upgrade: insert association");
+							berp3_install_syslog("upgrade: insert association");
 							$resqli = $db->query($sql);
 							if (!$resqli) {
 								$error++;
@@ -3392,7 +3392,7 @@ function migrate_clean_association($db, $langs, $conf)
 /**
  * Migrate categorie association
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3407,7 +3407,7 @@ function migrate_categorie_association($db, $langs, $conf)
 	$error = 0;
 
 	if ($db->DDLInfoTable(MAIN_DB_PREFIX."categorie_association")) {
-		dolibarr_install_syslog("upgrade2::migrate_categorie_association");
+		berp3_install_syslog("upgrade2::migrate_categorie_association");
 
 		$db->begin();
 
@@ -3458,7 +3458,7 @@ function migrate_categorie_association($db, $langs, $conf)
 /**
  * Migrate event assignement to owner
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3472,7 +3472,7 @@ function migrate_event_assignement($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_event_assignement");
+	berp3_install_syslog("upgrade2::migrate_event_assignement");
 
 	$db->begin();
 
@@ -3524,7 +3524,7 @@ function migrate_event_assignement($db, $langs, $conf)
 /**
  * Migrate event assignement to owner
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3538,7 +3538,7 @@ function migrate_event_assignement_contact($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_event_assignement");
+	berp3_install_syslog("upgrade2::migrate_event_assignement");
 
 	$db->begin();
 
@@ -3591,7 +3591,7 @@ function migrate_event_assignement_contact($db, $langs, $conf)
 /**
  * Migrate to reset the blocked log for V7+ algorithm
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3609,7 +3609,7 @@ function migrate_reset_blocked_log($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_reset_blocked_log");
+	berp3_install_syslog("upgrade2::migrate_reset_blocked_log");
 
 	$db->begin();
 
@@ -3690,7 +3690,7 @@ function migrate_reset_blocked_log($db, $langs, $conf)
 /**
  * Migrate to add entity value into llx_societe_remise
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3704,7 +3704,7 @@ function migrate_remise_entity($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_remise_entity");
+	berp3_install_syslog("upgrade2::migrate_remise_entity");
 
 	$db->begin();
 
@@ -3756,7 +3756,7 @@ function migrate_remise_entity($db, $langs, $conf)
 /**
  * Migrate to add entity value into llx_societe_remise_except
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3770,7 +3770,7 @@ function migrate_remise_except_entity($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_remise_except_entity");
+	berp3_install_syslog("upgrade2::migrate_remise_except_entity");
 
 	$db->begin();
 
@@ -3848,7 +3848,7 @@ function migrate_remise_except_entity($db, $langs, $conf)
 /**
  * Migrate to add entity value into llx_user_rights
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3861,7 +3861,7 @@ function migrate_user_rights_entity($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_user_rights_entity");
+	berp3_install_syslog("upgrade2::migrate_user_rights_entity");
 
 	$db->begin();
 
@@ -3913,7 +3913,7 @@ function migrate_user_rights_entity($db, $langs, $conf)
 /**
  * Migrate to add entity value into llx_usergroup_rights
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @return	void
@@ -3926,7 +3926,7 @@ function migrate_usergroup_rights_entity($db, $langs, $conf)
 
 	$error = 0;
 
-	dolibarr_install_syslog("upgrade2::migrate_usergroup_rights_entity");
+	berp3_install_syslog("upgrade2::migrate_usergroup_rights_entity");
 
 	$db->begin();
 
@@ -3978,7 +3978,7 @@ function migrate_usergroup_rights_entity($db, $langs, $conf)
 /**
  * Migration directory
  *
- * @param	DoliDB		$db			Database handler
+ * @param	Berp3DB		$db			Database handler
  * @param	Translate	$langs		Object langs
  * @param	Conf		$conf		Object conf
  * @param	string		$oldname	Old name (relative to DOL_DATA_ROOT)
@@ -3987,10 +3987,10 @@ function migrate_usergroup_rights_entity($db, $langs, $conf)
  */
 function migrate_rename_directories($db, $langs, $conf, $oldname, $newname)
 {
-	dolibarr_install_syslog("upgrade2::migrate_rename_directories");
+	berp3_install_syslog("upgrade2::migrate_rename_directories");
 
 	if (is_dir(DOL_DATA_ROOT.$oldname) && !file_exists(DOL_DATA_ROOT.$newname)) {
-		dolibarr_install_syslog("upgrade2::migrate_rename_directories move ".DOL_DATA_ROOT.$oldname.' into '.DOL_DATA_ROOT.$newname);
+		berp3_install_syslog("upgrade2::migrate_rename_directories move ".DOL_DATA_ROOT.$oldname.' into '.DOL_DATA_ROOT.$newname);
 		@rename(DOL_DATA_ROOT.$oldname, DOL_DATA_ROOT.$newname);
 	}
 }
@@ -3999,7 +3999,7 @@ function migrate_rename_directories($db, $langs, $conf, $oldname, $newname)
 /**
  * Delete deprecated files
  *
- * @param	DoliDB		$db			Database handler
+ * @param	Berp3DB		$db			Database handler
  * @param	Translate	$langs		Object langs
  * @param	Conf		$conf		Object conf
  * @return	void
@@ -4008,7 +4008,7 @@ function migrate_delete_old_files($db, $langs, $conf)
 {
 	$result = true;
 
-	dolibarr_install_syslog("upgrade2::migrate_delete_old_files");
+	berp3_install_syslog("upgrade2::migrate_delete_old_files");
 
 	// List of files to delete
 	$filetodeletearray = array(
@@ -4036,7 +4036,7 @@ function migrate_delete_old_files($db, $langs, $conf)
 		'/core/modules/mailings/contacts3.modules.php',
 		'/core/modules/mailings/contacts4.modules.php',
 		'/core/modules/mailings/framboise.modules.php',
-		'/core/modules/mailings/dolibarr_services_expired.modules.php',
+		'/core/modules/mailings/berp3_services_expired.modules.php',
 		'/core/modules/mailings/peche.modules.php',
 		'/core/modules/mailings/poire.modules.php',
 		'/core/modules/mailings/kiwi.modules.php',
@@ -4085,7 +4085,7 @@ function migrate_delete_old_files($db, $langs, $conf)
 /**
  * Remove deprecated directories
  *
- * @param	DoliDB		$db			Database handler
+ * @param	Berp3DB		$db			Database handler
  * @param	Translate	$langs		Object langs
  * @param	Conf		$conf		Object conf
  * @return	void
@@ -4094,7 +4094,7 @@ function migrate_delete_old_dir($db, $langs, $conf)
 {
 	$result = true;
 
-	dolibarr_install_syslog("upgrade2::migrate_delete_old_dir");
+	berp3_install_syslog("upgrade2::migrate_delete_old_dir");
 
 	// List of files to delete
 	$filetodeletearray = array(
@@ -4127,7 +4127,7 @@ function migrate_delete_old_dir($db, $langs, $conf)
  * We must do this when internal menu of module or permissions has changed
  * or when triggers have moved.
  *
- * @param	DoliDB		$db				Database handler
+ * @param	Berp3DB		$db				Database handler
  * @param	Translate	$langs			Object langs
  * @param	Conf		$conf			Object conf
  * @param	array		$listofmodule	List of modules, like array('MODULE_KEY_NAME'=>', $reloadmode)
@@ -4140,7 +4140,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 		return;
 	}
 
-	dolibarr_install_syslog("upgrade2::migrate_reload_modules force=".$force.", listofmodule=".join(',', array_keys($listofmodule)));
+	berp3_install_syslog("upgrade2::migrate_reload_modules force=".$force.", listofmodule=".join(',', array_keys($listofmodule)));
 
 	foreach ($listofmodule as $moduletoreload => $reloadmode) {	// reloadmodule can be 'noboxes', 'newboxdefonly', 'forceactivate'
 		if (empty($moduletoreload) || (empty($conf->global->$moduletoreload) && !$force)) {
@@ -4150,7 +4150,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 		$mod = null;
 
 		if ($moduletoreload == 'MAIN_MODULE_AGENDA') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Agenda module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Agenda module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modAgenda.class.php';
 			if ($res) {
 				$mod = new modAgenda($db);
@@ -4158,7 +4158,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_API') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Rest API module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Rest API module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modApi.class.php';
 			if ($res) {
 				$mod = new modApi($db);
@@ -4166,7 +4166,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_BARCODE') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Barcode module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Barcode module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modBarcode.class.php';
 			if ($res) {
 				$mod = new modBarcode($db);
@@ -4174,7 +4174,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_BLOCKEDLOG') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate BlockedLog module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate BlockedLog module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modBlockedLog.class.php';
 			if ($res) {
 				$mod = new modBlockedLog($db);
@@ -4183,7 +4183,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->insert_menus();
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_CRON') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Cron module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Cron module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modCron.class.php';
 			if ($res) {
 				$mod = new modCron($db);
@@ -4191,7 +4191,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_EXTERNALSITE') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate ExternalSite module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate ExternalSite module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modExternalSite.class.php';
 			if ($res) {
 				$mod = new modExternalSite($db);
@@ -4199,7 +4199,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_SOCIETE') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Societe module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Societe module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modSociete.class.php';
 			if ($res) {
 				$mod = new modSociete($db);
@@ -4207,7 +4207,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_PRODUIT') {    // Permission has changed into 2.7
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Produit module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Produit module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modProduct.class.php';
 			if ($res) {
 				$mod = new modProduct($db);
@@ -4215,7 +4215,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_SERVICE') {   // Permission has changed into 2.7
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Service module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Service module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modService.class.php';
 			if ($res) {
 				$mod = new modService($db);
@@ -4223,7 +4223,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_COMMANDE') {   // Permission has changed into 2.9
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Commande module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Commande module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modCommande.class.php';
 			if ($res) {
 				$mod = new modCommande($db);
@@ -4231,7 +4231,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_FACTURE') {    // Permission has changed into 2.9
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Facture module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Facture module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modFacture.class.php';
 			if ($res) {
 				$mod = new modFacture($db);
@@ -4239,7 +4239,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_FOURNISSEUR') {    // Permission has changed into 2.9
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Fournisseur module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Fournisseur module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modFournisseur.class.php';
 			if ($res) {
 				$mod = new modFournisseur($db);
@@ -4247,7 +4247,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_HOLIDAY') {   // Permission and tabs has changed into 3.8
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Leave Request module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Leave Request module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modHoliday.class.php';
 			if ($res) {
 				$mod = new modHoliday($db);
@@ -4255,7 +4255,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_DEPLACEMENT') {   // Permission has changed into 3.0
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Deplacement module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Deplacement module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modDeplacement.class.php';
 			if ($res) {
 				$mod = new modDeplacement($db);
@@ -4263,7 +4263,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_EXPENSEREPORT') {
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Expense Report module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Expense Report module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modExpenseReport.class.php';
 			if ($res) {
 				$mod = new modExpenseReport($db);
@@ -4271,7 +4271,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_DON') {   // Permission has changed into 3.0
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Don module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Don module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modDon.class.php';
 			if ($res) {
 				$mod = new modDon($db);
@@ -4279,7 +4279,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_ECM') {    // Permission has changed into 3.0 and 3.1
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate ECM module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate ECM module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modECM.class.php';
 			if ($res) {
 				$mod = new modECM($db);
@@ -4287,7 +4287,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_KNOWLEDGEMANAGEMENT') {    // Permission has changed into 3.0 and 3.1
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Knowledge Management");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Knowledge Management");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modKnowledgeManagement.class.php';
 			if ($res) {
 				$mod = new modKnowledgeManagement($db);
@@ -4295,7 +4295,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_EVENTORGANIZATION') {    // Permission has changed into 3.0 and 3.1
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules EventOrganization");
+			berp3_install_syslog("upgrade2::migrate_reload_modules EventOrganization");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modEventOrganization.class.php';
 			if ($res) {
 				$mod = new modEventOrganization($db);
@@ -4303,7 +4303,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_PAYBOX') {    // Permission has changed into 3.0
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Paybox module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Paybox module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modPaybox.class.php';
 			if ($res) {
 				$mod = new modPaybox($db);
@@ -4311,7 +4311,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_SUPPLIERPROPOSAL') {		// Module after 3.5
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Supplier Proposal module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Supplier Proposal module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modSupplierProposal.class.php';
 			if ($res) {
 				$mod = new modSupplierProposal($db);
@@ -4319,7 +4319,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_OPENSURVEY') {   // Permission has changed into 3.0
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Opensurvey module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Opensurvey module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modOpenSurvey.class.php';
 			if ($res) {
 				$mod = new modOpenSurvey($db);
@@ -4327,7 +4327,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_PRODUCTBATCH') {   // Permission has changed into 10.0
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules ProductBatch module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules ProductBatch module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modProductBatch.class.php';
 			if ($res) {
 				$mod = new modProductBatch($db);
@@ -4335,7 +4335,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 				$mod->init($reloadmode);
 			}
 		} elseif ($moduletoreload == 'MAIN_MODULE_TAKEPOS') {   // Permission has changed into 10.0
-			dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate Takepos module");
+			berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate Takepos module");
 			$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/modTakePos.class.php';
 			if ($res) {
 				$mod = new modTakePos($db);
@@ -4353,7 +4353,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 					$moduletoreloadshort = $reg[1];
 				}
 
-				dolibarr_install_syslog("upgrade2::migrate_reload_modules Reactivate module ".$moduletoreloadshort." with mode ".$reloadmode);
+				berp3_install_syslog("upgrade2::migrate_reload_modules Reactivate module ".$moduletoreloadshort." with mode ".$reloadmode);
 				$res = @include_once DOL_DOCUMENT_ROOT.'/core/modules/mod'.$moduletoreloadshort.'.class.php';
 				if ($res) {
 					$classname = 'mod'.$moduletoreloadshort;
@@ -4363,7 +4363,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 					$mod->delete_menus(); // We must delete to be sure it is inserted with new values
 					$mod->init($reloadmode);
 				} else {
-					dolibarr_install_syslog('Failed to include '.DOL_DOCUMENT_ROOT.'/core/modules/mod'.$moduletoreloadshort.'.class.php');
+					berp3_install_syslog('Failed to include '.DOL_DOCUMENT_ROOT.'/core/modules/mod'.$moduletoreloadshort.'.class.php');
 
 					$res = @dol_include_once(strtolower($moduletoreloadshort).'/core/modules/mod'.$moduletoreloadshort.'.class.php');
 					if ($res) {
@@ -4371,13 +4371,13 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 						$mod = new $classname($db);
 						$mod->init($reloadmode);
 					} else {
-						dolibarr_install_syslog('Failed to include '.strtolower($moduletoreloadshort).'/core/modules/mod'.$moduletoreloadshort.'.class.php', LOG_ERR);
+						berp3_install_syslog('Failed to include '.strtolower($moduletoreloadshort).'/core/modules/mod'.$moduletoreloadshort.'.class.php', LOG_ERR);
 						print "Error, can't find module with name ".$moduletoreload."\n";
 						return -1;
 					}
 				}
 			} else {
-				dolibarr_install_syslog("Error, can't find module with name ".$moduletoreload, LOG_ERR);
+				berp3_install_syslog("Error, can't find module with name ".$moduletoreload, LOG_ERR);
 				print "Error, can't find module with name ".$moduletoreload."\n";
 				return -1;
 			}
@@ -4401,7 +4401,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 /**
  * Reload SQL menu file (if dynamic menus, if modified by version)
  *
- * @param	DoliDB		$db			Database handler
+ * @param	Berp3DB		$db			Database handler
  * @param	Translate	$langs		Object langs
  * @param	Conf		$conf		Object conf
  * @return	void
@@ -4409,7 +4409,7 @@ function migrate_reload_modules($db, $langs, $conf, $listofmodule = array(), $fo
 function migrate_reload_menu($db, $langs, $conf)
 {
 	global $conf;
-	dolibarr_install_syslog("upgrade2::migrate_reload_menu");
+	berp3_install_syslog("upgrade2::migrate_reload_menu");
 
 	// Define list of menu handlers to initialize
 	$listofmenuhandler = array();

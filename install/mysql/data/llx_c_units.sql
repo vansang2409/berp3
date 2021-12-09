@@ -1,8 +1,8 @@
 -- ========================================================================
--- Copyright (C) 2001-2002,2004 Rodolphe Quiedeville    <rodolphe@quiedeville.org>
--- Copyright (C) 2004           Laurent Destailleur     <eldy@users.sourceforge.net>
--- Copyright (C) 2019           Florian Henry           <florian.henry@atm-consulitng.fr>
--- Copyright (C) 2021           Alexandre Spangaro      <aspangaro@open-dsi.fr>
+-- Copyright (C) 2001-2002,2004 
+-- Copyright (C) 2004           
+-- Copyright (C) 2019                      <florian.henry@atm-consulitng.fr>
+-- Copyright (C) 2021           
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015      Juanjo Menent	    <jmenent@2byte.es>
+/* Copyright (C) 2015      	    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ abstract class ModelePDFSuppliersPayments extends CommonDocGenerator
 	/**
 	 *  Return list of active generation models
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of numbers
 	 */
@@ -135,7 +135,7 @@ abstract class ModeleNumRefSupplierPayments
 			return $langs->trans("VersionDevelopment");
 		} elseif ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
-		} elseif ($this->version == 'dolibarr') {
+		} elseif ($this->version == 'berp3') {
 			return DOL_VERSION;
 		} elseif ($this->version) {
 			return $this->version;

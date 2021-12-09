@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2007 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2015-2019 Frederic France      <frederic.france@netlogic.fr>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2007 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2015-2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ class box_factures_imp extends ModeleBoxes
 	public $depends = array("facture");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -52,7 +52,7 @@ class box_factures_imp extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param)

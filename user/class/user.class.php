@@ -1,19 +1,19 @@
 <?php
-/* Copyright (c) 2002-2007  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (c) 2002-2003  Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (c) 2004-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2017  Regis Houssin           <regis.houssin@inodbox.com>
+/* Copyright (c) 2002-2007  
+ * Copyright (c) 2002-2003        
+ * Copyright (c) 2004-2012  
+ * Copyright (C) 2004            
+ * Copyright (C) 2004                 
+ * Copyright (C) 2005-2017  
  * Copyright (C) 2005       Lionel Cousteix         <etm_ltd@tiscali.co.uk>
- * Copyright (C) 2011       Herve Prot              <herve.prot@symeos.com>
- * Copyright (C) 2013-2019  Philippe Grand          <philippe.grand@atoo-net.com>
- * Copyright (C) 2013-2015  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2015       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2018       charlene Benke          <charlie@patas-monkey.com>
- * Copyright (C) 2018       Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2019-2020  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2019       Abbes Bahfir            <dolipar@dolipar.org>
+ * Copyright (C) 2011                     
+ * Copyright (C) 2013-2019            
+ * Copyright (C) 2013-2015  
+ * Copyright (C) 2015       
+ * Copyright (C) 2018       charlene Benke          
+ * Copyright (C) 2018                
+ * Copyright (C) 2019-2020  
+ * Copyright (C) 2019       Abbes Bahfir            <berp3par@berp3par.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/commonobject.class.php';
 require_once DOL_DOCUMENT_ROOT.'/user/class/usergroup.class.php';
 
 /**
- *	Class to manage Dolibarr users
+ *	Class to manage Berp3 users
  */
 class User extends CommonObject
 {
@@ -361,7 +361,7 @@ class User extends CommonObject
 	/**
 	 *    Constructor of the class
 	 *
-	 *    @param   DoliDb  $db     Database handler
+	 *    @param   Berp3Db  $db     Database handler
 	 */
 	public function __construct($db)
 	{
@@ -2224,7 +2224,7 @@ class User extends CommonObject
 	{
 		// phpcs:enable
 		global $conf, $langs, $mysoc;
-		global $dolibarr_main_url_root;
+		global $berp3_main_url_root;
 
 		require_once DOL_DOCUMENT_ROOT.'/core/class/CMailFile.class.php';
 
@@ -2257,7 +2257,7 @@ class User extends CommonObject
 		$subject = '['.$mysoc->name.'] '.$outputlangs->transnoentitiesnoconv("SubjectNewPassword", $appli);
 
 		// Define $urlwithroot
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 
 		if (!$changelater) {
@@ -2274,11 +2274,11 @@ class User extends CommonObject
 
 			dol_syslog(get_class($this)."::send_password changelater is off, url=".$url);
 		} else {
-			global $dolibarr_main_instance_unique_id;
+			global $berp3_main_instance_unique_id;
 
-			//print $password.'-'.$this->id.'-'.$dolibarr_main_instance_unique_id;
+			//print $password.'-'.$this->id.'-'.$berp3_main_instance_unique_id;
 			$url = $urlwithroot.'/user/passwordforgotten.php?action=validatenewpassword';
-			$url .= '&username='.urlencode($this->login)."&passworduidhash=".urlencode(dol_hash($password.'-'.$this->id.'-'.$dolibarr_main_instance_unique_id));
+			$url .= '&username='.urlencode($this->login)."&passworduidhash=".urlencode(dol_hash($password.'-'.$this->id.'-'.$berp3_main_instance_unique_id));
 
 			$msgishtml = 1;
 
@@ -2552,7 +2552,7 @@ class User extends CommonObject
 	public function getNomUrl($withpictoimg = 0, $option = '', $infologin = 0, $notooltip = 0, $maxlen = 24, $hidethirdpartylogo = 0, $mode = '', $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $langs, $conf, $db, $hookmanager, $user;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!$user->rights->user->user->lire && $user->id != $this->id) {
@@ -2622,7 +2622,7 @@ class User extends CommonObject
 			if (!empty($conf->global->MAIN_MODULE_MULTICOMPANY)) {
 				$label .= '<br><b>'.$langs->trans("ConnectedOnMultiCompany").':</b> '.$conf->entity.' (User entity '.$this->entity.')';
 			}
-			$label .= '<br><b>'.$langs->trans("AuthenticationMode").':</b> '.dol_string_nohtmltag($_SESSION["dol_authmode"].(empty($dolibarr_main_demo) ? '' : ' (demo)'));
+			$label .= '<br><b>'.$langs->trans("AuthenticationMode").':</b> '.dol_string_nohtmltag($_SESSION["dol_authmode"].(empty($berp3_main_demo) ? '' : ' (demo)'));
 			$label .= '<br><b>'.$langs->trans("ConnectedSince").':</b> '.dol_print_date($this->datelastlogin, "dayhour", 'tzuser');
 			$label .= '<br><b>'.$langs->trans("PreviousConnexion").':</b> '.dol_print_date($this->datepreviouslogin, "dayhour", 'tzuser');
 			$label .= '<br><b>'.$langs->trans("CurrentTheme").':</b> '.dol_string_nohtmltag($conf->theme);
@@ -3029,7 +3029,7 @@ class User extends CommonObject
 		$this->ref = 'SPECIMEN';
 		$this->specimen = 1;
 
-		$this->lastname = 'DOLIBARR';
+		$this->lastname = 'BERP3';
 		$this->firstname = 'SPECIMEN';
 		$this->gender = 'man';
 		$this->note_public = 'This is a note public';
@@ -3047,9 +3047,9 @@ class User extends CommonObject
 		$this->user_mobile = '0999999997';
 		$this->personal_mobile = '0999999996';
 		$this->admin = 0;
-		$this->login = 'dolibspec';
-		$this->pass = 'dolibspec';
-		//$this->pass_indatabase='dolibspec';									Set after a fetch
+		$this->login = 'berp3bspec';
+		$this->pass = 'berp3bspec';
+		//$this->pass_indatabase='berp3bspec';									Set after a fetch
 		//$this->pass_indatabase_crypted='e80ca5a88c892b0aaaf7e154853bccab';	Set after a fetch
 		$this->datec = $now;
 		$this->datem = $now;
@@ -3166,7 +3166,7 @@ class User extends CommonObject
 	 *  @param	Object	$ldapuser	Ladp User
 	 *  @return int  				<0 if KO, >0 if OK
 	 */
-	public function update_ldap2dolibarr(&$ldapuser)
+	public function update_ldap2berp3(&$ldapuser)
 	{
 		// phpcs:enable
 		// TODO: Voir pourquoi le update met à jour avec toutes les valeurs vide (global $user écrase ?)
@@ -3195,7 +3195,7 @@ class User extends CommonObject
 
 		$result = $this->update($user);
 
-		dol_syslog(get_class($this)."::update_ldap2dolibarr result=".$result, LOG_DEBUG);
+		dol_syslog(get_class($this)."::update_ldap2berp3 result=".$result, LOG_DEBUG);
 
 		return $result;
 	}
@@ -3445,12 +3445,12 @@ class User extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'user',

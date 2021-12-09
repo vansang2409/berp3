@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2007       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2010-2016  Destailleur Laurent     <eldy@users.sourceforge.net>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2005-2012  
+ * Copyright (C) 2007       
+ * Copyright (C) 2010-2016       
+ * Copyright (C) 2015             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -263,7 +263,7 @@ if ($action == 'edit') {
 			// Desc
 			$desc = (GETPOST('desc-'.$key) ? GETPOST('desc-'.$key) : $object->multilangs[$key]['description']);
 			print '<tr><td class="tdtop">'.$langs->trans('Description').'</td><td>';
-			$doleditor = new DolEditor("desc-$key", $desc, '', 160, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_3, '90%');
+			$doleditor = new DolEditor("desc-$key", $desc, '', 160, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_3, '90%');
 			$doleditor->Create();
 			print '</td></tr>';
 
@@ -323,7 +323,7 @@ if ($action == 'add' && ($user->rights->produit->creer || $user->rights->service
 	print '<tr><td class="fieldrequired">'.$langs->trans('Label').'</td>';
 	print '<td><input name="libelle" class="minwidth200 maxwidth300" value="'.GETPOST('libelle', 'alpha').'"></td></tr>';
 	print '<tr><td>'.$langs->trans('Description').'</td><td>';
-	$doleditor = new DolEditor('desc', GETPOST('desc', 'restricthtml'), '', 160, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_3, '90%');
+	$doleditor = new DolEditor('desc', GETPOST('desc', 'restricthtml'), '', 160, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_3, '90%');
 	$doleditor->Create();
 	print '</td></tr>';
 

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2011-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2013      Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2011-2013 
+ * Copyright (C) 2013      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,13 +52,13 @@ if (GETPOST('action', 'aZ09') == 'set_proxy') {
 
 	if (!$error) {
 		$result = 0;
-		$result += dolibarr_set_const($db, 'MAIN_USE_CONNECT_TIMEOUT', GETPOST("MAIN_USE_CONNECT_TIMEOUT"), 'chaine', 0, '', $conf->entity);
-		$result += dolibarr_set_const($db, 'MAIN_USE_RESPONSE_TIMEOUT', GETPOST("MAIN_USE_RESPONSE_TIMEOUT"), 'chaine', 0, '', $conf->entity);
-		$result += dolibarr_set_const($db, 'MAIN_PROXY_USE', GETPOST("MAIN_PROXY_USE"), 'chaine', 0, '', $conf->entity);
-		$result += dolibarr_set_const($db, 'MAIN_PROXY_HOST', GETPOST("MAIN_PROXY_HOST"), 'chaine', 0, '', $conf->entity);
-		$result += dolibarr_set_const($db, 'MAIN_PROXY_PORT', GETPOST("MAIN_PROXY_PORT"), 'chaine', 0, '', $conf->entity);
-		$result += dolibarr_set_const($db, 'MAIN_PROXY_USER', GETPOST("MAIN_PROXY_USER"), 'chaine', 0, '', $conf->entity);
-		$result += dolibarr_set_const($db, 'MAIN_PROXY_PASS', GETPOST("MAIN_PROXY_PASS"), 'chaine', 0, '', $conf->entity);
+		$result += berp3_set_const($db, 'MAIN_USE_CONNECT_TIMEOUT', GETPOST("MAIN_USE_CONNECT_TIMEOUT"), 'chaine', 0, '', $conf->entity);
+		$result += berp3_set_const($db, 'MAIN_USE_RESPONSE_TIMEOUT', GETPOST("MAIN_USE_RESPONSE_TIMEOUT"), 'chaine', 0, '', $conf->entity);
+		$result += berp3_set_const($db, 'MAIN_PROXY_USE', GETPOST("MAIN_PROXY_USE"), 'chaine', 0, '', $conf->entity);
+		$result += berp3_set_const($db, 'MAIN_PROXY_HOST', GETPOST("MAIN_PROXY_HOST"), 'chaine', 0, '', $conf->entity);
+		$result += berp3_set_const($db, 'MAIN_PROXY_PORT', GETPOST("MAIN_PROXY_PORT"), 'chaine', 0, '', $conf->entity);
+		$result += berp3_set_const($db, 'MAIN_PROXY_USER', GETPOST("MAIN_PROXY_USER"), 'chaine', 0, '', $conf->entity);
+		$result += berp3_set_const($db, 'MAIN_PROXY_PASS', GETPOST("MAIN_PROXY_PASS"), 'chaine', 0, '', $conf->entity);
 		if ($result < 5) {
 			dol_print_error($db);
 		}

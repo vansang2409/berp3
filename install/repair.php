@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2015      Raphaël Doursenaud   <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2021      Frédéric France      <frederic.france@free.fr>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2015         
+ * Copyright (C) 2021            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,9 +28,9 @@ include_once 'inc.php';
 if (file_exists($conffile)) {
 	include_once $conffile;
 }
-require_once $dolibarr_main_document_root.'/core/lib/admin.lib.php';
-include_once $dolibarr_main_document_root.'/core/lib/images.lib.php';
-require_once $dolibarr_main_document_root.'/core/class/extrafields.class.php';
+require_once $berp3_main_document_root.'/core/lib/admin.lib.php';
+include_once $berp3_main_document_root.'/core/lib/images.lib.php';
+require_once $berp3_main_document_root.'/core/class/extrafields.class.php';
 require_once 'lib/repair.lib.php';
 
 $step = 2;
@@ -49,20 +49,20 @@ $langs->setDefaultLang($setuplang);
 
 $langs->loadLangs(array("admin", "install", "other"));
 
-if ($dolibarr_main_db_type == "mysqli") {
+if ($berp3_main_db_type == "mysqli") {
 	$choix = 1;
 }
-if ($dolibarr_main_db_type == "pgsql") {
+if ($berp3_main_db_type == "pgsql") {
 	$choix = 2;
 }
-if ($dolibarr_main_db_type == "mssql") {
+if ($berp3_main_db_type == "mssql") {
 	$choix = 3;
 }
 
 
-dolibarr_install_syslog("--- repair: entering upgrade.php page");
+berp3_install_syslog("--- repair: entering upgrade.php page");
 if (!is_object($conf)) {
-	dolibarr_install_syslog("repair: conf file not initialized", LOG_ERR);
+	berp3_install_syslog("repair: conf file not initialized", LOG_ERR);
 }
 
 
@@ -104,51 +104,51 @@ print '<table cellspacing="0" cellpadding="1" border="0" width="100%">';
 $error = 0;
 
 // If password is encoded, we decode it
-if (preg_match('/crypted:/i', $dolibarr_main_db_pass) || !empty($dolibarr_main_db_encrypted_pass)) {
-	require_once $dolibarr_main_document_root.'/core/lib/security.lib.php';
-	if (preg_match('/crypted:/i', $dolibarr_main_db_pass)) {
-		$dolibarr_main_db_pass = preg_replace('/crypted:/i', '', $dolibarr_main_db_pass);
-		$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_pass);
-		$dolibarr_main_db_encrypted_pass = $dolibarr_main_db_pass; // We need to set this as it is used to know the password was initially crypted
+if (preg_match('/crypted:/i', $berp3_main_db_pass) || !empty($berp3_main_db_encrypted_pass)) {
+	require_once $berp3_main_document_root.'/core/lib/security.lib.php';
+	if (preg_match('/crypted:/i', $berp3_main_db_pass)) {
+		$berp3_main_db_pass = preg_replace('/crypted:/i', '', $berp3_main_db_pass);
+		$berp3_main_db_pass = dol_decode($berp3_main_db_pass);
+		$berp3_main_db_encrypted_pass = $berp3_main_db_pass; // We need to set this as it is used to know the password was initially crypted
 	} else {
-		$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_encrypted_pass);
+		$berp3_main_db_pass = dol_decode($berp3_main_db_encrypted_pass);
 	}
 }
 
 // $conf is already instancied inside inc.php
-$conf->db->type = $dolibarr_main_db_type;
-$conf->db->host = $dolibarr_main_db_host;
-$conf->db->port = $dolibarr_main_db_port;
-$conf->db->name = $dolibarr_main_db_name;
-$conf->db->user = $dolibarr_main_db_user;
-$conf->db->pass = $dolibarr_main_db_pass;
+$conf->db->type = $berp3_main_db_type;
+$conf->db->host = $berp3_main_db_host;
+$conf->db->port = $berp3_main_db_port;
+$conf->db->name = $berp3_main_db_name;
+$conf->db->user = $berp3_main_db_user;
+$conf->db->pass = $berp3_main_db_pass;
 
 // For encryption
-$conf->db->dolibarr_main_db_encryption = isset($dolibarr_main_db_encryption) ? $dolibarr_main_db_encryption : '';
-$conf->db->dolibarr_main_db_cryptkey = isset($dolibarr_main_db_cryptkey) ? $dolibarr_main_db_cryptkey : '';
+$conf->db->berp3_main_db_encryption = isset($berp3_main_db_encryption) ? $berp3_main_db_encryption : '';
+$conf->db->berp3_main_db_cryptkey = isset($berp3_main_db_cryptkey) ? $berp3_main_db_cryptkey : '';
 
-$db = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+$db = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 
 if ($db->connected) {
 	print '<tr><td class="nowrap">';
-	print $langs->trans("ServerConnection")." : $dolibarr_main_db_host</td><td class=\"right\">".$langs->trans("OK")."</td></tr>";
-	dolibarr_install_syslog("repair: ".$langs->transnoentities("ServerConnection").": ".$dolibarr_main_db_host.$langs->transnoentities("OK"));
+	print $langs->trans("ServerConnection")." : $berp3_main_db_host</td><td class=\"right\">".$langs->trans("OK")."</td></tr>";
+	berp3_install_syslog("repair: ".$langs->transnoentities("ServerConnection").": ".$berp3_main_db_host.$langs->transnoentities("OK"));
 	$ok = 1;
 } else {
-	print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name)."</td><td class=\"right\">".$langs->transnoentities("Error")."</td></tr>";
-	dolibarr_install_syslog("repair: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name));
+	print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $berp3_main_db_name)."</td><td class=\"right\">".$langs->transnoentities("Error")."</td></tr>";
+	berp3_install_syslog("repair: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $berp3_main_db_name));
 	$ok = 0;
 }
 
 if ($ok) {
 	if ($db->database_selected) {
 		print '<tr><td class="nowrap">';
-		print $langs->trans("DatabaseConnection")." : ".$dolibarr_main_db_name."</td><td class=\"right\">".$langs->trans("OK")."</td></tr>";
-		dolibarr_install_syslog("repair: database connection successful: ".$dolibarr_main_db_name);
+		print $langs->trans("DatabaseConnection")." : ".$berp3_main_db_name."</td><td class=\"right\">".$langs->trans("OK")."</td></tr>";
+		berp3_install_syslog("repair: database connection successful: ".$berp3_main_db_name);
 		$ok = 1;
 	} else {
-		print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name)."</td><td class=\"right\">".$langs->trans("Error")."</td></tr>";
-		dolibarr_install_syslog("repair: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name));
+		print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $berp3_main_db_name)."</td><td class=\"right\">".$langs->trans("Error")."</td></tr>";
+		berp3_install_syslog("repair: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $berp3_main_db_name));
 		$ok = 0;
 	}
 }
@@ -159,7 +159,7 @@ if ($ok) {
 	$versionarray = $db->getVersionArray();
 	print '<tr><td>'.$langs->trans("ServerVersion").'</td>';
 	print '<td class="right">'.$version.'</td></tr>';
-	dolibarr_install_syslog("repair: ".$langs->transnoentities("ServerVersion").": ".$version);
+	berp3_install_syslog("repair: ".$langs->transnoentities("ServerVersion").": ".$version);
 	//print '<td class="right">'.join('.',$versionarray).'</td></tr>';
 }
 
@@ -487,17 +487,17 @@ if ($ok && GETPOST('restore_thirdparties_logos')) {
 			}
 
 			if (!empty($name)) {
-				$filetotest = $dolibarr_main_data_root.'/societe/logos/'.$name.$ext;
-				$filetotestsmall = $dolibarr_main_data_root.'/societe/logos/thumbs/'.$name.'_small'.$ext;
+				$filetotest = $berp3_main_data_root.'/societe/logos/'.$name.$ext;
+				$filetotestsmall = $berp3_main_data_root.'/societe/logos/thumbs/'.$name.'_small'.$ext;
 				$exists = dol_is_file($filetotest);
 				print 'Check thirdparty '.$obj->rowid.' name='.$obj->name.' logo='.$obj->logo.' file '.$filetotest." exists=".$exists."<br>\n";
 				if ($exists) {
-					$filetarget = $dolibarr_main_data_root.'/societe/'.$obj->rowid.'/logos/'.$name.$ext;
-					$filetargetsmall = $dolibarr_main_data_root.'/societe/'.$obj->rowid.'/logos/thumbs/'.$name.'_small'.$ext;
+					$filetarget = $berp3_main_data_root.'/societe/'.$obj->rowid.'/logos/'.$name.$ext;
+					$filetargetsmall = $berp3_main_data_root.'/societe/'.$obj->rowid.'/logos/thumbs/'.$name.'_small'.$ext;
 					$existt = dol_is_file($filetarget);
 					if (!$existt) {
 						if (GETPOST('restore_thirdparties_logos', 'alpha') == 'confirmed') {
-							dol_mkdir($dolibarr_main_data_root.'/societe/'.$obj->rowid.'/logos');
+							dol_mkdir($berp3_main_data_root.'/societe/'.$obj->rowid.'/logos');
 						}
 
 						print "  &nbsp; &nbsp; &nbsp; -> Copy file ".$filetotest." -> ".$filetarget."<br>\n";
@@ -509,7 +509,7 @@ if ($ok && GETPOST('restore_thirdparties_logos')) {
 					$existtt = dol_is_file($filetargetsmall);
 					if (!$existtt) {
 						if (GETPOST('restore_thirdparties_logos', 'alpha') == 'confirmed') {
-							dol_mkdir($dolibarr_main_data_root.'/societe/'.$obj->rowid.'/logos/thumbs');
+							dol_mkdir($berp3_main_data_root.'/societe/'.$obj->rowid.'/logos/thumbs');
 						}
 						print "  &nbsp; &nbsp; &nbsp; -> Copy file ".$filetotestsmall." -> ".$filetargetsmall."<br>\n";
 						if (GETPOST('restore_thirdparties_logos', 'alpha') == 'confirmed') {
@@ -561,20 +561,20 @@ if ($ok && GETPOST('restore_user_pictures', 'alpha')) {
 			}
 
 			if (!empty($name)) {
-				$filetotest = $dolibarr_main_data_root.'/users/'.substr(sprintf('%08d', $obj->rowid), -1, 1).'/'.substr(sprintf('%08d', $obj->rowid), -2, 1).'/'.$name.$ext;
-				$filetotestsmall = $dolibarr_main_data_root.'/users/'.substr(sprintf('%08d', $obj->rowid), -1, 1).'/'.substr(sprintf('%08d', $obj->rowid), -2, 1).'/thumbs/'.$name.'_small'.$ext;
-				$filetotestmini = $dolibarr_main_data_root.'/users/'.substr(sprintf('%08d', $obj->rowid), -1, 1).'/'.substr(sprintf('%08d', $obj->rowid), -2, 1).'/thumbs/'.$name.'_mini'.$ext;
+				$filetotest = $berp3_main_data_root.'/users/'.substr(sprintf('%08d', $obj->rowid), -1, 1).'/'.substr(sprintf('%08d', $obj->rowid), -2, 1).'/'.$name.$ext;
+				$filetotestsmall = $berp3_main_data_root.'/users/'.substr(sprintf('%08d', $obj->rowid), -1, 1).'/'.substr(sprintf('%08d', $obj->rowid), -2, 1).'/thumbs/'.$name.'_small'.$ext;
+				$filetotestmini = $berp3_main_data_root.'/users/'.substr(sprintf('%08d', $obj->rowid), -1, 1).'/'.substr(sprintf('%08d', $obj->rowid), -2, 1).'/thumbs/'.$name.'_mini'.$ext;
 				$exists = dol_is_file($filetotest);
 				print 'Check user '.$obj->rowid.' lastname='.$obj->lastname.' firstname='.$obj->firstname.' photo='.$obj->photo.' file '.$filetotest." exists=".$exists."<br>\n";
 				if ($exists) {
-					$filetarget = $dolibarr_main_data_root.'/users/'.$obj->rowid.'/'.$name.$ext;
-					$filetargetsmall = $dolibarr_main_data_root.'/users/'.$obj->rowid.'/thumbs/'.$name.'_small'.$ext;
-					$filetargetmini = $dolibarr_main_data_root.'/users/'.$obj->rowid.'/thumbs/'.$name.'_mini'.$ext;
+					$filetarget = $berp3_main_data_root.'/users/'.$obj->rowid.'/'.$name.$ext;
+					$filetargetsmall = $berp3_main_data_root.'/users/'.$obj->rowid.'/thumbs/'.$name.'_small'.$ext;
+					$filetargetmini = $berp3_main_data_root.'/users/'.$obj->rowid.'/thumbs/'.$name.'_mini'.$ext;
 
 					$existt = dol_is_file($filetarget);
 					if (!$existt) {
 						if (GETPOST('restore_user_pictures', 'alpha') == 'confirmed') {
-							dol_mkdir($dolibarr_main_data_root.'/users/'.$obj->rowid);
+							dol_mkdir($berp3_main_data_root.'/users/'.$obj->rowid);
 						}
 
 						print "  &nbsp; &nbsp; &nbsp; -> Copy file ".$filetotest." -> ".$filetarget."<br>\n";
@@ -586,7 +586,7 @@ if ($ok && GETPOST('restore_user_pictures', 'alpha')) {
 					$existtt = dol_is_file($filetargetsmall);
 					if (!$existtt) {
 						if (GETPOST('restore_user_pictures', 'alpha') == 'confirmed') {
-							dol_mkdir($dolibarr_main_data_root.'/users/'.$obj->rowid.'/thumbs');
+							dol_mkdir($berp3_main_data_root.'/users/'.$obj->rowid.'/thumbs');
 						}
 
 						print "  &nbsp; &nbsp; &nbsp; -> Copy file ".$filetotestsmall." -> ".$filetargetsmall."<br>\n";
@@ -598,7 +598,7 @@ if ($ok && GETPOST('restore_user_pictures', 'alpha')) {
 					$existtt = dol_is_file($filetargetmini);
 					if (!$existtt) {
 						if (GETPOST('restore_user_pictures', 'alpha') == 'confirmed') {
-							dol_mkdir($dolibarr_main_data_root.'/users/'.$obj->rowid.'/thumbs');
+							dol_mkdir($berp3_main_data_root.'/users/'.$obj->rowid.'/thumbs');
 						}
 
 						print "  &nbsp; &nbsp; &nbsp; -> Copy file ".$filetotestmini." -> ".$filetargetmini."<br>\n";
@@ -637,7 +637,7 @@ if ($ok && GETPOST('rebuild_product_thumbs', 'alpha')) {
 			$obj = $db->fetch_object($resql);
 
 			if (!empty($obj->ref)) {
-				$files = dol_dir_list($dolibarr_main_data_root.'/produit/'.$obj->ref, 'files', 0);
+				$files = dol_dir_list($berp3_main_data_root.'/produit/'.$obj->ref, 'files', 0);
 				foreach ($files as $file) {
 					// Generate thumbs.
 					if (image_format_supported($file['fullname']) == 1) {
@@ -1230,7 +1230,7 @@ if ($ok && GETPOST('force_utf8_on_tables', 'alpha')) {
 
 		foreach ($listoftables as $table) {
 			// do not convert llx_const if mysql encrypt/decrypt is used
-			if ($conf->db->dolibarr_main_db_encryption != 0 && preg_match('/\_const$/', $table)) {
+			if ($conf->db->berp3_main_db_encryption != 0 && preg_match('/\_const$/', $table)) {
 				continue;
 			}
 
@@ -1276,7 +1276,7 @@ if ($ok && GETPOST('force_utf8mb4_on_tables', 'alpha')) {
 
 		foreach ($listoftables as $table) {
 			// do not convert llx_const if mysql encrypt/decrypt is used
-			if ($conf->db->dolibarr_main_db_encryption != 0 && preg_match('/\_const$/', $table)) {
+			if ($conf->db->berp3_main_db_encryption != 0 && preg_match('/\_const$/', $table)) {
 				continue;
 			}
 
@@ -1333,7 +1333,7 @@ if ($ok && GETPOST('rebuild_sequences', 'alpha')) {
 //
 if ($ok && GETPOST('repair_link_dispatch_lines_supplier_order_lines')) {
 	/*
-	 * This script is meant to be run when upgrading from a dolibarr version < 3.8
+	 * This script is meant to be run when upgrading from a berp3 version < 3.8
 	 * to a newer version.
 	 *
 	 * Version 3.8 introduces a new column in llx_commande_fournisseur_dispatch, which
@@ -1342,7 +1342,7 @@ if ($ok && GETPOST('repair_link_dispatch_lines_supplier_order_lines')) {
 	 * which line were dispatched where).
 	 *
 	 * However when migrating, the new column has a default value of 0, which means that
-	 * old supplier orders whose lines were dispatched using the old dolibarr version
+	 * old supplier orders whose lines were dispatched using the old berp3 version
 	 * have unspecific dispatch lines, which are not taken into account by the new version,
 	 * thus making the order look like it was never dispatched at all.
 	 *
@@ -1480,7 +1480,7 @@ if (empty($actiondone)) {
 
 if ($oneoptionset) {
 	print '<div class="center" style="padding-top: 10px"><a href="../index.php?mainmenu=home&leftmenu=home'.(GETPOSTISSET("login") ? '&username='.urlencode(GETPOST("login")) : '').'">';
-	print $langs->trans("GoToDolibarr");
+	print $langs->trans("GoToBerp3");
 	print '</a></div>';
 } else {
 	print '<div class="center warning" style="padding-top: 10px">';
@@ -1488,7 +1488,7 @@ if ($oneoptionset) {
 	print '</div>';
 }
 
-dolibarr_install_syslog("--- repair: end");
+berp3_install_syslog("--- repair: end");
 pFooter(1, $setuplang);
 
 if ($db->connected) {

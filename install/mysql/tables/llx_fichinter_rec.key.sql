@@ -1,8 +1,8 @@
 -- ============================================================================
--- Copyright (C) 2002-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2004-2006 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2009      Regis Houssin        <regis.houssin@inodbox.com>
--- Copyright (C) 2018      Charlene Benke        <charlie@patas-monkey.com>
+-- Copyright (C) 2002-2004 
+-- Copyright (C) 2004-2006 
+-- Copyright (C) 2009      
+-- Copyright (C) 2018      
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

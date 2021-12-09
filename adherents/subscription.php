@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2001-2004  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003  Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2004-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2012-2017  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015-2016  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2019       Thibault FOUCART        <support@ptibogxiv.net>
+/* Copyright (C) 2001-2004  
+ * Copyright (C) 2002-2003        
+ * Copyright (C) 2004-2018  
+ * Copyright (C) 2012-2017  
+ * Copyright (C) 2015-2016  
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2019              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -400,7 +400,7 @@ if ($user->rights->adherent->cotisation->creer && $action == 'subscription' && !
 						$listofmimes = array(dol_mimetype($file));
 					}
 
-					$moreinheader = 'X-Dolibarr-Info: send_an_email by adherents/subscription.php'."\r\n";
+					$moreinheader = 'X-Berp3-Info: send_an_email by adherents/subscription.php'."\r\n";
 
 					$result = $object->send_an_email($texttosend, $subjecttosend, $listofpaths, $listofmimes, $listofnames, "", "", 0, -1, '', $moreinheader);
 					if ($result < 0) {
@@ -580,11 +580,11 @@ if ($rowid > 0) {
 	$cols = 2;
 	include DOL_DOCUMENT_ROOT.'/core/tpl/extrafields_view.tpl.php';
 
-	// Third party Dolibarr
+	// Third party Berp3
 	if (!empty($conf->societe->enabled)) {
 		print '<tr><td>';
 		print '<table class="nobordernopadding" width="100%"><tr><td>';
-		print $langs->trans("LinkedToDolibarrThirdParty");
+		print $langs->trans("LinkedToBerp3ThirdParty");
 		print '</td>';
 		if ($action != 'editthirdparty' && $user->rights->adherent->creer) {
 			print '<td class="right"><a class="editfielda" href="'.$_SERVER["PHP_SELF"].'?action=editthirdparty&token='.newToken().'&rowid='.$object->id.'">'.img_edit($langs->trans('SetLinkToThirdParty'), 1).'</a></td>';
@@ -623,10 +623,10 @@ if ($rowid > 0) {
 		print '</td></tr>';
 	}
 
-	// Login Dolibarr - Link to user
+	// Login Berp3 - Link to user
 	print '<tr><td>';
 	print '<table class="nobordernopadding" width="100%"><tr><td>';
-	print $langs->trans("LinkedToDolibarrUser");
+	print $langs->trans("LinkedToBerp3User");
 	print '</td>';
 	if ($action != 'editlogin' && $user->rights->adherent->creer) {
 		print '<td class="right">';
@@ -645,7 +645,7 @@ if ($rowid > 0) {
 			$linkeduser->fetch($object->user_id);
 			print $linkeduser->getNomUrl(-1);
 		} else {
-			print '<span class="opacitymedium">'.$langs->trans("NoDolibarrAccess").'</span>';
+			print '<span class="opacitymedium">'.$langs->trans("NoBerp3Access").'</span>';
 		}
 	}
 	print '</td></tr>';
@@ -912,7 +912,7 @@ if ($rowid > 0) {
 			}
 			// @todo Add other extrafields mandatory for thirdparty creation
 
-			print $form->formconfirm($_SERVER["PHP_SELF"]."?rowid=".$object->id, $langs->trans("CreateDolibarrThirdParty"), $langs->trans("ConfirmCreateThirdParty"), "confirm_create_thirdparty", $formquestion, 1);
+			print $form->formconfirm($_SERVER["PHP_SELF"]."?rowid=".$object->id, $langs->trans("CreateBerp3ThirdParty"), $langs->trans("ConfirmCreateThirdParty"), "confirm_create_thirdparty", $formquestion, 1);
 		}
 
 
@@ -1010,7 +1010,7 @@ if ($rowid > 0) {
 						}
 						print $langs->trans("NoThirdPartyAssociatedToMember");
 						print ' - <a href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&amp;action=create_thirdparty">';
-						print $langs->trans("CreateDolibarrThirdParty");
+						print $langs->trans("CreateBerp3ThirdParty");
 						print '</a>)';
 					}
 					if (empty($conf->global->ADHERENT_VAT_FOR_SUBSCRIPTIONS) || $conf->global->ADHERENT_VAT_FOR_SUBSCRIPTIONS != 'defaultforfoundationcountry') {
@@ -1040,7 +1040,7 @@ if ($rowid > 0) {
 						}
 						print $langs->trans("NoThirdPartyAssociatedToMember");
 						print ' - <a href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&amp;action=create_thirdparty">';
-						print $langs->trans("CreateDolibarrThirdParty");
+						print $langs->trans("CreateBerp3ThirdParty");
 						print '</a>)';
 					}
 					if (empty($conf->global->ADHERENT_VAT_FOR_SUBSCRIPTIONS) || $conf->global->ADHERENT_VAT_FOR_SUBSCRIPTIONS != 'defaultforfoundationcountry') {

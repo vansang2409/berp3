@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2006-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004      
+ * Copyright (C) 2006-2014 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,10 +52,10 @@ class mod_codeclient_leopard extends ModeleThirdPartyCode
 	public $code_null; // Code facultatif
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var int Automatic numbering
@@ -106,7 +106,7 @@ class mod_codeclient_leopard extends ModeleThirdPartyCode
 	/**
 	 * 	Check validity of code according to its rules
 	 *
-	 *	@param	DoliDB		$db		Database handler
+	 *	@param	Berp3DB		$db		Database handler
 	 *	@param	string		$code	Code to check/correct
 	 *	@param	Societe		$soc	Object third party
 	 *  @param  int		  	$type   0 = customer/prospect , 1 = supplier

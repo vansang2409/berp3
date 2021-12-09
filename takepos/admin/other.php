@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2008-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2011-2017 Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2008-2011 
+ * Copyright (C) 2011-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -92,11 +92,11 @@ print '<td class="titlefield" colspan="2">'.$langs->trans("WebSiteDesc").'</td>'
 print '<td>'.$langs->trans("URL").'</td>';
 print '</tr>';
 
-$url = 'https://www.dolistore.com/45-pos';
+$url = 'https://www.berp3store.com/45-pos';
 
 print '<tr class="oddeven">'."\n";
-print '<td class="titlefield"><a href="'.$url.'" target="_blank" rel="external"><img border="0" class="imgautosize imgmaxwidth180" src="'.DOL_URL_ROOT.'/theme/dolistore_logo.png"></a></td>';
-print '<td>'.$langs->trans("DolistorePosCategory").'</td>';
+print '<td class="titlefield"><a href="'.$url.'" target="_blank" rel="external"><img border="0" class="imgautosize imgmaxwidth180" src="'.DOL_URL_ROOT.'/theme/berp3store_logo.png"></a></td>';
+print '<td>'.$langs->trans("Berp3storePosCategory").'</td>';
 print '<td><a href="'.$url.'" target="_blank" rel="external">'.$url.'</a></td>';
 print '</tr>';
 

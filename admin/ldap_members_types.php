@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004		Sebastien Di Cintio	<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier		<benoit.mortier@opensides.be>
- * Copyright (C) 2005-2017	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2006-2011	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2011-2013	Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2004		
+ * Copyright (C) 2004			
+ * Copyright (C) 2004				
+ * Copyright (C) 2005-2017			
+ * Copyright (C) 2006-2011		
+ * Copyright (C) 2011-2013	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,20 +51,20 @@ if ($action == 'setvalue' && $user->admin) {
 	$error = 0;
 	$db->begin();
 
-	if (!dolibarr_set_const($db, 'LDAP_MEMBER_TYPE_DN', GETPOST("membertype"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_MEMBER_TYPE_DN', GETPOST("membertype"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_MEMBER_TYPE_OBJECT_CLASS', GETPOST("objectclass"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_MEMBER_TYPE_OBJECT_CLASS', GETPOST("objectclass"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
 
-	if (!dolibarr_set_const($db, 'LDAP_MEMBER_TYPE_FIELD_FULLNAME', GETPOST("fieldfullname"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_MEMBER_TYPE_FIELD_FULLNAME', GETPOST("fieldfullname"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_MEMBER_TYPE_FIELD_DESCRIPTION', GETPOST("fielddescription"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_MEMBER_TYPE_FIELD_DESCRIPTION', GETPOST("fielddescription"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_MEMBER_TYPE_FIELD_GROUPMEMBERS', GETPOST("fieldmembertypemembers"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_MEMBER_TYPE_FIELD_GROUPMEMBERS', GETPOST("fieldmembertypemembers"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
 
@@ -74,7 +74,7 @@ if ($action == 'setvalue' && $user->admin) {
 	if ($key) {
 		$valkey = $conf->global->$key;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_KEY_MEMBERS_TYPES', $valkey, 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_KEY_MEMBERS_TYPES', $valkey, 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
 
@@ -146,7 +146,7 @@ print '<br>';
 print '<table class="noborder centpercent">';
 
 print '<tr class="liste_titre">';
-print '<td>'.$langs->trans("LDAPDolibarrMapping").'</td>';
+print '<td>'.$langs->trans("LDAPBerp3Mapping").'</td>';
 print '<td colspan="2">'.$langs->trans("LDAPLdapMapping").'</td>';
 print '<td class="right">'.$langs->trans("LDAPNamingAttribute").'</td>';
 print "</tr>\n";

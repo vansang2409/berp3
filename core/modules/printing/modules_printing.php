@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2014-2018 Frederic France      <frederic.france@netlogic.fr>
+ * Copyright (C) 2014-2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';
 class PrintingDriver
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -45,7 +45,7 @@ class PrintingDriver
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB      $db      Database handler
+	 *  @param      Berp3DB      $db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -55,7 +55,7 @@ class PrintingDriver
 	/**
 	 *  Return list of printing driver
 	 *
-	 *  @param  DoliDB  $db                 Database handler
+	 *  @param  Berp3DB  $db                 Database handler
 	 *  @param  integer  $maxfilenamelength  Max length of value to show
 	 *  @return array                       List of drivers
 	 */

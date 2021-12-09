@@ -29,7 +29,7 @@ class Validate
 {
 
 	/**
-	 * @var DoliDb		Database handler (result of a new DoliDB)
+	 * @var Berp3Db		Database handler (result of a new Berp3DB)
 	 */
 	public $db;
 
@@ -48,7 +48,7 @@ class Validate
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB 		$db 			Database handler
+	 * @param Berp3DB 		$db 			Database handler
 	 * @param Translate   	$outputLang 	Output lang for error
 	 */
 	public function __construct($db, $outputLang = null)

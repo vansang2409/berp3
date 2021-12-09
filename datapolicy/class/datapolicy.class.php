@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2018 Nicolas ZABOURI <info@inovea-conseil.com>
+/* Copyright (C) 2018  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ class DataPolicy
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -167,7 +167,7 @@ class DataPolicy
 		} else {
 			$l = $langs->defaultlang;
 		}
-		// TODO Use a dolibarr email template
+		// TODO Use a berp3 email template
 		$s = "DATAPOLICIESSUBJECT_".$l;
 		$ma = "DATAPOLICIESCONTENT_".$l;
 		$la = 'TXTLINKDATAPOLICIESACCEPT_'.$l;
@@ -244,7 +244,7 @@ class DataPolicy
 		} else {
 			$l = $langs->defaultlang;
 		}
-		// TODO Use a dolibarr email template
+		// TODO Use a berp3 email template
 		$s = "DATAPOLICIESSUBJECT_".$l;
 		$ma = "DATAPOLICIESCONTENT_".$l;
 		$la = 'TXTLINKDATAPOLICIESACCEPT_'.$l;
@@ -318,7 +318,7 @@ class DataPolicy
 		} else {
 			$l = $langs->defaultlang;
 		}
-		// TODO Use a dolibarr email template
+		// TODO Use a berp3 email template
 		$s = 'TXTLINKDATAPOLICIESSUBJECT_'.$l;
 		$ma = 'TXTLINKDATAPOLICIESMESSAGE_'.$l;
 		$la = 'TXTLINKDATAPOLICIESACCEPT_'.$l;

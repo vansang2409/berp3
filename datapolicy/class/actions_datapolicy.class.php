@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2018       Nicolas ZABOURI         <info@inovea-conseom.com>
- * Copyright (C) 2018-2019  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2018                <info@inovea-conseom.com>
+ * Copyright (C) 2018-2019  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 class ActionsDatapolicy
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -55,7 +55,7 @@ class ActionsDatapolicy
 	/**
 	 * Constructor
 	 *
-	 *  @param  DoliDB      $db      Database handler
+	 *  @param  Berp3DB      $db      Database handler
 	 */
 	public function __construct($db)
 	{

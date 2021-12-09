@@ -1,16 +1,16 @@
 <?php
 
-require_once DOL_DOCUMENT_ROOT.'/core/db/DoliDB.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/db/Berp3DB.class.php';
 
 /**
  * TraceableDB class
  *
  * Used to log queries into DebugBar
  */
-class TraceableDB extends DoliDB
+class TraceableDB extends Berp3DB
 {
 	/**
-	 * @var DoliDb Database handler
+	 * @var Berp3Db Database handler
 	 */
 	public $db; // cannot be protected because of parent declaration
 	/**
@@ -41,7 +41,7 @@ class TraceableDB extends DoliDB
 	/**
 	 * Constructor
 	 *
-	 * @param		DoliDB		$db      Database handler
+	 * @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -578,15 +578,15 @@ class TraceableDB extends DoliDB
 	/**
 	 * Create a user and privileges to connect to database (even if database does not exists yet)
 	 *
-	 * @param    string $dolibarr_main_db_host 	Ip serveur
-	 * @param    string $dolibarr_main_db_user 	Nom user a creer
-	 * @param    string $dolibarr_main_db_pass 	Mot de passe user a creer
-	 * @param    string $dolibarr_main_db_name 	Database name where user must be granted
+	 * @param    string $berp3_main_db_host 	Ip serveur
+	 * @param    string $berp3_main_db_user 	Nom user a creer
+	 * @param    string $berp3_main_db_pass 	Mot de passe user a creer
+	 * @param    string $berp3_main_db_name 	Database name where user must be granted
 	 * @return   int                            <0 if KO, >=0 if OK
 	 */
-	public function DDLCreateUser($dolibarr_main_db_host, $dolibarr_main_db_user, $dolibarr_main_db_pass, $dolibarr_main_db_name)
+	public function DDLCreateUser($berp3_main_db_host, $berp3_main_db_user, $berp3_main_db_pass, $berp3_main_db_name)
 	{
-		return $this->db->DDLCreateUser($dolibarr_main_db_host, $dolibarr_main_db_user, $dolibarr_main_db_pass, $dolibarr_main_db_name);
+		return $this->db->DDLCreateUser($berp3_main_db_host, $berp3_main_db_user, $berp3_main_db_pass, $berp3_main_db_name);
 	}
 
 	// phpcs:disable PEAR.NamingConventions.ValidFunctionName.ScopeNotCamelCaps

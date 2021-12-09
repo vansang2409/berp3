@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2018 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2018 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ abstract class ModelePDFStock extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 *  @param  DoliDB      $db                 Database handler
+	 *  @param  Berp3DB      $db                 Database handler
 	 *  @param  integer     $maxfilenamelength  Max length of value to show
 	 *  @return array                           List of templates
 	 */

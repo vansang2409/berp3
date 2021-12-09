@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2012-2013  Charles-Fr BENKE		<charles.fr@benke.fr>
+/* Copyright (C) 2012-2013  Charles-Fr BENKE		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 class FormExpenseReport
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -41,7 +41,7 @@ class FormExpenseReport
 	/**
 	 * Constructor
 	 *
-	 * @param		DoliDB		$db      Database handler
+	 * @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

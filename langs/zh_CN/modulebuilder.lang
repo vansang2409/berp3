@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=You can delete your module. WARNING: All coding fi
 EnterNameOfObjectToDeleteDesc=You can delete an object. WARNING: All coding files (generated or created manually) related to object will be deleted!
 DangerZone=危险区
 BuildPackage=Build package
-BuildPackageDesc=You can generate a zip package of your application so your are ready to distribute it on any Dolibarr. You can also distribute it or sell it on marketplace like <a href="https://www.dolistore.com">DoliStore.com</a>.
+BuildPackageDesc=You can generate a zip package of your application so your are ready to distribute it on any Berp3. You can also distribute it or sell it on marketplace like <a href="https://www.berp3store.com">Berp3Store.com</a>.
 BuildDocumentation=构建文档
 ModuleIsNotActive=This module is not activated yet. Go to %s to make it live or click here
 ModuleIsLive=This module has been activated. Any change may break a current live feature.
@@ -101,7 +101,7 @@ HooksDefDesc=在<b> module_parts ['hooks'] </b>属性中定义，在模块描述
 TriggerDefDesc=在触发器文件中定义要为执行的每个业务事件执行的代码。
 SeeIDsInUse=查看安装中使用的ID
 SeeReservedIDsRangeHere=查看保留ID的范围
-ToolkitForDevelopers=Dolibarr开发人员工具包
+ToolkitForDevelopers=Berp3开发人员工具包
 TryToUseTheModuleBuilder=If you have knowledge of SQL and PHP, you may use the native module builder wizard.<br>Enable the module <strong>%s</strong> and use the wizard by clicking the <span class="fa fa-bug"></span> on the top right menu.<br>Warning: This is an advanced developer feature, do <b>not</b> experiment on your production site!
 SeeTopRightMenu=请参阅右上方菜单中的<span class="fa fa-bug"></span>
 AddLanguageFile=添加语言文件

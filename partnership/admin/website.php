@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2001-2002	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2006-2015	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2006-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011		Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2001-2002	
+ * Copyright (C) 2006-2015	
+ * Copyright (C) 2006-2012	
+ * Copyright (C) 2011		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,16 +49,16 @@ $error = 0;
 
 if ($action == 'setPARTNERSHIP_ENABLE_PUBLIC') {
 	if (GETPOST('value')) {
-		dolibarr_set_const($db, 'PARTNERSHIP_ENABLE_PUBLIC', 1, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'PARTNERSHIP_ENABLE_PUBLIC', 1, 'chaine', 0, '', $conf->entity);
 	} else {
-		dolibarr_set_const($db, 'PARTNERSHIP_ENABLE_PUBLIC', 0, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'PARTNERSHIP_ENABLE_PUBLIC', 0, 'chaine', 0, '', $conf->entity);
 	}
 }
 
 if ($action == 'update') {
 	$public = GETPOST('PARTNERSHIP_ENABLE_PUBLIC');
 
-	$res = dolibarr_set_const($db, "PARTNERSHIP_ENABLE_PUBLIC", $public, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PARTNERSHIP_ENABLE_PUBLIC", $public, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -242,7 +242,7 @@ if (!empty($conf->global->PARTNERSHIP_ENABLE_PUBLIC)) {
 	}
 
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 	//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 

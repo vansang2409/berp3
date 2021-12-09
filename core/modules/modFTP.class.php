@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2003      
+ * Copyright (C) 2004-2008 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,19 +24,19 @@
  *      \brief      Description and activation file for the module FTP
  */
 
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  * 	Description and activation class for module FTP
  */
-class modFTP extends DolibarrModules
+class modFTP extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -53,8 +53,8 @@ class modFTP extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		// Module description used if translation string 'ModuleXXXDesc' not found (XXX is id value)
 		$this->description = "FTP Client";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (XXX is id value)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of png file (without png) used for this module

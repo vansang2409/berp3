@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2013-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2018       Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2013-2015 
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ class box_graph_product_distribution extends ModeleBoxes
 	public $depends = array("product|service", "facture|propal|commande");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -50,7 +50,7 @@ class box_graph_product_distribution extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 * 	@param	DoliDB	$db			Database handler
+	 * 	@param	Berp3DB	$db			Database handler
 	 *  @param	string	$param		More parameters
 	 */
 	public function __construct($db, $param)

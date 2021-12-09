@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2015 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2010-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2014-2016 Ferran Marcet       <fmarcet@2byte.es>
- * Copyright (C) 2018      Nicolas ZABOURI     <info@inovea-conseil.com>
+/* Copyright (C) 2004-2005 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2010-2015 
+ * Copyright (C) 2010-2014 
+ * Copyright (C) 2014-2016        
+ * Copyright (C) 2018           
  * Copyright (C) 2019		JC Prieto			<jcprieto@virtual20.com><prietojc@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -89,7 +89,7 @@ class BonPrelevement extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      	Database handler
+	 *  @param		Berp3DB		$db      	Database handler
 	 */
 	public function __construct($db)
 	{
@@ -796,8 +796,8 @@ class BonPrelevement extends CommonObject
 	 *	Create a direct debit order or a credit transfer order
 	 *  TODO delete params banque and agence when not necessary
 	 *
-	 *	@param 	int		$banque			dolibarr mysoc bank
-	 *	@param	int		$agence			dolibarr mysoc bank office (guichet)
+	 *	@param 	int		$banque			berp3 mysoc bank
+	 *	@param	int		$agence			berp3 mysoc bank office (guichet)
 	 *	@param	string	$mode			real=do action, simu=test only
 	 *  @param	string	$format			FRST, RCUR or ALL
 	 *  @param  string  $executiondate	Date to execute the transfer
@@ -1388,7 +1388,7 @@ class BonPrelevement extends CommonObject
 	/**
 	 *	Add a notification
 	 *
-	 *	@param	DoliDB		$db			database handler
+	 *	@param	Berp3DB		$db			database handler
 	 *	@param	int|User	$user		notification user
 	 *	@param	string		$action		notification action
 	 *	@return	int						0 if OK, <0 if KO

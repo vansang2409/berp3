@@ -23,9 +23,9 @@ require_once DOL_DOCUMENT_ROOT.'/adherents/class/subscription.class.php';
  * API class for subscriptions
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class Subscriptions extends DolibarrApi
+class Subscriptions extends Berp3Api
 {
 	/**
 	 * @var array   $FIELDS     Mandatory fields, checked when create and update object
@@ -58,7 +58,7 @@ class Subscriptions extends DolibarrApi
 	 */
 	public function get($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->adherent->cotisation->lire) {
+		if (!Berp3ApiAccess::$user->rights->adherent->cotisation->lire) {
 			throw new RestException(401);
 		}
 
@@ -91,7 +91,7 @@ class Subscriptions extends DolibarrApi
 
 		$obj_ret = array();
 
-		if (!DolibarrApiAccess::$user->rights->adherent->cotisation->lire) {
+		if (!Berp3ApiAccess::$user->rights->adherent->cotisation->lire) {
 			throw new RestException(401);
 		}
 
@@ -100,11 +100,11 @@ class Subscriptions extends DolibarrApi
 		$sql .= ' WHERE 1 = 1';
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -147,7 +147,7 @@ class Subscriptions extends DolibarrApi
 	 */
 	public function post($request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->adherent->cotisation->creer) {
+		if (!Berp3ApiAccess::$user->rights->adherent->cotisation->creer) {
 			throw new RestException(401);
 		}
 		// Check mandatory fields
@@ -157,7 +157,7 @@ class Subscriptions extends DolibarrApi
 		foreach ($request_data as $field => $value) {
 			$subscription->$field = $value;
 		}
-		if ($subscription->create(DolibarrApiAccess::$user) < 0) {
+		if ($subscription->create(Berp3ApiAccess::$user) < 0) {
 			throw new RestException(500, 'Error when creating subscription', array_merge(array($subscription->error), $subscription->errors));
 		}
 		return $subscription->id;
@@ -172,7 +172,7 @@ class Subscriptions extends DolibarrApi
 	 */
 	public function put($id, $request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->adherent->creer) {
+		if (!Berp3ApiAccess::$user->rights->adherent->creer) {
 			throw new RestException(401);
 		}
 
@@ -189,7 +189,7 @@ class Subscriptions extends DolibarrApi
 			$subscription->$field = $value;
 		}
 
-		if ($subscription->update(DolibarrApiAccess::$user) > 0) {
+		if ($subscription->update(Berp3ApiAccess::$user) > 0) {
 			return $this->get($id);
 		} else {
 			throw new RestException(500, $subscription->error);
@@ -205,7 +205,7 @@ class Subscriptions extends DolibarrApi
 	public function delete($id)
 	{
 		// The right to delete a subscription comes with the right to create one.
-		if (!DolibarrApiAccess::$user->rights->adherent->cotisation->creer) {
+		if (!Berp3ApiAccess::$user->rights->adherent->cotisation->creer) {
 			throw new RestException(401);
 		}
 		$subscription = new Subscription($this->db);
@@ -214,7 +214,7 @@ class Subscriptions extends DolibarrApi
 			throw new RestException(404, 'Subscription not found');
 		}
 
-		if (!$subscription->delete(DolibarrApiAccess::$user)) {
+		if (!$subscription->delete(Berp3ApiAccess::$user)) {
 			throw new RestException(401, 'error when deleting subscription');
 		}
 

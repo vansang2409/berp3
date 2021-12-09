@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004-2017	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2006		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2007-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011		Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2012		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2018       Ferran Marcet           <fmarcet@2byte.es>
+/* Copyright (C) 2004-2017	
+ * Copyright (C) 2006		
+ * Copyright (C) 2007-2017	
+ * Copyright (C) 2011		
+ * Copyright (C) 2012		
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,8 +67,8 @@ if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 }
 
 top_httphead('text/json');
-// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-if (empty($dolibarr_nocache)) {
+// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+if (empty($berp3_nocache)) {
 	header('Cache-Control: max-age=10800, public, must-revalidate');
 	// For a text/json, we must set an Expires to avoid to have it forced to an expired value by the web server
 	header('Expires: '.gmdate('D, d M Y H:i:s', dol_now('gmt') + 10800).' GMT');
@@ -81,7 +81,7 @@ if (empty($dolibarr_nocache)) {
 	"name": "<?php echo $appli; ?>",
 	"icons": [
 		{
-			"src": "<?php echo DOL_URL_ROOT.'/theme/dolibarr_256x256_color.png'; ?>",
+			"src": "<?php echo DOL_URL_ROOT.'/theme/berp3_256x256_color.png'; ?>",
 			"sizes": "256x256",
 			"type": "image/png"
 		}

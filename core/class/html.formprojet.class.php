@@ -1,7 +1,7 @@
 <?php
-/* Copyright (c) 2013 Florian Henry  <florian.henry@open-concept.pro>
- * Copyright (C) 2015 Marcos García  <marcosgdf@gmail.com>
- * Copyright (C) 2018 Charlene Benke <charlie@patas-monkey.com>
+/* Copyright (c) 2013   
+ * Copyright (C) 2015   
+ * Copyright (C) 2018  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
 class FormProjets
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -45,7 +45,7 @@ class FormProjets
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

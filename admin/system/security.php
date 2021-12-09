@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2013-2019	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2013-2019	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -211,7 +211,7 @@ print '<br>';
 print '<br>';
 
 print '<strong>'.$langs->trans("PermissionsOnFile", $conffile).'</strong>: ';		// $conffile is defined into filefunc.inc.php
-$perms = fileperms($dolibarr_main_document_root.'/'.$conffile);
+$perms = fileperms($berp3_main_document_root.'/'.$conffile);
 if ($perms) {
 	if (($perms & 0x0004) || ($perms & 0x0002)) {
 		print img_warning().' '.$langs->trans("ConfFileIsReadableOrWritableByAnyUsers");
@@ -233,7 +233,7 @@ print '<br>';
 print '<br>';
 
 $installlock = DOL_DATA_ROOT.'/install.lock';
-print '<strong>'.$langs->trans("DolibarrSetup").'</strong>: ';
+print '<strong>'.$langs->trans("Berp3Setup").'</strong>: ';
 if (file_exists($installlock)) {
 	print img_picto('', 'tick').' '.$langs->trans("InstallAndUpgradeLockedBy", $installlock);
 } else {
@@ -249,22 +249,22 @@ print '<br>';
 print '<br>';
 print load_fiche_titre($langs->trans("ConfigurationFile").' ('.$conffile.')', '', 'folder');
 
-print '<strong>$dolibarr_main_prod</strong>: '.($dolibarr_main_prod ? $dolibarr_main_prod : '0');
-if (empty($dolibarr_main_prod)) {
+print '<strong>$berp3_main_prod</strong>: '.($berp3_main_prod ? $berp3_main_prod : '0');
+if (empty($berp3_main_prod)) {
 	print ' &nbsp; '.img_picto('', 'warning').' '.$langs->trans("IfYouAreOnAProductionSetThis", 1);
 }
 print '<br>';
 
-print '<strong>$dolibarr_nocsrfcheck</strong>: '.(empty($dolibarr_nocsrfcheck) ? '0' : $dolibarr_nocsrfcheck);
-if (!empty($dolibarr_nocsrfcheck)) {
+print '<strong>$berp3_nocsrfcheck</strong>: '.(empty($berp3_nocsrfcheck) ? '0' : $berp3_nocsrfcheck);
+if (!empty($berp3_nocsrfcheck)) {
 	print ' &nbsp; '.img_picto('', 'warning').' '.$langs->trans("IfYouAreOnAProductionSetThis", 0);
 } else {
 	print ' &nbsp; <span class="opacitymedium">('.$langs->trans("Recommended").': 0)</span>';
 }
 print '<br>';
 
-print '<strong>$dolibarr_main_restrict_ip</strong>: ';
-if (empty($dolibarr_main_restrict_ip)) {
+print '<strong>$berp3_main_restrict_ip</strong>: ';
+if (empty($berp3_main_restrict_ip)) {
 	print '<span class="opacitymedium">'.$langs->trans("None").'</span>';
 	//print ' <span class="opacitymedium">('.$langs->trans("RecommendedValueIs", $langs->transnoentitiesnoconv("IPsOfUsers")).')</span>';
 }
@@ -272,8 +272,8 @@ if (empty($dolibarr_main_restrict_ip)) {
 print '<br>';
 
 if (empty($conf->global->SECURITY_DISABLE_TEST_ON_OBFUSCATED_CONF)) {
-	print '<strong>$dolibarr_main_db_pass</strong>: ';
-	if (!empty($dolibarr_main_db_pass) && empty($dolibarr_main_db_encrypted_pass)) {
+	print '<strong>$berp3_main_db_pass</strong>: ';
+	if (!empty($berp3_main_db_pass) && empty($berp3_main_db_encrypted_pass)) {
 		print img_picto('', 'warning').' '.$langs->trans("DatabasePasswordNotObfuscated").' &nbsp; <span class="opacitymedium">('.$langs->trans("Recommended").': '.$langs->trans("SetOptionTo", $langs->transnoentitiesnoconv("MainDbPasswordFileConfEncrypted"), yn(1)).')</span>';
 		//print ' <span class="opacitymedium">('.$langs->trans("RecommendedValueIs", $langs->transnoentitiesnoconv("IPsOfUsers")).')</span>';
 	} else {

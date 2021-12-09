@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2004-2016 Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2016 
  * Copyright (C) 2004-2010 Folke Ashberg: Some lines of code were inspired from work
  *                         of Folke Ashberg into PHP-Barcode 0.3pl2, available as GPL
  *                         source code at http://www.ashberg.de/bar.

@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2012	   Florian Henry  <florian.henry@open-concept.pro>
+ * Copyright (C) 2004      
+ * Copyright (C) 2005-2011 
+ * Copyright (C) 2012	     
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ if (!defined('NOREQUIREMENU')) {
 	define('NOREQUIREMENU', '1'); // If there is no need to load and show top and left menu
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 if (!defined("NOSESSION")) {
 	define("NOSESSION", '1');

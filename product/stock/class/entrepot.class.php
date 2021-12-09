@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2003-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2008 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011	   Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2003-2006 
+ * Copyright (C) 2004-2010 
+ * Copyright (C) 2005-2008 
+ * Copyright (C) 2011	   
  * Copyright (C) 2016	   Francis Appels       <francis.appels@yahoo.com>
- * Copyright (C) 2019-2020  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2019-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -164,7 +164,7 @@ class Entrepot extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB		$db      Database handler
+	 *  @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (c) 2008-2013	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2012		Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2012       Marcos García           <marcosgdf@gmail.com>
+/* Copyright (C) 2003		
+ * Copyright (c) 2008-2013	
+ * Copyright (C) 2012		
+ * Copyright (C) 2012       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

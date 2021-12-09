@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2003-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2014 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2006      Andre Cianfarani     <acianfa@free.fr>
- * Copyright (C) 2010-2020 Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2003-2006 
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2005-2014 
+ * Copyright (C) 2006           
+ * Copyright (C) 2010-2020 
  * Copyright (C) 2011      Jean Heimburger      <jean@tiaris.info>
- * Copyright (C) 2012-2014 Christophe Battarel  <christophe.battarel@altairis.fr>
- * Copyright (C) 2012      Cedric Salvador      <csalvador@gpcsolutions.fr>
- * Copyright (C) 2013      Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2014-2015 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2018      Nicolas ZABOURI	<info@inovea-conseil.com>
- * Copyright (C) 2016-2018 Ferran Marcet        <fmarcet@2byte.es>
- * Copyright (C) 2021       Frédéric France     <frederic.france@netlogic.fr>
+ * Copyright (C) 2012-2014   
+ * Copyright (C) 2012      Cedric Salvador      
+ * Copyright (C) 2013      
+ * Copyright (C) 2014-2015 
+ * Copyright (C) 2018      	
+ * Copyright (C) 2016-2018 
+ * Copyright (C) 2021       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -381,7 +381,7 @@ class Commande extends CommonOrder
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -517,7 +517,7 @@ class Commande extends CommonOrder
 						$mouvP = new MouvementStock($this->db);
 						$mouvP->origin = &$this;
 						// We decrement stock of product (and sub-products)
-						$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("OrderValidatedInDolibarr", $num));
+						$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("OrderValidatedInBerp3", $num));
 						if ($result < 0) {
 							$error++;
 							$this->error = $mouvP->error;
@@ -644,7 +644,7 @@ class Commande extends CommonOrder
 						$mouvP = new MouvementStock($this->db);
 						$mouvP->origin = &$this;
 						// We increment stock of product (and sub-products)
-						$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("OrderBackToDraftInDolibarr", $this->ref));
+						$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("OrderBackToDraftInBerp3", $this->ref));
 						if ($result < 0) {
 							$error++; $this->error = $mouvP->error; break;
 						}
@@ -822,7 +822,7 @@ class Commande extends CommonOrder
 					if ($this->lines[$i]->fk_product > 0) {
 						$mouvP = new MouvementStock($this->db);
 						// We increment stock of product (and sub-products)
-						$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("OrderCanceledInDolibarr", $this->ref)); // price is 0, we don't want WAP to be changed
+						$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, 0, $langs->trans("OrderCanceledInBerp3", $this->ref)); // price is 0, we don't want WAP to be changed
 						if ($result < 0) {
 							$error++;
 							$this->error = $mouvP->error;
@@ -1416,8 +1416,8 @@ class Commande extends CommonOrder
 	 *	@param      int				$fk_remise_except	Id remise
 	 *	@param      string			$price_base_type	HT or TTC
 	 *	@param      float			$pu_ttc    		    Prix unitaire TTC
-	 *	@param      int				$date_start       	Start date of the line - Added by Matelli (See http://matelli.fr/showcases/patchs-dolibarr/add-dates-in-order-lines.html)
-	 *	@param      int				$date_end         	End date of the line - Added by Matelli (See http://matelli.fr/showcases/patchs-dolibarr/add-dates-in-order-lines.html)
+	 *	@param      int				$date_start       	Start date of the line - Added by Matelli (See http://matelli.fr/showcases/patchs-berp3/add-dates-in-order-lines.html)
+	 *	@param      int				$date_end         	End date of the line - Added by Matelli (See http://matelli.fr/showcases/patchs-berp3/add-dates-in-order-lines.html)
 	 *	@param      int				$type				Type of line (0=product, 1=service). Not used if fk_product is defined, the type of product is used.
 	 *	@param      int				$rang             	Position of line
 	 *	@param		int				$special_code		Special code (also used by externals modules!)
@@ -3985,12 +3985,12 @@ class Commande extends CommonOrder
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 		'commande'
@@ -4110,7 +4110,7 @@ class OrderLine extends CommonOrderLine
 	/**
 	 *      Constructor
 	 *
-	 *      @param     DoliDB	$db      handler d'acces base de donnee
+	 *      @param     Berp3DB	$db      handler d'acces base de donnee
 	 */
 	public function __construct($db)
 	{

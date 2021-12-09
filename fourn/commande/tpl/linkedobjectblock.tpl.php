@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010-2011 Regis Houssin <regis.houssin@inodbox.com>
- * Copyright (C) 2014      Marcos García <marcosgdf@gmail.com>
+/* Copyright (C) 2010-2011  
+ * Copyright (C) 2014       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

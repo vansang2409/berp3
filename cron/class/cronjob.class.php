@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2019 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2013      Florian Henry        <florian.henry@open-concept.pro>
+/* Copyright (C) 2007-2019 
+ * Copyright (C) 2013      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -175,7 +175,7 @@ class Cronjob extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDb		$db      Database handler
+	 *  @param	Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -954,7 +954,7 @@ class Cronjob extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $db, $conf, $langs;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!empty($conf->dol_no_mouse_hover)) {
@@ -1279,13 +1279,13 @@ class Cronjob extends CommonObject
 
 		// Run a command line
 		if ($this->jobtype == 'command') {
-			global $dolibarr_cron_allow_cli;
+			global $berp3_cron_allow_cli;
 
-			if (empty($dolibarr_cron_allow_cli)) {
+			if (empty($berp3_cron_allow_cli)) {
 				$langs->load("errors");
 				$this->error      = $langs->trans("FailedToExecutCommandJob");
 				$this->lastoutput = '';
-				$this->lastresult = $langs->trans("ErrorParameterMustBeEnabledToAllwoThisFeature", 'dolibarr_cron_allow_cli');
+				$this->lastresult = $langs->trans("ErrorParameterMustBeEnabledToAllwoThisFeature", 'berp3_cron_allow_cli');
 			} else {
 				$outputdir = $conf->cron->dir_temp;
 				if (empty($outputdir)) {

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2005-2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ require_once DOL_DOCUMENT_ROOT.'/projet/class/project.class.php';
 class CommActionRapport
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -67,7 +67,7 @@ class CommActionRapport
 	/**
 	 * Constructor
 	 *
-	 * @param 	DoliDB	$db		Database handler
+	 * @param 	Berp3DB	$db		Database handler
 	 * @param	int		$month	Month
 	 * @param	int		$year	Year
 	 */
@@ -167,7 +167,7 @@ class CommActionRapport
 
 			$pdf->SetTitle($outputlangs->convToOutputCharset($this->title));
 			$pdf->SetSubject($outputlangs->convToOutputCharset($this->subject));
-			$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+			$pdf->SetCreator("Berp3 ".DOL_VERSION);
 			$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 			$pdf->SetKeywords($outputlangs->convToOutputCharset($this->title." ".$this->subject));
 

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2016-2020  Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2016-2019  Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2019-2021  Frédéric France			<frederic.france@netlogic.fr>
+/* 
+ * 
+ * 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

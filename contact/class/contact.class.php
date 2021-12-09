@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2002-2004 Rodolphe Quiedeville        <rodolphe@quiedeville.org>
- * Copyright (C) 2004      Benoit Mortier              <benoit.mortier@opensides.be>
- * Copyright (C) 2004-2013 Laurent Destailleur         <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin               <regis.houssin@inodbox.com>
+/* Copyright (C) 2002-2004         
+ * Copyright (C) 2004                    
+ * Copyright (C) 2004-2013          
+ * Copyright (C) 2005-2012                
  * Copyright (C) 2007      Franky Van Liedekerke       <franky.van.liedekerker@telenet.be>
- * Copyright (C) 2008      Raphael Bertrand (Resultic) <raphael.bertrand@resultic.fr>
- * Copyright (C) 2013      Florian Henry		  	   <florian.henry@open-concept.pro>
- * Copyright (C) 2013      Alexandre Spangaro 	       <aspangaro@open-dsi.fr>
- * Copyright (C) 2013      Juanjo Menent	 	       <jmenent@2byte.es>
- * Copyright (C) 2015      Marcos García               <marcosgdf@gmail.com>
- * Copyright (C) 2019      Nicolas ZABOURI 	           <info@inovea-conseil.com>
- * Copyright (C) 2020      Open-Dsi  	               <support@open-dsi.fr>
+ * Copyright (C) 2008       
+ * Copyright (C) 2013      		  	   
+ * Copyright (C) 2013       	       
+ * Copyright (C) 2013      	 	       
+ * Copyright (C) 2015                     
+ * Copyright (C) 2019       	           
+ * Copyright (C) 2020        	               
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -318,7 +318,7 @@ class Contact extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -940,7 +940,7 @@ class Contact extends CommonObject
 	 *
 	 *  @param      int		$id         	Id of contact
 	 *  @param      User	$user       	Load also alerts of this user (subscribing to alerts) that want alerts about this contact
-	 *  @param      string  $ref_ext    	External reference, not given by Dolibarr
+	 *  @param      string  $ref_ext    	External reference, not given by Berp3
 	 *  @param		string	$email			Email
 	 *  @param		int		$loadalsoroles	Load also roles. Try to always 0 here and load roles with a separate call of fetchRoles().
 	 *  @return     int     		    	>0 if OK, <0 if KO or if two records found for same ref or idprof, 0 if not found.
@@ -1067,7 +1067,7 @@ class Contact extends CommonObject
 				// Define gender according to civility
 				$this->setGenderFromCivility();
 
-				// Search Dolibarr user linked to this contact
+				// Search Berp3 user linked to this contact
 				$sql = "SELECT u.rowid ";
 				$sql .= " FROM ".MAIN_DB_PREFIX."user as u";
 				$sql .= " WHERE u.fk_socpeople = ".((int) $this->id);
@@ -1608,7 +1608,7 @@ class Contact extends CommonObject
 		$this->id = 0;
 		$this->entity = 1;
 		$this->specimen = 1;
-		$this->lastname = 'DOLIBARR';
+		$this->lastname = 'BERP3';
 		$this->firstname = 'SPECIMEN';
 		$this->address = '21 jump street';
 		$this->zip = '99999';
@@ -1698,12 +1698,12 @@ class Contact extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'socpeople', 'societe_contacts'

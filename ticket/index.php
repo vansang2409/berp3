@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) - 2013-2016    Jean-François FERRY     <hello@librethic.io>
- * Copyright (C) - 2019         Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2021		Frédéric France				<frederic.france@netlogic.fr>
+/* Copyright (C) - 2013-2016    
+ * Copyright (C) - 2019                  
+ * Copyright (C) 2021						
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

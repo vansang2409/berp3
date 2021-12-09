@@ -1,15 +1,15 @@
 <?php
-/* Copyright (c) 2002-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2006      Andre Cianfarani     <acianfa@free.fr>
+/* Copyright (c) 2002-2007 
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2004             
+ * Copyright (C) 2004        
+ * Copyright (C) 2004                
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2006           
  * Copyright (C) 2006      Marc Barilley/Ocebo  <marc@ocebo.com>
  * Copyright (C) 2007      Franky Van Liedekerke <franky.van.liedekerker@telenet.be>
- * Copyright (C) 2007      Patrick Raguin 		<patrick.raguin@gmail.com>
- * Copyright (C) 2019       Thibault FOUCART        <support@ptibogxiv.net>
+ * Copyright (C) 2007       		
+ * Copyright (C) 2019              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ class FormOther
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB		$db      Database handler
+	 *	@param	Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2012		Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2015		Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2016       Marcos García       <marcosgdf@gmail.com>
+/* Copyright (C) 2012			
+ * Copyright (C) 2015		
+ * Copyright (C) 2016              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ include_once DOL_DOCUMENT_ROOT.'/compta/bank/class/account.class.php';
 class FormBank
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -45,7 +45,7 @@ class FormBank
 	/**
 	 * Constructor
 	 *
-	 * @param		DoliDB		$db      Database handler
+	 * @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

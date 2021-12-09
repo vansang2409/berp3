@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2006-2015  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2007       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2009-2010  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2015-2016	Marcos García			<marcosgdf@gmail.com>
+/* Copyright (C) 2006-2015  
+ * Copyright (C) 2007       
+ * Copyright (C) 2009-2010  
+ * Copyright (C) 2015             
+ * Copyright (C) 2015-2016				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

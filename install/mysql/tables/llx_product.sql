@@ -1,10 +1,10 @@
 -- ============================================================================
--- Copyright (C) 2002-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2008-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2005-2010 Regis Houssin        <regis.houssin@inodbox.com>
--- Copyright (C) 2010      Juanjo Menent        <jmenent@2byte.es>
--- Copyright (C) 2012-2013 Cédric Salvador      <csalvador@gpcsolutions.fr>
--- Copyright (C) 2014      Marcos García        <marcosgdf@gmail.com>
+-- Copyright (C) 2002-2006 
+-- Copyright (C) 2008-2017 
+-- Copyright (C) 2005-2010 
+-- Copyright (C) 2010      
+-- Copyright (C) 2012-2013       
+-- Copyright (C) 2014      
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ create table llx_product
   ref                           varchar(128)  NOT NULL,
   entity                        integer   DEFAULT 1 NOT NULL,       -- Multi company id
 
-  ref_ext                       varchar(128),                       -- reference into an external system (not used by dolibarr)
+  ref_ext                       varchar(128),                       -- reference into an external system (not used by berp3)
 
   datec                         datetime,
   tms                           timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

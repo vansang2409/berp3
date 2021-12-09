@@ -1,9 +1,9 @@
 <?php
 /* Copyright (C) 2011	   Dimitri Mouillard	<dmouillard@teclib.com>
- * Copyright (C) 2013-2020 Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2012-2016 Regis Houssin	<regis.houssin@inodbox.com>
- * Copyright (C) 2018      Charlene Benke	<charlie@patas-monkey.com>
- * Copyright (C) 2019-2021 Frédéric France		<frederic.france@netlogic.fr>
+ *  	
+ * Copyright (C) 2012-2016 
+ * Copyright (C) 2018      	
+ * Copyright (C) 2019-2021 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

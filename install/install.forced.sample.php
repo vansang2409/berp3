@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2016       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2016             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ $force_install_nophpinfo = true;
 $force_install_noedit = 2;
 
 /** @var string Information message */
-$force_install_message = 'Welcome to your Dolibarr install';
+$force_install_message = 'Welcome to your Berp3 install';
 
 /** @var string Data root absolute path (documents folder) */
 $force_install_main_data_root = null;
@@ -31,7 +31,7 @@ $force_install_main_data_root = null;
 $force_install_mainforcehttps = true;
 
 /** @var string Database name */
-$force_install_database = 'dolibarr';
+$force_install_database = 'berp3';
 
 /** @var string Database driver (mysql|mysqli|pgsql|mssql|sqlite|sqlite3) */
 $force_install_type = 'mysqli';
@@ -63,8 +63,8 @@ $force_install_databaserootlogin = 'root';
 /** @var string Database root password */
 $force_install_databaserootpass = '';
 
-/** @var string Dolibarr super-administrator username */
-$force_install_dolibarrlogin = 'admin';
+/** @var string Berp3 super-administrator username */
+$force_install_berp3login = 'admin';
 
 /** @var bool Force install locking */
 $force_install_lockinstall = true;

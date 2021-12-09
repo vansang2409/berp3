@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2014	Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2012	Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2014		Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2014-2019  Alexandre Spangaro	 <aspangaro@open-dsi.fr>
+/* Copyright (C) 2003		
+ * Copyright (C) 2004-2014	
+ * Copyright (C) 2004		  
+ * Copyright (C) 2004		       
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2014		
+ * Copyright (C) 2014-2019  	 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,19 +29,19 @@
  *  \ingroup    salaries
  *  \brief      Description and activation file for the module salaries
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to manage salaries module
  */
-class modSalaries extends DolibarrModules
+class modSalaries extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -58,8 +58,8 @@ class modSalaries extends DolibarrModules
 		// Module description used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "Payment of salaries";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'payment';
@@ -167,7 +167,7 @@ class modSalaries extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories
 	 *
 	 *  @param      string	$options    Options when enabling module ('', 'noboxes')

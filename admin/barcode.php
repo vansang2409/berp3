@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2004	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2015	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2013	Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2003-2004	
+ * Copyright (C) 2004-2015	
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2011-2013	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,12 +46,12 @@ include DOL_DOCUMENT_ROOT.'/core/actions_setmoduleoptions.inc.php';
 
 if ($action == 'setbarcodeproducton') {
 	$barcodenumberingmodule = GETPOST('value', 'alpha');
-	$res = dolibarr_set_const($db, "BARCODE_PRODUCT_ADDON_NUM", $barcodenumberingmodule, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "BARCODE_PRODUCT_ADDON_NUM", $barcodenumberingmodule, 'chaine', 0, '', $conf->entity);
 	if ($barcodenumberingmodule == 'mod_barcode_product_standard' && empty($conf->global->BARCODE_STANDARD_PRODUCT_MASK)) {
-		$res = dolibarr_set_const($db, "BARCODE_STANDARD_PRODUCT_MASK", '020{000000000}', 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "BARCODE_STANDARD_PRODUCT_MASK", '020{000000000}', 'chaine', 0, '', $conf->entity);
 	}
 } elseif ($action == 'setbarcodeproductoff') {
-	$res = dolibarr_del_const($db, "BARCODE_PRODUCT_ADDON_NUM", $conf->entity);
+	$res = berp3_del_const($db, "BARCODE_PRODUCT_ADDON_NUM", $conf->entity);
 }
 
 if ($action == 'setcoder') {
@@ -68,11 +68,11 @@ if ($action == 'setcoder') {
 	}
 } elseif ($action == 'update') {
 	$location = GETPOST('GENBARCODE_LOCATION', 'alpha');
-	$res = dolibarr_set_const($db, "GENBARCODE_LOCATION", $location, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "GENBARCODE_LOCATION", $location, 'chaine', 0, '', $conf->entity);
 	$coder_id = GETPOST('PRODUIT_DEFAULT_BARCODE_TYPE', 'alpha');
-	$res = dolibarr_set_const($db, "PRODUIT_DEFAULT_BARCODE_TYPE", $coder_id, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PRODUIT_DEFAULT_BARCODE_TYPE", $coder_id, 'chaine', 0, '', $conf->entity);
 	$coder_id = GETPOST('GENBARCODE_BARCODETYPE_THIRDPARTY', 'alpha');
-	$res = dolibarr_set_const($db, "GENBARCODE_BARCODETYPE_THIRDPARTY", $coder_id, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "GENBARCODE_BARCODETYPE_THIRDPARTY", $coder_id, 'chaine', 0, '', $conf->entity);
 
 	if ($res > 0) {
 		setEventMessages($langs->trans("SetupSaved"), null, 'mesgs');

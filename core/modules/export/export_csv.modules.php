@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2006-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2006-2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,10 +44,10 @@ class ExportCsv extends ModeleExports
 	public $extension;
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	public $label_lib;
 
@@ -61,7 +61,7 @@ class ExportCsv extends ModeleExports
 	/**
 	 *	Constructor
 	 *
-	 *	@param	    DoliDB	$db      Database handler
+	 *	@param	    Berp3DB	$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -83,7 +83,7 @@ class ExportCsv extends ModeleExports
 		$this->version = '1.32'; // Driver version
 
 		// If driver use an external library, put its name here
-		$this->label_lib = 'Dolibarr';
+		$this->label_lib = 'Berp3';
 		$this->version_lib = DOL_VERSION;
 	}
 
@@ -332,7 +332,7 @@ class ExportCsv extends ModeleExports
 		global $conf;
 		$addquote = 0;
 
-		// Rule Dolibarr: No HTML
+		// Rule Berp3: No HTML
 		//print $charset.' '.$newvalue."\n";
 		//$newvalue=dol_string_nohtmltag($newvalue,0,$charset);
 		$newvalue = dol_htmlcleanlastbr($newvalue);

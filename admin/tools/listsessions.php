@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2012	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2004-2012		
+ * Copyright (C) 2005-2012			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -75,14 +75,14 @@ if ($action == 'confirm_purge' && $confirm == 'yes' && $user->admin) {
 
 // Lock new sessions
 if ($action == 'confirm_lock' && $confirm == 'yes' && $user->admin) {
-	if (dolibarr_set_const($db, 'MAIN_ONLY_LOGIN_ALLOWED', $user->login, 'text', 1, 'Logon is restricted to a particular user', 0) < 0) {
+	if (berp3_set_const($db, 'MAIN_ONLY_LOGIN_ALLOWED', $user->login, 'text', 1, 'Logon is restricted to a particular user', 0) < 0) {
 		dol_print_error($db);
 	}
 }
 
 // Unlock new sessions
 if ($action == 'confirm_unlock' && $user->admin) {
-	if (dolibarr_del_const($db, 'MAIN_ONLY_LOGIN_ALLOWED', -1) < 0) {
+	if (berp3_del_const($db, 'MAIN_ONLY_LOGIN_ALLOWED', -1) < 0) {
 		dol_print_error($db);
 	}
 }

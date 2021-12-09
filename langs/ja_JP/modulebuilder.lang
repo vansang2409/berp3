@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=モジュールを削除できる。警告：モ�
 EnterNameOfObjectToDeleteDesc=オブジェクトを削除できる。警告：オブジェクトに関連するすべてのコーディングファイル(手動で生成または作成されたもの)は削除される！
 DangerZone=危険区域
 BuildPackage=パッケージをビルドする
-BuildPackageDesc=アプリケーションのzipパッケージを生成して、Dolibarrで配布する準備を整えることができる。また、<a href="https://www.dolistore.com"> DoliStore.com</a>のようなマーケットプレイスで配布または販売することもできる。
+BuildPackageDesc=アプリケーションのzipパッケージを生成して、Berp3で配布する準備を整えることができる。また、<a href="https://www.berp3store.com"> Berp3Store.com</a>のようなマーケットプレイスで配布または販売することもできる。
 BuildDocumentation=ドキュメントを作成する
 ModuleIsNotActive=このモジュールはまだアクティブ化されていない。 %sにアクセスしてライブにするか、ここをクリックすること
 ModuleIsLive=このモジュールはアクティブ化されている。変更を加えると、現在のライブ機能が破損する可能性がある。
@@ -101,7 +101,7 @@ HooksDefDesc=定義する：管理したいフックのコンテキストを <b>
 TriggerDefDesc=実行されるビジネスイベントごとに実行するコードをトリガーファイルで定義する。
 SeeIDsInUse=インストールで使用されているIDを確認する
 SeeReservedIDsRangeHere=予約済IDの範囲を参照すること
-ToolkitForDevelopers=Dolibarr開発者向けのツールキット
+ToolkitForDevelopers=Berp3開発者向けのツールキット
 TryToUseTheModuleBuilder=SQLとPHPの知識がある場合は、ネイティブモジュールビルダーウィザードを使用できる。 <br>モジュール<strong>%s </strong>を有効にし、右上のメニューで<span class="fa fa-bug"></span>をクリックしてウィザードを使用する。 <br>警告：これは高度な開発者機能。本番サイトで</b>実験ではなく<b>を実行すること。
 SeeTopRightMenu=右上のメニューの<span class="fa fa-bug"></span>を参照すること
 AddLanguageFile=言語ファイルを追加する

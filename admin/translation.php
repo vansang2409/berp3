@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2007-2020	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2009-2017	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2017       Frédéric France     <frederic.france@free.fr>
+/* Copyright (C) 2007-2020		
+ * Copyright (C) 2009-2017			
+ * Copyright (C) 2017            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -95,9 +95,9 @@ if (GETPOST('button_removefilter_x', 'alpha') || GETPOST('button_removefilter.x'
 
 if ($action == 'setMAIN_ENABLE_OVERWRITE_TRANSLATION') {
 	if (GETPOST('value')) {
-		dolibarr_set_const($db, 'MAIN_ENABLE_OVERWRITE_TRANSLATION', 1, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'MAIN_ENABLE_OVERWRITE_TRANSLATION', 1, 'chaine', 0, '', $conf->entity);
 	} else {
-		dolibarr_set_const($db, 'MAIN_ENABLE_OVERWRITE_TRANSLATION', 0, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'MAIN_ENABLE_OVERWRITE_TRANSLATION', 0, 'chaine', 0, '', $conf->entity);
 	}
 }
 
@@ -558,8 +558,8 @@ if ($mode == 'searchkey') {
 
 			if (getDolGlobalInt('MAIN_FEATURES_LEVEL')) {
 				$transifexlangfile = '$'; // $ means 'All'
-				//$transifexurl = 'https://www.transifex.com/dolibarr-association/dolibarr/translate/#'.$langcode.'/'.$transifexlangfile.'?key='.$key;
-				$transifexurl = 'https://www.transifex.com/dolibarr-association/dolibarr/translate/#'.$langcode.'/'.$transifexlangfile.'?q=key%3A'.$key;
+				//$transifexurl = 'https://www.transifex.com/berp3-association/berp3/translate/#'.$langcode.'/'.$transifexlangfile.'?key='.$key;
+				$transifexurl = 'https://www.transifex.com/berp3-association/berp3/translate/#'.$langcode.'/'.$transifexlangfile.'?q=key%3A'.$key;
 
 				print ' &nbsp; <a href="'.$transifexurl.'" target="transifex">'.img_picto($langs->trans('FixOnTransifex'), 'globe').'</a>';
 			}

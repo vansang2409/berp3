@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2009-2015 Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2021 Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2009-2015        
+ * Copyright (C) 2011-2021 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-// Need global variable $urllogo, $title and $titletruedolibarrversion to be defined by caller (like dol_loginfunction in security2.lib.php)
+// Need global variable $urllogo, $title and $titletrueberp3version to be defined by caller (like dol_loginfunction in security2.lib.php)
 // Caller can also set 	$morelogincontent = array(['options']=>array('js'=>..., 'table'=>...);
 
 
@@ -75,7 +75,7 @@ if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 } else {
 	$titleofloginpage = $langs->trans('Login');
 }
-$titleofloginpage .= ' @ '.$titletruedolibarrversion; // $titletruedolibarrversion is defined by dol_loginfunction in security2.lib.php. We must keep the @, some tools use it to know it is login page and find true dolibarr version.
+$titleofloginpage .= ' @ '.$titletrueberp3version; // $titletrueberp3version is defined by dol_loginfunction in security2.lib.php. We must keep the @, some tools use it to know it is login page and find true berp3 version.
 
 $disablenofollow = 1;
 if (!preg_match('/'.constant('DOL_APPLICATION_TITLE').'/', $title)) {

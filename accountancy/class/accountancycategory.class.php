@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2016		Jamal Elbaz			<jamelbaz@gmail.pro>
- * Copyright (C) 2016-2017	Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2019  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2016		
+ * Copyright (C) 2016-2017	
+ * Copyright (C) 2018-2019  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/accounting.lib.php';
 class AccountancyCategory // extends CommonObject
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -132,7 +132,7 @@ class AccountancyCategory // extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb		$db      Database handler
+	 *  @param      Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

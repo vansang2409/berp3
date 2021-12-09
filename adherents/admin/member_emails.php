@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2012 Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2012      J. Fernando Lagrange <fernando@demo-tic.org>
- * Copyright (C) 2015      Jean-François Ferry	<jfefe@aternatik.fr>
+/* Copyright (C) 2003      
+ * Copyright (C) 2003         
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2011-2012 
+ * Copyright (C) 2012       
+ * Copyright (C) 2015      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,10 +51,10 @@ $error = 0;
 $constantes = array(
 	'MEMBER_REMINDER_EMAIL'=>array('type'=>'yesno', 'label'=>$langs->trans('MEMBER_REMINDER_EMAIL', $langs->transnoentities("Module2300Name"))),
 	'ADHERENT_EMAIL_TEMPLATE_REMIND_EXPIRATION' 	=>'emailtemplate:member',
-	'ADHERENT_EMAIL_TEMPLATE_AUTOREGISTER'			=>'emailtemplate:member',	// until Dolibarr 7 it was ADHERENT_AUTOREGISTER_MAIL
-	'ADHERENT_EMAIL_TEMPLATE_MEMBER_VALIDATION'		=>'emailtemplate:member',	// until Dolibarr 7 it was ADHERENT_MAIL_VALID
-	'ADHERENT_EMAIL_TEMPLATE_SUBSCRIPTION'			=>'emailtemplate:member',	// until Dolibarr 7 it was ADHERENT_MAIL_COTIS
-	'ADHERENT_EMAIL_TEMPLATE_CANCELATION'			=>'emailtemplate:member',	// until Dolibarr 7 it was ADHERENT_MAIL_RESIL
+	'ADHERENT_EMAIL_TEMPLATE_AUTOREGISTER'			=>'emailtemplate:member',	// until Berp3 7 it was ADHERENT_AUTOREGISTER_MAIL
+	'ADHERENT_EMAIL_TEMPLATE_MEMBER_VALIDATION'		=>'emailtemplate:member',	// until Berp3 7 it was ADHERENT_MAIL_VALID
+	'ADHERENT_EMAIL_TEMPLATE_SUBSCRIPTION'			=>'emailtemplate:member',	// until Berp3 7 it was ADHERENT_MAIL_COTIS
+	'ADHERENT_EMAIL_TEMPLATE_CANCELATION'			=>'emailtemplate:member',	// until Berp3 7 it was ADHERENT_MAIL_RESIL
 	'ADHERENT_EMAIL_TEMPLATE_EXCLUSION'				=>'emailtemplate:member',
 	'ADHERENT_MAIL_FROM'							=>'string',
 	'ADHERENT_AUTOREGISTER_NOTIF_MAIL_SUBJECT'		=>'string',
@@ -80,7 +80,7 @@ if ($action == 'updateall') {
 		$typetouse = empty($oldtypetonewone[$consttype]) ? $consttype : $oldtypetonewone[$consttype];
 		$constvalue = preg_replace('/:member$/', '', $constvalue);
 
-		$res = dolibarr_set_const($db, $constname, $constvalue, $consttype, 0, $constnote, $conf->entity);
+		$res = berp3_set_const($db, $constname, $constvalue, $consttype, 0, $constnote, $conf->entity);
 		if ($res <= 0) {
 			$error++;
 			$action = 'list';
@@ -108,7 +108,7 @@ if ($action == 'update' || $action == 'add') {
 	$typetouse = empty($oldtypetonewone[$consttype]) ? $consttype : $oldtypetonewone[$consttype];
 	$constvalue = preg_replace('/:member$/', '', $constvalue);
 
-	$res = dolibarr_set_const($db, $constname, $constvalue, $typetouse, 0, $constnote, $conf->entity);
+	$res = berp3_set_const($db, $constname, $constvalue, $typetouse, 0, $constnote, $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;

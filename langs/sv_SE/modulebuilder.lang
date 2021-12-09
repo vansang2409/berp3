@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=Du kan radera din modul. VARNING: Alla kodningsfil
 EnterNameOfObjectToDeleteDesc=Du kan radera ett objekt. VARNING: Alla kodningsfiler (genererade eller skapade manuellt) relaterade till objekt raderas!
 DangerZone=Farozon
 BuildPackage=Bygg paketet
-BuildPackageDesc=Du kan skapa ett zip-paket av din applikation så att du är redo att distribuera den på valfri Dolibarr. Du kan också distribuera den eller sälja den på marknadsplatsen som <a href="https://www.dolistore.com"> DoliStore.com </a>.
+BuildPackageDesc=Du kan skapa ett zip-paket av din applikation så att du är redo att distribuera den på valfri Berp3. Du kan också distribuera den eller sälja den på marknadsplatsen som <a href="https://www.berp3store.com"> Berp3Store.com </a>.
 BuildDocumentation=Bygg dokumentation
 ModuleIsNotActive=Denna modul är inte aktiverad än. Gå till %s för att göra det live eller klicka här
 ModuleIsLive=Denna modul har aktiverats. Varje ändring kan bryta en aktuell live-funktion.
@@ -101,7 +101,7 @@ HooksDefDesc=Definiera i egenskapen <b> modul_parts ['krokar'] </b> i modulbeskr
 TriggerDefDesc=Definiera i utlösningsfilen koden du vill utföra för varje företagshändelse som körts.
 SeeIDsInUse=Se ID-er som används i din installation
 SeeReservedIDsRangeHere=Se utbud av reserverade ID-skivor
-ToolkitForDevelopers=Verktygssats för Dolibarr-utvecklare
+ToolkitForDevelopers=Verktygssats för Berp3-utvecklare
 TryToUseTheModuleBuilder=Om du har kunskap om SQL och PHP kan du använda guiden för inbyggd modulbyggare. <br> Aktivera modulen <strong> %s </strong> och använd guiden genom att klicka på <span class="fa fa-bug"> </span> högst upp till höger. <br> Varning: Detta är en avancerad utvecklingsfunktion, gör <b> inte </b> experiment på din produktionsplats!
 SeeTopRightMenu=Se <span class="fa fa-bug"> </span> längst upp till höger
 AddLanguageFile=Lägg till språkfil

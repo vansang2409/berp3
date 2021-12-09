@@ -120,8 +120,8 @@ ConfirmCloneOrder=Biztosan klónozni szeretné ezt a <b>%s</b> megrendelést?
 DispatchSupplierOrder=Beszerzési megrendelés fogadása %s
 FirstApprovalAlreadyDone=Első jóváhagyás már elvégezve
 SecondApprovalAlreadyDone=Másod jóváhagyás már elvégezve
-SupplierOrderReceivedInDolibarr=Beszerzési megrendelés %s kapott %s
-SupplierOrderSubmitedInDolibarr=%s beszerzési megrendelés benyújtva
+SupplierOrderReceivedInBerp3=Beszerzési megrendelés %s kapott %s
+SupplierOrderSubmitedInBerp3=%s beszerzési megrendelés benyújtva
 SupplierOrderClassifiedBilled=Beszerzési megrendelés %s számlázva
 OtherOrders=Egyéb megrendelések
 ##### Types de contacts #####

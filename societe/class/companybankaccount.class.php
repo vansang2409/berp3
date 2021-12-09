@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2004		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2010-2013	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2012		Regis Houssin			<regis.houssin@inodbox.com>
+/* Copyright (C) 2004		
+ * Copyright (C) 2010-2013	
+ * Copyright (C) 2012		
  * Copyright (C) 2013   	Peter Fontaine          <contact@peterfontaine.fr>
- * Copyright (C) 2016       Marcos García           <marcosgdf@gmail.com>
+ * Copyright (C) 2016       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,9 +58,9 @@ class CompanyBankAccount extends Account
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB		$db      Database handler
+	 *  @param      Berp3DB		$db      Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 

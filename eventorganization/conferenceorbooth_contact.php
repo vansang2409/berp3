@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2021	Florian HENRY	<florian.henry@scopen.fr>
+/* Copyright (C) 2007-2017 
+ * Copyright (C) 2021	Florian HENRY	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  *  \brief      Tab for contacts linked to ConferenceOrBooth
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 $res = 0;
 // Try main.inc.php into web root known defined into CONTEXT_DOCUMENT_ROOT (not always defined)
 if (!$res && !empty($_SERVER["CONTEXT_DOCUMENT_ROOT"])) {
@@ -309,7 +309,7 @@ if (!empty($withproject)) {
 
 	print '<tr><td valign="middle">'.$langs->trans("EventOrganizationICSLink").'</td><td>';
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT;
 
 	// Show message

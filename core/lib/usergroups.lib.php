@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2006-2012	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2010-2017	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2015	    Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2018       Ferran Marcet       <fmarcet@2byte.es>
+/* Copyright (C) 2006-2012		
+ * Copyright (C) 2010-2017			
+ * Copyright (C) 2015	    
+ * Copyright (C) 2018              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -363,7 +363,7 @@ function showSkins($fuser, $edit = 0, $foruserprofile = false)
 		print $form->textwithpicto($langs->trans("DefaultSkin"), $langs->trans("ThemeDir").' : '.$dirthemestring);
 		print '</th>';
 		print '<th class="right">';
-		$url = 'https://www.dolistore.com/9-skins';
+		$url = 'https://www.berp3store.com/9-skins';
 		print '</th></tr>';
 	}
 
@@ -467,7 +467,7 @@ function showSkins($fuser, $edit = 0, $foruserprofile = false)
 		 print '<td>'.$langs->trans("TopMenuDisableImages").'</td>';
 		 print '<td>'.($conf->global->THEME_TOPMENU_DISABLE_IMAGE?$conf->global->THEME_TOPMENU_DISABLE_IMAGE:$langs->trans("Default")).'</td>';
 		 print '<td class="left" class="nowrap" width="20%"><input name="check_THEME_TOPMENU_DISABLE_IMAGE" id="check_THEME_TOPMENU_DISABLE_IMAGE" type="checkbox" '.(! empty($object->conf->THEME_ELDY_TEXTLINK)?" checked":"");
-		 print (empty($dolibarr_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
+		 print (empty($berp3_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
 		 print '> '.$langs->trans("UsePersonalValue").'</td>';
 		 print '<td>';
 		 if ($edit)
@@ -506,7 +506,7 @@ function showSkins($fuser, $edit = 0, $foruserprofile = false)
 		print '<td>'.$langs->trans("TopMenuBackgroundColor").'</td>';
 		print '<td>'.($conf->global->THEME_ELDY_TOPMENU_BACK1?$conf->global->THEME_ELDY_TOPMENU_BACK1:$langs->trans("Default")).'</td>';
 		print '<td class="nowrap left" width="20%"><input name="check_THEME_ELDY_TOPMENU_BACK1" id="check_THEME_ELDY_TOPMENU_BACK1" type="checkbox" '.(! empty($object->conf->THEME_ELDY_TOPMENU_BACK1)?" checked":"");
-		print (empty($dolibarr_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
+		print (empty($berp3_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
 		print '> '.$langs->trans("UsePersonalValue").'</td>';
 		print '<td>';
 		if ($edit)
@@ -549,7 +549,7 @@ function showSkins($fuser, $edit = 0, $foruserprofile = false)
 		print '<td>'.$langs->trans("TopMenuBackgroundColor").'</td>';
 		print '<td>'.($conf->global->THEME_ELDY_TOPMENU_BACK1?$conf->global->THEME_ELDY_TOPMENU_BACK1:$langs->trans("Default")).'</td>';
 		print '<td class="nowrap left" width="20%"><input name="check_THEME_ELDY_TOPMENU_BACK1" id="check_THEME_ELDY_TOPMENU_BACK1" type="checkbox" '.(! empty($object->conf->THEME_ELDY_TOPMENU_BACK1)?" checked":"");
-		print (empty($dolibarr_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
+		print (empty($berp3_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
 		print '> '.$langs->trans("UsePersonalValue").'</td>';
 		print '<td>';
 		if ($edit)
@@ -593,7 +593,7 @@ function showSkins($fuser, $edit = 0, $foruserprofile = false)
 		 print '<td>'.$langs->trans("TopMenuBackgroundColor").'</td>';
 		 print '<td>'.($conf->global->THEME_ELDY_TOPMENU_BACK1?$conf->global->THEME_ELDY_VERMENU_BACK1:$langs->trans("Default")).'</td>';
 		 print '<td class="nowrap left" width="20%"><input name="check_THEME_ELDY_VERMENU_BACK1" id="check_THEME_ELDY_VERMENU_BACK1" type="checkbox" '.(! empty($object->conf->THEME_ELDY_TOPMENU_BACK1)?" checked":"");
-		 print (empty($dolibarr_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
+		 print (empty($berp3_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
 		 print '> '.$langs->trans("UsePersonalValue").'</td>';
 		 print '<td>';
 		 if ($edit)
@@ -766,7 +766,7 @@ function showSkins($fuser, $edit = 0, $foruserprofile = false)
 		 print '<td>'.$langs->trans("TopMenuBackgroundColor").'</td>';
 		 print '<td>'.($conf->global->THEME_ELDY_TOPMENU_BACK1?$conf->global->THEME_ELDY_TEXTLINK:$langs->trans("Default")).'</td>';
 		 print '<td class="nowrap left" width="20%"><input name="check_THEME_ELDY_TEXTLINK" id="check_THEME_ELDY_TEXTLINK" type="checkbox" '.(! empty($object->conf->THEME_ELDY_TEXTLINK)?" checked":"");
-		 print (empty($dolibarr_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
+		 print (empty($berp3_main_demo) && $edit)?'':' disabled="disabled"';	// Disabled for demo
 		 print '> '.$langs->trans("UsePersonalValue").'</td>';
 		 print '<td>';
 		 if ($edit)

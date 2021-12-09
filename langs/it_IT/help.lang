@@ -5,8 +5,8 @@ RemoteControlSupport=Assistenza online
 OtherSupport=Altre forme di assistenza
 ToSeeListOfAvailableRessources=Per contattare/vedere le risorse disponibili:
 HelpCenter=Centro assistenza
-DolibarrHelpCenter=BERP3 Help and Support Center
-ToGoBackToDolibarr=Otherwise, <a href="%s">click here to continue to use Dolibarr</a>.
+Berp3HelpCenter=BERP3 Help and Support Center
+ToGoBackToBerp3=Otherwise, <a href="%s">click here to continue to use Berp3</a>.
 TypeOfSupport=Type of support
 TypeSupportCommunauty=Comunità (gratuito)
 TypeSupportCommercial=Commerciale

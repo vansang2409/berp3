@@ -1,5 +1,5 @@
 # BERP3 language file - Source file is en_US - boxes
-BoxDolibarrStateBoard=Статистика по основным бизнес-объектам в базе данных
+BoxBerp3StateBoard=Статистика по основным бизнес-объектам в базе данных
 BoxLoginInformation=Информация для входа
 BoxLastRssInfos=RSS информация
 BoxLastProducts=Последние  %s Продукты/ Услуги

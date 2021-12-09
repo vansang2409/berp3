@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2014 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2013 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2011-2018 Philippe Grand       <philippe.grand@atoo-net.com>
- * Copyright (C) 2015	   Claudio Aschieri		<c.aschieri@19.coop>
+/* Copyright (C) 2003-2005 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2004                
+ * Copyright (C) 2005-2014 
+ * Copyright (C) 2011-2013 
+ * Copyright (C) 2011-2018        
+ * Copyright (C) 2015	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ if ($action == 'updateMask') {
 	$maskconstdelivery = GETPOST('maskconstdelivery', 'alpha');
 	$maskdelivery = GETPOST('maskdelivery', 'alpha');
 	if ($maskconstdelivery) {
-		$res = dolibarr_set_const($db, $maskconstdelivery, $maskdelivery, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstdelivery, $maskdelivery, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -74,7 +74,7 @@ if ($action == 'updateMask') {
 
 if ($action == 'set_DELIVERY_FREE_TEXT') {
 	$free = GETPOST('DELIVERY_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
-	$res = dolibarr_set_const($db, "DELIVERY_FREE_TEXT", $free, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "DELIVERY_FREE_TEXT", $free, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -131,13 +131,13 @@ if ($action == 'del') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->DELIVERY_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'DELIVERY_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'DELIVERY_ADDON_PDF', $conf->entity);
 		}
 	}
 }
 
 if ($action == 'setdoc') {
-	if (dolibarr_set_const($db, "DELIVERY_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "DELIVERY_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->DELIVERY_ADDON_PDF = $value;
@@ -154,7 +154,7 @@ if ($action == 'setmod') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "DELIVERY_ADDON_NUMBER", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "DELIVERY_ADDON_NUMBER", $value, 'chaine', 0, '', $conf->entity);
 }
 
 
@@ -435,7 +435,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td><td class="right">';

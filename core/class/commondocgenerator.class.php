@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003-2005	Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010	Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004		Eric Seigne             <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012	Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2016       Charlie Benke           <charlie@patas-monkey.com>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2020       Josep Lluís Amador      <joseplluis@lliuretic.cat>
+/* Copyright (C) 2003-2005	
+ * Copyright (C) 2004-2010	
+ * Copyright (C) 2004		             
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2015       
+ * Copyright (C) 2016                  
+ * Copyright (C) 2018-2020  
+ * Copyright (C) 2020             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ abstract class CommonDocGenerator
 	public $errors = array();
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	protected $db;
 
@@ -63,7 +63,7 @@ abstract class CommonDocGenerator
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -535,7 +535,7 @@ abstract class CommonDocGenerator
 			}
 
 			// Calculate total up and total discount percentage
-			// Note that this added fields does not match a field into database in Dolibarr (Dolibarr manage discount on lines not as a global property of object)
+			// Note that this added fields does not match a field into database in Berp3 (Berp3 manage discount on lines not as a global property of object)
 			$resarray['object_total_up'] = $totalUp;
 			$resarray['object_total_up_locale'] = price($resarray['object_total_up'], 0, $outputlangs);
 			if (method_exists($object, 'getTotalDiscount') && in_array(get_class($object), array('Proposal', 'Commande', 'Facture', 'SupplierProposal', 'CommandeFournisseur', 'FactureFournisseur'))) {
@@ -804,7 +804,7 @@ abstract class CommonDocGenerator
 	/**
 	 * Define array with couple substitution key => substitution value
 	 *
-	 * @param   Object		$object    		Dolibarr Object
+	 * @param   Object		$object    		Berp3 Object
 	 * @param   Translate	$outputlangs    Language object for output
 	 * @param   boolean		$recursive    	Want to fetch child array or child object
 	 * @return	array						Array of substitution key->code

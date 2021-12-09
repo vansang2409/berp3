@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2004-2009  Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2009  
  * Copyright (C) 2006-2007  Yannick Warnier     <ywarnier@beeznest.org>
- * Copyright (C) 2011	    Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2012-2017  Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2012       Cédric Salvador     <csalvador@gpcsolutions.fr>
- * Copyright (C) 2012-2014  Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2015       Marcos García       <marcosgdf@gmail.com>
- * Copyright (C) 2021       Open-Dsi            <support@open-dsi.fr>
+ * Copyright (C) 2011	           
+ * Copyright (C) 2012-2017  
+ * Copyright (C) 2012            
+ * Copyright (C) 2012-2014  
+ * Copyright (C) 2015              
+ * Copyright (C) 2021                   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ function tax_prepare_head(ChargeSociales $object)
  *  Look for collectable VAT clients in the chosen year (and month)
  *
  *  @param	string	$type          	Tax type, either 'vat', 'localtax1' or 'localtax2'
- *  @param	DoliDB	$db          	Database handle
+ *  @param	Berp3DB	$db          	Database handle
  *  @param  int		$y           	Year
  *  @param  string	$date_start  	Start date
  *  @param  string	$date_end    	End date
@@ -636,7 +636,7 @@ function tax_by_thirdparty($type, $db, $y, $date_start, $date_end, $modetax, $di
  *  to report the amounts for different Tax rates as different lines.
  *
  *  @param	string	$type          	Tax type, either 'vat', 'localtax1' or 'localtax2'
- *  @param	DoliDB	$db          	Database handler object
+ *  @param	Berp3DB	$db          	Database handler object
  *  @param  int		$y           	Year
  *  @param  int		$q           	Quarter
  *  @param  string	$date_start  	Start date

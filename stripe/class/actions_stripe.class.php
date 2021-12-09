@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2009-2016 Regis Houssin  <regis.houssin@inodbox.com>
- * Copyright (C) 2011      Herve Prot     <herve.prot@symeos.com>
- * Copyright (C) 2014      Philippe Grand <philippe.grand@atoo-net.com>
+/* Copyright (C) 2009-2016   
+ * Copyright (C) 2011           
+ * Copyright (C) 2014       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ $langs->load("stripe@stripe");
 class ActionsStripeconnect
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -51,7 +51,7 @@ class ActionsStripeconnect
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB	$db		Database handler
+	 *	@param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -90,7 +90,7 @@ class ActionsStripeconnect
 			$this->resprints .= '<table width="100%" class="nobordernopadding"><tr><td>';
 			$this->resprints .= $langs->trans('StripeCustomer');
 			$this->resprints .= '<td><td class="right">';
-			//				$this->resprints.= '<a class="editfielda" href="'.$dolibarr_main_url_root.dol_buildpath('/dolipress/card.php?socid='.$object->id, 1).'">'.img_edit().'</a>';
+			//				$this->resprints.= '<a class="editfielda" href="'.$berp3_main_url_root.dol_buildpath('/berp3press/card.php?socid='.$object->id, 1).'">'.img_edit().'</a>';
 			$this->resprints .= '</td></tr></table>';
 			$this->resprints .= '</td>';
 			$this->resprints .= '<td colspan="3">';
@@ -141,7 +141,7 @@ class ActionsStripeconnect
 			$this->resprints .= '<table width="100%" class="nobordernopadding"><tr><td>';
 			$this->resprints .= $langs->trans('PlanStripe');
 			$this->resprints .= '<td><td class="right">';
-			//				$this->resprints.= '<a class="editfielda" href="'.$dolibarr_main_url_root.dol_buildpath('/dolipress/card.php?socid='.$object->id, 1).'">'.img_edit().'</a>';
+			//				$this->resprints.= '<a class="editfielda" href="'.$berp3_main_url_root.dol_buildpath('/berp3press/card.php?socid='.$object->id, 1).'">'.img_edit().'</a>';
 			$this->resprints .= '</td></tr></table>';
 			$this->resprints .= '</td>';
 			$this->resprints .= '<td colspan="3">';

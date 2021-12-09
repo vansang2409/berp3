@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2014-2019  Alexandre Spangaro	<aspangaro@open-dsi.fr>
+/* Copyright (C) 2014-2019  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ if ($action == 'update') {
 	foreach ($list as $constname) {
 		$constvalue = GETPOST($constname, 'alpha');
 
-		if (!dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	}
@@ -71,7 +71,7 @@ if ($action == 'update') {
 $reg = array();
 if (preg_match('/^(set|del)_?([A-Z_]+)$/', $action, $reg)) {
 	// Set boolean (on/off) constants
-	if (!dolibarr_set_const($db, $reg[2], ($reg[1] === 'set' ? '1' : '0'), 'chaine', 0, '', $conf->entity) > 0) {
+	if (!berp3_set_const($db, $reg[2], ($reg[1] === 'set' ? '1' : '0'), 'chaine', 0, '', $conf->entity) > 0) {
 		dol_print_error($db);
 	}
 }

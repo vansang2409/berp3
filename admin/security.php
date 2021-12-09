@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004-2009 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2007 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013-2015 Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2004-2009 
+ * Copyright (C) 2005-2007 
+ * Copyright (C) 2013-2015 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ $allow_disable_encryption = true;
  */
 
 if ($action == 'setgeneraterule') {
-	if (!dolibarr_set_const($db, 'USER_PASSWORD_GENERATED', $_GET["value"], 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'USER_PASSWORD_GENERATED', $_GET["value"], 'chaine', 0, '', $conf->entity)) {
 		dol_print_error($db);
 	} else {
 		header("Location: ".$_SERVER["PHP_SELF"]);
@@ -58,7 +58,7 @@ if ($action == 'activate_encrypt') {
 
 	$db->begin();
 
-	dolibarr_set_const($db, "DATABASE_PWD_ENCRYPTED", "1", 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "DATABASE_PWD_ENCRYPTED", "1", 'chaine', 0, '', $conf->entity);
 
 	$sql = "SELECT u.rowid, u.pass, u.pass_crypted";
 	$sql .= " FROM ".MAIN_DB_PREFIX."user as u";
@@ -104,7 +104,7 @@ if ($action == 'activate_encrypt') {
 	//On n'autorise pas l'annulation de l'encryption car les mots de passe ne peuvent pas etre decodes
 	//Do not allow "disable encryption" as passwords cannot be decrypted
 	if ($allow_disable_encryption) {
-		dolibarr_del_const($db, "DATABASE_PWD_ENCRYPTED", $conf->entity);
+		berp3_del_const($db, "DATABASE_PWD_ENCRYPTED", $conf->entity);
 	}
 	header("Location: security.php");
 	exit;
@@ -116,11 +116,11 @@ if ($action == 'activate_encryptdbpassconf') {
 		sleep(3); // Don't know why but we need to wait file is completely saved before making the reload. Even with flush and clearstatcache, we need to wait.
 
 		// database value not required
-		//dolibarr_set_const($db, "MAIN_DATABASE_PWD_CONFIG_ENCRYPTED", "1");
+		//berp3_set_const($db, "MAIN_DATABASE_PWD_CONFIG_ENCRYPTED", "1");
 		header("Location: security.php");
 		exit;
 	} else {
-		setEventMessages($langs->trans('InstrucToEncodePass', dol_encode($dolibarr_main_db_pass)), null, 'warnings');
+		setEventMessages($langs->trans('InstrucToEncodePass', dol_encode($berp3_main_db_pass)), null, 'warnings');
 	}
 } elseif ($action == 'disable_encryptdbpassconf') {
 	$result = encodedecode_dbpassconf(0);
@@ -128,20 +128,20 @@ if ($action == 'activate_encryptdbpassconf') {
 		sleep(3); // Don't know why but we need to wait file is completely saved before making the reload. Even with flush and clearstatcache, we need to wait.
 
 		// database value not required
-		//dolibarr_del_const($db, "MAIN_DATABASE_PWD_CONFIG_ENCRYPTED",$conf->entity);
+		//berp3_del_const($db, "MAIN_DATABASE_PWD_CONFIG_ENCRYPTED",$conf->entity);
 		header("Location: security.php");
 		exit;
 	} else {
-		setEventMessages($langs->trans('InstrucToClearPass', $dolibarr_main_db_pass), null, 'warnings');
+		setEventMessages($langs->trans('InstrucToClearPass', $berp3_main_db_pass), null, 'warnings');
 	}
 }
 
 if ($action == 'activate_MAIN_SECURITY_DISABLEFORGETPASSLINK') {
-	dolibarr_set_const($db, "MAIN_SECURITY_DISABLEFORGETPASSLINK", '1', 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_SECURITY_DISABLEFORGETPASSLINK", '1', 'chaine', 0, '', $conf->entity);
 	header("Location: security.php");
 	exit;
 } elseif ($action == 'disable_MAIN_SECURITY_DISABLEFORGETPASSLINK') {
-	dolibarr_del_const($db, "MAIN_SECURITY_DISABLEFORGETPASSLINK", $conf->entity);
+	berp3_del_const($db, "MAIN_SECURITY_DISABLEFORGETPASSLINK", $conf->entity);
 	header("Location: security.php");
 	exit;
 }
@@ -160,7 +160,7 @@ if ($action == 'updatepattern') {
 	}
 
 	if (!$patternInError) {
-		dolibarr_set_const($db, "USER_PASSWORD_PATTERN", $pattern, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "USER_PASSWORD_PATTERN", $pattern, 'chaine', 0, '', $conf->entity);
 		setEventMessages($langs->trans("SetupSaved"), null, 'mesgs');
 		header("Location: security.php");
 		exit;
@@ -432,21 +432,21 @@ print '</tr>';
 print '<tr class="oddeven">';
 print '<td colspan="3">'.$langs->trans("MainDbPasswordFileConfEncrypted").'</td>';
 print '<td align="center" width="60">';
-if (preg_match('/crypted:/i', $dolibarr_main_db_pass) || !empty($dolibarr_main_db_encrypted_pass)) {
+if (preg_match('/crypted:/i', $berp3_main_db_pass) || !empty($berp3_main_db_encrypted_pass)) {
 	print img_picto($langs->trans("Active"), 'tick');
 }
 
 print '</td>';
 
 print '<td align="center" width="100">';
-if (empty($dolibarr_main_db_pass) && empty($dolibarr_main_db_encrypted_pass)) {
+if (empty($berp3_main_db_pass) && empty($berp3_main_db_encrypted_pass)) {
 	$langs->load("errors");
 	print img_warning($langs->trans("WarningPassIsEmpty"));
 } else {
-	if (empty($dolibarr_main_db_encrypted_pass)) {
+	if (empty($berp3_main_db_encrypted_pass)) {
 		print '<a href="'.$_SERVER["PHP_SELF"].'?action=activate_encryptdbpassconf&token='.newToken().'">'.$langs->trans("Activate").'</a>';
 	}
-	if (!empty($dolibarr_main_db_encrypted_pass)) {
+	if (!empty($berp3_main_db_encrypted_pass)) {
 		print '<a href="'.$_SERVER["PHP_SELF"].'?action=disable_encryptdbpassconf&token='.newToken().'">'.$langs->trans("Disable").'</a>';
 	}
 }

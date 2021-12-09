@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2000-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2000-2005 
+ * Copyright (C) 2003         
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2005-2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 /**
  *      \file       htdocs/core/class/CSMSFile.class.php
  *      \brief      File of class to send sms
- *      \author	    Laurent Destailleur.
+ *      \author	    .
  */
 
 /**
@@ -212,10 +212,10 @@ class CSMSFile
 	public function dump_sms()
 	{
 		// phpcs:enable
-		global $conf, $dolibarr_main_data_root;
+		global $conf, $berp3_main_data_root;
 
-		if (@is_writeable($dolibarr_main_data_root)) {	// Avoid fatal error on fopen with open_basedir
-			$outputfile = $dolibarr_main_data_root."/dolibarr_sms.log";
+		if (@is_writeable($berp3_main_data_root)) {	// Avoid fatal error on fopen with open_basedir
+			$outputfile = $berp3_main_data_root."/berp3_sms.log";
 			$fp = fopen($outputfile, "w");
 
 			fputs($fp, "From: ".$this->addr_from."\n");
@@ -244,10 +244,10 @@ class CSMSFile
 	public function dump_sms_result($result)
 	{
 		// phpcs:enable
-		global $conf, $dolibarr_main_data_root;
+		global $conf, $berp3_main_data_root;
 
-		if (@is_writeable($dolibarr_main_data_root)) {    // Avoid fatal error on fopen with open_basedir
-			$outputfile = $dolibarr_main_data_root."/dolibarr_sms.log";
+		if (@is_writeable($berp3_main_data_root)) {    // Avoid fatal error on fopen with open_basedir
+			$outputfile = $berp3_main_data_root."/berp3_sms.log";
 			$fp = fopen($outputfile, "a+");
 
 			fputs($fp, "\nResult id=".$result);

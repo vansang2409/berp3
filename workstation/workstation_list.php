@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2020 Gauthier VERDOL <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2007-2017 
+ * Copyright (C) 2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  *		\brief      List page for workstation
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/html.formcompany.class.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/date.lib.php';
@@ -636,10 +636,10 @@ while ($i < ($limit ? min($num, $limit) : $num)) {
 		foreach ($object->usergroups as $id_group) {
 			$g = new UserGroup($db);
 			$g->fetch($id_group);
-			$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">' . $g->getNomUrl(1) . '</li>';
+			$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">' . $g->getNomUrl(1) . '</li>';
 		}
 		print '<td>';
-		print '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">' . implode(' ', $toprint) . '</ul></div>';
+		print '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">' . implode(' ', $toprint) . '</ul></div>';
 		print '</td>';
 	}
 
@@ -648,10 +648,10 @@ while ($i < ($limit ? min($num, $limit) : $num)) {
 		foreach ($object->resources as $id_resource) {
 			$r = new Dolresource($db);
 			$r->fetch($id_resource);
-			$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">' . $r->getNomUrl(1) . '</li>';
+			$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">' . $r->getNomUrl(1) . '</li>';
 		}
 		print '<td>';
-		print '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">' . implode(' ', $toprint) . '</ul></div>';
+		print '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">' . implode(' ', $toprint) . '</ul></div>';
 		print '</td>';
 	}
 

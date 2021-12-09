@@ -1,6 +1,6 @@
 <?php
-/* Copyright (c) 2003-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (c) 2004-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (c) 2003-2006 
+ * Copyright (c) 2004-2015 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1445,7 +1445,7 @@ class DolGraph
 				}
 				$this->stringtoshow .= "\n";
 				$this->stringtoshow .= '{';
-				$this->stringtoshow .= 'dolibarrinfo: \'y_' . $i . '\', ';
+				$this->stringtoshow .= 'berp3info: \'y_' . $i . '\', ';
 				$this->stringtoshow .= 'label: \'' . dol_escape_js(dol_string_nohtmltag($textoflegend)) . '\', ';
 				$this->stringtoshow .= 'pointStyle: \'' . ((!empty($this->type[$i]) && $this->type[$i] == 'linesnopoint') ? 'line' : 'circle') . '\', ';
 				$this->stringtoshow .= 'fill: ' . ($type == 'bar' ? 'true' : 'false') . ', ';

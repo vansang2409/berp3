@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2006-2017	Laurent Destailleur 	<eldy@users.sourceforge.net>
- * Copyright (C) 2006		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2007		Patrick Raguin      	<patrick.raguin@gmail.com>
- * Copyright (C) 2010-2012	Regis Houssin       	<regis.houssin@inodbox.com>
- * Copyright (C) 2010-2017	Juanjo Menent       	<jmenent@2byte.es>
- * Copyright (C) 2012		Christophe Battarel		<christophe.battarel@altairis.fr>
- * Copyright (C) 2012       Cédric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2012-2015  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2014		Cedric GROSS			<c.gross@kreiz-it.fr>
- * Copyright (C) 2014		Teddy Andreotti			<125155@supinfo.com>
- * Copyright (C) 2015-2016  Marcos García           <marcosgdf@gmail.com>
+/* Copyright (C) 2006-2017	 	
+ * Copyright (C) 2006		
+ * Copyright (C) 2007		      	
+ * Copyright (C) 2010-2012	       	
+ * Copyright (C) 2010-2017	       	
+ * Copyright (C) 2012				
+ * Copyright (C) 2012                
+ * Copyright (C) 2012-2015        
+ * Copyright (C) 2014		Cedric GROSS			
+ * Copyright (C) 2014					
+ * Copyright (C) 2015-2016  
  * Copyright (C) 2019       Lenin Rivas           	<lenin.rivas@servcom-it.com>
- * Copyright (C) 2020       Nicolas ZABOURI         <info@inovea-conseil.com>
+ * Copyright (C) 2020                
  * Copyright (C) 2021		Anthony Berton       	<bertonanthony@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -137,7 +137,7 @@ function pdf_getInstance($format = '', $metric = 'mm', $pagetype = 'P')
 		define('PDF_CREATOR', 'TCPDF');
 		define('PDF_AUTHOR', 'TCPDF');
 		define('PDF_HEADER_TITLE', 'TCPDF Example');
-		define('PDF_HEADER_STRING', "by Dolibarr ERP CRM");
+		define('PDF_HEADER_STRING', "by Berp3 ERP CRM");
 		define('PDF_UNIT', 'mm');
 		define('PDF_MARGIN_HEADER', 5);
 		define('PDF_MARGIN_FOOTER', 10);
@@ -993,7 +993,7 @@ function pdf_pagefoot(&$pdf, $outputlangs, $paramfreetext, $fromcompany, $marge_
 		$newfreetext = make_substitutions($conf->global->$paramfreetext, $substitutionarray, $outputlangs);
 
 		// Make a change into HTML code to allow to include images from medias directory.
-		// <img alt="" src="/dolibarr_dev/htdocs/viewimage.php?modulepart=medias&amp;entity=1&amp;file=image/ldestailleur_166x166.jpg" style="height:166px; width:166px" />
+		// <img alt="" src="/berp3_dev/htdocs/viewimage.php?modulepart=medias&amp;entity=1&amp;file=image/ldestailleur_166x166.jpg" style="height:166px; width:166px" />
 		// become
 		// <img alt="" src="'.DOL_DATA_ROOT.'/medias/image/ldestailleur_166x166.jpg" style="height:166px; width:166px" />
 		$newfreetext = preg_replace('/(<img.*src=")[^\"]*viewimage\.php[^\"]*modulepart=medias[^\"]*file=([^\"]*)("[^\/]*\/>)/', '\1file:/'.DOL_DATA_ROOT.'/medias/\2\3', $newfreetext);

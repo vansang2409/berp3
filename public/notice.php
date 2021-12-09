@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2016-2021	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2016-2021	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 
 /**
  *	\file       htdocs/public/notice.php
- *	\brief      Dolibarr public page to show a notice.
+ *	\brief      Berp3 public page to show a notice.
  *              Default notice is a message to say network connection is off. Some parameters can be used to show another message.
  *              You can call this page with URL:
  *                /public/notice.php?lang=xx_XX&transkey=translation_key  		(key must be inside file main.lang, error.lang or other.lang)
@@ -31,7 +31,7 @@ if (!defined('NOCSRFCHECK')) {
 	define("NOCSRFCHECK", 1); // We accept to go on this page from external web site.
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 if (!defined('NOSESSION')) {
 	define('NOSESSION', '1');

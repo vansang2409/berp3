@@ -1,5 +1,5 @@
 -- ========================================================================
--- Copyright (C) 2013 Cédric Salvador <csalvador@gpcsolutions.fr>
+-- Copyright (C) 2013  
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -25,6 +25,6 @@ create table llx_links
   datea             DATETIME NOT NULL,              -- date start
   url               VARCHAR(255) NOT NULL,          -- link url
   label             VARCHAR(255) NOT NULL,          -- link label
-  objecttype        VARCHAR(255) NOT NULL,          -- object type in Dolibarr
+  objecttype        VARCHAR(255) NOT NULL,          -- object type in Berp3
   objectid          INTEGER NOT NULL
 )ENGINE=innodb;

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017		Alexandre Spangaro		<aspangaro@open-dsi.fr>
+/* Copyright (C) 2017		
  * Copyright (C) 2017		Saasprov				<saasprov@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,25 +23,25 @@
  *  \ingroup    stripe
  *  \brief      Description and activation file for the module Stripe
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  * 	Description and activation class for module Paybox
  */
-class modStripe extends DolibarrModules
+class modStripe extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 50300;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'stripe';
@@ -53,8 +53,8 @@ class modStripe extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "Module to offer an online payment page by credit card with Stripe";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -73,7 +73,7 @@ class modStripe extends DolibarrModules
 		$this->depends = array(); // List of modules id that must be enabled if this module is enabled
 		$this->requiredby = array(); // List of modules id to disable if this one is disabled
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(5, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(5, 0); // Minimum version of Berp3 required by module
 		$this->langfiles = array("stripe");
 
 		// Constants

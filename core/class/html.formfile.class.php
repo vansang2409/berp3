@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2008-2013	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2010-2014	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2010-2016	Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2013		Charles-Fr BENKE	<charles.fr@benke.fr>
- * Copyright (C) 2013		Cédric Salvador		<csalvador@gpcsolutions.fr>
- * Copyright (C) 2014		Marcos García		<marcosgdf@gmail.com>
+/* Copyright (C) 2008-2013		
+ * Copyright (C) 2010-2014			
+ * Copyright (C) 2010-2016	
+ * Copyright (C) 2013		Charles-Fr BENKE	
+ * Copyright (C) 2013				
+ * Copyright (C) 2014				
  * Copyright (C) 2015		Bahfir Abbes		<bafbes@gmail.com>
- * Copyright (C) 2016-2017	Ferran Marcet		<fmarcet@2byte.es>
- * Copyright (C) 2019-2021  Frédéric France     <frederic.france@netlogic.fr>
+ * Copyright (C) 2016-2017			
+ * Copyright (C) 2019-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ class FormFile
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -227,10 +227,10 @@ class FormFile
 
 			if (!empty($conf->global->MAIN_UPLOAD_DOC)) {
 				if ($perm) {
-					$menudolibarrsetupmax = $langs->transnoentitiesnoconv("Home").'-'.$langs->transnoentitiesnoconv("Setup").'-'.$langs->transnoentitiesnoconv("Security");
+					$menuberp3setupmax = $langs->transnoentitiesnoconv("Home").'-'.$langs->transnoentitiesnoconv("Setup").'-'.$langs->transnoentitiesnoconv("Security");
 					$langs->load('other');
 					$out .= ' ';
-					$out .= info_admin($langs->trans("ThisLimitIsDefinedInSetupAt", $menudolibarrsetupmax, $max, $maxphptoshowparam, $maxphptoshow), 1);
+					$out .= info_admin($langs->trans("ThisLimitIsDefinedInSetupAt", $menuberp3setupmax, $max, $maxphptoshowparam, $maxphptoshow), 1);
 				}
 			} else {
 				$out .= ' ('.$langs->trans("UploadDisabled").')';
@@ -383,7 +383,7 @@ class FormFile
 	 */
 	public function showdocuments($modulepart, $modulesubdir, $filedir, $urlsource, $genallowed, $delallowed = 0, $modelselected = '', $allowgenifempty = 1, $forcenomultilang = 0, $iconPDF = 0, $notused = 0, $noform = 0, $param = '', $title = '', $buttonlabel = '', $codelang = '', $morepicto = '', $object = null, $hideifempty = 0, $removeaction = 'remove_file')
 	{
-		global $dolibarr_main_url_root;
+		global $berp3_main_url_root;
 
 		// Deprecation warning
 		if (!empty($iconPDF)) {
@@ -908,7 +908,7 @@ class FormFile
 					$out .= '<td class="nowraponall">';
 					if (!empty($file['share'])) {
 						// Define $urlwithroot
-						$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+						$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 						$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 						//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -1167,7 +1167,7 @@ class FormFile
 		// phpcs:enable
 		global $user, $conf, $langs, $hookmanager, $form;
 		global $sortfield, $sortorder, $maxheightmini;
-		global $dolibarr_main_url_root;
+		global $berp3_main_url_root;
 
 		if ($disablecrop == -1) {
 			$disablecrop = 1;
@@ -1431,7 +1431,7 @@ class FormFile
 						} else {
 							if ($file['share']) {
 								// Define $urlwithroot
-								$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+								$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 								$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 								//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -1597,7 +1597,7 @@ class FormFile
 		global $user, $conf, $langs, $hookmanager, $form;
 		global $sortfield, $sortorder;
 		global $search_doc_ref;
-		global $dolibarr_main_url_root;
+		global $berp3_main_url_root;
 
 		dol_syslog(get_class($this).'::list_of_autoecmfiles upload_dir='.$upload_dir.' modulepart='.$modulepart);
 
@@ -1898,7 +1898,7 @@ class FormFile
 				print '<td class="right">';
 				if (!empty($file['share'])) {
 					// Define $urlwithroot
-					$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+					$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 					$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 					//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 

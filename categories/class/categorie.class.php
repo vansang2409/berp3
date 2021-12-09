@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2005       Matthieu Valleton       <mv@seeschloss.org>
- * Copyright (C) 2005       Davoleau Brice          <brice.davoleau@gmail.com>
- * Copyright (C) 2005       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2006-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2006-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2007       Patrick Raguin          <patrick.raguin@gmail.com>
- * Copyright (C) 2013-2016  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2013-2018  Philippe Grand          <philippe.grand@atoo-net.com>
- * Copyright (C) 2015       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2016       Charlie Benke           <charlie@patas-monkey.com>
- * Copyright (C) 2018-2019  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2005              
+ * Copyright (C) 2005                 
+ * Copyright (C) 2005       
+ * Copyright (C) 2006-2012  
+ * Copyright (C) 2006-2012  
+ * Copyright (C) 2007                 
+ * Copyright (C) 2013-2016  
+ * Copyright (C) 2013-2018            
+ * Copyright (C) 2015       
+ * Copyright (C) 2015             
+ * Copyright (C) 2016                  
+ * Copyright (C) 2018-2019  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -260,7 +260,7 @@ class Categorie extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db     Database handler
+	 *  @param		Berp3DB		$db     Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1933,12 +1933,12 @@ class Categorie extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'categorie_societe'

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016   Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2015   
+ * Copyright (C) 2016   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@ require_once DOL_DOCUMENT_ROOT.'/supplier_proposal/class/supplier_proposal.class
  * API class for orders
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class Supplierproposals extends DolibarrApi
+class Supplierproposals extends Berp3Api
 {
 
 	/**
@@ -64,7 +64,7 @@ class Supplierproposals extends DolibarrApi
 	 */
 	public function get($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->supplier_proposal->lire) {
+		if (!Berp3ApiAccess::$user->rights->supplier_proposal->lire) {
 			throw new RestException(401);
 		}
 
@@ -73,8 +73,8 @@ class Supplierproposals extends DolibarrApi
 			throw new RestException(404, 'Supplier Proposal not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('supplier_proposal', $this->propal->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('supplier_proposal', $this->propal->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		$this->supplier_proposal->fetchObjectLinked();
@@ -98,33 +98,33 @@ class Supplierproposals extends DolibarrApi
 	{
 		global $db, $conf;
 
-		if (!DolibarrApiAccess::$user->rights->supplier_proposal->lire) {
+		if (!Berp3ApiAccess::$user->rights->supplier_proposal->lire) {
 			throw new RestException(401);
 		}
 
 		$obj_ret = array();
 
 		// case of external user, $thirdparty_ids param is ignored and replaced by user's socid
-		$socids = DolibarrApiAccess::$user->socid ? DolibarrApiAccess::$user->socid : $thirdparty_ids;
+		$socids = Berp3ApiAccess::$user->socid ? Berp3ApiAccess::$user->socid : $thirdparty_ids;
 
 		// If the internal user must only see his customers, force searching by him
 		$search_sale = 0;
-		if (!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) {
-			$search_sale = DolibarrApiAccess::$user->id;
+		if (!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) {
+			$search_sale = Berp3ApiAccess::$user->id;
 		}
 
 		$sql = "SELECT t.rowid";
-		if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
+		if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
 			$sql .= ", sc.fk_soc, sc.fk_user"; // We need these fields in order to filter by sale (including the case where the user can only see his prospects)
 		}
 		$sql .= " FROM ".MAIN_DB_PREFIX."supplier_proposal as t";
 
-		if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
+		if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
 			$sql .= ", ".MAIN_DB_PREFIX."societe_commerciaux as sc"; // We need this table joined to the select in order to filter by sale
 		}
 
 		$sql .= ' WHERE t.entity IN ('.getEntity('propal').')';
-		if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
+		if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
 			$sql .= " AND t.fk_soc = sc.fk_soc";
 		}
 		if ($socids) {
@@ -139,11 +139,11 @@ class Supplierproposals extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);

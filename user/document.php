@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2002-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2015 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010      Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2013      Cédric Salvador      <csalvador@gpcsolutions.fr>
+/* Copyright (C) 2002-2007 
+ * Copyright (C) 2004-2017 
+ * Copyright (C) 2005-2015 
+ * Copyright (C) 2010      
+ * Copyright (C) 2013            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -166,7 +166,7 @@ if ($object->id) {
 	print '<tr><td class="titlefield">'.$langs->trans("Login").'</td>';
 	if (!empty($object->ldap_sid) && $object->statut == 0) {
 		print '<td class="error">';
-		print $langs->trans("LoginAccountDisableInDolibarr");
+		print $langs->trans("LoginAccountDisableInBerp3");
 		print '</td>';
 	} else {
 		print '<td>';

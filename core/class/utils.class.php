@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2016	Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2021	Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2016	
+ * Copyright (C) 2021			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 class Utils
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -39,7 +39,7 @@ class Utils
 	/**
 	 *	Constructor
 	 *
-	 *  @param	DoliDB	$db		Database handler
+	 *  @param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -57,7 +57,7 @@ class Utils
 	 */
 	public function purgeFiles($choices = 'tempfilesold+logfiles', $nbsecondsold = 86400)
 	{
-		global $conf, $langs, $dolibarr_main_data_root;
+		global $conf, $langs, $berp3_main_data_root;
 
 		$langs->load("admin");
 
@@ -80,8 +80,8 @@ class Utils
 
 			if ($choice == 'tempfiles' || $choice == 'tempfilesold') {
 				// Delete temporary files
-				if ($dolibarr_main_data_root) {
-					$filesarray = dol_dir_list($dolibarr_main_data_root, "directories", 1, '^temp$', '', 'name', SORT_ASC, 2, 0, '', 1); // Do not follow symlinks
+				if ($berp3_main_data_root) {
+					$filesarray = dol_dir_list($berp3_main_data_root, "directories", 1, '^temp$', '', 'name', SORT_ASC, 2, 0, '', 1); // Do not follow symlinks
 
 					if ($choice == 'tempfilesold') {
 						$now = dol_now();
@@ -96,15 +96,15 @@ class Utils
 
 			if ($choice == 'allfiles') {
 				// Delete all files (except install.lock, do not follow symbolic links)
-				if ($dolibarr_main_data_root) {
-					$filesarray = dol_dir_list($dolibarr_main_data_root, "all", 0, '', 'install\.lock$', 'name', SORT_ASC, 0, 0, '', 1);
+				if ($berp3_main_data_root) {
+					$filesarray = dol_dir_list($berp3_main_data_root, "all", 0, '', 'install\.lock$', 'name', SORT_ASC, 0, 0, '', 1);
 				}
 			}
 
 			if ($choice == 'logfile' || $choice == 'logfiles') {
 				// Define files log
-				if ($dolibarr_main_data_root) {
-					$filesarray = dol_dir_list($dolibarr_main_data_root, "files", 0, '.*\.log[\.0-9]*(\.gz)?$', 'install\.lock$', 'name', SORT_ASC, 0, 0, '', 1);
+				if ($berp3_main_data_root) {
+					$filesarray = dol_dir_list($berp3_main_data_root, "files", 0, '.*\.log[\.0-9]*(\.gz)?$', 'install\.lock$', 'name', SORT_ASC, 0, 0, '', 1);
 				}
 
 				if (!empty($conf->syslog->enabled)) {
@@ -193,9 +193,9 @@ class Utils
 	 */
 	public function dumpDatabase($compression = 'none', $type = 'auto', $usedefault = 1, $file = 'auto', $keeplastnfiles = 0, $execmethod = 0)
 	{
-		global $db, $conf, $langs, $dolibarr_main_data_root;
-		global $dolibarr_main_db_name, $dolibarr_main_db_host, $dolibarr_main_db_user, $dolibarr_main_db_port, $dolibarr_main_db_pass;
-		global $dolibarr_main_db_character_set;
+		global $db, $conf, $langs, $berp3_main_data_root;
+		global $berp3_main_db_name, $berp3_main_db_host, $berp3_main_db_user, $berp3_main_db_port, $berp3_main_db_pass;
+		global $berp3_main_db_character_set;
 
 		$langs->load("admin");
 
@@ -232,7 +232,7 @@ class Utils
 				$prefix = 'pg_dump';
 				$ext = 'sql';
 			}
-			$file = $prefix.'_'.$dolibarr_main_db_name.'_'.dol_sanitizeFileName(DOL_VERSION).'_'.strftime("%Y%m%d%H%M").'.'.$ext;
+			$file = $prefix.'_'.$berp3_main_db_name.'_'.dol_sanitizeFileName(DOL_VERSION).'_'.strftime("%Y%m%d%H%M").'.'.$ext;
 		}
 
 		$outputdir = $conf->admin->dir_output.'/backup';
@@ -264,11 +264,11 @@ class Utils
 				$command = escapeshellarg($command); // If there is spaces, we add quotes on command to be sure $command is only a program and not a program+parameters
 			}
 
-			//$param=escapeshellarg($dolibarr_main_db_name)." -h ".escapeshellarg($dolibarr_main_db_host)." -u ".escapeshellarg($dolibarr_main_db_user)." -p".escapeshellarg($dolibarr_main_db_pass);
-			$param = $dolibarr_main_db_name." -h ".$dolibarr_main_db_host;
-			$param .= " -u ".$dolibarr_main_db_user;
-			if (!empty($dolibarr_main_db_port)) {
-				$param .= " -P ".$dolibarr_main_db_port;
+			//$param=escapeshellarg($berp3_main_db_name)." -h ".escapeshellarg($berp3_main_db_host)." -u ".escapeshellarg($berp3_main_db_user)." -p".escapeshellarg($berp3_main_db_pass);
+			$param = $berp3_main_db_name." -h ".$berp3_main_db_host;
+			$param .= " -u ".$berp3_main_db_user;
+			if (!empty($berp3_main_db_port)) {
+				$param .= " -P ".$berp3_main_db_port;
 			}
 			if (!GETPOST("use_transaction", "alpha")) {
 				$param .= " -l --single-transaction";
@@ -319,7 +319,7 @@ class Utils
 			} else {
 				$param .= " -d"; // No row information (no data)
 			}
-			if ($dolibarr_main_db_character_set == 'utf8mb4') {
+			if ($berp3_main_db_character_set == 'utf8mb4') {
 				// We save output into utf8mb4 charset
 				$param .= " --default-character-set=utf8mb4 --no-tablespaces";
 			} else {
@@ -327,9 +327,9 @@ class Utils
 			}
 			$paramcrypted = $param;
 			$paramclear = $param;
-			if (!empty($dolibarr_main_db_pass)) {
-				$paramcrypted .= ' -p"'.preg_replace('/./i', '*', $dolibarr_main_db_pass).'"';
-				$paramclear .= ' -p"'.str_replace(array('"', '`', '$'), array('\"', '\`', '\$'), $dolibarr_main_db_pass).'"';
+			if (!empty($berp3_main_db_pass)) {
+				$paramcrypted .= ' -p"'.preg_replace('/./i', '*', $berp3_main_db_pass).'"';
+				$paramclear .= ' -p"'.str_replace(array('"', '`', '$'), array('\"', '\`', '\$'), $berp3_main_db_pass).'"';
 			}
 
 			$handle = '';
@@ -524,13 +524,13 @@ class Utils
 				$command = escapeshellarg($command); // If there is spaces, we add quotes on command to be sure $command is only a program and not a program+parameters
 			}
 
-			//$param=escapeshellarg($dolibarr_main_db_name)." -h ".escapeshellarg($dolibarr_main_db_host)." -u ".escapeshellarg($dolibarr_main_db_user)." -p".escapeshellarg($dolibarr_main_db_pass);
+			//$param=escapeshellarg($berp3_main_db_name)." -h ".escapeshellarg($berp3_main_db_host)." -u ".escapeshellarg($berp3_main_db_user)." -p".escapeshellarg($berp3_main_db_pass);
 			//$param="-F c";
 			$param = "-F p";
-			$param .= " --no-tablespaces --inserts -h ".$dolibarr_main_db_host;
-			$param .= " -U ".$dolibarr_main_db_user;
-			if (!empty($dolibarr_main_db_port)) {
-				$param .= " -p ".$dolibarr_main_db_port;
+			$param .= " --no-tablespaces --inserts -h ".$berp3_main_db_host;
+			$param .= " -U ".$berp3_main_db_user;
+			if (!empty($berp3_main_db_port)) {
+				$param .= " -p ".$berp3_main_db_port;
 			}
 			if (GETPOST("sql_compat") && GETPOST("sql_compat") == 'ANSI') {
 				$param .= "  --disable-dollar-quoting";
@@ -562,13 +562,13 @@ class Utils
 			//if ($compression == 'bz')
 			$paramcrypted = $param;
 			$paramclear = $param;
-			/*if (! empty($dolibarr_main_db_pass))
+			/*if (! empty($berp3_main_db_pass))
 			 {
-			 $paramcrypted.=" -W".preg_replace('/./i','*',$dolibarr_main_db_pass);
-			 $paramclear.=" -W".$dolibarr_main_db_pass;
+			 $paramcrypted.=" -W".preg_replace('/./i','*',$berp3_main_db_pass);
+			 $paramclear.=" -W".$berp3_main_db_pass;
 			 }*/
-			$paramcrypted .= " -w ".$dolibarr_main_db_name;
-			$paramclear .= " -w ".$dolibarr_main_db_name;
+			$paramcrypted .= " -w ".$berp3_main_db_name;
+			$paramclear .= " -w ".$berp3_main_db_name;
 
 			$this->output = "";
 			$this->result = array("commandbackuplastdone" => "", "commandbackuptorun" => $command." ".$paramcrypted);
@@ -889,14 +889,14 @@ class Utils
 
 		if (empty($conf->global->SYSLOG_FILE)) {
 			$mainlogdir = DOL_DATA_ROOT;
-			$mainlog = 'dolibarr.log';
+			$mainlog = 'berp3.log';
 		} else {
 			$mainlogfull = str_replace('DOL_DATA_ROOT', DOL_DATA_ROOT, $conf->global->SYSLOG_FILE);
 			$mainlogdir = dirname($mainlogfull);
 			$mainlog = basename($mainlogfull);
 		}
 
-		$tabfiles = dol_dir_list(DOL_DATA_ROOT, 'files', 0, '^(dolibarr_.+|odt2pdf)\.log$'); // Also handle other log files like dolibarr_install.log
+		$tabfiles = dol_dir_list(DOL_DATA_ROOT, 'files', 0, '^(berp3_.+|odt2pdf)\.log$'); // Also handle other log files like berp3_install.log
 		$tabfiles[] = array('name' => $mainlog, 'path' => $mainlogdir);
 
 		foreach ($tabfiles as $file) {
@@ -992,11 +992,11 @@ class Utils
 		global $errormsg;
 
 		// Set to UTF-8
-		if (is_a($db, 'DoliDBMysqli')) {
-			/** @var DoliDBMysqli $db */
+		if (is_a($db, 'Berp3DBMysqli')) {
+			/** @var Berp3DBMysqli $db */
 			$db->db->set_charset('utf8');
 		} else {
-			/** @var DoliDB $db */
+			/** @var Berp3DB $db */
 			$db->query('SET NAMES utf8');
 			$db->query('SET CHARACTER SET utf8');
 		}
@@ -1023,7 +1023,7 @@ class Utils
 
 		// Print headers and global mysql config vars
 		$sqlhead = '';
-		$sqlhead .= "-- ".$db::LABEL." dump via php with Dolibarr ".DOL_VERSION."
+		$sqlhead .= "-- ".$db::LABEL." dump via php with Berp3 ".DOL_VERSION."
 --
 -- Host: ".$db->db->host_info."    Database: ".$db->database_name."
 -- ------------------------------------------------------

@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2010-2015	Laurent Destailleur	<eldy@users.sourceforge.net>
+/* Copyright (C) 2010-2015		
  * Copyright (C) 2009		Meos
- * Copyright (C) 2012		Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2016		Juanjo Menent		<jmenent@2byte.es>
+ * Copyright (C) 2012				
+ * Copyright (C) 2016		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -275,7 +275,7 @@ if ($modulepart == 'produit' || $modulepart == 'product' || $modulepart == 'serv
 		$dir = $conf->fournisseur->dir_output.'/facture'; // By default
 	}
 } elseif ($modulepart == 'medias') {
-	$dir = $dolibarr_main_data_root.'/'.$modulepart;
+	$dir = $berp3_main_data_root.'/'.$modulepart;
 } else {
 	print 'Bug: Action crop for modulepart = '.$modulepart.' is not supported yet by photos_resize.php.';
 }

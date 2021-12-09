@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005-2009 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2006      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2010      Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2005-2009 
+ * Copyright (C) 2006      
+ * Copyright (C) 2010      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
  *   \brief			Fichier de la classe de gestion des triggers
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
@@ -32,7 +32,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
 class Interfaces
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -46,7 +46,7 @@ class Interfaces
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -55,7 +55,7 @@ class Interfaces
 
 	// phpcs:disable PEAR.NamingConventions.ValidFunctionName.ScopeNotCamelCaps
 	/**
-	 *   Function called when a Dolibarr business event occurs
+	 *   Function called when a Berp3 business event occurs
 	 *   This function call all qualified triggers.
 	 *
 	 *   @param		string		$action     Trigger event code
@@ -323,7 +323,7 @@ class Interfaces
 			try {
 				$objMod = new $modName($db);
 
-				if (is_subclass_of($objMod, 'DolibarrTriggers')) {
+				if (is_subclass_of($objMod, 'Berp3Triggers')) {
 					// Define disabledbyname and disabledbymodule
 					$disabledbyname = 0;
 					$disabledbymodule = 1;
@@ -381,10 +381,10 @@ class Interfaces
 					$triggers[$j]['file'] = $files[$key];
 					$triggers[$j]['fullpath'] = $fullpath[$key];
 					$triggers[$j]['relpath'] = $relpath[$key];
-					$triggers[$j]['status'] = img_picto('Error: Trigger '.$modName.' does not extends DolibarrTriggers', 'warning');
+					$triggers[$j]['status'] = img_picto('Error: Trigger '.$modName.' does not extends Berp3Triggers', 'warning');
 
-					//print 'Error: Trigger '.$modName.' does not extends DolibarrTriggers<br>';
-					$text = 'Error: Trigger '.$modName.' does not extends DolibarrTriggers';
+					//print 'Error: Trigger '.$modName.' does not extends Berp3Triggers<br>';
+					$text = 'Error: Trigger '.$modName.' does not extends Berp3Triggers';
 				}
 			} catch (Exception $e) {
 				print $e->getMessage();

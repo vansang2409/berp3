@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2009 Regis Houssin        <regis.houssin@capnetworks.com>
- * Copyright (C) 2016 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2018 Andreu Bisquerra     <jove@bisquerra.com>
+/* Copyright (C) 2008 
+ * Copyright (C) 2009 
+ * Copyright (C) 2016 
+ * Copyright (C) 2018      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -143,9 +143,9 @@ class CashControl extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}

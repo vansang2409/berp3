@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2002-2003 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2020 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2015      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2015-2020 Charlene Benke       <charlie@patas-monkey.com>
- * Copyright (C) 2018      Nicolas ZABOURI	    <info@inovea-conseil.com>
- * Copyright (C) 2018-2020 Frédéric France      <frederic.france@netlogic.fr>
+/* Copyright (C) 2002-2003 
+ * Copyright (C) 2004-2014 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2011-2020 
+ * Copyright (C) 2015      
+ * Copyright (C) 2015-2020        
+ * Copyright (C) 2018      	    
+ * Copyright (C) 2018-2020 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -180,7 +180,7 @@ class Fichinter extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param	DoliDB	$db		Database handler
+	 *  @param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1361,12 +1361,12 @@ class Fichinter extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'fichinter'
@@ -1382,7 +1382,7 @@ class Fichinter extends CommonObject
 class FichinterLigne extends CommonObjectLine
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -1420,7 +1420,7 @@ class FichinterLigne extends CommonObjectLine
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db     Database handler
+	 *  @param  Berp3DB  $db     Database handler
 	 */
 	public function __construct($db)
 	{

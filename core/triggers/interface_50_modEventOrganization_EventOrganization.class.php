@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2017	Laurent Destailleur 	<eldy@users.sourceforge.net>
- * Copyright (C) 2021		Florian Henry		<florian.henry@scopen.fr>
+/* Copyright (C) 2005-2017	 	
+ * Copyright (C) 2021				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,18 +22,18 @@
  *  \brief      Trigger file for Event Organization module
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggered functions for agenda module
  */
-class InterfaceEventOrganization extends DolibarrTriggers
+class InterfaceEventOrganization extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -42,13 +42,13 @@ class InterfaceEventOrganization extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "eventorganization";
 		$this->description = "Triggers of this module to manage event organization triggers action";
-		// 'development', 'experimental', 'dolibarr' or version
-		$this->version = self::VERSION_DOLIBARR;
+		// 'development', 'experimental', 'berp3' or version
+		$this->version = self::VERSION_BERP3;
 		$this->picto = 'action';
 	}
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file is inside directory htdocs/core/triggers or htdocs/module/code/triggers (and declared)
 	 *
 	 * Following properties may be set before calling trigger. The may be completed by this trigger to be used for writing the event into database:

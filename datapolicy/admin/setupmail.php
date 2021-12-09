@@ -1,8 +1,8 @@
 <?php
 
-/* Copyright (C) 2004-2017  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2018       Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2017  
+ * Copyright (C) 2018                
+ * Copyright (C) 2018       
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,17 +52,17 @@ include DOL_DOCUMENT_ROOT.'/core/actions_setmoduleoptions.inc.php';
 if ($action == 'setvalue' && $user->admin) {
 	$db->begin();
 	$sub = "DATAPOLICIESSUBJECT_".$l;
-	$result = dolibarr_set_const($db, $sub, GETPOST($sub), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $sub, GETPOST($sub), 'chaine', 0, '', $conf->entity);
 	$cont = "DATAPOLICIESCONTENT_".$l;
-	$result = dolibarr_set_const($db, $cont, GETPOST($cont), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $cont, GETPOST($cont), 'chaine', 0, '', $conf->entity);
 	$cont = "TXTLINKDATAPOLICIESACCEPT_".$l;
-	$result = dolibarr_set_const($db, $cont, GETPOST($cont), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $cont, GETPOST($cont), 'chaine', 0, '', $conf->entity);
 	$cont = "TXTLINKDATAPOLICIESREFUSE_".$l;
-	$result = dolibarr_set_const($db, $cont, GETPOST($cont), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $cont, GETPOST($cont), 'chaine', 0, '', $conf->entity);
 	$sub = "DATAPOLICIESACCEPT_".$l;
-	$result = dolibarr_set_const($db, $sub, GETPOST($sub), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $sub, GETPOST($sub), 'chaine', 0, '', $conf->entity);
 	$sub = "DATAPOLICIESREFUSE_".$l;
-	$result = dolibarr_set_const($db, $sub, GETPOST($sub), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $sub, GETPOST($sub), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}

@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2006-2016	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2012		Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2015		Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2016		Juanjo Menent   	<jmenent@2byte.es>
- * Copyright (C) 2019	   Nicolas ZABOURI     <info@inovea-conseil.com>
- * Copyright (C) 2021		Ferran Marcet		<fmarcet@2byte.es>
+/* Copyright (C) 2006-2016		
+ * Copyright (C) 2012				
+ * Copyright (C) 2015		
+ * Copyright (C) 2016		   	
+ * Copyright (C) 2019	        
+ * Copyright (C) 2021				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

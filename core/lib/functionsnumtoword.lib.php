@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2015 
  * Copyright (C) 2015 Víctor Ortiz Pérez   <victor@accett.com.mx>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -185,7 +185,7 @@ function dolNumberToWord($numero, $langs, $numorcurrency = 'number')
 		}
 	}
 
-	/*In dolibarr 3.6.2 (my current version) doesn't have $langs->default and
+	/*In berp3 3.6.2 (my current version) doesn't have $langs->default and
 	in case exist why ask $lang like a parameter?*/
 	if (((is_object($langs) && $langs->default == 'es_MX') || (!is_object($langs) && $langs == 'es_MX')) && $numorcurrency == 'currency') {
 		if ($numero >= 1 && $numero < 2) {

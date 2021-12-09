@@ -1,8 +1,8 @@
 <?php
 /* Module descriptor for ticket system
- * Copyright (C) 2013-2016  Jean-François FERRY     <hello@librethic.io>
- *               2016       Christophe Battarel     <christophe@altairis.fr>
- * Copyright (C) 2019-2021  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2013-2016  
+ *               2016       
+ * Copyright (C) 2019-2021  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ class box_graph_ticket_by_severity extends ModeleBoxes
 	public $depends = array("ticket");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -49,7 +49,7 @@ class box_graph_ticket_by_severity extends ModeleBoxes
 
 	/**
 	 * Constructor
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param = '')

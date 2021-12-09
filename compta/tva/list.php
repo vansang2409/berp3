@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2001-2003	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2020	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2019	Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2020		Tobias Sekan			<tobias.sekan@startmail.com>
- * Copyright (C) 2021       Gauthier VERDOL         <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2001-2003	
+ * Copyright (C) 2004-2020	
+ * Copyright (C) 2005-2009	
+ * Copyright (C) 2011-2019	
+ * Copyright (C) 2020					
+ * Copyright (C) 2021       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

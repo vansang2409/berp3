@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Jean-Louis Bergamo		<jlb@j1b.org>
- * Copyright (C) 2004-2009	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio		<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier			<benoit.mortier@opensides.be>
- * Copyright (C) 2005-2011	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2015		Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2003		
+ * Copyright (C) 2003		
+ * Copyright (C) 2004-2009	
+ * Copyright (C) 2004		
+ * Copyright (C) 2004		
+ * Copyright (C) 2005-2011	
+ * Copyright (C) 2015		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,13 +57,13 @@ if ($action == 'set_default') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->USERGROUP_ADDON_PDF_ODT == "$value") {
-			dolibarr_del_const($db, 'USERGROUP_ADDON_PDF_ODT', $conf->entity);
+			berp3_del_const($db, 'USERGROUP_ADDON_PDF_ODT', $conf->entity);
 		}
 	}
 	$res = true;
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "USERGROUP_ADDON_PDF_ODT", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "USERGROUP_ADDON_PDF_ODT", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->USERGROUP_ADDON_PDF_ODT = $value;
@@ -77,7 +77,7 @@ if ($action == 'set_default') {
 	$res = true;
 } elseif (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -85,7 +85,7 @@ if ($action == 'set_default') {
 	}
 } elseif (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, $conf->entity) > 0) {
+	if (berp3_del_const($db, $code, $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {

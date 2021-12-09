@@ -120,8 +120,8 @@ ConfirmCloneOrder=هل أنت متأكد من أنك تريد استنساخ ه�
 DispatchSupplierOrder=استلام أمر الشراء %s
 FirstApprovalAlreadyDone=تمت الموافقة الأولى
 SecondApprovalAlreadyDone=تمت الموافقة الثانية
-SupplierOrderReceivedInDolibarr=أمر الشراء %s استلم %s
-SupplierOrderSubmitedInDolibarr=تم تقديم امر الشراء %s
+SupplierOrderReceivedInBerp3=أمر الشراء %s استلم %s
+SupplierOrderSubmitedInBerp3=تم تقديم امر الشراء %s
 SupplierOrderClassifiedBilled=امر الشراء %s فى وضع فوترة
 OtherOrders=أوامر أخرى
 ##### Types de contacts #####

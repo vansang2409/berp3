@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2020   Thibault FOUCART     	<support@ptibogxiv.net>
+/* Copyright (C) 2015   
+ * Copyright (C) 2020       	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,9 +26,9 @@ require_once DOL_DOCUMENT_ROOT.'/user/class/usergroup.class.php';
  * API class for users
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class Users extends DolibarrApi
+class Users extends Berp3Api
 {
 	/**
 	 * @var array   $FIELDS     Mandatory fields, checked when create and update object
@@ -72,14 +72,14 @@ class Users extends DolibarrApi
 	{
 		global $conf;
 
-		if (empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin)) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(401, "You are not allowed to read list of users");
 		}
 
 		$obj_ret = array();
 
 		// case of external user, $societe param is ignored and replaced by user's socid
-		//$socid = DolibarrApiAccess::$user->socid ? DolibarrApiAccess::$user->socid : $societe;
+		//$socid = Berp3ApiAccess::$user->socid ? Berp3ApiAccess::$user->socid : $societe;
 
 		$sql = "SELECT t.rowid";
 		$sql .= " FROM ".MAIN_DB_PREFIX."user as t";
@@ -99,11 +99,11 @@ class Users extends DolibarrApi
 
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -151,7 +151,7 @@ class Users extends DolibarrApi
 	 */
 	public function get($id, $includepermissions = 0)
 	{
-		if (empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin) && $id != 0 && DolibarrApiAccess::$user->id != $id) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin) && $id != 0 && Berp3ApiAccess::$user->id != $id) {
 			throw new RestException(401, 'Not allowed');
 		}
 
@@ -164,8 +164,8 @@ class Users extends DolibarrApi
 			throw new RestException(404, 'User not found');
 		}
 
-		if ($id > 0 && !DolibarrApi::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if ($id > 0 && !Berp3Api::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		if ($includepermissions) {
@@ -194,7 +194,7 @@ class Users extends DolibarrApi
 			throw new RestException(400, 'Bad parameters');
 		}
 
-		if (empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin) && DolibarrApiAccess::$user->login != $login) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin) && Berp3ApiAccess::$user->login != $login) {
 			throw new RestException(401, 'Not allowed');
 		}
 
@@ -203,8 +203,8 @@ class Users extends DolibarrApi
 			throw new RestException(404, 'User not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		if ($includepermissions) {
@@ -233,7 +233,7 @@ class Users extends DolibarrApi
 			throw new RestException(400, 'Bad parameters');
 		}
 
-		if (empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin) && DolibarrApiAccess::$user->email != $email) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin) && Berp3ApiAccess::$user->email != $email) {
 			throw new RestException(401, 'Not allowed');
 		}
 
@@ -242,8 +242,8 @@ class Users extends DolibarrApi
 			throw new RestException(404, 'User not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		if ($includepermissions) {
@@ -266,19 +266,19 @@ class Users extends DolibarrApi
 	 */
 	public function getInfo($includepermissions = 0)
 	{
-		if (empty(DolibarrApiAccess::$user->rights->user->self->creer) && empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin)) {
+		if (empty(Berp3ApiAccess::$user->rights->user->self->creer) && empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(401, 'Not allowed');
 		}
 
-		$apiUser = DolibarrApiAccess::$user;
+		$apiUser = Berp3ApiAccess::$user;
 
 		$result = $this->useraccount->fetch($apiUser->id);
 		if (!$result) {
 			throw new RestException(404, 'User not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		if ($includepermissions) {
@@ -307,8 +307,8 @@ class Users extends DolibarrApi
 	public function post($request_data = null)
 	{
 		// Check user authorization
-		if (empty(DolibarrApiAccess::$user->rights->user->creer) && empty(DolibarrApiAccess::$user->admin)) {
-			throw new RestException(401, "User creation not allowed for login ".DolibarrApiAccess::$user->login);
+		if (empty(Berp3ApiAccess::$user->rights->user->creer) && empty(Berp3ApiAccess::$user->admin)) {
+			throw new RestException(401, "User creation not allowed for login ".Berp3ApiAccess::$user->login);
 		}
 
 		// check mandatory fields
@@ -326,7 +326,7 @@ class Users extends DolibarrApi
 				throw new RestException(401, 'The property '.$field." can't be set/modified using the APIs");
 			}
 			/*if ($field == 'pass') {
-				if (empty(DolibarrApiAccess::$user->rights->user->user->password)) {
+				if (empty(Berp3ApiAccess::$user->rights->user->user->password)) {
 					throw new RestException(401, 'You are not allowed to modify/set password of other users');
 					continue;
 				}
@@ -336,7 +336,7 @@ class Users extends DolibarrApi
 			$this->useraccount->$field = $value;
 		}
 
-		if ($this->useraccount->create(DolibarrApiAccess::$user) < 0) {
+		if ($this->useraccount->create(Berp3ApiAccess::$user) < 0) {
 			throw new RestException(500, 'Error creating', array_merge(array($this->useraccount->error), $this->useraccount->errors));
 		}
 		return $this->useraccount->id;
@@ -357,7 +357,7 @@ class Users extends DolibarrApi
 	public function put($id, $request_data = null)
 	{
 		// Check user authorization
-		if (empty(DolibarrApiAccess::$user->rights->user->user->creer) && empty(DolibarrApiAccess::$user->admin)) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->creer) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(401, "User update not allowed");
 		}
 
@@ -366,8 +366,8 @@ class Users extends DolibarrApi
 			throw new RestException(404, 'Account not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		foreach ($request_data as $field => $value) {
@@ -379,14 +379,14 @@ class Users extends DolibarrApi
 				throw new RestException(401, 'The property '.$field." can't be set/modified using the APIs");
 			}
 			if ($field == 'pass') {
-				if ($this->useraccount->id != DolibarrApiAccess::$user->id && empty(DolibarrApiAccess::$user->rights->user->user->password)) {
+				if ($this->useraccount->id != Berp3ApiAccess::$user->id && empty(Berp3ApiAccess::$user->rights->user->user->password)) {
 					throw new RestException(401, 'You are not allowed to modify password of other users');
 				}
-				if ($this->useraccount->id == DolibarrApiAccess::$user->id && empty(DolibarrApiAccess::$user->rights->user->self->password)) {
+				if ($this->useraccount->id == Berp3ApiAccess::$user->id && empty(Berp3ApiAccess::$user->rights->user->self->password)) {
 					throw new RestException(401, 'You are not allowed to modify your own password');
 				}
 			}
-			if (DolibarrApiAccess::$user->admin) {	// If user for API is admin
+			if (Berp3ApiAccess::$user->admin) {	// If user for API is admin
 				if ($field == 'admin' && $value != $this->useraccount->admin && empty($value)) {
 					throw new RestException(401, 'Reseting the admin status of a user is not possible using the API');
 				}
@@ -412,7 +412,7 @@ class Users extends DolibarrApi
 
 		// If there is no error, update() returns the number of affected
 		// rows so if the update is a no op, the return value is zezo.
-		if ($this->useraccount->update(DolibarrApiAccess::$user) >= 0) {
+		if ($this->useraccount->update(Berp3ApiAccess::$user) >= 0) {
 			return $this->get($id);
 		} else {
 			throw new RestException(500, $this->useraccount->error);
@@ -433,7 +433,7 @@ class Users extends DolibarrApi
 	 */
 	public function getGroups($id)
 	{
-		if (empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin)) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(403);
 		}
 
@@ -473,7 +473,7 @@ class Users extends DolibarrApi
 	{
 		global $conf;
 
-		if (empty(DolibarrApiAccess::$user->rights->user->user->creer) && empty(DolibarrApiAccess::$user->admin)) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->creer) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(401);
 		}
 
@@ -482,16 +482,16 @@ class Users extends DolibarrApi
 			throw new RestException(404, 'User not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		if (!empty($conf->multicompany->enabled) && !empty($conf->global->MULTICOMPANY_TRANSVERSE_MODE) && !empty(DolibarrApiAccess::$user->admin) && empty(DolibarrApiAccess::$user->entity)) {
+		if (!empty($conf->multicompany->enabled) && !empty($conf->global->MULTICOMPANY_TRANSVERSE_MODE) && !empty(Berp3ApiAccess::$user->admin) && empty(Berp3ApiAccess::$user->entity)) {
 			$entity = (!empty($entity) ? $entity : $conf->entity);
 		} else {
 			// When using API, action is done on entity of logged user because a user of entity X with permission to create user should not be able to
 			// hack the security by giving himself permissions on another entity.
-			$entity = (DolibarrApiAccess::$user->entity > 0 ? DolibarrApiAccess::$user->entity : $conf->entity);
+			$entity = (Berp3ApiAccess::$user->entity > 0 ? Berp3ApiAccess::$user->entity : $conf->entity);
 		}
 
 		$result = $this->useraccount->SetInGroup($group, $entity);
@@ -526,13 +526,13 @@ class Users extends DolibarrApi
 
 		$obj_ret = array();
 
-		if ((empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin)) ||
-			!empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(DolibarrApiAccess::$user->rights->user->group_advance->read) && empty(DolibarrApiAccess::$user->admin)) {
+		if ((empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin)) ||
+			!empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(Berp3ApiAccess::$user->rights->user->group_advance->read) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(401, "You are not allowed to read groups");
 		}
 
 		// case of external user, $societe param is ignored and replaced by user's socid
-		//$socid = DolibarrApiAccess::$user->socid ? DolibarrApiAccess::$user->socid : $societe;
+		//$socid = Berp3ApiAccess::$user->socid ? Berp3ApiAccess::$user->socid : $societe;
 
 		$sql = "SELECT t.rowid";
 		$sql .= " FROM ".MAIN_DB_PREFIX."usergroup as t";
@@ -542,11 +542,11 @@ class Users extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -600,8 +600,8 @@ class Users extends DolibarrApi
 	{
 		global $db, $conf;
 
-		if ((empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(DolibarrApiAccess::$user->rights->user->user->lire) && empty(DolibarrApiAccess::$user->admin)) ||
-			!empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(DolibarrApiAccess::$user->rights->user->group_advance->read) && empty(DolibarrApiAccess::$user->admin)) {
+		if ((empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(Berp3ApiAccess::$user->rights->user->user->lire) && empty(Berp3ApiAccess::$user->admin)) ||
+			!empty($conf->global->MAIN_USE_ADVANCED_PERMS) && empty(Berp3ApiAccess::$user->rights->user->group_advance->read) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(401, "You are not allowed to read groups");
 		}
 
@@ -626,7 +626,7 @@ class Users extends DolibarrApi
 	 */
 	public function delete($id)
 	{
-		if (empty(DolibarrApiAccess::$user->rights->user->user->supprimer) && empty(DolibarrApiAccess::$user->admin)) {
+		if (empty(Berp3ApiAccess::$user->rights->user->user->supprimer) && empty(Berp3ApiAccess::$user->admin)) {
 			throw new RestException(401, 'Not allowed');
 		}
 		$result = $this->useraccount->fetch($id);
@@ -634,11 +634,11 @@ class Users extends DolibarrApi
 			throw new RestException(404, 'User not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('user', $this->useraccount->id, 'user')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 		$this->useraccount->oldcopy = clone $this->useraccount;
-		return $this->useraccount->delete(DolibarrApiAccess::$user);
+		return $this->useraccount->delete(Berp3ApiAccess::$user);
 	}
 
 	// phpcs:disable PEAR.NamingConventions.ValidFunctionName.PublicUnderscore
@@ -694,7 +694,7 @@ class Users extends DolibarrApi
 		unset($object->facebook);
 		unset($object->linkedin);
 
-		$canreadsalary = ((!empty($conf->salaries->enabled) && !empty(DolibarrApiAccess::$user->rights->salaries->read)) || (empty($conf->salaries->enabled)));
+		$canreadsalary = ((!empty($conf->salaries->enabled) && !empty(Berp3ApiAccess::$user->rights->salaries->read)) || (empty($conf->salaries->enabled)));
 
 		if (!$canreadsalary) {
 			unset($object->salary);

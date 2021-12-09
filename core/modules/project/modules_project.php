@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010-2014	Regis Houssin	<regis.houssin@inodbox.com>
- * Copyright (C) 2014       Marcos García   <marcosgdf@gmail.com>
+/* Copyright (C) 2010-2014	
+ * Copyright (C) 2014          
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/commondocgenerator.class.php';
 abstract class ModelePDFProjects extends CommonDocGenerator
 {
 	/**
-	 * @var DoliDb Database handler
+	 * @var Berp3Db Database handler
 	 */
 	public $db;
 
@@ -96,7 +96,7 @@ abstract class ModelePDFProjects extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 *  @param  DoliDB	$db     			Database handler
+	 *  @param  Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */
@@ -199,7 +199,7 @@ abstract class ModeleNumRefProjects
 			return $langs->trans("VersionDevelopment");
 		} elseif ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
-		} elseif ($this->version == 'dolibarr') {
+		} elseif ($this->version == 'berp3') {
 			return DOL_VERSION;
 		} elseif ($this->version) {
 			return $this->version;

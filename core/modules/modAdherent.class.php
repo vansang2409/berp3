@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003,2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2003       Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2004-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2013       Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2014-2015  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2018       Alexandre Spangaro      <aspangaro@open-dsi.fr>
+/* Copyright (C) 2003,2005  
+ * Copyright (C) 2003             
+ * Copyright (C) 2004-2012  
+ * Copyright (C) 2004            
+ * Copyright (C) 2004                 
+ * Copyright (C) 2013       
+ * Copyright (C) 2014-2015        
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,18 +29,18 @@
  *      \ingroup    member
  *      \brief      Description and activation file for the module member
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *  Class to describe and enable module Adherent
  */
-class modAdherent extends DolibarrModules
+class modAdherent extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -54,8 +54,8 @@ class modAdherent extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Management of members of a foundation or association";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'member';
 
@@ -423,7 +423,7 @@ class modAdherent extends DolibarrModules
 
 	/**
 	 *		Function called when module is enabled.
-	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *		It also creates data directories
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'newboxdefonly', 'noboxes')

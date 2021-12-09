@@ -1,5 +1,5 @@
 # BERP3 language file - Source file is en_US - agenda
-PropalClosedSignedInDolibarr=Quotation %s signed
-PropalClosedRefusedInDolibarr=Quotation %s refused
-PropalValidatedInDolibarr=Quotation %s validated
-PropalClassifiedBilledInDolibarr=Quotation %s classified billed
+PropalClosedSignedInBerp3=Quotation %s signed
+PropalClosedRefusedInBerp3=Quotation %s refused
+PropalValidatedInBerp3=Quotation %s validated
+PropalClassifiedBilledInBerp3=Quotation %s classified billed

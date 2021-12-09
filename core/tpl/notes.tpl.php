@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2012      Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2013      Florian Henry	   <florian.henry@open-concept.pro>
- * Copyright (C) 2014-2020 Laurent Destailleur <eldy@destailleur.fr>
+/* Copyright (C) 2012             
+ * Copyright (C) 2013      	   
+ * Copyright (C) 2014-2020  <eldy@destailleur.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -95,7 +95,7 @@ if ($module == 'propal') {
 //else dol_print_error('','Bad value '.$module.' for param module');
 
 if (!empty($conf->fckeditor->enabled) && !empty($conf->global->FCKEDITOR_ENABLE_SOCIETE)) {
-	$typeofdata = 'ckeditor:dolibarr_notes:100%:200::1:12:95%:0'; // Rem: This var is for all notes, not only thirdparties note.
+	$typeofdata = 'ckeditor:berp3_notes:100%:200::1:12:95%:0'; // Rem: This var is for all notes, not only thirdparties note.
 } else {
 	$typeofdata = 'textarea:12:95%';
 }

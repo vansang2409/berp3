@@ -89,7 +89,7 @@ MailingModuleDescContactsByCategory=طرف‌های تماس با دسته‌ب�
 MailingModuleDescContactsByFunction=طرف‌های تماس با سمت‌ها
 MailingModuleDescEmailsFromFile=رایانامه‌ها از فایل
 MailingModuleDescEmailsFromUser=ورودی رایانامه کاربر
-MailingModuleDescDolibarrUsers=کاربران دارای رایانامه
+MailingModuleDescBerp3Users=کاربران دارای رایانامه
 MailingModuleDescThirdPartiesByCategories=شخص‌سوم‌ها (بر حسب دسته‌بندی)
 SendingFromWebInterfaceIsNotAllowed=ارسال از رابط وب مجاز نیست.
 EmailCollectorFilterDesc=All filters must match to have an email being collected

@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Xavier Dutoit        <doli@sydesy.com>
- * Copyright (C) 2004-2020 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2017 Regis Houssin      	<regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2003      Xavier Dutoit        <berp3@sydesy.com>
+ * Copyright (C) 2004-2020 
+ * Copyright (C) 2005-2017       	
  * Copyright (C) 2006 	   Jean Heimburger    	<jean@tiaris.info>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -166,7 +166,7 @@ class Conf
 	 *  Load setup values into conf object (read llx_const)
 	 *  Note that this->db->xxx, this->file->xxx have been already set when setValues is called.
 	 *
-	 *  @param      DoliDB      $db     Database handler
+	 *  @param      Berp3DB      $db     Database handler
 	 *  @return     int                 < 0 if KO, >= 0 if OK
 	 */
 	public function setValues($db)
@@ -191,10 +191,10 @@ class Conf
 					$value = $objp->value;
 					if ($key) {
 						// Allow constants values to be overridden by environment variables
-						if (isset($_SERVER['DOLIBARR_'.$key])) {
-							$value = $_SERVER['DOLIBARR_'.$key];
-						} elseif (isset($_ENV['DOLIBARR_'.$key])) {
-							$value = $_ENV['DOLIBARR_'.$key];
+						if (isset($_SERVER['BERP3_'.$key])) {
+							$value = $_SERVER['BERP3_'.$key];
+						} elseif (isset($_ENV['BERP3_'.$key])) {
+							$value = $_ENV['BERP3_'.$key];
 						}
 
 						//if (! defined("$key")) define("$key", $value);	// In some cases, the constant might be already forced (Example: SYSLOG_HANDLERS during install)
@@ -607,19 +607,19 @@ class Conf
 			$this->theme = $this->global->MAIN_THEME;
 			$this->css = "/theme/".$this->theme."/style.css.php";
 
-			// conf->email_from = email pour envoi par dolibarr des mails automatiques
+			// conf->email_from = email pour envoi par berp3 des mails automatiques
 			$this->email_from = "robot@example.com";
 			if (!empty($this->global->MAIN_MAIL_EMAIL_FROM)) {
 				$this->email_from = $this->global->MAIN_MAIL_EMAIL_FROM;
 			}
 
-			// conf->notification->email_from = email pour envoi par Dolibarr des notifications
+			// conf->notification->email_from = email pour envoi par Berp3 des notifications
 			$this->notification->email_from = $this->email_from;
 			if (!empty($this->global->NOTIFICATION_EMAIL_FROM)) {
 				$this->notification->email_from = $this->global->NOTIFICATION_EMAIL_FROM;
 			}
 
-			// conf->mailing->email_from = email pour envoi par Dolibarr des mailings
+			// conf->mailing->email_from = email pour envoi par Berp3 des mailings
 			$this->mailing->email_from = $this->email_from;
 			if (!empty($this->global->MAILING_EMAIL_FROM)) {
 				$this->mailing->email_from = $this->global->MAILING_EMAIL_FROM;
@@ -820,11 +820,11 @@ class Conf
 				$this->global->MAIN_JS_GRAPH = 'chart'; // Use chart.js library
 			}
 
-			if (empty($this->global->MAIN_MODULE_DOLISTORE_API_SRV)) {
-				$this->global->MAIN_MODULE_DOLISTORE_API_SRV = 'https://www.dolistore.com';
+			if (empty($this->global->MAIN_MODULE_BERPSTORE_API_SRV)) {
+				$this->global->MAIN_MODULE_BERPSTORE_API_SRV = 'https://www.berp3store.com';
 			}
-			if (empty($this->global->MAIN_MODULE_DOLISTORE_API_KEY)) {
-				$this->global->MAIN_MODULE_DOLISTORE_API_KEY = 'dolistorecatalogpublickey1234567';
+			if (empty($this->global->MAIN_MODULE_BERPSTORE_API_KEY)) {
+				$this->global->MAIN_MODULE_BERPSTORE_API_KEY = 'berp3storecatalogpublickey1234567';
 			}
 
 			// Enable by default the CSRF protection by token.

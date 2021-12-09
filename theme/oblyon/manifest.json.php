@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004-2017	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2006		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2007-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011		Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2012		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2018       Ferran Marcet           <fmarcet@2byte.es>
+/* Copyright (C) 2004-2017	
+ * Copyright (C) 2006		
+ * Copyright (C) 2007-2017	
+ * Copyright (C) 2011		
+ * Copyright (C) 2012		
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ if (!empty($conf->global->MAIN_APPLICATION_TITLE)) $appli=$conf->global->MAIN_AP
     "name": "<?php echo $appli; ?>",
     "icons": [
         {
-            "src": "<?php echo dol_buildpath('/theme/common/dolibarr_logo_256x256.png', 2); ?>",
+            "src": "<?php echo dol_buildpath('/theme/common/berp3_logo_256x256.png', 2); ?>",
             "sizes": "256x256",
             "type": "image/png"
         }

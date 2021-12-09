@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2008-2010 Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2008-2010 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,9 +19,9 @@
  * 	\file       htdocs/public/agenda/agendaexport.php
  * 	\ingroup    agenda
  * 	\brief      Page to export agenda
- * 				http://127.0.0.1/dolibarr/public/agenda/agendaexport.php?format=vcal&exportkey=cle
- * 				http://127.0.0.1/dolibarr/public/agenda/agendaexport.php?format=ical&type=event&exportkey=cle
- * 				http://127.0.0.1/dolibarr/public/agenda/agendaexport.php?format=rss&exportkey=cle
+ * 				http://127.0.0.1/berp3/public/agenda/agendaexport.php?format=vcal&exportkey=cle
+ * 				http://127.0.0.1/berp3/public/agenda/agendaexport.php?format=ical&type=event&exportkey=cle
+ * 				http://127.0.0.1/berp3/public/agenda/agendaexport.php?format=rss&exportkey=cle
  *              Other parameters into url are:
  *              &notolderthan=99
  *              &year=2015
@@ -47,7 +47,7 @@ if (!defined('NOCSRFCHECK')) {
 	define("NOCSRFCHECK", 1); // We accept to go on this page from external web site.
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 
 
@@ -177,7 +177,7 @@ if ($reshook < 0) {
 
 
 // Define filename with prefix on filters predica (each predica set must have on cache file)
-$shortfilename = 'dolibarrcalendar';
+$shortfilename = 'berp3calendar';
 $filename = $shortfilename;
 // Complete long filename
 foreach ($filters as $key => $value) {
@@ -226,7 +226,7 @@ if ($format == 'ical') {
 if ($format == 'rss') {
 	$shortfilename .= '.rss'; $filename .= '.rss';
 }
-if ($shortfilename == 'dolibarrcalendar') {
+if ($shortfilename == 'berp3calendar') {
 	$langs->load("errors");
 	llxHeaderVierge();
 	print '<div class="error">'.$langs->trans("ErrorWrongValueForParameterX", 'format').'</div>';

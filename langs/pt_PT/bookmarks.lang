@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Comportamento quando um URL de marcador é selecionado
 CreateBookmark=Criar marcador
 SetHereATitleForLink=Defina um título para o marcador
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Utilizar um URL http externo para o URL BERP3 relativo
+UseAnExternalHttpLinkOrRelativeBerp3Link=Utilizar um URL http externo para o URL BERP3 relativo
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Escolher se a página associada deve abrir ou não numa nova janela
 BookmarksManagement=Gestão de Marcadores

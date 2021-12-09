@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2009-2019	Laurent Destailleur	<eldy@users.sourceforge.org>
- * Copyright (C) 2011-2013  Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2009-2019		
+ * Copyright (C) 2011-2013  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,12 +58,12 @@ if ($action == 'set') {
 	}
 
 	if (!$error) {
-		$res1 = dolibarr_set_const($db, "GEOIP_VERSION", GETPOST('geoipversion', 'aZ09'), 'chaine', 0, '', $conf->entity);
+		$res1 = berp3_set_const($db, "GEOIP_VERSION", GETPOST('geoipversion', 'aZ09'), 'chaine', 0, '', $conf->entity);
 		if (!$res1 > 0) {
 			$error++;
 		}
 
-		$res2 = dolibarr_set_const($db, "GEOIPMAXMIND_COUNTRY_DATAFILE", $gimcdf, 'chaine', 0, '', $conf->entity);
+		$res2 = berp3_set_const($db, "GEOIPMAXMIND_COUNTRY_DATAFILE", $gimcdf, 'chaine', 0, '', $conf->entity);
 		if (!$res2 > 0) {
 			$error++;
 		}

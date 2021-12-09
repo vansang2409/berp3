@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2013-2014 Olivier Geffroy      <jeff@jeffinfo.com>
- * Copyright (C) 2013-2014 Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2013-2021 Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2014-2015 Ari Elbaz (elarifr)  <github@accedinfo.com>
- * Copyright (C) 2014      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2014      Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2015      Jean-François Ferry  <jfefe@aternatik.fr>
- * Copyright (C) 2017      Laurent Destailleur  <eldy@destailleur.fr>
- * Copyright (C) 2021      Ferran Marcet        <fmarcet@2byte.es>
+/*  
+ *  
+ * Copyright (C) 2013-2021 
+ * Copyright (C) 2014-2015 
+ * Copyright (C) 2014      
+ * Copyright (C) 2014      
+ * Copyright (C) 2015      
+ * Copyright (C) 2017      
+ * Copyright (C) 2021      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -73,7 +73,7 @@ if (in_array($action, array(
 	'setACCOUNTING_LIST_SORT_VENTILATION_DONE'))) {
 	$constname = preg_replace('/^set/', '', $action);
 	$constvalue = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, $constname, $constvalue, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, $constname, $constvalue, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -91,7 +91,7 @@ if ($action == 'update') {
 	if (!$error) {
 		foreach ($list as $constname) {
 			$constvalue = GETPOST($constname, 'alpha');
-			if (!dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+			if (!berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 				$error++;
 			}
 		}
@@ -106,7 +106,7 @@ if ($action == 'update') {
 				$constvalue = dol_mktime(0, 0, 0, GETPOST($constname.'month', 'int'), GETPOST($constname.'day', 'int'), GETPOST($constname.'year', 'int'));
 			}
 
-			if (!dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+			if (!berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 				$error++;
 			}
 		}
@@ -122,7 +122,7 @@ if ($action == 'update') {
 
 if ($action == 'setlistsorttodo') {
 	$setlistsorttodo = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTING_LIST_SORT_VENTILATION_TODO", $setlistsorttodo, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTING_LIST_SORT_VENTILATION_TODO", $setlistsorttodo, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -136,7 +136,7 @@ if ($action == 'setlistsorttodo') {
 
 if ($action == 'setlistsortdone') {
 	$setlistsortdone = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTING_LIST_SORT_VENTILATION_DONE", $setlistsortdone, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTING_LIST_SORT_VENTILATION_DONE", $setlistsortdone, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -150,7 +150,7 @@ if ($action == 'setlistsortdone') {
 
 if ($action == 'setmanagezero') {
 	$setmanagezero = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTING_MANAGE_ZERO", $setmanagezero, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTING_MANAGE_ZERO", $setmanagezero, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -164,7 +164,7 @@ if ($action == 'setmanagezero') {
 
 if ($action == 'setdisabledirectinput') {
 	$setdisabledirectinput = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "BANK_DISABLE_DIRECT_INPUT", $setdisabledirectinput, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "BANK_DISABLE_DIRECT_INPUT", $setdisabledirectinput, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -178,7 +178,7 @@ if ($action == 'setdisabledirectinput') {
 
 if ($action == 'setenabledraftexport') {
 	$setenabledraftexport = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTING_ENABLE_EXPORT_DRAFT_JOURNAL", $setenabledraftexport, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTING_ENABLE_EXPORT_DRAFT_JOURNAL", $setenabledraftexport, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -192,7 +192,7 @@ if ($action == 'setenabledraftexport') {
 
 if ($action == 'setenablesubsidiarylist') {
 	$setenablesubsidiarylist = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTANCY_COMBO_FOR_AUX", $setenablesubsidiarylist, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTANCY_COMBO_FOR_AUX", $setenablesubsidiarylist, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -206,7 +206,7 @@ if ($action == 'setenablesubsidiarylist') {
 
 if ($action == 'setdisablebindingonsales') {
 	$setdisablebindingonsales = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTING_DISABLE_BINDING_ON_SALES", $setdisablebindingonsales, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTING_DISABLE_BINDING_ON_SALES", $setdisablebindingonsales, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -220,7 +220,7 @@ if ($action == 'setdisablebindingonsales') {
 
 if ($action == 'setdisablebindingonpurchases') {
 	$setdisablebindingonpurchases = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTING_DISABLE_BINDING_ON_PURCHASES", $setdisablebindingonpurchases, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTING_DISABLE_BINDING_ON_PURCHASES", $setdisablebindingonpurchases, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -234,7 +234,7 @@ if ($action == 'setdisablebindingonpurchases') {
 
 if ($action == 'setdisablebindingonexpensereports') {
 	$setdisablebindingonexpensereports = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "ACCOUNTING_DISABLE_BINDING_ON_EXPENSEREPORTS", $setdisablebindingonexpensereports, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "ACCOUNTING_DISABLE_BINDING_ON_EXPENSEREPORTS", $setdisablebindingonexpensereports, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}

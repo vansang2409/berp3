@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2008-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2011-2017 Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2019 Andreu Bisquerra Gaya		<jove@bisquerra.com>
- * Copyright (C) 2021    Nicolas ZABOURI    <info@inovea-conseil.com>
+/* Copyright (C) 2008-2011 
+ * Copyright (C) 2011-2017 
+ * Copyright (C) 2019  Gaya		
+ * Copyright (C) 2021        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,14 +44,14 @@ $langs->loadLangs(array("admin", "cashdesk", "commercial"));
 if (GETPOST('action', 'alpha') == 'set') {
 	$db->begin();
 
-	$res = dolibarr_set_const($db, "TAKEPOS_HEADER", GETPOST('TAKEPOS_HEADER', 'restricthtml'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_FOOTER", GETPOST('TAKEPOS_FOOTER', 'restricthtml'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_RECEIPT_NAME", GETPOST('TAKEPOS_RECEIPT_NAME', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_SHOW_CUSTOMER", GETPOST('TAKEPOS_SHOW_CUSTOMER', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_AUTO_PRINT_TICKETS", GETPOST('TAKEPOS_AUTO_PRINT_TICKETS', 'int'), 'int', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_PRINT_SERVER", GETPOST('TAKEPOS_PRINT_SERVER', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_PRINT_PAYMENT_METHOD", GETPOST('TAKEPOS_PRINT_PAYMENT_METHOD', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, 'TAKEPOS_PRINT_WITHOUT_DETAILS_LABEL_DEFAULT', GETPOST('TAKEPOS_PRINT_WITHOUT_DETAILS_LABEL_DEFAULT', 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_HEADER", GETPOST('TAKEPOS_HEADER', 'restricthtml'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_FOOTER", GETPOST('TAKEPOS_FOOTER', 'restricthtml'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_RECEIPT_NAME", GETPOST('TAKEPOS_RECEIPT_NAME', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_SHOW_CUSTOMER", GETPOST('TAKEPOS_SHOW_CUSTOMER', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_AUTO_PRINT_TICKETS", GETPOST('TAKEPOS_AUTO_PRINT_TICKETS', 'int'), 'int', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_PRINT_SERVER", GETPOST('TAKEPOS_PRINT_SERVER', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_PRINT_PAYMENT_METHOD", GETPOST('TAKEPOS_PRINT_PAYMENT_METHOD', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, 'TAKEPOS_PRINT_WITHOUT_DETAILS_LABEL_DEFAULT', GETPOST('TAKEPOS_PRINT_WITHOUT_DETAILS_LABEL_DEFAULT', 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 
 	dol_syslog("admin/cashdesk: level ".GETPOST('level', 'alpha'));
 
@@ -67,7 +67,7 @@ if (GETPOST('action', 'alpha') == 'set') {
 		setEventMessages($langs->trans("Error"), null, 'errors');
 	}
 } elseif (GETPOST('action', 'alpha') == 'setmethod') {
-	dolibarr_set_const($db, "TAKEPOS_PRINT_METHOD", GETPOST('value', 'alpha'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "TAKEPOS_PRINT_METHOD", GETPOST('value', 'alpha'), 'chaine', 0, '', $conf->entity);
 	// TakePOS connector require ReceiptPrinter module
 	if ($conf->global->TAKEPOS_PRINT_METHOD == "takeposconnector" && !$conf->receiptprinter->enabled) {
 		activateModule("modReceiptPrinter");
@@ -116,7 +116,7 @@ print "</td></tr>\n";
 
 // Receipt printer module
 print '<tr class="oddeven"><td>';
-print $langs->trans('DolibarrReceiptPrinter');
+print $langs->trans('Berp3ReceiptPrinter');
 print '<td>';
 print $langs->trans('ReceiptPrinterMethodDescription');
 if ($conf->receiptprinter->enabled) {
@@ -195,7 +195,7 @@ if ($conf->global->TAKEPOS_PRINT_METHOD == "browser" || $conf->global->TAKEPOS_P
 		print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 	} else {
 		include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+		$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 		print $doleditor->Create();
 	}
 	print "</td></tr>\n";
@@ -208,7 +208,7 @@ if ($conf->global->TAKEPOS_PRINT_METHOD == "browser" || $conf->global->TAKEPOS_P
 		print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 	} else {
 		include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+		$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 		print $doleditor->Create();
 	}
 	print "</td></tr>\n";

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2021 Gauthier VERDOL <gauthier.verdol@atm-consulting.fr>
- * Copyright (C) 2021 Greg Rastklan <greg.rastklan@atm-consulting.fr>
- * Copyright (C) 2021 Jean-Pascal BOUDET <jean-pascal.boudet@atm-consulting.fr>
- * Copyright (C) 2021 Grégory BLEMAND <gregory.blemand@atm-consulting.fr>
+/* Copyright (C) 2017  
+ * Copyright (C) 2021  
+ * Copyright (C) 2021  
+ * Copyright (C) 2021  
+ * Copyright (C) 2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -166,9 +166,9 @@ class SkillRank extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 
@@ -1048,7 +1048,7 @@ class SkillRank extends CommonObject
 	{
 		global $conf, $langs;
 
-		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/dolibarr_mydedicatedlofile.log';
+		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/berp3_mydedicatedlofile.log';
 
 		$error = 0;
 		$this->output = '';

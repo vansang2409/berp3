@@ -1,10 +1,10 @@
 <?php
 /* Copyright (C) 2011 		Dimitri Mouillard   	<dmouillard@teclib.com>
- * Copyright (C) 2015 		Laurent Destailleur 	<eldy@users.sourceforge.net>
- * Copyright (C) 2015 		Alexandre Spangaro  	<aspangaro@open-dsi.fr>
- * Copyright (C) 2018       Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (c) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2016-2020 	Ferran Marcet       	<fmarcet@2byte.es>
+ * Copyright (C) 2015 		 	
+ * Copyright (C) 2015 		  	
+ * Copyright (C) 2018                
+ * Copyright (c) 2018-2021  
+ * Copyright (C) 2016-2020 	       	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -206,7 +206,7 @@ class ExpenseReport extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db     Handler acces base de donnees
+	 *  @param  Berp3DB  $db     Handler acces base de donnees
 	 */
 	public function __construct($db)
 	{
@@ -2538,7 +2538,7 @@ class ExpenseReport extends CommonObject
 class ExpenseReportLine
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -2607,7 +2607,7 @@ class ExpenseReportLine
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB    $db     Handlet database
+	 * @param Berp3DB    $db     Handlet database
 	 */
 	public function __construct($db)
 	{

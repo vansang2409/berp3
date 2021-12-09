@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2003       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2020  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015-2021  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2017       Ferran Marcet           <fmarcet@2byte.es>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2003       
+ * Copyright (C) 2004-2020  
+ * Copyright (C) 2005-2009  
+ * Copyright (C) 2015-2021  
+ * Copyright (C) 2017       
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -89,7 +89,7 @@ if (!empty($conf->multicompany->enabled) && !empty($conf->entity) && $conf->enti
 $conf->expensereport->dir_output = $rootfordata.'/expensereport';
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -1105,7 +1105,7 @@ if (empty($reshook)) {
 			}
 		}
 
-		// if VAT is not used in Dolibarr, set VAT rate to 0 because VAT rate is necessary.
+		// if VAT is not used in Berp3, set VAT rate to 0 because VAT rate is necessary.
 		if (empty($vatrate)) {
 			$vatrate = "0.000";
 		}
@@ -1269,7 +1269,7 @@ if (empty($reshook)) {
 		$qty = price2num(GETPOST('qty', 'alpha'));
 		$vatrate = GETPOST('vatrate', 'alpha');
 
-		// if VAT is not used in Dolibarr, set VAT rate to 0 because VAT rate is necessary.
+		// if VAT is not used in Berp3, set VAT rate to 0 because VAT rate is necessary.
 		if (empty($vatrate)) {
 			$vatrate = "0.000";
 		}
@@ -1453,7 +1453,7 @@ if ($action == 'create') {
 	print '<td class="tdtop">'.$langs->trans('NotePublic').'</td>';
 	print '<td>';
 
-	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 	print '</td></tr>';
 
@@ -1463,7 +1463,7 @@ if ($action == 'create') {
 		print '<td class="tdtop">'.$langs->trans('NotePrivate').'</td>';
 		print '<td>';
 
-		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 		print $doleditor->Create(1);
 		print '</td></tr>';
 	}

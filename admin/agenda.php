@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2008-2015	Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2011		Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2012  Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2015		Jean-François Ferry <jfefe@aternatik.fr>
+/* Copyright (C) 2008-2015	
+ * Copyright (C) 2011				
+ * Copyright (C) 2011-2012  
+ * Copyright (C) 2015		 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,7 +90,7 @@ if ($action == "save" && empty($cancel)) {
 		$keyparam = 'MAIN_AGENDA_ACTIONAUTO_'.$trigger['code'];
 		//print "param=".$param." - ".$_POST[$param];
 		if ($search_event === '' || preg_match('/'.preg_quote($search_event, '/').'/i', $keyparam)) {
-			$res = dolibarr_set_const($db, $keyparam, (GETPOST($keyparam, 'alpha') ?GETPOST($keyparam, 'alpha') : ''), 'chaine', 0, '', $conf->entity);
+			$res = berp3_set_const($db, $keyparam, (GETPOST($keyparam, 'alpha') ?GETPOST($keyparam, 'alpha') : ''), 'chaine', 0, '', $conf->entity);
 			if (!($res > 0)) {
 				$error++;
 			}

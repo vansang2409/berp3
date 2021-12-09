@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013-2014 Cedric GROSS         <c.gross@kreiz-it.fr>
+/* Copyright (C) 2003      
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2005-2012 
+ *  Cedric GROSS         
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,18 +25,18 @@
  *  \ingroup    productbatch
  *  \brief      Description and activation file for the module productbatch
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module productdluo
  */
-class modProductBatch extends DolibarrModules
+class modProductBatch extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -52,8 +52,8 @@ class modProductBatch extends DolibarrModules
 		$this->description = "Batch number, eat-by and sell-by date management module";
 
 		$this->rights_class = 'productbatch';
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where dluo is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 
@@ -73,7 +73,7 @@ class modProductBatch extends DolibarrModules
 		$this->requiredby = array(); // List of module ids to disable if this one is disabled
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(3, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(3, 0); // Minimum version of Berp3 required by module
 		$this->langfiles = array("productbatch");
 
 		// Constants
@@ -123,7 +123,7 @@ class modProductBatch extends DolibarrModules
 
 	/**
 	 *		Function called when module is enabled.
-	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *		It also creates data directories
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')
@@ -138,7 +138,7 @@ class modProductBatch extends DolibarrModules
 		if (!empty($conf->cashdesk->enabled)) {
 			if (empty($conf->global->CASHDESK_NO_DECREASE_STOCK)) {
 				include_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
-				$res = dolibarr_set_const($db, "CASHDESK_NO_DECREASE_STOCK", 1, 'chaine', 0, '', $conf->entity);
+				$res = berp3_set_const($db, "CASHDESK_NO_DECREASE_STOCK", 1, 'chaine', 0, '', $conf->entity);
 			}
 		}
 

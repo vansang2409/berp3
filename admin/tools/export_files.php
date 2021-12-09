@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2006-2014  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2011       Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2021		Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2014  
+ * Copyright (C) 2011       
+ * Copyright (C) 2015       
+ * Copyright (C) 2021				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -145,7 +145,7 @@ if ($compression == 'zip') {
 
 	$file .= '.tar';
 	// We also exclude '/temp/' dir and 'documents/admin/documents'
-	$cmd = "tar -cf ".$outputdir."/".$file." --exclude-vcs --exclude 'temp' --exclude 'dolibarr.log' --exclude 'dolibarr_*.log' --exclude 'documents/admin/documents' -C ".dirname(DOL_DATA_ROOT)." ".basename(DOL_DATA_ROOT);
+	$cmd = "tar -cf ".$outputdir."/".$file." --exclude-vcs --exclude 'temp' --exclude 'berp3.log' --exclude 'berp3_*.log' --exclude 'documents/admin/documents' -C ".dirname(DOL_DATA_ROOT)." ".basename(DOL_DATA_ROOT);
 
 	$result = $utils->executeCLI($cmd, $outputfile);
 
@@ -178,7 +178,7 @@ if ($errormsg) {
 }
 
 // Redirect t backup page
-header("Location: dolibarr_export.php");
+header("Location: berp3_export.php");
 
 $time_end = time();
 

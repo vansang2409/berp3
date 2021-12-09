@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005-2012	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2017	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2014		Marcos García		<marcosgdf@gmail.com>
+/* Copyright (C) 2005-2012		
+ * Copyright (C) 2005-2017			
+ * Copyright (C) 2014				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,18 +23,18 @@
  *  \brief      Fichier de gestion des triggers LDAP
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for ldap module
  */
-class InterfaceLdapsynchro extends DolibarrTriggers
+class InterfaceLdapsynchro extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -42,14 +42,14 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "ldap";
-		$this->description = "Triggers of this module allows to synchronize Dolibarr toward a LDAP database.";
-		// 'development', 'experimental', 'dolibarr' or version
-		$this->version = self::VERSION_DOLIBARR;
+		$this->description = "Triggers of this module allows to synchronize Berp3 toward a LDAP database.";
+		// 'development', 'experimental', 'berp3' or version
+		$this->version = self::VERSION_BERP3;
 		$this->picto = 'technic';
 	}
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file is inside directory htdocs/core/triggers or htdocs/module/code/triggers (and declared)
 	 *
 	 * @param string		$action		Event action code
@@ -81,7 +81,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 		// Users
 		if ($action == 'USER_CREATE') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -98,7 +98,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 			}
 		} elseif ($action == 'USER_MODIFY') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -177,7 +177,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 			}
 		} elseif ($action == 'USER_NEW_PASSWORD') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -212,7 +212,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
 		} elseif ($action == 'USER_DELETE') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -229,7 +229,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 			}
 			/*} elseif ($action == 'USER_SETINGROUP') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -263,7 +263,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 			}
 			} elseif ($action == 'USER_REMOVEFROMGROUP') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -298,7 +298,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 		} elseif ($action == 'USERGROUP_CREATE') {
 			// Groupes
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -320,7 +320,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 			}
 		} elseif ($action == 'USERGROUP_MODIFY') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 
@@ -353,7 +353,7 @@ class InterfaceLdapsynchro extends DolibarrTriggers
 			}
 		} elseif ($action == 'USERGROUP_DELETE') {
 			dol_syslog("Trigger '".$this->name."' for action '$action' launched by ".__FILE__.". id=".$object->id);
-			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'dolibarr2ldap') {
+			if (!empty($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE === 'berp32ldap') {
 				$ldap = new Ldap();
 				$result = $ldap->connect_bind();
 

@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2001-2007	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2019	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2010-2014	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2011-2017	Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2015		Alexandre Spangaro		<aspangaro@open-dsi.fr>
+/* Copyright (C) 2001-2007	
+ * Copyright (C) 2004-2019	
+ * Copyright (C) 2005-2017	
+ * Copyright (C) 2010-2014	
+ * Copyright (C) 2011-2017	
+ * Copyright (C) 2015		
  * Copyright (C) 2017       Rui Strecht			    <rui.strecht@aliartalentos.com>
- * Copyright (C) 2020       Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2020       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,17 +60,17 @@ if (($action == 'update' && !GETPOST("cancel", 'alpha'))) {
 			$networkconstname = 'MAIN_INFO_SOCIETE_'.strtoupper($key).'_URL';
 			$networkconstid = 'MAIN_INFO_SOCIETE_'.strtoupper($key);
 			if (GETPOSTISSET($key.'url') && GETPOST($key.'url', 'alpha') != '') {
-				dolibarr_set_const($db, $networkconstname, GETPOST($key.'url', 'alpha'), 'chaine', 0, '', $conf->entity);
-				dolibarr_set_const($db, $networkconstid, GETPOST($key, 'alpha'), 'chaine', 0, '', $conf->entity);
+				berp3_set_const($db, $networkconstname, GETPOST($key.'url', 'alpha'), 'chaine', 0, '', $conf->entity);
+				berp3_set_const($db, $networkconstid, GETPOST($key, 'alpha'), 'chaine', 0, '', $conf->entity);
 			} elseif (GETPOSTISSET($key) && GETPOST($key, 'alpha') != '') {
 				if (!empty($listofnetworks[$key]['url'])) {
 					$url = str_replace('{socialid}', GETPOST($key, 'alpha'), $listofnetworks[$key]['url']);
-					dolibarr_set_const($db, $networkconstname, $url, 'chaine', 0, '', $conf->entity);
+					berp3_set_const($db, $networkconstname, $url, 'chaine', 0, '', $conf->entity);
 				}
-				dolibarr_set_const($db, $networkconstid, GETPOST($key, 'alpha'), 'chaine', 0, '', $conf->entity);
+				berp3_set_const($db, $networkconstid, GETPOST($key, 'alpha'), 'chaine', 0, '', $conf->entity);
 			} else {
-				dolibarr_del_const($db, $networkconstname, $conf->entity);
-				dolibarr_del_const($db, $networkconstid, $conf->entity);
+				berp3_del_const($db, $networkconstname, $conf->entity);
+				berp3_del_const($db, $networkconstid, $conf->entity);
 			}
 		}
 	}

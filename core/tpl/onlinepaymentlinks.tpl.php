@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Laurent Destailleur <eldy@destailleur.fr>
+/* Copyright (C) 2017  <eldy@destailleur.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

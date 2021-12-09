@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2008-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2008-2017 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2008-2011 
+ * Copyright (C) 2008-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 /**
  *  \file		htdocs/core/lib/security2.lib.php
  *  \ingroup    core
- *  \brief		Set of function used for dolibarr security (not common functions).
+ *  \brief		Set of function used for berp3 security (not common functions).
  *  			Warning, this file must not depends on other library files, except function.lib.php
  *  			because it is used at low code level.
  */
@@ -50,7 +50,7 @@ function dol_getwebuser($mode)
  *	@param		string	$usertotest			Login value to test
  *	@param		string	$passwordtotest		Password value to test
  *	@param		string	$entitytotest		Instance of data we must check
- *	@param		array	$authmode			Array list of selected authentication mode array('http', 'dolibarr', 'xxx'...)
+ *	@param		array	$authmode			Array list of selected authentication mode array('http', 'berp3', 'xxx'...)
  *	@param		string	$context			Context checkLoginPassEntity was created for ('api', 'dav', 'ws', '')
  *  @return		string						Login or ''
  */
@@ -123,7 +123,7 @@ function checkLoginPassEntity($usertotest, $passwordtotest, $entitytotest, $auth
 
 if (!function_exists('dol_loginfunction')) {
 	/**
-	 * Show Dolibarr default login page.
+	 * Show Berp3 default login page.
 	 * Part of this code is also duplicated into main.inc.php::top_htmlhead
 	 *
 	 * @param       Translate   $langs      Lang object (must be initialized by a new).
@@ -133,7 +133,7 @@ if (!function_exists('dol_loginfunction')) {
 	 */
 	function dol_loginfunction($langs, $conf, $mysoc)
 	{
-		global $dolibarr_main_demo, $dolibarr_main_force_https;
+		global $berp3_main_demo, $berp3_main_force_https;
 		global $db, $hookmanager;
 
 		$langs->loadLangs(array("main", "other", "help", "admin"));
@@ -153,7 +153,7 @@ if (!function_exists('dol_loginfunction')) {
 		if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 			$title = $conf->global->MAIN_APPLICATION_TITLE;
 		}
-		$titletruedolibarrversion = constant('DOL_VERSION'); // $title used by login template after the @ to inform of true Dolibarr version
+		$titletrueberp3version = constant('DOL_VERSION'); // $title used by login template after the @ to inform of true Berp3 version
 
 		// Note: $conf->css looks like '/theme/eldy/style.css.php'
 		/*
@@ -191,7 +191,7 @@ if (!function_exists('dol_loginfunction')) {
 		$prefix = dol_getprefix('');
 		$sessiontimeout = 'DOLSESSTIMEOUT_'.$prefix;
 		if (!empty($conf->global->MAIN_SESSION_TIMEOUT)) {
-			setcookie($sessiontimeout, $conf->global->MAIN_SESSION_TIMEOUT, 0, "/", null, (empty($dolibarr_main_force_https) ? false : true), true);
+			setcookie($sessiontimeout, $conf->global->MAIN_SESSION_TIMEOUT, 0, "/", null, (empty($berp3_main_force_https) ? false : true), true);
 		}
 
 		if (GETPOST('urlfrom', 'alpha')) {
@@ -208,8 +208,8 @@ if (!function_exists('dol_loginfunction')) {
 
 		$demologin = '';
 		$demopassword = '';
-		if (!empty($dolibarr_main_demo)) {
-			$tab = explode(',', $dolibarr_main_demo);
+		if (!empty($berp3_main_demo)) {
+			$tab = explode(',', $berp3_main_demo);
 			$demologin = $tab[0];
 			$demopassword = $tab[1];
 		}
@@ -244,8 +244,8 @@ if (!function_exists('dol_loginfunction')) {
 			$width = 128;
 		} elseif (!empty($mysoc->logo_squarred_small) && is_readable($conf->mycompany->dir_output.'/logos/thumbs/'.$mysoc->logo_squarred_small)) {
 			$urllogo = DOL_URL_ROOT.'/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file='.urlencode('logos/thumbs/'.$mysoc->logo_squarred_small);
-		} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/dolibarr_logo.svg')) {
-			$urllogo = DOL_URL_ROOT.'/theme/dolibarr_logo.svg';
+		} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/berp3_logo.png')) {
+			$urllogo = DOL_URL_ROOT.'/theme/berp3_logo.png';
 		}
 
 		// Security graphical code
@@ -285,7 +285,7 @@ if (!function_exists('dol_loginfunction')) {
 		// Set jquery theme
 		$dol_loginmesg = (!empty($_SESSION["dol_loginmesg"]) ? $_SESSION["dol_loginmesg"] : '');
 
-		$favicon = DOL_URL_ROOT.'/theme/dolibarr_256x256_color.png';
+		$favicon = DOL_URL_ROOT.'/theme/berp3_256x256_color.png';
 		if (!empty($mysoc->logo_squarred_mini)) {
 			$favicon = DOL_URL_ROOT.'/viewimage.php?cache=1&modulepart=mycompany&file='.urlencode('logos/thumbs/'.$mysoc->logo_squarred_mini);
 		}
@@ -373,7 +373,7 @@ function encodedecode_dbpassconf($level = 0)
 
 			$lineofpass = 0;
 
-			if (preg_match('/^[^#]*dolibarr_main_db_encrypted_pass[\s]*=[\s]*(.*)/i', $buffer, $reg)) {	// Old way to save crypted value
+			if (preg_match('/^[^#]*berp3_main_db_encrypted_pass[\s]*=[\s]*(.*)/i', $buffer, $reg)) {	// Old way to save crypted value
 				$val = trim($reg[1]); // This also remove CR/LF
 				$val = preg_replace('/^["\']/', '', $val);
 				$val = preg_replace('/["\'][\s;]*$/', '', $val);
@@ -383,7 +383,7 @@ function encodedecode_dbpassconf($level = 0)
 					$passwd = $val;
 					$lineofpass = 1;
 				}
-			} elseif (preg_match('/^[^#]*dolibarr_main_db_pass[\s]*=[\s]*(.*)/i', $buffer, $reg)) {
+			} elseif (preg_match('/^[^#]*berp3_main_db_pass[\s]*=[\s]*(.*)/i', $buffer, $reg)) {
 				$val = trim($reg[1]); // This also remove CR/LF
 				$val = preg_replace('/^["\']/', '', $val);
 				$val = preg_replace('/["\'][\s;]*$/', '', $val);
@@ -404,10 +404,10 @@ function encodedecode_dbpassconf($level = 0)
 			if ($lineofpass) {
 				// Add value at end of file
 				if ($level == 0) {
-					$config .= '$dolibarr_main_db_pass=\''.$passwd.'\';'."\n";
+					$config .= '$berp3_main_db_pass=\''.$passwd.'\';'."\n";
 				}
 				if ($level == 1) {
-					$config .= '$dolibarr_main_db_pass=\'crypted:'.$passwd_crypted.'\';'."\n";
+					$config .= '$berp3_main_db_pass=\'crypted:'.$passwd_crypted.'\';'."\n";
 				}
 
 				//print 'passwd = '.$passwd.' - passwd_crypted = '.$passwd_crypted;

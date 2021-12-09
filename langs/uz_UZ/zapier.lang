@@ -1,4 +1,4 @@
-# Copyright (C) 2019 Frédéric FRANCE <frederic.france@free.fr>
+# Copyright (C) 2019 Frédéric FRANCE 
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,9 +13,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-ModuleZapierForDolibarrName = BERP3 uchun Zapier
-ModuleZapierForDolibarrDesc = BERP3 moduli uchun zapier
-ZapierForDolibarrSetup=BERP3 uchun Zapier-ni sozlash
+ModuleZapierForBerp3Name = BERP3 uchun Zapier
+ModuleZapierForBerp3Desc = BERP3 moduli uchun zapier
+ZapierForBerp3Setup=BERP3 uchun Zapier-ni sozlash
 ZapierDescription=Zapier bilan interfeys
 ZapierAbout=Zapier moduli haqida
 ZapierSetupPage=Zapier-dan foydalanish uchun BERP3 tomonida o'rnatishga hojat yo'q. Biroq, Zapier-dan BERP3 bilan foydalanish uchun siz zapier-da paket yaratishingiz va nashr qilishingiz kerak. <a href="https://bonaerp.com/index.php/Module_Zapier">-dagi ushbu viki-sahifadagi </a>-dagi hujjatlarni ko'ring.

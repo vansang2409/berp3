@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005      Patrick Rouillon     <patrick@rouillon.net>
- * Copyright (C) 2005-2016 Destailleur Laurent  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2015 Philippe Grand       <philippe.grand@atoo-net.com>
+/* Copyright (C) 2005           
+ * Copyright (C) 2005-2016   
+ * Copyright (C) 2005-2012 		
+ * Copyright (C) 2011-2015        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

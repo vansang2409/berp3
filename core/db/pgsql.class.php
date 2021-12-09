@@ -1,13 +1,13 @@
 <?php
 /* Copyright (C) 2001		Fabien Seisen			<seisen@linuxfr.org>
- * Copyright (C) 2002-2005	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2014	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio		<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier			<benoit.mortier@opensides.be>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
+ * Copyright (C) 2002-2005	
+ * Copyright (C) 2004-2014	
+ * Copyright (C) 2004		
+ * Copyright (C) 2004		
+ * Copyright (C) 2005-2012	
  * Copyright (C) 2012		Yann Droneaud			<yann@droneaud.fr>
- * Copyright (C) 2012		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2015       Marcos García           <marcosgdf@gmail.com>
+ * Copyright (C) 2012		
+ * Copyright (C) 2015       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,12 +28,12 @@
  *	\brief      Fichier de la classe permettant de gerer une base pgsql
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/db/DoliDB.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/db/Berp3DB.class.php';
 
 /**
  *	Class to drive a Postgresql database for BERP3
  */
-class DoliDBPgsql extends DoliDB
+class Berp3DBPgsql extends Berp3DB
 {
 	//! Database type
 	public $type = 'pgsql'; // Name of manager
@@ -76,8 +76,8 @@ class DoliDBPgsql extends DoliDB
 		if (!empty($conf->db->character_set)) {
 			$this->forcecharset = $conf->db->character_set;
 		}
-		if (!empty($conf->db->dolibarr_main_db_collation)) {
-			$this->forcecollate = $conf->db->dolibarr_main_db_collation;
+		if (!empty($conf->db->berp3_main_db_collation)) {
+			$this->forcecollate = $conf->db->berp3_main_db_collation;
 		}
 
 		$this->database_user = $user;
@@ -92,7 +92,7 @@ class DoliDBPgsql extends DoliDB
 			$this->connected = false;
 			$this->ok = false;
 			$this->error = "Pgsql PHP functions are not available in this version of PHP";
-			dol_syslog(get_class($this)."::DoliDBPgsql : Pgsql PHP functions are not available in this version of PHP", LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBPgsql : Pgsql PHP functions are not available in this version of PHP", LOG_ERR);
 			return $this->ok;
 		}
 
@@ -100,7 +100,7 @@ class DoliDBPgsql extends DoliDB
 			$this->connected = false;
 			$this->ok = false;
 			$this->error = $langs->trans("ErrorWrongHostParameter");
-			dol_syslog(get_class($this)."::DoliDBPgsql : Erreur Connect, wrong host parameters", LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBPgsql : Erreur Connect, wrong host parameters", LOG_ERR);
 			return $this->ok;
 		}
 
@@ -116,7 +116,7 @@ class DoliDBPgsql extends DoliDB
 			$this->connected = false;
 			$this->ok = false;
 			$this->error = 'Host, login or password incorrect';
-			dol_syslog(get_class($this)."::DoliDBPgsql : Erreur Connect ".$this->error, LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBPgsql : Erreur Connect ".$this->error, LOG_ERR);
 		}
 
 		// Si connexion serveur ok et si connexion base demandee, on essaie connexion base
@@ -130,7 +130,7 @@ class DoliDBPgsql extends DoliDB
 				$this->database_name = '';
 				$this->ok = false;
 				$this->error = $this->error();
-				dol_syslog(get_class($this)."::DoliDBPgsql : Erreur Select_db ".$this->error, LOG_ERR);
+				dol_syslog(get_class($this)."::Berp3DBPgsql : Erreur Select_db ".$this->error, LOG_ERR);
 			}
 		} else {
 			// Pas de selection de base demandee, ok ou ko
@@ -276,21 +276,21 @@ class DoliDBPgsql extends DoliDB
 				}
 
 				// alter table add primary key (field1, field2 ...) -> We remove the primary key name not accepted by PostGreSQL
-				// ALTER TABLE llx_dolibarr_modules ADD PRIMARY KEY pk_dolibarr_modules (numero, entity)
+				// ALTER TABLE llx_berp3_modules ADD PRIMARY KEY pk_berp3_modules (numero, entity)
 				if (preg_match('/ALTER\s+TABLE\s*(.*)\s*ADD\s+PRIMARY\s+KEY\s*(.*)\s*\((.*)$/i', $line, $reg)) {
 					$line = "-- ".$line." replaced by --\n";
 					$line .= "ALTER TABLE ".$reg[1]." ADD PRIMARY KEY (".$reg[3];
 				}
 
 				// Translate order to drop primary keys
-				// ALTER TABLE llx_dolibarr_modules DROP PRIMARY KEY pk_xxx
+				// ALTER TABLE llx_berp3_modules DROP PRIMARY KEY pk_xxx
 				if (preg_match('/ALTER\s+TABLE\s*(.*)\s*DROP\s+PRIMARY\s+KEY\s*([^;]+)$/i', $line, $reg)) {
 					$line = "-- ".$line." replaced by --\n";
 					$line .= "ALTER TABLE ".$reg[1]." DROP CONSTRAINT ".$reg[2];
 				}
 
 				// Translate order to drop foreign keys
-				// ALTER TABLE llx_dolibarr_modules DROP FOREIGN KEY fk_xxx
+				// ALTER TABLE llx_berp3_modules DROP FOREIGN KEY fk_xxx
 				if (preg_match('/ALTER\s+TABLE\s*(.*)\s*DROP\s+FOREIGN\s+KEY\s*(.*)$/i', $line, $reg)) {
 					$line = "-- ".$line." replaced by --\n";
 					$line .= "ALTER TABLE ".$reg[1]." DROP CONSTRAINT ".$reg[2];
@@ -499,7 +499,7 @@ class DoliDBPgsql extends DoliDB
 	 */
 	public function query($query, $usesavepoint = 0, $type = 'auto', $result_mode = 0)
 	{
-		global $conf, $dolibarr_main_db_readonly;
+		global $conf, $berp3_main_db_readonly;
 
 		$query = trim($query);
 
@@ -532,7 +532,7 @@ class DoliDBPgsql extends DoliDB
 			return false; // Return false = error if empty request
 		}
 
-		if (!empty($dolibarr_main_db_readonly)) {
+		if (!empty($berp3_main_db_readonly)) {
 			if (preg_match('/^(INSERT|UPDATE|REPLACE|DELETE|CREATE|ALTER|TRUNCATE|DROP)/i', $query)) {
 				$this->lasterror = 'Application in read-only mode';
 				$this->lasterrno = 'APPREADONLY';
@@ -748,7 +748,7 @@ class DoliDBPgsql extends DoliDB
 			// Si il y a eu echec de connexion, $this->db n'est pas valide.
 			return 'DB_ERROR_FAILED_TO_CONNECT';
 		} else {
-			// Constants to convert error code to a generic Dolibarr error code
+			// Constants to convert error code to a generic Berp3 error code
 			$errorcode_map = array(
 			1004 => 'DB_ERROR_CANNOT_CREATE',
 			1005 => 'DB_ERROR_CANNOT_CREATE',
@@ -846,10 +846,10 @@ class DoliDBPgsql extends DoliDB
 		global $conf;
 
 		// Type of encryption (2: AES (recommended), 1: DES , 0: no encryption)
-		//$cryptType = ($conf->db->dolibarr_main_db_encryption ? $conf->db->dolibarr_main_db_encryption : 0);
+		//$cryptType = ($conf->db->berp3_main_db_encryption ? $conf->db->berp3_main_db_encryption : 0);
 
 		//Encryption key
-		//$cryptKey = (!empty($conf->db->dolibarr_main_db_cryptkey) ? $conf->db->dolibarr_main_db_cryptkey : '');
+		//$cryptKey = (!empty($conf->db->berp3_main_db_cryptkey) ? $conf->db->berp3_main_db_cryptkey : '');
 
 		$return = $fieldorvalue;
 		return ($withQuotes ? "'" : "").$this->escape($return).($withQuotes ? "'" : "");
@@ -867,10 +867,10 @@ class DoliDBPgsql extends DoliDB
 		global $conf;
 
 		// Type of encryption (2: AES (recommended), 1: DES , 0: no encryption)
-		$cryptType = ($conf->db->dolibarr_main_db_encryption ? $conf->db->dolibarr_main_db_encryption : 0);
+		$cryptType = ($conf->db->berp3_main_db_encryption ? $conf->db->berp3_main_db_encryption : 0);
 
 		//Encryption key
-		$cryptKey = (!empty($conf->db->dolibarr_main_db_cryptkey) ? $conf->db->dolibarr_main_db_cryptkey : '');
+		$cryptKey = (!empty($conf->db->berp3_main_db_cryptkey) ? $conf->db->berp3_main_db_cryptkey : '');
 
 		$return = $value;
 		return $return;
@@ -1091,17 +1091,17 @@ class DoliDBPgsql extends DoliDB
 	/**
 	 * 	Create a user to connect to database
 	 *
-	 *	@param	string	$dolibarr_main_db_host 		Ip server
-	 *	@param	string	$dolibarr_main_db_user 		Name of user to create
-	 *	@param	string	$dolibarr_main_db_pass 		Password of user to create
-	 *	@param	string	$dolibarr_main_db_name		Database name where user must be granted
+	 *	@param	string	$berp3_main_db_host 		Ip server
+	 *	@param	string	$berp3_main_db_user 		Name of user to create
+	 *	@param	string	$berp3_main_db_pass 		Password of user to create
+	 *	@param	string	$berp3_main_db_name		Database name where user must be granted
 	 *	@return	int									<0 if KO, >=0 if OK
 	 */
-	public function DDLCreateUser($dolibarr_main_db_host, $dolibarr_main_db_user, $dolibarr_main_db_pass, $dolibarr_main_db_name)
+	public function DDLCreateUser($berp3_main_db_host, $berp3_main_db_user, $berp3_main_db_pass, $berp3_main_db_name)
 	{
 		// phpcs:enable
 		// Note: using ' on user does not works with pgsql
-		$sql = "CREATE USER ".$this->escape($dolibarr_main_db_user)." with password '".$this->escape($dolibarr_main_db_pass)."'";
+		$sql = "CREATE USER ".$this->escape($berp3_main_db_user)." with password '".$this->escape($berp3_main_db_pass)."'";
 
 		dol_syslog(get_class($this)."::DDLCreateUser", LOG_DEBUG); // No sql to avoid password in log
 		$resql = $this->query($sql);

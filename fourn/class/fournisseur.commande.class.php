@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2003-2006	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2017	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2006	
+ * Copyright (C) 2004-2017	
+ * Copyright (C) 2005-2012	
  * Copyright (C) 2007		Franky Van Liedekerke	<franky.van.liedekerke@telenet.be>
- * Copyright (C) 2010-2020	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2010-2018	Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2012-2015  Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2013       Florian Henry		  	<florian.henry@open-concept.pro>
- * Copyright (C) 2013       Cédric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2018       Nicolas ZABOURI			<info@inovea-conseil.com>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2018       Ferran Marcet         	<fmarcet@2byte.es>
- * Copyright (C) 2021       Josep Lluís Amador      <joseplluis@lliuretic.cat>
+ * Copyright (C) 2010-2020	
+ * Copyright (C) 2010-2018	
+ * Copyright (C) 2012-2015  
+ * Copyright (C) 2013       		  	
+ * Copyright (C) 2013                
+ * Copyright (C) 2018       			
+ * Copyright (C) 2018-2020  
+ * Copyright (C) 2018                	
+ * Copyright (C) 2021             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -294,7 +294,7 @@ class CommandeFournisseur extends CommonOrder
 	/**
 	 * 	Constructor
 	 *
-	 *  @param      DoliDB		$db      Database handler
+	 *  @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1057,7 +1057,7 @@ class CommandeFournisseur extends CommonOrder
 							if (!empty($this->lines[$i]->remise_percent) && empty($conf->global->STOCK_EXCLUDE_DISCOUNT_FOR_PMP)) {
 								$up_ht_disc = price2num($up_ht_disc * (100 - $this->lines[$i]->remise_percent) / 100, 'MU');
 							}
-							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $up_ht_disc, $langs->trans("OrderApprovedInDolibarr", $this->ref));
+							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $up_ht_disc, $langs->trans("OrderApprovedInBerp3", $this->ref));
 							if ($result < 0) {
 								$error++;
 							}
@@ -3170,12 +3170,12 @@ class CommandeFournisseur extends CommonOrder
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'commande_fournisseur'
@@ -3495,7 +3495,7 @@ class CommandeFournisseurLigne extends CommonOrderLine
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017       ATM Consulting      <contact@atm-consulting.fr>
- * Copyright (C) 2017-2018  Laurent Destailleur	<eldy@users.sourceforge.net>
+/* Copyright (C) 2017             
+ * Copyright (C) 2017-2018  	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,18 +22,18 @@
  *  \brief      Trigger file for blockedlog module
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggered functions for agenda module
  */
-class InterfaceActionsBlockedLog extends DolibarrTriggers
+class InterfaceActionsBlockedLog extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -42,13 +42,13 @@ class InterfaceActionsBlockedLog extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "system";
 		$this->description = "Triggers of this module add action for BlockedLog module (Module of unalterable logs).";
-		// 'development', 'experimental', 'dolibarr' or version
-		$this->version = self::VERSION_DOLIBARR;
+		// 'development', 'experimental', 'berp3' or version
+		$this->version = self::VERSION_BERP3;
 		$this->picto = 'technic';
 	}
 
 	/**
-	 * Function called on Dolibarr payment or invoice event.
+	 * Function called on Berp3 payment or invoice event.
 	 *
 	 * @param string		$action		Event action code
 	 * @param Object		$object     Object

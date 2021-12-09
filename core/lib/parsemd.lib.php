@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2008-2013	Laurent Destailleur			<eldy@users.sourceforge.net>
+/* Copyright (C) 2008-2013				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,11 +54,11 @@ function dolMd2Html($content, $parser = 'parsedown', $replaceimagepath = null)
  * Function to parse MD content into ASCIIDOC
  *
  * @param	string	  $content			    MD content
- * @param   string    $parser               'dolibarr'
+ * @param   string    $parser               'berp3'
  * @param   string    $replaceimagepath     Replace path to image with another path. Exemple: ('doc/'=>'xxx/aaa/')
  * @return	string                          Parsed content
  */
-function dolMd2Asciidoc($content, $parser = 'dolibarr', $replaceimagepath = null)
+function dolMd2Asciidoc($content, $parser = 'berp3', $replaceimagepath = null)
 {
 	if (is_array($replaceimagepath)) {
 		foreach ($replaceimagepath as $key => $val) {
@@ -67,7 +67,7 @@ function dolMd2Asciidoc($content, $parser = 'dolibarr', $replaceimagepath = null
 			$content = preg_replace('/'.preg_quote($keytoreplace, '/').'/m', $valafter, $content);
 		}
 	}
-	//if ($parser == 'dolibarr')
+	//if ($parser == 'berp3')
 	//{
 		$content = preg_replace('/<!--.*-->/msU', '', $content);
 	//}

@@ -1,20 +1,20 @@
 <?php
-/* Copyright (C) 2006-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2013 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2020 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2012-2013 Christophe Battarel  <christophe.battarel@altairis.fr>
- * Copyright (C) 2011-2019 Philippe Grand       <philippe.grand@atoo-net.com>
- * Copyright (C) 2012-2015 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2012-2015 Raphaël Doursenaud   <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2012      Cedric Salvador      <csalvador@gpcsolutions.fr>
- * Copyright (C) 2015-2021 Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2016      Bahfir abbes         <dolipar@dolipar.org>
- * Copyright (C) 2017      ATM Consulting       <support@atm-consulting.fr>
- * Copyright (C) 2017-2019 Nicolas ZABOURI      <info@inovea-conseil.com>
+/* Copyright (C) 2006-2015 
+ * Copyright (C) 2005-2013 
+ * Copyright (C) 2010-2020 
+ * Copyright (C) 2012-2013   
+ * Copyright (C) 2011-2019        
+ * Copyright (C) 2012-2015 
+ * Copyright (C) 2012-2015    
+ * Copyright (C) 2012      Cedric Salvador      
+ * Copyright (C) 2015-2021 
+ * Copyright (C) 2016      Bahfir abbes         <berp3par@berp3par.org>
+ * Copyright (C) 2017             
+ * Copyright (C) 2017-2019       
  * Copyright (C) 2017      Rui Strecht          <rui.strecht@aliartalentos.com>
- * Copyright (C) 2018-2021 Frédéric France      <frederic.france@netlogic.fr>
- * Copyright (C) 2018      Josep Lluís Amador   <joseplluis@lliuretic.cat>
- * Copyright (C) 2021      Gauthier VERDOL      <gauthier.verdol@atm-consulting.fr>
+ * Copyright (C) 2018-2021 
+ * Copyright (C) 2018         
+ * Copyright (C) 2021            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@
 abstract class CommonObject
 {
 	/**
-	 * @var DoliDb		Database handler (result of a new DoliDB)
+	 * @var Berp3Db		Database handler (result of a new Berp3DB)
 	 */
 	public $db;
 
@@ -922,7 +922,7 @@ abstract class CommonObject
 	 */
 	public function getLastMainDocLink($modulepart, $initsharekey = 0, $relativelink = 0)
 	{
-		global $user, $dolibarr_main_url_root;
+		global $user, $berp3_main_url_root;
 
 		if (empty($this->last_main_doc)) {
 			return ''; // No way to known which document name to use
@@ -972,7 +972,7 @@ abstract class CommonObject
 			}
 		}
 		// Define $urlwithroot
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		// This is to use external domain name found into config file
 		//if (DOL_URL_ROOT && ! preg_match('/\/$/', $urlwithouturlroot) && ! preg_match('/^\//', DOL_URL_ROOT)) $urlwithroot=$urlwithouturlroot.'/'.DOL_URL_ROOT;
 		//else
@@ -6623,7 +6623,7 @@ abstract class CommonObject
 		} elseif (preg_match('/^text/', $type)) {
 			if (!preg_match('/search_/', $keyprefix)) {		// If keyprefix is search_ or search_options_, we must just use a simple text field
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'dolibarr_notes', 'In', false, false, false, ROWS_5, '90%');
+				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'berp3_notes', 'In', false, false, false, ROWS_5, '90%');
 				$out = $doleditor->Create(1);
 			} else {
 				$out = '<input type="text" class="flat '.$morecss.' maxwidthonsmartphone" name="'.$keyprefix.$key.$keysuffix.'" id="'.$keyprefix.$key.$keysuffix.'" value="'.dol_escape_htmltag($value).'" '.($moreparam ? $moreparam : '').'>';
@@ -6631,7 +6631,7 @@ abstract class CommonObject
 		} elseif (preg_match('/^html/', $type)) {
 			if (!preg_match('/search_/', $keyprefix)) {		// If keyprefix is search_ or search_options_, we must just use a simple text field
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'dolibarr_notes', 'In', false, false, !empty($conf->fckeditor->enabled) && $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_5, '90%');
+				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'berp3_notes', 'In', false, false, !empty($conf->fckeditor->enabled) && $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_5, '90%');
 				$out = $doleditor->Create(1);
 			} else {
 				$out = '<input type="text" class="flat '.$morecss.' maxwidthonsmartphone" name="'.$keyprefix.$key.$keysuffix.'" id="'.$keyprefix.$key.$keysuffix.'" value="'.dol_escape_htmltag($value).'" '.($moreparam ? $moreparam : '').'>';
@@ -7287,9 +7287,9 @@ abstract class CommonObject
 			if (is_array($value_arr) && count($value_arr) > 0) {
 				$toprint = array();
 				foreach ($value_arr as $keyval => $valueval) {
-					$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.$param['options'][$valueval].'</li>';
+					$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.$param['options'][$valueval].'</li>';
 				}
-				$value = '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">'.implode(' ', $toprint).'</ul></div>';
+				$value = '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">'.implode(' ', $toprint).'</ul></div>';
 			}
 		} elseif ($type == 'chkbxlst') {
 			$value_arr = explode(',', $value);
@@ -7335,9 +7335,9 @@ abstract class CommonObject
 									$translabel = $langs->trans($obj->$field_toshow);
 								}
 								if ($translabel != $field_toshow) {
-									$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
+									$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
 								} else {
-									$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.$obj->$field_toshow.'</li>';
+									$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.$obj->$field_toshow.'</li>';
 								}
 							}
 						} else {
@@ -7346,14 +7346,14 @@ abstract class CommonObject
 								$translabel = $langs->trans($obj->{$InfoFieldList[1]});
 							}
 							if ($translabel != $obj->{$InfoFieldList[1]}) {
-								$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
+								$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
 							} else {
-								$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.$obj->{$InfoFieldList[1]}.'</li>';
+								$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.$obj->{$InfoFieldList[1]}.'</li>';
 							}
 						}
 					}
 				}
-				$value = '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">'.implode(' ', $toprint).'</ul></div>';
+				$value = '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">'.implode(' ', $toprint).'</ul></div>';
 			} else {
 				dol_syslog(get_class($this).'::showOutputField error '.$this->db->lasterror(), LOG_WARNING);
 			}
@@ -7993,14 +7993,14 @@ abstract class CommonObject
 	 * This function is meant to be called from replaceThirdparty with the appropiate tables
 	 * Column name fk_soc MUST be used to identify thirdparties
 	 *
-	 * @param  DoliDB 	   $db 			  Database handler
+	 * @param  Berp3DB 	   $db 			  Database handler
 	 * @param  int 		   $origin_id     Old thirdparty id (the thirdparty to delete)
 	 * @param  int 		   $dest_id       New thirdparty id (the thirdparty that will received element of the other)
 	 * @param  string[]    $tables        Tables that need to be changed
 	 * @param  int         $ignoreerrors  Ignore errors. Return true even if errors. We need this when replacement can fails like for categories (categorie of old thirdparty may already exists on new one)
 	 * @return bool						  True if success, False if error
 	 */
-	public static function commonReplaceThirdparty(DoliDB $db, $origin_id, $dest_id, array $tables, $ignoreerrors = 0)
+	public static function commonReplaceThirdparty(Berp3DB $db, $origin_id, $dest_id, array $tables, $ignoreerrors = 0)
 	{
 		foreach ($tables as $table) {
 			$sql = 'UPDATE '.MAIN_DB_PREFIX.$table.' SET fk_soc = '.((int) $dest_id).' WHERE fk_soc = '.((int) $origin_id);

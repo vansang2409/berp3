@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2007-2018  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014       Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Florian Henry       <florian.henry@open-concept.pro>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2020 	   Nicolas ZABOURI		<info@inovea-conseil.com>
+/* Copyright (C) 2007-2018  
+ * Copyright (C) 2014       
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
+ * Copyright (C) 2020 	   		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -211,9 +211,9 @@ class WebsitePage extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}
@@ -641,8 +641,8 @@ class WebsitePage extends CommonObject
 			$result = $websiteobj->fetch($this->fk_website);
 
 			if ($result > 0) {
-				global $dolibarr_main_data_root;
-				$pathofwebsite = $dolibarr_main_data_root.'/website/'.$websiteobj->ref;
+				global $berp3_main_data_root;
+				$pathofwebsite = $berp3_main_data_root.'/website/'.$websiteobj->ref;
 
 				$filealias = $pathofwebsite.'/'.$this->pageurl.'.php';
 				$filetpl = $pathofwebsite.'/page'.$this->id.'.tpl.php';
@@ -764,7 +764,7 @@ class WebsitePage extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $maxlen = 24, $morecss = '')
 	{
 		global $langs, $conf, $db;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		$result = '';

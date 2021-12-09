@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2010, 
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -54,7 +54,7 @@ CKEDITOR.editorConfig = function( config )
 	];
 
 	// Used for mailing fields
-	config.toolbar_dolibarr_mailings =
+	config.toolbar_berp3_mailings =
 	[
 	 	['Maximize','Preview'],
 	 	['SpellChecker', 'Scayt'],
@@ -69,7 +69,7 @@ CKEDITOR.editorConfig = function( config )
 	 ];
 
 	// Used for notes fields
-	config.toolbar_dolibarr_notes =
+	config.toolbar_berp3_notes =
 	[
 	 	['Maximize'],
 	 	['SpellChecker', 'Scayt'],		// 'Cut','Copy','Paste','-', are useless, can be done with right click, even on smarpthone
@@ -83,7 +83,7 @@ CKEDITOR.editorConfig = function( config )
 	];
 
 	// Used for details lines
-	config.toolbar_dolibarr_details =
+	config.toolbar_berp3_details =
 	[
 	 	['Maximize'],
 	 	['SpellChecker', 'Scayt'],		// 'Cut','Copy','Paste','-', are useless, can be done with right click, even on smarpthone
@@ -96,7 +96,7 @@ CKEDITOR.editorConfig = function( config )
 	];
 
 	// Used for mailing fields
-	config.toolbar_dolibarr_readonly =
+	config.toolbar_berp3_readonly =
 	[
 	 	['Maximize'],
 	 	['Find'],

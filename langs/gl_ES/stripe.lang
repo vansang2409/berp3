@@ -2,7 +2,7 @@
 StripeSetup=Configuración do módulo Stripe
 StripeDesc=Este módulo ofrecelle páxinas para permitir o pagamento a clientes mediante <a href="http://www.stripe.com" target="_blank">Stripe</a>. Podese usar para un pagamento libre ou para un pagamento dun obxecto en concreto de BERP3 (factura, pedimento...)
 StripeOrCBDoPayment=Pagar con tarxeta de crédito ou Stripe
-FollowingUrlAreAvailableToMakePayments=As seguintes URL están dispoñibles para ofrecer unha páxina a un cliente no que facer un pagamento de obxectos Dolibarr
+FollowingUrlAreAvailableToMakePayments=As seguintes URL están dispoñibles para ofrecer unha páxina a un cliente no que facer un pagamento de obxectos Berp3
 PaymentForm=Forma de pagamento
 WelcomeOnPaymentPage=A nosa benvida ao servizo de pagamento en liña
 ThisScreenAllowsYouToPay=Esta pantalla permítelle facer un pagamento en liña a %s.

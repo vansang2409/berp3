@@ -120,8 +120,8 @@ ConfirmCloneOrder=Ushbu buyurtmani klonlamoqchimisiz <b> %s </b>?
 DispatchSupplierOrder=%s sotib olish buyurtmasini qabul qilish
 FirstApprovalAlreadyDone=Birinchi tasdiqlash allaqachon qilingan
 SecondApprovalAlreadyDone=Ikkinchi tasdiqlash allaqachon amalga oshirilgan
-SupplierOrderReceivedInDolibarr=%s sotib olish buyurtmasi %s qabul qilindi
-SupplierOrderSubmitedInDolibarr=%s sotib olish buyurtmasi taqdim etildi
+SupplierOrderReceivedInBerp3=%s sotib olish buyurtmasi %s qabul qilindi
+SupplierOrderSubmitedInBerp3=%s sotib olish buyurtmasi taqdim etildi
 SupplierOrderClassifiedBilled=Xarid qilish buyurtmasi %s to'plami taqdim etiladi
 OtherOrders=Boshqa buyurtmalar
 ##### Types de contacts #####

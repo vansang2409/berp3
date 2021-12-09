@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2014	   Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2018 	   Philippe Grand		<philippe.grand@atoo-net.com>
- * Copyright (C) 2021 	   Thibault FOUCART		<support@ptibogxiv.net>
+/* Copyright (C) 2003-2005 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2014	   
+ * Copyright (C) 2018 	   		
+ * Copyright (C) 2021 	   Thibault FOUCART		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class Notify
 	public $id;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -89,7 +89,7 @@ class Notify
 	/**
 	 *	Constructor
 	 *
-	 *	@param 		DoliDB		$db		Database handler
+	 *	@param 		Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -345,7 +345,7 @@ class Notify
 	{
 		global $user, $conf, $langs, $mysoc;
 		global $hookmanager;
-		global $dolibarr_main_url_root;
+		global $berp3_main_url_root;
 		global $action;
 
 		if (!in_array($notifcode, $this->arrayofnotifsupported)) {
@@ -364,12 +364,12 @@ class Notify
 		$langs->load("other");
 
 		// Define $urlwithroot
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 		//$urlwithroot=DOL_MAIN_URL_ROOT;						// This is to use same domain name than current
 
 		// Define some vars
-		$application = 'Dolibarr';
+		$application = 'Berp3';
 		if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 			$application = $conf->global->MAIN_APPLICATION_TITLE;
 		}
@@ -454,7 +454,7 @@ class Notify
 							$outputlangs->loadLangs(array("main", "other"));
 						}
 
-						$subject = '['.$mysoc->name.'] '.$outputlangs->transnoentitiesnoconv("DolibarrNotification").($projtitle ? ' '.$projtitle : '');
+						$subject = '['.$mysoc->name.'] '.$outputlangs->transnoentitiesnoconv("Berp3Notification").($projtitle ? ' '.$projtitle : '');
 
 						switch ($notifcode) {
 							case 'BILL_VALIDATE':
@@ -692,7 +692,7 @@ class Notify
 				$link = '';
 				$num++;
 
-				$subject = '['.$mysoc->name.'] '.$langs->transnoentitiesnoconv("DolibarrNotification").($projtitle ? ' '.$projtitle : '');
+				$subject = '['.$mysoc->name.'] '.$langs->transnoentitiesnoconv("Berp3Notification").($projtitle ? ' '.$projtitle : '');
 
 				switch ($notifcode) {
 					case 'BILL_VALIDATE':

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2006-2017 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2012 
+ * Copyright (C) 2006-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ if ($reshook < 0) {
 }
 
 if (empty($reshook)) {
-	if ($action == 'dolibarr2ldap') {
+	if ($action == 'berp32ldap') {
 		$ldap = new Ldap();
 		$result = $ldap->connect_bind();
 
@@ -125,7 +125,7 @@ print dol_get_fiche_end();
 print '<div class="tabsAction">';
 
 if ($conf->global->LDAP_MEMBER_TYPE_ACTIVE == 1) {
-	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&action=dolibarr2ldap">'.$langs->trans("ForceSynchronize").'</a>';
+	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&action=berp32ldap">'.$langs->trans("ForceSynchronize").'</a>';
 }
 
 print "</div>\n";

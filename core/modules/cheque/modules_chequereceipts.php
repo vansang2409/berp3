@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2009 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2016      Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2003-2005 
+ * Copyright (C) 2004-2009 
+ * Copyright (C) 2004                
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2016      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -115,7 +115,7 @@ abstract class ModeleNumRefChequeReceipts
 		if ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
 		}
-		if ($this->version == 'dolibarr') {
+		if ($this->version == 'berp3') {
 			return DOL_VERSION;
 		}
 		if ($this->version) {
@@ -140,7 +140,7 @@ abstract class ModeleChequeReceipts extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */
@@ -165,7 +165,7 @@ abstract class ModeleChequeReceipts extends CommonDocGenerator
 /**
  *  Cree un bordereau remise de cheque
  *
- * 	@param	DoliDB		$db				Database handler
+ * 	@param	Berp3DB		$db				Database handler
  *	@param	int			$id				Object invoice (or id of invoice)
  *	@param	string		$message		Message
  *	@param	string		$modele			Force le modele a utiliser ('' to not force)

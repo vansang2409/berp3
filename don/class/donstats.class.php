@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (c) 2005-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011      Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2003      
+ * Copyright (c) 2005-2013 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2011      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,7 +61,7 @@ class DonationStats extends Stats
 	/**
 	 * Constructor
 	 *
-	 * @param	DoliDB	$db      	Database handler
+	 * @param	Berp3DB	$db      	Database handler
 	 * @param 	int		$socid	   	Id third party for filter
 	 * @param 	string	$mode	   	Option (not used)
 	 * @param   int		$userid    	Id user for filter (creation user)

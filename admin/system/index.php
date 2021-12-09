@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2001-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2010 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2001-2007 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2005-2010 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,8 +50,8 @@ print load_fiche_titre($langs->trans("SummarySystem"), '', 'title_setup');
 
 
 print '<table class="noborder centpercent">';
-print "<tr class=\"liste_titre\"><td colspan=\"2\">Dolibarr</td></tr>\n";
-$dolversion = version_dolibarr();
+print "<tr class=\"liste_titre\"><td colspan=\"2\">Berp3</td></tr>\n";
+$dolversion = version_berp3();
 print "<tr $bc[0]><td width=\"280\">".$langs->trans("Version")."</td><td>".$dolversion."</td></tr>\n";
 print '</table>';
 

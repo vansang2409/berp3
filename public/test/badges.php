@@ -28,7 +28,7 @@ session_cache_limiter('public');
 require_once '../../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/functions.lib.php';
 
-if ($dolibarr_main_prod) {
+if ($berp3_main_prod) {
 	accessforbidden();
 }
 
@@ -83,7 +83,7 @@ llxHeader('', 'Documentation and examples for theme');
 
 		<p>Unless the context is clear (as with the “Notifications” example, where it is understood that the “4” is the number of notifications), consider including additional context with a visually hidden piece of additional text.</p>
 
-		<p><strong>Remember to use aria-label attribute for accessibility in Dolibarr. Don't forget to use aria-hidden on icons included in badges</strong></p>
+		<p><strong>Remember to use aria-label attribute for accessibility in Berp3. Don't forget to use aria-hidden on icons included in badges</strong></p>
 		</div>
 
 		<div class="bd-example">
@@ -244,7 +244,7 @@ llxHeader('', 'Documentation and examples for theme');
 
 		<p>Unless the context is clear (as with the “Notifications” example, where it is understood that the “4” is the number of notifications), consider including additional context with a visually hidden piece of additional text.</p>
 
-		<p><strong>Remember to use aria-label attribute for accessibility in Dolibarr. Don't forget to use aria-hidden on icons included in badges</strong></p>
+		<p><strong>Remember to use aria-label attribute for accessibility in Berp3. Don't forget to use aria-hidden on icons included in badges</strong></p>
 </div>
 
 

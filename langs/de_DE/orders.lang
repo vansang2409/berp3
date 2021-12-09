@@ -120,8 +120,8 @@ ConfirmCloneOrder=Möchten Sie die Bestellung <b>%s</b> wirklich duplizieren?
 DispatchSupplierOrder=Lieferantenbestellung %s erhalten
 FirstApprovalAlreadyDone=1. Bestätigung bereits erledigt
 SecondApprovalAlreadyDone=2. Bestätigung bereits erledigt
-SupplierOrderReceivedInDolibarr=Lieferantenbestellung %s erhalten %s
-SupplierOrderSubmitedInDolibarr=Lieferantenbestellung %s versendet
+SupplierOrderReceivedInBerp3=Lieferantenbestellung %s erhalten %s
+SupplierOrderSubmitedInBerp3=Lieferantenbestellung %s versendet
 SupplierOrderClassifiedBilled=Bestellung %s als verrechnet markieren
 OtherOrders=zeige weitere Bestellungen dieses Partners
 ##### Types de contacts #####

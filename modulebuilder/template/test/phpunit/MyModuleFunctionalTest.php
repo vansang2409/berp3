@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2007-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2007-2017 
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software: you can redistribute it and/or modify
@@ -47,16 +47,16 @@ class MyModuleFunctionalTest extends \PHPUnit_Extensions_Selenium2TestCase
 	/** @var string Base URL of the webserver under test */
 	protected static $base_url = 'http://dev.zenfusion.fr';
 	/**
-	 * @var string Dolibarr admin username
+	 * @var string Berp3 admin username
 	 * @see authenticate
 	 */
 	protected static $dol_admin_user = 'admin';
 	/**
-	 * @var string Dolibarr admin password
+	 * @var string Berp3 admin password
 	 * @see authenticate
 	 */
 	protected static $dol_admin_pass = 'admin';
-	/** @var int Dolibarr module ID */
+	/** @var int Berp3 module ID */
 	private static $module_id = 500000; // TODO: autodetect?
 
 	/** @var array Browsers to test with */
@@ -124,7 +124,7 @@ class MyModuleFunctionalTest extends \PHPUnit_Extensions_Selenium2TestCase
 	}
 
 	/**
-	 * Handle Dolibarr authentication
+	 * Handle Berp3 authentication
 	 * @return void
 	 */
 	private function authenticate()
@@ -225,7 +225,7 @@ class MyModuleFunctionalTest extends \PHPUnit_Extensions_Selenium2TestCase
 		$this->url('/custom/mymodule/admin/about.php');
 		$this->authenticate();
 		return $this->assertEquals(
-			'Dolibarr Module Template (aka My Module)',
+			'Berp3 Module Template (aka My Module)',
 			$this->byTag('h1')->text(),
 			"Readme title"
 		);

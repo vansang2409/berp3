@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2007-2011	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2008-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2008-2011	Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2014       Teddy Andreotti    	<125155@supinfo.com>
+/* Copyright (C) 2007-2011		
+ * Copyright (C) 2008-2012			
+ * Copyright (C) 2008-2011	
+ * Copyright (C) 2014           	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ if (!empty($conf->global->MAIN_SECURITY_DISABLEFORGETPASSLINK)) {
 }
 
 $action = GETPOST('action', 'aZ09');
-$mode = $dolibarr_main_authentication;
+$mode = $berp3_main_authentication;
 if (!$mode) {
 	$mode = 'http';
 }
@@ -91,10 +91,10 @@ if (empty($reshook)) {
 		if ($result < 0) {
 			$message = '<div class="error">'.dol_escape_htmltag($langs->trans("ErrorLoginDoesNotExists", $username)).'</div>';
 		} else {
-			global $dolibarr_main_instance_unique_id;
+			global $berp3_main_instance_unique_id;
 
-			//print $edituser->pass_temp.'-'.$edituser->id.'-'.$dolibarr_main_instance_unique_id.' '.$passworduidhash;
-			if ($edituser->pass_temp && dol_verifyHash($edituser->pass_temp.'-'.$edituser->id.'-'.$dolibarr_main_instance_unique_id, $passworduidhash)) {
+			//print $edituser->pass_temp.'-'.$edituser->id.'-'.$berp3_main_instance_unique_id.' '.$passworduidhash;
+			if ($edituser->pass_temp && dol_verifyHash($edituser->pass_temp.'-'.$edituser->id.'-'.$berp3_main_instance_unique_id, $passworduidhash)) {
 				// Clear session
 				unset($_SESSION['dol_login']);
 				$_SESSION['dol_loginmesg'] = $langs->transnoentitiesnoconv('NewPasswordValidated'); // Save message for the session page
@@ -174,7 +174,7 @@ if (empty($reshook)) {
 $dol_url_root = DOL_URL_ROOT;
 
 // Title
-$title = 'Dolibarr '.DOL_VERSION;
+$title = 'Berp3 '.DOL_VERSION;
 if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 	$title = $conf->global->MAIN_APPLICATION_TITLE;
 }
@@ -194,7 +194,7 @@ if (!$username) {
 
 // Send password button enabled ?
 $disabled = 'disabled';
-if (preg_match('/dolibarr/i', $mode)) {
+if (preg_match('/berp3/i', $mode)) {
 	$disabled = '';
 }
 if (!empty($conf->global->MAIN_SECURITY_ENABLE_SENDPASSWORD)) {
@@ -210,10 +210,10 @@ if (!empty($mysoc->logo_small) && is_readable($conf->mycompany->dir_output.'/log
 } elseif (!empty($mysoc->logo_small) && is_readable($conf->mycompany->dir_output.'/logos/'.$mysoc->logo)) {
 	$urllogo = DOL_URL_ROOT.'/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file='.urlencode('logos/'.$mysoc->logo);
 	$width = 128;
-} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/'.$conf->theme.'/img/dolibarr_logo.svg')) {
-	$urllogo = DOL_URL_ROOT.'/theme/'.$conf->theme.'/img/dolibarr_logo.svg';
-} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/dolibarr_logo.svg')) {
-	$urllogo = DOL_URL_ROOT.'/theme/dolibarr_logo.svg';
+} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/'.$conf->theme.'/img/berp3_logo.png')) {
+	$urllogo = DOL_URL_ROOT.'/theme/'.$conf->theme.'/img/berp3_logo.png';
+} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/berp3_logo.png')) {
+	$urllogo = DOL_URL_ROOT.'/theme/berp3_logo.png';
 }
 
 // Security graphical code

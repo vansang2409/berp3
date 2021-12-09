@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2011-2019 Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2014      Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2021		Gauthier VERDOL         <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2011-2019 
+ * Copyright (C) 2014      
+ * Copyright (C) 2021		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -101,7 +101,7 @@ class Salary extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -492,7 +492,7 @@ class Salary extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $db, $conf, $langs, $hookmanager;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!empty($conf->dol_no_mouse_hover)) $notooltip = 1; // Force disable tooltips

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2016      Jean-François Ferry  <hello@librethic.io>
+/* Copyright (C) 2016        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ class TicketStats extends Stats
 	/**
 	 * Constructor
 	 *
-	 * @param  DoliDB $db     Database handler
+	 * @param  Berp3DB $db     Database handler
 	 * @param  int    $socid  Id third party
 	 * @param  mixed  $userid Id user for filter or array of user ids
 	 * @return void

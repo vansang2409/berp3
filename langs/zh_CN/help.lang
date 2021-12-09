@@ -5,8 +5,8 @@ RemoteControlSupport=网上实时/远程支持
 OtherSupport=其他支持
 ToSeeListOfAvailableRessources=查看/联络可用的资源：
 HelpCenter=帮助中心
-DolibarrHelpCenter=BERP3 Help and Support Center
-ToGoBackToDolibarr=Otherwise, <a href="%s">click here to continue to use Dolibarr</a>.
+Berp3HelpCenter=BERP3 Help and Support Center
+ToGoBackToBerp3=Otherwise, <a href="%s">click here to continue to use Berp3</a>.
 TypeOfSupport=Type of support
 TypeSupportCommunauty=社区（免费）
 TypeSupportCommercial=商业

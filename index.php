@@ -1,10 +1,5 @@
 <?php
-/* Copyright (C) 2001-2004	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2020	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2012	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2015		Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2021		Frédéric France			<frederic.france@netlogic.fr>
+/* 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -449,7 +444,7 @@ if (empty($conf->global->MAIN_DISABLE_GLOBAL_WORKBOARD)) {
 	$boxwork .= '<div class="box">';
 	$boxwork .= '<table summary="'.dol_escape_htmltag($langs->trans("WorkingBoard")).'" class="noborder boxtable boxtablenobottom boxworkingboard centpercent">'."\n";
 	$boxwork .= '<tr class="liste_titre">';
-	$boxwork .= '<th class="liste_titre"><div class="inline-block valignmiddle">'.$langs->trans("DolibarrWorkBoard").'</div>';
+	$boxwork .= '<th class="liste_titre"><div class="inline-block valignmiddle">'.$langs->trans("Berp3WorkBoard").'</div>';
 	if ($showweather) {
 		if ($totallate > 0) {
 			$text = $langs->transnoentitiesnoconv("WarningYouHaveAtLeastOneTaskLate").' ('.$langs->transnoentitiesnoconv(

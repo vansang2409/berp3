@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2020		Tobias Sekan		<tobias.sekan@startmail.com>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004-2010 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2020				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,9 +53,9 @@ if ($contact->socid) {
 
 // We create VCard
 $v = new vCard();
-$v->setProdId('Dolibarr '.DOL_VERSION);
+$v->setProdId('Berp3 '.DOL_VERSION);
 
-$v->setUid('DOLIBARR-CONTACTID-'.$contact->id);
+$v->setUid('BERP3-CONTACTID-'.$contact->id);
 $v->setName($contact->lastname, $contact->firstname, "", $contact->civility, "");
 $v->setFormattedName($contact->getFullName($langs, 1));
 

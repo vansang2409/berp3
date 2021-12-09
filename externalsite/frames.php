@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2004-2018 Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2018 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -70,7 +70,7 @@ if (!empty($keyforcontent)) {
 			/*print "
 			<html>
 			<head>
-			<title>Dolibarr frame for external web site</title>
+			<title>Berp3 frame for external web site</title>
 			</head>
 
 			<frameset ".(empty($conf->global->MAIN_MENU_INVERT)?"rows":"cols")."=\"".$heightforframes.",*\" border=0 framespacing=0 frameborder=0>
@@ -109,7 +109,7 @@ if (!empty($keyforcontent)) {
 		print "
 	<html>
 	<head>
-	<title>Dolibarr frame for external web site</title>
+	<title>Berp3 frame for external web site</title>
 	</head>
 
 	<frameset ".(empty($conf->global->MAIN_MENU_INVERT) ? "rows" : "cols")."=\"".$heightforframes.",*\" border=0 framespacing=0 frameborder=0>

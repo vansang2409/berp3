@@ -47,7 +47,7 @@ $action = GETPOST('action', 'aZ09');
 
 if ($action == 'updateoptions') {
 	if (GETPOST('activate_RESOURCE_USE_SEARCH_TO_SELECT') != '') {
-		if (dolibarr_set_const($db, "RESOURCE_USE_SEARCH_TO_SELECT", GETPOST('activate_RESOURCE_USE_SEARCH_TO_SELECT'), 'chaine', 0, '', $conf->entity)) {
+		if (berp3_set_const($db, "RESOURCE_USE_SEARCH_TO_SELECT", GETPOST('activate_RESOURCE_USE_SEARCH_TO_SELECT'), 'chaine', 0, '', $conf->entity)) {
 			setEventMessages($langs->trans("SetupSaved"), null, 'mesgs');
 		} else {
 			setEventMessages($langs->trans("Error"), null, 'errors');

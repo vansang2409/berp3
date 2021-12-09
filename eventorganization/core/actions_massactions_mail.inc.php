@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2015-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2021 Nicolas ZABOURI	<info@inovea-conseil.com>
- * Copyright (C) 2018 	   Juanjo Menent  <jmenent@2byte.es>
- * Copyright (C) 2019 	   Ferran Marcet  <fmarcet@2byte.es>
- * Copyright (C) 2019-2021 Frédéric France <frederic.france@netlogic.fr>
+/* Copyright (C) 2015-2017 
+ * Copyright (C) 2018-2021 	
+ * Copyright (C) 2018 	     
+ * Copyright (C) 2019 	     
+ * Copyright (C) 2019-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -194,7 +194,7 @@ if (!$error && $massaction == 'confirm_presend_attendees') {
 			$substitutionarray = getCommonSubstitutionArray($langs, 0, null, $attendees);
 
 			if (!empty($conf->global->MAIN_AGENDA_XCAL_EXPORTKEY)) {
-				$urlwithouturlroot = preg_replace('/' . preg_quote(DOL_URL_ROOT, '/') . '$/i', '', trim($dolibarr_main_url_root));
+				$urlwithouturlroot = preg_replace('/' . preg_quote(DOL_URL_ROOT, '/') . '$/i', '', trim($berp3_main_url_root));
 				$urlwithroot = $urlwithouturlroot . DOL_URL_ROOT;
 				$url_link = $urlwithroot . '/public/agenda/agendaexport.php?format=ical' . ($conf->entity > 1 ? "&entity=" . $conf->entity : "");
 				$url_link .= '&exportkey=' . ($conf->global->MAIN_AGENDA_XCAL_EXPORTKEY ? urlencode($conf->global->MAIN_AGENDA_XCAL_EXPORTKEY) : '...');

@@ -1,10 +1,10 @@
 <?php
 /* Copyright (C) 2011		Dimitri Mouillard	<dmouillard@teclib.com>
- * Copyright (C) 2012-2014	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2012-2016	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2013		Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2016       Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2012-2014		
+ * Copyright (C) 2012-2016			
+ * Copyright (C) 2013		
+ * Copyright (C) 2016       
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -161,7 +161,7 @@ class Holiday extends CommonObject
 	/**
 	 *   Constructor
 	 *
-	 *   @param		DoliDB		$db      Database handler
+	 *   @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1674,7 +1674,7 @@ class Holiday extends CommonObject
 	 *    Get list of Users or list of vacation balance.
 	 *
 	 *    @param      boolean			$stringlist	    If true return a string list of id. If false, return an array with detail.
-	 *    @param      boolean   		$type			If true, read Dolibarr user list, if false, return vacation balance list.
+	 *    @param      boolean   		$type			If true, read Berp3 user list, if false, return vacation balance list.
 	 *    @param      string            $filters        Filters
 	 *    @return     array|string|int      			Return an array
 	 */
@@ -1686,7 +1686,7 @@ class Holiday extends CommonObject
 
 		if ($stringlist) {
 			if ($type) {
-				// If user of Dolibarr
+				// If user of Berp3
 				$sql = "SELECT";
 				if (!empty($conf->multicompany->enabled) && !empty($conf->global->MULTICOMPANY_TRANSVERSE_MODE)) {
 					$sql .= " DISTINCT";
@@ -1776,7 +1776,7 @@ class Holiday extends CommonObject
 			// Si faux donc return array
 			// List for BERP3 users
 			if ($type) {
-								// If user of Dolibarr
+								// If user of Berp3
 				$sql = "SELECT";
 				if (!empty($conf->multicompany->enabled) && !empty($conf->global->MULTICOMPANY_TRANSVERSE_MODE)) {
 					$sql .= " DISTINCT";
@@ -1920,7 +1920,7 @@ class Holiday extends CommonObject
 
 
 	/**
-	 *	Compte le nombre d'utilisateur actifs dans Dolibarr
+	 *	Compte le nombre d'utilisateur actifs dans Berp3
 	 *
 	 *  @return     int      retourne le nombre d'utilisateur
 	 */
@@ -1936,7 +1936,7 @@ class Holiday extends CommonObject
 		return $objet->compteur;
 	}
 	/**
-	 *	Compte le nombre d'utilisateur actifs dans Dolibarr sans CP
+	 *	Compte le nombre d'utilisateur actifs dans Berp3 sans CP
 	 *
 	 *  @return     int      retourne le nombre d'utilisateur
 	 */
@@ -1954,18 +1954,18 @@ class Holiday extends CommonObject
 	}
 
 	/**
-	 *  Compare le nombre d'utilisateur actif de Dolibarr à celui des utilisateurs des congés payés
+	 *  Compare le nombre d'utilisateur actif de Berp3 à celui des utilisateurs des congés payés
 	 *
-	 *  @param    int	$userDolibarrWithoutCP	Number of active users in Dolibarr without holidays
+	 *  @param    int	$userBerp3WithoutCP	Number of active users in Berp3 without holidays
 	 *  @param    int	$userCP    				Number of active users into table of holidays
 	 *  @return   int							<0 if KO, >0 if OK
 	 */
-	public function verifNbUsers($userDolibarrWithoutCP, $userCP)
+	public function verifNbUsers($userBerp3WithoutCP, $userCP)
 	{
 		if (empty($userCP)) {
 			$userCP = 0;
 		}
-		dol_syslog(get_class($this).'::verifNbUsers userDolibarr='.$userDolibarrWithoutCP.' userCP='.$userCP);
+		dol_syslog(get_class($this).'::verifNbUsers userBerp3='.$userBerp3WithoutCP.' userCP='.$userCP);
 		return 1;
 	}
 

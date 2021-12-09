@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2001      Eric Seigne         <erics@rycks.com>
- * Copyright (C) 2004-2015 Destailleur Laurent <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2010 Regis Houssin       <regis.houssin@inodbox.com>
+/* Copyright (C) 2001               
+ * Copyright (C) 2004-2015  
+ * Copyright (C) 2005-2010        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ class Translate
 	 *	Constructor
 	 *
 	 *  @param	string	$dir            Force directory that contains /langs subdirectory (value is sometimes '..' like into install/* pages or support/* pages). Use '' by default.
-	 *  @param  Conf	$conf			Object with Dolibarr configuration
+	 *  @param  Conf	$conf			Object with Berp3 configuration
 	 */
 	public function __construct($dir, $conf)
 	{
@@ -286,7 +286,7 @@ class Translate
 						if ($alt == 2) {
 							$fileread = 1;
 						}
-						$found = true; // Found in dolibarr PHP cache
+						$found = true; // Found in berp3 PHP cache
 					}
 				}
 
@@ -474,7 +474,7 @@ class Translate
 				//print $newdomain."\n";
 				//var_dump($this->tab_translate);
 				$fileread = 1;
-				$found = true; // Found in dolibarr PHP cache
+				$found = true; // Found in berp3 PHP cache
 			}
 		}
 
@@ -943,7 +943,7 @@ class Translate
 	 *      Search into translation array, then into cache, then if still not found, search into database.
 	 *      Store key-label found into cache variable $this->cache_labels to save SQL requests to get labels.
 	 *
-	 * 		@param	DoliDB	$db				Database handler
+	 * 		@param	Berp3DB	$db				Database handler
 	 * 		@param	string	$key			Translation key to get label (key in language file)
 	 * 		@param	string	$tablename		Table name without prefix
 	 * 		@param	string	$fieldkey		Field for key

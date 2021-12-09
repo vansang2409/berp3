@@ -1,7 +1,7 @@
 <?php
 /* Copyright (C) 2017      Franck Moreau        <franck.moreau@theobald.com>
- * Copyright (C) 2018      Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2020      Maxime DEMAREST      <maxime@indelog.fr>
+ * Copyright (C) 2018      
+ * Copyright (C) 2020            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

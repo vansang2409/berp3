@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Eric Seigne          <erics@rycks.com>
- * Copyright (C) 2004-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2011-2012 Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2003      
+ * Copyright (C) 2003                
+ * Copyright (C) 2004-2010 
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2011-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,8 +60,8 @@ if ($action == 'update') {
 	$exturl = dol_string_onlythesehtmltags($exturl, 1, 1, 0, 1);
 	$exturl = trim(dol_string_onlythesehtmlattributes($exturl));
 
-	$i += dolibarr_set_const($db, 'EXTERNALSITE_LABEL', trim($label), 'chaine', 0, '', $conf->entity);
-	$i += dolibarr_set_const($db, 'EXTERNALSITE_URL', trim($exturl), 'chaine', 0, '', $conf->entity);
+	$i += berp3_set_const($db, 'EXTERNALSITE_LABEL', trim($label), 'chaine', 0, '', $conf->entity);
+	$i += berp3_set_const($db, 'EXTERNALSITE_URL', trim($exturl), 'chaine', 0, '', $conf->entity);
 
 	if ($i >= 2) {
 		$db->commit();

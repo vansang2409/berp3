@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2010-2011	Regis Houssin   <regis.houssin@inodbox.com>
- * Copyright (C) 2013		Juanjo Menent   <jmenent@2byte.es>
- * Copyright (C) 2014       Marcos García   <marcosgdf@gmail.com>
- * Copyright (C) 2013-2020	Charlene BENKE	<charlie@patas-monkey.com>
+/* Copyright (C) 2010-2011	   
+ * Copyright (C) 2013		   
+ * Copyright (C) 2014          
+ * 	Charlene BENKE	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

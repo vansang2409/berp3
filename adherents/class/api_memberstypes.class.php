@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017	Regis Houssin	<regis.houssin@inodbox.com>
+/* Copyright (C) 2017	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,9 +23,9 @@ require_once DOL_DOCUMENT_ROOT.'/adherents/class/adherent_type.class.php';
  * API class for members types
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class MembersTypes extends DolibarrApi
+class MembersTypes extends Berp3Api
 {
 	/**
 	 * @var array   $FIELDS     Mandatory fields, checked when create and update object
@@ -55,7 +55,7 @@ class MembersTypes extends DolibarrApi
 	 */
 	public function get($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->adherent->lire) {
+		if (!Berp3ApiAccess::$user->rights->adherent->lire) {
 			throw new RestException(401);
 		}
 
@@ -65,8 +65,8 @@ class MembersTypes extends DolibarrApi
 			throw new RestException(404, 'member type not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('member', $membertype->id, 'adherent_type')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('member', $membertype->id, 'adherent_type')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		return $this->_cleanObjectDatas($membertype);
@@ -92,7 +92,7 @@ class MembersTypes extends DolibarrApi
 
 		$obj_ret = array();
 
-		if (!DolibarrApiAccess::$user->rights->adherent->lire) {
+		if (!Berp3ApiAccess::$user->rights->adherent->lire) {
 			throw new RestException(401);
 		}
 
@@ -102,11 +102,11 @@ class MembersTypes extends DolibarrApi
 
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -150,7 +150,7 @@ class MembersTypes extends DolibarrApi
 	 */
 	public function post($request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->adherent->configurer) {
+		if (!Berp3ApiAccess::$user->rights->adherent->configurer) {
 			throw new RestException(401);
 		}
 		// Check mandatory fields
@@ -160,7 +160,7 @@ class MembersTypes extends DolibarrApi
 		foreach ($request_data as $field => $value) {
 			$membertype->$field = $value;
 		}
-		if ($membertype->create(DolibarrApiAccess::$user) < 0) {
+		if ($membertype->create(Berp3ApiAccess::$user) < 0) {
 			throw new RestException(500, 'Error creating member type', array_merge(array($membertype->error), $membertype->errors));
 		}
 		return $membertype->id;
@@ -175,7 +175,7 @@ class MembersTypes extends DolibarrApi
 	 */
 	public function put($id, $request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->adherent->configurer) {
+		if (!Berp3ApiAccess::$user->rights->adherent->configurer) {
 			throw new RestException(401);
 		}
 
@@ -185,8 +185,8 @@ class MembersTypes extends DolibarrApi
 			throw new RestException(404, 'member type not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('member', $membertype->id, 'adherent_type')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('member', $membertype->id, 'adherent_type')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		foreach ($request_data as $field => $value) {
@@ -200,7 +200,7 @@ class MembersTypes extends DolibarrApi
 
 		// If there is no error, update() returns the number of affected rows
 		// so if the update is a no op, the return value is zero.
-		if ($membertype->update(DolibarrApiAccess::$user) >= 0) {
+		if ($membertype->update(Berp3ApiAccess::$user) >= 0) {
 			return $this->get($id);
 		} else {
 			throw new RestException(500, $membertype->error);
@@ -215,7 +215,7 @@ class MembersTypes extends DolibarrApi
 	 */
 	public function delete($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->adherent->configurer) {
+		if (!Berp3ApiAccess::$user->rights->adherent->configurer) {
 			throw new RestException(401);
 		}
 		$membertype = new AdherentType($this->db);
@@ -224,8 +224,8 @@ class MembersTypes extends DolibarrApi
 			throw new RestException(404, 'member type not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('member', $membertype->id, 'adherent_type')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('member', $membertype->id, 'adherent_type')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		if (!$membertype->delete()) {

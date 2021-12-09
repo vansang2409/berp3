@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2019 Frédéric FRANCE <frederic.france@free.fr>
+/* Copyright (C) 2004-2017 
+ * Copyright (C) 2019 Frédéric FRANCE 
  *
  *
  * LICENSE =================================================================
@@ -26,7 +26,7 @@
  * \brief   About page of module Zapier.
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../../main.inc.php';
 
 // Libraries

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2011 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2011 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 /**
  *  Check authentication array and set error, errorcode, errorlabel
  *
- *  @param	array	$authentication     Array with authentication informations ('login'=>,'password'=>,'entity'=>,'dolibarrkey'=>)
+ *  @param	array	$authentication     Array with authentication informations ('login'=>,'password'=>,'entity'=>,'berp3key'=>)
  *  @param 	int		$error				Number of errors
  *  @param  string	$errorcode			Error string code
  *  @param  string	$errorlabel			Error string label
@@ -35,14 +35,14 @@
 function check_authentication($authentication, &$error, &$errorcode, &$errorlabel)
 {
 	global $db, $conf, $langs;
-	global $dolibarr_main_authentication, $dolibarr_auto_user;
+	global $berp3_main_authentication, $berp3_auto_user;
 
 	$fuser = new User($db);
 
-	if (!$error && ($authentication['dolibarrkey'] != $conf->global->WEBSERVICES_KEY)) {
+	if (!$error && ($authentication['berp3key'] != $conf->global->WEBSERVICES_KEY)) {
 		$error++;
 		$errorcode = 'BAD_VALUE_FOR_SECURITY_KEY';
-		$errorlabel = 'Value provided into dolibarrkey entry field does not match security key defined in Webservice module setup';
+		$errorlabel = 'Value provided into berp3key entry field does not match security key defined in Webservice module setup';
 	}
 
 	if (!$error && !empty($authentication['entity']) && !is_numeric($authentication['entity'])) {
@@ -74,15 +74,15 @@ function check_authentication($authentication, &$error, &$errorcode, &$errorlabe
 			$fuser->getrights(); // Load permission of user
 
 			// Authentication mode
-			if (empty($dolibarr_main_authentication)) {
-				$dolibarr_main_authentication = 'http,dolibarr';
+			if (empty($berp3_main_authentication)) {
+				$berp3_main_authentication = 'http,berp3';
 			}
 			// Authentication mode: forceuser
-			if ($dolibarr_main_authentication == 'forceuser' && empty($dolibarr_auto_user)) {
-				$dolibarr_auto_user = 'auto';
+			if ($berp3_main_authentication == 'forceuser' && empty($berp3_auto_user)) {
+				$berp3_auto_user = 'auto';
 			}
 			// Set authmode
-			$authmode = explode(',', $dolibarr_main_authentication);
+			$authmode = explode(',', $berp3_main_authentication);
 
 			include_once DOL_DOCUMENT_ROOT.'/core/lib/security2.lib.php';
 			$login = checkLoginPassEntity($authentication['login'], $authentication['password'], $authentication['entity'], $authmode, 'ws');

@@ -1,14 +1,14 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2012 Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2012      J. Fernando Lagrange <fernando@demo-tic.org>
- * Copyright (C) 2015      Jean-François Ferry  <jfefe@aternatik.fr>
- * Copyright (C) 2020-2021 Frédéric France      <frederic.france@netlogic.fr>
+/* Copyright (C) 2003      
+ * Copyright (C) 2003         
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2011-2012 
+ * Copyright (C) 2012       
+ * Copyright (C) 2015      
+ * Copyright (C) 2020-2021 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,13 +65,13 @@ if ($action == 'set_default') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->MEMBER_ADDON_PDF_ODT == "$value") {
-			dolibarr_del_const($db, 'MEMBER_ADDON_PDF_ODT', $conf->entity);
+			berp3_del_const($db, 'MEMBER_ADDON_PDF_ODT', $conf->entity);
 		}
 	}
 	$res = true;
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "MEMBER_ADDON_PDF_ODT", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "MEMBER_ADDON_PDF_ODT", $value, 'chaine', 0, '', $conf->entity)) {
 		// The constant that was read ahead of the new set
 		// we therefore go through a variable to have a consistent display
 		$conf->global->MEMBER_ADDON_PDF_ODT = $value;
@@ -85,7 +85,7 @@ if ($action == 'set_default') {
 	$res = true;
 } elseif (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -93,7 +93,7 @@ if ($action == 'set_default') {
 	}
 } elseif (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, $conf->entity) > 0) {
+	if (berp3_del_const($db, $code, $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -102,17 +102,17 @@ if ($action == 'set_default') {
 } elseif ($action == 'updateall') {
 	$db->begin();
 	$res1 = $res2 = $res3 = $res4 = $res5 = $res6 = $res7 = 0;
-	$res1 = dolibarr_set_const($db, 'ADHERENT_LOGIN_NOT_REQUIRED', GETPOST('ADHERENT_LOGIN_NOT_REQUIRED', 'alpha') ? 0 : 1, 'chaine', 0, '', $conf->entity);
-	$res2 = dolibarr_set_const($db, 'ADHERENT_MAIL_REQUIRED', GETPOST('ADHERENT_MAIL_REQUIRED', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res3 = dolibarr_set_const($db, 'ADHERENT_DEFAULT_SENDINFOBYMAIL', GETPOST('ADHERENT_DEFAULT_SENDINFOBYMAIL', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res3 = dolibarr_set_const($db, 'ADHERENT_CREATE_EXTERNAL_USER_LOGIN', GETPOST('ADHERENT_CREATE_EXTERNAL_USER_LOGIN', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res4 = dolibarr_set_const($db, 'ADHERENT_BANK_USE', GETPOST('ADHERENT_BANK_USE', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res1 = berp3_set_const($db, 'ADHERENT_LOGIN_NOT_REQUIRED', GETPOST('ADHERENT_LOGIN_NOT_REQUIRED', 'alpha') ? 0 : 1, 'chaine', 0, '', $conf->entity);
+	$res2 = berp3_set_const($db, 'ADHERENT_MAIL_REQUIRED', GETPOST('ADHERENT_MAIL_REQUIRED', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res3 = berp3_set_const($db, 'ADHERENT_DEFAULT_SENDINFOBYMAIL', GETPOST('ADHERENT_DEFAULT_SENDINFOBYMAIL', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res3 = berp3_set_const($db, 'ADHERENT_CREATE_EXTERNAL_USER_LOGIN', GETPOST('ADHERENT_CREATE_EXTERNAL_USER_LOGIN', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res4 = berp3_set_const($db, 'ADHERENT_BANK_USE', GETPOST('ADHERENT_BANK_USE', 'alpha'), 'chaine', 0, '', $conf->entity);
 	// Use vat for invoice creation
 	if ($conf->facture->enabled) {
-		$res4 = dolibarr_set_const($db, 'ADHERENT_VAT_FOR_SUBSCRIPTIONS', GETPOST('ADHERENT_VAT_FOR_SUBSCRIPTIONS', 'alpha'), 'chaine', 0, '', $conf->entity);
-		$res5 = dolibarr_set_const($db, 'ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', GETPOST('ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', 'alpha'), 'chaine', 0, '', $conf->entity);
+		$res4 = berp3_set_const($db, 'ADHERENT_VAT_FOR_SUBSCRIPTIONS', GETPOST('ADHERENT_VAT_FOR_SUBSCRIPTIONS', 'alpha'), 'chaine', 0, '', $conf->entity);
+		$res5 = berp3_set_const($db, 'ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', GETPOST('ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', 'alpha'), 'chaine', 0, '', $conf->entity);
 		if (!empty($conf->product->enabled) || !empty($conf->service->enabled)) {
-			$res6 = dolibarr_set_const($db, 'ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', GETPOST('ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', 'alpha'), 'chaine', 0, '', $conf->entity);
+			$res6 = berp3_set_const($db, 'ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', GETPOST('ADHERENT_PRODUCT_ID_FOR_SUBSCRIPTIONS', 'alpha'), 'chaine', 0, '', $conf->entity);
 		}
 	}
 	if ($res1 < 0 || $res2 < 0 || $res3 < 0 || $res4 < 0 || $res5 < 0 || $res6 < 0) {
@@ -142,7 +142,7 @@ if ($action == 'update' || $action == 'add') {
 
 	$consttype = GETPOST('consttype', 'alpha');
 	$constnote = GETPOST('constnote');
-	$res = dolibarr_set_const($db, $constname, $constvalue, $choices[$consttype], 0, $constnote, $conf->entity);
+	$res = berp3_set_const($db, $constname, $constvalue, $choices[$consttype], 0, $constnote, $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -157,7 +157,7 @@ if ($action == 'update' || $action == 'add') {
 
 // Action to enable of a submodule of the adherent module
 if ($action == 'set') {
-	$result = dolibarr_set_const($db, GETPOST('name', 'alpha'), GETPOST('value'), '', 0, '', $conf->entity);
+	$result = berp3_set_const($db, GETPOST('name', 'alpha'), GETPOST('value'), '', 0, '', $conf->entity);
 	if ($result < 0) {
 		print $db->error();
 	}
@@ -165,7 +165,7 @@ if ($action == 'set') {
 
 // Action to disable a submodule of the adherent module
 if ($action == 'unset') {
-	$result = dolibarr_del_const($db, GETPOST('name', 'alpha'), $conf->entity);
+	$result = berp3_del_const($db, GETPOST('name', 'alpha'), $conf->entity);
 	if ($result < 0) {
 		print $db->error();
 	}

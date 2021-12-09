@@ -120,8 +120,8 @@ ConfirmCloneOrder=Opravdu chcete klonovat tuto objednávku <b> %s </b>?
 DispatchSupplierOrder=Příjem objednávky %s
 FirstApprovalAlreadyDone=První schválení již učiněno
 SecondApprovalAlreadyDone=Druhé schválení již bylo provedeno
-SupplierOrderReceivedInDolibarr=Objednávka %s obdržena %s
-SupplierOrderSubmitedInDolibarr=Objednávka %s byla odeslána
+SupplierOrderReceivedInBerp3=Objednávka %s obdržena %s
+SupplierOrderSubmitedInBerp3=Objednávka %s byla odeslána
 SupplierOrderClassifiedBilled=Objednávka nákupu %s nastavena fakturovaná
 OtherOrders=Ostatní objednávky
 ##### Types de contacts #####

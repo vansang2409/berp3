@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2015   
+ * Copyright (C) 2016	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -85,7 +85,7 @@ class Login
 	 */
 	public function index($login, $password, $entity = '', $reset = 0)
 	{
-		global $conf, $dolibarr_main_authentication, $dolibarr_auto_user;
+		global $conf, $berp3_main_authentication, $berp3_auto_user;
 
 		// Is the login API disabled ? The token must be generated from backoffice only.
 		if (! empty($conf->global->API_DISABLE_LOGIN_API)) {
@@ -94,23 +94,23 @@ class Login
 		}
 
 		// Authentication mode
-		if (empty($dolibarr_main_authentication)) {
-			$dolibarr_main_authentication = 'dolibarr';
+		if (empty($berp3_main_authentication)) {
+			$berp3_main_authentication = 'berp3';
 		}
 
 		// Authentication mode: forceuser
-		if ($dolibarr_main_authentication == 'forceuser') {
-			if (empty($dolibarr_auto_user)) {
-				$dolibarr_auto_user = 'auto';
+		if ($berp3_main_authentication == 'forceuser') {
+			if (empty($berp3_auto_user)) {
+				$berp3_auto_user = 'auto';
 			}
-			if ($dolibarr_auto_user != $login) {
-				dol_syslog("Warning: your instance is set to use the automatic forced login '".$dolibarr_auto_user."' that is not the requested login. API usage is forbidden in this mode.");
-				throw new RestException(403, "Your instance is set to use the automatic login '".$dolibarr_auto_user."' that is not the requested login. API usage is forbidden in this mode.");
+			if ($berp3_auto_user != $login) {
+				dol_syslog("Warning: your instance is set to use the automatic forced login '".$berp3_auto_user."' that is not the requested login. API usage is forbidden in this mode.");
+				throw new RestException(403, "Your instance is set to use the automatic login '".$berp3_auto_user."' that is not the requested login. API usage is forbidden in this mode.");
 			}
 		}
 
 		// Set authmode
-		$authmode = explode(',', $dolibarr_main_authentication);
+		$authmode = explode(',', $berp3_main_authentication);
 
 		if ($entity != '' && !is_numeric($entity)) {
 			throw new RestException(403, "Bad value for entity, must be the numeric ID of company.");
@@ -163,7 +163,7 @@ class Login
 				'code' => 200,
 				'token' => $token,
 				'entity' => $tmpuser->entity,
-				'message' => 'Welcome '.$login.($reset ? ' - Token is new' : ' - This is your token (recorded for your user). You can use it to make any REST API call, or enter it into the DOLAPIKEY field to use the Dolibarr API explorer.')
+				'message' => 'Welcome '.$login.($reset ? ' - Token is new' : ' - This is your token (recorded for your user). You can use it to make any REST API call, or enter it into the DOLAPIKEY field to use the Berp3 API explorer.')
 			)
 		);
 	}

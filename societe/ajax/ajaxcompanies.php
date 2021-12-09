@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2006      Andre Cianfarani     <acianfa@free.fr>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2007-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2006           
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2007-2010 
  * Copyright (C) 2010      Cyrille de Lambert   <info@auguria.net>
  *
  * This program is free software; you can redistribute it and/or modify

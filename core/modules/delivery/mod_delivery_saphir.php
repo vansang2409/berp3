@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2007 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2005-2007 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,10 +32,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/delivery/modules_delivery.php';
 class mod_delivery_saphir extends ModeleNumRefDeliveryOrder
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var string Error message

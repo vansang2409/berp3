@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2015       Jean-François Ferry		<jfefe@aternatik.fr>
+/* Copyright (C) 2003-2005 
+ * Copyright (C) 2004-2013 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2015       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,8 +49,8 @@ $boxes = array();
  */
 
 if ($action == 'addconst') {
-	dolibarr_set_const($db, "MAIN_BOXES_MAXLINES", GETPOST("MAIN_BOXES_MAXLINES", 'int'), '', 0, '', $conf->entity);
-	dolibarr_set_const($db, "MAIN_ACTIVATE_FILECACHE", GETPOST("MAIN_ACTIVATE_FILECACHE", 'alpha'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_BOXES_MAXLINES", GETPOST("MAIN_BOXES_MAXLINES", 'int'), '', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_ACTIVATE_FILECACHE", GETPOST("MAIN_ACTIVATE_FILECACHE", 'alpha'), 'chaine', 0, '', $conf->entity);
 }
 
 if ($action == 'add') {

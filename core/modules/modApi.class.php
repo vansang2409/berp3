@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville		<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2015		Jean-François Ferry		<jfefe@aternatik.fr>
- * Copyright (C) 2018		Regis Houssin			<regis.houssin@inodbox.com>
+/* Copyright (C) 2003				
+ * Copyright (C) 2004-2012	
+ * Copyright (C) 2015		
+ * Copyright (C) 2018		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,18 +25,18 @@
  *  \ingroup    api
  *  \brief      Description and activation file for the module Api
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module Api
  */
-class modApi extends DolibarrModules
+class modApi extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -45,7 +45,7 @@ class modApi extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 2610;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'api';
@@ -58,8 +58,8 @@ class modApi extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "REST interface";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or 'dolibarr_deprecated' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or 'berp3_deprecated' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Can be enabled / disabled only in the main company with superadmin account
@@ -220,7 +220,7 @@ class modApi extends DolibarrModules
 
 	/**
 	 *		Function called when module is enabled.
-	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *		It also creates data directories
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')

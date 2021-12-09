@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2001-2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2019  Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2001-2005  
+ * Copyright (C) 2004-2019  
  * Copyright (C) 2005       Marc Barilley / Ocebo   <marc@ocebo.com>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2012       Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2013       Christophe Battarel     <christophe.battarel@altairis.fr>
- * Copyright (C) 2013       Cédric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2015-2018  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2015       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2015       Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016-2021  Ferran Marcet           <fmarcet@2byte.es>
- * Copyright (C) 2018       Charlene Benke	        <charlie@patas-monkey.com>
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2012       
+ * Copyright (C) 2013       
+ * Copyright (C) 2013                
+ * Copyright (C) 2015-2018  
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
+ * Copyright (C) 2016-2021  
+ * Copyright (C) 2018       	        
  * Copyright (C) 2021	   	Anthony Berton			<anthony.berton@bb2a.fr>
  *
  * This program is free software; you can redistribute it and/or modify

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2005      
+ * Copyright (C) 2004-2018 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 class DiscountAbsolute
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -105,7 +105,7 @@ class DiscountAbsolute
 	/**
 	 *	Constructor
 	 *
-	 *  @param  	DoliDB		$db		Database handler
+	 *  @param  	Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{

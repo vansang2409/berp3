@@ -15,6 +15,6 @@ UrlOrLink=网址
 BehaviourOnClick=Behaviour when a bookmark URL is selected
 CreateBookmark=创建书签
 SetHereATitleForLink=设置书签标题
-UseAnExternalHttpLinkOrRelativeDolibarrLink=使用外部的HTTP URL或相对Dolibarr网址
+UseAnExternalHttpLinkOrRelativeBerp3Link=使用外部的HTTP URL或相对Berp3网址
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=选择链接页面必须在新窗口中打开或不打开
 BookmarksManagement=书签管理

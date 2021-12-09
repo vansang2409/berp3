@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) - 2013-2015 Jean-François FERRY	<jfefe@aternatik.fr>
- * Copyright (C) 2019       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) - 2013-2015 	
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ require_once DOL_DOCUMENT_ROOT."/resource/class/dolresource.class.php";
 class FormResource
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -52,7 +52,7 @@ class FormResource
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{

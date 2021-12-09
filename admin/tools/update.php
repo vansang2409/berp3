@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2007-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2009-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012      Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2007-2017 
+ * Copyright (C) 2009-2012 
+ * Copyright (C) 2012      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 
 /**
  *		\file 		htdocs/admin/tools/update.php
- *		\brief      Page to make a Dolibarr online upgrade
+ *		\brief      Page to make a Berp3 online upgrade
  */
 
 if (! defined('CSRFCHECK_WITH_TOKEN')) {
@@ -45,10 +45,10 @@ if (GETPOST('msg', 'alpha')) {
 }
 
 
-$urldolibarr = 'https://www.dolibarr.org/downloads/';
-$dolibarrroot = preg_replace('/([\\/]+)$/i', '', DOL_DOCUMENT_ROOT);
-$dolibarrroot = preg_replace('/([^\\/]+)$/i', '', $dolibarrroot);
-$dolibarrdataroot = preg_replace('/([\\/]+)$/i', '', DOL_DATA_ROOT);
+$urlberp3 = 'https://www.berp3.org/downloads/';
+$berp3root = preg_replace('/([\\/]+)$/i', '', DOL_DOCUMENT_ROOT);
+$berp3root = preg_replace('/([^\\/]+)$/i', '', $berp3root);
+$berp3dataroot = preg_replace('/([\\/]+)$/i', '', DOL_DATA_ROOT);
 
 $sfurl = '';
 $version = '0.0';
@@ -59,7 +59,7 @@ $version = '0.0';
  */
 
 if ($action == 'getlastversion') {
-	$result = getURLContent('https://sourceforge.net/projects/dolibarr/rss');
+	$result = getURLContent('https://sourceforge.net/projects/berp3/rss');
 	//var_dump($result['content']);
 	$sfurl = simplexml_load_string($result['content'], 'SimpleXMLElement', LIBXML_NOCDATA|LIBXML_NONET);
 }
@@ -116,17 +116,17 @@ print $langs->trans("Upgrade").'<br>';
 print '<hr>';
 print $langs->trans("ThisIsProcessToFollow").'<br>';
 print '<b>'.$langs->trans("StepNb", 1).'</b>: ';
-$fullurl = '<a href="'.$urldolibarr.'" target="_blank">'.$urldolibarr.'</a>';
+$fullurl = '<a href="'.$urlberp3.'" target="_blank">'.$urlberp3.'</a>';
 print str_replace('{s}', $fullurl, $langs->trans("DownloadPackageFromWebSite", '{s}')).'<br>';
 print '<b>'.$langs->trans("StepNb", 2).'</b>: ';
-print str_replace('{s}', $dolibarrroot, $langs->trans("UnpackPackageInDolibarrRoot", '{s}')).'<br>';
+print str_replace('{s}', $berp3root, $langs->trans("UnpackPackageInBerp3Root", '{s}')).'<br>';
 print '<b>'.$langs->trans("StepNb", 3).'</b>: ';
-print $langs->trans("RemoveLock", $dolibarrdataroot.'/install.lock').'<br>';
+print $langs->trans("RemoveLock", $berp3dataroot.'/install.lock').'<br>';
 print '<b>'.$langs->trans("StepNb", 4).'</b>: ';
 $fullurl = '<a href="'.DOL_URL_ROOT.'/install/" target="_blank">'.DOL_URL_ROOT.'/install/</a>';
 print str_replace('{s}', $fullurl, $langs->trans("CallUpdatePage", '{s}')).'<br>';
 print '<b>'.$langs->trans("StepNb", 5).'</b>: ';
-print $langs->trans("RestoreLock", $dolibarrdataroot.'/install.lock').'<br>';
+print $langs->trans("RestoreLock", $berp3dataroot.'/install.lock').'<br>';
 
 print '<br>';
 print '<br>';

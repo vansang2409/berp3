@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2013-2014	Olivier Geffroy		<jeff@jeffinfo.com>
- * Copyright (C) 2013-2021	Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2014		Ari Elbaz (elarifr)	<github@accedinfo.com>
- * Copyright (C) 2014		Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2016-2017	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2017-2021	Open-DSI			<support@open-dsi.fr>
+/* 	
+ * Copyright (C) 2013-2021	
+ * Copyright (C) 2014		
+ * Copyright (C) 2014		
+ * Copyright (C) 2016-2017		
+ * Copyright (C) 2017-2021				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,17 +25,17 @@
  * \ingroup		Double entry accounting
  * \brief		Module to activate the double entry accounting module
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  * Class to describe and enable double entry accounting module
  */
-class modAccounting extends DolibarrModules
+class modAccounting extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -50,8 +50,8 @@ class modAccounting extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Double entry accounting management";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or 'dolibarr_deprecated' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or 'berp3_deprecated' or version
+		$this->version = 'berp3';
 
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'accountancy';
@@ -67,7 +67,7 @@ class modAccounting extends DolibarrModules
 		$this->requiredby = array(); // List of modules id to disable if this one is disabled
 		$this->conflictwith = array("modComptabilite"); // List of modules are in conflict with this module
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(3, 9); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(3, 9); // Minimum version of Berp3 required by module
 		$this->langfiles = array("accountancy", "compta");
 
 		// Constants

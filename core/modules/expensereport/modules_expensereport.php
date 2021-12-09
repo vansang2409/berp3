@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015 Laurent Destailleur    <eldy@users.sourceforge.net>
+/* Copyright (C) 2015     
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ abstract class ModeleExpenseReport extends CommonDocGenerator
 	/**
 	 *  Return list of active models generation
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */
@@ -55,7 +55,7 @@ abstract class ModeleExpenseReport extends CommonDocGenerator
 /**
  * expensereport_pdf_create
  *
- *  @param	    DoliDB		$db  			Database handler
+ *  @param	    Berp3DB		$db  			Database handler
  *  @param	    ExpenseReport	$object		Object ExpenseReport
  *  @param		string		$message		Message
  *  @param	    string		$modele			Force the model to use ('' to not force)
@@ -65,7 +65,7 @@ abstract class ModeleExpenseReport extends CommonDocGenerator
  *  @param      int			$hideref        Hide ref
  *  @return     int         				0 if KO, 1 if OK
  */
-function expensereport_pdf_create(DoliDB $db, ExpenseReport $object, $message, $modele, $outputlangs, $hidedetails = 0, $hidedesc = 0, $hideref = 0)
+function expensereport_pdf_create(Berp3DB $db, ExpenseReport $object, $message, $modele, $outputlangs, $hidedetails = 0, $hidedesc = 0, $hideref = 0)
 {
 	return $object->generateDocument($modele, $outputlangs, $hidedetails, $hidedesc, $hideref);
 }
@@ -152,7 +152,7 @@ abstract class ModeleNumRefExpenseReport
 			return $langs->trans("VersionDevelopment");
 		} elseif ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
-		} elseif ($this->version == 'dolibarr') {
+		} elseif ($this->version == 'berp3') {
 			return DOL_VERSION;
 		} elseif ($this->version) {
 			return $this->version;

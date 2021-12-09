@@ -1,7 +1,7 @@
 <?php
 /* Copyright (C) 2012      Mikael Carlavan        <contact@mika-carl.fr>
- * Copyright (C) 2017      ATM Consulting         <contact@atm-consulting.fr>
- * Copyright (C) 2017      Pierre-Henry Favre     <phf@atm-consulting.fr>
+ * Copyright (C) 2017               
+ * Copyright (C) 2017           <phf@atm-consulting.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

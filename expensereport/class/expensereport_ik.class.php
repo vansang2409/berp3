@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017		ATM Consulting			<support@atm-consulting.fr>
- * Copyright (C) 2017		Pierre-Henry Favre		<phf@atm-consulting.fr>
+/* Copyright (C) 2017					
+ * Copyright (C) 2017				<phf@atm-consulting.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -83,9 +83,9 @@ class ExpenseReportIk extends CoreObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB		$db      Database handler
+	 *  @param      Berp3DB		$db      Database handler
 	 */
-	public function __construct(DoliDB &$db)
+	public function __construct(Berp3DB &$db)
 	{
 		parent::__construct($db);
 		parent::init();

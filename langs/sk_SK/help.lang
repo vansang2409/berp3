@@ -5,8 +5,8 @@ RemoteControlSupport=Online / vzdialená podpora v reálnom čase
 OtherSupport=Ďalšia podpora
 ToSeeListOfAvailableRessources=Ak chcete kontaktovať / zobrazenie dostupných zdrojov:
 HelpCenter=Nápoveda centrum
-DolibarrHelpCenter=BERP3 Help and Support Center
-ToGoBackToDolibarr=Otherwise, <a href="%s">click here to continue to use Dolibarr</a>.
+Berp3HelpCenter=BERP3 Help and Support Center
+ToGoBackToBerp3=Otherwise, <a href="%s">click here to continue to use Berp3</a>.
 TypeOfSupport=Type of support
 TypeSupportCommunauty=Spoločenstva (zadarmo)
 TypeSupportCommercial=Obchodné

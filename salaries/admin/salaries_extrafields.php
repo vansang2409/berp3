@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2001-2002	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2019       Alexandre Spangaro      <aspangaro@open-dsi.fr>
+/* Copyright (C) 2001-2002	
+ * Copyright (C) 2004-2012	
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (c) 2005-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2003      
+ * Copyright (c) 2005-2008 
+ * Copyright (C) 2005-2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ class DeplacementStats extends Stats
 	/**
 	 * Constructor
 	 *
-	 * @param 	DoliDB		$db		   Database handler
+	 * @param 	Berp3DB		$db		   Database handler
 	 * @param 	int			$socid	   Id third party
 	 * @param   mixed		$userid    Id user for filter or array of user ids
 	 * @return 	void

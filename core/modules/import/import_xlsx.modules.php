@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2006-2012	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2009-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2012      Christophe Battarel  <christophe.battarel@altairis.fr>
- * Copyright (C) 2012-2016 Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2006-2012		
+ * Copyright (C) 2009-2012			
+ * Copyright (C) 2012        
+ * Copyright (C) 2012-2016 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ require_once DOL_DOCUMENT_ROOT . '/core/modules/import/modules_import.php';
 class ImportXlsx extends ModeleImports
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -67,10 +67,10 @@ class ImportXlsx extends ModeleImports
 	public $extension; // Extension of files imported by driver
 
 	/**
-	 * Dolibarr version of driver
+	 * Berp3 version of driver
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	public $label_lib; // Label of external lib used by driver
 
@@ -96,7 +96,7 @@ class ImportXlsx extends ModeleImports
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB		$db				Database handler
+	 *	@param	Berp3DB		$db				Database handler
 	 *	@param	string		$datatoimport	String code describing import set (ex: 'societe_1')
 	 */
 	public function __construct($db, $datatoimport)
@@ -147,7 +147,7 @@ class ImportXlsx extends ModeleImports
 		// phpcs:enable
 		global $user, $conf, $langs, $file;
 		// create a temporary object, the final output will be generated in footer
-		$this->workbook->getProperties()->setCreator($user->getFullName($outputlangs) . ' - Dolibarr ' . DOL_VERSION);
+		$this->workbook->getProperties()->setCreator($user->getFullName($outputlangs) . ' - Berp3 ' . DOL_VERSION);
 		$this->workbook->getProperties()->setTitle($outputlangs->trans("Import") . ' - ' . $file);
 		$this->workbook->getProperties()->setSubject($outputlangs->trans("Import") . ' - ' . $file);
 		$this->workbook->getProperties()->setDescription($outputlangs->trans("Import") . ' - ' . $file);
@@ -912,7 +912,7 @@ class ImportXlsx extends ModeleImports
 							if ($sql) {
 								$resql = $this->db->query($sql);
 								if ($resql) {
-									$last_insert_id_array[$tablename] = $this->db->last_insert_id($tablename); // store the last inserted auto_increment id for each table, so that child tables can be inserted with the appropriate id. This must be done just after the INSERT request, else we risk losing the id (because another sql query will be issued somewhere in Dolibarr).
+									$last_insert_id_array[$tablename] = $this->db->last_insert_id($tablename); // store the last inserted auto_increment id for each table, so that child tables can be inserted with the appropriate id. This must be done just after the INSERT request, else we risk losing the id (because another sql query will be issued somewhere in Berp3).
 									$insertdone = true;
 								} else {
 									//print 'E';

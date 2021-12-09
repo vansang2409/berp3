@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2001-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Eric Seigne          <erics@rycks.com>
- * Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011      Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2014      Cedric GROSS         <c.gross@kreiz-it.fr>
- * Copyright (C) 2015      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2017      Open-DSI             <support@open-dsi.fr>
- * Copyright (C) 2018-2021 Frédéric France      <frederic.france@netlogic.fr>
+/* Copyright (C) 2001-2004 
+ * Copyright (C) 2003                
+ * Copyright (C) 2004-2018 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2011      
+ * Copyright (C) 2014      Cedric GROSS         
+ * Copyright (C) 2015      
+ * Copyright (C) 2017                   
+ * Copyright (C) 2018-2021 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1147,7 +1147,7 @@ if (count($listofextcals)) {
 						}
 						// Test to avoid infinite loop ($datecurstart must increase)
 						if ($savdatecurstart >= $datecurstart) {
-							dol_syslog("Found a rule freq ".$icalevent['RRULE']['FREQ']." not managed by dolibarr code. Assume 1 week frequency.", LOG_ERR);
+							dol_syslog("Found a rule freq ".$icalevent['RRULE']['FREQ']." not managed by berp3 code. Assume 1 week frequency.", LOG_ERR);
 							$datecurstart += 3600 * 24 * 7;
 							$datecurend += 3600 * 24 * 7;
 						}
@@ -1642,7 +1642,7 @@ $db->close();
 /**
  * Show event of a particular day
  *
- * @param	DoliDB	$db              Database handler
+ * @param	Berp3DB	$db              Database handler
  * @param   int		$day             Day
  * @param   int		$month           Month
  * @param   int		$year            Year

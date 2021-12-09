@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2020 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2020 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ function dolSessionOpen($database_name, $table_name)
 {
 	global $conf, $dbsession;
 
-	$dbsession = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+	$dbsession = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 
 	return true;
 }

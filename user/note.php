@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2015 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004-2015 
+ * Copyright (C) 2005-2015 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 /**
  *      \file       htdocs/user/note.php
  *      \ingroup    usergroup
- *      \brief      Fiche de notes sur un utilisateur Dolibarr
+ *      \brief      Fiche de notes sur un utilisateur Berp3
  */
 
 require '../main.inc.php';
@@ -115,7 +115,7 @@ if ($id) {
 	print '<tr><td class="titlefield">'.$langs->trans("Login").'</td>';
 	if (!empty($object->ldap_sid) && $object->statut == 0) {
 		print '<td class="error">';
-		print $langs->trans("LoginAccountDisableInDolibarr");
+		print $langs->trans("LoginAccountDisableInBerp3");
 		print '</td>';
 	} else {
 		print '<td>';
@@ -142,7 +142,7 @@ if ($id) {
 		print "<input type=\"hidden\" name=\"id\" value=\"".$object->id."\">";
 		// Editeur wysiwyg
 		require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor('note_private', $object->note_private, '', 280, 'dolibarr_notes', 'In', true, false, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_8, '90%');
+		$doleditor = new DolEditor('note_private', $object->note_private, '', 280, 'berp3_notes', 'In', true, false, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_8, '90%');
 		$doleditor->Create();
 	} else {
 		print dol_string_onlythesehtmltags(dol_htmlentitiesbr($object->note_private));

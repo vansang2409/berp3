@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2002-2003 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2003 
+ * Copyright (C) 2004-2014 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ class CActionComm
 	public $error = '';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -89,7 +89,7 @@ class CActionComm
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDB		$db		Database handler
+	 *  @param	Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{

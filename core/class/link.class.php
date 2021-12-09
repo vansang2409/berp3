@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2013 Cédric Salvador <csalvador@gpcsolutions.fr>
+/* Copyright (C) 2013  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ class Link extends CommonObject
 	/**
 	 *    Constructor
 	 *
-	 *    @param	DoliDB		$db		Database handler
+	 *    @param	Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -223,8 +223,8 @@ class Link extends CommonObject
 	 *  Loads all links from database
 	 *
 	 *  @param  array   $links      array of Link objects to fill
-	 *  @param  string  $objecttype type of the associated object in dolibarr
-	 *  @param  int     $objectid   id of the associated object in dolibarr
+	 *  @param  string  $objecttype type of the associated object in berp3
+	 *  @param  int     $objectid   id of the associated object in berp3
 	 *  @param  string  $sortfield  field used to sort
 	 *  @param  string  $sortorder  sort order
 	 *  @return int                 1 if ok, 0 if no records, -1 if error
@@ -274,9 +274,9 @@ class Link extends CommonObject
 	/**
 	 *  Return nb of links
 	 *
-	 *  @param  DoliDb  $dbs         Database handler
-	 *  @param  string  $objecttype Type of the associated object in dolibarr
-	 *  @param  int     $objectid   Id of the associated object in dolibarr
+	 *  @param  Berp3Db  $dbs         Database handler
+	 *  @param  string  $objecttype Type of the associated object in berp3
+	 *  @param  int     $objectid   Id of the associated object in berp3
 	 *  @return int                 Nb of links, -1 if error
 	 **/
 	public static function count($dbs, $objecttype, $objectid)

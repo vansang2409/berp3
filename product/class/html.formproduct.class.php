@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2008-2009 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2008-2009 
  * Copyright (C) 2015-2017 Francis Appels       <francis.appels@yahoo.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -30,7 +30,7 @@ require_once DOL_DOCUMENT_ROOT.'/product/stock/class/entrepot.class.php';
 class FormProduct
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -47,7 +47,7 @@ class FormProduct
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db     Database handler
+	 *  @param  Berp3DB  $db     Database handler
 	 */
 	public function __construct($db)
 	{

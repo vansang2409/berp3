@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2009       Laurent Destailleur    <eldy@users.sourceforge.net>
- * Copyright (C) 2010-2016  Juanjo Menent	       <jmenent@2byte.es>
- * Copyright (C) 2013-2018  Philippe Grand         <philippe.grand@atoo-net.com>
- * Copyright (C) 2015       Jean-François Ferry    <jfefe@aternatik.fr>
+/* Copyright (C) 2009           
+ * Copyright (C) 2010-2016  	       
+ * Copyright (C) 2013-2018           
+ * Copyright (C) 2015           
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ $type = 'bankaccount';
 
 // Order display of bank account
 if ($action == 'setbankorder') {
-	if (dolibarr_set_const($db, "BANK_SHOW_ORDER_OPTION", GETPOST('value', 'alpha'), 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, "BANK_SHOW_ORDER_OPTION", GETPOST('value', 'alpha'), 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -62,14 +62,14 @@ if ($action == 'setbankorder') {
 
 // Auto report last num releve on conciliate
 if ($action == 'setreportlastnumreleve') {
-	if (dolibarr_set_const($db, "BANK_REPORT_LAST_NUM_RELEVE", 1, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, "BANK_REPORT_LAST_NUM_RELEVE", 1, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
 		dol_print_error($db);
 	}
 } elseif ($action == 'unsetreportlastnumreleve') {
-	if (dolibarr_set_const($db, "BANK_REPORT_LAST_NUM_RELEVE", 0, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, "BANK_REPORT_LAST_NUM_RELEVE", 0, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -79,14 +79,14 @@ if ($action == 'setreportlastnumreleve') {
 
 // Colorize movements
 if ($action == 'setbankcolorizemovement') {
-	if (dolibarr_set_const($db, "BANK_COLORIZE_MOVEMENT", 1, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, "BANK_COLORIZE_MOVEMENT", 1, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
 		dol_print_error($db);
 	}
 } elseif ($action == 'unsetbankcolorizemovement') {
-	if (dolibarr_set_const($db, "BANK_COLORIZE_MOVEMENT", 0, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, "BANK_COLORIZE_MOVEMENT", 0, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -107,7 +107,7 @@ if ($actionsave) {
 			$color = '';
 		}
 
-		$res = dolibarr_set_const($db, 'BANK_COLORIZE_MOVEMENT_COLOR'.$i, $color, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'BANK_COLORIZE_MOVEMENT_COLOR'.$i, $color, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -175,12 +175,12 @@ if ($action == 'set') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->BANKADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'BANKADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'BANKADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "BANKADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "BANKADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// The constant that was read before the new set
 		// We therefore requires a variable to have a coherent view
 		$conf->global->BANKADDON_PDF = $value;

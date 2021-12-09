@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2015       Cedric GROSS            <c.gross@kreiz-it.fr>
- * Copyright (C) 2015-2016  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2004       
+ * Copyright (C) 2004-2010  
+ * Copyright (C) 2015       Cedric GROSS            
+ * Copyright (C) 2015-2016        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@
  */
 
 include 'inc.php';
-require_once $dolibarr_main_document_root.'/core/class/conf.class.php';
-require_once $dolibarr_main_document_root.'/core/lib/admin.lib.php';
+require_once $berp3_main_document_root.'/core/class/conf.class.php';
+require_once $berp3_main_document_root.'/core/lib/admin.lib.php';
 
 global $langs;
 
@@ -49,29 +49,29 @@ $langs->setDefaultLang($setuplang);
 $langs->loadLangs(array("admin", "install"));
 
 $choix = 0;
-if ($dolibarr_main_db_type == "mysqli") {
+if ($berp3_main_db_type == "mysqli") {
 	$choix = 1;
 }
-if ($dolibarr_main_db_type == "pgsql") {
+if ($berp3_main_db_type == "pgsql") {
 	$choix = 2;
 }
-if ($dolibarr_main_db_type == "mssql") {
+if ($berp3_main_db_type == "mssql") {
 	$choix = 3;
 }
-if ($dolibarr_main_db_type == "sqlite") {
+if ($berp3_main_db_type == "sqlite") {
 	$choix = 4;
 }
-if ($dolibarr_main_db_type == "sqlite3") {
+if ($berp3_main_db_type == "sqlite3") {
 	$choix = 5;
 }
 
-//if (empty($choix)) dol_print_error('','Database type '.$dolibarr_main_db_type.' not supported into step2.php page');
+//if (empty($choix)) dol_print_error('','Database type '.$berp3_main_db_type.' not supported into step2.php page');
 
 // Now we load forced values from install.forced.php file.
 $useforcedwizard = false;
 $forcedfile = "./install.forced.php";
-if ($conffile == "/etc/dolibarr/conf.php") {
-	$forcedfile = "/etc/dolibarr/install.forced.php";
+if ($conffile == "/etc/berp3/conf.php") {
+	$forcedfile = "/etc/berp3/install.forced.php";
 }
 if (@file_exists($forcedfile)) {
 	$useforcedwizard = true;
@@ -82,7 +82,7 @@ if (@file_exists($forcedfile)) {
 	}
 }
 
-dolibarr_install_syslog("- step2: entering step2.php page");
+berp3_install_syslog("- step2: entering step2.php page");
 
 
 /*
@@ -104,7 +104,7 @@ if ($action == "set") {
 	print '<table cellspacing="0" style="padding: 4px 4px 4px 0" border="0" width="100%">';
 	$error = 0;
 
-	$db = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+	$db = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 
 	if ($db->connected) {
 		print "<tr><td>";
@@ -116,9 +116,9 @@ if ($action == "set") {
 
 	if ($ok) {
 		if ($db->database_selected) {
-			dolibarr_install_syslog("step2: successful connection to database: ".$conf->db->name);
+			berp3_install_syslog("step2: successful connection to database: ".$conf->db->name);
 		} else {
-			dolibarr_install_syslog("step2: failed connection to database :".$conf->db->name, LOG_ERR);
+			berp3_install_syslog("step2: failed connection to database :".$conf->db->name, LOG_ERR);
 			print "<tr><td>Failed to select database ".$conf->db->name.'</td><td><img src="../theme/eldy/img/error.png" alt="Error"></td></tr>';
 			$ok = 0;
 		}
@@ -141,7 +141,7 @@ if ($action == "set") {
 	$requestnb = 0;
 
 	// To disable some code, so you can call step2 with url like
-	// http://localhost/dolibarrnew/install/step2.php?action=set&token='.newToken().'&createtables=0&createkeys=0&createfunctions=0&createdata=llx_20_c_departements
+	// http://localhost/berp3new/install/step2.php?action=set&token='.newToken().'&createtables=0&createkeys=0&createfunctions=0&createdata=llx_20_c_departements
 	$createtables = isset($_GET['createtables']) ?GETPOST('createtables') : 1;
 	$createkeys = isset($_GET['createkeys']) ?GETPOST('createkeys') : 1;
 	$createfunctions = isset($_GET['createfunctions']) ?GETPOST('createfunction') : 1;
@@ -164,7 +164,7 @@ if ($action == "set") {
 
 		$ok = 0;
 		$handle = opendir($dir);
-		dolibarr_install_syslog("step2: open tables directory ".$dir." handle=".$handle);
+		berp3_install_syslog("step2: open tables directory ".$dir." handle=".$handle);
 		$tablefound = 0;
 		$tabledata = array();
 		if (is_resource($handle)) {
@@ -204,14 +204,14 @@ if ($action == "set") {
 				}
 
 				// Replace the prefix tables
-				if ($dolibarr_main_db_prefix != 'llx_') {
-					$buffer = preg_replace('/llx_/i', $dolibarr_main_db_prefix, $buffer);
+				if ($berp3_main_db_prefix != 'llx_') {
+					$buffer = preg_replace('/llx_/i', $berp3_main_db_prefix, $buffer);
 				}
 
 				//print "<tr><td>Creation de la table $name/td>";
 				$requestnb++;
 
-				dolibarr_install_syslog("step2: request: ".$buffer);
+				berp3_install_syslog("step2: request: ".$buffer);
 				$resql = $db->query($buffer, 0, 'dml');
 				if ($resql) {
 					// print "<td>OK requete ==== $buffer</td></tr>";
@@ -233,7 +233,7 @@ if ($action == "set") {
 				print "</td>";
 				print '<td><span class="error">'.$langs->trans("Error").' Failed to open file '.$dir.$file.'</span></td></tr>';
 				$error++;
-				dolibarr_install_syslog("step2: failed to open file ".$dir.$file, LOG_ERR);
+				berp3_install_syslog("step2: failed to open file ".$dir.$file, LOG_ERR);
 			}
 		}
 
@@ -245,7 +245,7 @@ if ($action == "set") {
 			}
 		} else {
 			print '<tr><td>'.$langs->trans("ErrorFailedToFindSomeFiles", $dir).'</td><td><img src="../theme/eldy/img/error.png" alt="Error"></td></tr>';
-			dolibarr_install_syslog("step2: failed to find files to create database in directory ".$dir, LOG_ERR);
+			berp3_install_syslog("step2: failed to find files to create database in directory ".$dir, LOG_ERR);
 		}
 	}
 
@@ -262,7 +262,7 @@ if ($action == "set") {
 
 		$okkeys = 0;
 		$handle = opendir($dir);
-		dolibarr_install_syslog("step2: open keys directory ".$dir." handle=".$handle);
+		berp3_install_syslog("step2: open keys directory ".$dir." handle=".$handle);
 		$tablefound = 0;
 		$tabledata = array();
 		if (is_resource($handle)) {
@@ -323,14 +323,14 @@ if ($action == "set") {
 					$buffer = trim($req);
 					if ($buffer) {
 						// Replace the prefix tables
-						if ($dolibarr_main_db_prefix != 'llx_') {
-							$buffer = preg_replace('/llx_/i', $dolibarr_main_db_prefix, $buffer);
+						if ($berp3_main_db_prefix != 'llx_') {
+							$buffer = preg_replace('/llx_/i', $berp3_main_db_prefix, $buffer);
 						}
 
 						//print "<tr><td>Creation des cles et index de la table $name: '$buffer'</td>";
 						$requestnb++;
 
-						dolibarr_install_syslog("step2: request: ".$buffer);
+						berp3_install_syslog("step2: request: ".$buffer);
 						$resql = $db->query($buffer, 0, 'dml');
 						if ($resql) {
 							//print "<td>OK requete ==== $buffer</td></tr>";
@@ -358,7 +358,7 @@ if ($action == "set") {
 				print "</td>";
 				print '<td><span class="error">'.$langs->trans("Error")." Failed to open file ".$dir.$file."</span></td></tr>";
 				$error++;
-				dolibarr_install_syslog("step2: failed to open file ".$dir.$file, LOG_ERR);
+				berp3_install_syslog("step2: failed to open file ".$dir.$file, LOG_ERR);
 			}
 		}
 
@@ -391,7 +391,7 @@ if ($action == "set") {
 		$file = "functions.sql";
 		if (file_exists($dir.$file)) {
 			$fp = fopen($dir.$file, "r");
-			dolibarr_install_syslog("step2: open function file ".$dir.$file." handle=".$fp);
+			berp3_install_syslog("step2: open function file ".$dir.$file." handle=".$fp);
 			if ($fp) {
 				$buffer = '';
 				while (!feof($fp)) {
@@ -410,10 +410,10 @@ if ($action == "set") {
 				$buffer = trim($buffer);
 				if ($buffer) {
 					// Replace the prefix in table names
-					if ($dolibarr_main_db_prefix != 'llx_') {
-						$buffer = preg_replace('/llx_/i', $dolibarr_main_db_prefix, $buffer);
+					if ($berp3_main_db_prefix != 'llx_') {
+						$buffer = preg_replace('/llx_/i', $berp3_main_db_prefix, $buffer);
 					}
-					dolibarr_install_syslog("step2: request: ".$buffer);
+					berp3_install_syslog("step2: request: ".$buffer);
 					print "<!-- Insert line : ".$buffer."<br>-->\n";
 					$resql = $db->query($buffer, 0, 'dml');
 					if ($resql) {
@@ -458,7 +458,7 @@ if ($action == "set") {
 
 		// Insert data
 		$handle = opendir($dir);
-		dolibarr_install_syslog("step2: open directory data ".$dir." handle=".$handle);
+		berp3_install_syslog("step2: open directory data ".$dir." handle=".$handle);
 		$tablefound = 0;
 		$tabledata = array();
 		if (is_resource($handle)) {
@@ -483,7 +483,7 @@ if ($action == "set") {
 		foreach ($tabledata as $file) {
 			$name = substr($file, 0, dol_strlen($file) - 4);
 			$fp = fopen($dir.$file, "r");
-			dolibarr_install_syslog("step2: open data file ".$dir.$file." handle=".$fp);
+			berp3_install_syslog("step2: open data file ".$dir.$file." handle=".$fp);
 			if ($fp) {
 				$arrayofrequests = array();
 				$linefound = 0;
@@ -513,7 +513,7 @@ if ($action == "set") {
 				}
 				fclose($fp);
 
-				dolibarr_install_syslog("step2: found ".$linefound." records, defined ".count($arrayofrequests)." group(s).");
+				berp3_install_syslog("step2: found ".$linefound." records, defined ".count($arrayofrequests)." group(s).");
 
 				$okallfile = 1;
 				$db->begin();
@@ -521,11 +521,11 @@ if ($action == "set") {
 				// We loop on each requests of file
 				foreach ($arrayofrequests as $buffer) {
 					// Replace the prefix tables
-					if ($dolibarr_main_db_prefix != 'llx_') {
-						$buffer = preg_replace('/llx_/i', $dolibarr_main_db_prefix, $buffer);
+					if ($berp3_main_db_prefix != 'llx_') {
+						$buffer = preg_replace('/llx_/i', $berp3_main_db_prefix, $buffer);
 					}
 
-					//dolibarr_install_syslog("step2: request: " . $buffer);
+					//berp3_install_syslog("step2: request: " . $buffer);
 					$resql = $db->query($buffer, 1);
 					if ($resql) {
 						//$db->free($resql);     // Not required as request we launch here does not return memory needs.
@@ -566,30 +566,30 @@ $ret = 0;
 if (!$ok && isset($argv[1])) {
 	$ret = 1;
 }
-dolibarr_install_syslog("Exit ".$ret);
+berp3_install_syslog("Exit ".$ret);
 
-dolibarr_install_syslog("- step2: end");
+berp3_install_syslog("- step2: end");
 
 // Force here a value we need after because master.inc.php is not loaded into step2.
 // This code must be similar with the one into main.inc.php
-$conf->file->instance_unique_id = (empty($dolibarr_main_instance_unique_id) ? (empty($dolibarr_main_cookie_cryptkey) ? '' : $dolibarr_main_cookie_cryptkey) : $dolibarr_main_instance_unique_id); // Unique id of instance
+$conf->file->instance_unique_id = (empty($berp3_main_instance_unique_id) ? (empty($berp3_main_cookie_cryptkey) ? '' : $berp3_main_cookie_cryptkey) : $berp3_main_instance_unique_id); // Unique id of instance
 
-$hash_unique_id = md5('dolibarr'.$conf->file->instance_unique_id);
+$hash_unique_id = md5('berp3'.$conf->file->instance_unique_id);
 
-$out  = '<input type="checkbox" name="dolibarrpingno" id="dolibarrpingno"'.((!empty($conf->global->MAIN_FIRST_PING_OK_ID) && $conf->global->MAIN_FIRST_PING_OK_ID == 'disabled') ? '' : ' value="checked" checked="true"').'> ';
-$out .= '<label for="dolibarrpingno">'.$langs->trans("MakeAnonymousPing").'</label>';
+$out  = '<input type="checkbox" name="berp3pingno" id="berp3pingno"'.((!empty($conf->global->MAIN_FIRST_PING_OK_ID) && $conf->global->MAIN_FIRST_PING_OK_ID == 'disabled') ? '' : ' value="checked" checked="true"').'> ';
+$out .= '<label for="berp3pingno">'.$langs->trans("MakeAnonymousPing").'</label>';
 
 $out .= '<!-- Add js script to manage the uncheck of option to not send the ping -->';
 $out .= '<script type="text/javascript">';
 $out .= 'jQuery(document).ready(function(){';
-$out .= '  document.cookie = "DOLINSTALLNOPING_'.$hash_unique_id.'=0; path=/"'."\n";
-$out .= '  jQuery("#dolibarrpingno").click(function() {';
+$out .= '  document.cookie = "BERPNSTALLNOPING_'.$hash_unique_id.'=0; path=/"'."\n";
+$out .= '  jQuery("#berp3pingno").click(function() {';
 $out .= '    if (! $(this).is(\':checked\')) {';
 $out .= '      console.log("We uncheck anonymous ping");';
-$out .= '      document.cookie = "DOLINSTALLNOPING_'.$hash_unique_id.'=1; path=/"'."\n";
+$out .= '      document.cookie = "BERPNSTALLNOPING_'.$hash_unique_id.'=1; path=/"'."\n";
 $out .= '    } else {'."\n";
 $out .= '      console.log("We check anonymous ping");';
-$out .= '      document.cookie = "DOLINSTALLNOPING_'.$hash_unique_id.'=0; path=/"'."\n";
+$out .= '      document.cookie = "BERPNSTALLNOPING_'.$hash_unique_id.'=0; path=/"'."\n";
 $out .= '    }'."\n";
 $out .= '  });';
 $out .= '});';

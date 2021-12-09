@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2006-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2007 
+ * Copyright (C) 2005                
+ * Copyright (C) 2006-2011 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,10 +37,10 @@ class mod_codecompta_aquarium extends ModeleAccountancyCode
 	public $name = 'Aquarium';
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	public $prefixcustomeraccountancycode;
 
@@ -131,7 +131,7 @@ class mod_codecompta_aquarium extends ModeleAccountancyCode
 	/**
 	 *  Set accountancy account code for a third party into this->code
 	 *
-	 *  @param	DoliDB		$db             Database handler
+	 *  @param	Berp3DB		$db             Database handler
 	 *  @param  Societe		$societe        Third party object
 	 *  @param  string		$type			'customer' or 'supplier'
 	 *  @return	int							>=0 if OK, <0 if KO
@@ -190,7 +190,7 @@ class mod_codecompta_aquarium extends ModeleAccountancyCode
 	/**
 	 *  Return if a code is available
 	 *
-	 *	@param	DoliDB		$db			Database handler
+	 *	@param	Berp3DB		$db			Database handler
 	 * 	@param	string		$code		Code of third party
 	 * 	@param	Societe		$societe	Object third party
 	 * 	@param	string		$type		'supplier' or 'customer'

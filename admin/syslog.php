@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2007      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2013	   Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2005-2012 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2007      
+ * Copyright (C) 2013	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -100,8 +100,8 @@ if ($action == 'set') {
 			}
 			foreach ($module->configure() as $option) {
 				if (GETPOSTISSET($option['constant'])) {
-					dolibarr_del_const($db, $option['constant'], -1);
-					dolibarr_set_const($db, $option['constant'], trim(GETPOST($option['constant'])), 'chaine', 0, '', 0);
+					berp3_del_const($db, $option['constant'], -1);
+					berp3_set_const($db, $option['constant'], trim(GETPOST($option['constant'])), 'chaine', 0, '', 0);
 				}
 			}
 		}
@@ -109,8 +109,8 @@ if ($action == 'set') {
 
 	$activeModules = $newActiveModules;
 
-	dolibarr_del_const($db, 'SYSLOG_HANDLERS', -1); // To be sure ther is not a setup into another entity
-	dolibarr_set_const($db, 'SYSLOG_HANDLERS', json_encode($activeModules), 'chaine', 0, '', 0);
+	berp3_del_const($db, 'SYSLOG_HANDLERS', -1); // To be sure ther is not a setup into another entity
+	berp3_set_const($db, 'SYSLOG_HANDLERS', json_encode($activeModules), 'chaine', 0, '', 0);
 
 	// Check configuration
 	foreach ($activeModules as $modulename) {
@@ -134,7 +134,7 @@ if ($action == 'set') {
 // Set level
 if ($action == 'setlevel') {
 	$level = GETPOST("level");
-	$res = dolibarr_set_const($db, "SYSLOG_LEVEL", $level, 'chaine', 0, '', 0);
+	$res = berp3_set_const($db, "SYSLOG_LEVEL", $level, 'chaine', 0, '', 0);
 	dol_syslog("admin/syslog: level ".$level);
 
 	if (!($res > 0)) {
@@ -143,7 +143,7 @@ if ($action == 'setlevel') {
 
 	if (!$error) {
 		$file_saves = GETPOST("file_saves");
-		$res = dolibarr_set_const($db, "SYSLOG_FILE_SAVES", $file_saves, 'chaine', 0, '', 0);
+		$res = berp3_set_const($db, "SYSLOG_FILE_SAVES", $file_saves, 'chaine', 0, '', 0);
 		dol_syslog("admin/syslog: file saves  ".$file_saves);
 
 		if (!($res > 0)) {
@@ -171,14 +171,14 @@ $linkback = '<a href="'.DOL_URL_ROOT.'/admin/modules.php?restore_lastsearch_valu
 print load_fiche_titre($langs->trans("SyslogSetup"), $linkback, 'title_setup');
 print '<br>';
 
-$syslogfacility = $defaultsyslogfacility = dolibarr_get_const($db, "SYSLOG_FACILITY", 0);
-$syslogfile = $defaultsyslogfile = dolibarr_get_const($db, "SYSLOG_FILE", 0);
+$syslogfacility = $defaultsyslogfacility = berp3_get_const($db, "SYSLOG_FACILITY", 0);
+$syslogfile = $defaultsyslogfile = berp3_get_const($db, "SYSLOG_FILE", 0);
 
 if (!$defaultsyslogfacility) {
 	$defaultsyslogfacility = 'LOG_USER';
 }
 if (!$defaultsyslogfile) {
-	$defaultsyslogfile = 'dolibarr.log';
+	$defaultsyslogfile = 'berp3.log';
 }
 $optionmc = '';
 if (!empty($conf->global->MAIN_MODULE_MULTICOMPANY) && $user->entity) {

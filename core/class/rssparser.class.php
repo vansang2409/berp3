@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2011-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2011-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 class RssParser
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -57,7 +57,7 @@ class RssParser
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

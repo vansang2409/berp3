@@ -1,15 +1,15 @@
 <?php
-/* Copyright (C) 2003-2008	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@capnetworks.com>
+/* Copyright (C) 2003-2008	
+ * Copyright (C) 2005-2012				<regis.houssin@capnetworks.com>
  * Copyright (C) 2007		Franky Van Liedekerke	<franky.van.liedekerke@telenet.be>
- * Copyright (C) 2006-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2011-2017	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2013       Florian Henry		  	<florian.henry@open-concept.pro>
- * Copyright (C) 2014		Cedric GROSS			<c.gross@kreiz-it.fr>
- * Copyright (C) 2014-2015  Marcos García           <marcosgdf@gmail.com>
+ * Copyright (C) 2006-2012	
+ * Copyright (C) 2011-2017	
+ * Copyright (C) 2013       		  	
+ * Copyright (C) 2014		Cedric GROSS			
+ * Copyright (C) 2014-2015  
  * Copyright (C) 2014-2020  Francis Appels          <francis.appels@yahoo.com>
- * Copyright (C) 2015       Claudio Aschieri        <c.aschieri@19.coop>
- * Copyright (C) 2016		Ferran Marcet			<fmarcet@2byte.es>
+ * Copyright (C) 2015               
+ * Copyright (C) 2016					
  * Copyright (C) 2018		Quentin Vial-Gouteyron  <quentin.vial-gouteyron@atm-consulting.fr>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -128,7 +128,7 @@ class Reception extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -591,9 +591,9 @@ class Reception extends CommonObject
 
 						// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record.
 						if (!empty($conf->global->STOCK_CALCULATE_ON_RECEPTION || $conf->global->STOCK_CALCULATE_ON_RECEPTION_CLOSE)) {
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->cost_price, $langs->trans("ReceptionValidatedInDolibarr", $numref));
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->cost_price, $langs->trans("ReceptionValidatedInBerp3", $numref));
 						} else {
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionValidatedInDolibarr", $numref));
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionValidatedInBerp3", $numref));
 						}
 						if ($result < 0) {
 							$error++;
@@ -607,9 +607,9 @@ class Reception extends CommonObject
 						// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record.
 						// Note: ->fk_origin_stock = id into table llx_product_batch (may be rename into llx_product_stock_batch in another version)
 						if (!empty($conf->global->STOCK_CALCULATE_ON_RECEPTION || $conf->global->STOCK_CALCULATE_ON_RECEPTION_CLOSE)) {
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->cost_price, $langs->trans("ReceptionValidatedInDolibarr", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->cost_price, $langs->trans("ReceptionValidatedInBerp3", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
 						} else {
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionValidatedInDolibarr", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionValidatedInBerp3", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
 						}
 						if ($result < 0) {
 							$error++;
@@ -940,7 +940,7 @@ class Reception extends CommonObject
 					// we do not log origin because it will be deleted
 					$mouvS->origin = null;
 
-					$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $obj->qty, 0, $langs->trans("ReceptionDeletedInDolibarr", $this->ref), '', $obj->eatby, $obj->sellby, $obj->batch); // Price is set to 0, because we don't want to see WAP changed
+					$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $obj->qty, 0, $langs->trans("ReceptionDeletedInBerp3", $this->ref), '', $obj->eatby, $obj->sellby, $obj->batch); // Price is set to 0, because we don't want to see WAP changed
 				}
 			} else {
 				$error++; $this->errors[] = "Error ".$this->db->lasterror();
@@ -1526,7 +1526,7 @@ class Reception extends CommonObject
 							// line without batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionClassifyClosedInDolibarr", $numref));
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionClassifyClosedInBerp3", $numref));
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -1536,7 +1536,7 @@ class Reception extends CommonObject
 							// line with batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionClassifyClosedInDolibarr", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ReceptionClassifyClosedInBerp3", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
 
 							if ($result < 0) {
 								$this->error = $mouvS->error;
@@ -1688,7 +1688,7 @@ class Reception extends CommonObject
 							// line without batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionUnClassifyCloseddInDolibarr", $numref));
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionUnClassifyCloseddInBerp3", $numref));
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -1698,7 +1698,7 @@ class Reception extends CommonObject
 							// line with batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionUnClassifyCloseddInDolibarr", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionUnClassifyCloseddInBerp3", $numref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -1810,7 +1810,7 @@ class Reception extends CommonObject
 							// line without batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionBackToDraftInDolibarr", $this->ref));
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionBackToDraftInBerp3", $this->ref));
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -1821,7 +1821,7 @@ class Reception extends CommonObject
 							// line with batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionBackToDraftInDolibarr", $this->ref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ReceptionBackToDraftInBerp3", $this->ref), $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch);
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -1917,12 +1917,12 @@ class Reception extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array('reception');
 

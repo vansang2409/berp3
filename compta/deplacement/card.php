@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012		Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2013       Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2018-2019  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2003		
+ * Copyright (C) 2004-2012	
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2012		
+ * Copyright (C) 2013       
+ * Copyright (C) 2018-2019  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -237,7 +237,7 @@ if ($action == 'create') {
 	print '<td class="tdtop">'.$langs->trans('NotePublic').'</td>';
 	print '<td>';
 
-	$doleditor = new DolEditor('note_public', GETPOST('note_public', 'restricthtml'), '', 200, 'dolibarr_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_8, '90%');
+	$doleditor = new DolEditor('note_public', GETPOST('note_public', 'restricthtml'), '', 200, 'berp3_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_8, '90%');
 	print $doleditor->Create(1);
 
 	print '</td></tr>';
@@ -248,7 +248,7 @@ if ($action == 'create') {
 		print '<td class="tdtop">'.$langs->trans('NotePrivate').'</td>';
 		print '<td>';
 
-		$doleditor = new DolEditor('note_private', GETPOST('note_private', 'restricthtml'), '', 200, 'dolibarr_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_8, '90%');
+		$doleditor = new DolEditor('note_private', GETPOST('note_private', 'restricthtml'), '', 200, 'berp3_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_8, '90%');
 		print $doleditor->Create(1);
 
 		print '</td></tr>';
@@ -329,7 +329,7 @@ if ($action == 'create') {
 			print '<tr><td class="tdtop">'.$langs->trans("NotePublic").'</td>';
 			print '<td>';
 
-			$doleditor = new DolEditor('note_public', $object->note_public, '', 200, 'dolibarr_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_8, '90%');
+			$doleditor = new DolEditor('note_public', $object->note_public, '', 200, 'berp3_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_8, '90%');
 			print $doleditor->Create(1);
 
 			print "</td></tr>";
@@ -339,7 +339,7 @@ if ($action == 'create') {
 				print '<tr><td class="tdtop">'.$langs->trans("NotePrivate").'</td>';
 				print '<td>';
 
-				$doleditor = new DolEditor('note_private', $object->note_private, '', 200, 'dolibarr_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_8, '90%');
+				$doleditor = new DolEditor('note_private', $object->note_private, '', 200, 'berp3_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_8, '90%');
 				print $doleditor->Create(1);
 
 				print "</td></tr>";

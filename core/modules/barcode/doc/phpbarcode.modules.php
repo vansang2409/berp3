@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005      Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2005-2013 
+ * Copyright (C) 2005      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,10 +33,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/barcode.lib.php'; // This is to includ
 class modPhpbarcode extends ModeleBarCode
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var string Error code (or message)

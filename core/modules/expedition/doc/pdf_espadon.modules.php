@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2005      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2012 Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2014-2015 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2018-2020	Frédéric France    	<frederic.france@netlogic.fr>
+/* Copyright (C) 2005      
+ * Copyright (C) 2005-2012 	
+ * Copyright (C) 2005-2012 		
+ * Copyright (C) 2014-2015 
+ * Copyright (C) 2018-2020	    	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
 class pdf_espadon extends ModelePdfExpedition
 {
 	/**
-	 * @var DoliDb Database handler
+	 * @var Berp3Db Database handler
 	 */
 	public $db;
 
@@ -68,10 +68,10 @@ class pdf_espadon extends ModelePdfExpedition
 	public $phpmin = array(5, 6);
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	/**
 	 * @var int page_largeur
@@ -118,7 +118,7 @@ class pdf_espadon extends ModelePdfExpedition
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB	$db		Database handler
+	 *	@param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db = 0)
 	{
@@ -302,7 +302,7 @@ class pdf_espadon extends ModelePdfExpedition
 
 				$pdf->SetTitle($outputlangs->convToOutputCharset($object->ref));
 				$pdf->SetSubject($outputlangs->transnoentities("Shipment"));
-				$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+				$pdf->SetCreator("Berp3 ".DOL_VERSION);
 				$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 				$pdf->SetKeyWords($outputlangs->convToOutputCharset($object->ref)." ".$outputlangs->transnoentities("Shipment"));
 				if (!empty($conf->global->MAIN_DISABLE_PDF_COMPRESSION)) {

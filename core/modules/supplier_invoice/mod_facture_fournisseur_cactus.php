@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013-2018 Philippe Grand       <philippe.grand@atoo-net.com>
- * Copyright (C) 2016      Alexandre Spangaro   <aspangaro@open-dsi.fr>
+/* Copyright (C) 2005-2008 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2013-2018        
+ * Copyright (C) 2016      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,10 +34,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/supplier_invoice/modules_facturefo
 class mod_facture_fournisseur_cactus extends ModeleNumRefSuppliersInvoices
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var string Error code (or message)

@@ -1,22 +1,22 @@
 <?php
-/* Copyright (C) 2000-2007	Rodolphe Quiedeville		<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Jean-Louis Bergamo			<jlb@j1b.org>
- * Copyright (C) 2004-2018	Laurent Destailleur			<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio			<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier				<benoit.mortier@opensides.be>
+/* Copyright (C) 2000-2007			
+ * Copyright (C) 2003					
+ * Copyright (C) 2004-2018				
+ * Copyright (C) 2004					
+ * Copyright (C) 2004						
  * Copyright (C) 2004		Christophe Combelles		<ccomb@free.fr>
- * Copyright (C) 2005-2019	Regis Houssin				<regis.houssin@inodbox.com>
- * Copyright (C) 2008		Raphael Bertrand (Resultic)	<raphael.bertrand@resultic.fr>
- * Copyright (C) 2010-2018	Juanjo Menent				<jmenent@2byte.es>
- * Copyright (C) 2013		Cédric Salvador				<csalvador@gpcsolutions.fr>
- * Copyright (C) 2013-2021	Alexandre Spangaro			<aspangaro@open-dsi.fr>
- * Copyright (C) 2014		Cédric GROSS				<c.gross@kreiz-it.fr>
- * Copyright (C) 2014-2015	Marcos García				<marcosgdf@gmail.com>
- * Copyright (C) 2015		Jean-François Ferry			<jfefe@aternatik.fr>
- * Copyright (C) 2018-2021  Frédéric France             <frederic.france@netlogic.fr>
- * Copyright (C) 2019       Thibault Foucart            <support@ptibogxiv.net>
- * Copyright (C) 2020       Open-Dsi         			<support@open-dsi.fr>
- * Copyright (C) 2021       Gauthier VERDOL         	<gauthier.verdol@atm-consulting.fr>
+ * Copyright (C) 2005-2019					
+ * Copyright (C) 2008			
+ * Copyright (C) 2010-2018	
+ * Copyright (C) 2013						
+ * Copyright (C) 2013-2021				
+ * Copyright (C) 2014						
+ * Copyright (C) 2014-2015					
+ * Copyright (C) 2015					
+ * Copyright (C) 2018-2021               
+ * Copyright (C) 2019                   
+ * Copyright (C) 2020                			
+ * Copyright (C) 2021                	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@
 include_once DOL_DOCUMENT_ROOT.'/core/lib/json.lib.php';
 
 /**
- * Return dolibarr global constant string value
+ * Return berp3 global constant string value
  * @param string $key key to return value, return '' if not set
  * @param string $default value to return
  * @return string
@@ -55,7 +55,7 @@ function getDolGlobalString($key, $default = '')
 }
 
 /**
- * Return dolibarr global constant int value
+ * Return berp3 global constant int value
  * @param string $key key to return value, return 0 if not set
  * @param int $default value to return
  * @return int
@@ -68,7 +68,7 @@ function getDolGlobalInt($key, $default = 0)
 }
 
 /**
- * Return a DoliDB instance (database handler).
+ * Return a Berp3DB instance (database handler).
  *
  * @param   string	$type		Type of database (mysql, pgsql...)
  * @param	string	$host		Address of database server
@@ -76,15 +76,15 @@ function getDolGlobalInt($key, $default = 0)
  * @param	string	$pass		Password
  * @param	string	$name		Name of database
  * @param	int		$port		Port of database server
- * @return	DoliDB				A DoliDB instance
+ * @return	Berp3DB				A Berp3DB instance
  */
-function getDoliDBInstance($type, $host, $user, $pass, $name, $port)
+function getBerp3DBInstance($type, $host, $user, $pass, $name, $port)
 {
 	require_once DOL_DOCUMENT_ROOT."/core/db/".$type.'.class.php';
 
-	$class = 'DoliDB'.ucfirst($type);
-	$dolidb = new $class($type, $host, $user, $pass, $name, $port);
-	return $dolidb;
+	$class = 'Berp3DB'.ucfirst($type);
+	$berp3db = new $class($type, $host, $user, $pass, $name, $port);
+	return $berp3db;
 }
 
 /**
@@ -859,7 +859,7 @@ function checkVal($out = '', $check = 'alphanohtml', $filter = null, $options = 
 
 if (!function_exists('dol_getprefix')) {
 	/**
-	 *  Return a prefix to use for this Dolibarr instance, for session/cookie names or email id.
+	 *  Return a prefix to use for this Berp3 instance, for session/cookie names or email id.
 	 *  The prefix is unique for instance and avoid conflict between multi-instances, even when having two instances with same root dir
 	 *  or two instances in same virtual servers.
 	 *
@@ -890,8 +890,8 @@ if (!function_exists('dol_getprefix')) {
 		}
 
 		// If prefix is for session (no need to have $conf loaded)
-		global $dolibarr_main_instance_unique_id, $dolibarr_main_cookie_cryptkey;	// This is loaded by filefunc.inc.php
-		$tmp_instance_unique_id = empty($dolibarr_main_instance_unique_id) ? (empty($dolibarr_main_cookie_cryptkey) ? '' : $dolibarr_main_cookie_cryptkey) : $dolibarr_main_instance_unique_id; // Unique id of instance
+		global $berp3_main_instance_unique_id, $berp3_main_cookie_cryptkey;	// This is loaded by filefunc.inc.php
+		$tmp_instance_unique_id = empty($berp3_main_instance_unique_id) ? (empty($berp3_main_cookie_cryptkey) ? '' : $berp3_main_cookie_cryptkey) : $berp3_main_instance_unique_id; // Unique id of instance
 
 		// The recommended value (may be not defined for old versions)
 		if (!empty($tmp_instance_unique_id)) {
@@ -940,7 +940,7 @@ function dol_include_once($relpath, $classname = '')
  *	Return path of url or filesystem. Can check into alternate dir or alternate dir + main dir depending on value of $returnemptyifnotfound.
  *
  * 	@param	string	$path						Relative path to file (if mode=0) or relative url (if mode=1). Ie: mydir/myfile, ../myfile
- *  @param	int		$type						0=Used for a Filesystem path, 1=Used for an URL path (output relative), 2=Used for an URL path (output full path using same host that current url), 3=Used for an URL path (output full path using host defined into $dolibarr_main_url_root of conf file)
+ *  @param	int		$type						0=Used for a Filesystem path, 1=Used for an URL path (output relative), 2=Used for an URL path (output full path using same host that current url), 3=Used for an URL path (output full path using host defined into $berp3_main_url_root of conf file)
  *  @param	int		$returnemptyifnotfound		0:If $type==0 and if file was not found into alternate dir, return default path into main dir (no test on it)
  *  											1:If $type==0 and if file was not found into alternate dir, return empty string
  *  											2:If $type==0 and if file was not found into alternate dir, test into main dir, return default path if found, empty string if not found
@@ -991,10 +991,10 @@ function dol_buildpath($path, $type = 0, $returnemptyifnotfound = 0)
 		foreach ($conf->file->dol_document_root as $key => $dirroot) {	// ex: array(["main"]=>"/home/main/htdocs", ["alt0"]=>"/home/dirmod/htdocs", ...)
 			if ($key == 'main') {
 				if ($type == 3) {
-					global $dolibarr_main_url_root;
+					global $berp3_main_url_root;
 
 					// Define $urlwithroot
-					$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+					$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 					$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 					//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -1013,10 +1013,10 @@ function dol_buildpath($path, $type = 0, $returnemptyifnotfound = 0)
 						$res = (preg_match('/^http/i', $conf->file->dol_url_root[$key]) ? '' : DOL_MAIN_URL_ROOT).$conf->file->dol_url_root[$key].'/'.$path;
 					}
 					if ($type == 3) {
-						global $dolibarr_main_url_root;
+						global $berp3_main_url_root;
 
 						// Define $urlwithroot
-						$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+						$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 						$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 						//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -1442,7 +1442,7 @@ function dol_ucwords($string, $encoding = "UTF-8")
  *
  * 	@param  string		$message				Line to log. ''=Show nothing
  *  @param  int			$level					Log level
- *												On Windows LOG_ERR=4, LOG_WARNING=5, LOG_NOTICE=LOG_INFO=6, LOG_DEBUG=6 si define_syslog_variables ou PHP 5.3+, 7 si dolibarr
+ *												On Windows LOG_ERR=4, LOG_WARNING=5, LOG_NOTICE=LOG_INFO=6, LOG_DEBUG=6 si define_syslog_variables ou PHP 5.3+, 7 si berp3
  *												On Linux   LOG_ERR=3, LOG_WARNING=4, LOG_NOTICE=5, LOG_INFO=6, LOG_DEBUG=7
  *  @param	int			$ident					1=Increase ident of 1, -1=Decrease ident of 1
  *  @param	string		$suffixinfilename		When output is a file, append this suffix into default log filename.
@@ -1460,7 +1460,7 @@ function dol_syslog($message, $level = LOG_INFO, $ident = 0, $suffixinfilename =
 	}
 
 	// Check if we are into execution of code of a website
-	if (defined('USEEXTERNALSERVER') && !defined('USEDOLIBARRSERVER') && !defined('USEDOLIBARREDITOR')) {
+	if (defined('USEEXTERNALSERVER') && !defined('USEBERP3SERVER') && !defined('USEBERP3EDITOR')) {
 		global $website, $websitekey;
 		if (is_object($website) && !empty($website->ref)) {
 			$suffixinfilename .= '_website_'.$website->ref;
@@ -3423,7 +3423,7 @@ function isValidEmail($address, $acceptsupervisorkey = 0)
  *	Return if the domain name has a valid MX record.
  *  WARNING: This need function idn_to_ascii, checkdnsrr and getmxrr
  *
- *	@param	    string		$domain	    			Domain name (Ex: "yahoo.com", "yhaoo.com", "dolibarr.fr")
+ *	@param	    string		$domain	    			Domain name (Ex: "yahoo.com", "yhaoo.com", "berp3.fr")
  *	@return     int     							-1 if error (function not available), 0=Not valid, 1=Valid
  *  @see isValidEmail()
  */
@@ -4511,7 +4511,7 @@ function info_admin($text, $infoonimgalt = 0, $nodiv = 0, $admin = '1', $morecss
  *  This function must be called when a blocking technical error is encountered.
  *  However, one must try to call it only within php pages, classes must return their error through their property "error".
  *
- *	@param	 	DoliDB|string   $db      	Database handler
+ *	@param	 	Berp3DB|string   $db      	Database handler
  *	@param  	string|string[] $error		String or array of errors strings to show
  *  @param		array           $errors		Array of errors
  *	@return 	void
@@ -4520,7 +4520,7 @@ function info_admin($text, $infoonimgalt = 0, $nodiv = 0, $admin = '1', $morecss
 function dol_print_error($db = '', $error = '', $errors = null)
 {
 	global $conf, $langs, $argv;
-	global $dolibarr_main_prod;
+	global $berp3_main_prod;
 
 	$out = '';
 	$syslog = '';
@@ -4536,14 +4536,14 @@ function dol_print_error($db = '', $error = '', $errors = null)
 	$langs->loadLangs(array('main', 'errors'));
 
 	if ($_SERVER['DOCUMENT_ROOT']) {    // Mode web
-		$out .= $langs->trans("DolibarrHasDetectedError").".<br>\n";
+		$out .= $langs->trans("Berp3HasDetectedError").".<br>\n";
 		if (getDolGlobalInt('MAIN_FEATURES_LEVEL') > 0) {
 			$out .= "You use an experimental or develop level of features, so please do NOT report any bugs or vulnerability, except if problem is confirmed after moving option MAIN_FEATURES_LEVEL back to 0.<br>\n";
 		}
 		$out .= $langs->trans("InformationToHelpDiagnose").":<br>\n";
 
 		$out .= "<b>".$langs->trans("Date").":</b> ".dol_print_date(time(), 'dayhourlog')."<br>\n";
-		$out .= "<b>".$langs->trans("Dolibarr").":</b> ".DOL_VERSION." - https://www.dolibarr.org<br>\n";
+		$out .= "<b>".$langs->trans("Berp3").":</b> ".DOL_VERSION." - https://www.berp3.org<br>\n";
 		if (isset($conf->global->MAIN_FEATURES_LEVEL)) {
 			$out .= "<b>".$langs->trans("LevelOfFeature").":</b> ".getDolGlobalInt('MAIN_FEATURES_LEVEL')."<br>\n";
 		}
@@ -4618,7 +4618,7 @@ function dol_print_error($db = '', $error = '', $errors = null)
 			$syslog .= ", msg=".$msg;
 		}
 	}
-	if (empty($dolibarr_main_prod) && $_SERVER['DOCUMENT_ROOT'] && function_exists('xdebug_print_function_stack') && function_exists('xdebug_call_file')) {
+	if (empty($berp3_main_prod) && $_SERVER['DOCUMENT_ROOT'] && function_exists('xdebug_print_function_stack') && function_exists('xdebug_call_file')) {
 		xdebug_print_function_stack();
 		$out .= '<b>XDebug informations:</b>'."<br>\n";
 		$out .= 'File: '.xdebug_call_file()."<br>\n";
@@ -4632,7 +4632,7 @@ function dol_print_error($db = '', $error = '', $errors = null)
 		http_response_code(500);
 	}
 
-	if (empty($dolibarr_main_prod)) {
+	if (empty($berp3_main_prod)) {
 		print $out;
 	} else {
 		if (empty($langs->defaultlang)) {
@@ -4641,8 +4641,8 @@ function dol_print_error($db = '', $error = '', $errors = null)
 		$langs->loadLangs(array("main", "errors")); // Reload main because language may have been set only on previous line so we have to reload files we need.
 		// This should not happen, except if there is a bug somewhere. Enabled and check log in such case.
 		print 'This website or feature is currently temporarly not available or failed after a technical error.<br><br>This may be due to a maintenance operation. Current status of operation ('.dol_print_date(dol_now(), 'dayhourrfc').') are on next line...<br><br>'."\n";
-		print $langs->trans("DolibarrHasDetectedError").'. ';
-		print $langs->trans("YouCanSetOptionDolibarrMainProdToZero");
+		print $langs->trans("Berp3HasDetectedError").'. ';
+		print $langs->trans("YouCanSetOptionBerp3MainProdToZero");
 		define("MAIN_CORE_ERROR", 1);
 	}
 
@@ -5362,9 +5362,9 @@ function price2num($amount, $rounding = '', $option = 0)
 			$amount = str_replace($thousand, '', $amount);
 		}
 
-		// Convert amount to format with dolibarr dec and thousand (this is because PHP convert a number
-		// to format defined by LC_NUMERIC after a calculation and we want source format to be like defined by Dolibarr setup.
-		// So if number was already a good number, it is converted into local Dolibarr setup.
+		// Convert amount to format with berp3 dec and thousand (this is because PHP convert a number
+		// to format defined by LC_NUMERIC after a calculation and we want source format to be like defined by Berp3 setup.
+		// So if number was already a good number, it is converted into local Berp3 setup.
 		if (is_numeric($amount)) {
 			// We put in temps value of decimal ("0.00001"). Works with 0 and 2.0E-5 and 9999.10
 			$temps = sprintf("%0.10F", $amount - intval($amount)); // temps=0.0000000000 or 0.0000200000 or 9999.1000000000
@@ -5408,14 +5408,14 @@ function price2num($amount, $rounding = '', $option = 0)
 		}
 		//print ' SS'.$amount.' - '.$nbofdec.' - '.$dec.' - '.$thousand.' - '.$nbofdectoround.'<br>';
 
-		// Convert amount to format with dolibarr dec and thousand (this is because PHP convert a number
-		// to format defined by LC_NUMERIC after a calculation and we want source format to be defined by Dolibarr setup.
+		// Convert amount to format with berp3 dec and thousand (this is because PHP convert a number
+		// to format defined by LC_NUMERIC after a calculation and we want source format to be defined by Berp3 setup.
 		if (is_numeric($amount)) {
 			// We put in temps value of decimal ("0.00001"). Works with 0 and 2.0E-5 and 9999.10
 			$temps = sprintf("%0.10F", $amount - intval($amount)); // temps=0.0000000000 or 0.0000200000 or 9999.1000000000
 			$temps = preg_replace('/([\.1-9])0+$/', '\\1', $temps); // temps=0. or 0.00002 or 9999.1
 			$nbofdec = max(0, dol_strlen($temps) - 2); // -2 to remove "0."
-			$amount = number_format($amount, min($nbofdec, $nbofdectoround), $dec, $thousand); // Convert amount to format with dolibarr dec and thousand
+			$amount = number_format($amount, min($nbofdec, $nbofdectoround), $dec, $thousand); // Convert amount to format with berp3 dec and thousand
 		}
 		//print "TT".$amount.'<br>';
 
@@ -8075,7 +8075,7 @@ function dol_osencode($str)
  *      Return an id or code from a code or id.
  *      Store also Code-Id into a cache to speed up next request on same key.
  *
- * 		@param	DoliDB	$db				Database handler
+ * 		@param	Berp3DB	$db				Database handler
  * 		@param	string	$key			Code or Id to get Id or Code
  * 		@param	string	$tablename		Table name without prefix
  * 		@param	string	$fieldkey		Field to search the key into
@@ -10344,7 +10344,7 @@ function currentToken()
  * Start a table with headers and a optinal clickable number (don't forget to use "finishSimpleTable()" after the last table row)
  *
  * @param string	$header		The first left header of the table (automatic translated)
- * @param string	$link		(optional) The link to a internal dolibarr page, when click on the number (without the first "/")
+ * @param string	$link		(optional) The link to a internal berp3 page, when click on the number (without the first "/")
  * @param string	$arguments	(optional) Additional arguments for the link (e.g. "search_status=0")
  * @param integer	$emptyRows	(optional) The count of empty rows after the first header
  * @param integer	$number		(optional) The number that is shown right after the first header, when not set the link is shown on the right side of the header as "FullList"

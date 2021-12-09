@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2007-2012  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014-2016  Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Florian Henry       <florian.henry@open-concept.pro>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2018-2019  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2007-2012  
+ * Copyright (C) 2014-2016  
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
+ * Copyright (C) 2018-2019  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -70,9 +70,9 @@ class ProductStockEntrepot extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}
@@ -511,7 +511,7 @@ class ProductStockEntrepot extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $maxlen = 24, $morecss = '')
 	{
 		global $langs, $conf, $db;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 

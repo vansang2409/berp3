@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016   Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2015   
+ * Copyright (C) 2016   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  */
 
 /**
- * 	\defgroup   api     Module DolibarrApi
+ * 	\defgroup   api     Module Berp3Api
  *  \brief      API explorer using the swagger.json file
  *  \file       htdocs/api/admin/explorer_withredoc.php
  */
@@ -29,7 +29,7 @@ require_once '../../main.inc.php';
 // Enable and test if module Api is enabled
 if (empty($conf->global->MAIN_MODULE_API)) {
 	$langs->load("admin");
-	dol_syslog("Call of Dolibarr API interfaces with module API REST are disabled");
+	dol_syslog("Call of Berp3 API interfaces with module API REST are disabled");
 	print $langs->trans("WarningModuleNotActive", 'Api').'.<br><br>';
 	print $langs->trans("ToActivateModule");
 	//session_destroy();
@@ -39,7 +39,7 @@ if (empty($conf->global->MAIN_MODULE_API)) {
 // Test if explorer is not disabled
 if (!empty($conf->global->API_EXPLORER_DISABLED)) {
 	$langs->load("admin");
-	dol_syslog("Call Dolibarr API interfaces with module REST disabled");
+	dol_syslog("Call Berp3 API interfaces with module REST disabled");
 	print $langs->trans("WarningAPIExplorerDisabled").'.<br><br>';
 	//session_destroy();
 	exit(0);
@@ -80,7 +80,7 @@ if (!empty($conf->global->API_RESTRICT_ON_IP)) {
   </head>
   <body>
 	<redoc spec-url='<?php echo DOL_MAIN_URL_ROOT.'/api/index.php/explorer/swagger.json?DOLAPIKEY='.GETPOST('DOLAPIKEY', 'aZ09'); ?>'></redoc>
-	<!--<redoc spec-url='https://demo.dolibarr.org/api/index.php/explorer/swagger.json'></redoc>-->
+	<!--<redoc spec-url='https://demo.berp3.org/api/index.php/explorer/swagger.json'></redoc>-->
 	<!--<redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>-->
 	<script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"> </script>
   </body>

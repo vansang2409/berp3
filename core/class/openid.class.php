@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2013 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -307,7 +307,7 @@ class SimpleOpenID
 			return false;
 		} else {
 			$request = $method." /server HTTP/1.0\r\n";
-			$request .= "User-Agent: Dolibarr\r\n";
+			$request .= "User-Agent: Berp3\r\n";
 			$request .= "Connection: close\r\n\r\n";
 			fwrite($fp, $request);
 			stream_set_timeout($fp, 4); // Connection response timeout is 4 seconds

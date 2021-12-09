@@ -59,7 +59,7 @@ ChooseFormatOfFileToImport=Choose the file format to use as import file format b
 ChooseFileToImport=Upload file then click on the %s icon to select file as source import file...
 SourceFileFormat=Lähtefaili formaat
 FieldsInSourceFile=Lähtefailis olevad väljad
-FieldsInTargetDatabase=Dolibarri andmebaasi sihtväljad (rasvane=kohustuslik)
+FieldsInTargetDatabase=Berp3i andmebaasi sihtväljad (rasvane=kohustuslik)
 Field=Väli
 NoFields=Väljasid ei ole
 MoveField=Liiguta väli veergu nr %s

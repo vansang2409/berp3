@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2002-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2002-2004 
+ * Copyright (C) 2003         
+ * Copyright (C) 2004-2018 
+ * Copyright (C) 2005-2009 
  * Copyright (C) 2013      Peter Fontaine       <contact@peterfontaine.fr>
- * Copyright (C) 2015-2016 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2017      Ferran Marcet        <fmarcet@2byte.es>
- * Copyright (C) 2018 -2021Thibault FOUCART     <support@ptibogxiv.net>
+ * Copyright (C) 2015-2016 
+ * Copyright (C) 2017      
+ * Copyright (C) 2018 -2021    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

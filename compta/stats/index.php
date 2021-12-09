@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2001-2004  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2017       Olivier Geffroy         <jeff@jeffinfo.com>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2001-2004  
+ * Copyright (C) 2004-2012  
+ * Copyright (C) 2005-2009  
+ * Copyright (C) 2017       
+ * Copyright (C) 2018-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

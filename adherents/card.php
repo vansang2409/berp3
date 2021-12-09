@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2001-2004  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003  Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2004-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2018  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2012       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2012-2020  Philippe Grand          <philippe.grand@atoo-net.com>
- * Copyright (C) 2015-2018  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2021       Waël Almoman            <info@almoman.com>
+/* Copyright (C) 2001-2004  
+ * Copyright (C) 2002-2003        
+ * Copyright (C) 2004-2012  
+ * Copyright (C) 2005-2018  
+ * Copyright (C) 2012       
+ * Copyright (C) 2012-2020            
+ * Copyright (C) 2015-2018  
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2021                   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,7 +72,7 @@ $extrafields->fetch_name_optionals_label($object->table_element);
 
 $socialnetworks = getArrayOfSocialNetworks();
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $object->getCanvas($id);
 $canvas = $object->canvas ? $object->canvas : GETPOST("canvas");
 $objcanvas = null;
@@ -684,7 +684,7 @@ if (empty($reshook)) {
 					$subjecttosend = make_substitutions($subject, $substitutionarray, $outputlangs);
 					$texttosend = make_substitutions(dol_concatdesc($msg, $adht->getMailOnValid()), $substitutionarray, $outputlangs);
 
-					$moreinheader = 'X-Dolibarr-Info: send_an_email by adherents/card.php'."\r\n";
+					$moreinheader = 'X-Berp3-Info: send_an_email by adherents/card.php'."\r\n";
 
 					$result = $object->send_an_email($texttosend, $subjecttosend, array(), array(), array(), "", "", 0, -1, '', $moreinheader);
 					if ($result < 0) {
@@ -755,7 +755,7 @@ if (empty($reshook)) {
 						$subjecttosend = make_substitutions($subject, $substitutionarray, $outputlangs);
 						$texttosend = make_substitutions(dol_concatdesc($msg, $adht->getMailOnResiliate()), $substitutionarray, $outputlangs);
 
-						$moreinheader = 'X-Dolibarr-Info: send_an_email by adherents/card.php'."\r\n";
+						$moreinheader = 'X-Berp3-Info: send_an_email by adherents/card.php'."\r\n";
 
 						$result = $object->send_an_email($texttosend, $subjecttosend, array(), array(), array(), "", "", 0, -1, '', $moreinheader);
 						if ($result < 0) {
@@ -826,7 +826,7 @@ if (empty($reshook)) {
 						$subjecttosend = make_substitutions($subject, $substitutionarray, $outputlangs);
 						$texttosend = make_substitutions(dol_concatdesc($msg, $adht->getMailOnExclude()), $substitutionarray, $outputlangs);
 
-						$moreinheader = 'X-Dolibarr-Info: send_an_email by adherents/card.php'."\r\n";
+						$moreinheader = 'X-Berp3-Info: send_an_email by adherents/card.php'."\r\n";
 
 						$result = $object->send_an_email($texttosend, $subjecttosend, array(), array(), array(), "", "", 0, -1, '', $moreinheader);
 						if ($result < 0) {
@@ -1379,9 +1379,9 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			print "</td></tr>";
 		}
 
-		// Third party Dolibarr
+		// Third party Berp3
 		if (!empty($conf->societe->enabled)) {
-			print '<tr><td>'.$langs->trans("LinkedToDolibarrThirdParty").'</td><td colspan="2" class="valeur">';
+			print '<tr><td>'.$langs->trans("LinkedToBerp3ThirdParty").'</td><td colspan="2" class="valeur">';
 			if ($object->socid) {
 				$company = new Societe($db);
 				$result = $company->fetch($object->socid);
@@ -1392,12 +1392,12 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			print '</td></tr>';
 		}
 
-		// Login Dolibarr
-		print '<tr><td>'.$langs->trans("LinkedToDolibarrUser").'</td><td colspan="2" class="valeur">';
+		// Login Berp3
+		print '<tr><td>'.$langs->trans("LinkedToBerp3User").'</td><td colspan="2" class="valeur">';
 		if ($object->user_id) {
 			$form->form_users($_SERVER['PHP_SELF'].'?rowid='.$object->id, $object->user_id, 'none');
 		} else {
-			print $langs->trans("NoDolibarrAccess");
+			print $langs->trans("NoBerp3Access");
 		}
 		print '</td></tr>';
 
@@ -1460,14 +1460,14 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			);
 			if (!empty($conf->societe->enabled) && $object->socid > 0) {
 				$object->fetch_thirdparty();
-				$formquestion[] = array('label' => $langs->trans("UserWillBe"), 'type' => 'radio', 'name' => 'internalorexternal', 'default'=>'external', 'values' => array('external'=>$langs->trans("External").' - '.$langs->trans("LinkedToDolibarrThirdParty").' '.$object->thirdparty->getNomUrl(1, '', 0, 1), 'internal'=>$langs->trans("Internal")));
+				$formquestion[] = array('label' => $langs->trans("UserWillBe"), 'type' => 'radio', 'name' => 'internalorexternal', 'default'=>'external', 'values' => array('external'=>$langs->trans("External").' - '.$langs->trans("LinkedToBerp3ThirdParty").' '.$object->thirdparty->getNomUrl(1, '', 0, 1), 'internal'=>$langs->trans("Internal")));
 			}
 			$text = '';
 			if (!empty($conf->societe->enabled) && $object->socid <= 0) {
 				$text .= $langs->trans("UserWillBeInternalUser").'<br>';
 			}
 			$text .= $langs->trans("ConfirmCreateLogin");
-			print $form->formconfirm($_SERVER["PHP_SELF"]."?rowid=".$object->id, $langs->trans("CreateDolibarrLogin"), $text, "confirm_create_user", $formquestion, 'yes');
+			print $form->formconfirm($_SERVER["PHP_SELF"]."?rowid=".$object->id, $langs->trans("CreateBerp3Login"), $text, "confirm_create_user", $formquestion, 'yes');
 		}
 
 		// Confirm create third party
@@ -1493,7 +1493,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				array('label' => $langs->trans("AliasNames"), 'type' => 'text', 'name' => 'companyalias', 'value' => $companyalias, 'morecss' => 'minwidth300', 'moreattr' => 'maxlength="128"')
 			);
 
-			print $form->formconfirm($_SERVER["PHP_SELF"]."?rowid=".$object->id, $langs->trans("CreateDolibarrThirdParty"), $langs->trans("ConfirmCreateThirdParty"), "confirm_create_thirdparty", $formquestion, 'yes');
+			print $form->formconfirm($_SERVER["PHP_SELF"]."?rowid=".$object->id, $langs->trans("CreateBerp3ThirdParty"), $langs->trans("ConfirmCreateThirdParty"), "confirm_create_thirdparty", $formquestion, 'yes');
 		}
 
 		// Confirm validate member
@@ -1805,11 +1805,11 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		// Other attributes
 		include DOL_DOCUMENT_ROOT.'/core/tpl/extrafields_view.tpl.php';
 
-		// Third party Dolibarr
+		// Third party Berp3
 		if (!empty($conf->societe->enabled)) {
 			print '<tr><td>';
 			$editenable = $user->rights->adherent->creer;
-			print $form->editfieldkey('LinkedToDolibarrThirdParty', 'thirdparty', '', $object, $editenable);
+			print $form->editfieldkey('LinkedToBerp3ThirdParty', 'thirdparty', '', $object, $editenable);
 			print '</td><td colspan="2" class="valeur">';
 			if ($action == 'editthirdparty') {
 				$htmlname = 'socid';
@@ -1843,10 +1843,10 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			print '</td></tr>';
 		}
 
-		// Login Dolibarr - Link to user
+		// Login Berp3 - Link to user
 		print '<tr><td>';
 		$editenable = $user->rights->adherent->creer && $user->rights->user->user->creer;
-		print $form->editfieldkey('LinkedToDolibarrUser', 'login', '', $object, $editenable);
+		print $form->editfieldkey('LinkedToBerp3User', 'login', '', $object, $editenable);
 		print '</td><td colspan="2" class="valeur">';
 		if ($action == 'editlogin') {
 			$form->form_users($_SERVER['PHP_SELF'].'?rowid='.$object->id, $object->user_id, 'userid', '');
@@ -1856,7 +1856,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				$linkeduser->fetch($object->user_id);
 				print $linkeduser->getNomUrl(-1);
 			} else {
-				print '<span class="opacitymedium">'.$langs->trans("NoDolibarrAccess").'</span>';
+				print '<span class="opacitymedium">'.$langs->trans("NoBerp3Access").'</span>';
 			}
 		}
 		print '</td></tr>';
@@ -1956,12 +1956,12 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				if (!empty($conf->societe->enabled) && !$object->socid) {
 					if ($user->rights->societe->creer) {
 						if (Adherent::STATUS_DRAFT != $object->statut) {
-							print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&amp;action=create_thirdparty" title="'.dol_escape_htmltag($langs->trans("CreateDolibarrThirdPartyDesc")).'">'.$langs->trans("CreateDolibarrThirdParty").'</a>'."\n";
+							print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&amp;action=create_thirdparty" title="'.dol_escape_htmltag($langs->trans("CreateBerp3ThirdPartyDesc")).'">'.$langs->trans("CreateBerp3ThirdParty").'</a>'."\n";
 						} else {
-							print '<a class="butActionRefused classfortooltip" href="#" title="'.dol_escape_htmltag($langs->trans("ValidateBefore")).'">'.$langs->trans("CreateDolibarrThirdParty").'</a>'."\n";
+							print '<a class="butActionRefused classfortooltip" href="#" title="'.dol_escape_htmltag($langs->trans("ValidateBefore")).'">'.$langs->trans("CreateBerp3ThirdParty").'</a>'."\n";
 						}
 					} else {
-						print '<span class="butActionRefused classfortooltip" title="'.dol_escape_htmltag($langs->trans("NotEnoughPermissions")).'">'.$langs->trans("CreateDolibarrThirdParty").'</span>'."\n";
+						print '<span class="butActionRefused classfortooltip" title="'.dol_escape_htmltag($langs->trans("NotEnoughPermissions")).'">'.$langs->trans("CreateBerp3ThirdParty").'</span>'."\n";
 					}
 				}
 
@@ -1969,12 +1969,12 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				if (!$user->socid && !$object->user_id) {
 					if ($user->rights->user->user->creer) {
 						if (Adherent::STATUS_DRAFT != $object->statut) {
-							print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&amp;action=create_user" title="'.dol_escape_htmltag($langs->trans("CreateDolibarrLoginDesc")).'">'.$langs->trans("CreateDolibarrLogin").'</a>'."\n";
+							print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?rowid='.$object->id.'&amp;action=create_user" title="'.dol_escape_htmltag($langs->trans("CreateBerp3LoginDesc")).'">'.$langs->trans("CreateBerp3Login").'</a>'."\n";
 						} else {
-							print '<a class="butActionRefused classfortooltip" href="#" title="'.dol_escape_htmltag($langs->trans("ValidateBefore")).'">'.$langs->trans("CreateDolibarrLogin").'</a>'."\n";
+							print '<a class="butActionRefused classfortooltip" href="#" title="'.dol_escape_htmltag($langs->trans("ValidateBefore")).'">'.$langs->trans("CreateBerp3Login").'</a>'."\n";
 						}
 					} else {
-						print '<span class="butActionRefused classfortooltip" title="'.dol_escape_htmltag($langs->trans("NotEnoughPermissions")).'">'.$langs->trans("CreateDolibarrLogin").'</span>'."\n";
+						print '<span class="butActionRefused classfortooltip" title="'.dol_escape_htmltag($langs->trans("NotEnoughPermissions")).'">'.$langs->trans("CreateBerp3Login").'</span>'."\n";
 					}
 				}
 

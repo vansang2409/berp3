@@ -5,8 +5,8 @@ RemoteControlSupport=پشتیبانی برخط آنی/از راه دور
 OtherSupport=سایر انواع پشتیبانی
 ToSeeListOfAvailableRessources=برای تماس/نمایش منابع فعال
 HelpCenter=مرکز کمک
-DolibarrHelpCenter=مرکز کمک و پشتیبانی Dolibarr
-ToGoBackToDolibarr=در غیر این‌صورت <a href="%s">برای ادامۀ استفاده از BERP3 اینجا کلیک کنید</a>.
+Berp3HelpCenter=مرکز کمک و پشتیبانی Berp3
+ToGoBackToBerp3=در غیر این‌صورت <a href="%s">برای ادامۀ استفاده از BERP3 اینجا کلیک کنید</a>.
 TypeOfSupport=نوع پشتیبانی
 TypeSupportCommunauty=جامعۀ‌مجازی (رایگان)
 TypeSupportCommercial=تجاری

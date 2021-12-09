@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2013-2018 Jean-François Ferry <hello@librethic.io>
- * Copyright (C) 2016      Christophe Battarel <christophe@altairis.fr>
- * Copyright (C) 2019-2020 Frédéric France     <frederic.france@netlogic.fr>
- * Copyright (C) 2020      Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2013-2018  
+ * Copyright (C) 2016       
+ * Copyright (C) 2019-2020 
+ * Copyright (C) 2020      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -282,7 +282,7 @@ class Ticket extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param DoliDb $db Database handler
+	 *  @param Berp3Db $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1338,7 +1338,7 @@ class Ticket extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $db, $conf, $langs;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!empty($conf->dol_no_mouse_hover)) {
@@ -2951,7 +2951,7 @@ class Ticket extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB 	$db 			Database handler
+	 * @param Berp3DB 	$db 			Database handler
 	 * @param int 		$origin_id 		Old thirdparty id
 	 * @param int 		$dest_id 		New thirdparty id
 	 * @return bool

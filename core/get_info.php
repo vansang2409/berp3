@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2018 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2018 
  *
  * This file is a modified version of datepicker.php from phpBSM to fix some
  * bugs, to add new features and to dramatically increase speed.
@@ -56,7 +56,7 @@ $left = ($langs->trans("DIRECTION") == 'rtl' ? 'right' : 'left');
 
 $title = $langs->trans("Info");
 
-// URL http://mydolibarr/core/search_page?dol_use_jmobile=1 can be used for tests
+// URL http://myberp3/core/search_page?dol_use_jmobile=1 can be used for tests
 $head = '<!-- Quick access -->'."\n";
 $arrayofjs = array();
 $arrayofcss = array();
@@ -166,7 +166,7 @@ if (empty($conf->global->MAIN_PRINT_DISABLELINK) && empty($conf->global->MAIN_OP
 }
 */
 
-// Link to Dolibarr wiki pages
+// Link to Berp3 wiki pages
 /*
 if (empty($conf->global->MAIN_HELP_DISABLELINK) && empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER))
 {

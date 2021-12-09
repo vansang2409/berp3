@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2001-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@capnetworks.com>
- * Copyright (C) 2013      Charles-Fr BENKE     <charles.fr@benke.fr>
- * Copyright (C) 2015      Jean-François Ferry	<jfefe@aternatik.fr>
- * Copyright (C) 2016      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2018      Andreu Bisquerra		<jove@bisquerra.com>
+/* Copyright (C) 2001-2005 
+ * Copyright (C) 2004-2013 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2013      Charles-Fr BENKE     
+ * Copyright (C) 2015      
+ * Copyright (C) 2016      
+ * Copyright (C) 2018      		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

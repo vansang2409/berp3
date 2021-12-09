@@ -1,14 +1,14 @@
 <?php
-/* Copyright (C) 2003-2007	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Jean-Louis Bergamo		<jlb@j1b.org>
- * Copyright (C) 2004-2017	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Eric Seigne				<eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2015		Jean-François Ferry		<jfefe@aternatik.fr>
- * Copyright (C) 2015		Raphaël Doursenaud		<rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2018		Nicolas ZABOURI 		<info@inovea-conseil.com>
- * Copyright (C) 2021       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2003-2007	
+ * Copyright (C) 2003		
+ * Copyright (C) 2004-2017	
+ * Copyright (C) 2004		
+ * Copyright (C) 2005-2017	
+ * Copyright (C) 2011		
+ * Copyright (C) 2015		
+ * Copyright (C) 2015				
+ * Copyright (C) 2018		 		
+ * Copyright (C) 2021       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/geturl.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
-require_once DOL_DOCUMENT_ROOT.'/admin/dolistore/class/dolistore.class.php';
+require_once DOL_DOCUMENT_ROOT.'/admin/berp3store/class/berp3store.class.php';
 
 // Load translation files required by the page
 $langs->loadLangs(array("errors", "admin", "modulebuilder"));
@@ -57,14 +57,14 @@ $search_nature = GETPOST('search_nature', 'alpha');
 $search_version = GETPOST('search_version', 'alpha');
 
 
-// For dolistore search
+// For berp3store search
 $options              = array();
 $options['per_page']  = 20;
 $options['categorie'] = ((GETPOST('categorie', 'int') ?GETPOST('categorie', 'int') : 0) + 0);
 $options['start']     = ((GETPOST('start', 'int') ?GETPOST('start', 'int') : 0) + 0);
 $options['end']       = ((GETPOST('end', 'int') ?GETPOST('end', 'int') : 0) + 0);
 $options['search']    = GETPOST('search_keyword', 'alpha');
-$dolistore            = new Dolistore(false);
+$berp3store            = new Berp3store(false);
 
 
 if (!$user->admin) {
@@ -103,7 +103,7 @@ if (!GETPOST('buttonreset', 'alpha')) {
 }
 
 $dirins = DOL_DOCUMENT_ROOT.'/custom';
-$urldolibarrmodules = 'https://www.dolistore.com/';
+$urlberp3modules = 'https://www.berp3store.com/';
 
 // Initialize technical object to manage hooks of page. Note that conf->hooks_modules contains array of hook context
 $hookmanager->initHooks(array('adminmodules', 'globaladmin'));
@@ -143,12 +143,12 @@ if ($action == 'install') {
 	} else {
 		if (!$error && !preg_match('/\.zip$/i', $original_file)) {
 			$langs->load("errors");
-			setEventMessages($langs->trans("ErrorFileMustBeADolibarrPackage", $original_file), null, 'errors');
+			setEventMessages($langs->trans("ErrorFileMustBeABerp3Package", $original_file), null, 'errors');
 			$error++;
 		}
 		if (!$error && !preg_match('/^(module[a-zA-Z0-9]*|theme)_.*\-([0-9][0-9\.]*)\.zip$/i', $original_file)) {
 			$langs->load("errors");
-			setEventMessages($langs->trans("ErrorFilenameDosNotMatchDolibarrPackageRules", $original_file, 'module_*-x.y*.zip'), null, 'errors');
+			setEventMessages($langs->trans("ErrorFilenameDosNotMatchBerp3PackageRules", $original_file, 'module_*-x.y*.zip'), null, 'errors');
 			$error++;
 		}
 		if (empty($_FILES['fileinstall']['tmp_name'])) {
@@ -247,7 +247,7 @@ if ($action == 'install') {
 
 if ($action == 'set' && $user->admin) {
 	$resarray = activateModule($value);
-	dolibarr_set_const($db, "MAIN_IHM_PARAMS_REV", (int) $conf->global->MAIN_IHM_PARAMS_REV + 1, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_IHM_PARAMS_REV", (int) $conf->global->MAIN_IHM_PARAMS_REV + 1, 'chaine', 0, '', $conf->entity);
 	if (!empty($resarray['errors'])) {
 		setEventMessages('', $resarray['errors'], 'errors');
 	} else {
@@ -271,7 +271,7 @@ if ($action == 'set' && $user->admin) {
 	exit;
 } elseif ($action == 'reset' && $user->admin && GETPOST('confirm') == 'yes') {
 	$result = unActivateModule($value);
-	dolibarr_set_const($db, "MAIN_IHM_PARAMS_REV", (int) $conf->global->MAIN_IHM_PARAMS_REV + 1, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_IHM_PARAMS_REV", (int) $conf->global->MAIN_IHM_PARAMS_REV + 1, 'chaine', 0, '', $conf->entity);
 	if ($result) {
 		setEventMessages($result, null, 'errors');
 	}
@@ -288,7 +288,7 @@ if ($action == 'set' && $user->admin) {
 $form = new Form($db);
 
 $morejs = array();
-$morecss = array("/admin/dolistore/css/dolistore.css");
+$morecss = array("/admin/berp3store/css/berp3store.css");
 
 // Set dir where external modules are installed
 if (!dol_is_dir($dirins)) {
@@ -605,7 +605,7 @@ if ($mode == 'common' || $mode == 'commonkanban') {
 
 		$modName = $filename[$key];
 
-		/** @var DolibarrModules $objMod */
+		/** @var Berp3Modules $objMod */
 		$objMod = $modules[$modName];
 
 		//print $objMod->name." - ".$key." - ".$objMod->version."<br>";
@@ -739,7 +739,7 @@ if ($mode == 'common' || $mode == 'commonkanban') {
 			&& (
 				$action == 'checklastversion'
 				// This is a bad practice to activate a synch external access during building of a page. 1 external module can hang the application.
-				// Adding a cron job could be a good idea see DolibarrModules::checkForUpdate()
+				// Adding a cron job could be a good idea see Berp3Modules::checkForUpdate()
 				|| 	!empty($conf->global->CHECKLASTVERSION_EXTERNALMODULE)
 			)
 		) {
@@ -903,7 +903,7 @@ if ($mode == 'common' || $mode == 'commonkanban') {
 			// Picto + Name of module
 			print '  <td class="tdoverflowmax300" title="'.dol_escape_htmltag($objMod->getName()).'">';
 			$alttext = '';
-			//if (is_array($objMod->need_dolibarr_version)) $alttext.=($alttext?' - ':'').'Dolibarr >= '.join('.',$objMod->need_dolibarr_version);
+			//if (is_array($objMod->need_berp3_version)) $alttext.=($alttext?' - ':'').'Berp3 >= '.join('.',$objMod->need_berp3_version);
 			//if (is_array($objMod->phpmin)) $alttext.=($alttext?' - ':'').'PHP >= '.join('.',$objMod->phpmin);
 			if (!empty($objMod->picto)) {
 				if (preg_match('/^\//i', $objMod->picto)) {
@@ -999,9 +999,9 @@ if ($mode == 'marketplace') {
 	print '</tr>';
 
 	print '<tr class="oddeven">'."\n";
-	$url = 'https://www.dolistore.com';
-	print '<td class="hideonsmartphone"><a href="'.$url.'" target="_blank" rel="external"><img border="0" class="imgautosize imgmaxwidth180" src="'.DOL_URL_ROOT.'/theme/dolistore_logo.png"></a></td>';
-	print '<td><span class="opacitymedium">'.$langs->trans("DoliStoreDesc").'</span></td>';
+	$url = 'https://www.berp3store.com';
+	print '<td class="hideonsmartphone"><a href="'.$url.'" target="_blank" rel="external"><img border="0" class="imgautosize imgmaxwidth180" src="'.DOL_URL_ROOT.'/theme/berp3store_logo.png"></a></td>';
+	print '<td><span class="opacitymedium">'.$langs->trans("Berp3StoreDesc").'</span></td>';
 	print '<td><a href="'.$url.'" target="_blank" rel="external">'.$url.'</a></td>';
 	print '</tr>';
 
@@ -1012,20 +1012,20 @@ if ($mode == 'marketplace') {
 
 	print '<br>';
 
-	if (empty($conf->global->MAIN_DISABLE_DOLISTORE_SEARCH) && $conf->global->MAIN_FEATURES_LEVEL >= 1) {
+	if (empty($conf->global->MAIN_DISABLE_BERPSTORE_SEARCH) && $conf->global->MAIN_FEATURES_LEVEL >= 1) {
 		// $options is array with filter criterias
 		//var_dump($options);
-		$dolistore->getRemoteCategories();
-		$dolistore->getRemoteProducts($options);
+		$berp3store->getRemoteCategories();
+		$berp3store->getRemoteProducts($options);
 
-		print '<span class="opacitymedium">'.$langs->trans('DOLISTOREdescriptionLong').'</span><br><br>';
+		print '<span class="opacitymedium">'.$langs->trans('BERPSTOREdescriptionLong').'</span><br><br>';
 
-		$previouslink = $dolistore->get_previous_link();
-		$nextlink = $dolistore->get_next_link();
+		$previouslink = $berp3store->get_previous_link();
+		$nextlink = $berp3store->get_next_link();
 
 		print '<div class="liste_titre liste_titre_bydiv centpercent"><div class="divsearchfield">';
 
-		print '<form method="POST" class="centpercent" id="searchFormList" action="'.urlencode($dolistore->url).'">';
+		print '<form method="POST" class="centpercent" id="searchFormList" action="'.urlencode($berp3store->url).'">';
 		?>
 					<input type="hidden" name="token" value="<?php echo newToken(); ?>">
 					<input type="hidden" name="mode" value="marketplace">
@@ -1034,7 +1034,7 @@ if ($mode == 'marketplace') {
 					</div>
 					<div class="divsearchfield">
 						<input class="button buttongen" value="<?php echo $langs->trans('Rechercher') ?>" type="submit">
-						<a class="buttonreset" href="<?php echo urlencode($dolistore->url) ?>"><?php echo $langs->trans('Reset') ?></a>
+						<a class="buttonreset" href="<?php echo urlencode($berp3store->url) ?>"><?php echo $langs->trans('Reset') ?></a>
 
 						&nbsp;
 					</div>
@@ -1051,13 +1051,13 @@ if ($mode == 'marketplace') {
 
 			<div id="category-tree-left">
 				<ul class="tree">
-					<?php echo dol_escape_htmltag($dolistore->get_categories()); ?>
+					<?php echo dol_escape_htmltag($berp3store->get_categories()); ?>
 				</ul>
 			</div>
 			<div id="listing-content">
 				<table summary="list_of_modules" id="list_of_modules" class="productlist centpercent">
 					<tbody id="listOfModules">
-						<?php echo $dolistore->get_products(!empty($categorie) ? $categorie: ''); ?>
+						<?php echo $berp3store->get_products(!empty($categorie) ? $categorie: ''); ?>
 					</tbody>
 				</table>
 			</div>
@@ -1074,17 +1074,17 @@ if ($mode == 'deploy') {
 
 	print $deschelp;
 
-	$dolibarrdataroot = preg_replace('/([\\/]+)$/i', '', DOL_DATA_ROOT);
+	$berp3dataroot = preg_replace('/([\\/]+)$/i', '', DOL_DATA_ROOT);
 	$allowonlineinstall = true;
 	$allowfromweb = 1;
-	if (dol_is_file($dolibarrdataroot.'/installmodules.lock')) {
+	if (dol_is_file($berp3dataroot.'/installmodules.lock')) {
 		$allowonlineinstall = false;
 	}
 
-	$fullurl = '<a href="'.$urldolibarrmodules.'" target="_blank">'.$urldolibarrmodules.'</a>';
+	$fullurl = '<a href="'.$urlberp3modules.'" target="_blank">'.$urlberp3modules.'</a>';
 	$message = '';
 	if (!empty($allowonlineinstall)) {
-		if (!in_array('/custom', explode(',', $dolibarr_main_url_root_alt))) {
+		if (!in_array('/custom', explode(',', $berp3_main_url_root_alt))) {
 			$message = info_admin($langs->trans("ConfFileMustContainCustom", DOL_DOCUMENT_ROOT.'/custom', DOL_DOCUMENT_ROOT));
 			$allowfromweb = -1;
 		} else {
@@ -1100,7 +1100,7 @@ if ($mode == 'deploy') {
 			}
 		}
 	} else {
-		$message = info_admin($langs->trans("InstallModuleFromWebHasBeenDisabledByFile", $dolibarrdataroot.'/installmodules.lock'));
+		$message = info_admin($langs->trans("InstallModuleFromWebHasBeenDisabledByFile", $berp3dataroot.'/installmodules.lock'));
 		$allowfromweb = 0;
 	}
 
@@ -1271,11 +1271,11 @@ if ($mode == 'develop') {
 	print '</tr>';
 
 	print '<tr class="oddeven" height="80">'."\n";
-	$url = 'https://partners.dolibarr.org';
+	$url = 'https://partners.berp3.org';
 	print '<td class="left">';
-	print'<a href="'.$url.'" target="_blank" rel="external"><img border="0" class="imgautosize imgmaxwidth180" src="'.DOL_URL_ROOT.'/theme/dolibarr_preferred_partner.png"></a>';
+	print'<a href="'.$url.'" target="_blank" rel="external"><img border="0" class="imgautosize imgmaxwidth180" src="'.DOL_URL_ROOT.'/theme/berp3_preferred_partner.png"></a>';
 	print '</td>';
-	print '<td>'.$langs->trans("DoliPartnersDesc").'</td>';
+	print '<td>'.$langs->trans("Berp3PartnersDesc").'</td>';
 	print '<td><a href="'.$url.'" target="_blank" rel="external">'.$url.'</a></td>';
 	print '</tr>';
 

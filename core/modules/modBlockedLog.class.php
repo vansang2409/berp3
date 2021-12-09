@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017   Laurent Destailleur  <eldy@users.sourcefore.net>
+/* Copyright (C) 2017     <eldy@users.sourcefore.net>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,17 +22,17 @@
  *  \ingroup    blockedlog
  *  \brief      Description and activation file for the module BlockedLog
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *	Class to describe a BlockedLog module
  */
-class modBlockedLog extends DolibarrModules
+class modBlockedLog extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -51,8 +51,8 @@ class modBlockedLog extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Enable a log on some business events into a non reversible log. This module may be mandatory for some countries.";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -157,7 +157,7 @@ class modBlockedLog extends DolibarrModules
 
 	/**
 	 *      Function called when module is enabled.
-	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *      It also creates data directories.
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')

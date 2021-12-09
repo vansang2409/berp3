@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2003,2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2009-2011 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013      Cedric Gross         <c.gross@kreiz-it.fr>
+/* Copyright (C) 2003,2005 
+ * Copyright (C) 2003         
+ * Copyright (C) 2004-2014 
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2009-2011 
+ * Copyright (C) 2013      Cedric Gross         
  * Copyright (C) 2015      Bahfir Abbes         <bafbes@gmail.com>
- * Copyright (C) 2017      Juanjo Menent        <jmenent@2byte.es>
+ * Copyright (C) 2017      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,18 +30,18 @@
  *      \ingroup    agenda
  *      \brief      Description and activation file for the module agenda
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *	Class to describe and enable/disable module Agenda
  */
-class modAgenda extends DolibarrModules
+class modAgenda extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -55,8 +55,8 @@ class modAgenda extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Follow events or rendez-vous. Record manual events into Agendas or let application record automatic events for log tracking.";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'action';

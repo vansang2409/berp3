@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2014-2017  Olivier Geffroy     <jeff@jeffinfo.com>
- * Copyright (C) 2015-2017  Alexandre Spangaro  <aspangaro@open-dsi.fr>
- * Copyright (C) 2015-2020  Florian Henry       <florian.henry@open-concept.pro>
- * Copyright (C) 2018-2020  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2014-2017  
+ * Copyright (C) 2015-2017  
+ * Copyright (C) 2015-2020  
+ * Copyright (C) 2018-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -178,9 +178,9 @@ class BookKeeping extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}
@@ -459,7 +459,7 @@ class BookKeeping extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $db, $conf, $langs;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!empty($conf->dol_no_mouse_hover)) {

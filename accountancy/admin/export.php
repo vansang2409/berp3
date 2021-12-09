@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2013-2014 Olivier Geffroy		<jeff@jeffinfo.com>
- * Copyright (C) 2013-2017 Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2014	   Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2014      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2014	   Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2015      Jean-François Ferry	<jfefe@aternatik.fr>
- * Copyright (C) 2017-2018 Frédéric France      <frederic.france@netlogic.fr>
+/*  
+ * Copyright (C) 2013-2017 
+ * Copyright (C) 2014	   
+ * Copyright (C) 2014      
+ * Copyright (C) 2014	   
+ * Copyright (C) 2015      
+ * Copyright (C) 2017-2018 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -86,11 +86,11 @@ if ($action == 'update') {
 	$modelcsv = GETPOST('ACCOUNTING_EXPORT_MODELCSV', 'int');
 
 	if (!empty($modelcsv)) {
-		if (!dolibarr_set_const($db, 'ACCOUNTING_EXPORT_MODELCSV', $modelcsv, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'ACCOUNTING_EXPORT_MODELCSV', $modelcsv, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 		//if ($modelcsv==AccountancyExport::$EXPORT_TYPE_QUADRATUS || $modelcsv==AccountancyExport::$EXPORT_TYPE_CIEL) {
-		//	dolibarr_set_const($db, 'ACCOUNTING_EXPORT_FORMAT', 'txt', 'chaine', 0, '', $conf->entity);
+		//	berp3_set_const($db, 'ACCOUNTING_EXPORT_FORMAT', 'txt', 'chaine', 0, '', $conf->entity);
 		//}
 	} else {
 		$error++;
@@ -99,7 +99,7 @@ if ($action == 'update') {
 	foreach ($main_option as $constname) {
 		$constvalue = GETPOST($constname, 'alpha');
 
-		if (!dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	}
@@ -109,7 +109,7 @@ if ($action == 'update') {
 
 		if (strpos($constante, 'ACCOUNTING') !== false) {
 			$constvalue = GETPOST($key, 'alpha');
-			if (!dolibarr_set_const($db, $constante, $constvalue, 'chaine', 0, '', $conf->entity)) {
+			if (!berp3_set_const($db, $constante, $constvalue, 'chaine', 0, '', $conf->entity)) {
 				$error++;
 			}
 		}

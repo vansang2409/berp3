@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
+/* Copyright (C) 2015   
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software; you can redistribute it and/or modify
@@ -32,9 +32,9 @@ dol_include_once('/mymodule/class/myobject.class.php');
  * API class for mymodule myobject
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class MyModuleApi extends DolibarrApi
+class MyModuleApi extends Berp3Api
 {
 	/**
 	 * @var MyObject $myobject {@type MyObject}
@@ -69,7 +69,7 @@ class MyModuleApi extends DolibarrApi
 	 */
 	public function get($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->mymodule->myobject->read) {
+		if (!Berp3ApiAccess::$user->rights->mymodule->myobject->read) {
 			throw new RestException(401);
 		}
 
@@ -78,8 +78,8 @@ class MyModuleApi extends DolibarrApi
 			throw new RestException(404, 'MyObject not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('myobject', $this->myobject->id, 'mymodule_myobject')) {
-			throw new RestException(401, 'Access to instance id='.$this->myobject->id.' of object not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('myobject', $this->myobject->id, 'mymodule_myobject')) {
+			throw new RestException(401, 'Access to instance id='.$this->myobject->id.' of object not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		return $this->_cleanObjectDatas($this->myobject);
@@ -109,27 +109,27 @@ class MyModuleApi extends DolibarrApi
 		$obj_ret = array();
 		$tmpobject = new MyObject($this->db);
 
-		if (!DolibarrApiAccess::$user->rights->mymodule->myobject->read) {
+		if (!Berp3ApiAccess::$user->rights->mymodule->myobject->read) {
 			throw new RestException(401);
 		}
 
-		$socid = DolibarrApiAccess::$user->socid ? DolibarrApiAccess::$user->socid : '';
+		$socid = Berp3ApiAccess::$user->socid ? Berp3ApiAccess::$user->socid : '';
 
 		$restrictonsocid = 0; // Set to 1 if there is a field socid in table of object
 
 		// If the internal user must only see his customers, force searching by him
 		$search_sale = 0;
-		if ($restrictonsocid && !DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) {
-			$search_sale = DolibarrApiAccess::$user->id;
+		if ($restrictonsocid && !Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) {
+			$search_sale = Berp3ApiAccess::$user->id;
 		}
 
 		$sql = "SELECT t.rowid";
-		if ($restrictonsocid && (!DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
+		if ($restrictonsocid && (!Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
 			$sql .= ", sc.fk_soc, sc.fk_user"; // We need these fields in order to filter by sale (including the case where the user can only see his prospects)
 		}
 		$sql .= " FROM ".MAIN_DB_PREFIX.$tmpobject->table_element." as t";
 
-		if ($restrictonsocid && (!DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
+		if ($restrictonsocid && (!Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
 			$sql .= ", ".MAIN_DB_PREFIX."societe_commerciaux as sc"; // We need this table joined to the select in order to filter by sale
 		}
 		$sql .= " WHERE 1 = 1";
@@ -141,7 +141,7 @@ class MyModuleApi extends DolibarrApi
 		if ($tmpobject->ismultientitymanaged) {
 			$sql .= ' AND t.entity IN ('.getEntity($tmpobject->element).')';
 		}
-		if ($restrictonsocid && (!DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
+		if ($restrictonsocid && (!Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
 			$sql .= " AND t.fk_soc = sc.fk_soc";
 		}
 		if ($restrictonsocid && $socid) {
@@ -155,11 +155,11 @@ class MyModuleApi extends DolibarrApi
 			$sql .= " AND sc.fk_user = ".((int) $search_sale);
 		}
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -205,7 +205,7 @@ class MyModuleApi extends DolibarrApi
 	 */
 	public function post($request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->mymodule->myobject->write) {
+		if (!Berp3ApiAccess::$user->rights->mymodule->myobject->write) {
 			throw new RestException(401);
 		}
 
@@ -219,7 +219,7 @@ class MyModuleApi extends DolibarrApi
 		// Clean data
 		// $this->myobject->abc = checkVal($this->myobject->abc, 'alphanohtml');
 
-		if ($this->myobject->create(DolibarrApiAccess::$user)<0) {
+		if ($this->myobject->create(Berp3ApiAccess::$user)<0) {
 			throw new RestException(500, "Error creating MyObject", array_merge(array($this->myobject->error), $this->myobject->errors));
 		}
 		return $this->myobject->id;
@@ -238,7 +238,7 @@ class MyModuleApi extends DolibarrApi
 	 */
 	public function put($id, $request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->mymodule->myobject->write) {
+		if (!Berp3ApiAccess::$user->rights->mymodule->myobject->write) {
 			throw new RestException(401);
 		}
 
@@ -247,8 +247,8 @@ class MyModuleApi extends DolibarrApi
 			throw new RestException(404, 'MyObject not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('myobject', $this->myobject->id, 'mymodule_myobject')) {
-			throw new RestException(401, 'Access to instance id='.$this->myobject->id.' of object not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('myobject', $this->myobject->id, 'mymodule_myobject')) {
+			throw new RestException(401, 'Access to instance id='.$this->myobject->id.' of object not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		foreach ($request_data as $field => $value) {
@@ -261,7 +261,7 @@ class MyModuleApi extends DolibarrApi
 		// Clean data
 		// $this->myobject->abc = checkVal($this->myobject->abc, 'alphanohtml');
 
-		if ($this->myobject->update(DolibarrApiAccess::$user, false) > 0) {
+		if ($this->myobject->update(Berp3ApiAccess::$user, false) > 0) {
 			return $this->get($id);
 		} else {
 			throw new RestException(500, $this->myobject->error);
@@ -280,7 +280,7 @@ class MyModuleApi extends DolibarrApi
 	 */
 	public function delete($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->mymodule->myobject->delete) {
+		if (!Berp3ApiAccess::$user->rights->mymodule->myobject->delete) {
 			throw new RestException(401);
 		}
 		$result = $this->myobject->fetch($id);
@@ -288,11 +288,11 @@ class MyModuleApi extends DolibarrApi
 			throw new RestException(404, 'MyObject not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('myobject', $this->myobject->id, 'mymodule_myobject')) {
-			throw new RestException(401, 'Access to instance id='.$this->myobject->id.' of object not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('myobject', $this->myobject->id, 'mymodule_myobject')) {
+			throw new RestException(401, 'Access to instance id='.$this->myobject->id.' of object not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		if (!$this->myobject->delete(DolibarrApiAccess::$user)) {
+		if (!$this->myobject->delete(Berp3ApiAccess::$user)) {
 			throw new RestException(500, 'Error when deleting MyObject : '.$this->myobject->error);
 		}
 

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2004		Rodolphe Quiedeville		<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2016	Laurent Destailleur		<eldy@users.sourceforge.org>
- * Copyright (C) 2011		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2012-2018	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2015		Jean-François Ferry		<jfefe@aternatik.fr>
+/* Copyright (C) 2004				
+ * Copyright (C) 2005-2016			
+ * Copyright (C) 2011		
+ * Copyright (C) 2012-2018	
+ * Copyright (C) 2015		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ $action = GETPOST('action', 'aZ09');
 if ($action == 'setproductionmode') {
 	$status = GETPOST('status', 'alpha');
 
-	if (dolibarr_set_const($db, 'API_PRODUCTION_MODE', $status, 'chaine', 0, '', 0) > 0) {
+	if (berp3_set_const($db, 'API_PRODUCTION_MODE', $status, 'chaine', 0, '', 0) > 0) {
 		$error = 0;
 
 		if ($status == 1) {
@@ -70,7 +70,7 @@ if ($action == 'setproductionmode') {
 }
 
 if ($action == 'save') {
-	dolibarr_set_const($db, 'API_RESTRICT_ON_IP', GETPOST('API_RESTRICT_ON_IP', 'alpha'));
+	berp3_set_const($db, 'API_RESTRICT_ON_IP', GETPOST('API_RESTRICT_ON_IP', 'alpha'));
 }
 
 
@@ -133,7 +133,7 @@ print '</form>';
 
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 

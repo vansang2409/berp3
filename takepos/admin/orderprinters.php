@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2005       Matthieu Valleton   <mv@seeschloss.org>
- * Copyright (C) 2005       Eric Seigne         <eric.seigne@ryxeo.com>
- * Copyright (C) 2006-2016  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2007       Patrick Raguin      <patrick.raguin@gmail.com>
- * Copyright (C) 2005-2012  Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2005          
+ * Copyright (C) 2005                
+ * Copyright (C) 2006-2016  
+ * Copyright (C) 2007             
+ * Copyright (C) 2005-2012         
+ * Copyright (C) 2015       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ if ($action == "SavePrinter1") {
 			$printedcategories = $printedcategories.$cat.";";
 		}
 	}
-	dolibarr_set_const($db, "TAKEPOS_PRINTED_CATEGORIES_1", $printedcategories, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "TAKEPOS_PRINTED_CATEGORIES_1", $printedcategories, 'chaine', 0, '', $conf->entity);
 }
 
 if ($action == "SavePrinter2") {
@@ -70,7 +70,7 @@ if ($action == "SavePrinter2") {
 			$printedcategories = $printedcategories.$cat.";";
 		}
 	}
-	dolibarr_set_const($db, "TAKEPOS_PRINTED_CATEGORIES_2", $printedcategories, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "TAKEPOS_PRINTED_CATEGORIES_2", $printedcategories, 'chaine', 0, '', $conf->entity);
 }
 
 if ($action == "SavePrinter3") {
@@ -80,7 +80,7 @@ if ($action == "SavePrinter3") {
 			$printedcategories = $printedcategories.$cat.";";
 		}
 	}
-	dolibarr_set_const($db, "TAKEPOS_PRINTED_CATEGORIES_3", $printedcategories, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "TAKEPOS_PRINTED_CATEGORIES_3", $printedcategories, 'chaine', 0, '', $conf->entity);
 }
 
 

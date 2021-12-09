@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Laurent Destailleur	<eldy@users.sourceforge.net>
+/* Copyright (C) 2017 	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ function dolSaveMasterFile($filemaster)
 
 	$mastercontent = '<?php'."\n";
 	$mastercontent .= '// File generated to link to the master file - DO NOT MODIFY - It is just an include'."\n";
-	$mastercontent .= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) {\n";
+	$mastercontent .= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) {\n";
 	$mastercontent .= "    if (! defined('USEEXTERNALSERVER')) define('USEEXTERNALSERVER', 1);\n";
 	$mastercontent .= "    require_once '".DOL_DOCUMENT_ROOT."/master.inc.php';\n";
 	$mastercontent .= "}\n";
@@ -71,9 +71,9 @@ function dolSavePageAlias($filealias, $object, $objectpage)
 
 	$aliascontent = '<?php'."\n";
 	$aliascontent .= "// File generated to wrap the alias page - DO NOT MODIFY - It is just a wrapper to real page\n";
-	$aliascontent .= 'global $dolibarr_main_data_root;'."\n";
-	$aliascontent .= 'if (empty($dolibarr_main_data_root)) require \'./page'.$objectpage->id.'.tpl.php\'; ';
-	$aliascontent .= 'else require $dolibarr_main_data_root.\'/website/\'.$website->ref.\'/page'.$objectpage->id.'.tpl.php\';'."\n";
+	$aliascontent .= 'global $berp3_main_data_root;'."\n";
+	$aliascontent .= 'if (empty($berp3_main_data_root)) require \'./page'.$objectpage->id.'.tpl.php\'; ';
+	$aliascontent .= 'else require $berp3_main_data_root.\'/website/\'.$website->ref.\'/page'.$objectpage->id.'.tpl.php\';'."\n";
 	$aliascontent .= '?>'."\n";
 	$result = file_put_contents($filealias, $aliascontent);
 	if ($result === false) {
@@ -91,9 +91,9 @@ function dolSavePageAlias($filealias, $object, $objectpage)
 
 		$aliascontent = '<?php'."\n";
 		$aliascontent .= "// File generated to wrap the alias page - DO NOT MODIFY - It is just a wrapper to real page\n";
-		$aliascontent .= 'global $dolibarr_main_data_root;'."\n";
-		$aliascontent .= 'if (empty($dolibarr_main_data_root)) require \'../page'.$objectpage->id.'.tpl.php\'; ';
-		$aliascontent .= 'else require $dolibarr_main_data_root.\'/website/\'.$website->ref.\'/page'.$objectpage->id.'.tpl.php\';'."\n";
+		$aliascontent .= 'global $berp3_main_data_root;'."\n";
+		$aliascontent .= 'if (empty($berp3_main_data_root)) require \'../page'.$objectpage->id.'.tpl.php\'; ';
+		$aliascontent .= 'else require $berp3_main_data_root.\'/website/\'.$website->ref.\'/page'.$objectpage->id.'.tpl.php\';'."\n";
 		$aliascontent .= '?>'."\n";
 		$result = file_put_contents($filealiassub, $aliascontent);
 		if ($result === false) {
@@ -114,9 +114,9 @@ function dolSavePageAlias($filealias, $object, $objectpage)
 
 				$aliascontent = '<?php'."\n";
 				$aliascontent .= "// File generated to wrap the alias page - DO NOT MODIFY - It is just a wrapper to real page\n";
-				$aliascontent .= 'global $dolibarr_main_data_root;'."\n";
-				$aliascontent .= 'if (empty($dolibarr_main_data_root)) require \'../page'.$objectpage->id.'.tpl.php\'; ';
-				$aliascontent .= 'else require $dolibarr_main_data_root.\'/website/\'.$website->ref.\'/page'.$objectpage->id.'.tpl.php\';'."\n";
+				$aliascontent .= 'global $berp3_main_data_root;'."\n";
+				$aliascontent .= 'if (empty($berp3_main_data_root)) require \'../page'.$objectpage->id.'.tpl.php\'; ';
+				$aliascontent .= 'else require $berp3_main_data_root.\'/website/\'.$website->ref.\'/page'.$objectpage->id.'.tpl.php\';'."\n";
 				$aliascontent .= '?>'."\n";
 				$result = file_put_contents($filealiassub, $aliascontent);
 				if ($result === false) {
@@ -174,7 +174,7 @@ function dolSavePageContent($filetpl, Website $object, WebsitePage $objectpage, 
 	$tplcontent = '';
 	$tplcontent .= "<?php // BEGIN PHP\n";
 	$tplcontent .= '$websitekey=basename(__DIR__); if (empty($websitepagefile)) $websitepagefile=__FILE__;'."\n";
-	$tplcontent .= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) {\n";
+	$tplcontent .= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) {\n";
 	$tplcontent .= '	$pathdepth = count(explode(\'/\', $_SERVER[\'SCRIPT_NAME\'])) - 2;'."\n";
 	$tplcontent .= '	require_once ($pathdepth ? str_repeat(\'../\', $pathdepth) : \'./\').\'master.inc.php\';'."\n";
 	$tplcontent .= "} // Not already loaded\n";
@@ -195,8 +195,8 @@ function dolSavePageContent($filetpl, Website $object, WebsitePage $objectpage, 
 	$tplcontent .= '<meta name="keywords" content="'.dol_string_nohtmltag($objectpage->keywords).'" />'."\n";
 	$tplcontent .= '<meta name="title" content="'.dol_string_nohtmltag($objectpage->title, 0, 'UTF-8').'" />'."\n";
 	$tplcontent .= '<meta name="description" content="'.dol_string_nohtmltag($objectpage->description, 0, 'UTF-8').'" />'."\n";
-	$tplcontent .= '<meta name="generator" content="'.DOL_APPLICATION_TITLE.' '.DOL_VERSION.' (https://www.dolibarr.org)" />'."\n";
-	$tplcontent .= '<meta name="dolibarr:pageid" content="'.dol_string_nohtmltag($objectpage->id).'" />'."\n";
+	$tplcontent .= '<meta name="generator" content="'.DOL_APPLICATION_TITLE.' '.DOL_VERSION.' (https://www.berp3.org)" />'."\n";
+	$tplcontent .= '<meta name="berp3:pageid" content="'.dol_string_nohtmltag($objectpage->id).'" />'."\n";
 	// Add canonical reference
 	if ($object->virtualhost) {
 		$tplcontent .= '<link rel="canonical" href="'.(($objectpage->id == $object->fk_default_home) ? '/' : (($shortlangcode != substr($object->lang, 0, 2) ? '/'.$shortlangcode : '').'/'.$objectpage->pageurl.'.php')).'" />'."\n";
@@ -262,7 +262,7 @@ function dolSavePageContent($filetpl, Website $object, WebsitePage $objectpage, 
 	$tplcontent .= preg_replace('/<\/?html>/ims', '', $objectpage->htmlheader)."\n";
 	$tplcontent .= '</head>'."\n";
 
-	$tplcontent .= '<!-- File generated by Dolibarr website module editor -->'."\n";
+	$tplcontent .= '<!-- File generated by Berp3 website module editor -->'."\n";
 	$tplcontent .= '<body id="bodywebsite" class="bodywebsite bodywebpage-'.$objectpage->ref.'">'."\n";
 	$tplcontent .= $objectpage->content."\n";
 	$tplcontent .= '</body>'."\n";
@@ -305,7 +305,7 @@ function dolSaveIndexPage($pathofwebsite, $fileindex, $filetpl, $filewrapper)
 		$indexcontent = '<?php'."\n";
 		$indexcontent .= "// BEGIN PHP File generated to provide an index.php as Home Page or alias redirector - DO NOT MODIFY - It is just a generated wrapper.\n";
 		$indexcontent .= '$websitekey=basename(__DIR__); if (empty($websitepagefile)) $websitepagefile=__FILE__;'."\n";
-		$indexcontent .= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) { require_once './master.inc.php'; } // Load master if not already loaded\n";
+		$indexcontent .= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) { require_once './master.inc.php'; } // Load master if not already loaded\n";
 		$indexcontent .= 'if (! empty($_GET[\'pageref\']) || ! empty($_GET[\'pagealiasalt\']) || ! empty($_GET[\'pageid\'])) {'."\n";
 		$indexcontent .= "	require_once DOL_DOCUMENT_ROOT.'/core/lib/website.lib.php';\n";
 		$indexcontent .= "	require_once DOL_DOCUMENT_ROOT.'/core/website.inc.php';\n";
@@ -522,7 +522,7 @@ function showWebsiteTemplates(Website $website)
 	print $form->textwithpicto($langs->trans("Templates"), $langs->trans("ThemeDir").' : '.join(", ", $dirthemes));
 	print '</th>';
 	print '<th class="right">';
-	$url = 'https://www.dolistore.com/43-web-site-templates';
+	$url = 'https://www.berp3store.com/43-web-site-templates';
 	print '</th></tr>';
 
 	print '<tr><td colspan="'.$colspan.'">';

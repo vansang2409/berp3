@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005      Simon Tosser         <simon@kornog-computing.com>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2004-2007 
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2005      Simon Tosser         
+ * Copyright (C) 2005-2012 
  * Copyright (C) 2010	   Pierre Morin         <pierre.morin@auguria.net>
- * Copyright (C) 2013      Marcos García        <marcosgdf@gmail.com>
+ * Copyright (C) 2013      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -308,7 +308,7 @@ if ($type == 'directory') {
 			if ($relativepath && $relativepath != '/') {
 				$relativepath .= '/';
 			}
-			$upload_dir = $dolibarr_main_data_root.'/'.$module.'/'.$relativepath;
+			$upload_dir = $berp3_main_data_root.'/'.$module.'/'.$relativepath;
 			if (GETPOSTISSET('website') || GETPOSTISSET('file_manager')) {
 				$param .= '&file_manager=1';
 				if (!preg_match('/website=/', $param)) {

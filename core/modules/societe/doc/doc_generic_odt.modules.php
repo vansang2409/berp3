@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2010-2011 Laurent Destailleur <ely@users.sourceforge.net>
- * Copyright (C) 2016	   Charlie Benke	   <charlie@patas-monkey.com>
- * Copyright (C) 2018-2019 Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2010-2011  <ely@users.sourceforge.net>
+ * Copyright (C) 2016	   	   
+ * Copyright (C) 2018-2019 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ class doc_generic_odt extends ModeleThirdPartyDoc
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -406,7 +406,7 @@ class doc_generic_odt extends ModeleThirdPartyDoc
 						$odfHandler->title = $object->builddoc_filename;
 						$odfHandler->subject = $object->builddoc_filename;
 
-						if (!empty($conf->global->ODT_ADD_DOLIBARR_ID)) {
+						if (!empty($conf->global->ODT_ADD_BERP3_ID)) {
 							$odfHandler->userdefined['dol_id'] = $object->id;
 							$odfHandler->userdefined['dol_element'] = $object->element;
 						}

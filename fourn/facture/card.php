@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2002-2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2020	Laurent Destailleur 	<eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2005  
+ * Copyright (C) 2004-2020	 	
  * Copyright (C) 2004		Christophe Combelles	<ccomb@free.fr>
  * Copyright (C) 2005		Marc Barilley			<marc@ocebo.fr>
- * Copyright (C) 2005-2013	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2010-2019	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2013-2015	Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2013		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2014-2016  Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2016-2021	Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2019       Ferran Marcet	        <fmarcet@2byte.es>
+ * Copyright (C) 2005-2013	
+ * Copyright (C) 2010-2019	
+ * Copyright (C) 2013-2015	
+ * Copyright (C) 2013		
+ * Copyright (C) 2014-2016  			
+ * Copyright (C) 2016-2021	
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -2291,7 +2291,7 @@ if ($action == 'create') {
 	// Public note
 	print '<tr><td>'.$langs->trans('NotePublic').'</td>';
 	print '<td>';
-	$doleditor = new DolEditor('note_public', (GETPOSTISSET('note_public') ?GETPOST('note_public', 'restricthtml') : $note_public), '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_public', (GETPOSTISSET('note_public') ?GETPOST('note_public', 'restricthtml') : $note_public), '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 	print '</td>';
 	// print '<td><textarea name="note" wrap="soft" cols="60" rows="'.ROWS_5.'"></textarea></td>';
@@ -2300,7 +2300,7 @@ if ($action == 'create') {
 	// Private note
 	print '<tr><td>'.$langs->trans('NotePrivate').'</td>';
 	print '<td>';
-	$doleditor = new DolEditor('note_private', (GETPOSTISSET('note_private') ?GETPOST('note_private', 'restricthtml') : $note_private), '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_private', (GETPOSTISSET('note_private') ?GETPOST('note_private', 'restricthtml') : $note_private), '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 	print '</td>';
 	// print '<td><textarea name="note" wrap="soft" cols="60" rows="'.ROWS_5.'"></textarea></td>';

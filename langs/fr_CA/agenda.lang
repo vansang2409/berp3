@@ -1,15 +1,15 @@
 # BERP3 language file - Source file is en_US - agenda
-NewCompanyToDolibarr=Le tiers %s a été créé
-PropalClassifiedBilledInDolibarr=Proposition %s classée facturée
-InvoicePaidInDolibarr=La facture %s a changé en payé
-MemberValidatedInDolibarr=Membre %s validé
-MemberModifiedInDolibarr=Membre %s modifié
-MemberResiliatedInDolibarr=Membre %s terminé
-MemberDeletedInDolibarr=Membre %s supprimé
-ShipmentClassifyClosedInDolibarr=Expédition %s classé facturé
-ShipmentDeletedInDolibarr=Envoi %s supprimé
-OrderCreatedInDolibarr=L'ordre %s a été créé
-OrderDeliveredInDolibarr=Commande %s classée Délivrée
+NewCompanyToBerp3=Le tiers %s a été créé
+PropalClassifiedBilledInBerp3=Proposition %s classée facturée
+InvoicePaidInBerp3=La facture %s a changé en payé
+MemberValidatedInBerp3=Membre %s validé
+MemberModifiedInBerp3=Membre %s modifié
+MemberResiliatedInBerp3=Membre %s terminé
+MemberDeletedInBerp3=Membre %s supprimé
+ShipmentClassifyClosedInBerp3=Expédition %s classé facturé
+ShipmentDeletedInBerp3=Envoi %s supprimé
+OrderCreatedInBerp3=L'ordre %s a été créé
+OrderDeliveredInBerp3=Commande %s classée Délivrée
 ProposalDeleted=Proposition supprimée
 AgendaModelModule=Modèles de document pour l'événement
 AgendaUrlOptions1=Vous pouvez aussi ajouter les paramètres suivants pour filtrer les réponses :

@@ -1,6 +1,6 @@
 -- ========================================================================
--- Copyright (C) 2015 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2020 Udo Tamm             <software@dolibit.de>
+-- Copyright (C) 2015 
+-- Copyright (C) 2020              <software@berp3bit.de>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

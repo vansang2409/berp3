@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2013-2014  Olivier Geffroy      <jeff@jeffinfo.com>
- * Copyright (C) 2013-2021  Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2013-2021  Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2014       Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2015       Ari Elbaz (elarifr)  <github@accedinfo.com>
- * Copyright (C) 2018       Frédéric France      <frederic.france@netlogic.fr>
+/*   
+ * Copyright (C) 2013-2021  
+ * Copyright (C) 2013-2021  
+ * Copyright (C) 2014       
+ * Copyright (C) 2015       
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -62,7 +62,7 @@ class AccountingAccount extends CommonObject
 	public $restrictiononfksoc = 1;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -151,7 +151,7 @@ class AccountingAccount extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handle
+	 * @param Berp3DB $db Database handle
 	 */
 	public function __construct($db)
 	{

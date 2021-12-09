@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2011 Dimitri Mouillard   <dmouillard@teclib.com>
- * Copyright (C) 2015 Laurent Destailleur <eldy@users.sourceforge.net>
+ * Copyright (C) 2015 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,18 +23,18 @@
  *      \ingroup    expensereport
  *      \brief      Description and activation file for the module ExpenseReport
  */
-include_once DOL_DOCUMENT_ROOT."/core/modules/DolibarrModules.class.php";
+include_once DOL_DOCUMENT_ROOT."/core/modules/Berp3Modules.class.php";
 
 
 /**
  *	Description and activation class for module ExpenseReport
  */
-class modExpenseReport extends DolibarrModules
+class modExpenseReport extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param		DoliDb	$db      Database handler
+	 *   @param		Berp3Db	$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -49,7 +49,7 @@ class modExpenseReport extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "Manage and claim expense reports (transportation, meal, ...)";
-		$this->version = 'dolibarr';
+		$this->version = 'berp3';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'trip';
 
@@ -66,7 +66,7 @@ class modExpenseReport extends DolibarrModules
 		// $this->conflictwith = array("modDeplacement"); // Deactivate for access on old information
 		$this->requiredby = array(); // List of modules id to disable if this one is disabled
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(3, 7); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(3, 7); // Minimum version of Berp3 required by module
 		$this->langfiles = array("companies", "trips");
 
 		// Constants
@@ -235,7 +235,7 @@ class modExpenseReport extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories.
 	 *
 	 *  @param      string  $options    Options

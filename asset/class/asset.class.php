@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017      Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2018      Alexandre Spangaro  <aspangaro@open-dsi.fr>
+/* Copyright (C) 2017      
+ * Copyright (C) 2018      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -163,9 +163,9 @@ class Asset extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf;
 
@@ -306,7 +306,7 @@ class Asset extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $db, $conf, $langs;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!empty($conf->dol_no_mouse_hover)) {

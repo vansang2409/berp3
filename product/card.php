@@ -1,24 +1,24 @@
 <?php
-/* Copyright (C) 2001-2007	Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2016	Laurent Destailleur	 <eldy@users.sourceforge.net>
- * Copyright (C) 2005		Eric Seigne		     <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2015	Regis Houssin		 <regis.houssin@capnetworks.com>
- * Copyright (C) 2006		Andre Cianfarani	 <acianfa@free.fr>
+/* Copyright (C) 2001-2007	
+ * Copyright (C) 2004-2016		 
+ * Copyright (C) 2005				     
+ * Copyright (C) 2005-2015			 <regis.houssin@capnetworks.com>
+ * Copyright (C) 2006			 
  * Copyright (C) 2006		Auguria SARL		 <info@auguria.org>
- * Copyright (C) 2010-2015	Juanjo Menent		 <jmenent@2byte.es>
- * Copyright (C) 2013-2016	Marcos García		 <marcosgdf@gmail.com>
- * Copyright (C) 2012-2013	Cédric Salvador		 <csalvador@gpcsolutions.fr>
- * Copyright (C) 2011-2020	Alexandre Spangaro	 <aspangaro@open-dsi.fr>
- * Copyright (C) 2014		Cédric Gross		 <c.gross@kreiz-it.fr>
- * Copyright (C) 2014-2015	Ferran Marcet		 <fmarcet@2byte.es>
- * Copyright (C) 2015		Jean-François Ferry	 <jfefe@aternatik.fr>
- * Copyright (C) 2015		Raphaël Doursenaud	 <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2016		Charlie Benke		 <charlie@patas-monkey.com>
+ * Copyright (C) 2010-2015			 
+ * Copyright (C) 2013-2016			 
+ * Copyright (C) 2012-2013			 
+ * Copyright (C) 2011-2020		 
+ * Copyright (C) 2014		Cédric Gross		 
+ * Copyright (C) 2014-2015			 
+ * Copyright (C) 2015			 
+ * Copyright (C) 2015			 
+ * Copyright (C) 2016				 
  * Copyright (C) 2016		Meziane Sof		     <virtualsof@yahoo.fr>
- * Copyright (C) 2017		Josep Lluís Amador	 <joseplluis@lliuretic.cat>
- * Copyright (C) 2019-2021  Frédéric France      <frederic.france@netlogic.fr>
- * Copyright (C) 2019-2020  Thibault FOUCART     <support@ptibogxiv.net>
- * Copyright (C) 2020  		Pierre Ardoin     	 <mapiolca@me.com>
+ * Copyright (C) 2017			 
+ * Copyright (C) 2019-2021  
+ * Copyright (C) 2019-2020      
+ * Copyright (C) 2020  		     	 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -152,7 +152,7 @@ if ($id > 0 || !empty($ref)) {
 
 $modulepart = 'product';
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $canvas = !empty($object->canvas) ? $object->canvas : GETPOST("canvas");
 $objcanvas = null;
 if (!empty($canvas)) {
@@ -1246,7 +1246,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		// Description (used in invoice, propal...)
 		print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 
-		$doleditor = new DolEditor('desc', GETPOST('desc', 'restricthtml'), '', 160, 'dolibarr_details', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_PRODUCTDESC'), ROWS_4, '90%');
+		$doleditor = new DolEditor('desc', GETPOST('desc', 'restricthtml'), '', 160, 'berp3_details', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_PRODUCTDESC'), ROWS_4, '90%');
 		$doleditor->Create();
 
 		print "</td></tr>";
@@ -1413,8 +1413,8 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		//{
 			print '<tr><td class="tdtop">'.$langs->trans("NoteNotVisibleOnBill").'</td><td>';
 
-			// We use dolibarr_details as type of DolEditor here, because we must not accept images as description is included into PDF and not accepted by TCPDF.
-			$doleditor = new DolEditor('note_private', GETPOST('note_private', 'restricthtml'), '', 140, 'dolibarr_details', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_PRODUCTDESC'), ROWS_8, '90%');
+			// We use berp3_details as type of DolEditor here, because we must not accept images as description is included into PDF and not accepted by TCPDF.
+			$doleditor = new DolEditor('note_private', GETPOST('note_private', 'restricthtml'), '', 140, 'berp3_details', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_PRODUCTDESC'), ROWS_8, '90%');
 			$doleditor->Create();
 
 			print "</td></tr>";
@@ -1795,8 +1795,8 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			// Description (used in invoice, propal...)
 			print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 
-			// We use dolibarr_details as type of DolEditor here, because we must not accept images as description is included into PDF and not accepted by TCPDF.
-			$doleditor = new DolEditor('desc', $object->description, '', 160, 'dolibarr_details', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_4, '90%');
+			// We use berp3_details as type of DolEditor here, because we must not accept images as description is included into PDF and not accepted by TCPDF.
+			$doleditor = new DolEditor('desc', $object->description, '', 160, 'berp3_details', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_4, '90%');
 			$doleditor->Create();
 
 			print "</td></tr>";
@@ -1978,7 +1978,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			if (!empty($conf->global->MAIN_DISABLE_NOTES_TAB)) {
 				print '<tr><td class="tdtop">'.$langs->trans("NoteNotVisibleOnBill").'</td><td>';
 
-				$doleditor = new DolEditor('note_private', $object->note_private, '', 140, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_4, '90%');
+				$doleditor = new DolEditor('note_private', $object->note_private, '', 140, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_4, '90%');
 				$doleditor->Create();
 
 				print "</td></tr>";

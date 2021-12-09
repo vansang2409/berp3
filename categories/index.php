@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2005       Matthieu Valleton   <mv@seeschloss.org>
- * Copyright (C) 2005       Eric Seigne         <eric.seigne@ryxeo.com>
- * Copyright (C) 2006-2016  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2007       Patrick Raguin      <patrick.raguin@gmail.com>
- * Copyright (C) 2005-2012  Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2021		Frédéric France		<frederic.france@netlogic.fr>
+/* Copyright (C) 2005          
+ * Copyright (C) 2005                
+ * Copyright (C) 2006-2016  
+ * Copyright (C) 2007             
+ * Copyright (C) 2005-2012         
+ * Copyright (C) 2015       
+ * Copyright (C) 2021		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

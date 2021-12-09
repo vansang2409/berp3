@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2002-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2020 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2010 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013	   Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2014-2017 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2017      Ferran Marcet        <fmarcet@2byte.es>
- * Copyright (C) 2019      Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2002-2005 
+ * Copyright (C) 2005-2020 
+ * Copyright (C) 2005-2010 
+ * Copyright (C) 2013	   
+ * Copyright (C) 2014-2017 
+ * Copyright (C) 2017      
+ * Copyright (C) 2019      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -276,7 +276,7 @@ class Project extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB		$db      Database handler
+	 *  @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -2075,12 +2075,12 @@ class Project extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'projet'

@@ -1,6 +1,6 @@
 <?php
 
-/* Copyright (C) 2018      Nicolas ZABOURI      <info@inovea-conseil.com>
+/* Copyright (C) 2018            
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -127,8 +127,8 @@ print "\n";
 print "<html>\n";
 print "<head>\n";
 print '<meta name="robots" content="noindex,nofollow">'."\n";
-print '<meta name="keywords" content="dolibarr">'."\n";
-print '<meta name="description" content="Dolibarr DATAPOLICIES">'."\n";
+print '<meta name="keywords" content="berp3">'."\n";
+print '<meta name="description" content="Berp3 DATAPOLICIES">'."\n";
 print "<title>".$langs->trans("DATAPOLICIESReturn")."</title>\n";
 print '<link rel="stylesheet" type="text/css" href="'.DOL_URL_ROOT.$conf->css.'?lang='.$lang.'">'."\n";
 print '<style type="text/css">';

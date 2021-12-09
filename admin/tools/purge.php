@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2017	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2006-2012	Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2017		
+ * Copyright (C) 2006-2012			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ $form = new Form($db);
 
 print load_fiche_titre($langs->trans("Purge"), '', 'title_setup');
 
-print '<span class="opacitymedium">'.$langs->trans("PurgeAreaDesc", $dolibarr_main_data_root).'</span><br>';
+print '<span class="opacitymedium">'.$langs->trans("PurgeAreaDesc", $berp3_main_data_root).'</span><br>';
 print '<br>';
 
 
@@ -97,7 +97,7 @@ if (!empty($conf->syslog->enabled)) {
 	print '<input type="radio" name="choice" id="choicelogfile" value="logfile"';
 	print ($choice && $choice == 'logfile') ? ' checked' : '';
 	$filelogparam = $filelog;
-	if ($user->admin && preg_match('/^dolibarr.*\.log$/', basename($filelog))) {
+	if ($user->admin && preg_match('/^berp3.*\.log$/', basename($filelog))) {
 		$filelogparam = '<a class="wordbreak" href="'.DOL_URL_ROOT.'/document.php?modulepart=logs&file=';
 		$filelogparam .= basename($filelog);
 		$filelogparam .= '">'.$filelog.'</a>';
@@ -114,7 +114,7 @@ print '> <label for="choicetempfiles">'.$langs->trans("PurgeDeleteTemporaryFiles
 
 print '<input type="radio" name="choice" id="choiceallfiles" value="confirm_allfiles"';
 print ($choice && $choice == 'confirm_allfiles') ? ' checked' : '';
-print '> <label for="choiceallfiles">'.$langs->trans("PurgeDeleteAllFilesInDocumentsDir", $dolibarr_main_data_root).'</label><br>';
+print '> <label for="choiceallfiles">'.$langs->trans("PurgeDeleteAllFilesInDocumentsDir", $berp3_main_data_root).'</label><br>';
 
 print '</td></tr></table>';
 

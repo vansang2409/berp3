@@ -15,6 +15,6 @@ UrlOrLink=Link
 BehaviourOnClick=Ponašanje kada se klikne na link
 CreateBookmark=Kreiraj bookmark
 SetHereATitleForLink=Postavi naslov za bookmark
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Koristi ekterni http link ili relativni BERP3 link
+UseAnExternalHttpLinkOrRelativeBerp3Link=Koristi ekterni http link ili relativni BERP3 link
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Choose if linked page must open in new window or not
 BookmarksManagement=Upravljanje bookmark-ima

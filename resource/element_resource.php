@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2013-2018	Jean-François Ferry	<hello+jf@librethic.io>
+/* Copyright (C) 2013-2018		<hello+jf@librethic.io>
  * Copyright (C) 2016		Gilles Poirier 		<glgpoirier@gmail.com>
- * Copyright (C) 2019		Josep Lluís Amador	<joseplluis@lliuretic.cat>
- * Copyright (C) 2021		Frédéric France		<frederic.france@netlogic.fr>
+ * Copyright (C) 2019			
+ * Copyright (C) 2021		
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

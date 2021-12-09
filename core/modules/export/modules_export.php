@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005      Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2007 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2005      
+ * Copyright (C) 2005-2007 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,7 +48,7 @@ class ModeleExports extends CommonDocGenerator    // This class can't be abstrac
 	/**
 	 *  Load into memory list of available export format
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates (same content than array this->driverlabel)
 	 */

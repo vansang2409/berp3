@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2005-2012 
  *
  * This file is an example to follow to add your own email selector inside
- * the Dolibarr email tool.
+ * the Berp3 email tool.
  * Follow instructions given in README file to know what to change to build
  * your own emailing list selector.
  * Code that need to be changed in this file are marked by "CHANGE THIS" tag.
@@ -33,7 +33,7 @@ class mailing_mailinglist_mymodule_myobject extends MailingTargets
 	public $picto = 'mymodule@mymodule';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -41,7 +41,7 @@ class mailing_mailinglist_mymodule_myobject extends MailingTargets
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db     Database handler
+	 *  @param  Berp3DB  $db     Database handler
 	 */
 	public function __construct($db)
 	{
@@ -135,7 +135,7 @@ class mailing_mailinglist_mymodule_myobject extends MailingTargets
 						'other' => $obj->plan.';'.$obj->partner,
 						'source_url' => $this->url($obj->id),
 						'source_id' => $obj->id,
-						'source_type' => 'dolicloud'
+						'source_type' => 'berp3cloud'
 					);
 					$old = $obj->email;
 					$j++;

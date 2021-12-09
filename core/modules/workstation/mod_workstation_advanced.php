@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2003-2007  Rodolphe Quiedeville        <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2007  Laurent Destailleur         <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009  Regis Houssin               <regis.houssin@inodbox.com>
- * Copyright (C) 2008       Raphael Bertrand (Resultic) <raphael.bertrand@resultic.fr>
- * Copyright (C) 2019       Frédéric France             <frederic.france@netlogic.fr>
- * Copyright (C) 2020 		Gauthier VERDOL <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2003-2007          
+ * Copyright (C) 2004-2007           
+ * Copyright (C) 2005-2009                 
+ * Copyright (C) 2008        
+ * Copyright (C) 2019                    
+ * Copyright (C) 2020 		 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,10 +36,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/workstation/modules_workstation.ph
 class mod_workstation_advanced extends ModeleNumRefWorkstation
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var string Error message

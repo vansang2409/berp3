@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2008-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2011-2017 Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2021    Nicolas ZABOURI    <info@inovea-conseil.com>
+/* Copyright (C) 2008-2011 
+ * Copyright (C) 2011-2017 
+ * Copyright (C) 2021        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -71,16 +71,16 @@ $error = 0;
 if ($action == 'set') {
 	$db->begin();
 
-	$res = dolibarr_set_const($db, "TAKEPOS_ROOT_CATEGORY_ID", GETPOST('TAKEPOS_ROOT_CATEGORY_ID', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_SUPPLEMENTS_CATEGORY", GETPOST('TAKEPOS_SUPPLEMENTS_CATEGORY', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_NUMPAD", GETPOST('TAKEPOS_NUMPAD', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_SORTPRODUCTFIELD", GETPOST('TAKEPOS_SORTPRODUCTFIELD', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_NUM_TERMINALS", GETPOST('TAKEPOS_NUM_TERMINALS', 'alpha'), 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_ADDON", GETPOST('TAKEPOS_ADDON', 'alpha'), 'int', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "TAKEPOS_EMAIL_TEMPLATE_INVOICE", GETPOST('TAKEPOS_EMAIL_TEMPLATE_INVOICE', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_ROOT_CATEGORY_ID", GETPOST('TAKEPOS_ROOT_CATEGORY_ID', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_SUPPLEMENTS_CATEGORY", GETPOST('TAKEPOS_SUPPLEMENTS_CATEGORY', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_NUMPAD", GETPOST('TAKEPOS_NUMPAD', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_SORTPRODUCTFIELD", GETPOST('TAKEPOS_SORTPRODUCTFIELD', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_NUM_TERMINALS", GETPOST('TAKEPOS_NUM_TERMINALS', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_ADDON", GETPOST('TAKEPOS_ADDON', 'alpha'), 'int', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_EMAIL_TEMPLATE_INVOICE", GETPOST('TAKEPOS_EMAIL_TEMPLATE_INVOICE', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!empty($conf->global->TAKEPOS_ENABLE_SUMUP)) {
-		$res = dolibarr_set_const($db, "TAKEPOS_SUMUP_AFFILIATE", GETPOST('TAKEPOS_SUMUP_AFFILIATE', 'alpha'), 'chaine', 0, '', $conf->entity);
-		$res = dolibarr_set_const($db, "TAKEPOS_SUMUP_APPID", GETPOST('TAKEPOS_SUMUP_APPID', 'alpha'), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "TAKEPOS_SUMUP_AFFILIATE", GETPOST('TAKEPOS_SUMUP_AFFILIATE', 'alpha'), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "TAKEPOS_SUMUP_APPID", GETPOST('TAKEPOS_SUMUP_APPID', 'alpha'), 'chaine', 0, '', $conf->entity);
 	}
 
 	dol_syslog("admin/cashdesk: level ".GETPOST('level', 'alpha'));
@@ -98,14 +98,14 @@ if ($action == 'set') {
 	$maskconst = GETPOST('maskconst', 'alpha');
 	$maskvalue = GETPOST('maskvalue', 'alpha');
 	if ($maskconst) {
-		$res = dolibarr_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
 	}
 	if (!($res > 0)) {
 		$error++;
 	}
 } elseif ($action == 'setrefmod') {
 	$value = GETPOST('value', 'alpha');
-	dolibarr_set_const($db, "TAKEPOS_REF_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "TAKEPOS_REF_ADDON", $value, 'chaine', 0, '', $conf->entity);
 }
 
 if ($action != '') {

@@ -1,6 +1,6 @@
 -- ========================================================================
--- Copyright (C) 2008      Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2009      Regis Houssin        <regis.houssin@inodbox.com>
+-- Copyright (C) 2008      
+-- Copyright (C) 2009      
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -16,8 +16,8 @@
 -- along with this program. If not, see <https://www.gnu.org/licenses/>.
 --
 -- ========================================================================
--- This table logs all dolibarr security events
--- Content of this table is not managed by users but by Dolibarr
+-- This table logs all berp3 security events
+-- Content of this table is not managed by users but by Berp3
 -- trigger interface_20_all_Logevents.
 -- ========================================================================
 

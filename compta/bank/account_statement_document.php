@@ -1,10 +1,10 @@
 <?php
 
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville  <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur   <eldy@users.sourceforge.net>
- * Copyright (C) 2005      Marc Barilley / Ocebo <marc@ocebo.com>
- * Copyright (C) 2005-2017 Regis Houssin         <regis.houssin@inodbox.com>
- * Copyright (C) 2019	   Nicolas ZABOURI       <info@inovea-conseil.com>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2005      
+ * Copyright (C) 2005-2017 
+ * Copyright (C) 2019	          
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

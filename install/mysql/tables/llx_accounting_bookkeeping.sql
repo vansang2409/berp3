@@ -1,6 +1,6 @@
 -- ============================================================================
--- Copyright (C) 2013-2014 Olivier Geffroy      <jeff@jeffinfo.com>
--- Copyright (C) 2013-2019 Alexandre Spangaro   <aspangaro@open-dsi.fr>
+--  
+-- Copyright (C) 2013-2019 
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

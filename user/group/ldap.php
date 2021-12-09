@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2006-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2006-2017  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2019       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2006-2012  
+ * Copyright (C) 2006-2017  
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ if (!empty($conf->global->MAIN_USE_ADVANCED_PERMS)) {
  * Actions
  */
 
-if ($action == 'dolibarr2ldap') {
+if ($action == 'berp32ldap') {
 	$ldap = new Ldap();
 	$result = $ldap->connect_bind();
 
@@ -147,13 +147,13 @@ print dol_get_fiche_end();
  */
 print '<div class="tabsAction">';
 
-if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'dolibarr2ldap') {
-	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=dolibarr2ldap">'.$langs->trans("ForceSynchronize").'</a>';
+if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'berp32ldap') {
+	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=berp32ldap">'.$langs->trans("ForceSynchronize").'</a>';
 }
 
 print "</div>\n";
 
-if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'dolibarr2ldap') {
+if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'berp32ldap') {
 	print "<br>\n";
 }
 

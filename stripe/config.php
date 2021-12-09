@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2017		Alexandre Spangaro		<aspangaro@open-dsi.fr>
+/* Copyright (C) 2017		
  * Copyright (C) 2017		Saasprov				<saasprov@gmail.com>
- * Copyright (C) 2017		Ferran Marcet			<fmarcet@2byte.es.com>
+ * Copyright (C) 2017					<fmarcet@2byte.es.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,5 +51,5 @@ if (empty($conf->global->STRIPE_LIVE) || GETPOST('forcesandbox', 'alpha')) {
 }
 
 \Stripe\Stripe::setApiKey($stripearrayofkeys['secret_key']);
-\Stripe\Stripe::setAppInfo("Dolibarr Stripe", DOL_VERSION, "https://www.dolibarr.org"); // add dolibarr version
+\Stripe\Stripe::setAppInfo("Berp3 Stripe", DOL_VERSION, "https://www.berp3.org"); // add berp3 version
 \Stripe\Stripe::setApiVersion(empty($conf->global->STRIPE_FORCE_VERSION) ? "2020-08-27" : $conf->global->STRIPE_FORCE_VERSION); // force version API

@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2010  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015-2016  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2004       
+ * Copyright (C) 2004-2018  
+ * Copyright (C) 2005-2010  
+ * Copyright (C) 2015-2016        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,10 +38,10 @@
 
 include_once 'inc.php';
 if (!file_exists($conffile)) {
-	print 'Error: Dolibarr config file was not found. This may means that Dolibarr is not installed yet. Please call the page "/install/index.php" instead of "/install/upgrade.php").';
+	print 'Error: Berp3 config file was not found. This may means that Berp3 is not installed yet. Please call the page "/install/index.php" instead of "/install/upgrade.php").';
 }
 require_once $conffile;
-require_once $dolibarr_main_document_root.'/core/lib/admin.lib.php';
+require_once $berp3_main_document_root.'/core/lib/admin.lib.php';
 
 global $langs;
 
@@ -67,20 +67,20 @@ $ignoredbversion = (GETPOST('ignoredbversion', 'alpha', 3) == 'ignoredbversion')
 
 $langs->loadLangs(array("admin", "install", "other", "errors"));
 
-if ($dolibarr_main_db_type == "mysqli") {
+if ($berp3_main_db_type == "mysqli") {
 	$choix = 1;
 }
-if ($dolibarr_main_db_type == "pgsql") {
+if ($berp3_main_db_type == "pgsql") {
 	$choix = 2;
 }
-if ($dolibarr_main_db_type == "mssql") {
+if ($berp3_main_db_type == "mssql") {
 	$choix = 3;
 }
 
 
-dolibarr_install_syslog("--- upgrade: Entering upgrade.php page");
+berp3_install_syslog("--- upgrade: Entering upgrade.php page");
 if (!is_object($conf)) {
-	dolibarr_install_syslog("upgrade2: conf file not initialized", LOG_ERR);
+	berp3_install_syslog("upgrade2: conf file not initialized", LOG_ERR);
 }
 
 
@@ -117,36 +117,36 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 	$error = 0;
 
 	// If password is encoded, we decode it
-	if (preg_match('/crypted:/i', $dolibarr_main_db_pass) || !empty($dolibarr_main_db_encrypted_pass)) {
-		require_once $dolibarr_main_document_root.'/core/lib/security.lib.php';
-		if (preg_match('/crypted:/i', $dolibarr_main_db_pass)) {
-			$dolibarr_main_db_pass = preg_replace('/crypted:/i', '', $dolibarr_main_db_pass);
-			$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_pass);
-			$dolibarr_main_db_encrypted_pass = $dolibarr_main_db_pass; // We need to set this as it is used to know the password was initially crypted
+	if (preg_match('/crypted:/i', $berp3_main_db_pass) || !empty($berp3_main_db_encrypted_pass)) {
+		require_once $berp3_main_document_root.'/core/lib/security.lib.php';
+		if (preg_match('/crypted:/i', $berp3_main_db_pass)) {
+			$berp3_main_db_pass = preg_replace('/crypted:/i', '', $berp3_main_db_pass);
+			$berp3_main_db_pass = dol_decode($berp3_main_db_pass);
+			$berp3_main_db_encrypted_pass = $berp3_main_db_pass; // We need to set this as it is used to know the password was initially crypted
 		} else {
-			$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_encrypted_pass);
+			$berp3_main_db_pass = dol_decode($berp3_main_db_encrypted_pass);
 		}
 	}
 
 	// $conf is already instancied inside inc.php
-	$conf->db->type = $dolibarr_main_db_type;
-	$conf->db->host = $dolibarr_main_db_host;
-	$conf->db->port = $dolibarr_main_db_port;
-	$conf->db->name = $dolibarr_main_db_name;
-	$conf->db->user = $dolibarr_main_db_user;
-	$conf->db->pass = $dolibarr_main_db_pass;
+	$conf->db->type = $berp3_main_db_type;
+	$conf->db->host = $berp3_main_db_host;
+	$conf->db->port = $berp3_main_db_port;
+	$conf->db->name = $berp3_main_db_name;
+	$conf->db->user = $berp3_main_db_user;
+	$conf->db->pass = $berp3_main_db_pass;
 
 	// Load type and crypt key
-	if (empty($dolibarr_main_db_encryption)) {
-		$dolibarr_main_db_encryption = 0;
+	if (empty($berp3_main_db_encryption)) {
+		$berp3_main_db_encryption = 0;
 	}
-	$conf->db->dolibarr_main_db_encryption = $dolibarr_main_db_encryption;
-	if (empty($dolibarr_main_db_cryptkey)) {
-		$dolibarr_main_db_cryptkey = '';
+	$conf->db->berp3_main_db_encryption = $berp3_main_db_encryption;
+	if (empty($berp3_main_db_cryptkey)) {
+		$berp3_main_db_cryptkey = '';
 	}
-	$conf->db->dolibarr_main_db_cryptkey = $dolibarr_main_db_cryptkey;
+	$conf->db->berp3_main_db_cryptkey = $berp3_main_db_cryptkey;
 
-	$db = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+	$db = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 
 	// Create the global $hookmanager object
 	include_once DOL_DOCUMENT_ROOT.'/core/class/hookmanager.class.php';
@@ -154,24 +154,24 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 
 	if ($db->connected) {
 		print '<tr><td class="nowrap">';
-		print $langs->trans("ServerConnection")." : ".$dolibarr_main_db_host.'</td><td class="right"><span class="neutral">'.$langs->trans("OK").'</span></td></tr>'."\n";
-		dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ServerConnection").": $dolibarr_main_db_host ".$langs->transnoentities("OK"));
+		print $langs->trans("ServerConnection")." : ".$berp3_main_db_host.'</td><td class="right"><span class="neutral">'.$langs->trans("OK").'</span></td></tr>'."\n";
+		berp3_install_syslog("upgrade: ".$langs->transnoentities("ServerConnection").": $berp3_main_db_host ".$langs->transnoentities("OK"));
 		$ok = 1;
 	} else {
-		print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name).'</td><td class="right"><span class="error">'.$langs->transnoentities("Error")."</span></td></tr>\n";
-		dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name));
+		print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $berp3_main_db_name).'</td><td class="right"><span class="error">'.$langs->transnoentities("Error")."</span></td></tr>\n";
+		berp3_install_syslog("upgrade: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $berp3_main_db_name));
 		$ok = 0;
 	}
 
 	if ($ok) {
 		if ($db->database_selected) {
 			print '<tr><td class="nowrap">';
-			print $langs->trans("DatabaseConnection")." : ".$dolibarr_main_db_name.'</td><td class="right"><span class="neutral">'.$langs->trans("OK")."</span></td></tr>\n";
-			dolibarr_install_syslog("upgrade: Database connection successful: ".$dolibarr_main_db_name);
+			print $langs->trans("DatabaseConnection")." : ".$berp3_main_db_name.'</td><td class="right"><span class="neutral">'.$langs->trans("OK")."</span></td></tr>\n";
+			berp3_install_syslog("upgrade: Database connection successful: ".$berp3_main_db_name);
 			$ok = 1;
 		} else {
-			print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name).'</td><td class="right"><span class="ok">'.$langs->trans("Error")."</span></td></tr>\n";
-			dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $dolibarr_main_db_name));
+			print "<tr><td>".$langs->trans("ErrorFailedToConnectToDatabase", $berp3_main_db_name).'</td><td class="right"><span class="ok">'.$langs->trans("Error")."</span></td></tr>\n";
+			berp3_install_syslog("upgrade: ".$langs->transnoentities("ErrorFailedToConnectToDatabase", $berp3_main_db_name));
 			$ok = 0;
 		}
 	}
@@ -182,15 +182,15 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 		$versionarray = $db->getVersionArray();
 		print '<tr><td>'.$langs->trans("ServerVersion").'</td>';
 		print '<td class="right">'.$version.'</td></tr>';
-		dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ServerVersion").": ".$version);
+		berp3_install_syslog("upgrade: ".$langs->transnoentities("ServerVersion").": ".$version);
 		if ($db->type == 'mysqli' && function_exists('mysqli_get_charset')) {
 			$tmparray = $db->db->get_charset();
 			print '<tr><td>'.$langs->trans("ClientCharset").'</td>';
 			print '<td class="right">'.$tmparray->charset.'</td></tr>';
-			dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ClientCharset").": ".$tmparray->charset);
+			berp3_install_syslog("upgrade: ".$langs->transnoentities("ClientCharset").": ".$tmparray->charset);
 			print '<tr><td>'.$langs->trans("ClientSortingCharset").'</td>';
 			print '<td class="right">'.$tmparray->collation.'</td></tr>';
-			dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ClientCollation").": ".$tmparray->collation);
+			berp3_install_syslog("upgrade: ".$langs->transnoentities("ClientCollation").": ".$tmparray->collation);
 		}
 
 		// Test database version requirement
@@ -200,7 +200,7 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 			&& versioncompare($versionarray, $versionmindb) < 0) {
 			// Warning: database version too low.
 			print "<tr><td>".$langs->trans("ErrorDatabaseVersionTooLow", join('.', $versionarray), join('.', $versionmindb)).'</td><td class="right"><span class="error">'.$langs->trans("Error")."</span></td></tr>\n";
-			dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ErrorDatabaseVersionTooLow", join('.', $versionarray), join('.', $versionmindb)));
+			berp3_install_syslog("upgrade: ".$langs->transnoentities("ErrorDatabaseVersionTooLow", join('.', $versionarray), join('.', $versionmindb)));
 			$ok = 0;
 		}
 
@@ -225,7 +225,7 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 				) {
 					// Warning: database version too low.
 					print '<tr><td><div class="warning">'.$langs->trans("ErrorDatabaseVersionForbiddenForMigration", join('.', $versionarray), $listofforbiddenversion)."</div></td><td class=\"right\">".$langs->trans("Error")."</td></tr>\n";
-					dolibarr_install_syslog("upgrade: ".$langs->transnoentities("ErrorDatabaseVersionForbiddenForMigration", join('.', $versionarray), $listofforbiddenversion));
+					berp3_install_syslog("upgrade: ".$langs->transnoentities("ErrorDatabaseVersionForbiddenForMigration", join('.', $versionarray), $listofforbiddenversion));
 					$ok = 0;
 					break;
 				}
@@ -247,7 +247,7 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 		$versioncommande = array(4, 0, 0);
 		if (count($versioncommande) && count($versionarray)
 		&& versioncompare($versioncommande, $versionarray) <= 0) {	// Si mysql >= 4.0
-			dolibarr_install_syslog("Clean database from bad named constraints");
+			berp3_install_syslog("Clean database from bad named constraints");
 
 			// Suppression vieilles contraintes sans noms et en doubles
 			// Les contraintes indesirables ont un nom qui commence par 0_ ou se termine par ibfk_999
@@ -299,7 +299,7 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 		if (!empty($dirmodule)) {
 			$dir = dol_buildpath('/'.$dirmodule.'/sql/', 0);
 		}
-		dolibarr_install_syslog("Scan sql files for migration files in ".$dir);
+		berp3_install_syslog("Scan sql files for migration files in ".$dir);
 
 		// Clean last part to exclude minor version x.y.z -> x.y
 		$newversionfrom = preg_replace('/(\.[0-9]+)$/i', '.0', $versionfrom);
@@ -353,8 +353,8 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 				$listoffileprocessed[$dir.$file] = $dir.$file;
 
 
-				// Scan if there is migration scripts that depends of Dolibarr version
-				// for modules htdocs/module/sql or htdocs/custom/module/sql (files called "dolibarr_x.y.z-a.b.c.sql")
+				// Scan if there is migration scripts that depends of Berp3 version
+				// for modules htdocs/module/sql or htdocs/custom/module/sql (files called "berp3_x.y.z-a.b.c.sql")
 				$modulesfile = array();
 				foreach ($conf->file->dol_document_root as $type => $dirroot) {
 					$handlemodule = @opendir($dirroot); // $dirroot may be '..'
@@ -362,8 +362,8 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 						while (($filemodule = readdir($handlemodule)) !== false) {
 							if (!preg_match('/\./', $filemodule) && is_dir($dirroot.'/'.$filemodule.'/sql')) {	// We exclude filemodule that contains . (are not directories) and are not directories.
 								//print "Scan for ".$dirroot . '/' . $filemodule . '/sql/'.$file;
-								if (is_file($dirroot.'/'.$filemodule.'/sql/dolibarr_'.$file)) {
-									$modulesfile[$dirroot.'/'.$filemodule.'/sql/dolibarr_'.$file] = '/'.$filemodule.'/sql/dolibarr_'.$file;
+								if (is_file($dirroot.'/'.$filemodule.'/sql/berp3_'.$file)) {
+									$modulesfile[$dirroot.'/'.$filemodule.'/sql/berp3_'.$file] = '/'.$filemodule.'/sql/berp3_'.$file;
 								}
 							}
 						}
@@ -382,7 +382,7 @@ if (!GETPOST('action', 'aZ09') || preg_match('/upgrade/i', GETPOST('action', 'aZ
 						print '<tr><td class="nowrap">'.$langs->trans("ChoosedMigrateScript").' (external modules)</td><td class="right">'.$modulefileshort.'</td></tr>'."\n";
 
 						// Run sql script
-						$okmodule = run_sql($modulefilelong, 0, '', 1); // Note: Result of migration of external module should not decide if we continue migration of Dolibarr or not.
+						$okmodule = run_sql($modulefilelong, 0, '', 1); // Note: Result of migration of external module should not decide if we continue migration of Berp3 or not.
 						$listoffileprocessed[$modulefilelong] = $modulefilelong;
 					}
 				}
@@ -405,9 +405,9 @@ $ret = 0;
 if (!$ok && isset($argv[1])) {
 	$ret = 1;
 }
-dolibarr_install_syslog("Exit ".$ret);
+berp3_install_syslog("Exit ".$ret);
 
-dolibarr_install_syslog("--- upgrade: end ".((!$ok && empty($_GET["ignoreerrors"])) || $dirmodule));
+berp3_install_syslog("--- upgrade: end ".((!$ok && empty($_GET["ignoreerrors"])) || $dirmodule));
 $nonext = (!$ok && empty($_GET["ignoreerrors"])) ? 2 : 0;
 if ($dirmodule) {
 	$nonext = 1;

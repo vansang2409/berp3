@@ -1,5 +1,5 @@
 ﻿/*
- Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ Copyright (c) 2003-2015, 
  For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 (function(){function A(a){return a&&a.domId&&a.getInputElement().$?a.getInputElement():a&&a.$?a:!1}function J(a){if(!a)throw"Languages-by-groups list are required for construct selectbox";var d=[],c="",e;for(e in a)for(var f in a[e]){var h=a[e][f];"en_US"==h?c=h:d.push(h)}d.sort();c&&d.unshift(c);return{getCurrentLangGroup:function(d){a:{for(var c in a)for(var e in a[c])if(e.toUpperCase()===d.toUpperCase()){d=c;break a}d=""}return d},setLangList:function(){var d={},c;for(c in a)for(var e in a[c])d[a[c][e]]=

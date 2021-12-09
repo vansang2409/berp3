@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2011-2015 Regis Houssin <regis.houssin@inodbox.com>
- * Copyright (C) 2021      Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2011-2015  
+ * Copyright (C) 2021      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,9 +69,9 @@ top_httphead();
 if (!empty($action) && !empty($name)) {
 	if ($user->admin) {
 		if ($action == 'set') {
-			dolibarr_set_const($db, $name, $value, 'chaine', 0, '', $entity);
+			berp3_set_const($db, $name, $value, 'chaine', 0, '', $entity);
 		} elseif ($action == 'del') {
-			dolibarr_del_const($db, $name, $entity);
+			berp3_del_const($db, $name, $entity);
 		}
 	}
 } else {

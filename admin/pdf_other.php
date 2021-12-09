@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2001-2005 	Rodolphe Quiedeville 	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 	Laurent Destailleur  	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2011 	Regis Houssin        	<regis.houssin@inodbox.com>
- * Copyright (C) 2012-2107 	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2019	   	Ferran Marcet			<fmarcet@2byte.es>
+/* Copyright (C) 2001-2005 	 	
+ * Copyright (C) 2004-2012 	  	
+ * Copyright (C) 2005-2011 	        	
+ * Copyright (C) 2012-2107 	
+ * Copyright (C) 2019	   				
  * Copyright (C) 2021		Anthony Berton       	<bertonanthony@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -49,16 +49,16 @@ $action = GETPOST('action', 'aZ09');
 
 if ($action == 'update') {
 	if (GETPOSTISSET('PROPOSAL_PDF_HIDE_PAYMENTTERM')) {
-		dolibarr_set_const($db, "PROPOSAL_PDF_HIDE_PAYMENTTERM", GETPOST("PROPOSAL_PDF_HIDE_PAYMENTTERM"), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "PROPOSAL_PDF_HIDE_PAYMENTTERM", GETPOST("PROPOSAL_PDF_HIDE_PAYMENTTERM"), 'chaine', 0, '', $conf->entity);
 	}
 	if (GETPOSTISSET('PROPOSAL_PDF_HIDE_PAYMENTMODE')) {
-		dolibarr_set_const($db, "PROPOSAL_PDF_HIDE_PAYMENTMODE", GETPOST("PROPOSAL_PDF_HIDE_PAYMENTMODE"), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "PROPOSAL_PDF_HIDE_PAYMENTMODE", GETPOST("PROPOSAL_PDF_HIDE_PAYMENTMODE"), 'chaine', 0, '', $conf->entity);
 	}
 	if (GETPOSTISSET('MAIN_GENERATE_PROPOSALS_WITH_PICTURE')) {
-		dolibarr_set_const($db, "MAIN_GENERATE_PROPOSALS_WITH_PICTURE", GETPOST("MAIN_GENERATE_PROPOSALS_WITH_PICTURE"), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_GENERATE_PROPOSALS_WITH_PICTURE", GETPOST("MAIN_GENERATE_PROPOSALS_WITH_PICTURE"), 'chaine', 0, '', $conf->entity);
 	}
 	if (GETPOSTISSET('MAIN_DOCUMENTS_WITH_PICTURE_WIDTH')) {
-		dolibarr_set_const($db, "MAIN_DOCUMENTS_WITH_PICTURE_WIDTH", GETPOST("MAIN_DOCUMENTS_WITH_PICTURE_WIDTH", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_DOCUMENTS_WITH_PICTURE_WIDTH", GETPOST("MAIN_DOCUMENTS_WITH_PICTURE_WIDTH", 'int'), 'chaine', 0, '', $conf->entity);
 	}
 
 	setEventMessages($langs->trans("SetupSaved"), null, 'mesgs');

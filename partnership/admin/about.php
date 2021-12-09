@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2017 
  * Copyright (C) 2021 Dorian Laurent <i.merraha@sofimedmaroc.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@
  * \brief   About page of module Partnership.
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';

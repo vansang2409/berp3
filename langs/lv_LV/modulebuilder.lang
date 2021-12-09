@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=Jūs varat izdzēst savu moduli. BRĪDINĀJUMS! Vi
 EnterNameOfObjectToDeleteDesc=Objektu var izdzēst. BRĪDINĀJUMS: Visi ar objektu saistītie kodēšanas faili (ģenerēti vai izveidoti manuāli) tiks izdzēsti!
 DangerZone=Bīstamā zona
 BuildPackage=Izveidot paketi
-BuildPackageDesc=Jūs varat izveidot zip pakotni no jūsu pieteikuma, lai jūs būtu gatavi to izplatīt jebkurā Dolibarr. Jūs varat arī to izplatīt vai pārdot tirgū kā <a href="https://www.dolistore.com">DoliStore.com</a> .
+BuildPackageDesc=Jūs varat izveidot zip pakotni no jūsu pieteikuma, lai jūs būtu gatavi to izplatīt jebkurā Berp3. Jūs varat arī to izplatīt vai pārdot tirgū kā <a href="https://www.berp3store.com">Berp3Store.com</a> .
 BuildDocumentation=Izveidot dokumentāciju
 ModuleIsNotActive=Šis modulis vēl nav aktivizēts. Dodieties uz vietni %s, lai to aktivizētu, vai noklikšķiniet šeit
 ModuleIsLive=Šis modulis ir aktivizēts. Jebkuras izmaiņas var pārtraukt pašreizējo tiešraides funkciju.

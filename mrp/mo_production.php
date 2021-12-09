@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2019-2020 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2019-2020 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
  *		\brief      Page to make production on a MO
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../main.inc.php';
 
 require_once DOL_DOCUMENT_ROOT.'/core/class/html.formcompany.class.php';

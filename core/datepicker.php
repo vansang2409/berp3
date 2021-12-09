@@ -1,8 +1,8 @@
 <?php
 /* Copyright (C) phpBSM
- * Copyright (C) 2005-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2007 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2014	   Juanjo Menent        <jmenent@2byte.es>
+ * Copyright (C) 2005-2010 
+ * Copyright (C) 2005-2007 
+ * Copyright (C) 2014	   
  *
  * This file is a modified version of datepicker.php from phpBSM to fix some
  * bugs, to add new features and to dramatically increase speed.
@@ -68,7 +68,7 @@ $left = ($langs->trans("DIRECTION") == 'rtl' ? 'right' : 'left');
 //var_dump($langs->trans("FormatDateShortJava"));
 
 
-// URL http://mydolibarr/core/datepicker.php?mode=test&m=10&y=2038 can be used for tests
+// URL http://myberp3/core/datepicker.php?mode=test&m=10&y=2038 can be used for tests
 print '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">'."\n";
 print '<html>'."\n";
 print '<head>'."\n";

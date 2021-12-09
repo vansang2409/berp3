@@ -1,6 +1,6 @@
 <?php
 
-/* Copyright (C) 2016	Marcos García	<marcosgdf@gmail.com>
+/* Copyright (C) 2016		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ class ProductAttribute extends CommonObject
 {
 	/**
 	 * Database handler
-	 * @var DoliDB
+	 * @var Berp3DB
 	 */
 	public $db;
 
@@ -63,9 +63,9 @@ class ProductAttribute extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param   DoliDB $db     Database handler
+	 * @param   Berp3DB $db     Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf;
 
@@ -360,11 +360,11 @@ class ProductAttribute extends CommonObject
 	/**
 	 * Updates the order of all variants. Used by AJAX page for drag&drop
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param array $order Array with row id ordered in ascendent mode
 	 * @return int <0 KO >0 OK
 	 */
-	public static function bulkUpdateOrder(DoliDB $db, array $order)
+	public static function bulkUpdateOrder(Berp3DB $db, array $order)
 	{
 		global $user;
 

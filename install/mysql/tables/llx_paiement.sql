@@ -1,7 +1,7 @@
 -- ===================================================================
--- Copyright (C) 2001-2004	Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2004		Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2012		Regis Houssin        <regis.houssin@inodbox.com>
+-- Copyright (C) 2001-2004	
+-- Copyright (C) 2004		
+-- Copyright (C) 2012		
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ create table llx_paiement
   datec            datetime,							-- date de creation
   tms              timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   datep            datetime,							-- payment date
-  amount           double(24,8) DEFAULT 0,				-- amount paid in Dolibarr currency
+  amount           double(24,8) DEFAULT 0,				-- amount paid in Berp3 currency
   multicurrency_amount double(24,8) DEFAULT 0,			-- amount paid in invoice currency	
   fk_paiement      integer NOT NULL,					-- type of payment in llx_c_paiement
   num_paiement     varchar(50),

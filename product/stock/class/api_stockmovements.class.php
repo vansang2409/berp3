@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2016   Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2016   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,9 +24,9 @@ require_once DOL_DOCUMENT_ROOT.'/product/stock/class/mouvementstock.class.php';
  * API class for stock movements
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class StockMovements extends DolibarrApi
+class StockMovements extends Berp3Api
 {
 	/**
 	 * @var array   $FIELDS     Mandatory fields, checked when create and update object
@@ -65,7 +65,7 @@ class StockMovements extends DolibarrApi
 	/*
 	public function get($id)
 	{
-		if(! DolibarrApiAccess::$user->rights->stock->lire) {
+		if(! Berp3ApiAccess::$user->rights->stock->lire) {
 			throw new RestException(401);
 		}
 
@@ -74,8 +74,8 @@ class StockMovements extends DolibarrApi
 			throw new RestException(404, 'warehouse not found');
 		}
 
-		if( ! DolibarrApi::_checkAccessToResource('warehouse',$this->stockmovement->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if( ! Berp3Api::_checkAccessToResource('warehouse',$this->stockmovement->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		return $this->_cleanObjectDatas($this->stockmovement);
@@ -99,7 +99,7 @@ class StockMovements extends DolibarrApi
 
 		$obj_ret = array();
 
-		if (!DolibarrApiAccess::$user->rights->stock->lire) {
+		if (!Berp3ApiAccess::$user->rights->stock->lire) {
 			throw new RestException(401);
 		}
 
@@ -109,11 +109,11 @@ class StockMovements extends DolibarrApi
 		$sql .= ' WHERE 1 = 1';
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -173,7 +173,7 @@ class StockMovements extends DolibarrApi
 	 */
 	public function post($product_id, $warehouse_id, $qty, $lot = '', $movementcode = '', $movementlabel = '', $price = '', $dlc = '', $dluo = '', $origin_type = '', $origin_id = 0)
 	{
-		if (!DolibarrApiAccess::$user->rights->stock->creer) {
+		if (!Berp3ApiAccess::$user->rights->stock->creer) {
 			throw new RestException(401);
 		}
 
@@ -192,7 +192,7 @@ class StockMovements extends DolibarrApi
 		$sellBy = empty($dlc) ? '' : dol_stringtotime($dlc);
 
 		$this->stockmovement->setOrigin($origin_type, $origin_id);
-		if ($this->stockmovement->_create(DolibarrApiAccess::$user, $product_id, $warehouse_id, $qty, $type, $price, $movementlabel, $movementcode, '', $eatBy, $sellBy, $lot) <= 0) {
+		if ($this->stockmovement->_create(Berp3ApiAccess::$user, $product_id, $warehouse_id, $qty, $type, $price, $movementlabel, $movementcode, '', $eatBy, $sellBy, $lot) <= 0) {
 			$errormessage = $this->stockmovement->error;
 			if (empty($errormessage)) {
 				$errormessage = join(',', $this->stockmovement->errors);
@@ -213,7 +213,7 @@ class StockMovements extends DolibarrApi
 	/*
 	public function put($id, $request_data = null)
 	{
-		if(! DolibarrApiAccess::$user->rights->stock->creer) {
+		if(! Berp3ApiAccess::$user->rights->stock->creer) {
 			throw new RestException(401);
 		}
 
@@ -222,8 +222,8 @@ class StockMovements extends DolibarrApi
 			throw new RestException(404, 'stock movement not found');
 		}
 
-		if( ! DolibarrApi::_checkAccessToResource('stock',$this->stockmovement->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if( ! Berp3Api::_checkAccessToResource('stock',$this->stockmovement->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		foreach($request_data as $field => $value) {
@@ -231,7 +231,7 @@ class StockMovements extends DolibarrApi
 			$this->stockmovement->$field = $value;
 		}
 
-		if($this->stockmovement->update($id, DolibarrApiAccess::$user))
+		if($this->stockmovement->update($id, Berp3ApiAccess::$user))
 			return $this->get ($id);
 
 		return false;
@@ -246,7 +246,7 @@ class StockMovements extends DolibarrApi
 	/*
 	public function delete($id)
 	{
-		if(! DolibarrApiAccess::$user->rights->stock->supprimer) {
+		if(! Berp3ApiAccess::$user->rights->stock->supprimer) {
 			throw new RestException(401);
 		}
 		$result = $this->stockmovement->fetch($id);
@@ -254,11 +254,11 @@ class StockMovements extends DolibarrApi
 			throw new RestException(404, 'stock movement not found');
 		}
 
-		if( ! DolibarrApi::_checkAccessToResource('stock',$this->stockmovement->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if( ! Berp3Api::_checkAccessToResource('stock',$this->stockmovement->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		if (! $this->stockmovement->delete(DolibarrApiAccess::$user)) {
+		if (! $this->stockmovement->delete(Berp3ApiAccess::$user)) {
 			throw new RestException(401,'error when delete stock movement');
 		}
 

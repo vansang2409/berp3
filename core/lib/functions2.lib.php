@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2008-2011  Laurent Destailleur         <eldy@users.sourceforge.net>
- * Copyright (C) 2008-2012  Regis Houssin               <regis.houssin@inodbox.com>
- * Copyright (C) 2008       Raphael Bertrand (Resultic) <raphael.bertrand@resultic.fr>
- * Copyright (C) 2014-2016  Marcos García               <marcosgdf@gmail.com>
- * Copyright (C) 2015       Ferran Marcet               <fmarcet@2byte.es>
- * Copyright (C) 2015-2016  Raphaël Doursenaud          <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2017       Juanjo Menent               <jmenent@2byte.es>
+/* Copyright (C) 2008-2011           
+ * Copyright (C) 2008-2012                 
+ * Copyright (C) 2008        
+ * Copyright (C) 2014-2016                 
+ * Copyright (C) 2015                      
+ * Copyright (C) 2015-2016            
+ * Copyright (C) 2017                      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -824,7 +824,7 @@ function isValidVATID($company)
  */
 function clean_url($url, $http = 1)
 {
-	// Fixed by Matelli (see http://matelli.fr/showcases/patchs-dolibarr/fix-cleaning-url.html)
+	// Fixed by Matelli (see http://matelli.fr/showcases/patchs-berp3/fix-cleaning-url.html)
 	// To include the minus sign in a char class, we must not escape it but put it at the end of the class
 	// Also, there's no need of escape a dot sign in a class
 	$regs = array();
@@ -954,7 +954,7 @@ function array2table($data, $tableMarkup = 1, $tableoptions = '', $troptions = '
 /**
  * Return last or next value for a mask (according to area we should not reset)
  *
- * @param   DoliDB		$db				Database handler
+ * @param   Berp3DB		$db				Database handler
  * @param   string		$mask			Mask to use
  * @param   string		$table			Table containing field with counter
  * @param   string		$field			Field containing already used values of counter
@@ -1771,13 +1771,13 @@ function weight_convert($weight, &$from_unit, $to_unit)
 /**
  *	Save personnal parameter
  *
- *	@param	DoliDB	$db         Handler database
+ *	@param	Berp3DB	$db         Handler database
  *	@param	Conf	$conf		Object conf
  *	@param	User	$user      	Object user
  *	@param	array	$tab        Array (key=>value) with all parameters to save
  *	@return int         		<0 if KO, >0 if OK
  *
- *	@see		dolibarr_get_const(), dolibarr_set_const(), dolibarr_del_const()
+ *	@see		berp3_get_const(), berp3_set_const(), berp3_del_const()
  */
 function dol_set_user_param($db, $conf, &$user, $tab)
 {
@@ -1884,12 +1884,12 @@ function version_php()
 }
 
 /**
- * 	Return Dolibarr version
+ * 	Return Berp3 version
  *
- * 	@return		string			Dolibarr version
- *  @see		versiondolibarrarray(), versioncompare()
+ * 	@return		string			Berp3 version
+ *  @see		versionberp3array(), versioncompare()
  */
-function version_dolibarr()
+function version_berp3()
 {
 	return DOL_VERSION;
 }
@@ -1907,7 +1907,7 @@ function version_webserver()
 /**
  * 	Return list of activated modules usable for document generation
  *
- * 	@param	DoliDB		$db				    Database handler
+ * 	@param	Berp3DB		$db				    Database handler
  * 	@param	string		$type			    Type of models (company, invoice, ...)
  *  @param  int		    $maxfilenamelength  Max length of value to show
  * 	@return	array|int			    		0 if no module is activated, or array(key=>label). For modules that need directory scan, key is completed with ":filename".
@@ -2241,7 +2241,7 @@ function dolGetElementUrl($objectid, $objecttype, $withpicto = 0, $option = '')
 /**
  * Clean corrupted tree (orphelins linked to a not existing parent), record linked to themself and child-parent loop
  *
- * @param	DoliDB	$db					Database handler
+ * @param	Berp3DB	$db					Database handler
  * @param	string	$tabletocleantree	Table to clean
  * @param	string	$fieldfkparent		Field name that contains id of parent
  * @return	int							Nb of records fixed/deleted
@@ -2690,9 +2690,9 @@ if (!function_exists('dolEscapeXML')) {
  */
 function convertBackOfficeMediasLinksToPublicLinks($notetoshow)
 {
-	global $dolibarr_main_url_root;
+	global $berp3_main_url_root;
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 	//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 	$notetoshow = preg_replace('/src="[a-zA-Z0-9_\/\-\.]*(viewimage\.php\?modulepart=medias[^"]*)"/', 'src="'.$urlwithroot.'/\1"', $notetoshow);

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2020 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2020 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,14 +34,14 @@
 //if (! defined('NOREQUIREHTML'))            define('NOREQUIREHTML','1');				// If we don't need to load the html.form.class.php
 //if (! defined('NOREQUIREAJAX'))            define('NOREQUIREAJAX','1');       	  	// Do not load ajax.lib.php library
 //if (! defined("NOLOGIN"))                  define("NOLOGIN",'1');						// If this page is public (can be called outside logged session). This include the NOIPCHECK too.
-//if (! defined('NOIPCHECK'))                define('NOIPCHECK','1');					// Do not check IP defined into conf $dolibarr_main_restrict_ip
+//if (! defined('NOIPCHECK'))                define('NOIPCHECK','1');					// Do not check IP defined into conf $berp3_main_restrict_ip
 //if (! defined("MAIN_LANG_DEFAULT"))        define('MAIN_LANG_DEFAULT','auto');					// Force lang to a particular value
 //if (! defined("MAIN_AUTHENTICATION_MODE")) define('MAIN_AUTHENTICATION_MODE','aloginmodule');		// Force authentication handler
 //if (! defined("NOREDIRECTBYMAINTOLOGIN"))  define('NOREDIRECTBYMAINTOLOGIN',1);		// The main.inc.php does not make a redirect if not logged, instead show simple error message
 //if (! defined("FORCECSP"))                 define('FORCECSP','none');					// Disable all Content Security Policies
 
 
-// Load Dolibarr environment
+// Load Berp3 environment
 $res = 0;
 // Try main.inc.php into web root known defined into CONTEXT_DOCUMENT_ROOT (not always defined)
 if (!$res && !empty($_SERVER["CONTEXT_DOCUMENT_ROOT"])) {
@@ -448,7 +448,7 @@ if ($object->id > 0 && (empty($action) || ($action != 'edit' && $action != 'crea
 			array('label' => $langs->trans("LoginToCreate"), 'type' => 'text', 'name' => 'login', 'value' => $login)
 		);
 		$text .= $langs->trans("ConfirmCreateLogin");
-		print $form->formconfirm($_SERVER["PHP_SELF"]."?id=".$object->id, $langs->trans("CreateDolibarrLogin"), $text, "confirm_create_user", $formquestion, 'yes');
+		print $form->formconfirm($_SERVER["PHP_SELF"]."?id=".$object->id, $langs->trans("CreateBerp3Login"), $text, "confirm_create_user", $formquestion, 'yes');
 	}
 
 	// Call Hook formConfirm
@@ -600,12 +600,12 @@ if ($object->id > 0 && (empty($action) || ($action != 'edit' && $action != 'crea
 					// TODO Check if a user already exists
 					$useralreadyexists = 0;
 					if (empty($useralreadyexists)) {
-						print '<div class="inline-block divButAction"><a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=create_user">'.$langs->trans("CreateDolibarrLogin").'</a></div>';
+						print '<div class="inline-block divButAction"><a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=create_user">'.$langs->trans("CreateBerp3Login").'</a></div>';
 					} else {
-						print '<div class="inline-block divButAction"><a class="butActionRefused" href="#">'.$langs->trans("CreateDolibarrLogin").'</a></div>';
+						print '<div class="inline-block divButAction"><a class="butActionRefused" href="#">'.$langs->trans("CreateBerp3Login").'</a></div>';
 					}
 				} else {
-					print '<div class="inline-block divButAction"><span class="butActionRefused classfortooltip" href="#" title="'.dol_escape_htmltag($langs->trans("NotEnoughPermissions")).'">'.$langs->trans("CreateDolibarrLogin")."</span></div>";
+					print '<div class="inline-block divButAction"><span class="butActionRefused classfortooltip" href="#" title="'.dol_escape_htmltag($langs->trans("NotEnoughPermissions")).'">'.$langs->trans("CreateBerp3Login")."</span></div>";
 				}
 			}
 

@@ -1,15 +1,15 @@
 <?php
-/* Copyright (C) 2002-2003  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003  Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2004       Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2009-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2009-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2013       Florian Henry           <forian.henry@open-concept.pro>
- * Copyright (C) 2015       Charles-Fr BENKE        <charles.fr@benke.fr>
- * Copyright (C) 2016       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2017       Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2002-2003  
+ * Copyright (C) 2002-2003        
+ * Copyright (C) 2004            
+ * Copyright (C) 2004                 
+ * Copyright (C) 2009-2012  
+ * Copyright (C) 2009-2012  
+ * Copyright (C) 2013                  <forian.henry@open-concept.pro>
+ * Copyright (C) 2015       Charles-Fr BENKE        
+ * Copyright (C) 2016             
+ * Copyright (C) 2017                
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@
 class ExtraFields
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -193,7 +193,7 @@ class ExtraFields
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1138,7 +1138,7 @@ class ExtraFields
 		} elseif ($type == 'text') {
 			if (!preg_match('/search_/', $keyprefix)) {		// If keyprefix is search_ or search_options_, we must just use a simple text field
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'dolibarr_notes', 'In', false, false, false, ROWS_5, '90%');
+				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'berp3_notes', 'In', false, false, false, ROWS_5, '90%');
 				$out = $doleditor->Create(1);
 			} else {
 				$out = '<input type="text" class="flat '.$morecss.' maxwidthonsmartphone" name="'.$keyprefix.$key.$keysuffix.'" id="'.$keyprefix.$key.$keysuffix.'" value="'.dol_escape_htmltag($value).'" '.($moreparam ? $moreparam : '').'>';
@@ -1146,7 +1146,7 @@ class ExtraFields
 		} elseif ($type == 'html') {
 			if (!preg_match('/search_/', $keyprefix)) {		// If keyprefix is search_ or search_options_, we must just use a simple text field
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'dolibarr_notes', 'In', false, false, !empty($conf->fckeditor->enabled) && $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_5, '90%');
+				$doleditor = new DolEditor($keyprefix.$key.$keysuffix, $value, '', 200, 'berp3_notes', 'In', false, false, !empty($conf->fckeditor->enabled) && $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_5, '90%');
 				$out = $doleditor->Create(1);
 			} else {
 				$out = '<input type="text" class="flat '.$morecss.' maxwidthonsmartphone" name="'.$keyprefix.$key.$keysuffix.'" id="'.$keyprefix.$key.$keysuffix.'" value="'.dol_escape_htmltag($value).'" '.($moreparam ? $moreparam : '').'>';
@@ -1780,9 +1780,9 @@ class ExtraFields
 					$c->fetch($obj->rowid);
 					$ways = $c->print_all_ways(); // $ways[0] = "ccc2 >> ccc2a >> ccc2a1" with html formatted text
 					foreach ($ways as $way) {
-						$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories"'.($c->color ? ' style="background: #'.$c->color.';"' : ' style="background: #bbb"').'>'.img_object('', 'category').' '.$way.'</li>';
+						$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories"'.($c->color ? ' style="background: #'.$c->color.';"' : ' style="background: #bbb"').'>'.img_object('', 'category').' '.$way.'</li>';
 					}
-					$value = '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">'.implode(' ', $toprint).'</ul></div>';
+					$value = '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">'.implode(' ', $toprint).'</ul></div>';
 				}
 			} else {
 				dol_syslog(get_class($this).'::showOutputField error '.$this->db->lasterror(), LOG_WARNING);
@@ -1795,10 +1795,10 @@ class ExtraFields
 			$toprint = array();
 			if (is_array($value_arr)) {
 				foreach ($value_arr as $keyval => $valueval) {
-					$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.$param['options'][$valueval].'</li>';
+					$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.$param['options'][$valueval].'</li>';
 				}
 			}
-			$value = '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">'.implode(' ', $toprint).'</ul></div>';
+			$value = '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">'.implode(' ', $toprint).'</ul></div>';
 		} elseif ($type == 'chkbxlst') {
 			$value_arr = explode(',', $value);
 
@@ -1851,9 +1851,9 @@ class ExtraFields
 										$translabel = $langs->trans($obj->$field_toshow);
 									}
 									if ($translabel != $field_toshow) {
-										$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
+										$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
 									} else {
-										$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.$obj->$field_toshow.'</li>';
+										$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.$obj->$field_toshow.'</li>';
 									}
 								}
 							} else {
@@ -1862,9 +1862,9 @@ class ExtraFields
 									$translabel = $langs->trans($obj->{$InfoFieldList[1]});
 								}
 								if ($translabel != $obj->{$InfoFieldList[1]}) {
-									$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
+									$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.dol_trunc($translabel, 18).'</li>';
 								} else {
-									$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb">'.$obj->{$InfoFieldList[1]}.'</li>';
+									$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb">'.$obj->{$InfoFieldList[1]}.'</li>';
 								}
 							}
 						}
@@ -1879,12 +1879,12 @@ class ExtraFields
 							$c->fetch($obj->rowid);
 							$ways = $c->print_all_ways(); // $ways[0] = "ccc2 >> ccc2a >> ccc2a1" with html formatted text
 							foreach ($ways as $way) {
-								$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories"'.($c->color ? ' style="background: #'.$c->color.';"' : ' style="background: #bbb"').'>'.img_object('', 'category').' '.$way.'</li>';
+								$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories"'.($c->color ? ' style="background: #'.$c->color.';"' : ' style="background: #bbb"').'>'.img_object('', 'category').' '.$way.'</li>';
 							}
 						}
 					}
 				}
-				$value = '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">'.implode(' ', $toprint).'</ul></div>';
+				$value = '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">'.implode(' ', $toprint).'</ul></div>';
 			} else {
 				dol_syslog(get_class($this).'::showOutputField error '.$this->db->lasterror(), LOG_WARNING);
 			}

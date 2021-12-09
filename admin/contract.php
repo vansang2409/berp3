@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2011-2013      Juanjo Menent	    <jmenent@2byte.es>
- * Copyright (C) 2011-2018      Philippe Grand	    <philippe.grand@atoo-net.com>
+/* Copyright (C) 2011-2013      	    
+ * Copyright (C) 2011-2018      	    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ if ($action == 'updateMask') {
 	$maskconst = GETPOST('maskconstcontract', 'alpha');
 	$maskvalue = GETPOST('maskcontract', 'alpha');
 	if ($maskconst) {
-		$res = dolibarr_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -109,12 +109,12 @@ if ($action == 'updateMask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->CONTRACT_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'CONTRACT_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'CONTRACT_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "CONTRACT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "CONTRACT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->CONTRACT_ADDON_PDF = $value;
@@ -129,16 +129,16 @@ if ($action == 'updateMask') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "CONTRACT_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "CONTRACT_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'set_other') {
 	$freetext = GETPOST('CONTRACT_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
-	$res1 = dolibarr_set_const($db, "CONTRACT_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res1 = berp3_set_const($db, "CONTRACT_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	$draft = GETPOST('CONTRACT_DRAFT_WATERMARK', 'alpha');
-	$res2 = dolibarr_set_const($db, "CONTRACT_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res2 = berp3_set_const($db, "CONTRACT_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 
 	$value = GETPOST('activate_hideClosedServiceByDefault', 'alpha');
-	$res3 = dolibarr_set_const($db, "CONTRACT_HIDE_CLOSED_SERVICES_BY_DEFAULT", $value, 'chaine', 0, '', $conf->entity);
+	$res3 = berp3_set_const($db, "CONTRACT_HIDE_CLOSED_SERVICES_BY_DEFAULT", $value, 'chaine', 0, '', $conf->entity);
 
 	if (!$res1 > 0 || !$res2 > 0 || !$res3 > 0) {
 		$error++;
@@ -446,7 +446,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td></tr>'."\n";

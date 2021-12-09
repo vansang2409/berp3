@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2001-2004  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005       Simon Tosser            <simon@kornog-computing.com>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2016       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2001-2004  
+ * Copyright (C) 2004-2010  
+ * Copyright (C) 2005       Simon Tosser            
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2016             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -175,14 +175,14 @@ if ($action == 'update') {
 		if (!empty($conf->$module->enabled)) {
 			foreach ($delays as $delay) {
 				if (GETPOST($delay['code']) != '') {
-					dolibarr_set_const($db, $delay['code'], GETPOST($delay['code']), 'chaine', 0, '', $conf->entity);
+					berp3_set_const($db, $delay['code'], GETPOST($delay['code']), 'chaine', 0, '', $conf->entity);
 				}
 			}
 		}
 	}
 
-	dolibarr_set_const($db, "MAIN_DISABLE_METEO", GETPOST("MAIN_DISABLE_METEO"), 'chaine', 0, '', $conf->entity);
-	dolibarr_set_const($db, "MAIN_USE_METEO_WITH_PERCENTAGE", GETPOST("MAIN_USE_METEO_WITH_PERCENTAGE"), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_DISABLE_METEO", GETPOST("MAIN_DISABLE_METEO"), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_USE_METEO_WITH_PERCENTAGE", GETPOST("MAIN_USE_METEO_WITH_PERCENTAGE"), 'chaine', 0, '', $conf->entity);
 
 	// For update value with percentage
 	$plus = '';
@@ -192,7 +192,7 @@ if ($action == 'update') {
 	// Update values
 	for ($i = 0; $i < 4; $i++) {
 		if (GETPOSTISSET('MAIN_METEO'.$plus.'_LEVEL'.$i)) {
-			dolibarr_set_const($db, 'MAIN_METEO'.$plus.'_LEVEL'.$i, GETPOST('MAIN_METEO'.$plus.'_LEVEL'.$i, 'int'), 'chaine', 0, '', $conf->entity);
+			berp3_set_const($db, 'MAIN_METEO'.$plus.'_LEVEL'.$i, GETPOST('MAIN_METEO'.$plus.'_LEVEL'.$i, 'int'), 'chaine', 0, '', $conf->entity);
 		}
 	}
 

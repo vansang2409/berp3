@@ -1,6 +1,6 @@
 <?php
 
-/* Copyright (C) 2016	Marcos García	<marcosgdf@gmail.com>
+/* Copyright (C) 2016		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ class ProductCombination2ValuePair
 {
 	/**
 	 * Database handler
-	 * @var DoliDB
+	 * @var Berp3DB
 	 */
 	private $db;
 
@@ -55,9 +55,9 @@ class ProductCombination2ValuePair
 	/**
 	 * Constructor
 	 *
-	 * @param   DoliDB $db     Database handler
+	 * @param   Berp3DB $db     Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015-2021  Frédéric France     <frederic.france@netlogic.fr>
- * Copyright (C) 2020       Andreu Bisquerra    <jove@bisquerra.com>
+/* Copyright (C) 2015-2021  
+ * Copyright (C) 2020           
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -122,7 +122,7 @@ class dolReceiptPrinter extends Printer
 	const CONNECTOR_CUPS_PRINT = 5;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -152,7 +152,7 @@ class dolReceiptPrinter extends Printer
 	/**
 	 * Constructor
 	 *
-	 * @param   DoliDB      $db         database
+	 * @param   Berp3DB      $db         database
 	 */
 	public function __construct($db)
 	{
@@ -529,7 +529,7 @@ class dolReceiptPrinter extends Printer
 		global $conf;
 
 		$error = 0;
-		$img = EscposImage::load(DOL_DOCUMENT_ROOT.'/theme/dolibarr_logo_bw.png');
+		$img = EscposImage::load(DOL_DOCUMENT_ROOT.'/theme/berp3_logo_bw.png');
 		//$this->profile = CapabilityProfile::load("TM-T88IV");
 		$ret = $this->initPrinter($printerid);
 		if ($ret > 0) {

@@ -1,5 +1,5 @@
 # BERP3 language file - Source file is en_US - boxes
-BoxDolibarrStateBoard=Estadísticas sobre los principales objetos comerciales en la base de datos
+BoxBerp3StateBoard=Estadísticas sobre los principales objetos comerciales en la base de datos
 BoxLoginInformation=Información login
 BoxLastRssInfos=Hilos de información RSS
 BoxLastProducts=Últimos %s productos/servicios

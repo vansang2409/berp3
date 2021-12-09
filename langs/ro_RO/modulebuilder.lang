@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc= Puteți șterge modulul pe care l-aţi creat. ATE
 EnterNameOfObjectToDeleteDesc=Puteți șterge un obiect. ATENŢIE: Toate fișierele de cod (generate sau create manual) legate de obiect vor fi șterse!
 DangerZone=Zona periculoasă
 BuildPackage=Construiți pachetul
-BuildPackageDesc=Puteți genera un pachet zip al aplicației dvs., pentru a-l putea distribui in orice implementare de Dolibarr. Puteți, de asemenea, să-l distribuiți sau să-l vindeţi în marketplace, de exemplu pe <a href="https://www.dolistore.com">DoliStore.com</a>.
+BuildPackageDesc=Puteți genera un pachet zip al aplicației dvs., pentru a-l putea distribui in orice implementare de Berp3. Puteți, de asemenea, să-l distribuiți sau să-l vindeţi în marketplace, de exemplu pe <a href="https://www.berp3store.com">Berp3Store.com</a>.
 BuildDocumentation=Construiți documentația
 ModuleIsNotActive=Acest modul nu este activat încă. Mergi la %s a-l activa sau dă click aici 
 ModuleIsLive=Acest modul a fost activat. Orice modificare poate duce la disfuncţionalităţi ale versiuni curente activate.  
@@ -101,7 +101,7 @@ HooksDefDesc=Definiți în proprietatea <b>module_parts['hooks'] </b>, în descr
 TriggerDefDesc=Definiți în fișierul trigger codul pe care doriți să-l executați pentru fiecare eveniment urmărit.
 SeeIDsInUse=Vezi ID-urile utilizate în instalarea ta.
 SeeReservedIDsRangeHere=Vezi gama de ID-uri rezervate
-ToolkitForDevelopers=Toolkit pentru dezvoltatorii de sistem Dolibarr
+ToolkitForDevelopers=Toolkit pentru dezvoltatorii de sistem Berp3
 TryToUseTheModuleBuilder=Dacă ai cunoștințe de SQL și PHP, poți folosi asistentul nativ Modul Builder. <br> Activează modulul <strong>%s</strong> și utilizează asistentul dând clic pe <span class="fa fa-bug"> </span> din meniul din dreapta sus. <br> Atenție: Aceasta este o caracteristică avansată de dezvoltare, <b>nu</b> experimenta pe instanţele de producție!
 SeeTopRightMenu=Vezi <span class="fa fa-bug"></span> din meniul din dreapta sus
 AddLanguageFile=Adăugă fișierul de limbă

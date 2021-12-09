@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2016-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2016-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 /**
  *     	\file       htdocs/public/website/index.php
  *		\ingroup    website
- *		\brief      Wrapper to output pages when website is powered by Dolibarr instead of a native web server
+ *		\brief      Wrapper to output pages when website is powered by Berp3 instead of a native web server
  */
 
 if (!defined('NOTOKENRENEWAL')) {
@@ -49,7 +49,7 @@ if (!defined('NOREQUIREAJAX')) {
 	define('NOREQUIREAJAX', '1');
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 if (!defined('NOBROWSERNOTIF')) {
 	define('NOBROWSERNOTIF', '1');
@@ -161,17 +161,17 @@ if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 
 
 // Security: Delete string ../ into $original_file
-global $dolibarr_main_data_root;
+global $berp3_main_data_root;
 
 if ($pageid == 'css') {   // No more used ?
 	header('Content-type: text/css');
-	// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-	//if (empty($dolibarr_nocache)) header('Cache-Control: max-age=3600, public, must-revalidate');
+	// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+	//if (empty($berp3_nocache)) header('Cache-Control: max-age=3600, public, must-revalidate');
 	//else
 	header('Cache-Control: no-cache');
-	$original_file = $dolibarr_main_data_root.'/website/'.$websitekey.'/styles.css.php';
+	$original_file = $berp3_main_data_root.'/website/'.$websitekey.'/styles.css.php';
 } else {
-	$original_file = $dolibarr_main_data_root.'/website/'.$websitekey.'/page'.$pageid.'.tpl.php';
+	$original_file = $berp3_main_data_root.'/website/'.$websitekey.'/page'.$pageid.'.tpl.php';
 }
 
 // Find the subdirectory name as the reference
@@ -215,8 +215,8 @@ if (!file_exists($original_file_osencoded)) {
 
 
 // Output page content
-define('USEDOLIBARRSERVER', 1);
-print '<!-- Page content '.$original_file.' rendered with DOLIBARR SERVER : Html with CSS link and html header + Body that was saved into tpl dir -->'."\n";
+define('USEBERP3SERVER', 1);
+print '<!-- Page content '.$original_file.' rendered with BERP3 SERVER : Html with CSS link and html header + Body that was saved into tpl dir -->'."\n";
 include_once $original_file_osencoded; // Note: The pageXXX.tpl.php showed here contains a formatage with dolWebsiteOutput() at end of page.
 
 if (is_object($db)) {

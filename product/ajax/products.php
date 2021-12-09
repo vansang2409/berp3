@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2006      Andre Cianfarani     <acianfa@free.fr>
- * Copyright (C) 2005-2013 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2007-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2020      Josep Lluís Amador   <joseplluis@lliuretic.cat>
+/* Copyright (C) 2006           
+ * Copyright (C) 2005-2013 
+ * Copyright (C) 2007-2011 
+ * Copyright (C) 2020         
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

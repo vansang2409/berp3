@@ -15,6 +15,6 @@ UrlOrLink=العنوان
 BehaviourOnClick=السلوك على الضغط على العنوان
 CreateBookmark=إيجاد المرجعية
 SetHereATitleForLink=مجموعة هنا عنوان المرجعية
-UseAnExternalHttpLinkOrRelativeDolibarrLink=استخدام خارجي عنوان النص المتشعب أو قريب BERP3 عنوان
+UseAnExternalHttpLinkOrRelativeBerp3Link=استخدام خارجي عنوان النص المتشعب أو قريب BERP3 عنوان
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Choose if linked page must open in new window or not
 BookmarksManagement=إدارة العناوين

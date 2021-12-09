@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2013-2015 Jean-François FERRY     <hello@librethic.io>
- * Copyright (C) 2016      Christophe Battarel     <christophe@altairis.fr>
- * Copyright (C) 2019      Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2021      Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2021      Alexandre Spangaro      <aspangaro@open-dsi.fr>
+/* Copyright (C) 2013-2015 
+ * Copyright (C) 2016      
+ * Copyright (C) 2019      
+ * Copyright (C) 2021      
+ * Copyright (C) 2021      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ if (!class_exists('FormCompany')) {
 class FormTicket
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -100,7 +100,7 @@ class FormTicket
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -306,9 +306,9 @@ class FormTicket
 		print '<tr><td><label for="message"><span class="fieldrequired">'.$langs->trans("Message").'</span></label></td><td>';
 
 		// If public form, display more information
-		$toolbarname = 'dolibarr_notes';
+		$toolbarname = 'berp3_notes';
 		if ($this->ispublic) {
-			$toolbarname = 'dolibarr_details';
+			$toolbarname = 'berp3_details';
 			print '<div class="warning">'.($conf->global->TICKET_PUBLIC_TEXT_HELP_MESSAGE ? $conf->global->TICKET_PUBLIC_TEXT_HELP_MESSAGE : $langs->trans('TicketPublicPleaseBeAccuratelyDescribe')).'</div>';
 		}
 		include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
@@ -1343,7 +1343,7 @@ class FormTicket
 			print '</td><td>';
 			include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
 
-			$doleditor = new DolEditor('mail_intro', $mail_intro, '100%', 90, 'dolibarr_details', '', false, $uselocalbrowser, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
+			$doleditor = new DolEditor('mail_intro', $mail_intro, '100%', 90, 'berp3_details', '', false, $uselocalbrowser, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
 
 			$doleditor->Create();
 			print '</td></tr>';
@@ -1377,8 +1377,8 @@ class FormTicket
 			print $form->textwithpicto('', $langs->trans("TicketMessageHelp"), 1, 'help');
 		}
 		print '</label></td><td>';
-		//$toolbarname = 'dolibarr_details';
-		$toolbarname = 'dolibarr_notes';
+		//$toolbarname = 'berp3_details';
+		$toolbarname = 'berp3_notes';
 		include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
 		$doleditor = new DolEditor('message', $defaultmessage, '100%', 200, $toolbarname, '', false, $uselocalbrowser, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_5, 70);
 		$doleditor->Create();
@@ -1392,7 +1392,7 @@ class FormTicket
 			print $form->textwithpicto('', $langs->trans("TicketMessageMailSignatureHelp"), 1, 'help');
 			print '</td><td>';
 			include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-			$doleditor = new DolEditor('mail_signature', $mail_signature, '100%', 150, 'dolibarr_details', '', false, $uselocalbrowser, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
+			$doleditor = new DolEditor('mail_signature', $mail_signature, '100%', 150, 'berp3_details', '', false, $uselocalbrowser, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
 			$doleditor->Create();
 			print '</td></tr>';
 		}

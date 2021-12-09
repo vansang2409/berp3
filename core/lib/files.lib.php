@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2008-2012  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2012-2021  Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2012-2016  Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Marcos García       <marcosgdf@gmail.com>
- * Copyright (C) 2016       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2019       Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2008-2012  
+ * Copyright (C) 2012-2021         
+ * Copyright (C) 2012-2016  
+ * Copyright (C) 2015              
+ * Copyright (C) 2016       
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -2273,7 +2273,7 @@ function dol_most_recent_file($dir, $regexfilter = '', $excludefilter = array('(
 function dol_check_secure_access_document($modulepart, $original_file, $entity, $fuser = '', $refname = '', $mode = 'read')
 {
 	global $conf, $db, $user, $hookmanager;
-	global $dolibarr_main_data_root, $dolibarr_main_document_root_alt;
+	global $berp3_main_data_root, $berp3_main_document_root_alt;
 	global $object;
 
 	if (!is_object($fuser)) {
@@ -2326,28 +2326,28 @@ function dol_check_secure_access_document($modulepart, $original_file, $entity, 
 	}
 
 	// Wrapping for miscellaneous medias files
-	if ($modulepart == 'medias' && !empty($dolibarr_main_data_root)) {
+	if ($modulepart == 'medias' && !empty($berp3_main_data_root)) {
 		if (empty($entity) || empty($conf->medias->multidir_output[$entity])) {
 			return array('accessallowed'=>0, 'error'=>'Value entity must be provided');
 		}
 		$accessallowed = 1;
 		$original_file = $conf->medias->multidir_output[$entity].'/'.$original_file;
-	} elseif ($modulepart == 'logs' && !empty($dolibarr_main_data_root)) {
-		// Wrapping for *.log files, like when used with url http://.../document.php?modulepart=logs&file=dolibarr.log
-		$accessallowed = ($user->admin && basename($original_file) == $original_file && preg_match('/^dolibarr.*\.log$/', basename($original_file)));
-		$original_file = $dolibarr_main_data_root.'/'.$original_file;
-	} elseif ($modulepart == 'doctemplates' && !empty($dolibarr_main_data_root)) {
-		// Wrapping for *.log files, like when used with url http://.../document.php?modulepart=logs&file=dolibarr.log
+	} elseif ($modulepart == 'logs' && !empty($berp3_main_data_root)) {
+		// Wrapping for *.log files, like when used with url http://.../document.php?modulepart=logs&file=berp3.log
+		$accessallowed = ($user->admin && basename($original_file) == $original_file && preg_match('/^berp3.*\.log$/', basename($original_file)));
+		$original_file = $berp3_main_data_root.'/'.$original_file;
+	} elseif ($modulepart == 'doctemplates' && !empty($berp3_main_data_root)) {
+		// Wrapping for *.log files, like when used with url http://.../document.php?modulepart=logs&file=berp3.log
 		$accessallowed = $user->admin;
-		$original_file = $dolibarr_main_data_root.'/doctemplates/'.$original_file;
-	} elseif ($modulepart == 'doctemplateswebsite' && !empty($dolibarr_main_data_root)) {
+		$original_file = $berp3_main_data_root.'/doctemplates/'.$original_file;
+	} elseif ($modulepart == 'doctemplateswebsite' && !empty($berp3_main_data_root)) {
 		// Wrapping for *.zip files, like when used with url http://.../document.php?modulepart=packages&file=module_myfile.zip
 		$accessallowed = ($fuser->rights->website->write && preg_match('/\.jpg$/i', basename($original_file)));
-		$original_file = $dolibarr_main_data_root.'/doctemplates/websites/'.$original_file;
-	} elseif ($modulepart == 'packages' && !empty($dolibarr_main_data_root)) {
+		$original_file = $berp3_main_data_root.'/doctemplates/websites/'.$original_file;
+	} elseif ($modulepart == 'packages' && !empty($berp3_main_data_root)) {
 		// Wrapping for *.zip files, like when used with url http://.../document.php?modulepart=packages&file=module_myfile.zip
 		// Dir for custom dirs
-		$tmp = explode(',', $dolibarr_main_document_root_alt);
+		$tmp = explode(',', $berp3_main_document_root_alt);
 		$dirins = $tmp[0];
 
 		$accessallowed = ($user->admin && preg_match('/^module_.*\.zip$/', basename($original_file)));
@@ -3047,7 +3047,7 @@ function getFilesUpdated(&$file_list, SimpleXMLElement $dir, $path = '', $pathre
 		} else {
 			$md5_local = md5_file($pathref.'/'.$filename);
 
-			if ($conffile == '/etc/dolibarr/conf.php' && $filename == '/filefunc.inc.php') {	// For install with deb or rpm, we ignore test on filefunc.inc.php that was modified by package
+			if ($conffile == '/etc/berp3/conf.php' && $filename == '/filefunc.inc.php') {	// For install with deb or rpm, we ignore test on filefunc.inc.php that was modified by package
 				$checksumconcat[] = $expectedmd5;
 			} else {
 				if ($md5_local != $expectedmd5) {

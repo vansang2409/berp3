@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2018      Alexandre Spangaro <aspangaro@open-dsi.fr>
+/* Copyright (C) 2018       
  * Copyright (C) 2018      Fidesio            <contact@fidesio.com>
- * Copyright (C) 2021		Gauthier VERDOL         <gauthier.verdol@atm-consulting.fr>
+ * Copyright (C) 2021		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2007-2020  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014       Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Florian Henry       <florian.henry@open-concept.pro>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2016       Pierre-Henry Favre  <phf@atm-consulting.fr>
+/* Copyright (C) 2007-2020  
+ * Copyright (C) 2014       
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
+ * Copyright (C) 2016       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -97,9 +97,9 @@ class MultiCurrency extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 
@@ -430,7 +430,7 @@ class MultiCurrency extends CommonObject
 	 * @param	double	$rate	new rate
 	 * @return int -1 if KO, 1 if OK, 2 if label found and OK
 	 */
-	public function addRateFromDolibarr($code, $rate)
+	public function addRateFromBerp3($code, $rate)
 	{
 		global $user;
 
@@ -493,7 +493,7 @@ class MultiCurrency extends CommonObject
 	 /**
 	  * Get id of currency from code
 	  *
-	  * @param  DoliDB	$db		    object db
+	  * @param  Berp3DB	$db		    object db
 	  * @param  string	$code	    code value search
 	  *
 	  * @return int                 0 if not found, >0 if OK
@@ -516,7 +516,7 @@ class MultiCurrency extends CommonObject
 	 /**
 	  * Get id and rate of currency from code
 	  *
-	  * @param DoliDB	$db		        Object db
+	  * @param Berp3DB	$db		        Object db
 	  * @param string	$code	        Code value search
 	  * @param integer	$date_document	Date from document (propal, order, invoice, ...)
 	  *
@@ -561,16 +561,16 @@ class MultiCurrency extends CommonObject
 	 *
 	 * @param	int		$fk_facture		id of facture
 	 * @param	double	$amount			amount to convert
-	 * @param	string	$way			'dolibarr' mean the amount is in dolibarr currency
+	 * @param	string	$way			'berp3' mean the amount is in berp3 currency
 	 * @param	string	$table			facture or facture_fourn
 	 * @return	double					amount converted
 	 */
-	public static function getAmountConversionFromInvoiceRate($fk_facture, $amount, $way = 'dolibarr', $table = 'facture')
+	public static function getAmountConversionFromInvoiceRate($fk_facture, $amount, $way = 'berp3', $table = 'facture')
 	{
 		$multicurrency_tx = self::getInvoiceRate($fk_facture, $table);
 
 		if ($multicurrency_tx) {
-			if ($way == 'dolibarr') {
+			if ($way == 'berp3') {
 				return price2num($amount * $multicurrency_tx, 'MU');
 			} else {
 				return price2num($amount / $multicurrency_tx, 'MU');
@@ -665,7 +665,7 @@ class MultiCurrency extends CommonObject
 						if ($obj->fetch(null, $code) > 0) {
 							$obj->updateRate($rate);
 						} elseif ($addifnotfound) {
-							self::addRateFromDolibarr($code, $rate);
+							self::addRateFromBerp3($code, $rate);
 						}
 					}
 				}
@@ -742,9 +742,9 @@ class CurrencyRate extends CommonObjectLine
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = &$db;
 

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2019       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2018  
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,17 +23,17 @@
  *  \ingroup    zapier
  *  \brief      Description and activation file for the module Zapier
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *  Description and activation class for module Zapier
  */
-class modZapier extends DolibarrModules
+class modZapier extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -41,7 +41,7 @@ class modZapier extends DolibarrModules
 
 		$this->db = $db;
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 50330;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'zapier';
@@ -58,11 +58,11 @@ class modZapier extends DolibarrModules
 		$this->description = "ZapierDescription";
 		// Used only if file README.md and README-LL.md not found.
 		$this->descriptionlong = "Zapier description (Long)";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
+		// Possible values for version are: 'development', 'experimental', 'berp3', 'berp3_deprecated' or a version string like 'x.y.z'
 		$this->version = 'development';
 		//Url to the file with your last numberversion of this module
 		//$this->url_last_version = 'http://www.example.com/versionmodule.txt';
-		// Key used in llx_const table to save module status enabled/disabled (where ZAPIERFORDOLIBARR is value of property name of module in uppercase)
+		// Key used in llx_const table to save module status enabled/disabled (where ZAPIERFORBERP3 is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
 		// If file is in theme/yourtheme/img directory under name object_pictovalue.png, use this->picto='pictovalue'
@@ -124,8 +124,8 @@ class modZapier extends DolibarrModules
 		$this->langfiles = array("zapier");
 		// Minimum version of PHP required by module
 		//$this->phpmin = array(5, 6);
-		// Minimum version of Dolibarr required by module
-		$this->need_dolibarr_version = array(10, 0);
+		// Minimum version of Berp3 required by module
+		$this->need_berp3_version = array(10, 0);
 		// Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		$this->warnings_activation = array();
 		// Warning to show when we activate an external module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
@@ -138,11 +138,11 @@ class modZapier extends DolibarrModules
 		// Constants
 		// List of particular constants to add when module is enabled (key, 'chaine', value, desc, visible, 'current' or 'allentities', deleteonunactive)
 		// Example: $this->const=array(
-		//    1 => array('ZAPIERFORDOLIBARR_MYNEWCONST1', 'chaine', 'myvalue', 'This is a constant to add', 1),
-		//    2 => array('ZAPIERFORDOLIBARR_MYNEWCONST2', 'chaine', 'myvalue', 'This is another constant to add', 0, 'current', 1)
+		//    1 => array('ZAPIERFORBERP3_MYNEWCONST1', 'chaine', 'myvalue', 'This is a constant to add', 1),
+		//    2 => array('ZAPIERFORBERP3_MYNEWCONST2', 'chaine', 'myvalue', 'This is another constant to add', 0, 'current', 1)
 		// );
 		$this->const = array(
-			// 1 => array('ZAPIERFORDOLIBARR_MYCONSTANT', 'chaine', 'avalue', 'This is a constant to add', 1, 'allentities', 1)
+			// 1 => array('ZAPIERFORBERP3_MYCONSTANT', 'chaine', 'avalue', 'This is a constant to add', 1, 'allentities', 1)
 		);
 		// Some keys to add into the overwriting translation tables
 		/*$this->overwrite_translation = array(
@@ -273,7 +273,7 @@ class modZapier extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories
 	 *
 	 *  @param      string  $options    Options when enabling module ('', 'noboxes')

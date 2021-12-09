@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Käitumine URLil klõpsamise puhul
 CreateBookmark=Loo järjehoidja
 SetHereATitleForLink=Sea järjehoidja pealkiri
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Kasuta välise lehe URLi või Dolibarri sisest linki
+UseAnExternalHttpLinkOrRelativeBerp3Link=Kasuta välise lehe URLi või Berp3i sisest linki
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Choose if linked page must open in new window or not
 BookmarksManagement=Järjehoidjate haldamine

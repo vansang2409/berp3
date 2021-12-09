@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
+/* Copyright (C) 2015   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,15 +19,15 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/functions.lib.php';
 
 
 /**
- * API that gives the status of the Dolibarr instance.
+ * API that gives the status of the Berp3 instance.
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
 class Status
 {
 	/**
-	 * Get status (Dolibarr version)
+	 * Get status (Berp3 version)
 	 *
 	 * @return array
 	 */
@@ -38,7 +38,7 @@ class Status
 		return array(
 			'success' => array(
 				'code' => 200,
-				'dolibarr_version' => DOL_VERSION,
+				'berp3_version' => DOL_VERSION,
 				'access_locked' => (empty($conf->global->MAIN_ONLY_LOGIN_ALLOWED) ? '0' : $conf->global->MAIN_ONLY_LOGIN_ALLOWED),
 			),
 		);

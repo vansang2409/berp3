@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2008-2012 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2007-2012 
+ * Copyright (C) 2008-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -120,7 +120,7 @@ class EcmDirectory extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2012      Marcos García        <marcosgdf@gmail.com>
+/* Copyright (C) 2006-2015 
+ * Copyright (C) 2012      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,10 +47,10 @@ class ExportExcel2007 extends ModeleExports
 	public $extension;
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	public $label_lib;
 
@@ -72,7 +72,7 @@ class ExportExcel2007 extends ModeleExports
 	/**
 	 *	Constructor
 	 *
-	 *	@param	    DoliDB	$db      Database handler
+	 *	@param	    Berp3DB	$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -207,7 +207,7 @@ class ExportExcel2007 extends ModeleExports
 
 		$this->workbook = new Spreadsheet();
 		$this->workbook->getProperties()->setCreator($user->getFullName($outputlangs).' - '.DOL_APPLICATION_TITLE.' '.DOL_VERSION);
-		//$this->workbook->getProperties()->setLastModifiedBy('Dolibarr '.DOL_VERSION);
+		//$this->workbook->getProperties()->setLastModifiedBy('Berp3 '.DOL_VERSION);
 		$this->workbook->getProperties()->setTitle(basename($file));
 		$this->workbook->getProperties()->setSubject(basename($file));
 		$this->workbook->getProperties()->setDescription(DOL_APPLICATION_TITLE.' '.DOL_VERSION);
@@ -399,7 +399,7 @@ class ExportExcel2007 extends ModeleExports
 	public function excel_clean($newvalue)
 	{
 		// phpcs:enable
-		// Rule Dolibarr: No HTML
+		// Rule Berp3: No HTML
 		$newvalue = dol_string_nohtmltag($newvalue);
 
 		return $newvalue;

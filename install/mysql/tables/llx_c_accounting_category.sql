@@ -1,6 +1,6 @@
 -- ===================================================================
--- Copyright (C) 2015-2016 Alexandre Spangaro	<aspangaro@open-dsi.fr>
--- Copyright (C) 2016	   Jamal Elbaz			<jamelbaz@gmail.pro>
+-- Copyright (C) 2015-2016 
+-- Copyright (C) 2016	   
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2010-2018 Regis Houssin  <regis.houssin@inodbox.com>
+/* Copyright (C) 2010-2018   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ class ActionsCardProduct
 	/**
 	 *    Constructor
 	 *
-	 *    @param	DoliDB	$db             Database handler
+	 *    @param	Berp3DB	$db             Database handler
 	 *    @param	string	$dirmodule		Name of directory of module
 	 *    @param	string	$targetmodule	Name of directory where canvas is stored
 	 *    @param	string	$canvas         Name of canvas

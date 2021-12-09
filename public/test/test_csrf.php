@@ -3,7 +3,7 @@
 
 ?>
 
-This is a form to test if a CSRF exists into a Dolibarr page.<br>
+This is a form to test if a CSRF exists into a Berp3 page.<br>
 <br>
 - Change url to send request to into this file (server B, hard coded page)<br>
 - Open this form into a virtual server A.<br>
@@ -12,7 +12,7 @@ This is a form to test if a CSRF exists into a Dolibarr page.<br>
 
 <br>
 <?php
-	$urltosendrequest = "http://127.0.0.1/dolibarr/htdocs/user/group/card.php";
+	$urltosendrequest = "http://127.0.0.1/berp3/htdocs/user/group/card.php";
 	print 'urltosendrequest = '.$urltosendrequest.'<br><br>';
 ?>
 

@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=Siz modulingizni o'chirib tashlashingiz mumkin. OG
 EnterNameOfObjectToDeleteDesc=Ob'ektni o'chirishingiz mumkin. OGOHLANTIRISH: Ob'ektga tegishli bo'lgan barcha kodlash fayllari (qo'lda yaratilgan yoki yaratilgan) o'chiriladi!
 DangerZone=Xavfli hudud
 BuildPackage=Paket yaratish
-BuildPackageDesc=Siz o'zingizning arizangizning zip paketini yaratishingiz mumkin, shunda siz uni har qanday Dolibarr-da tarqatishga tayyor bo'lasiz. Siz uni tarqatishingiz yoki <a href="https://www.dolistore.com"> kabi bozorda sotishingiz mumkin DoliStore.com </a>.
+BuildPackageDesc=Siz o'zingizning arizangizning zip paketini yaratishingiz mumkin, shunda siz uni har qanday Berp3-da tarqatishga tayyor bo'lasiz. Siz uni tarqatishingiz yoki <a href="https://www.berp3store.com"> kabi bozorda sotishingiz mumkin Berp3Store.com </a>.
 BuildDocumentation=Hujjatlarni yaratish
 ModuleIsNotActive=Ushbu modul hali faollashtirilmagan. Uni jonli qilish uchun %s-ga o'ting yoki shu yerni bosing
 ModuleIsLive=Ushbu modul faollashtirildi. Har qanday o'zgarish joriy jonli xususiyatni buzishi mumkin.

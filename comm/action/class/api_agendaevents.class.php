@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016   Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2015   
+ * Copyright (C) 2016   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@ require_once DOL_DOCUMENT_ROOT.'/comm/action/class/actioncomm.class.php';
  * API class for Agenda Events
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class AgendaEvents extends DolibarrApi
+class AgendaEvents extends Berp3Api
 {
 
 	/**
@@ -64,7 +64,7 @@ class AgendaEvents extends DolibarrApi
 	 */
 	public function get($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->agenda->myactions->read) {
+		if (!Berp3ApiAccess::$user->rights->agenda->myactions->read) {
 			throw new RestException(401, "Insufficient rights to read an event");
 		}
 		if ($id === 0) {
@@ -80,12 +80,12 @@ class AgendaEvents extends DolibarrApi
 			throw new RestException(404, 'Agenda Events not found');
 		}
 
-		if (!DolibarrApiAccess::$user->rights->agenda->allactions->read && $this->actioncomm->userownerid != DolibarrApiAccess::$user->id) {
-			throw new RestException(401, "Insufficient rights to read event for owner id ".$request_data['userownerid'].' Your id is '.DolibarrApiAccess::$user->id);
+		if (!Berp3ApiAccess::$user->rights->agenda->allactions->read && $this->actioncomm->userownerid != Berp3ApiAccess::$user->id) {
+			throw new RestException(401, "Insufficient rights to read event for owner id ".$request_data['userownerid'].' Your id is '.Berp3ApiAccess::$user->id);
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('agenda', $this->actioncomm->id, 'actioncomm', '', 'fk_soc', 'id')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('agenda', $this->actioncomm->id, 'actioncomm', '', 'fk_soc', 'id')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 		return $this->_cleanObjectDatas($this->actioncomm);
 	}
@@ -109,20 +109,20 @@ class AgendaEvents extends DolibarrApi
 
 		$obj_ret = array();
 
-		if (!DolibarrApiAccess::$user->rights->agenda->myactions->read) {
+		if (!Berp3ApiAccess::$user->rights->agenda->myactions->read) {
 			throw new RestException(401, "Insufficient rights to read events");
 		}
 
 		// case of external user
 		$socid = 0;
-		if (!empty(DolibarrApiAccess::$user->socid)) {
-			$socid = DolibarrApiAccess::$user->socid;
+		if (!empty(Berp3ApiAccess::$user->socid)) {
+			$socid = Berp3ApiAccess::$user->socid;
 		}
 
 		// If the internal user must only see his customers, force searching by him
 		$search_sale = 0;
-		if (!DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) {
-			$search_sale = DolibarrApiAccess::$user->id;
+		if (!Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) {
+			$search_sale = Berp3ApiAccess::$user->id;
 		}
 		if (empty($conf->societe->enabled)) {
 			$search_sale = 0; // If module thirdparty not enabled, sale representative is something that does not exists
@@ -130,19 +130,19 @@ class AgendaEvents extends DolibarrApi
 
 		$sql = "SELECT t.id as rowid";
 		if (!empty($conf->societe->enabled)) {
-			if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
+			if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
 				$sql .= ", sc.fk_soc, sc.fk_user"; // We need these fields in order to filter by sale (including the case where the user can only see his prospects)
 			}
 		}
 		$sql .= " FROM ".MAIN_DB_PREFIX."actioncomm as t";
 		if (!empty($conf->societe->enabled)) {
-			if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
+			if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
 				$sql .= ", ".MAIN_DB_PREFIX."societe_commerciaux as sc"; // We need this table joined to the select in order to filter by sale
 			}
 		}
 		$sql .= ' WHERE t.entity IN ('.getEntity('agenda').')';
 		if (!empty($conf->societe->enabled)) {
-			if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
+			if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socid) || $search_sale > 0) {
 				$sql .= " AND t.fk_soc = sc.fk_soc";
 			}
 		}
@@ -158,11 +158,11 @@ class AgendaEvents extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -206,11 +206,11 @@ class AgendaEvents extends DolibarrApi
 	 */
 	public function post($request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->agenda->myactions->create) {
+		if (!Berp3ApiAccess::$user->rights->agenda->myactions->create) {
 			throw new RestException(401, "Insufficient rights to create your Agenda Event");
 		}
-		if (!DolibarrApiAccess::$user->rights->agenda->allactions->create && DolibarrApiAccess::$user->id != $request_data['userownerid']) {
-			throw new RestException(401, "Insufficient rights to create an Agenda Event for owner id ".$request_data['userownerid'].' Your id is '.DolibarrApiAccess::$user->id);
+		if (!Berp3ApiAccess::$user->rights->agenda->allactions->create && Berp3ApiAccess::$user->id != $request_data['userownerid']) {
+			throw new RestException(401, "Insufficient rights to create an Agenda Event for owner id ".$request_data['userownerid'].' Your id is '.Berp3ApiAccess::$user->id);
 		}
 
 		// Check mandatory fields
@@ -227,7 +227,7 @@ class AgendaEvents extends DolibarrApi
 		  $this->expensereport->lines = $lines;
 		}*/
 
-		if ($this->actioncomm->create(DolibarrApiAccess::$user) < 0) {
+		if ($this->actioncomm->create(Berp3ApiAccess::$user) < 0) {
 			throw new RestException(500, "Error creating event", array_merge(array($this->actioncomm->error), $this->actioncomm->errors));
 		}
 
@@ -245,11 +245,11 @@ class AgendaEvents extends DolibarrApi
 	 */
 	public function put($id, $request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->agenda->myactions->create) {
+		if (!Berp3ApiAccess::$user->rights->agenda->myactions->create) {
 			throw new RestException(401, "Insufficient rights to create your Agenda Event");
 		}
-		if (!DolibarrApiAccess::$user->rights->agenda->allactions->create && DolibarrApiAccess::$user->id != $request_data['userownerid']) {
-			throw new RestException(401, "Insufficient rights to create an Agenda Event for owner id ".$request_data['userownerid'].' Your id is '.DolibarrApiAccess::$user->id);
+		if (!Berp3ApiAccess::$user->rights->agenda->allactions->create && Berp3ApiAccess::$user->id != $request_data['userownerid']) {
+			throw new RestException(401, "Insufficient rights to create an Agenda Event for owner id ".$request_data['userownerid'].' Your id is '.Berp3ApiAccess::$user->id);
 		}
 
 		$result = $this->actioncomm->fetch($id);
@@ -262,8 +262,8 @@ class AgendaEvents extends DolibarrApi
 			throw new RestException(404, 'actioncomm not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('actioncomm', $this->actioncomm->id, 'actioncomm', '', 'fk_soc', 'id')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('actioncomm', $this->actioncomm->id, 'actioncomm', '', 'fk_soc', 'id')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 		foreach ($request_data as $field => $value) {
 			if ($field == 'id') {
@@ -273,7 +273,7 @@ class AgendaEvents extends DolibarrApi
 			$this->actioncomm->$field = $this->_checkValForAPI($field, $value, $this->actioncomm);
 		}
 
-		if ($this->actioncomm->update(DolibarrApiAccess::$user, 1) > 0) {
+		if ($this->actioncomm->update(Berp3ApiAccess::$user, 1) > 0) {
 			return $this->get($id);
 		}
 
@@ -289,7 +289,7 @@ class AgendaEvents extends DolibarrApi
 	 */
 	public function delete($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->agenda->myactions->delete) {
+		if (!Berp3ApiAccess::$user->rights->agenda->myactions->delete) {
 			throw new RestException(401, "Insufficient rights to delete your Agenda Event");
 		}
 
@@ -300,19 +300,19 @@ class AgendaEvents extends DolibarrApi
 			$this->actioncomm->oldcopy = clone $this->actioncomm;
 		}
 
-		if (!DolibarrApiAccess::$user->rights->agenda->allactions->delete && DolibarrApiAccess::$user->id != $this->actioncomm->userownerid) {
-			throw new RestException(401, "Insufficient rights to delete an Agenda Event of owner id ".$this->actioncomm->userownerid.' Your id is '.DolibarrApiAccess::$user->id);
+		if (!Berp3ApiAccess::$user->rights->agenda->allactions->delete && Berp3ApiAccess::$user->id != $this->actioncomm->userownerid) {
+			throw new RestException(401, "Insufficient rights to delete an Agenda Event of owner id ".$this->actioncomm->userownerid.' Your id is '.Berp3ApiAccess::$user->id);
 		}
 
 		if (!$result) {
 			throw new RestException(404, 'Agenda Event not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('actioncomm', $this->actioncomm->id, 'actioncomm', '', 'fk_soc', 'id')) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('actioncomm', $this->actioncomm->id, 'actioncomm', '', 'fk_soc', 'id')) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		if (!$this->actioncomm->delete(DolibarrApiAccess::$user)) {
+		if (!$this->actioncomm->delete(Berp3ApiAccess::$user)) {
 			throw new RestException(500, 'Error when delete Agenda Event : '.$this->actioncomm->error);
 		}
 

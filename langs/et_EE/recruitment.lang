@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Laurent Destailleur
+# Copyright (C) 2020 
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ EnablePublicRecruitmentPages=Enable public pages of open jobs
 #
 # About page
 #
-About = Dolibarri kohta
+About = Berp3i kohta
 RecruitmentAbout = About Recruitment
 RecruitmentAboutPage = Recruitment about page
 NbOfEmployeesExpected=Expected nb of employees

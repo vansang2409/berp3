@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2012-2013	Christophe Battarel	<christophe.battarel@altairis.fr>
- * Copyright (C) 2014		Ferran Marcet		<fmarcet@2byte.es>
+/* Copyright (C) 2012-2013		
+ * Copyright (C) 2014				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

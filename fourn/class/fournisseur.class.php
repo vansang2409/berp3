@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2006      Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011	   Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2004-2007 
+ * Copyright (C) 2006      
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2011	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ class Fournisseur extends Societe
 	/**
 	 *	Constructor
 	 *
-	 *  @param	DoliDB	$db		Database handler
+	 *  @param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -203,12 +203,12 @@ class Fournisseur extends Societe
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param  DoliDB  $db             Database handler
+	 * @param  Berp3DB  $db             Database handler
 	 * @param  int     $origin_id      Old third-party id
 	 * @param  int     $dest_id        New third-party id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'facture_fourn'

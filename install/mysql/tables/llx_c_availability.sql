@@ -1,6 +1,6 @@
 -- ========================================================================
--- Copyright (C) 2011 Philippe GRAND      <philippe.grand@atoo-net.com>
--- Copyright (C) 2020 Alexandre SPANGARO  <aspangaro@open-dsi.fr>
+-- Copyright (C) 2011 Philippe GRAND      
+-- Copyright (C) 2020 Alexandre SPANGARO  
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

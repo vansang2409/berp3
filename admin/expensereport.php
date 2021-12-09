@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003-2004 Rodolphe Quiedeville         <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2015 Laurent Destailleur          <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio          <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier               <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2014 Regis Houssin                <regis.houssin@inodbox.com>
- * Copyright (C) 2008      Raphael Bertrand (Resultic)  <raphael.bertrand@resultic.fr>
- * Copyright (C) 2011-2013 Juanjo Menent			    <jmenent@2byte.es>
- * Copyright (C) 2011-2018 Philippe Grand			    <philippe.grand@atoo-net.com>
+/* Copyright (C) 2003-2004 
+ * Copyright (C) 2004-2015 
+ * Copyright (C) 2004                
+ * Copyright (C) 2004                     
+ * Copyright (C) 2005-2014 
+ * Copyright (C) 2008      
+ * Copyright (C) 2011-2013 			    
+ * Copyright (C) 2011-2018 			    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ if ($action == 'updateMask') {
 	$maskconst = GETPOST('maskconst', 'alpha');
 	$maskvalue = GETPOST('maskvalue', 'alpha');
 	if ($maskconst) {
-		$res = dolibarr_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -109,18 +109,18 @@ if ($action == 'updateMask') {
 	// Activate a model
 	$ret = addDocumentModel($value, $type, $label, $scandir);
 	if ($ret > 0 && empty($conf->global->EXPENSEREPORT_ADDON_PDF)) {
-		dolibarr_set_const($db, 'EXPENSEREPORT_ADDON_PDF', $value, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'EXPENSEREPORT_ADDON_PDF', $value, 'chaine', 0, '', $conf->entity);
 	}
 } elseif ($action == 'del') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->EXPENSEREPORT_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'EXPENSEREPORT_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'EXPENSEREPORT_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "EXPENSEREPORT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "EXPENSEREPORT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->EXPENSEREPORT_ADDON_PDF = $value;
@@ -135,26 +135,26 @@ if ($action == 'updateMask') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "EXPENSEREPORT_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "EXPENSEREPORT_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'setoptions') {
 	$db->begin();
 
 	$freetext = GETPOST('EXPENSEREPORT_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
-	$res1 = dolibarr_set_const($db, "EXPENSEREPORT_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res1 = berp3_set_const($db, "EXPENSEREPORT_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	$draft = GETPOST('EXPENSEREPORT_DRAFT_WATERMARK', 'alpha');
-	$res2 = dolibarr_set_const($db, "EXPENSEREPORT_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res2 = berp3_set_const($db, "EXPENSEREPORT_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 
 	$res3 = 0;
 	if (!empty($conf->projet->enabled) && GETPOSTISSET('EXPENSEREPORT_PROJECT_IS_REQUIRED')) {  // Option may not be provided
-		$res3 = dolibarr_set_const($db, 'EXPENSEREPORT_PROJECT_IS_REQUIRED', GETPOST('EXPENSEREPORT_PROJECT_IS_REQUIRED', 'int'), 'chaine', 0, '', $conf->entity);
+		$res3 = berp3_set_const($db, 'EXPENSEREPORT_PROJECT_IS_REQUIRED', GETPOST('EXPENSEREPORT_PROJECT_IS_REQUIRED', 'int'), 'chaine', 0, '', $conf->entity);
 	}
 
 	$dates = GETPOST('EXPENSEREPORT_PREFILL_DATES_WITH_CURRENT_MONTH', 'int');
-	$res4 = dolibarr_set_const($db, 'EXPENSEREPORT_PREFILL_DATES_WITH_CURRENT_MONTH', intval($dates), 'chaine', 0, '', $conf->entity);
+	$res4 = berp3_set_const($db, 'EXPENSEREPORT_PREFILL_DATES_WITH_CURRENT_MONTH', intval($dates), 'chaine', 0, '', $conf->entity);
 
 	$amounts = GETPOST('EXPENSEREPORT_FORCE_LINE_AMOUNTS_INCLUDING_TAXES_ONLY', 'int');
-	$res5 = dolibarr_set_const($db, 'EXPENSEREPORT_FORCE_LINE_AMOUNTS_INCLUDING_TAXES_ONLY', intval($amounts), 'chaine', 0, '', $conf->entity);
+	$res5 = berp3_set_const($db, 'EXPENSEREPORT_FORCE_LINE_AMOUNTS_INCLUDING_TAXES_ONLY', intval($amounts), 'chaine', 0, '', $conf->entity);
 
 	if (!($res1 > 0) || !($res2 > 0) || !($res3 >= 0) || !($res4 >0) || !($res5 >0)) {
 		$error++;
@@ -457,7 +457,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td></tr>'."\n";

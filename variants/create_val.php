@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2016	Marcos García	<marcosgdf@gmail.com>
- * Copyright (C) 2018   Frédéric France <frederic.france@netlogic.fr>
+/* Copyright (C) 2016		
+ * Copyright (C) 2018    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

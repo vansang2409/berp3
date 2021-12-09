@@ -1,6 +1,6 @@
 <?php
 /* <one line to give the program's name and a brief idea of what it does.>
- * Copyright (C) 2015 ATM Consulting <support@atm-consulting.fr>
+ * Copyright (C) 2015  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  * 	\brief		Page to setup multicurrency module
  */
 
-// Dolibarr environment
+// Berp3 environment
 require '../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/multicurrency.lib.php';
@@ -49,7 +49,7 @@ $reg = array();
 if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
 	$value = GETPOST($code, 'alpha');
-	if (dolibarr_set_const($db, $code, $value, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, $value, 'chaine', 0, '', $conf->entity) > 0) {
 		setEventMessages($langs->trans("SetupSaved"), null, 'mesgs');
 	} else {
 		setEventMessages($langs->trans("Error"), null, 'errors');
@@ -58,7 +58,7 @@ if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 
 if (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, 0) > 0) {
+	if (berp3_del_const($db, $code, 0) > 0) {
 		setEventMessages($langs->trans("SetupSaved"), null, 'mesgs');
 	} else {
 		setEventMessages($langs->trans("Error"), null, 'errors');
@@ -125,9 +125,9 @@ if ($action == 'add_currency') {
 	}
 } elseif ($action == 'setapilayer') {
 	if (GETPOSTISSET('modify_apilayer')) {
-		dolibarr_set_const($db, 'MULTICURRENCY_APP_ID', GETPOST('MULTICURRENCY_APP_ID', 'alpha'));
-		dolibarr_set_const($db, 'MULTICURRENCY_APP_SOURCE', GETPOST('MULTICURRENCY_APP_SOURCE', 'alpha'));
-		//dolibarr_set_const($db, 'MULTICURRENCY_ALTERNATE_SOURCE', GETPOST('MULTICURRENCY_ALTERNATE_SOURCE', 'alpha'));
+		berp3_set_const($db, 'MULTICURRENCY_APP_ID', GETPOST('MULTICURRENCY_APP_ID', 'alpha'));
+		berp3_set_const($db, 'MULTICURRENCY_APP_SOURCE', GETPOST('MULTICURRENCY_APP_SOURCE', 'alpha'));
+		//berp3_set_const($db, 'MULTICURRENCY_ALTERNATE_SOURCE', GETPOST('MULTICURRENCY_ALTERNATE_SOURCE', 'alpha'));
 	} else {
 		$result = MultiCurrency::syncRates($conf->global->MULTICURRENCY_APP_ID);
 		if ($result > 0) {
@@ -234,7 +234,7 @@ print '<td class="right">';
 print '<form method="POST" action="'.$_SERVER['PHP_SELF'].'">';
 print '<input type="hidden" name="token" value="'.newToken().'">';
 print '<input type="hidden" name="action" value="set_MULTICURRENCY_MODIFY_RATE_APPLICATION">';
-print $form->selectarray('MULTICURRENCY_MODIFY_RATE_APPLICATION', array('PU_DOLIBARR' => 'PU_DOLIBARR', 'PU_CURRENCY' => 'PU_CURRENCY'), $conf->global->MULTICURRENCY_MODIFY_RATE_APPLICATION);
+print $form->selectarray('MULTICURRENCY_MODIFY_RATE_APPLICATION', array('PU_BERP3' => 'PU_BERP3', 'PU_CURRENCY' => 'PU_CURRENCY'), $conf->global->MULTICURRENCY_MODIFY_RATE_APPLICATION);
 print '<input type="submit" class="button button-edit" value="'.$langs->trans("Modify").'">';
 print '</form>';
 print '</td></tr>';

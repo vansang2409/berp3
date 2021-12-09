@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2008 Laurent Destailleur  <eldy@users.sourceforge.org>
+/* Copyright (C) 2005      
+ * Copyright (C) 2005-2008   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,19 +24,19 @@
  *	\brief      Description and activation file for the module Click to Dial
  */
 
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to describe and enable module Click to Dial
  */
-class modClickToDial extends DolibarrModules
+class modClickToDial extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -49,7 +49,7 @@ class modClickToDial extends DolibarrModules
 		$this->description = "Integration of a ClickToDial system (Asterisk, ...)";
 		$this->descriptionlong = "Support a Click To Dial feature with a SIP system. When clicking on a phone number, your phone system automatically call the callee.";
 
-		$this->version = 'dolibarr'; // 'development' or 'experimental' or 'dolibarr' or version
+		$this->version = 'berp3'; // 'development' or 'experimental' or 'berp3' or version
 
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'phoning';

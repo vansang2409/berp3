@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville 	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2013 Laurent Destailleur  	<eldy@users.sourceforge.org>
- * Copyright (C) 2011-2013 Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2004       	
+ * Copyright (C) 2005-2013   	
+ * Copyright (C) 2011-2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,25 +53,25 @@ if ($action == 'setvalue') {
 	$mailingdelay = GETPOST('MAILING_DELAY', 'int');
 	$contactbulkdefault = GETPOST('MAILING_CONTACT_DEFAULT_BULK_STATUS', 'int');
 
-	$res = dolibarr_set_const($db, "MAILING_EMAIL_FROM", $mailfrom, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MAILING_EMAIL_FROM", $mailfrom, 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
-	$res = dolibarr_set_const($db, "MAILING_EMAIL_ERRORSTO", $mailerror, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MAILING_EMAIL_ERRORSTO", $mailerror, 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
-	$res = dolibarr_set_const($db, "MAILING_DELAY", $mailingdelay, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MAILING_DELAY", $mailingdelay, 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
-	$res = dolibarr_set_const($db, "MAILING_CONTACT_DEFAULT_BULK_STATUS", $contactbulkdefault, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MAILING_CONTACT_DEFAULT_BULK_STATUS", $contactbulkdefault, 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
 
 	// Create temporary encryption key if nedded
-	$res = dolibarr_set_const($db, "MAILING_EMAIL_UNSUBSCRIBE_KEY", $checkread_key, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MAILING_EMAIL_UNSUBSCRIBE_KEY", $checkread_key, 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -87,7 +87,7 @@ if ($action == 'setvalue') {
 }
 if ($action == 'setonsearchandlistgooncustomerorsuppliercard') {
 	$setonsearchandlistgooncustomerorsuppliercard = GETPOST('value', 'int');
-	$res = dolibarr_set_const($db, "SOCIETE_ON_SEARCH_AND_LIST_GO_ON_CUSTOMER_OR_SUPPLIER_CARD", $setonsearchandlistgooncustomerorsuppliercard, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "SOCIETE_ON_SEARCH_AND_LIST_GO_ON_CUSTOMER_OR_SUPPLIER_CARD", $setonsearchandlistgooncustomerorsuppliercard, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}

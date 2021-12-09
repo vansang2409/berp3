@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2004-2014  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2008		Raphael Bertrand	<raphael.bertrand@resultic.fr>
- * Copyright (C) 2010-2013	Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2012      	Christophe Battarel <christophe.battarel@altairis.fr>
- * Copyright (C) 2012       Cedric Salvador     <csalvador@gpcsolutions.fr>
- * Copyright (C) 2015       Marcos García       <marcosgdf@gmail.com>
- * Copyright (C) 2017       Ferran Marcet       <fmarcet@2byte.es>
- * Copyright (C) 2018-2020  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2014  
+ * Copyright (C) 2005-2012  		
+ * Copyright (C) 2008		Raphael Bertrand	
+ * Copyright (C) 2010-2013	
+ * Copyright (C) 2012      	 
+ * Copyright (C) 2012       Cedric Salvador     
+ * Copyright (C) 2015              
+ * Copyright (C) 2017              
+ * Copyright (C) 2018-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/pdf.lib.php';
 class pdf_eratosthene extends ModelePDFCommandes
 {
 	/**
-	 * @var DoliDb Database handler
+	 * @var Berp3Db Database handler
 	 */
 	public $db;
 
@@ -79,10 +79,10 @@ class pdf_eratosthene extends ModelePDFCommandes
 	public $phpmin = array(5, 6);
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	/**
 	 * @var int page_largeur
@@ -134,7 +134,7 @@ class pdf_eratosthene extends ModelePDFCommandes
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -356,7 +356,7 @@ class pdf_eratosthene extends ModelePDFCommandes
 
 				$pdf->SetTitle($outputlangs->convToOutputCharset($object->ref));
 				$pdf->SetSubject($outputlangs->transnoentities("PdfOrderTitle"));
-				$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+				$pdf->SetCreator("Berp3 ".DOL_VERSION);
 				$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 				$pdf->SetKeyWords($outputlangs->convToOutputCharset($object->ref)." ".$outputlangs->transnoentities("PdfOrderTitle")." ".$outputlangs->convToOutputCharset($object->thirdparty->name));
 				if (!empty($conf->global->MAIN_DISABLE_PDF_COMPRESSION)) {

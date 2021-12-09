@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2013-2016  Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2014-2015  Frederic France      <frederic.france@free.fr>
+/* Copyright (C) 2013-2016  
+ * Copyright (C) 2014-2015        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
 require_once DOL_DOCUMENT_ROOT.'/core/modules/printing/modules_printing.php';
 require_once DOL_DOCUMENT_ROOT.'/printing/lib/printing.lib.php';
-use OAuth\Common\Storage\DoliStorage;
+use OAuth\Common\Storage\Berp3Storage;
 
 // Load translation files required by the page
 $langs->loadLangs(array('admin', 'printing', 'oauth'));
@@ -69,7 +69,7 @@ if ($action == 'setconst' && $user->admin) {
 	$db->begin();
 	foreach ($_POST['setupdriver'] as $setupconst) {
 		//print '<pre>'.print_r($setupconst, true).'</pre>';
-		$result = dolibarr_set_const($db, $setupconst['varname'], $setupconst['value'], 'chaine', 0, '', $conf->entity);
+		$result = berp3_set_const($db, $setupconst['varname'], $setupconst['value'], 'chaine', 0, '', $conf->entity);
 		if (!$result > 0) {
 			$error++;
 		}
@@ -88,7 +88,7 @@ if ($action == 'setconst' && $user->admin) {
 if ($action == 'setvalue' && $user->admin) {
 	$db->begin();
 
-	$result = dolibarr_set_const($db, $varname, $value, 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $varname, $value, 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
@@ -200,8 +200,8 @@ if ($mode == 'setup' && $user->admin) {
 				print '<td>'.$langs->trans("Token").'</td>';
 				print '<td colspan="2">';
 				$tokenobj = null;
-				// Dolibarr storage
-				$storage = new DoliStorage($db, $conf);
+				// Berp3 storage
+				$storage = new Berp3Storage($db, $conf);
 				try {
 					$tokenobj = $storage->retrieveAccessToken($OAUTH_SERVICENAME_GOOGLE);
 				} catch (Exception $e) {

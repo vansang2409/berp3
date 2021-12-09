@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2001-2002	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Jean-Louis Bergamo		<jlb@j1b.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2012		Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2013		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2015		Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2001-2002	
+ * Copyright (C) 2003		
+ * Copyright (C) 2004-2012	
+ * Copyright (C) 2012		
+ * Copyright (C) 2013		
+ * Copyright (C) 2015		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

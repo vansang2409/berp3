@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2002-2004  Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003       Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2015  Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009  Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2002-2004  
+ * Copyright (C) 2003          
+ * Copyright (C) 2004-2015  
+ * Copyright (C) 2005-2009  
  * Copyright (C) 2013       Peter Fontaine       <contact@peterfontaine.fr>
- * Copyright (C) 2015-2016  Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2015       Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2021       Gauthier VERDOL      <gauthier.verdol@atm-consulting.fr>
+ * Copyright (C) 2015-2016  
+ * Copyright (C) 2015       
+ * Copyright (C) 2021             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -300,7 +300,7 @@ if ($action != 'edit' && $action != 'create') {		// If not bank account yet, $ac
 	print '<tr><td class="titlefieldmiddle">'.$langs->trans("Login").'</td>';
 	if (!empty($object->ldap_sid) && $object->statut == 0) {
 		print '<td class="error">';
-		print $langs->trans("LoginAccountDisableInDolibarr");
+		print $langs->trans("LoginAccountDisableInBerp3");
 		print '</td>';
 	} else {
 		print '<td>';

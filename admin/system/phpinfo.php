@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2001-2002	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2016       Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2020       Tobias Sekan			<tobias.sekan@startmail.com>
+/* Copyright (C) 2001-2002	
+ * Copyright (C) 2004-2012	
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2016       
+ * Copyright (C) 2020       Tobias Sekan			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -183,7 +183,7 @@ print "<td>".$name."</td>";
 print getResultColumn($name, $activatedExtensions, $loadedExtensions, $functions);
 print "</tr>";
 
-if (empty($_SERVER["SERVER_ADMIN"]) || $_SERVER["SERVER_ADMIN"] != 'doliwamp@localhost') {
+if (empty($_SERVER["SERVER_ADMIN"]) || $_SERVER["SERVER_ADMIN"] != 'berp3wamp@localhost') {
 	$functions = ["locale_get_primary_language", "locale_get_region"];
 	$name      = "Intl";
 

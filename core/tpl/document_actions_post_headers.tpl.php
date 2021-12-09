@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C)    2013      Cédric Salvador     <csalvador@gpcsolutions.fr>
- * Copyright (C)    2013-2014 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C)	2015	  Marcos García		  <marcosgdf@gmail.com>
- * Copyright (C) 	2019	  Nicolas ZABOURI     <info@inovea-conseil.com>
+/* Copyright (C)    2013           
+ * Copyright (C)    2013-2014 
+ * Copyright (C)	2015	  		  
+ * Copyright (C) 	2019	       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

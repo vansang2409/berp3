@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2018		Quentin Vial-Gouteyron	<quentin.vial-gouteyron@atm-consulting.fr>
- * Copyright (C) 2019		Frédéric France			<frederic.france@netlogic.fr>
+ * Copyright (C) 2019					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/reception/modules_reception.php';
  */
 class mod_reception_moonstone extends ModelNumRefReception
 {
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 	public $error = '';
 	public $nom = 'Moonstone';
 

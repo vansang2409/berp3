@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2007 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2008      Raphael Bertrand (Resultic) <raphael.bertrand@resultic.fr>
- * Copyright (C) 2013      Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2005-2007 
+ * Copyright (C) 2008       
+ * Copyright (C) 2013      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,10 +34,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/facture/modules_facture.php';
 class mod_facture_mercure extends ModeleNumRefFactures
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var string Error message

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2006-2011 Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2006-2011 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ class modGeneratePassNone extends ModeleGenPassword
 	public $length;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -51,7 +51,7 @@ class modGeneratePassNone extends ModeleGenPassword
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db			Database handler
+	 *  @param		Berp3DB		$db			Database handler
 	 *	@param		Conf		$conf		Handler de conf
 	 *	@param		Translate	$langs		Handler de langue
 	 *	@param		User		$user		Handler du user connecte

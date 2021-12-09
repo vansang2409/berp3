@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2006-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2015-2018 Charlene BENKE  	<charlie@patas-monkey.com>
- * Copyright (C) 2020      Maxime DEMAREST <maxime@indelog.fr>
+/* Copyright (C) 2003-2006 
+ * Copyright (C) 2006-2014 
+ * Copyright (C) 2015-2018 Charlene BENKE  	
+ * Copyright (C) 2020       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ class pdf_paiement
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb		$db      Database handler
+	 *  @param      Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -300,7 +300,7 @@ class pdf_paiement
 
 		$pdf->SetTitle($outputlangs->transnoentities("Payments"));
 		$pdf->SetSubject($outputlangs->transnoentities("Payments"));
-		$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+		$pdf->SetCreator("Berp3 ".DOL_VERSION);
 		$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 		//$pdf->SetKeyWords();
 		if (!empty($conf->global->MAIN_DISABLE_PDF_COMPRESSION)) {

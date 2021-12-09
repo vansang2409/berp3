@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2021  Florian HENRY <florian.henry@scopen.fr>
- * Copyright (C) 2021		Frédéric France			<frederic.france@netlogic.fr>
+/* Copyright (C) 2017  
+ * Copyright (C) 2021  Florian HENRY 
+ * Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -137,9 +137,9 @@ class DefaultValues extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 

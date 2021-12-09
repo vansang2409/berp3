@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003      Eric Seigne          <erics@rycks.com>
- * Copyright (C) 2003,2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2011 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011 	   Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2020		Tobias Sekan		<tobias.sekan@startmail.com>
+/* Copyright (C) 2003                
+ * Copyright (C) 2003,2005 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2005-2011 
+ * Copyright (C) 2011 	   
+ * Copyright (C) 2020				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -100,11 +100,11 @@ if ($action == 'add' || GETPOST("modify")) {
 			//print $sql;exit;
 		}
 
-		$result1 = dolibarr_set_const($db, "EXTERNAL_RSS_TITLE_".GETPOST("norss", 'int'), GETPOST($external_rss_title, 'alpha'), 'chaine', 0, '', $conf->entity);
+		$result1 = berp3_set_const($db, "EXTERNAL_RSS_TITLE_".GETPOST("norss", 'int'), GETPOST($external_rss_title, 'alpha'), 'chaine', 0, '', $conf->entity);
 		if ($result1) {
 			$consttosave = "EXTERNAL_RSS_URLRSS_".GETPOST("norss", 'int');
 			$urltosave = GETPOST($external_rss_urlrss, 'alpha');
-			$result2 = dolibarr_set_const($db, $consttosave, $urltosave, 'chaine', 0, '', $conf->entity);
+			$result2 = berp3_set_const($db, $consttosave, $urltosave, 'chaine', 0, '', $conf->entity);
 			//var_dump($result2);exit;
 		}
 
@@ -160,9 +160,9 @@ if (GETPOST("delete")) {
 		}
 
 
-		$result1 = dolibarr_del_const($db, "EXTERNAL_RSS_TITLE_".GETPOST("norss", 'int'), $conf->entity);
+		$result1 = berp3_del_const($db, "EXTERNAL_RSS_TITLE_".GETPOST("norss", 'int'), $conf->entity);
 		if ($result1) {
-			$result2 = dolibarr_del_const($db, "EXTERNAL_RSS_URLRSS_".GETPOST("norss", 'int'), $conf->entity);
+			$result2 = berp3_del_const($db, "EXTERNAL_RSS_URLRSS_".GETPOST("norss", 'int'), $conf->entity);
 		}
 
 		if ($result1 && $result2) {
@@ -206,7 +206,7 @@ print '</tr>';
 print '<tr class="pair">';
 print '<td>'.$langs->trans('RSSUrl').'</td>';
 print '<td><input type="text" class="flat minwidth300" name="external_rss_urlrss_'.($lastexternalrss + 1).'" value=""></td>';
-print '<td>http://news.google.com/news?ned=us&topic=h&output=rss<br>http://www.dolibarr.org/rss</td>';
+print '<td>http://news.google.com/news?ned=us&topic=h&output=rss<br>http://www.berp3.org/rss</td>';
 print '</tr>';
 print '</table>';
 

@@ -1,9 +1,9 @@
 <?php
 /**
- * Copyright (C) 2013	    Marcos García	        <marcosgdf@gmail.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2013	    	        
+ * Copyright (C) 2018       
  * Copyright (C) 2020       Abbes Bahfir            <bafbes@gmail.com>
- * Copyright (C) 2021       Waël Almoman            <info@almoman.com>
+ * Copyright (C) 2021                   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -222,13 +222,13 @@ function getHtmlOnlinePaymentLink($type, $ref, $label = '')
  */
 function getOnlinePaymentUrl($mode, $type, $ref = '', $amount = '9.99', $freetag = 'your_tag', $localorexternal = 0)
 {
-	global $conf, $dolibarr_main_url_root;
+	global $conf, $berp3_main_url_root;
 
 	$ref = str_replace(' ', '', $ref);
 	$out = '';
 
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 	//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 

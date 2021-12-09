@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012	   Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2021	   Ferran Marcet        <fmarcet@2byte.es>
+/* Copyright (C) 2003-2006 
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2012	   
+ * Copyright (C) 2021	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,18 +27,18 @@
  *	\brief      Description and activation file for the module Stock
  */
 
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to describe and enable module Stock
  */
-class modStock extends DolibarrModules
+class modStock extends Berp3Modules
 {
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -53,8 +53,8 @@ class modStock extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Gestion des stocks";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'stock';
@@ -421,7 +421,7 @@ class modStock extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories
 	 *
 	 *  @param      string	$options    Options when enabling module ('', 'noboxes')

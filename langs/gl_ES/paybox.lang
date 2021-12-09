@@ -1,7 +1,7 @@
 # BERP3 language file - Source file is en_US - paybox
 PayBoxSetup=Configuración do módulo PayBox
 PayBoxDesc=Este módulo ofrece páxinas para permitir o pago en <a href="http://www.paybox.com" target="_blank">PayBox</a> por parte dos clientes. Pode usarse para un pago gratuíto ou para un pago dun obxecto BERP3 en particular (factura, pedido, ...)
-FollowingUrlAreAvailableToMakePayments=As seguintes URL están dispoñibles para ofrecer unha páxina a un cliente na que facer un pago en obxectos Dolibarr
+FollowingUrlAreAvailableToMakePayments=As seguintes URL están dispoñibles para ofrecer unha páxina a un cliente na que facer un pago en obxectos Berp3
 PaymentForm=Forma de pagamento
 WelcomeOnPaymentPage=A nosa benvida ao servizo de pagamento en liña
 ThisScreenAllowsYouToPay=Esta pantalla permítelle facer un pagamento en liña a %s.

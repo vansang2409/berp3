@@ -1527,7 +1527,7 @@ select.selectarrowonleft option {
         max-width: 140px;
     }
     .vmenu .searchform input {
-        max-width: 138px;	/* length of input text in the quick search box when using a smartphone and without dolidroid */
+        max-width: 138px;	/* length of input text in the quick search box when using a smartphone and without berp3droid */
     }
 
     .hideonsmartphone { display: none; }
@@ -3031,7 +3031,7 @@ font-size: 14px;
     color: <?php print $maincolor; ?> !important;
 }
 
-.blockvmenuhelp a[href*="http://www.dolibarr."] {
+.blockvmenuhelp a[href*="http://www.berp3."] {
     padding: 15px 0 5px;
     font-size: 15px;
 }
@@ -6614,7 +6614,7 @@ span#select2-boxbookmark-container, span#select2-boxcombo-container {
 }
 
 /* To emulate select 2 style */
-.select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr {
+.select2-container-multi-berp3 .select2-choices-berp3 .select2-search-choice-berp3 {
     padding: 2px 5px 1px 5px;
     margin: 0 0 2px 3px;
     position: relative;
@@ -6637,14 +6637,14 @@ span#select2-boxbookmark-container, span#select2-boxcombo-container {
     background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
     background-image: linear-gradient(to bottom, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
 }
-.select2-container-multi-dolibarr .select2-choices-dolibarr .select2-search-choice-dolibarr a {
+.select2-container-multi-berp3 .select2-choices-berp3 .select2-search-choice-berp3 a {
     font-weight: normal;
 }
-.select2-container-multi-dolibarr .select2-choices-dolibarr li {
+.select2-container-multi-berp3 .select2-choices-berp3 li {
     float: left;
     list-style: none;
 }
-.select2-container-multi-dolibarr .select2-choices-dolibarr {
+.select2-container-multi-berp3 .select2-choices-berp3 {
     height: auto !important;
     height: 1%;
     margin: 0;

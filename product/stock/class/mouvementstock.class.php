@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2003-2006 
+ * Copyright (C) 2005-2015 
  * Copyright (C) 2011      Jean Heimburger      <jean@tiaris.info>
- * Copyright (C) 2014	   Cedric GROSS	        <c.gross@kreiz-it.fr>
+ * Copyright (C) 2014	   Cedric GROSS	        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -132,7 +132,7 @@ class MouvementStock extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB		$db      Database handler
+	 *  @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

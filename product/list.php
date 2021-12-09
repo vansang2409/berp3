@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2001-2006  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2019  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2012-2016  Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2013-2019	Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2013-2015  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2013       Jean Heimburger         <jean@tiaris.info>
- * Copyright (C) 2013       Cédric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2013       Florian Henry           <florian.henry@open-concept.pro>
+/* Copyright (C) 2001-2006  
+ * Copyright (C) 2004-2019  
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2012-2016  
+ * Copyright (C) 2013-2019	
+ * Copyright (C) 2013-2015        
+ * Copyright (C) 2013       
+ * Copyright (C) 2013                
+ * Copyright (C) 2013       
  * Copyright (C) 2013       Adolfo segura           <adolfo.segura@gmail.com>
- * Copyright (C) 2015       Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016       Ferran Marcet		    <fmarcet@2byte.es>
- * Copyright (C) 2020-2021	Open-DSI				<support@open-dsi.fr>
+ * Copyright (C) 2015       
+ * Copyright (C) 2016       		    
+ * Copyright (C) 2020-2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -139,7 +139,7 @@ if (empty($action)) {
 	$action = 'list';
 }
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $canvas = GETPOST("canvas");
 $objcanvas = null;
 if (!empty($canvas)) {

@@ -1,14 +1,14 @@
 <?php
-/* Copyright (C) 2001-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005      Simon TOSSER         <simon@kornog-computing.com>
- * Copyright (C) 2005-2017 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2013 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2013      Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2014      Cedric GROSS         <c.gross@kreiz-it.fr>
- * Copyright (C) 2015      Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2021 Frédéric France      <frederic.france@netlogic.fr>
- * Copyright (C) 2019	   Ferran Marcet	    <fmarcet@2byte.es>
+/* Copyright (C) 2001-2005 
+ * Copyright (C) 2004-2018 
+ * Copyright (C) 2005               
+ * Copyright (C) 2005-2017 
+ * Copyright (C) 2010-2013 
+ * Copyright (C) 2013      
+ * Copyright (C) 2014      Cedric GROSS         
+ * Copyright (C) 2015      
+ * Copyright (C) 2018-2021 
+ * Copyright (C) 2019	   	    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1294,7 +1294,7 @@ if ($action == 'create') {
 	// Description
 	print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('note', (GETPOSTISSET('note') ? GETPOST('note', 'restricthtml') : $object->note_private), '', 120, 'dolibarr_notes', 'In', true, true, $conf->fckeditor->enabled, ROWS_4, '90%');
+	$doleditor = new DolEditor('note', (GETPOSTISSET('note') ? GETPOST('note', 'restricthtml') : $object->note_private), '', 120, 'berp3_notes', 'In', true, true, $conf->fckeditor->enabled, ROWS_4, '90%');
 	$doleditor->Create();
 	print '</td></tr>';
 
@@ -1749,7 +1749,7 @@ if ($id > 0) {
 		print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 		// Editeur wysiwyg
 		require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor('note', $object->note_private, '', 200, 'dolibarr_notes', 'In', true, true, $conf->fckeditor->enabled, ROWS_5, '90%');
+		$doleditor = new DolEditor('note', $object->note_private, '', 200, 'berp3_notes', 'In', true, true, $conf->fckeditor->enabled, ROWS_5, '90%');
 		$doleditor->Create();
 		print '</td></tr>';
 

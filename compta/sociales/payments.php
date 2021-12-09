@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2001-2003 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2016 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2010 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2016 Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2011-2014 Juanjo Menent	<jmenent@2byte.es>
- * Copyright (C) 2015      Jean-François Ferry	<jfefe@aternatik.fr>
- * Copyright (C) 2019      Nicolas ZABOURI      <info@inovea-conseil.com>
- * Copyright (C) 2021	   Gauthier VERDOL      <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2001-2003 
+ * Copyright (C) 2004-2016 
+ * Copyright (C) 2005-2010 
+ * Copyright (C) 2011-2016 
+ * Copyright (C) 2011-2014 	
+ * Copyright (C) 2015      
+ * Copyright (C) 2019            
+ * Copyright (C) 2021	         
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

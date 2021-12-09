@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2009 Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005	   Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2005-2009 	
+ * Copyright (C) 2005	   		
  * Copyright (C) 2015	   Francis Appels		<francis.appels@yahoo.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -32,10 +32,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/barcode.lib.php'; // This is to includ
 class modTcpdfbarcode extends ModeleBarCode
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var string Error code (or message)
@@ -212,7 +212,7 @@ class modTcpdfbarcode extends ModeleBarCode
 	/**
 	 *	get available output_modes for tcpdf class wth its translated description
 	 *
-	 * @param	string $dolEncodingType dolibarr barcode encoding type
+	 * @param	string $dolEncodingType berp3 barcode encoding type
 	 * @return	string tcpdf encoding type
 	 */
 	public function getTcpdfEncodingType($dolEncodingType)

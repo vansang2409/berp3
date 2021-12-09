@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2005-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin	    <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2011 Juanjo Menent	    <jmenent@2byte.es>
- * Copyright (C) 2015-2017 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2015-2017 Nicolas ZABOURI      <info@inovea-conseil.com>
- * Copyright (C) 2018-2021  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2005-2012 
+ * Copyright (C) 2005-2012 	    
+ * Copyright (C) 2010-2011 	    
+ * Copyright (C) 2015-2017 
+ * Copyright (C) 2015-2017       
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/html.form.class.php';
 class FormMail extends Form
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -163,7 +163,7 @@ class FormMail extends Form
 	/**
 	 *	Constructor
 	 *
-	 *  @param	DoliDB	$db      Database handler
+	 *  @param	Berp3DB	$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -937,7 +937,7 @@ class FormMail extends Form
 					$out .= '<input type="hidden" id="message" name="message" value="'.$defaultmessage.'" />';
 				} else {
 					if (!isset($this->ckeditortoolbar)) {
-						$this->ckeditortoolbar = 'dolibarr_notes';
+						$this->ckeditortoolbar = 'berp3_notes';
 					}
 
 					// Editor wysiwyg
@@ -1246,7 +1246,7 @@ class FormMail extends Form
 	 *  Return templates of email with type = $type_template or type = 'all'.
 	 *  This search into table c_email_templates. Used by the get_form function.
 	 *
-	 *  @param	DoliDB		$db				Database handler
+	 *  @param	Berp3DB		$db				Database handler
 	 *  @param	string		$type_template	Get message for model/type=$type_template, type='all' also included.
 	 *  @param	User		$user			Get template public or limited to this user
 	 *  @param	Translate	$outputlangs	Output lang object

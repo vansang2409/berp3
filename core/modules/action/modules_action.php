@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003-2005	Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010	Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004     	Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012	Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2016		Charlie Benke		<charlie@patas-monkey.com>
+/* Copyright (C) 2003-2005	
+ * Copyright (C) 2004-2010	
+ * Copyright (C) 2004     	          
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2016				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ abstract class ModeleAction extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 * 	@param	DoliDB		$db					Database handler
+	 * 	@param	Berp3DB		$db					Database handler
 	 *  @param	integer		$maxfilenamelength  Max length of value to show
 	 * 	@return	array							List of templates
 	 */
@@ -60,7 +60,7 @@ abstract class ModeleAction extends CommonDocGenerator
 /**
  *  Create a product document on disk using template defined into PRODUCT_ADDON_PDF
  *
- *  @param	DoliDB		$db  			data base object
+ *  @param	Berp3DB		$db  			data base object
  *  @param	Object		$object			Object fichinter
  *  @param	string		$modele			forces the model to use ('' by default)
  *  @param	Translate	$outputlangs	lang object to use for translation

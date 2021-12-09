@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2017 
  * Copyright (C) 2021 NextGestion         <contact@nextgestion.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -190,9 +190,9 @@ class Partnership extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 
@@ -1281,7 +1281,7 @@ class Partnership extends CommonObject
 	{
 		global $conf, $langs;
 
-		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/dolibarr_mydedicatedlofile.log';
+		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/berp3_mydedicatedlofile.log';
 
 		$error = 0;
 		$this->output = '';
@@ -1320,9 +1320,9 @@ class PartnershipLine extends CommonObjectLine
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}

@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (C) 2015-2016  Nicolas Rivera      <nrivera.pro@gmail.com>
- * Copyright (C) 2015-2019  Open-DSI            <support@open-dsi.fr>
+ * Copyright (C) 2015-2019              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
  *	\brief      Menus Page < Oblyon Theme Configurator >
  */
 
-// Dolibarr environment
+// Berp3 environment
 $res = @include ("../../main.inc.php"); // From htdocs directory
 if (! $res) {
   $res = @include ("../../../main.inc.php"); // From "custom" directory
@@ -55,10 +55,10 @@ if ($action == 'set') {
   $name = GETPOST ( 'name', 'text' );
     
   if ($value == 1) {
-    $res = dolibarr_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
+    $res = berp3_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
     if (! $res > 0) $error ++;
   } else {
-    $res = dolibarr_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
+    $res = berp3_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
     if (! $res > 0) $error ++;
   }
 
@@ -70,7 +70,7 @@ if ($action == 'set') {
 }
  
 if ($action == 'setvar'){  
-  $res = dolibarr_set_const($db, 'OBLYON_EFFECT_LEFTMENU', GETPOST('OBLYON_EFFECT_LEFTMENU'),'chaine',0,'',$conf->entity);
+  $res = berp3_set_const($db, 'OBLYON_EFFECT_LEFTMENU', GETPOST('OBLYON_EFFECT_LEFTMENU'),'chaine',0,'',$conf->entity);
 
   if (! $res > 0) $error++;
   

@@ -1,7 +1,7 @@
 -- ============================================================================
--- Copyright (C) 2001-2003 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2006-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2007-2013 Regis Houssin        <regis.houssin@inodbox.com>
+-- Copyright (C) 2001-2003 
+-- Copyright (C) 2006-2013 
+-- Copyright (C) 2007-2013 
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ create table llx_user
   rowid             integer AUTO_INCREMENT PRIMARY KEY,
   entity            integer DEFAULT 1 NOT NULL, -- multi company id
 
-  ref_ext			varchar(50),				-- reference into an external system (not used by dolibarr)
+  ref_ext			varchar(50),				-- reference into an external system (not used by berp3)
   ref_int			varchar(50),				-- reference into an internal system (deprecated)
 
   admin             smallint DEFAULT 0,			-- user has admin profile

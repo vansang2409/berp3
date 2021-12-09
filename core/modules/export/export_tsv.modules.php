@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2012      Marcos García        <marcosgdf@gmail.com>
+/* Copyright (C) 2006-2008 
+ * Copyright (C) 2012      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,10 +43,10 @@ class ExportTsv extends ModeleExports
 	public $extension;
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	public $label_lib;
 
@@ -60,7 +60,7 @@ class ExportTsv extends ModeleExports
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB	$db      Database handler
+	 *  @param      Berp3DB	$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -75,7 +75,7 @@ class ExportTsv extends ModeleExports
 		$this->version = '1.15'; // Driver version
 
 		// If driver use an external library, put its name here
-		$this->label_lib = 'Dolibarr';
+		$this->label_lib = 'Berp3';
 		$this->version_lib = DOL_VERSION;
 	}
 
@@ -302,7 +302,7 @@ class ExportTsv extends ModeleExports
 	public function tsv_clean($newvalue, $charset)
 	{
 		// phpcs:enable
-		// Rule Dolibarr: No HTML
+		// Rule Berp3: No HTML
 		$newvalue = dol_string_nohtmltag($newvalue, 1, $charset);
 
 		// Rule 1 TSV: No CR, LF in cells

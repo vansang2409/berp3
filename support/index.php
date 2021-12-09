@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2008-2015	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2008-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2012		Juanjo Menent		<jmenent@2byte.es>
- * add german links 2020    Udo Tamm            <dev@dolibit.de>
+/* Copyright (C) 2008-2015		
+ * Copyright (C) 2008-2012			
+ * Copyright (C) 2012		
+ * add german links 2020                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,11 +25,11 @@
  */
 
 
-// Use its own include to not share the include of Dolibarr
+// Use its own include to not share the include of Berp3
 // This is a standalone feature with no information from BERP3 to show
 // and no database access to do.
 include_once 'inc.php';
-$uri = preg_replace('/^http(s?):\/\//i', '', $dolibarr_main_url_root);
+$uri = preg_replace('/^http(s?):\/\//i', '', $berp3_main_url_root);
 $pos = strstr($uri, '/'); // $pos contient alors url sans nom domaine
 if ($pos == '/') {
 	$pos = ''; // si $pos vaut /, on le met a ''
@@ -45,7 +45,7 @@ $langs->loadLangs(array("other", $langs->load("help")));
  * View
  */
 
-pHeader($langs->trans("DolibarrHelpCenter"), $_SERVER["PHP_SELF"]);
+pHeader($langs->trans("Berp3HelpCenter"), $_SERVER["PHP_SELF"]);
 
 print '<br><span class="opacitymedium">'.$langs->trans("HelpCenterDesc1")."<br>\n";
 print $langs->trans("HelpCenterDesc2")."</span><br>\n";
@@ -65,7 +65,7 @@ if (GETPOST('dol_no_mouse_hover')) {
 if (GETPOST('dol_use_jmobile')) {
 	$homeurl .= (strpos($homeurl, '?') === false ? '?' : '&').'dol_use_jmobile=1';
 }
-print $langs->trans("ToGoBackToDolibarr", $homeurl);
+print $langs->trans("ToGoBackToBerp3", $homeurl);
 
 print '<br><br>';
 
@@ -111,22 +111,22 @@ if (preg_match('/de/i', $langs->defaultlang)) {
 }
 print '<br>'.$langs->trans("ForDocumentationSeeWiki", $urlwiki, $urlwiki);
 print '<br>';
-$urlforum = 'https://www.dolibarr.org/forum/';
-$urlforumlocal = 'https://www.dolibarr.org/forum/';
+$urlforum = 'https://www.berp3.org/forum/';
+$urlforumlocal = 'https://www.berp3.org/forum/';
 if (preg_match('/fr/i', $langs->defaultlang)) {
-	$urlforumlocal = 'https://www.dolibarr.fr/forum/';
+	$urlforumlocal = 'https://www.berp3.fr/forum/';
 }
 if (preg_match('/es/i', $langs->defaultlang)) {
-	$urlforumlocal = 'https://www.dolibarr.es/foro/';
+	$urlforumlocal = 'https://www.berp3.es/foro/';
 }
 if (preg_match('/it/i', $langs->defaultlang)) {
-	$urlforumlocal = 'http://www.dolibarr.it/forum/';
+	$urlforumlocal = 'http://www.berp3.it/forum/';
 }
 if (preg_match('/gr/i', $langs->defaultlang)) {
-	$urlforumlocal = 'https://www.dolibarr.gr/forum/';
+	$urlforumlocal = 'https://www.berp3.gr/forum/';
 }
 if (preg_match('/de/i', $langs->defaultlang)) {
-	$urlforumlocal = 'https://www.dolibarr.de/forum/';
+	$urlforumlocal = 'https://www.berp3.de/forum/';
 }
 print '<br>'.$langs->trans("ForAnswersSeeForum", $urlforumlocal, $urlforumlocal).'<br>';
 if ($urlforumlocal != $urlforum) {
@@ -158,7 +158,7 @@ print '</td></tr></table>';
 
 print '</td>';
 print '</tr><tr>';
-$urlwiki = 'https://partners.dolibarr.org';
+$urlwiki = 'https://partners.berp3.org';
 print '<td align="center" valign="top">';
 print '<table class="nocellnopadd">';
 print '<tr><td align="center">';
@@ -194,7 +194,7 @@ print '</td></tr></table>';
 
 print '</td>';
 print '</tr><tr>';
-$urlwiki = 'https://partners.dolibarr.org';
+$urlwiki = 'https://partners.berp3.org';
 print '<td align="center" valign="top">';
 print '<table class="nocellnopadd">';
 print '<tr><td align="center">';

@@ -11,7 +11,7 @@ class PclZipProxyException extends Exception
  * Encoding : ISO-8859-1
  *
  * @copyright  GPL License 2008 - Julien Pauli - Cyril PIERRE de GEYER - Anaska (http://www.anaska.com)
- * @copyright  GPL License 2010 - Laurent Destailleur - eldy@users.sourceforge.net
+ * @copyright  GPL License 2010 -  - eldy@users.sourceforge.net
  * @license    https://www.gnu.org/copyleft/gpl.html  GPL License
  * @version 1.4
  */

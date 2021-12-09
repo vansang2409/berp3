@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2007-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2007-2017 
  * Copyright (C) 2021		NextGestion			<contact@nextgestion.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,7 +23,7 @@
  */
 
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../main.inc.php';
 
 require_once DOL_DOCUMENT_ROOT.'/contact/class/contact.class.php';

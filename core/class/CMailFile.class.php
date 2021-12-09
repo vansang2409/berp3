@@ -1,12 +1,12 @@
 <?php
 /**
  * Copyright (C)            Dan Potter
- * Copyright (C)            Eric Seigne
- * Copyright (C) 2000-2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2003       Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2004-2015  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2019-2020  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C)            
+ * Copyright (C) 2000-2005  
+ * Copyright (C) 2003             
+ * Copyright (C) 2004-2015  
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2019-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -140,7 +140,7 @@ class CMailFile
 	 */
 	public function __construct($subject, $to, $from, $msg, $filename_list = array(), $mimetype_list = array(), $mimefilename_list = array(), $addr_cc = "", $addr_bcc = "", $deliveryreceipt = 0, $msgishtml = 0, $errors_to = '', $css = '', $trackid = '', $moreinheader = '', $sendcontext = 'standard', $replyto = '')
 	{
-		global $conf, $dolibarr_main_data_root;
+		global $conf, $berp3_main_data_root;
 
 		// Clean values of $mimefilename_list
 		if (is_array($mimefilename_list)) {
@@ -206,10 +206,10 @@ class CMailFile
 		$this->mixed_boundary = "multipart_x.".time().".x_boundary";
 
 		// On defini related_boundary
-		$this->related_boundary = 'mul_'.dol_hash(uniqid("dolibarr2"), 3); // Force md5 hash (does not contains special chars)
+		$this->related_boundary = 'mul_'.dol_hash(uniqid("berp32"), 3); // Force md5 hash (does not contains special chars)
 
 		// On defini alternative_boundary
-		$this->alternative_boundary = 'mul_'.dol_hash(uniqid("dolibarr3"), 3); // Force md5 hash (does not contains special chars)
+		$this->alternative_boundary = 'mul_'.dol_hash(uniqid("berp33"), 3); // Force md5 hash (does not contains special chars)
 
 		dol_syslog("CMailFile::CMailfile: sendmode=".$this->sendmode." charset=".$conf->file->character_set_client." from=$from, to=$to, addr_cc=$addr_cc, addr_bcc=$addr_bcc, errors_to=$errors_to, replyto=$replyto trackid=$trackid sendcontext=$sendcontext", LOG_DEBUG);
 		dol_syslog("CMailFile::CMailfile: subject=".$subject.", deliveryreceipt=".$deliveryreceipt.", msgishtml=".$msgishtml, LOG_DEBUG);
@@ -234,10 +234,10 @@ class CMailFile
 			$this->msgishtml = $msgishtml;
 		}
 
-		global $dolibarr_main_url_root;
+		global $berp3_main_url_root;
 
 		// Define $urlwithroot
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 		//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -254,7 +254,7 @@ class CMailFile
 
 			$findimg = 0;
 			if (!empty($conf->global->MAIN_MAIL_ADD_INLINE_IMAGES_IF_IN_MEDIAS)) {
-				$findimg = $this->findHtmlImages($dolibarr_main_data_root.'/medias');
+				$findimg = $this->findHtmlImages($berp3_main_data_root.'/medias');
 			}
 
 			// Define if there is at least one file
@@ -420,7 +420,7 @@ class CMailFile
 			}
 
 			$host = dol_getprefix('email');
-			$this->msgid = time().'.SMTPs-dolibarr-'.$this->trackid.'@'.$host;
+			$this->msgid = time().'.SMTPs-berp3-'.$this->trackid.'@'.$host;
 
 			$this->smtps = $smtps;
 		} elseif ($this->sendmode == 'swiftmailer') {
@@ -440,8 +440,8 @@ class CMailFile
 			//$this->message = new Swift_SignedMessage();
 			// Adding a trackid header to a message
 			$headers = $this->message->getHeaders();
-			$headers->addTextHeader('X-Dolibarr-TRACKID', $this->trackid.'@'.$host);
-			$this->msgid = time().'.swiftmailer-dolibarr-'.$this->trackid.'@'.$host;
+			$headers->addTextHeader('X-Berp3-TRACKID', $this->trackid.'@'.$host);
+			$this->msgid = time().'.swiftmailer-berp3-'.$this->trackid.'@'.$host;
 			$headerID = $this->msgid;
 			$msgid = $headers->get('Message-ID');
 			$msgid->setId($headerID);
@@ -1017,10 +1017,10 @@ class CMailFile
 	public function dump_mail()
 	{
 		// phpcs:enable
-		global $conf, $dolibarr_main_data_root;
+		global $conf, $berp3_main_data_root;
 
-		if (@is_writeable($dolibarr_main_data_root)) {	// Avoid fatal error on fopen with open_basedir
-			$outputfile = $dolibarr_main_data_root."/dolibarr_mail.log";
+		if (@is_writeable($berp3_main_data_root)) {	// Avoid fatal error on fopen with open_basedir
+			$outputfile = $berp3_main_data_root."/berp3_mail.log";
 			$fp = fopen($outputfile, "w");
 
 			if ($this->sendmode == 'mail') {
@@ -1143,10 +1143,10 @@ class CMailFile
 		$trackid = $this->trackid;
 		if ($trackid) {
 			// References is kept in response and Message-ID is returned into In-Reply-To:
-			$this->msgid = time().'.phpmail-dolibarr-'.$trackid.'@'.$host;
+			$this->msgid = time().'.phpmail-berp3-'.$trackid.'@'.$host;
 			$out .= 'Message-ID: <'.$this->msgid.">".$this->eol2; // Uppercase seems replaced by phpmail
 			$out .= 'References: <'.$this->msgid.">".$this->eol2;
-			$out .= 'X-Dolibarr-TRACKID: '.$trackid.'@'.$host.$this->eol2;
+			$out .= 'X-Berp3-TRACKID: '.$trackid.'@'.$host.$this->eol2;
 		} else {
 			$this->msgid = time().'.phpmail@'.$host;
 			$out .= 'Message-ID: <'.$this->msgid.">".$this->eol2;
@@ -1155,7 +1155,7 @@ class CMailFile
 		if (!empty($_SERVER['REMOTE_ADDR'])) {
 			$out .= "X-RemoteAddr: ".$_SERVER['REMOTE_ADDR'].$this->eol2;
 		}
-		$out .= "X-Mailer: Dolibarr version ".DOL_VERSION." (using php mail)".$this->eol2;
+		$out .= "X-Mailer: Berp3 version ".DOL_VERSION." (using php mail)".$this->eol2;
 		$out .= "Mime-Version: 1.0".$this->eol2;
 
 		//$out.= "From: ".$this->getValidAddress($this->addr_from,3,1).$this->eol;

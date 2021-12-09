@@ -7,6 +7,6 @@ TotalTicket=Totale ticketprijs
 BankToPay=Betalingsaccount
 ShowCompany=Toon bedrijf
 ShowStock=Toon magazijn
-DolibarrReceiptPrinter=BERP3 Ontvangsten Printer
+Berp3ReceiptPrinter=BERP3 Ontvangsten Printer
 NotAvailableWithBrowserPrinter=Not available when printer for receipt is set to browser:
 Receipt=Ontvangst

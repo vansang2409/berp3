@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2013-2014 Olivier Geffroy      <jeff@jeffinfo.com>
- * Copyright (C) 2013-2021 Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2014      Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2019      Eric Seigne          <eric.seigne@cap-rel.fr>
- * Copyright (C) 2021      Frédéric France      <frederic.france@netlogic.fr>
+/*  
+ * Copyright (C) 2013-2021 
+ * Copyright (C) 2014      
+ * Copyright (C) 2019                
+ * Copyright (C) 2021      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

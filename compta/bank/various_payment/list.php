@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2017-2019	Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2017       Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2020       Tobias Sekan            <tobias.sekan@startmail.com>
+/* Copyright (C) 2017-2019	
+ * Copyright (C) 2017       
+ * Copyright (C) 2018       
+ * Copyright (C) 2020                   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

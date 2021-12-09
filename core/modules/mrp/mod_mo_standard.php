@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2005-2010 
+ * Copyright (C) 2005-2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,10 +30,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/mrp/modules_mo.php';
 class mod_mo_standard extends ModeleNumRefMos
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	public $prefix = 'MO';
 

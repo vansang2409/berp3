@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2014 Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2016 Laurent Destailleur  <eldy@uers.sourceforge.net>
+/* Copyright (C) 2014 
+ * Copyright (C) 2016   <eldy@uers.sourceforge.net>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

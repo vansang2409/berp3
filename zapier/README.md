@@ -1,7 +1,7 @@
 Module Zapier
 ==============
 
-This is a module to add interface between Zapier and Dolibarr ERP CRM.
+This is a module to add interface between Zapier and Berp3 ERP CRM.
 
 
 Documentation

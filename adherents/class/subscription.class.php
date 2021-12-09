@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2002-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2006-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2004 
+ * Copyright (C) 2006-2015 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  *		\brief		File of class to manage subscriptions of foundation members
  */
 
-//namespace DolibarrMember;
+//namespace Berp3Member;
 
 require_once DOL_DOCUMENT_ROOT.'/core/class/commonobject.class.php';
 
@@ -119,7 +119,7 @@ class Subscription extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *	@param 		DoliDB		$db		Database handler
+	 *	@param 		Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{

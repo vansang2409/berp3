@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2004-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2004-2005 
+ * Copyright (C) 2004-2018 
+ * Copyright (C) 2004             
+ * Copyright (C) 2005-2012 
  * Copyright (C) 2007      Franky Van Liedekerke <franky.van.liedekerke@telenet.be>
- * Copyright (C) 2013      Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2013-2016 Alexandre Spangaro 	<aspangaro@open-dsi.fr>
- * Copyright (C) 2014      Juanjo Menent	 	<jmenent@2byte.es>
- * Copyright (C) 2015      Jean-François Ferry	<jfefe@aternatik.fr>
+ * Copyright (C) 2013      
+ * Copyright (C) 2013-2016  	
+ * Copyright (C) 2014      	 	
+ * Copyright (C) 2015      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,7 +61,7 @@ $extrafields = new ExtraFields($db);
 // fetch optionals attributes and labels
 $extrafields->fetch_name_optionals_label($object->table_element);
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $object->getCanvas($id);
 $objcanvas = null;
 $canvas = (!empty($object->canvas) ? $object->canvas : GETPOST("canvas"));

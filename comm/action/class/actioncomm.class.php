@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2002-2004  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2017  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2015	    Marcos García		    <marcosgdf@gmail.com>
- * Copyright (C) 2018	    Nicolas ZABOURI	        <info@inovea-conseil.com>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2002-2004  
+ * Copyright (C) 2004-2011  
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2011-2017  
+ * Copyright (C) 2015	    		    
+ * Copyright (C) 2018	    	        
+ * Copyright (C) 2018-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -386,9 +386,9 @@ class ActionComm extends CommonObject
 	/**
 	 *      Constructor
 	 *
-	 *      @param      DoliDB		$db      Database handler
+	 *      @param      Berp3DB		$db      Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}
@@ -1783,7 +1783,7 @@ class ActionComm extends CommonObject
 		global $hookmanager;
 
 		// phpcs:enable
-		global $conf, $langs, $dolibarr_main_url_root, $mysoc;
+		global $conf, $langs, $berp3_main_url_root, $mysoc;
 
 		require_once DOL_DOCUMENT_ROOT."/core/lib/xcal.lib.php";
 		require_once DOL_DOCUMENT_ROOT."/core/lib/date.lib.php";
@@ -1946,7 +1946,7 @@ class ActionComm extends CommonObject
 
 					// 'eid','startdate','duration','enddate','title','summary','category','email','url','desc','author'
 					$event = array();
-					$event['uid'] = 'dolibarragenda-'.$this->db->database_name.'-'.$obj->id."@".$_SERVER["SERVER_NAME"];
+					$event['uid'] = 'berp3agenda-'.$this->db->database_name.'-'.$obj->id."@".$_SERVER["SERVER_NAME"];
 					$event['type'] = $type;
 					$datestart = $this->db->jdate($obj->datep) - (empty($conf->global->AGENDA_EXPORT_FIX_TZ) ? 0 : ($conf->global->AGENDA_EXPORT_FIX_TZ * 3600));
 
@@ -1974,7 +1974,7 @@ class ActionComm extends CommonObject
 					$event['category'] = $obj->type_label;
 					$event['email'] = $obj->email;
 					// Define $urlwithroot
-					$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+					$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 					$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 					//$urlwithroot=DOL_MAIN_URL_ROOT;						// This is to use same domain name than current
 					$url = $urlwithroot.'/comm/action/card.php?id='.$obj->id;
@@ -2057,11 +2057,11 @@ class ActionComm extends CommonObject
 							$timestampEnd   = - ($conf->global->AGENDA_EXPORT_FIX_TZ * 3600);
 						}
 
-						$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+						$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 						$urlwithroot       = $urlwithouturlroot.DOL_URL_ROOT;
 						$url               = $urlwithroot.'/holiday/card.php?id='.$obj->rowid;
 
-						$event['uid']          = 'dolibarrholiday-'.$this->db->database_name.'-'.$obj->rowid."@".$_SERVER["SERVER_NAME"];
+						$event['uid']          = 'berp3holiday-'.$this->db->database_name.'-'.$obj->rowid."@".$_SERVER["SERVER_NAME"];
 						$event['author']       = dolGetFirstLastname($obj->firstname, $obj->lastname);
 						$event['type']         = 'event';
 						$event['category']     = "Holiday";
@@ -2106,13 +2106,13 @@ class ActionComm extends CommonObject
 				$more = $langs->transnoentities("ActionsDoneBy").' '.$logind;
 			}
 			if ($more) {
-				$title = 'Dolibarr actions '.$mysoc->name.' - '.$more;
+				$title = 'Berp3 actions '.$mysoc->name.' - '.$more;
 				$desc = $more;
-				$desc .= ' ('.$mysoc->name.' - built by Dolibarr)';
+				$desc .= ' ('.$mysoc->name.' - built by Berp3)';
 			} else {
-				$title = 'Dolibarr actions '.$mysoc->name;
+				$title = 'Berp3 actions '.$mysoc->name;
 				$desc = $langs->transnoentities('ListOfActions');
-				$desc .= ' ('.$mysoc->name.' - built by Dolibarr)';
+				$desc .= ' ('.$mysoc->name.' - built by Berp3)';
 			}
 
 			// Create temp file
@@ -2189,12 +2189,12 @@ class ActionComm extends CommonObject
 	/**
 	 *  Function used to replace a thirdparty id with another one.
 	 *
-	 *  @param DoliDB $db Database handler
+	 *  @param Berp3DB $db Database handler
 	 *  @param int $origin_id Old thirdparty id
 	 *  @param int $dest_id New thirdparty id
 	 *  @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'actioncomm'

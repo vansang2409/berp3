@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2008-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2008-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ require_once DOL_DOCUMENT_ROOT.'/ecm/class/ecmdirectory.class.php';
 class FormEcm
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -41,7 +41,7 @@ class FormEcm
 	/**
 	 * 	Constructor
 	 *
-	 * 	@param	DoliDB	$db		Database handler
+	 * 	@param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{

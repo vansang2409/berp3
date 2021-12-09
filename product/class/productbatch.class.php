@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2021 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2013-2014 Cedric GROSS         <c.gross@kreiz-it.fr>
+/* Copyright (C) 2007-2021 
+ *  Cedric GROSS         
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ class Productbatch extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDb		$db      Database handler
+	 *  @param	Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -428,7 +428,7 @@ class Productbatch extends CommonObject
 	/**
 	 * Return all batch detail records for a given product and warehouse
 	 *
-	 *  @param	DoliDB		$db    				database object
+	 *  @param	Berp3DB		$db    				database object
 	 *  @param	int			$fk_product_stock	id product_stock for objet
 	 *  @param	int			$with_qty    		1 = doesn't return line with 0 quantity
 	 *  @param  int         $fk_product         If set to a product id, get eatby and sellby from table llx_product_lot
@@ -503,7 +503,7 @@ class Productbatch extends CommonObject
 	/**
 	 * Return all batch for a product and a warehouse
 	 *
-	 * @param	DoliDB		$db    				Database object
+	 * @param	Berp3DB		$db    				Database object
 	 * @param	int			$fk_product         Id of product
 	 * @param	int			$fk_warehouse       Id of warehouse
 	 * @param	int			$qty_min            [=NULL] Minimum quantity

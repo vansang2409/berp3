@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2012-2014 Charles-François BENKE <charles.fr@benke.fr>
- * Copyright (C) 2014      Marcos García          <marcosgdf@gmail.com>
- * Copyright (C) 2015      Frederic France        <frederic.france@free.fr>
- * Copyright (C) 2016      Juan José Menent       <jmenent@2byte.es>
- * Copyright (C) 2020      Pierre Ardoin          <mapiolca@me.com>
+/* Copyright (C) 2012-2014  
+ * Copyright (C) 2014                
+ * Copyright (C) 2015              
+ * Copyright (C) 2016             
+ * Copyright (C) 2020                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class box_validated_projects extends ModeleBoxes
 	//var $depends = array("projet");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -52,7 +52,7 @@ class box_validated_projects extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param = '')

@@ -1,14 +1,14 @@
 <?php
-/* Copyright (C) 2004-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005      Eric	Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2016 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2015 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2011-2018 Philippe Grand       <philippe.grand@atoo-net.com>
- * Copyright (C) 2012-2016 Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2013      Florian Henry        <florian.henry@open-concept.pro>
+/* Copyright (C) 2004-2006 
+ * Copyright (C) 2004-2015 
+ * Copyright (C) 2005      Eric	Seigne          
+ * Copyright (C) 2005-2016 
+ * Copyright (C) 2010-2015 
+ * Copyright (C) 2011-2018        
+ * Copyright (C) 2012-2016 
+ * Copyright (C) 2013      
  * Copyright (C) 2014      Ion Agorria          <ion@agorria.com>
- * Copyright (C) 2018-2019  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2018-2019  
  *
  * This	program	is free	software; you can redistribute it and/or modify
  * it under	the	terms of the GNU General Public	License	as published by
@@ -1379,10 +1379,10 @@ if (empty($reshook)) {
 		$ws_thirdparty  = GETPOST('ws_thirdparty', 'int');
 
 		// NS and Authentication parameters
-		$ws_ns = 'http://www.dolibarr.org/ns/';
+		$ws_ns = 'http://www.berp3.org/ns/';
 		$ws_authentication = array(
-			'dolibarrkey'=>$ws_key,
-			'sourceapplication'=>'DolibarrWebServiceClient',
+			'berp3key'=>$ws_key,
+			'sourceapplication'=>'Berp3WebServiceClient',
 			'login'=>$ws_user,
 			'password'=>$ws_password,
 			'entity'=>$ws_entity
@@ -1736,7 +1736,7 @@ if ($action == 'create') {
 
 	print '<tr><td>'.$langs->trans('NotePublic').'</td>';
 	print '<td>';
-	$doleditor = new DolEditor('note_public', isset($note_public) ? $note_public : GETPOST('note_public', 'restricthtml'), '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_public', isset($note_public) ? $note_public : GETPOST('note_public', 'restricthtml'), '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 	print '</td>';
 	//print '<textarea name="note_public" wrap="soft" cols="60" rows="'.ROWS_5.'"></textarea>';
@@ -1744,7 +1744,7 @@ if ($action == 'create') {
 
 	print '<tr><td>'.$langs->trans('NotePrivate').'</td>';
 	print '<td>';
-	$doleditor = new DolEditor('note_private', isset($note_private) ? $note_private : GETPOST('note_private', 'restricthtml'), '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_private', isset($note_private) ? $note_private : GETPOST('note_private', 'restricthtml'), '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 	print '</td>';
 	//print '<td><textarea name="note_private" wrap="soft" cols="60" rows="'.ROWS_5.'"></textarea></td>';
@@ -2699,10 +2699,10 @@ if ($action == 'create') {
 			$ws_password = GETPOST('ws_password', 'alpha');
 
 			// NS and Authentication parameters
-			$ws_ns = 'http://www.dolibarr.org/ns/';
+			$ws_ns = 'http://www.berp3.org/ns/';
 			$ws_authentication = array(
-			'dolibarrkey'=>$ws_key,
-			'sourceapplication'=>'DolibarrWebServiceClient',
+			'berp3key'=>$ws_key,
+			'sourceapplication'=>'Berp3WebServiceClient',
 			'login'=>$ws_user,
 			'password'=>$ws_password,
 			'entity'=>''
@@ -2813,8 +2813,8 @@ if ($action == 'create') {
 
 
 							// Ensure that price is equal and warn user if it's not
-							$supplier_price = price($result_product["product"]["price_net"]); //Price of client tab in supplier dolibarr
-							$local_price = null; //Price of supplier as stated in product suppliers tab on this dolibarr, NULL if not found
+							$supplier_price = price($result_product["product"]["price_net"]); //Price of client tab in supplier berp3
+							$local_price = null; //Price of supplier as stated in product suppliers tab on this berp3, NULL if not found
 
 							$product_fourn = new ProductFournisseur($db);
 							$product_fourn_list = $product_fourn->list_product_fournisseur_price($line->fk_product);

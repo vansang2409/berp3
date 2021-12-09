@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003-2008	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio		<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier			<benoit.mortier@opensides.be>
- * Copyright (C) 2004		Eric Seigne				<eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2012	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2011-2018	Philippe Grand			<philippe.grand@atoo-net.com>
+/* Copyright (C) 2003-2008	
+ * Copyright (C) 2004-2011	
+ * Copyright (C) 2004		
+ * Copyright (C) 2004		
+ * Copyright (C) 2004		
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2011-2012	
+ * Copyright (C) 2011-2018	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ $action = GETPOST('action', 'aZ09');
  */
 
 if ($action == 'save') {
-	dolibarr_set_const($db, 'EXPORT_CSV_SEPARATOR_TO_USE', GETPOST('EXPORT_CSV_SEPARATOR_TO_USE', 'alphanohtml'));
+	berp3_set_const($db, 'EXPORT_CSV_SEPARATOR_TO_USE', GETPOST('EXPORT_CSV_SEPARATOR_TO_USE', 'alphanohtml'));
 }
 
 

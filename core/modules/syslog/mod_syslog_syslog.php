@@ -20,13 +20,13 @@ class mod_syslog_syslog extends LogHandler implements LogHandlerInterface
 	}
 
 	/**
-	 * Version of the module ('x.y.z' or 'dolibarr' or 'experimental' or 'development')
+	 * Version of the module ('x.y.z' or 'berp3' or 'experimental' or 'development')
 	 *
 	 * @return string
 	 */
 	public function getVersion()
 	{
-		return 'dolibarr';
+		return 'berp3';
 	}
 
 	/**
@@ -123,7 +123,7 @@ class mod_syslog_syslog extends LogHandler implements LogHandlerInterface
 		}
 
 		// (int) is required to avoid error parameter 3 expected to be long
-		openlog('dolibarr', LOG_PID | LOG_PERROR, (int) $facility);
+		openlog('berp3', LOG_PID | LOG_PERROR, (int) $facility);
 		syslog($content['level'], $content['message']);
 		closelog();
 	}

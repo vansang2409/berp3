@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2016      Jean-François Ferry  <hello@librethic.io>
+/* Copyright (C) 2016        
  *
  * A class containing a diff implementation
  *

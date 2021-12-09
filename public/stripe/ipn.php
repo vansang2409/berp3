@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2018-2020      Thibault FOUCART        <support@ptibogxiv.net>
- * Copyright (C) 2018       	Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2018-2020             
+ * Copyright (C) 2018       	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ if (!defined('NOCSRFCHECK')) {
 	define("NOCSRFCHECK", 1); // We accept to go on this page from external web site.
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 if (!defined('NOBROWSERNOTIF')) {
 	define('NOBROWSERNOTIF', '1');
@@ -84,7 +84,7 @@ if (empty($endpoint_secret)) {
 }
 
 if (!empty($conf->global->STRIPE_USER_ACCOUNT_FOR_ACTIONS)) {
-	// We set the user to use for all ipn actions in Dolibarr
+	// We set the user to use for all ipn actions in Berp3
 	$user = new User($db);
 	$user->fetch($conf->global->STRIPE_USER_ACCOUNT_FOR_ACTIONS);
 	$user->getrights();
@@ -162,7 +162,7 @@ dol_syslog("***** Stripe IPN was called with event->type = ".$event->type);
 if ($event->type == 'payout.created') {
 	$error = 0;
 
-	$result = dolibarr_set_const($db, $service."_NEXTPAYOUT", date('Y-m-d H:i:s', $event->data->object->arrival_date), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $service."_NEXTPAYOUT", date('Y-m-d H:i:s', $event->data->object->arrival_date), 'chaine', 0, '', $conf->entity);
 
 	if ($result > 0) {
 		$subject = $societeName.' - [NOTIFICATION] Stripe payout scheduled';
@@ -205,7 +205,7 @@ if ($event->type == 'payout.created') {
 } elseif ($event->type == 'payout.paid') {
 	global $conf;
 	$error = 0;
-	$result = dolibarr_set_const($db, $service."_NEXTPAYOUT", null, 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, $service."_NEXTPAYOUT", null, 'chaine', 0, '', $conf->entity);
 	if ($result) {
 		$langs->load("errors");
 

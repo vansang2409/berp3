@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2013 Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2013 Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2015 Frederic France	<frederic.france@free.fr>
+/* Copyright (C) 2013 
+ * Copyright (C) 2013 
+ * Copyright (C) 2015 	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class box_ficheinter extends ModeleBoxes
 	public $depends = array("ficheinter"); // conf->contrat->enabled
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -50,7 +50,7 @@ class box_ficheinter extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param)

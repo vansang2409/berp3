@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2019	Laurent Destailleur		<eldy@uers.sourceforge.net>
- * Copyright (C) 2005-2016	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2021		Waël Almoman            <info@almoman.com>
+/* Copyright (C) 2004		
+ * Copyright (C) 2005-2019			<eldy@uers.sourceforge.net>
+ * Copyright (C) 2005-2016	
+ * Copyright (C) 2021		            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -743,7 +743,7 @@ if ($action == 'create') {
 	print '<div style="padding-top: 10px">';
 	// wysiwyg editor
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('bodyemail', GETPOST('bodyemail', 'restricthtmlallowunvalid'), '', 600, 'dolibarr_mailings', '', true, true, $conf->global->FCKEDITOR_ENABLE_MAILING, 20, '90%');
+	$doleditor = new DolEditor('bodyemail', GETPOST('bodyemail', 'restricthtmlallowunvalid'), '', 600, 'berp3_mailings', '', true, true, $conf->global->FCKEDITOR_ENABLE_MAILING, 20, '90%');
 	$doleditor->Create();
 	print '</div>';
 
@@ -1103,7 +1103,7 @@ if ($action == 'create') {
 				$readonly = 1;
 				// wysiwyg editor
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor('bodyemail', $object->body, '', 600, 'dolibarr_mailings', '', false, true, empty($conf->global->FCKEDITOR_ENABLE_MAILING) ? 0 : 1, 20, '90%', $readonly);
+				$doleditor = new DolEditor('bodyemail', $object->body, '', 600, 'berp3_mailings', '', false, true, empty($conf->global->FCKEDITOR_ENABLE_MAILING) ? 0 : 1, 20, '90%', $readonly);
 				$doleditor->Create();
 			} else {
 				print dol_htmlentitiesbr($object->body);
@@ -1258,13 +1258,13 @@ if ($action == 'create') {
 			if ($action == 'edit') {
 				// wysiwyg editor
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor('bodyemail', $object->body, '', 600, 'dolibarr_mailings', '', true, true, $conf->global->FCKEDITOR_ENABLE_MAILING, 20, '90%');
+				$doleditor = new DolEditor('bodyemail', $object->body, '', 600, 'berp3_mailings', '', true, true, $conf->global->FCKEDITOR_ENABLE_MAILING, 20, '90%');
 				$doleditor->Create();
 			}
 			if ($action == 'edithtml') {
 				// HTML source editor
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor('bodyemail', $object->body, '', 600, 'dolibarr_mailings', '', true, true, 'ace', 20, '90%');
+				$doleditor = new DolEditor('bodyemail', $object->body, '', 600, 'berp3_mailings', '', true, true, 'ace', 20, '90%');
 				$doleditor->Create(0, '', false, 'HTML Source', 'php');
 			}
 

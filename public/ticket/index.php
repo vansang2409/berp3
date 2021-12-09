@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) - 2013-2016	Jean-François FERRY    <hello@librethic.io>
- * Copyright (C) - 2019     	Laurent Destailleur    <eldy@users.sourceforge.net>
+/* Copyright (C) - 2013-2016	    
+ * Copyright (C) - 2019     	    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ if (!defined("NOLOGIN")) {
 	define("NOLOGIN", '1'); // If this page is public (can be called outside logged session)
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 if (!defined('NOBROWSERNOTIF')) {
 	define('NOBROWSERNOTIF', '1');

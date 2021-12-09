@@ -1,7 +1,7 @@
 -- ===================================================================
--- Copyright (C) 2003 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2009 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2010 juanjo Menent        <jmenent@2byte.es>
+-- Copyright (C) 2003 
+-- Copyright (C) 2009 
+-- Copyright (C) 2010 juanjo Menent        
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

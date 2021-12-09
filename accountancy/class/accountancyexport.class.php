@@ -1,16 +1,16 @@
 <?php
 /*
- * Copyright (C) 2007-2012  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014       Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Florian Henry       <florian.henry@open-concept.pro>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2016       Pierre-Henry Favre  <phf@atm-consulting.fr>
- * Copyright (C) 2016-2021  Alexandre Spangaro  <aspangaro@open-dsi.fr>
- * Copyright (C) 2013-2017  Olivier Geffroy     <jeff@jeffinfo.com>
- * Copyright (C) 2017       Elarifr. Ari Elbaz  <github@accedinfo.com>
- * Copyright (C) 2017-2019  Frédéric France     <frederic.france@netlogic.fr>
- * Copyright (C) 2017       André Schild        <a.schild@aarboard.ch>
- * Copyright (C) 2020       Guillaume Alexandre <guillaume@tag-info.fr>
+ * Copyright (C) 2007-2012  
+ * Copyright (C) 2014       
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
+ * Copyright (C) 2016       
+ * Copyright (C) 2016-2021  
+ * Copyright (C) 2013-2017  
+ * Copyright (C) 2017       
+ * Copyright (C) 2017-2019  
+ * Copyright (C) 2017       
+ * Copyright (C) 2020       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -85,9 +85,9 @@ class AccountancyExport
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf;
 
@@ -479,7 +479,7 @@ class AccountancyExport
 	/**
 	 * Export format : CIEL (Format XIMPORT)
 	 * Format since 2003 compatible CIEL version > 2002 / Sage50
-	 * Last review for this format : 2021-09-13 Alexandre Spangaro (aspangaro@open-dsi.fr)
+	 * Last review for this format : 2021-09-13  (aspangaro@open-dsi.fr)
 	 *
 	 * Help : https://sage50c.online-help.sage.fr/aide-technique/
 	 * In sage software | Use menu : "Exchange" > "Importing entries..."
@@ -515,7 +515,7 @@ class AccountancyExport
 			$Tab['libelle_ecriture'] = str_pad(self::trunc(dol_string_unaccent($data->doc_ref).dol_string_unaccent($data->label_operation), 25), 25);
 			$Tab['montant'] = str_pad(price2fec(abs($data->debit - $data->credit)), 13, ' ', STR_PAD_LEFT);
 			$Tab['type_montant'] = str_pad($data->sens, 1);
-			$Tab['vide'] = str_repeat(' ', 18); // Analytical accounting - Not managed in Dolibarr
+			$Tab['vide'] = str_repeat(' ', 18); // Analytical accounting - Not managed in Berp3
 			$Tab['intitule_compte'] = str_pad(self::trunc(dol_string_unaccent($data->label_operation), 34), 34);
 			$Tab['end'] = 'O2003'; // 0 = EUR | 2003 = Format Ciel
 
@@ -529,7 +529,7 @@ class AccountancyExport
 	/**
 	 * Export format : Quadratus (Format ASCII)
 	 * Format since 2015 compatible QuadraCOMPTA
-	 * Last review for this format : 2021/09/13 Alexandre Spangaro (aspangaro@open-dsi.fr)
+	 * Last review for this format : 2021/09/13  (aspangaro@open-dsi.fr)
 	 *
 	 * Help : https://docplayer.fr/20769649-Fichier-d-entree-ascii-dans-quadracompta.html
 	 * In QuadraCompta | Use menu : "Outils" > "Suivi des dossiers" > "Import ASCII(Compta)"
@@ -1393,7 +1393,7 @@ class AccountancyExport
 
 	/**
 	 * Export format : LD Compta version 10 & higher
-	 * Last review for this format : 08-15-2021 Alexandre Spangaro (aspangaro@open-dsi.fr)
+	 * Last review for this format : 08-15-2021  (aspangaro@open-dsi.fr)
 	 *
 	 * Help : http://www.ldsysteme.fr/fileadmin/telechargement/np/ldcompta/Documentation/IntCptW10.pdf
 	 *

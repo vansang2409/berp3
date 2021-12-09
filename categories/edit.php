@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2005      Matthieu Valleton    <mv@seeschloss.org>
- * Copyright (C) 2006-2016 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2007      Patrick Raguin	  	<patrick.raguin@gmail.com>
- * Copyright (C) 2020      Frédéric France		<frederic.france@netlogic.fr>
+/* Copyright (C) 2005          
+ * Copyright (C) 2006-2016 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2007      	  	
+ * Copyright (C) 2020      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -165,7 +165,7 @@ print '<tr>';
 print '<td>'.$langs->trans("Description").'</td>';
 print '<td>';
 require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-$doleditor = new DolEditor('description', $object->description, '', 200, 'dolibarr_notes', '', false, true, $conf->fckeditor->enabled, ROWS_6, '90%');
+$doleditor = new DolEditor('description', $object->description, '', 200, 'berp3_notes', '', false, true, $conf->fckeditor->enabled, ROWS_6, '90%');
 $doleditor->Create();
 print '</td></tr>';
 

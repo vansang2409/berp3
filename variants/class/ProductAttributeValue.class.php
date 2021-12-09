@@ -1,6 +1,6 @@
 <?php
 
-/* Copyright (C) 2016	Marcos García	<marcosgdf@gmail.com>
+/* Copyright (C) 2016		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ class ProductAttributeValue extends CommonObject
 {
 	/**
 	 * Database handler
-	 * @var DoliDB
+	 * @var Berp3DB
 	 */
 	public $db;
 
@@ -56,9 +56,9 @@ class ProductAttributeValue extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param   DoliDB $db     Database handler
+	 * @param   Berp3DB $db     Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf;
 

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005-2009	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2009-2017	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2014		Marcos García		<marcosgdf@gmail.com>
+/* Copyright (C) 2005-2009		
+ * Copyright (C) 2009-2017			
+ * Copyright (C) 2014				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,18 +23,18 @@
  *  \brief      Trigger file for
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for security audit events
  */
-class InterfaceLogevents extends DolibarrTriggers
+class InterfaceLogevents extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -42,14 +42,14 @@ class InterfaceLogevents extends DolibarrTriggers
 
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "core";
-		$this->description = "Triggers of this module allows to add security event records inside Dolibarr.";
-		// 'development', 'experimental', 'dolibarr' or version
-		$this->version = self::VERSION_DOLIBARR;
+		$this->description = "Triggers of this module allows to add security event records inside Berp3.";
+		// 'development', 'experimental', 'berp3' or version
+		$this->version = self::VERSION_BERP3;
 		$this->picto = 'technic';
 	}
 
 	/**
-	 * Function called when a Dolibarrr security audit event is done.
+	 * Function called when a Berp3r security audit event is done.
 	 * All functions "runTrigger" are triggered if file is inside directory htdocs/core/triggers or htdocs/module/code/triggers (and declared)
 	 *
 	 * @param string		$action		Event action code

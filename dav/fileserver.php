@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2018	Destailleur Laurent	<eldy@users.sourceforge.net>
- * Copyright (C) 2019	Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2018		
+ * Copyright (C) 2019			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -95,7 +95,7 @@ $tmpDir = $conf->dav->multidir_output[$entity]; // We need root dir, not a dir t
 $authBackend = new \Sabre\DAV\Auth\Backend\BasicCallBack(function ($username, $password) {
 	global $user;
 	global $conf;
-	global $dolibarr_main_authentication, $dolibarr_auto_user;
+	global $berp3_main_authentication, $berp3_auto_user;
 
 	if (empty($user->login)) {
 		dol_syslog("Failed to authenticate to DAV, login is not provided", LOG_WARNING);
@@ -111,22 +111,22 @@ $authBackend = new \Sabre\DAV\Auth\Backend\BasicCallBack(function ($username, $p
 	}
 
 	// Authentication mode
-	if (empty($dolibarr_main_authentication)) {
-		$dolibarr_main_authentication = 'dolibarr';
+	if (empty($berp3_main_authentication)) {
+		$berp3_main_authentication = 'berp3';
 	}
 
 	// Authentication mode: forceuser
-	if ($dolibarr_main_authentication == 'forceuser') {
-		if (empty($dolibarr_auto_user)) {
-			$dolibarr_auto_user = 'auto';
+	if ($berp3_main_authentication == 'forceuser') {
+		if (empty($berp3_auto_user)) {
+			$berp3_auto_user = 'auto';
 		}
-		if ($dolibarr_auto_user != $username) {
-			dol_syslog("Warning: your instance is set to use the automatic forced login '".$dolibarr_auto_user."' that is not the requested login. DAV usage is forbidden in this mode.");
+		if ($berp3_auto_user != $username) {
+			dol_syslog("Warning: your instance is set to use the automatic forced login '".$berp3_auto_user."' that is not the requested login. DAV usage is forbidden in this mode.");
 			return false;
 		}
 	}
 
-	$authmode = explode(',', $dolibarr_main_authentication);
+	$authmode = explode(',', $berp3_main_authentication);
 	$entity = (GETPOST('entity', 'int') ? GETPOST('entity', 'int') : (!empty($conf->entity) ? $conf->entity : 1));
 
 	if (checkLoginPassEntity($username, $password, $entity, $authmode, 'dav') != $username) {
@@ -165,12 +165,12 @@ if (!empty($conf->ecm->enabled) && !empty($conf->global->DAV_ALLOW_ECM_DIR)) {
 
 
 // Principals Backend
-//$principalBackend = new \Sabre\DAVACL\PrincipalBackend\Dolibarr($user,$db);
+//$principalBackend = new \Sabre\DAVACL\PrincipalBackend\Berp3($user,$db);
 // /principals
 //$nodes[] = new \Sabre\DAVACL\PrincipalCollection($principalBackend);
 // CardDav & CalDav Backend
-//$carddavBackend   = new \Sabre\CardDAV\Backend\Dolibarr($user,$db,$langs);
-//$caldavBackend    = new \Sabre\CalDAV\Backend\Dolibarr($user,$db,$langs, $cdavLib);
+//$carddavBackend   = new \Sabre\CardDAV\Backend\Berp3($user,$db,$langs);
+//$caldavBackend    = new \Sabre\CalDAV\Backend\Berp3($user,$db,$langs, $cdavLib);
 // /addressbook
 //$nodes[] = new \Sabre\CardDAV\AddressBookRoot($principalBackend, $carddavBackend);
 // /calendars

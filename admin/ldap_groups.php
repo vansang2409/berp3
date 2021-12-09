@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2006-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2011-2013 Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2005      
+ * Copyright (C) 2006-2011 
+ * Copyright (C) 2011-2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,26 +51,26 @@ if ($action == 'setvalue' && $user->admin) {
 	$error = 0;
 	$db->begin();
 
-	if (!dolibarr_set_const($db, 'LDAP_GROUP_DN', GETPOST("group", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_GROUP_DN', GETPOST("group", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_GROUP_OBJECT_CLASS', GETPOST("objectclass", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_GROUP_OBJECT_CLASS', GETPOST("objectclass", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_GROUP_FILTER', GETPOST("filter"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_GROUP_FILTER', GETPOST("filter"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_GROUP_FIELD_FULLNAME', GETPOST("fieldfullname", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_GROUP_FIELD_FULLNAME', GETPOST("fieldfullname", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	//if (! dolibarr_set_const($db, 'LDAP_GROUP_FIELD_NAME',GETPOST("fieldname", 'alphanohtml'),'chaine',0,'',$conf->entity)) $error++;
-	if (!dolibarr_set_const($db, 'LDAP_GROUP_FIELD_DESCRIPTION', GETPOST("fielddescription", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+	//if (! berp3_set_const($db, 'LDAP_GROUP_FIELD_NAME',GETPOST("fieldname", 'alphanohtml'),'chaine',0,'',$conf->entity)) $error++;
+	if (!berp3_set_const($db, 'LDAP_GROUP_FIELD_DESCRIPTION', GETPOST("fielddescription", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_GROUP_FIELD_GROUPMEMBERS', GETPOST("fieldgroupmembers", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_GROUP_FIELD_GROUPMEMBERS', GETPOST("fieldgroupmembers", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_GROUP_FIELD_GROUPID', GETPOST("fieldgroupid", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_GROUP_FIELD_GROUPID', GETPOST("fieldgroupid", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
 
@@ -80,7 +80,7 @@ if ($action == 'setvalue' && $user->admin) {
 	if ($key) {
 		$valkey = $conf->global->$key;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_KEY_GROUPS', $valkey, 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_KEY_GROUPS', $valkey, 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
 
@@ -160,7 +160,7 @@ print '<br>';
 print '<table class="noborder centpercent">';
 
 print '<tr class="liste_titre">';
-print '<td>'.$langs->trans("LDAPDolibarrMapping").'</td>';
+print '<td>'.$langs->trans("LDAPBerp3Mapping").'</td>';
 print '<td colspan="2">'.$langs->trans("LDAPLdapMapping").'</td>';
 print '<td class="right">'.$langs->trans("LDAPNamingAttribute").'</td>';
 print "</tr>\n";
@@ -218,7 +218,7 @@ print '</form>';
 /*
  * Test de la connexion
  */
-if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'dolibarr2ldap') {
+if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'berp32ldap') {
 	$butlabel = $langs->trans("LDAPTestSynchroGroup");
 	$testlabel = 'testgroup';
 	$key = $conf->global->LDAP_KEY_GROUPS;
@@ -226,7 +226,7 @@ if ($conf->global->LDAP_SYNCHRO_ACTIVE == 'dolibarr2ldap') {
 	$objectclass = $conf->global->LDAP_GROUP_OBJECT_CLASS;
 
 	show_ldap_test_button($butlabel, $testlabel, $key, $dn, $objectclass);
-} elseif ($conf->global->LDAP_SYNCHRO_ACTIVE == 'ldap2dolibarr') {
+} elseif ($conf->global->LDAP_SYNCHRO_ACTIVE == 'ldap2berp3') {
 	$butlabel = $langs->trans("LDAPTestSearch");
 	$testlabel = 'testsearchgroup';
 	$key = $conf->global->LDAP_KEY_GROUPS;

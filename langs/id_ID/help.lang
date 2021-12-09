@@ -5,8 +5,8 @@ RemoteControlSupport=Dukungan real-time / remote online
 OtherSupport=Dukungan lain
 ToSeeListOfAvailableRessources=Untuk menghubungi / melihat sumber daya yang tersedia:
 HelpCenter=Pusat Bantuan
-DolibarrHelpCenter=Pusat Bantuan dan Dukungan Dolibarr
-ToGoBackToDolibarr=Jika tidak, <a href="%s"> klik di sini untuk terus menggunakan BERP3 </a>.
+Berp3HelpCenter=Pusat Bantuan dan Dukungan Berp3
+ToGoBackToBerp3=Jika tidak, <a href="%s"> klik di sini untuk terus menggunakan BERP3 </a>.
 TypeOfSupport=Jenis dukungan
 TypeSupportCommunauty=Komunitas (gratis)
 TypeSupportCommercial=Komersil
@@ -19,5 +19,5 @@ TypeHelpDevForm=Bantuan + Pengembangan + Pelatihan
 BackToHelpCenter=Jika tidak, <a href="%s"> kembali ke halaman awal pusat Bantuan </a>.
 LinkToGoldMember=Anda dapat menghubungi salah satu pelatih yang dipilih sebelumnya oleh BERP3 untuk bahasa Anda (%s) dengan mengklik Widget mereka (status dan harga maksimum diperbarui secara otomatis):
 PossibleLanguages=Bahasa yang didukung
-SubscribeToFoundation=Bantu proyek Dolibarr, berlangganan yayasan
+SubscribeToFoundation=Bantu proyek Berp3, berlangganan yayasan
 SeeOfficalSupport=Untuk dukungan resmi BERP3 dalam bahasa Anda: <br><b><a href="%s" target="_blank"> %s </a> </b>

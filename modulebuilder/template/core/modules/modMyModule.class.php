@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2019  Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2019-2020  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2018  
+ * Copyright (C) 2018-2019           
+ * Copyright (C) 2019-2020  
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software; you can redistribute it and/or modify
@@ -26,17 +26,17 @@
  *  \ingroup    mymodule
  *  \brief      Description and activation file for module MyModule
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *  Description and activation class for module MyModule
  */
-class modMyModule extends DolibarrModules
+class modMyModule extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -44,7 +44,7 @@ class modMyModule extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 500000; // TODO Go on page https://bonaerp.com/index.php/List_of_modules_id to reserve an id number for your module
 
 		// Key text used to identify module (for permissions, menus, etc...)
@@ -71,7 +71,7 @@ class modMyModule extends DolibarrModules
 		$this->editor_name = 'Editor name';
 		$this->editor_url = 'https://www.example.com';
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
+		// Possible values for version are: 'development', 'experimental', 'berp3', 'berp3_deprecated' or a version string like 'x.y.z'
 		$this->version = '1.0';
 		// Url to the file with your last numberversion of this module
 		//$this->url_last_version = 'http://www.example.com/versionmodule.txt';
@@ -145,7 +145,7 @@ class modMyModule extends DolibarrModules
 
 		// Prerequisites
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(11, -3); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(11, -3); // Minimum version of Berp3 required by module
 
 		// Messages at activation
 		$this->warnings_activation = array(); // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
@@ -401,7 +401,7 @@ class modMyModule extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories
 	 *
 	 *  @param      string  $options    Options when enabling module ('', 'noboxes')

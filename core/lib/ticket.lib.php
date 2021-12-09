@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2013-2018	Jean-François FERRY	<hello@librethic.io>
- * Copyright (C) 2016		Christophe Battarel	<christophe@altairis.fr>
- * Copyright (C) 2019-2020  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2013-2018		
+ * Copyright (C) 2016			
+ * Copyright (C) 2019-2020  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -222,8 +222,8 @@ function llxHeaderTicket($title, $head = "", $disablejs = 0, $disablehead = 0, $
 				$urllogo = DOL_URL_ROOT.'/viewimage.php?modulepart=mycompany&amp;entity='.$conf->entity.'&amp;file='.urlencode('logos/thumbs/'.$mysoc->logo_small);
 			} elseif (!empty($mysoc->logo) && is_readable($conf->mycompany->dir_output.'/logos/'.$mysoc->logo)) {
 				$urllogo = DOL_URL_ROOT.'/viewimage.php?modulepart=mycompany&amp;entity='.$conf->entity.'&amp;file='.urlencode('logos/'.$mysoc->logo);
-			} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/dolibarr_logo.svg')) {
-				$urllogo = DOL_URL_ROOT.'/theme/dolibarr_logo.svg';
+			} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/berp3_logo.png')) {
+				$urllogo = DOL_URL_ROOT.'/theme/berp3_logo.png';
 			}
 		}
 	}
@@ -243,7 +243,7 @@ function llxHeaderTicket($title, $head = "", $disablejs = 0, $disablehead = 0, $
 		}
 		print '</div>';
 		if (empty($conf->global->MAIN_HIDE_POWERED_BY)) {
-			print '<div class="poweredbypublicpayment opacitymedium right"><a class="poweredbyhref" href="https://www.dolibarr.org?utm_medium=website&utm_source=poweredby" target="dolibarr" rel="noopener">'.$langs->trans("PoweredBy").'<br><img src="'.DOL_URL_ROOT.'/theme/dolibarr_logo.svg" width="80px"></a></div>';
+			print '<div class="poweredbypublicpayment opacitymedium right"><a class="poweredbyhref" href="https://www.berp3.org?utm_medium=website&utm_source=poweredby" target="berp3" rel="noopener">'.$langs->trans("PoweredBy").'<br><img src="'.DOL_URL_ROOT.'/theme/berp3_logo.png" width="80px"></a></div>';
 		}
 		print '</div>';
 	}
@@ -267,7 +267,7 @@ function llxHeaderTicket($title, $head = "", $disablejs = 0, $disablehead = 0, $
  *
  * 		@param	Conf		       $conf		   Object conf
  * 		@param	Translate	       $langs		   Object langs
- * 		@param	DoliDB		       $db			   Object db
+ * 		@param	Berp3DB		       $db			   Object db
  * 		@param	mixed			   $filterobj	   Filter on object Adherent|Societe|Project|Product|CommandeFournisseur|Dolresource|Ticket|... to list events linked to an object
  * 		@param	Contact		       $objcon		   Filter on object contact to filter events on a contact
  *      @param  int			       $noprint        Return string but does not output it

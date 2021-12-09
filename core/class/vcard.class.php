@@ -1,7 +1,7 @@
 <?php
 /* Copyright (C)           Kai Blankenhorn      <kaib@bitfolge.de>
- * Copyright (C) 2005-2017 Laurent Destailleur  <eldy@users.sourceforge.org>
- * Copyright (C) 2020		Tobias Sekan		<tobias.sekan@startmail.com>
+ * Copyright (C) 2005-2017   
+ * Copyright (C) 2020				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -352,7 +352,7 @@ class vCard
 			$text .= "$key:$value\r\n";
 		}
 		$text .= "REV:".date("Y-m-d")."T".date("H:i:s")."Z\r\n";
-		$text .= "MAILER: Dolibarr\r\n";
+		$text .= "MAILER: Berp3\r\n";
 		$text .= "END:VCARD\r\n";
 		return $text;
 	}

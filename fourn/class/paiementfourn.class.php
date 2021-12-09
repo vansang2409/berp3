@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2002-2004 Rodolphe Quiedeville   <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2007 Laurent Destailleur    <eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2004    
+ * Copyright (C) 2004-2007     
  * Copyright (C) 2005      Marc Barilley / Ocebo  <marc@ocebo.com>
- * Copyright (C) 2005-2009 Regis Houssin          <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2011 Juanjo Menent          <jmenent@2byte.es>
- * Copyright (C) 2014      Marcos García          <marcosgdf@gmail.com>
- * Copyright (C) 2018      Nicolas ZABOURI	  <info@inovea-conseil.com>
- * Copyright (C) 2018       Frédéric France         <frederic.francenetlogic.fr>
+ * Copyright (C) 2005-2009           
+ * Copyright (C) 2010-2011           
+ * Copyright (C) 2014                
+ * Copyright (C) 2018      	  
+ * Copyright (C) 2018                <frederic.francenetlogic.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,7 +72,7 @@ class PaiementFourn extends Paiement
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -165,7 +165,7 @@ class PaiementFourn extends Paiement
 
 		dol_syslog(get_class($this)."::create", LOG_DEBUG);
 
-		if ($way == 'dolibarr') {
+		if ($way == 'berp3') {
 			$amounts = &$this->amounts;
 			$amounts_to_update = &$this->multicurrency_amounts;
 		} else {
@@ -191,7 +191,7 @@ class PaiementFourn extends Paiement
 			$ref = $this->getNextNumRef(is_object($thirdparty) ? $thirdparty : '');
 			$now = dol_now();
 
-			if ($way == 'dolibarr') {
+			if ($way == 'berp3') {
 				$total = $totalamount;
 				$mtotal = $totalamount_converted; // Maybe use price2num with MT for the converted value
 			} else {
@@ -788,13 +788,13 @@ class PaiementFourn extends Paiement
 	/**
 	 * 	get the right way of payment
 	 *
-	 * 	@return 	string 	'dolibarr' if standard comportment or paid in dolibarr currency, 'customer' if payment received from multicurrency inputs
+	 * 	@return 	string 	'berp3' if standard comportment or paid in berp3 currency, 'customer' if payment received from multicurrency inputs
 	 */
 	public function getWay()
 	{
 		global $conf;
 
-		$way = 'dolibarr';
+		$way = 'berp3';
 		if (!empty($conf->multicurrency->enabled)) {
 			foreach ($this->multicurrency_amounts as $value) {
 				if (!empty($value)) { // one value found then payment is in invoice currency

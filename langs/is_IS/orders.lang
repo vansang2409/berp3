@@ -120,8 +120,8 @@ ConfirmCloneOrder=Are you sure you want to clone this order <b>%s</b>?
 DispatchSupplierOrder=Receiving purchase order %s
 FirstApprovalAlreadyDone=First approval already done
 SecondApprovalAlreadyDone=Second approval already done
-SupplierOrderReceivedInDolibarr=Purchase Order %s received %s
-SupplierOrderSubmitedInDolibarr=Purchase Order %s submitted
+SupplierOrderReceivedInBerp3=Purchase Order %s received %s
+SupplierOrderSubmitedInBerp3=Purchase Order %s submitted
 SupplierOrderClassifiedBilled=Purchase Order %s set billed
 OtherOrders=Aðrar skipanir
 ##### Types de contacts #####

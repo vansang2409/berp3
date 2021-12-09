@@ -5,8 +5,8 @@ RemoteControlSupport=Onlayn real vaqtda / masofadan qo'llab-quvvatlash
 OtherSupport=Boshqa yordam
 ToSeeListOfAvailableRessources=Mavjud manbalarga murojaat qilish / ko'rish uchun:
 HelpCenter=Yordam markazi
-DolibarrHelpCenter=BERP3 yordam va qo'llab-quvvatlash markazi
-ToGoBackToDolibarr=Aks holda, BERP3 </a> dan foydalanishda davom etish uchun <a href="%s"> bu erni bosing.
+Berp3HelpCenter=BERP3 yordam va qo'llab-quvvatlash markazi
+ToGoBackToBerp3=Aks holda, BERP3 </a> dan foydalanishda davom etish uchun <a href="%s"> bu erni bosing.
 TypeOfSupport=Qo'llab-quvvatlash turi
 TypeSupportCommunauty=Hamjamiyat (bepul)
 TypeSupportCommercial=Tijorat

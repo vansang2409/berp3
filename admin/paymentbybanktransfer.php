@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2010 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2013 Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2005      
+ * Copyright (C) 2005-2014 
+ * Copyright (C) 2005-2010 
+ * Copyright (C) 2010-2013 
  * Copyright (C) 2019      Markus Welters       <markus@welters.de>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -52,36 +52,36 @@ if ($action == "set") {
 	$id = GETPOST('PAYMENTBYBANKTRANSFER_ID_BANKACCOUNT', 'int');
 	$account = new Account($db);
 	if ($account->fetch($id) > 0) {
-		$res = dolibarr_set_const($db, "PAYMENTBYBANKTRANSFER_ID_BANKACCOUNT", $id, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "PAYMENTBYBANKTRANSFER_ID_BANKACCOUNT", $id, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
 		/*
-		$res = dolibarr_set_const($db, "PRELEVEMENT_CODE_BANQUE", $account->code_banque,'chaine',0,'',$conf->entity);
+		$res = berp3_set_const($db, "PRELEVEMENT_CODE_BANQUE", $account->code_banque,'chaine',0,'',$conf->entity);
 		if (! $res > 0) $error++;
-		$res = dolibarr_set_const($db, "PRELEVEMENT_CODE_GUICHET", $account->code_guichet,'chaine',0,'',$conf->entity);
+		$res = berp3_set_const($db, "PRELEVEMENT_CODE_GUICHET", $account->code_guichet,'chaine',0,'',$conf->entity);
 		if (! $res > 0) $error++;
-		$res = dolibarr_set_const($db, "PRELEVEMENT_NUMERO_COMPTE", $account->number,'chaine',0,'',$conf->entity);
+		$res = berp3_set_const($db, "PRELEVEMENT_NUMERO_COMPTE", $account->number,'chaine',0,'',$conf->entity);
 		if (! $res > 0) $error++;
-		$res = dolibarr_set_const($db, "PRELEVEMENT_NUMBER_KEY", $account->cle_rib,'chaine',0,'',$conf->entity);
+		$res = berp3_set_const($db, "PRELEVEMENT_NUMBER_KEY", $account->cle_rib,'chaine',0,'',$conf->entity);
 		if (! $res > 0) $error++;
-		$res = dolibarr_set_const($db, "PRELEVEMENT_IBAN", $account->iban,'chaine',0,'',$conf->entity);
+		$res = berp3_set_const($db, "PRELEVEMENT_IBAN", $account->iban,'chaine',0,'',$conf->entity);
 		if (! $res > 0) $error++;
-		$res = dolibarr_set_const($db, "PRELEVEMENT_BIC", $account->bic,'chaine',0,'',$conf->entity);
+		$res = berp3_set_const($db, "PRELEVEMENT_BIC", $account->bic,'chaine',0,'',$conf->entity);
 		if (! $res > 0) $error++;
-		$res = dolibarr_set_const($db, "PRELEVEMENT_RAISON_SOCIALE", $account->proprio,'chaine',0,'',$conf->entity);
+		$res = berp3_set_const($db, "PRELEVEMENT_RAISON_SOCIALE", $account->proprio,'chaine',0,'',$conf->entity);
 		if (! $res > 0) $error++;
 		*/
 	} else {
 		$error++;
 	}
 	/* Moved to account
-	$res = dolibarr_set_const($db, "PAYMENTBYBANKTRANSFER_ICS", GETPOST("PAYMENTBYBANKTRANSFER_ICS"), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PAYMENTBYBANKTRANSFER_ICS", GETPOST("PAYMENTBYBANKTRANSFER_ICS"), 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) $error++;
 	*/
 
 	if (GETPOST("PAYMENTBYBANKTRANSFER_USER") > 0) {
-		$res = dolibarr_set_const($db, "PAYMENTBYBANKTRANSFER_USER", GETPOST("PAYMENTBYBANKTRANSFER_USER"), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "PAYMENTBYBANKTRANSFER_USER", GETPOST("PAYMENTBYBANKTRANSFER_USER"), 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -89,17 +89,17 @@ if ($action == "set") {
 	/*
 	if (GETPOST("PAYMENTBYBANKTRANSFER_END_TO_END") || GETPOST("PAYMENTBYBANKTRANSFER_END_TO_END") == "")
 	{
-		$res = dolibarr_set_const($db, "PAYMENTBYBANKTRANSFER_END_TO_END", GETPOST("PAYMENTBYBANKTRANSFER_END_TO_END"), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "PAYMENTBYBANKTRANSFER_END_TO_END", GETPOST("PAYMENTBYBANKTRANSFER_END_TO_END"), 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) $error++;
 	}
 	if (GETPOST("PAYMENTBYBANKTRANSFER_USTRD") || GETPOST("PAYMENTBYBANKTRANSFER_USTRD") == "")
 	{
-		$res = dolibarr_set_const($db, "PAYMENTBYBANKTRANSFER_USTRD", GETPOST("PAYMENTBYBANKTRANSFER_USTRD"), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "PAYMENTBYBANKTRANSFER_USTRD", GETPOST("PAYMENTBYBANKTRANSFER_USTRD"), 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) $error++;
 	}
 	*/
 	if (GETPOST("PAYMENTBYBANKTRANSFER_ADDDAYS") || GETPOST("PAYMENTBYBANKTRANSFER_ADDDAYS") == "") {
-		$res = dolibarr_set_const($db, "PAYMENTBYBANKTRANSFER_ADDDAYS", GETPOST("PAYMENTBYBANKTRANSFER_ADDDAYS"), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, "PAYMENTBYBANKTRANSFER_ADDDAYS", GETPOST("PAYMENTBYBANKTRANSFER_ADDDAYS"), 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}

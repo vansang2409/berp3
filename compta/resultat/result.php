@@ -1,8 +1,8 @@
 <?php
 /* Copyright (C) 2016-2017  Jamal Elbaz             <jamelbaz@gmail.com>
- * Copyright (C) 2016       Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2020  Laurent Destailleur     <eldy@destailleur.fr>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2016       
+ * Copyright (C) 2018-2020       <eldy@destailleur.fr>
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

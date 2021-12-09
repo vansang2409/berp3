@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2021		Dorian Vabre			<dorian.vabre@gmail.com>
+/* Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
  *  MEMBER_NEWFORM_AMOUNT               Default amount for auto-subscribe form
  *  MEMBER_NEWFORM_EDITAMOUNT           0 or 1 = Amount can be edited
  *  MEMBER_NEWFORM_PAYONLINE            Suggest payment with paypal, paybox or stripe
- *  MEMBER_NEWFORM_DOLIBARRTURNOVER     Show field turnover (specific for dolibarr foundation)
+ *  MEMBER_NEWFORM_BERP3TURNOVER     Show field turnover (specific for berp3 foundation)
  *  MEMBER_URL_REDIRECT_SUBSCRIPTION    Url to redirect once subscribe submitted
  *  MEMBER_NEWFORM_FORCETYPE            Force type of member
  *  MEMBER_NEWFORM_FORCEMORPHY          Force nature of member (mor/phy)
@@ -38,13 +38,13 @@ if (!defined('NOCSRFCHECK')) {
 	define("NOCSRFCHECK", 1); // We accept to go on this page from external web site.
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 if (!defined('NOBROWSERNOTIF')) {
 	define('NOBROWSERNOTIF', '1');
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 
 // For MultiCompany module.
@@ -66,8 +66,8 @@ require_once DOL_DOCUMENT_ROOT.'/compta/facture/class/paymentterm.class.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/html.formcompany.class.php';
 require_once DOL_DOCUMENT_ROOT.'/contact/class/contact.class.php';
 
-global $dolibarr_main_instance_unique_id;
-global $dolibarr_main_url_root;
+global $berp3_main_instance_unique_id;
+global $berp3_main_url_root;
 
 // Init vars
 $errmsg = '';
@@ -164,8 +164,8 @@ function llxHeaderVierge($title, $head = "", $disablejs = 0, $disablehead = 0, $
 		$urllogo = DOL_URL_ROOT.'/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file='.urlencode('logos/thumbs/'.$mysoc->logo_small);
 	} elseif (!empty($mysoc->logo) && is_readable($conf->mycompany->dir_output.'/logos/'.$mysoc->logo)) {
 		$urllogo = DOL_URL_ROOT.'/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file='.urlencode('logos/'.$mysoc->logo);
-	} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/dolibarr_logo.svg')) {
-		$urllogo = DOL_URL_ROOT.'/theme/dolibarr_logo.svg';
+	} elseif (is_readable(DOL_DOCUMENT_ROOT.'/theme/berp3_logo.png')) {
+		$urllogo = DOL_URL_ROOT.'/theme/berp3_logo.png';
 	}
 
 	print '<div class="center">';
@@ -177,7 +177,7 @@ function llxHeaderVierge($title, $head = "", $disablejs = 0, $disablehead = 0, $
 		print '>';
 		print '</div>';
 		if (empty($conf->global->MAIN_HIDE_POWERED_BY)) {
-			print '<div class="poweredbypublicpayment opacitymedium right"><a class="poweredbyhref" href="https://www.dolibarr.org?utm_medium=website&utm_source=poweredby" target="dolibarr" rel="noopener">'.$langs->trans("PoweredBy").'<br><img class="poweredbyimg" src="'.DOL_URL_ROOT.'/theme/dolibarr_logo.svg" width="80px"></a></div>';
+			print '<div class="poweredbypublicpayment opacitymedium right"><a class="poweredbyhref" href="https://www.berp3.org?utm_medium=website&utm_source=poweredby" target="berp3" rel="noopener">'.$langs->trans("PoweredBy").'<br><img class="poweredbyimg" src="'.DOL_URL_ROOT.'/theme/berp3_logo.png" width="80px"></a></div>';
 		}
 		print '</div>';
 	}
@@ -286,7 +286,7 @@ if (empty($reshook) && $action == 'add' && (!empty($conference->id) && $conferen
 		// If the registration has already been paid for this attendee
 		if (!empty($confattendee->date_subscription) && !empty($confattendee->amount)) {
 			$securekeyurl = dol_hash($conf->global->EVENTORGANIZATION_SECUREKEY.'conferenceorbooth'.$id, 'master');
-			$redirection = $dolibarr_main_url_root.'/public/eventorganization/subscriptionok.php?id='.((int) $id).'&securekey='.urlencode($securekeyurl);
+			$redirection = $berp3_main_url_root.'/public/eventorganization/subscriptionok.php?id='.((int) $id).'&securekey='.urlencode($securekeyurl);
 
 			$mesg = $langs->trans("RegistrationAndPaymentWereAlreadyRecorder", $email);
 			setEventMessages($mesg, null, 'mesgs');
@@ -539,7 +539,7 @@ if (empty($reshook) && $action == 'add' && (!empty($conference->id) && $conferen
 				// Now we redirect to the payment page
 				$sourcetouse = 'organizedeventregistration';
 				$reftouse = $facture->id;
-				$redirection = $dolibarr_main_url_root.'/public/payment/newpayment.php?source='.urlencode($sourcetouse).'&ref='.urlencode($reftouse);
+				$redirection = $berp3_main_url_root.'/public/payment/newpayment.php?source='.urlencode($sourcetouse).'&ref='.urlencode($reftouse);
 				if (!empty($conf->global->PAYMENT_SECURITY_TOKEN)) {
 					if (!empty($conf->global->PAYMENT_SECURITY_TOKEN_UNIQUE)) {
 						$redirection .= '&securekey='.dol_hash($conf->global->PAYMENT_SECURITY_TOKEN . $sourcetouse . $reftouse, 2); // Use the source in the hash to avoid duplicates if the references are identical
@@ -604,7 +604,7 @@ if (empty($reshook) && $action == 'add' && (!empty($conference->id) && $conferen
 			}
 
 			$securekeyurl = dol_hash($conf->global->EVENTORGANIZATION_SECUREKEY.'conferenceorbooth'.$id, 2);
-			$redirection = $dolibarr_main_url_root.'/public/eventorganization/subscriptionok.php?id='.((int) $id).'&securekey='.urlencode($securekeyurl);
+			$redirection = $berp3_main_url_root.'/public/eventorganization/subscriptionok.php?id='.((int) $id).'&securekey='.urlencode($securekeyurl);
 
 			Header("Location: ".$redirection);
 			exit;

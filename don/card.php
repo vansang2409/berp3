@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2001-2002  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2017  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2013       Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2015-2016  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2019  Thibault FOUCART        <support@ptibogxiv.net>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2001-2002  
+ * Copyright (C) 2004-2017  
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2013       
+ * Copyright (C) 2015-2016  
+ * Copyright (C) 2018-2019         
+ * Copyright (C) 2018-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -491,7 +491,7 @@ if ($action == 'create') {
 	print '<td class="tdtop">'.$langs->trans('NotePublic').'</td>';
 	print '<td>';
 
-	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 	print '</td></tr>';
 
@@ -501,7 +501,7 @@ if ($action == 'create') {
 		print '<td class="tdtop">'.$langs->trans('NotePrivate').'</td>';
 		print '<td>';
 
-		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 		print $doleditor->Create(1);
 		print '</td></tr>';
 	}

@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Destailleur Laurent		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2014	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2006		Andre Cianfarani		<acianfa@free.fr>
- * Copyright (C) 2008		Raphael Bertrand		<raphael.bertrand@resultic.fr>
- * Copyright (C) 2010-2016	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2013		Christophe Battarel		<christophe.battarel@altairis.fr>
- * Copyright (C) 2013		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2014-2015	Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2018   	Nicolas ZABOURI			<info@inovea-conseil.com>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2015-2018	Ferran Marcet			<fmarcet@2byte.es>
+/* Copyright (C) 2003		
+ * Copyright (C) 2004-2012			
+ * Copyright (C) 2005-2014	
+ * Copyright (C) 2006				
+ * Copyright (C) 2008		Raphael Bertrand		
+ * Copyright (C) 2010-2016	
+ * Copyright (C) 2013				
+ * Copyright (C) 2013		
+ * Copyright (C) 2014-2015				
+ * Copyright (C) 2018   				
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2015-2018				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -258,7 +258,7 @@ class Contrat extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -2445,12 +2445,12 @@ class Contrat extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'contrat'
@@ -2726,7 +2726,7 @@ class ContratLigne extends CommonObjectLine
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb		$db      Database handler
+	 *  @param      Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2002-2003	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Jean-Louis Bergamo		<jlb@j1b.org>
- * Copyright (C) 2004-2016	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2014-2017	Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2015		Jean-François Ferry		<jfefe@aternatik.fr>
- * Copyright (C) 2016		Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2002-2003	
+ * Copyright (C) 2003		
+ * Copyright (C) 2004-2016	
+ * Copyright (C) 2005-2009	
+ * Copyright (C) 2014-2017	
+ * Copyright (C) 2015		
+ * Copyright (C) 2016					
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -454,7 +454,7 @@ if ($action == 'create') {
 	print '<td>';
 	// Editor wysiwyg
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('account_comment', (GETPOST("account_comment") ?GETPOST("account_comment") : $object->comment), '', 90, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_4, '90%');
+	$doleditor = new DolEditor('account_comment', (GETPOST("account_comment") ?GETPOST("account_comment") : $object->comment), '', 90, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_4, '90%');
 	$doleditor->Create();
 	print '</td></tr>';
 
@@ -969,7 +969,7 @@ if ($action == 'create') {
 		print '<td>';
 		// Editor wysiwyg
 		require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor('account_comment', (GETPOST("account_comment") ?GETPOST("account_comment") : $object->comment), '', 90, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_4, '95%');
+		$doleditor = new DolEditor('account_comment', (GETPOST("account_comment") ?GETPOST("account_comment") : $object->comment), '', 90, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_4, '95%');
 		$doleditor->Create();
 		print '</td></tr>';
 

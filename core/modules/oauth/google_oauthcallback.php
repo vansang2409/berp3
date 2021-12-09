@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2015       Frederic France      <frederic.france@free.fr>
+ * Copyright (C) 2015             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,12 +24,12 @@
 
 require '../../../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/includes/OAuth/bootstrap.php';
-use OAuth\Common\Storage\DoliStorage;
+use OAuth\Common\Storage\Berp3Storage;
 use OAuth\Common\Consumer\Credentials;
 use OAuth\OAuth2\Service\Google;
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -60,8 +60,8 @@ $httpClient = new \OAuth\Common\Http\Client\CurlClient();
 //$httpClient->setCurlParameters($params);
 $serviceFactory->setHttpClient($httpClient);
 
-// Dolibarr storage
-$storage = new DoliStorage($db, $conf);
+// Berp3 storage
+$storage = new Berp3Storage($db, $conf);
 
 // Setup the credentials for the requests
 $credentials = new Credentials(
@@ -128,7 +128,7 @@ if (!empty($_GET['code'])) {     // We are coming from oauth provider page
 
 		$token = $apiService->requestAccessToken($_GET['code'], $state);
 
-		setEventMessages($langs->trans('NewTokenStored'), null, 'mesgs'); // Stored into object managed by class DoliStorage so into table oauth_token
+		setEventMessages($langs->trans('NewTokenStored'), null, 'mesgs'); // Stored into object managed by class Berp3Storage so into table oauth_token
 
 		$backtourl = $_SESSION["backtourlsavedbeforeoauthjump"];
 		unset($_SESSION["backtourlsavedbeforeoauthjump"]);

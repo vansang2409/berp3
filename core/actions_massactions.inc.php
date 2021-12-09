@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2015-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2021 Nicolas ZABOURI	<info@inovea-conseil.com>
- * Copyright (C) 2018 	   Juanjo Menent  <jmenent@2byte.es>
- * Copyright (C) 2019 	   Ferran Marcet  <fmarcet@2byte.es>
- * Copyright (C) 2019-2021 Frédéric France <frederic.france@netlogic.fr>
+/* Copyright (C) 2015-2017 
+ * Copyright (C) 2018-2021 	
+ * Copyright (C) 2018 	     
+ * Copyright (C) 2019 	     
+ * Copyright (C) 2019-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1633,7 +1633,7 @@ if (!$error && ($massaction == 'approveleave' || ($action == 'approveleave' && $
 
 						$message .= "- ".$langs->transnoentitiesnoconv("ValidatedBy")." : ".dolGetFirstLastname($expediteur->firstname, $expediteur->lastname)."\n";
 
-						$message .= "- ".$langs->transnoentitiesnoconv("Link")." : ".$dolibarr_main_url_root."/holiday/card.php?id=".$objecttmp->id."\n\n";
+						$message .= "- ".$langs->transnoentitiesnoconv("Link")." : ".$berp3_main_url_root."/holiday/card.php?id=".$objecttmp->id."\n\n";
 						$message .= "\n";
 
 						$trackid = 'leav'.$objecttmp->id;

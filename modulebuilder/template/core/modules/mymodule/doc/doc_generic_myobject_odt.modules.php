@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2010-2012 	Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2012		Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2014		Marcos García		<marcosgdf@gmail.com>
- * Copyright (C) 2016		Charlie Benke		<charlie@patas-monkey.com>
- * Copyright (C) 2018-2021  Philippe Grand      <philippe.grand@atoo-net.com>
- * Copyright (C) 2018       Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2010-2012 	
+ * Copyright (C) 2012		
+ * Copyright (C) 2014				
+ * Copyright (C) 2016				
+ * Copyright (C) 2018-2021        
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,15 +53,15 @@ class doc_generic_myobject_odt extends ModelePDFMyObject
 	public $phpmin = array(5, 6);
 
 	/**
-	 * @var string Dolibarr version of the loaded document
+	 * @var string Berp3 version of the loaded document
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

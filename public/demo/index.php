@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2001-2002  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2006-2013  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2010       Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2001-2002  
+ * Copyright (C) 2006-2013  
+ * Copyright (C) 2010       
+ * Copyright (C) 2015             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ if (!defined('NOBROWSERNOTIF')) {
 	define('NOBROWSERNOTIF', 1);
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 
 require '../../main.inc.php';
@@ -49,9 +49,9 @@ $conf->dol_no_mouse_hover = GETPOST('dol_no_mouse_hover', 'int');
 $conf->dol_use_jmobile = GETPOST('dol_use_jmobile', 'int');
 
 // Security check
-global $dolibarr_main_demo;
-if (empty($dolibarr_main_demo)) {
-	accessforbidden('Parameter dolibarr_main_demo must be defined in conf file with value "default login,default pass" to enable the demo entry page', 0, 0, 1);
+global $berp3_main_demo;
+if (empty($berp3_main_demo)) {
+	accessforbidden('Parameter berp3_main_demo must be defined in conf file with value "default login,default pass" to enable the demo entry page', 0, 0, 1);
 }
 
 // Initialize technical object to manage hooks of page. Note that conf->hooks_modules contains array of hook context
@@ -80,7 +80,7 @@ if (empty($reshook)) {
 	$demoprofiles = array(
 		array('default'=>'1', 'key'=>'profdemoservonly', 'label'=>'DemoCompanyServiceOnly',
 		'disablemodules'=>'adherent,barcode,bom,cashdesk,don,expedition,externalsite,ftp,incoterm,mailmanspip,margin,mrp,prelevement,product,productbatch,stock,takepos',
-		//'icon'=>DOL_URL_ROOT.'/public/demo/dolibarr_screenshot8.png',
+		//'icon'=>DOL_URL_ROOT.'/public/demo/berp3_screenshot8.png',
 		'icon'=>DOL_URL_ROOT.'/public/demo/demo-profile-service.jpg',
 		'url'=>$url
 		),
@@ -91,20 +91,20 @@ if (empty($reshook)) {
 		),
 		array('default'=>'0', 'key'=>'profdemoprodstock', 'label'=>'DemoCompanyProductAndStocks',
 		'disablemodules'=>'adherent,bom,contrat,don,externalsite,ficheinter,ftp,mailmanspip,mrp,prelevement,service',
-		//'icon'=>DOL_URL_ROOT.'/public/demo/dolibarr_screenshot2.png',
+		//'icon'=>DOL_URL_ROOT.'/public/demo/berp3_screenshot2.png',
 		'icon'=>DOL_URL_ROOT.'/public/demo/demo-profile-product.jpg',
 		'url'=>$url
 		),
 		array('default'=>'0', 'key'=>'profdemofun2', 'label'=>'DemoFundation2',
 		'disablemodules'=>'barcode,cashdesk,bom,commande,commercial,compta,comptabilite,contrat,expedition,externalsite,ficheinter,ftp,incoterm,mailmanspip,margin,mrp,prelevement,product,productbatch,projet,propal,propale,service,societe,stock,tax,takepos',
-		//'icon'=>DOL_URL_ROOT.'/public/demo/dolibarr_screenshot6.png',
+		//'icon'=>DOL_URL_ROOT.'/public/demo/berp3_screenshot6.png',
 		'icon'=>DOL_URL_ROOT.'/public/demo/demo-profile-foundation.jpg',
 		'url'=>$url
 		),
 		// All demo profile
 		array('default'=>'0', 'key'=>'profdemoall', 'label'=>'ChooseYourDemoProfilMore',
 		'disablemodules'=>'adherent,cashdesk,don,externalsite,mailmanspip',
-		//'icon'=>DOL_URL_ROOT.'/public/demo/dolibarr_screenshot9.png'
+		//'icon'=>DOL_URL_ROOT.'/public/demo/berp3_screenshot9.png'
 		'icon'=>DOL_URL_ROOT.'/public/demo/demo-profile-all.jpg'
 		)
 	);
@@ -120,7 +120,7 @@ if (empty($reshook)) {
 									'memcached', 'numberwords', 'zipautofillfr');
 	$alwayshiddenuncheckedmodules = array('cashdesk', 'collab', 'dav', 'debugbar', 'emailcollector', 'ftp', 'hrm', 'modulebuilder', 'printing', 'webservicesclient', 'zappier',
 									// Extended modules
-									'awstats', 'bittorrent', 'bootstrap', 'cabinetmed', 'cmcic', 'concatpdf', 'customfield', 'datapolicy', 'deplacement', 'dolicloud', 'filemanager', 'lightbox', 'mantis', 'monitoring', 'moretemplates', 'multicompany', 'nltechno', 'numberingpack', 'openstreetmap',
+									'awstats', 'bittorrent', 'bootstrap', 'cabinetmed', 'cmcic', 'concatpdf', 'customfield', 'datapolicy', 'deplacement', 'berp3cloud', 'filemanager', 'lightbox', 'mantis', 'monitoring', 'moretemplates', 'multicompany', 'nltechno', 'numberingpack', 'openstreetmap',
 									'ovh', 'phenix', 'phpsysinfo', 'pibarcode', 'postnuke', 'dynamicprices', 'receiptprinter', 'selectbank', 'skincoloreditor', 'submiteverywhere', 'survey', 'thomsonphonebook', 'topten', 'tvacerfa', 'voyage', 'webcalendar', 'webmail');
 }
 
@@ -239,7 +239,7 @@ if (GETPOST('action', 'aZ09') == 'gotodemo') {     // Action run when we click o
 
 $head = '';
 $head .= '<meta name="keywords" content="demo,online,demonstration,example,test,erp,crm,demos,web">'."\n";
-$head .= '<meta name="description" content="Dolibarr ERP and CRM demo. You can test here several profiles for BERP3 ERP and CRM demonstration.">'."\n";
+$head .= '<meta name="description" content="Berp3 ERP and CRM demo. You can test here several profiles for BERP3 ERP and CRM demonstration.">'."\n";
 
 $head .= '
 <script type="text/javascript">
@@ -267,14 +267,14 @@ jQuery(document).ready(function () {
 });
 </script>';
 
-llxHeaderVierge($langs->trans("DolibarrDemo"), $head);
+llxHeaderVierge($langs->trans("Berp3Demo"), $head);
 
 
 print "\n";
 
 print '<div class="demoban demobackground">';
 print '<div class="right" style="padding-right: 30px; padding-top: 30px;">';
-print '<a alt="Official portal of your ERP CRM application" targe="_blank" href="https://www.dolibarr.org?utm_medium=website&utm_source=demo"><img class="demologo" src="'.DOL_URL_ROOT.'/theme/dolibarr_logo.svg" alt="Dolibarr logo"></a>';
+print '<a alt="Official portal of your ERP CRM application" targe="_blank" href="https://www.berp3.org?utm_medium=website&utm_source=demo"><img class="demologo" src="'.DOL_URL_ROOT.'/theme/berp3_logo.png" alt="Berp3 logo"></a>';
 print '</div>';
 print '</div>';
 
@@ -299,7 +299,7 @@ foreach ($demoprofiles as $profilearray) {
 
 		$url = $_SERVER["PHP_SELF"].'?action=gotodemo';
 		$urlwithmod = $url.'&amp;demochoice='.$profilearray['key'];
-		// Should work with DOL_URL_ROOT='' or DOL_URL_ROOT='/dolibarr'
+		// Should work with DOL_URL_ROOT='' or DOL_URL_ROOT='/berp3'
 		//print "xx".$_SERVER["PHP_SELF"].' '.DOL_URL_ROOT.'<br>';
 
 		$urlfrom = preg_replace('/^'.preg_quote(DOL_URL_ROOT, '/').'/i', '', $_SERVER["PHP_SELF"]);
@@ -328,7 +328,7 @@ foreach ($demoprofiles as $profilearray) {
 		print '<input type="hidden" name="dol_no_mouse_hover" value="'.$conf->dol_no_mouse_hover.'">'."\n";
 		print '<input type="hidden" name="dol_use_jmobile" value="'.$conf->dol_use_jmobile.'">'."\n";
 
-		print '<div id="div'.$profilearray['key'].'" summary="Dolibarr online demonstration for profile '.$profilearray['label'].'" class="center inline-block CTable CTableRow'.($i % 2 == 0 ? '1' : '0').'">'."\n";
+		print '<div id="div'.$profilearray['key'].'" summary="Berp3 online demonstration for profile '.$profilearray['label'].'" class="center inline-block CTable CTableRow'.($i % 2 == 0 ? '1' : '0').'">'."\n";
 
 
 		print '<div id="a1'.$profilearray['key'].'" class="demobox '.(empty($profilearray['url']) ? 'modulelineshow cursorpointer' : 'nomodulelines').'">';

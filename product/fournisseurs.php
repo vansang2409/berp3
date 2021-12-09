@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2001-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2021 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2012 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2012      Christophe Battarel  <christophe.battarel@altairis.fr>
+/* Copyright (C) 2001-2007 
+ * Copyright (C) 2004-2021 
+ * Copyright (C) 2004                
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2010-2012 
+ * Copyright (C) 2012        
  * Copyright (C) 2014      Ion Agorria          <ion@agorria.com>
- * Copyright (C) 2015      Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2016      Ferran Marcet		<fmarcet@2byte.es>
- * Copyright (C) 2019      Frédéric France      <frederic.france@netlogic.fr>
+ * Copyright (C) 2015      
+ * Copyright (C) 2016      		
+ * Copyright (C) 2019      
  * Copyright (C) 2019      Tim Otte			    <otte@meuser.it>
- * Copyright (C) 2020      Pierre Ardoin        <mapiolca@me.com>
+ * Copyright (C) 2020              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -524,7 +524,7 @@ if ($id > 0 || $ref) {
 					$reshook = $hookmanager->executeHooks('formCreateThirdpartyOptions', $parameters, $object, $action);
 					if (empty($reshook)) {
 						if (empty($form->result)) {
-							print ' - <a href="'.DOL_URL_ROOT.'/societe/card.php?action=create&type=f&backtopage='.urlencode($_SERVER["PHP_SELF"].'?id='.$object->id.'&action='.$action).'">'.$langs->trans("CreateDolibarrThirdPartySupplier").'</a>';
+							print ' - <a href="'.DOL_URL_ROOT.'/societe/card.php?action=create&type=f&backtopage='.urlencode($_SERVER["PHP_SELF"].'?id='.$object->id.'&action='.$action).'">'.$langs->trans("CreateBerp3ThirdPartySupplier").'</a>';
 						}
 					}
 				}
@@ -804,7 +804,7 @@ END;
 					print '<td>'.$langs->trans('ProductSupplierDescription').'</td>';
 					print '<td>';
 
-					$doleditor = new DolEditor('supplier_description', $object->desc_supplier, '', 160, 'dolibarr_details', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_4, '90%');
+					$doleditor = new DolEditor('supplier_description', $object->desc_supplier, '', 160, 'berp3_details', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_4, '90%');
 					$doleditor->Create();
 
 					print '</td>';

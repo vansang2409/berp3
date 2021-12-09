@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville  <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2014 Regis Houssin         <regis.houssin@inodbox.com>
- * Copyright (C) 2006-2007 Laurent Destailleur   <eldy@users.sourceforge.net>
+/* Copyright (C) 2003      
+ * Copyright (C) 2005-2014 
+ * Copyright (C) 2006-2007 
  * Copyright (C) 2007      Franky Van Liedekerke <franky.van.liedekerke@telenet.be>
- * Copyright (C) 2011-2018 Philippe Grand	     <philippe.grand@atoo-net.com>
- * Copyright (C) 2013      Florian Henry	     <florian.henry@open-concept.pro>
- * Copyright (C) 2014-2015 Marcos García         <marcosgdf@gmail.com>
+ * Copyright (C) 2011-2018 	     
+ * Copyright (C) 2013      	     
+ * Copyright (C) 2014-2015          
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -112,7 +112,7 @@ class Delivery extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param	DoliDB	$db		Database handler
+	 * @param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1069,12 +1069,12 @@ class Delivery extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'delivery'
@@ -1092,7 +1092,7 @@ class Delivery extends CommonObject
 class DeliveryLine extends CommonObjectLine
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -1143,7 +1143,7 @@ class DeliveryLine extends CommonObjectLine
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB	$db		Database handler
+	 *	@param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{

@@ -59,7 +59,7 @@ ChooseFormatOfFileToImport=Velg filformatet som skal brukes som importfilformat 
 ChooseFileToImport=Last opp fil og klikk deretter på %s ikonet for å velge fil som kilde-importfil ...
 SourceFileFormat=Kildefil-format
 FieldsInSourceFile=Felt i kildefilen
-FieldsInTargetDatabase=Målfelt i Dolibarr-databasen (uthevet=obligatorisk)
+FieldsInTargetDatabase=Målfelt i Berp3-databasen (uthevet=obligatorisk)
 Field=Felt
 NoFields=Ingen felt
 MoveField=Flytt feltet med kolonnenummer %s

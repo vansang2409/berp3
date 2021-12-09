@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2015 
  *
  * This file is a modified version of datepicker.php from phpBSM to fix some
  * bugs, to add new features and to dramatically increase speed.

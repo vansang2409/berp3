@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004		Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2011	Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012		Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2018           charlene Benke	     <charlie@patas-monkey.com>
+/* Copyright (C) 2003		
+ * Copyright (C) 2004-2012	
+ * Copyright (C) 2004		          
+ * Copyright (C) 2005-2011	
+ * Copyright (C) 2012		
+ * Copyright (C) 2018           charlene Benke	     
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

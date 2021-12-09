@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017		ATM-Consulting  	 <support@atm-consulting.fr>
+/* Copyright (C) 2017		ATM-Consulting  	 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ class pdf_paiement_fourn extends pdf_paiement
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb		$db      Database handler
+	 *  @param      Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

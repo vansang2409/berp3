@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005-2016 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012      Christophe Battarel	<christophe.battarel@altairis.fr>
+/* Copyright (C) 2005-2016 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2012      	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1533,7 +1533,7 @@ if ($step == 5 && $datatoimport) {
 				print ', ';
 			}
 			$newval = $val;
-			// Link to Dolibarr wiki pages
+			// Link to Berp3 wiki pages
 			/*$helppagename='EN:Table_'.$newval;
 			if ($helppagename && empty($conf->global->MAIN_HELP_DISABLELINK))
 			{
@@ -1939,7 +1939,7 @@ if ($step == 6 && $datatoimport) {
 				print ', ';
 			}
 			$newval = $val;
-			// Link to Dolibarr wiki pages
+			// Link to Berp3 wiki pages
 			/*$helppagename='EN:Table_'.$newval;
 			if ($helppagename && empty($conf->global->MAIN_HELP_DISABLELINK))
 			{

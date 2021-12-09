@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017		Alexandre Spangaro   <aspangaro@open-dsi.fr>
+/* Copyright (C) 2017		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -84,7 +84,7 @@ class AccountingJournal extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handle
+	 * @param Berp3DB $db Database handle
 	 */
 	public function __construct($db)
 	{

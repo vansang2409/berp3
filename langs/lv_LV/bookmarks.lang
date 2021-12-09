@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Behaviour when a bookmark URL is selected
 CreateBookmark=Izveidot grāmatzīmi
 SetHereATitleForLink=Iestatiet grāmatzīmes nosaukumu
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Izmantojiet ārēju / absolūtu saiti (https: // URL) vai iekšējo / relatīvo saiti (/ DOLIBARR_ROOT / htdocs / ...)
+UseAnExternalHttpLinkOrRelativeBerp3Link=Izmantojiet ārēju / absolūtu saiti (https: // URL) vai iekšējo / relatīvo saiti (/ BERP3_ROOT / htdocs / ...)
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Izvēlieties, vai saistītā lapa jāatver pašreizējā cilnē vai jaunā cilnē
 BookmarksManagement=Grāmatzīmju vadība

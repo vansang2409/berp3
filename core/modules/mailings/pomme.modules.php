@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2011 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin       <regis.houssin@inodbox.com>
+/* Copyright (C) 2005-2011 
+ * Copyright (C) 2005-2009        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,9 +30,9 @@ include_once DOL_DOCUMENT_ROOT.'/core/modules/mailings/modules_mailings.php';
  */
 class mailing_pomme extends MailingTargets
 {
-	public $name = 'DolibarrUsers'; // Identifiant du module mailing
+	public $name = 'Berp3Users'; // Identifiant du module mailing
 	// This label is used if no translation is found for key XXX neither MailingModuleDescXXX where XXX=name is found
-	public $desc = 'Dolibarr users with emails'; // Libelle utilise si aucune traduction pour MailingModuleDescXXX ou XXX=name trouv�e
+	public $desc = 'Berp3 users with emails'; // Libelle utilise si aucune traduction pour MailingModuleDescXXX ou XXX=name trouv�e
 	public $require_module = array(); // Module mailing actif si modules require_module actifs
 	public $require_admin = 1; // Module mailing actif pour user admin ou non
 
@@ -42,7 +42,7 @@ class mailing_pomme extends MailingTargets
 	public $picto = 'user';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -50,7 +50,7 @@ class mailing_pomme extends MailingTargets
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -73,7 +73,7 @@ class mailing_pomme extends MailingTargets
 		$langs->load("users");
 
 		$statssql = array();
-		$sql = "SELECT '".$this->db->escape($langs->trans("DolibarrUsers"))."' as label,";
+		$sql = "SELECT '".$this->db->escape($langs->trans("Berp3Users"))."' as label,";
 		$sql .= " count(distinct(u.email)) as nb";
 		$sql .= " FROM ".MAIN_DB_PREFIX."user as u";
 		$sql .= " WHERE u.email != ''"; // u.email IS NOT NULL est implicite dans ce test

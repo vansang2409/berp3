@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2013	Laurent Destailleur		<eldy@users.sourceforge.org>
- * Copyright (C) 2011-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2012  Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2004		
+ * Copyright (C) 2005-2013			
+ * Copyright (C) 2011-2012	
+ * Copyright (C) 2011-2012  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,65 +44,65 @@ $action = GETPOST('action', 'aZ09');
 if ($action == 'setvalue' && $user->admin) {
 	$db->begin();
 
-	$result = dolibarr_set_const($db, "PAYPAL_API_USER", GETPOST('PAYPAL_API_USER', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYPAL_API_USER", GETPOST('PAYPAL_API_USER', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "PAYPAL_API_PASSWORD", GETPOST('PAYPAL_API_PASSWORD', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYPAL_API_PASSWORD", GETPOST('PAYPAL_API_PASSWORD', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "PAYPAL_API_SIGNATURE", GETPOST('PAYPAL_API_SIGNATURE', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYPAL_API_SIGNATURE", GETPOST('PAYPAL_API_SIGNATURE', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "PAYPAL_SSLVERSION", GETPOST('PAYPAL_SSLVERSION', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYPAL_SSLVERSION", GETPOST('PAYPAL_SSLVERSION', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "ONLINE_PAYMENT_CREDITOR", GETPOST('ONLINE_PAYMENT_CREDITOR', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "ONLINE_PAYMENT_CREDITOR", GETPOST('ONLINE_PAYMENT_CREDITOR', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "PAYPAL_BANK_ACCOUNT_FOR_PAYMENTS", GETPOST('PAYPAL_BANK_ACCOUNT_FOR_PAYMENTS', 'int'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYPAL_BANK_ACCOUNT_FOR_PAYMENTS", GETPOST('PAYPAL_BANK_ACCOUNT_FOR_PAYMENTS', 'int'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "PAYPAL_API_INTEGRAL_OR_PAYPALONLY", GETPOST('PAYPAL_API_INTEGRAL_OR_PAYPALONLY', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYPAL_API_INTEGRAL_OR_PAYPALONLY", GETPOST('PAYPAL_API_INTEGRAL_OR_PAYPALONLY', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "ONLINE_PAYMENT_CSS_URL", GETPOST('ONLINE_PAYMENT_CSS_URL', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "ONLINE_PAYMENT_CSS_URL", GETPOST('ONLINE_PAYMENT_CSS_URL', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "PAYPAL_ADD_PAYMENT_URL", GETPOST('PAYPAL_ADD_PAYMENT_URL', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYPAL_ADD_PAYMENT_URL", GETPOST('PAYPAL_ADD_PAYMENT_URL', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "ONLINE_PAYMENT_MESSAGE_FORM", GETPOST('ONLINE_PAYMENT_MESSAGE_FORM', 'restricthtml'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "ONLINE_PAYMENT_MESSAGE_FORM", GETPOST('ONLINE_PAYMENT_MESSAGE_FORM', 'restricthtml'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "ONLINE_PAYMENT_MESSAGE_OK", GETPOST('ONLINE_PAYMENT_MESSAGE_OK', 'restricthtml'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "ONLINE_PAYMENT_MESSAGE_OK", GETPOST('ONLINE_PAYMENT_MESSAGE_OK', 'restricthtml'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "ONLINE_PAYMENT_MESSAGE_KO", GETPOST('ONLINE_PAYMENT_MESSAGE_KO', 'restricthtml'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "ONLINE_PAYMENT_MESSAGE_KO", GETPOST('ONLINE_PAYMENT_MESSAGE_KO', 'restricthtml'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
-	$result = dolibarr_set_const($db, "ONLINE_PAYMENT_SENDEMAIL", GETPOST('ONLINE_PAYMENT_SENDEMAIL', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "ONLINE_PAYMENT_SENDEMAIL", GETPOST('ONLINE_PAYMENT_SENDEMAIL', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
 	// Payment token for URL
-	$result = dolibarr_set_const($db, "PAYMENT_SECURITY_TOKEN", GETPOST('PAYMENT_SECURITY_TOKEN', 'alpha'), 'chaine', 0, '', $conf->entity);
+	$result = berp3_set_const($db, "PAYMENT_SECURITY_TOKEN", GETPOST('PAYMENT_SECURITY_TOKEN', 'alpha'), 'chaine', 0, '', $conf->entity);
 	if (!$result > 0) {
 		$error++;
 	}
 	if (empty($conf->use_javascript_ajax)) {
-		$result = dolibarr_set_const($db, "PAYMENT_SECURITY_TOKEN_UNIQUE", GETPOST('PAYMENT_SECURITY_TOKEN_UNIQUE', 'alpha'), 'chaine', 0, '', $conf->entity);
+		$result = berp3_set_const($db, "PAYMENT_SECURITY_TOKEN_UNIQUE", GETPOST('PAYMENT_SECURITY_TOKEN_UNIQUE', 'alpha'), 'chaine', 0, '', $conf->entity);
 		if (!$result > 0) {
 			$error++;
 		}
@@ -119,7 +119,7 @@ if ($action == 'setvalue' && $user->admin) {
 
 if ($action == "setlive") {
 	$liveenable = GETPOST('value', 'int') ? 0 : 1;
-	$res = dolibarr_set_const($db, "PAYPAL_API_SANDBOX", $liveenable, 'yesno', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PAYPAL_API_SANDBOX", $liveenable, 'yesno', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -267,21 +267,21 @@ print '</td></tr>';
 
 print '<tr class="oddeven"><td>';
 print $langs->trans("MessageForm").'</td><td>';
-$doleditor = new DolEditor('ONLINE_PAYMENT_MESSAGE_FORM', $conf->global->ONLINE_PAYMENT_MESSAGE_FORM, '', 100, 'dolibarr_details', 'In', false, true, true, ROWS_4, '90%');
+$doleditor = new DolEditor('ONLINE_PAYMENT_MESSAGE_FORM', $conf->global->ONLINE_PAYMENT_MESSAGE_FORM, '', 100, 'berp3_details', 'In', false, true, true, ROWS_4, '90%');
 $doleditor->Create();
 print '</td></tr>';
 
 
 print '<tr class="oddeven"><td>';
 print $langs->trans("MessageOK").'</td><td>';
-$doleditor = new DolEditor('ONLINE_PAYMENT_MESSAGE_OK', $conf->global->ONLINE_PAYMENT_MESSAGE_OK, '', 100, 'dolibarr_details', 'In', false, true, true, ROWS_4, '90%');
+$doleditor = new DolEditor('ONLINE_PAYMENT_MESSAGE_OK', $conf->global->ONLINE_PAYMENT_MESSAGE_OK, '', 100, 'berp3_details', 'In', false, true, true, ROWS_4, '90%');
 $doleditor->Create();
 print '</td></tr>';
 
 
 print '<tr class="oddeven"><td>';
 print $langs->trans("MessageKO").'</td><td>';
-$doleditor = new DolEditor('ONLINE_PAYMENT_MESSAGE_KO', $conf->global->ONLINE_PAYMENT_MESSAGE_KO, '', 100, 'dolibarr_details', 'In', false, true, true, ROWS_4, '90%');
+$doleditor = new DolEditor('ONLINE_PAYMENT_MESSAGE_KO', $conf->global->ONLINE_PAYMENT_MESSAGE_KO, '', 100, 'berp3_details', 'In', false, true, true, ROWS_4, '90%');
 $doleditor->Create();
 print '</td></tr>';
 

@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2006-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2007-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011      Juanjo Menent	    <jmenent@2byte.es>
+/* Copyright (C) 2004      
+ * Copyright (C) 2006-2014 
+ * Copyright (C) 2007-2012 
+ * Copyright (C) 2011      	    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,10 +44,10 @@ class mod_barcode_product_standard extends ModeleNumRefBarCode
 	public $code_null; // Optional code
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var int Automatic numbering
@@ -231,7 +231,7 @@ class mod_barcode_product_standard extends ModeleNumRefBarCode
 	/**
 	 * 	Check validity of code according to its rules
 	 *
-	 *	@param	DoliDB		$db					Database handler
+	 *	@param	Berp3DB		$db					Database handler
 	 *	@param	string		$code				Code to check/correct
 	 *	@param	Product		$product			Object product
 	 *  @param  int		  	$thirdparty_type   	0 = customer/prospect , 1 = supplier
@@ -283,7 +283,7 @@ class mod_barcode_product_standard extends ModeleNumRefBarCode
 	/**
 	 *	Return if a code is used (by other element)
 	 *
-	 *	@param	DoliDB		$db			Handler acces base
+	 *	@param	Berp3DB		$db			Handler acces base
 	 *	@param	string		$code		Code to check
 	 *	@param	Product		$product	Objet product
 	 *	@return	int						0 if available, <0 if KO

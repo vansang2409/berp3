@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003-2005  Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2015  Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2009-2012  Regis Houssin			<regis.houssin@capnetworks.com>
- * Copyright (C) 2010-2011  Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2012       Cedric Salvador			<csalvador@gpcsolutions.fr>
- * Copyright (C) 2013       Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2015       Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2016-2018  Charlie Benke			<charlie@patas-monkey.com>
+/* Copyright (C) 2003-2005  
+ * Copyright (C) 2004-2015  
+ * Copyright (C) 2009-2012  			<regis.houssin@capnetworks.com>
+ * Copyright (C) 2010-2011  
+ * Copyright (C) 2012       Cedric Salvador			
+ * Copyright (C) 2013       
+ * Copyright (C) 2015       			
+ * Copyright (C) 2016-2018  			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -97,7 +97,7 @@ class FichinterRec extends Fichinter
 	/**
 	 *	Constructor
 	 *
-	 * 	@param		DoliDB		$db		Database handler
+	 * 	@param		Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -681,12 +681,12 @@ class FichinterRec extends Fichinter
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array('fichinter_rec');
 

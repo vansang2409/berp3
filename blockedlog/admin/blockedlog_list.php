@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2017       ATM Consulting          <contact@atm-consulting.fr>
- * Copyright (C) 2017-2018  Laurent Destailleur     <eldy@destailleur.fr>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2017                 
+ * Copyright (C) 2017-2018       <eldy@destailleur.fr>
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -186,7 +186,7 @@ if ($action === 'downloadblockchain') {
 		if ($res) {
 			header('Content-Type: application/octet-stream');
 			header("Content-Transfer-Encoding: Binary");
-			header("Content-disposition: attachment; filename=\"unalterable-log-archive-".$dolibarr_main_db_name."-".(GETPOST('yeartoexport', 'int') > 0 ? GETPOST('yeartoexport', 'int').(GETPOST('monthtoexport', 'int') > 0 ?sprintf("%02d", GETPOST('monthtoexport', 'int')) : '').'-' : '').$previoushash.".csv\"");
+			header("Content-disposition: attachment; filename=\"unalterable-log-archive-".$berp3_main_db_name."-".(GETPOST('yeartoexport', 'int') > 0 ? GETPOST('yeartoexport', 'int').(GETPOST('monthtoexport', 'int') > 0 ?sprintf("%02d", GETPOST('monthtoexport', 'int')) : '').'-' : '').$previoushash.".csv\"");
 
 			print $langs->transnoentities('Id')
 				.';'.$langs->transnoentities('Date')

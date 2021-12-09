@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2007-2017  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014-2016  Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Florian Henry       <florian.henry@open-concept.pro>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2007-2017  
+ * Copyright (C) 2014-2016  
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software; you can redistribute it and/or modify
@@ -136,9 +136,9 @@ class EmailSenderProfile extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf;
 
@@ -278,7 +278,7 @@ class EmailSenderProfile extends CommonObject
 	public function getNomUrl($withpicto = 0)
 	{
 		global $db, $conf, $langs;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		$result = '';

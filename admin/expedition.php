@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003-2008	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio		<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier			<benoit.mortier@opensides.be>
- * Copyright (C) 2004		Eric Seigne				<eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2012	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2011-2018	Philippe Grand			<philippe.grand@atoo-net.com>
+/* Copyright (C) 2003-2008	
+ * Copyright (C) 2004-2011	
+ * Copyright (C) 2004		
+ * Copyright (C) 2004		
+ * Copyright (C) 2004		
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2011-2012	
+ * Copyright (C) 2011-2018	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -62,7 +62,7 @@ if ($action == 'updateMask') {
 	$maskconst = GETPOST('maskconstexpedition', 'alpha');
 	$maskvalue = GETPOST('maskexpedition', 'alpha');
 	if (!empty($maskconst)) {
-		$res = dolibarr_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (isset($res)) {
@@ -74,14 +74,14 @@ if ($action == 'updateMask') {
 	}
 } elseif ($action == 'set_param') {
 	$freetext = GETPOST('SHIPPING_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
-	$res = dolibarr_set_const($db, "SHIPPING_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "SHIPPING_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 	if ($res <= 0) {
 		$error++;
 		setEventMessages($langs->trans("Error"), null, 'errors');
 	}
 
 	$draft = GETPOST('SHIPPING_DRAFT_WATERMARK', 'alpha');
-	$res = dolibarr_set_const($db, "SHIPPING_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "SHIPPING_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 	if ($res <= 0) {
 		$error++;
 		setEventMessages($langs->trans("Error"), null, 'errors');
@@ -131,12 +131,12 @@ if ($action == 'updateMask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->EXPEDITION_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'EXPEDITION_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'EXPEDITION_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "EXPEDITION_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "EXPEDITION_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->EXPEDITION_ADDON_PDF = $value;
@@ -148,7 +148,7 @@ if ($action == 'updateMask') {
 		$ret = addDocumentModel($value, $type, $label, $scandir);
 	}
 } elseif ($action == 'setmodel') {
-	dolibarr_set_const($db, "EXPEDITION_ADDON_NUMBER", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "EXPEDITION_ADDON_NUMBER", $value, 'chaine', 0, '', $conf->entity);
 }
 
 
@@ -442,7 +442,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print "</td></tr>\n";

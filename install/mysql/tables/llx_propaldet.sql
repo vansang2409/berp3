@@ -1,8 +1,8 @@
 -- ===================================================================
--- Copyright (C) 2002-2003	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
--- Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
--- Copyright (C) 2010		Juanjo Menent			<jmenent@2byte.es>
--- Copyright (C) 2012      Cédric Salvador      <csalvador@gpcsolutions.fr>
+-- Copyright (C) 2002-2003	
+-- Copyright (C) 2005-2012	
+-- Copyright (C) 2010		
+-- Copyright (C) 2012            
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

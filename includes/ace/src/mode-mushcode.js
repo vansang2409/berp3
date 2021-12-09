@@ -12,7 +12,7 @@ var MushCodeRules = function() {
  "@ifelse|"+
  "@switch|"+
  "@halt|"+
- "@dolist|"+
+ "@berp3st|"+
  "@create|"+
  "@scent|"+
  "@sound|"+

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2006	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2012		Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2012       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2014-2020  Alexandre Spangaro		<aspangaro@open-dsi.fr>
+/* Copyright (C) 2003		
+ * Copyright (C) 2005-2006	
+ * Copyright (C) 2012		
+ * Copyright (C) 2012       
+ * Copyright (C) 2014-2020  
  * Copyright (C) 2015  		Benoit Bruchard			<benoitb21@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -38,7 +38,7 @@ class html_cerfafr extends ModeleDon
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb      $db      Database handler
+	 *  @param      Berp3Db      $db      Database handler
 	 */
 	public function __construct($db)
 	{

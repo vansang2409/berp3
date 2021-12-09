@@ -1,5 +1,5 @@
 <?php
-// Copyright (C) 2014 Cedric GROSS		<c.gross@kreiz-it.fr>
+// Copyright (C) 2014 Cedric GROSS		
 // Copyright (C) 2017 Francis Appels	<francis.appels@z-application.com>
 //
 // This program is free software; you can redistribute it and/or modify
@@ -49,8 +49,8 @@ require_once '../../main.inc.php';
 
 // Define javascript type
 top_httphead('text/javascript; charset=UTF-8');
-// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-if (empty($dolibarr_nocache)) {
+// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+if (empty($berp3_nocache)) {
 	header('Cache-Control: max-age=10800, public, must-revalidate');
 } else {
 	header('Cache-Control: no-cache');

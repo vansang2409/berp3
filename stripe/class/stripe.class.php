@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2018-2021 	Thibault FOUCART       <support@ptibogxiv.net>
+/* Copyright (C) 2018-2021 	      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -70,7 +70,7 @@ class Stripe extends CommonObject
 	/**
 	 * 	Constructor
 	 *
-	 * 	@param	DoliDB		$db			Database handler
+	 * 	@param	Berp3DB		$db			Database handler
 	 */
 	public function __construct($db)
 	{
@@ -244,7 +244,7 @@ class Stripe extends CommonObject
 						}
 					}
 
-					// Create customer in Dolibarr
+					// Create customer in Berp3
 					$sql = "INSERT INTO ".MAIN_DB_PREFIX."societe_account (fk_soc, login, key_account, site, site_account, status, entity, date_creation, fk_user_creat)";
 					$sql .= " VALUES (".((int) $object->id).", '', '".$this->db->escape($customer->id)."', 'stripe', '".$this->db->escape($stripearrayofkeysbyenv[$status]['publishable_key'])."', ".((int) $status).", ".((int) $conf->entity).", '".$this->db->idate(dol_now())."', ".((int) $user->id).")";
 					$resql = $this->db->query($sql);

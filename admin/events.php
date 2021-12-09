@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2008-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2013	   Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2008-2011 
+ * Copyright (C) 2013	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,9 +67,9 @@ if ($action == "save") {
 	foreach ($eventstolog as $key => $arr) {
 		$param = 'MAIN_LOGEVENTS_'.$arr['id'];
 		if (GETPOST($param, 'alphanohtml')) {
-			dolibarr_set_const($db, $param, GETPOST($param, 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+			berp3_set_const($db, $param, GETPOST($param, 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 		} else {
-			dolibarr_del_const($db, $param, $conf->entity);
+			berp3_del_const($db, $param, $conf->entity);
 		}
 	}
 

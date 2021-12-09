@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C)    2013    Cédric Salvador    <csalvador@gpcsolutions.fr>
- * Copyright (C)    2015    Marcos García      <marcosgdf@gmail.com>
- * Copyright (C)    2015    Ferran Marcet      <fmarcet@2byte.es>
+/* Copyright (C)    2013        
+ * Copyright (C)    2015          
+ * Copyright (C)    2015          
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

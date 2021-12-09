@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Oppførsel når et bokmerke-URL er valgt
 CreateBookmark=Opprett bokmerke
 SetHereATitleForLink=Angi tittel for bokmerket
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Bruk en ekstern http URL eller en relativ BERP3 URL
+UseAnExternalHttpLinkOrRelativeBerp3Link=Bruk en ekstern http URL eller en relativ BERP3 URL
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Velg om lenken skal åpnes i et nytt vindu eller ikke
 BookmarksManagement=Behandling av bokmerker

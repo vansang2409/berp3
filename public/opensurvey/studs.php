@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2013-2015 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014      Marcos García       <marcosgdf@gmail.com>
+/* Copyright (C) 2013-2015 
+ * Copyright (C) 2014             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ if (!defined('NOBROWSERNOTIF')) {
 	define('NOBROWSERNOTIF', '1');
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 
 require '../../main.inc.php';
@@ -163,7 +163,7 @@ if (GETPOST("boutonp") || GETPOST("boutonp.x") || GETPOST("boutonp_x")) {		// bo
 					if ($email) {
 						include_once DOL_DOCUMENT_ROOT.'/core/class/CMailFile.class.php';
 
-						$application = ($conf->global->MAIN_APPLICATION_TITLE ? $conf->global->MAIN_APPLICATION_TITLE : 'Dolibarr ERP/CRM');
+						$application = ($conf->global->MAIN_APPLICATION_TITLE ? $conf->global->MAIN_APPLICATION_TITLE : 'Berp3 ERP/CRM');
 
 						$link = getUrlSondage($numsondage, true);
 						$link = '<a href="'.$link.'">'.$link.'</a>';

@@ -1,7 +1,7 @@
 <?php
 
-/* Copyright (C) 2016	Marcos García	<marcosgdf@gmail.com>
- * Copyright (C) 2018	Juanjo Menent	<jmenent@2byte.es>
+/* Copyright (C) 2016		
+ * Copyright (C) 2018		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ class ProductCombination
 {
 	/**
 	 * Database handler
-	 * @var DoliDB
+	 * @var Berp3DB
 	 */
 	public $db;
 
@@ -86,9 +86,9 @@ class ProductCombination
 	/**
 	 * Constructor
 	 *
-	 * @param   DoliDB $db     Database handler
+	 * @param   Berp3DB $db     Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf;
 
@@ -983,7 +983,7 @@ class ProductCombinationLevel
 {
 	/**
 	 * Database handler
-	 * @var DoliDB
+	 * @var Berp3DB
 	 */
 	public $db;
 
@@ -1025,9 +1025,9 @@ class ProductCombinationLevel
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}
@@ -1222,12 +1222,12 @@ class ProductCombinationLevel
 	/**
 	 * Create new Product Combination Price level from Parent
 	 *
-	 * @param DoliDB 				$db						Database handler
+	 * @param Berp3DB 				$db						Database handler
 	 * @param ProductCombination 	$productCombination		Product combination
 	 * @param int					$fkPriceLevel			Price level
 	 * @return ProductCombinationLevel
 	 */
-	public static function createFromParent(DoliDB $db, ProductCombination $productCombination, $fkPriceLevel)
+	public static function createFromParent(Berp3DB $db, ProductCombination $productCombination, $fkPriceLevel)
 	{
 		$productCombinationLevel = new self($db);
 		$productCombinationLevel->fk_price_level = $fkPriceLevel;

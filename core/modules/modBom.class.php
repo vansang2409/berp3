@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2018	   Nicolas ZABOURI 	<info@inovea-conseil.com>
- * Copyright (C) 2019 Maxime Kohlhaas <maxime@atm-consulting.fr>
- * Copyright (C) 2021 Ferran Marcet <fmarcet@2byte.es>
+/* Copyright (C) 2004-2018 
+ * Copyright (C) 2018	    	
+ * Copyright (C) 2019  
+ * Copyright (C) 2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,18 +26,18 @@
  *  \ingroup    bom
  *  \brief      Description and activation file for the module Bom
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module Bom
  */
-class modBom extends DolibarrModules
+class modBom extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -46,7 +46,7 @@ class modBom extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 650;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'bom';
@@ -66,8 +66,8 @@ class modBom extends DolibarrModules
 		// Used only if file README.md and README-LL.md not found.
 		$this->descriptionlong = "Bill of Materials definitions. They can be used to make Manufacturing Resource Planning";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3', 'berp3_deprecated' or a version string like 'x.y.z'
+		$this->version = 'berp3';
 
 		//Url to the file with your last numberversion of this module
 		//$this->url_last_version = 'http://www.example.com/versionmodule.txt';
@@ -110,7 +110,7 @@ class modBom extends DolibarrModules
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with. Example: array('modModuleToDisable1', ...)
 		$this->langfiles = array("mrp");
 		//$this->phpmin = array(5, 6));					// Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(9, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(9, 0); // Minimum version of Berp3 required by module
 		$this->warnings_activation = array(); // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		$this->warnings_activation_ext = array(); // Warning to show when we activate an external module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		//$this->automatic_activation = array('FR'=>'BomWasAutomaticallyActivatedBecauseOfYourCountryChoice');
@@ -457,7 +457,7 @@ class modBom extends DolibarrModules
 
 	/**
 	 *	Function called when module is enabled.
-	 *	The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *	The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *	It also creates data directories
 	 *
 	 *	@param      string	$options    Options when enabling module ('', 'noboxes')

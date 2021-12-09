@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004-2006 Destailleur Laurent  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012      Raphaël Doursenaud   <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2015-2019 Frederic France      <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2006   
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2012         
+ * Copyright (C) 2015-2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class box_supplier_orders extends ModeleBoxes
 	public $depends = array("fournisseur");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -49,7 +49,7 @@ class box_supplier_orders extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param)

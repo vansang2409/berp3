@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2017  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,8 +54,8 @@ require_once '../../main.inc.php';
 
 // Define javascript type
 top_httphead('text/javascript; charset=UTF-8');
-// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-if (empty($dolibarr_nocache)) {
+// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+if (empty($berp3_nocache)) {
 	header('Cache-Control: max-age=10800, public, must-revalidate');
 } else {
 	header('Cache-Control: no-cache');
@@ -88,9 +88,9 @@ jQuery(".classfortooltiponclicktext").dialog({
     autoOpen: false
     }).css("z-index: 5000");
 jQuery(".classfortooltiponclick").click(function () {
-    console.log("We click on tooltip for element with dolid="+$(this).attr(\'dolid\'));
-    if ($(this).attr(\'dolid\')) {
-        obj=$("#idfortooltiponclick_"+$(this).attr(\'dolid\'));		/* obj is a div component */
+    console.log("We click on tooltip for element with berp3d="+$(this).attr(\'berp3d\'));
+    if ($(this).attr(\'berp3d\')) {
+        obj=$("#idfortooltiponclick_"+$(this).attr(\'berp3d\'));		/* obj is a div component */
         obj.dialog("open");
         return false;
     }

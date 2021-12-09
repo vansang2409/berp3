@@ -1,10 +1,10 @@
 <?php
 /* Copyright (C) 2001		Fabien Seisen			<seisen@linuxfr.org>
- * Copyright (C) 2002-2005	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2006		Andre Cianfarani		<acianfa@free.fr>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+ * Copyright (C) 2002-2005	
+ * Copyright (C) 2004-2011	
+ * Copyright (C) 2006				
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2015             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,15 +22,15 @@
 
 /**
  *	\file       htdocs/core/db/mysqli.class.php
- *	\brief      Class file to manage Dolibarr database access for a MySQL database
+ *	\brief      Class file to manage Berp3 database access for a MySQL database
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/db/DoliDB.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/db/Berp3DB.class.php';
 
 /**
- *	Class to manage Dolibarr database access for a MySQL database using the MySQLi extension
+ *	Class to manage Berp3 database access for a MySQL database using the MySQLi extension
  */
-class DoliDBMysqli extends DoliDB
+class Berp3DBMysqli extends Berp3DB
 {
 	/** @var mysqli Database object */
 	public $db;
@@ -62,8 +62,8 @@ class DoliDBMysqli extends DoliDB
 		if (!empty($conf->db->character_set)) {
 			$this->forcecharset = $conf->db->character_set;
 		}
-		if (!empty($conf->db->dolibarr_main_db_collation)) {
-			$this->forcecollate = $conf->db->dolibarr_main_db_collation;
+		if (!empty($conf->db->berp3_main_db_collation)) {
+			$this->forcecollate = $conf->db->berp3_main_db_collation;
 		}
 
 		$this->database_user = $user;
@@ -78,14 +78,14 @@ class DoliDBMysqli extends DoliDB
 			$this->connected = false;
 			$this->ok = false;
 			$this->error = "Mysqli PHP functions for using Mysqli driver are not available in this version of PHP. Try to use another driver.";
-			dol_syslog(get_class($this)."::DoliDBMysqli : Mysqli PHP functions for using Mysqli driver are not available in this version of PHP. Try to use another driver.", LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBMysqli : Mysqli PHP functions for using Mysqli driver are not available in this version of PHP. Try to use another driver.", LOG_ERR);
 		}
 
 		if (!$host) {
 			$this->connected = false;
 			$this->ok = false;
 			$this->error = $langs->trans("ErrorWrongHostParameter");
-			dol_syslog(get_class($this)."::DoliDBMysqli : Connect error, wrong host parameters", LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBMysqli : Connect error, wrong host parameters", LOG_ERR);
 		}
 
 		// Try server connection
@@ -96,7 +96,7 @@ class DoliDBMysqli extends DoliDB
 			$this->connected = false;
 			$this->ok = false;
 			$this->error = $this->db->connect_error;
-			dol_syslog(get_class($this)."::DoliDBMysqli Connect error: ".$this->error, LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBMysqli Connect error: ".$this->error, LOG_ERR);
 		} else {
 			$this->connected = true;
 			$this->ok = true;
@@ -110,7 +110,7 @@ class DoliDBMysqli extends DoliDB
 				$this->ok = true;
 
 				// If client is old latin, we force utf8
-				$clientmustbe = empty($conf->db->dolibarr_main_db_character_set) ? 'utf8' : $conf->db->dolibarr_main_db_character_set;
+				$clientmustbe = empty($conf->db->berp3_main_db_character_set) ? 'utf8' : $conf->db->berp3_main_db_character_set;
 				if (preg_match('/latin1/', $clientmustbe)) {
 					$clientmustbe = 'utf8';
 				}
@@ -118,7 +118,7 @@ class DoliDBMysqli extends DoliDB
 				if ($this->db->character_set_name() != $clientmustbe) {
 					$this->db->set_charset($clientmustbe); // This set charset, but with a bad collation
 
-					$collation = $conf->db->dolibarr_main_db_collation;
+					$collation = $conf->db->berp3_main_db_collation;
 					if (preg_match('/latin1/', $collation)) {
 						$collation = 'utf8_unicode_ci';
 					}
@@ -132,7 +132,7 @@ class DoliDBMysqli extends DoliDB
 				$this->database_name = '';
 				$this->ok = false;
 				$this->error = $this->error();
-				dol_syslog(get_class($this)."::DoliDBMysqli : Select_db error ".$this->error, LOG_ERR);
+				dol_syslog(get_class($this)."::Berp3DBMysqli : Select_db error ".$this->error, LOG_ERR);
 			}
 		} else {
 			// Pas de selection de base demandee, ok ou ko
@@ -140,7 +140,7 @@ class DoliDBMysqli extends DoliDB
 
 			if ($this->connected) {
 				// If client is old latin, we force utf8
-				$clientmustbe = empty($conf->db->dolibarr_main_db_character_set) ? 'utf8' : $conf->db->dolibarr_main_db_character_set;
+				$clientmustbe = empty($conf->db->berp3_main_db_character_set) ? 'utf8' : $conf->db->berp3_main_db_character_set;
 				if (preg_match('/latin1/', $clientmustbe)) {
 					$clientmustbe = 'utf8';
 				}
@@ -151,7 +151,7 @@ class DoliDBMysqli extends DoliDB
 				if ($this->db->character_set_name() != $clientmustbe) {
 					$this->db->set_charset($clientmustbe); // This set utf8_unicode_ci
 
-					$collation = $conf->db->dolibarr_main_db_collation;
+					$collation = $conf->db->berp3_main_db_collation;
 					if (preg_match('/latin1/', $collation)) {
 						$collation = 'utf8_unicode_ci';
 					}
@@ -267,7 +267,7 @@ class DoliDBMysqli extends DoliDB
 	 */
 	public function query($query, $usesavepoint = 0, $type = 'auto', $result_mode = 0)
 	{
-		global $conf, $dolibarr_main_db_readonly;
+		global $conf, $berp3_main_db_readonly;
 
 		$query = trim($query);
 
@@ -279,7 +279,7 @@ class DoliDBMysqli extends DoliDB
 			return false; // Return false = error if empty request
 		}
 
-		if (!empty($dolibarr_main_db_readonly)) {
+		if (!empty($berp3_main_db_readonly)) {
 			if (preg_match('/^(INSERT|UPDATE|REPLACE|DELETE|CREATE|ALTER|TRUNCATE|DROP)/i', $query)) {
 				$this->lasterror = 'Application in read-only mode';
 				$this->lasterrno = 'APPREADONLY';
@@ -462,7 +462,7 @@ class DoliDBMysqli extends DoliDB
 			// Si il y a eu echec de connexion, $this->db n'est pas valide.
 			return 'DB_ERROR_FAILED_TO_CONNECT';
 		} else {
-			// Constants to convert a MySql error code to a generic Dolibarr error code
+			// Constants to convert a MySql error code to a generic Berp3 error code
 			$errorcode_map = array(
 			1004 => 'DB_ERROR_CANNOT_CREATE',
 			1005 => 'DB_ERROR_CANNOT_CREATE',
@@ -545,10 +545,10 @@ class DoliDBMysqli extends DoliDB
 		global $conf;
 
 		// Type of encryption (2: AES (recommended), 1: DES , 0: no encryption)
-		$cryptType = (!empty($conf->db->dolibarr_main_db_encryption) ? $conf->db->dolibarr_main_db_encryption : 0);
+		$cryptType = (!empty($conf->db->berp3_main_db_encryption) ? $conf->db->berp3_main_db_encryption : 0);
 
 		//Encryption key
-		$cryptKey = (!empty($conf->db->dolibarr_main_db_cryptkey) ? $conf->db->dolibarr_main_db_cryptkey : '');
+		$cryptKey = (!empty($conf->db->berp3_main_db_cryptkey) ? $conf->db->berp3_main_db_cryptkey : '');
 
 		$escapedstringwithquotes = ($withQuotes ? "'" : "").$this->escape($fieldorvalue).($withQuotes ? "'" : "");
 
@@ -574,10 +574,10 @@ class DoliDBMysqli extends DoliDB
 		global $conf;
 
 		// Type of encryption (2: AES (recommended), 1: DES , 0: no encryption)
-		$cryptType = (!empty($conf->db->dolibarr_main_db_encryption) ? $conf->db->dolibarr_main_db_encryption : 0);
+		$cryptType = (!empty($conf->db->berp3_main_db_encryption) ? $conf->db->berp3_main_db_encryption : 0);
 
 		//Encryption key
-		$cryptKey = (!empty($conf->db->dolibarr_main_db_cryptkey) ? $conf->db->dolibarr_main_db_cryptkey : '');
+		$cryptKey = (!empty($conf->db->berp3_main_db_cryptkey) ? $conf->db->berp3_main_db_cryptkey : '');
 
 		$return = $value;
 
@@ -633,7 +633,7 @@ class DoliDBMysqli extends DoliDB
 			$collation = $this->forcecollate;
 		}
 
-		// ALTER DATABASE dolibarr_db DEFAULT CHARACTER SET latin DEFAULT COLLATE latin1_swedish_ci
+		// ALTER DATABASE berp3_db DEFAULT CHARACTER SET latin DEFAULT COLLATE latin1_swedish_ci
 		$sql = "CREATE DATABASE `".$this->escape($database)."`";
 		$sql .= " DEFAULT CHARACTER SET `".$this->escape($charset)."` DEFAULT COLLATE `".$this->escape($collation)."`";
 
@@ -939,16 +939,16 @@ class DoliDBMysqli extends DoliDB
 	/**
 	 * 	Create a user and privileges to connect to database (even if database does not exists yet)
 	 *
-	 *	@param	string	$dolibarr_main_db_host 		Ip server or '%'
-	 *	@param	string	$dolibarr_main_db_user 		Nom user a creer
-	 *	@param	string	$dolibarr_main_db_pass 		Mot de passe user a creer
-	 *	@param	string	$dolibarr_main_db_name		Database name where user must be granted
+	 *	@param	string	$berp3_main_db_host 		Ip server or '%'
+	 *	@param	string	$berp3_main_db_user 		Nom user a creer
+	 *	@param	string	$berp3_main_db_pass 		Mot de passe user a creer
+	 *	@param	string	$berp3_main_db_name		Database name where user must be granted
 	 *	@return	int									<0 if KO, >=0 if OK
 	 */
-	public function DDLCreateUser($dolibarr_main_db_host, $dolibarr_main_db_user, $dolibarr_main_db_pass, $dolibarr_main_db_name)
+	public function DDLCreateUser($berp3_main_db_host, $berp3_main_db_user, $berp3_main_db_pass, $berp3_main_db_name)
 	{
 		// phpcs:enable
-		$sql = "CREATE USER '".$this->escape($dolibarr_main_db_user)."'";
+		$sql = "CREATE USER '".$this->escape($berp3_main_db_user)."'";
 		dol_syslog(get_class($this)."::DDLCreateUser", LOG_DEBUG); // No sql to avoid password in log
 		$resql = $this->query($sql);
 		if (!$resql) {
@@ -961,14 +961,14 @@ class DoliDBMysqli extends DoliDB
 		}
 
 		// Redo with localhost forced (sometimes user is created on %)
-		$sql = "CREATE USER '".$this->escape($dolibarr_main_db_user)."'@'localhost'";
+		$sql = "CREATE USER '".$this->escape($berp3_main_db_user)."'@'localhost'";
 		$resql = $this->query($sql);
 
-		$sql = "GRANT ALL PRIVILEGES ON ".$this->escape($dolibarr_main_db_name).".* TO '".$this->escape($dolibarr_main_db_user)."'@'".$this->escape($dolibarr_main_db_host)."' IDENTIFIED BY '".$this->escape($dolibarr_main_db_pass)."'";
+		$sql = "GRANT ALL PRIVILEGES ON ".$this->escape($berp3_main_db_name).".* TO '".$this->escape($berp3_main_db_user)."'@'".$this->escape($berp3_main_db_host)."' IDENTIFIED BY '".$this->escape($berp3_main_db_pass)."'";
 		dol_syslog(get_class($this)."::DDLCreateUser", LOG_DEBUG); // No sql to avoid password in log
 		$resql = $this->query($sql);
 		if (!$resql) {
-			$this->error = "Connected user not allowed to GRANT ALL PRIVILEGES ON ".$this->escape($dolibarr_main_db_name).".* TO '".$this->escape($dolibarr_main_db_user)."'@'".$this->escape($dolibarr_main_db_host)."'  IDENTIFIED BY '*****'";
+			$this->error = "Connected user not allowed to GRANT ALL PRIVILEGES ON ".$this->escape($berp3_main_db_name).".* TO '".$this->escape($berp3_main_db_user)."'@'".$this->escape($berp3_main_db_host)."'  IDENTIFIED BY '*****'";
 			return -1;
 		}
 

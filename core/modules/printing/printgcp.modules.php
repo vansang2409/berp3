@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2014-2019  Frédéric France      <frederic.france@netlogic.fr>
+ * Copyright (C) 2014-2019  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 include_once DOL_DOCUMENT_ROOT.'/core/modules/printing/modules_printing.php';
 require_once DOL_DOCUMENT_ROOT.'/includes/OAuth/bootstrap.php';
 
-use OAuth\Common\Storage\DoliStorage;
+use OAuth\Common\Storage\Berp3Storage;
 use OAuth\Common\Consumer\Credentials;
 use OAuth\OAuth2\Service\Google;
 
@@ -81,7 +81,7 @@ class printing_printgcp extends PrintingDriver
 	public $errors = array();
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -96,14 +96,14 @@ class printing_printgcp extends PrintingDriver
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB      $db      Database handler
+	 *  @param      Berp3DB      $db      Database handler
 	 */
 	public function __construct($db)
 	{
-		global $conf, $langs, $dolibarr_main_url_root;
+		global $conf, $langs, $berp3_main_url_root;
 
 		// Define $urlwithroot
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 		//$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -119,7 +119,7 @@ class printing_printgcp extends PrintingDriver
 			$this->google_id = $conf->global->OAUTH_GOOGLE_ID;
 			$this->google_secret = $conf->global->OAUTH_GOOGLE_SECRET;
 			// Token storage
-			$storage = new DoliStorage($this->db, $this->conf);
+			$storage = new Berp3Storage($this->db, $this->conf);
 			//$storage->clearToken($this->OAUTH_SERVICENAME_GOOGLE);
 			// Setup the credentials for the requests
 			$credentials = new Credentials(
@@ -256,7 +256,7 @@ class printing_printgcp extends PrintingDriver
 	{
 		$ret = array();
 		// Token storage
-		$storage = new DoliStorage($this->db, $this->conf);
+		$storage = new Berp3Storage($this->db, $this->conf);
 		// Setup the credentials for the requests
 		$credentials = new Credentials(
 			$this->google_id,
@@ -392,8 +392,8 @@ class printing_printgcp extends PrintingDriver
 			'content' => base64_encode($contents), // encode file content as base64
 			'contentType' => $contenttype,
 		);
-		// Dolibarr Token storage
-		$storage = new DoliStorage($this->db, $this->conf);
+		// Berp3 Token storage
+		$storage = new Berp3Storage($this->db, $this->conf);
 		// Setup the credentials for the requests
 		$credentials = new Credentials(
 			$this->google_id,
@@ -442,7 +442,7 @@ class printing_printgcp extends PrintingDriver
 		$error = 0;
 		$html = '';
 		// Token storage
-		$storage = new DoliStorage($this->db, $this->conf);
+		$storage = new Berp3Storage($this->db, $this->conf);
 		// Setup the credentials for the requests
 		$credentials = new Credentials(
 			$this->google_id,

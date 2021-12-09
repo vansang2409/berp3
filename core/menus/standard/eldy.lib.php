@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2010-2014 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2010      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012-2015 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2013      Cédric Salvador      <csalvador@gpcsolutions.fr>
- * Copyright (C) 2015      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2018      Ferran Marcet        <fmarcet@2byte.es>
- * Copyright (C) 2018-2019  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2021       Gauthier VERDOL         <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2010-2014 
+ * Copyright (C) 2010      
+ * Copyright (C) 2012-2015 
+ * Copyright (C) 2013            
+ * Copyright (C) 2015      
+ * Copyright (C) 2018      
+ * Copyright (C) 2018-2019  
+ * Copyright (C) 2021       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/menubase.class.php';
 /**
  * Core function to output top menu eldy
  *
- * @param 	DoliDB	$db				Database handler
+ * @param 	Berp3DB	$db				Database handler
  * @param 	string	$atarget		Target (Example: '' or '_top')
  * @param 	int		$type_user     	0=Menu for backoffice, 1=Menu for front office
  * @param  	array	$tabMenu        If array with menu entries already loaded, we put this array here (in most cases, it's empty). For eldy menu, it contains menu entries loaded from database.
@@ -45,7 +45,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/menubase.class.php';
 function print_eldy_menu($db, $atarget, $type_user, &$tabMenu, &$menu, $noout = 0, $mode = '')
 {
 	global $user, $conf, $langs, $mysoc;
-	global $dolibarr_main_db_name;
+	global $berp3_main_db_name;
 
 	$mainmenu = (empty($_SESSION["mainmenu"]) ? '' : $_SESSION["mainmenu"]);
 	$leftmenu = (empty($_SESSION["leftmenu"]) ? '' : $_SESSION["leftmenu"]);
@@ -478,7 +478,7 @@ function print_eldy_menu($db, $atarget, $type_user, &$tabMenu, &$menu, $noout = 
 
 		$newTabMenu[$i]['url'] = make_substitutions($newTabMenu[$i]['url'], $substitarray);
 
-		// url = url from host, shorturl = relative path into dolibarr sources
+		// url = url from host, shorturl = relative path into berp3 sources
 		$url = $shorturl = $newTabMenu[$i]['url'];
 		if (!preg_match("/^(http:\/\/|https:\/\/)/i", $newTabMenu[$i]['url'])) {	// Do not change url content for external links
 			$tmp = explode('?', $newTabMenu[$i]['url'], 2);
@@ -548,7 +548,7 @@ function print_eldy_menu($db, $atarget, $type_user, &$tabMenu, &$menu, $noout = 
 				$urllogo=DOL_URL_ROOT.'/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file='.urlencode('logos/thumbs/'.$mysoc->logo_mini);
 			}*/
 		} else {
-			$urllogo = DOL_URL_ROOT.'/theme/dolibarr_512x512_white.png';
+			$urllogo = DOL_URL_ROOT.'/theme/berp3_512x512_white.png';
 			$logoContainerAdditionalClass = '';
 		}
 		$title = $langs->trans("GoIntoSetupToChangeLogo");
@@ -682,7 +682,7 @@ function print_end_menu_array()
  * Core function to output left menu eldy
  * Fill &$menu (example with $forcemainmenu='home' $forceleftmenu='all', return left menu tree of Home)
  *
- * @param	DoliDB		$db                 Database handler
+ * @param	Berp3DB		$db                 Database handler
  * @param 	array		$menu_array_before  Table of menu entries to show before entries of menu handler (menu->liste filled with menu->add)
  * @param   array		$menu_array_after   Table of menu entries to show after entries of menu handler (menu->liste filled with menu->add)
  * @param	array		$tabMenu       		If array with menu entries already loaded, we put this array here (in most cases, it's empty)
@@ -697,7 +697,7 @@ function print_end_menu_array()
 function print_left_eldy_menu($db, $menu_array_before, $menu_array_after, &$tabMenu, &$menu, $noout = 0, $forcemainmenu = '', $forceleftmenu = '', $moredata = null, $type_user = 0)
 {
 
-	global $user, $conf, $langs, $dolibarr_main_db_name, $mysoc, $hookmanager;
+	global $user, $conf, $langs, $berp3_main_db_name, $mysoc, $hookmanager;
 
 	//var_dump($tabMenu);
 
@@ -801,8 +801,8 @@ function print_left_eldy_menu($db, $menu_array_before, $menu_array_after, &$tabM
 					$newmenu->add('/admin/triggers.php?mainmenu=home&amp;leftmenu=admintools_info', $langs->trans('Triggers'), 2);
 					$newmenu->add('/admin/system/filecheck.php?mainmenu=home&amp;leftmenu=admintools_info', $langs->trans('FileCheck'), 2);
 				}
-				$newmenu->add("/admin/tools/dolibarr_export.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Backup"), 1);
-				$newmenu->add("/admin/tools/dolibarr_import.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Restore"), 1);
+				$newmenu->add("/admin/tools/berp3_export.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Backup"), 1);
+				$newmenu->add("/admin/tools/berp3_import.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Restore"), 1);
 				$newmenu->add("/admin/tools/purge.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Purge"), 1);
 				$newmenu->add("/admin/tools/listevents.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Audit"), 1);
 				$newmenu->add("/admin/tools/listsessions.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Sessions"), 1);

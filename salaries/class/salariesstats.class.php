@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2018      Alexandre Spangaro   <aspangaro@open-dsi.fr>
+/* Copyright (C) 2018      
  * Copyright (c) 2018      Fidesio              <contact@fidesio.com>
- * Copyright (C) 2021		Gauthier VERDOL         <gauthier.verdol@atm-consulting.fr>
+ * Copyright (C) 2021		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ class SalariesStats extends Stats
 	/**
 	 * Constructor
 	 *
-	 * @param   DoliDB      $db        Database handler
+	 * @param   Berp3DB      $db        Database handler
 	 * @param   int         $socid     Id third party
 	 * @param   mixed       $userid    Id user for filter or array of user ids
 	 * @return  void

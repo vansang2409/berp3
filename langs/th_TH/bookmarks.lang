@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Behaviour when a bookmark URL is selected
 CreateBookmark=สร้างที่คั่นหน้า
 SetHereATitleForLink=ตั้งชื่อสำหรับบุ๊คมาร์ค
-UseAnExternalHttpLinkOrRelativeDolibarrLink=ใช้ URL ที่ http ภายนอกหรือ URL BERP3 ญาติ
+UseAnExternalHttpLinkOrRelativeBerp3Link=ใช้ URL ที่ http ภายนอกหรือ URL BERP3 ญาติ
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Choose if linked page must open in new window or not
 BookmarksManagement=การจัดการที่คั่นหน้า

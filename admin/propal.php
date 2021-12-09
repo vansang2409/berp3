@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003-2004 Rodolphe Quiedeville        <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur         <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio         <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier              <benoit.mortier@opensides.be>
- * Copyright (C) 2004      Eric Seigne                 <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012 Regis Houssin               <regis.houssin@inodbox.com>
- * Copyright (C) 2008      Raphael Bertrand (Resultic) <raphael.bertrand@resultic.fr>
- * Copyright (C) 2011-2013 Juanjo Menent			   <jmenent@2byte.es>
+/* Copyright (C) 2003-2004         
+ * Copyright (C) 2004-2011          
+ * Copyright (C) 2004               
+ * Copyright (C) 2004                    
+ * Copyright (C) 2004                       
+ * Copyright (C) 2005-2012                
+ * Copyright (C) 2008       
+ * Copyright (C) 2011-2013 			   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ if ($action == 'updateMask') {
 	$maskconstpropal = GETPOST('maskconstpropal', 'alpha');
 	$maskpropal = GETPOST('maskpropal', 'alpha');
 	if ($maskconstpropal) {
-		$res = dolibarr_set_const($db, $maskconstpropal, $maskpropal, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstpropal, $maskpropal, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -108,8 +108,8 @@ if ($action == 'updateMask') {
 	$rib = GETPOST('rib', 'alpha');
 	$chq = GETPOST('chq', 'alpha');
 
-	$res = dolibarr_set_const($db, "FACTURE_RIB_NUMBER", $rib, 'chaine', 0, '', $conf->entity);
-	$res = dolibarr_set_const($db, "FACTURE_CHQ_NUMBER", $chq, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FACTURE_RIB_NUMBER", $rib, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FACTURE_CHQ_NUMBER", $chq, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -123,7 +123,7 @@ if ($action == 'updateMask') {
 } elseif ($action == 'set_PROPALE_DRAFT_WATERMARK') {
 	$draft = GETPOST('PROPALE_DRAFT_WATERMARK', 'alpha');
 
-	$res = dolibarr_set_const($db, "PROPALE_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PROPALE_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -136,7 +136,7 @@ if ($action == 'updateMask') {
 } elseif ($action == 'set_PROPOSAL_FREE_TEXT') {
 	$freetext = GETPOST('PROPOSAL_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
 
-	$res = dolibarr_set_const($db, "PROPOSAL_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PROPOSAL_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -148,7 +148,7 @@ if ($action == 'updateMask') {
 		setEventMessages($langs->trans("Error"), null, 'errors');
 	}
 } elseif ($action == 'setdefaultduration') {
-	$res = dolibarr_set_const($db, "PROPALE_VALIDITY_DURATION", $value, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "PROPALE_VALIDITY_DURATION", $value, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -160,7 +160,7 @@ if ($action == 'updateMask') {
 		setEventMessages($langs->trans("Error"), null, 'errors');
 	}
 } elseif ($action == 'set_BANK_ASK_PAYMENT_BANK_DURING_PROPOSAL') {
-	$res = dolibarr_set_const($db, "BANK_ASK_PAYMENT_BANK_DURING_PROPOSAL", $value, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "BANK_ASK_PAYMENT_BANK_DURING_PROPOSAL", $value, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -178,11 +178,11 @@ if ($action == 'updateMask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->PROPALE_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'PROPALE_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'PROPALE_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
-	if (dolibarr_set_const($db, "PROPALE_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "PROPALE_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		$conf->global->PROPALE_ADDON_PDF = $value;
 	}
 
@@ -195,7 +195,7 @@ if ($action == 'updateMask') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "PROPALE_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "PROPALE_ADDON", $value, 'chaine', 0, '', $conf->entity);
 }
 
 
@@ -623,7 +623,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td><td class="right">';

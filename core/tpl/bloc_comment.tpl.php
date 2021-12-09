@@ -43,7 +43,7 @@ if ($action !== 'editcomment') {
 
 	$desc = GETPOST('comment_description');
 
-	$doleditor = new DolEditor('comment_description', $desc, '', 80, 'dolibarr_notes', 'In', 0, true, true, ROWS_3, '100%');
+	$doleditor = new DolEditor('comment_description', $desc, '', 80, 'berp3_notes', 'In', 0, true, true, ROWS_3, '100%');
 	print $doleditor->Create(1);
 
 	print '</td>';
@@ -100,7 +100,7 @@ if (!empty($object->comments)) {
 
 		print '<div class="comment-description comment-cell">';
 		if ($action === 'editcomment' && $comment->id == $idcomment) {
-			$doleditor = new DolEditor('comment_description', $comment->description, '', 80, 'dolibarr_notes', 'In', 0, true, true, ROWS_3, '100%');
+			$doleditor = new DolEditor('comment_description', $comment->description, '', 80, 'berp3_notes', 'In', 0, true, true, ROWS_3, '100%');
 			print $doleditor->Create(1);
 		} else {
 			print $comment->description;

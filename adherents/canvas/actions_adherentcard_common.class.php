@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010-2012 Regis Houssin  <regis.houssin@inodbox.com>
- * Copyright (C) 2012      Philippe Grand <philippe.grand@atoo-net.com>
+/* Copyright (C) 2010-2012   
+ * Copyright (C) 2012       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 abstract class ActionsAdherentCardCommon
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -184,13 +184,13 @@ abstract class ActionsAdherentCardCommon
 				$this->tpl['nb_emailing'] = $this->object->getNbOfEMailings();
 			}
 
-			// Dolibarr user
+			// Berp3 user
 			if ($this->object->user_id) {
-				$dolibarr_user = new User($this->db);
-				$result = $dolibarr_user->fetch($this->object->user_id);
-				$this->tpl['dolibarr_user'] = $dolibarr_user->getLoginUrl(1);
+				$berp3_user = new User($this->db);
+				$result = $berp3_user->fetch($this->object->user_id);
+				$this->tpl['berp3_user'] = $berp3_user->getLoginUrl(1);
 			} else {
-				$this->tpl['dolibarr_user'] = $langs->trans("NoDolibarrAccess");
+				$this->tpl['berp3_user'] = $langs->trans("NoBerp3Access");
 			}
 		}
 
@@ -238,7 +238,7 @@ abstract class ActionsAdherentCardCommon
 			array('label' => $langs->trans("LoginToCreate"), 'type' => 'text', 'name' => 'login', 'value' => $login),
 			array('label' => $langs->trans("Password"), 'type' => 'text', 'name' => 'password', 'value' => $password));
 
-			$this->tpl['action_create_user'] = $form->formconfirm($_SERVER["PHP_SELF"]."?id=".$this->object->id, $langs->trans("CreateDolibarrLogin"), $langs->trans("ConfirmCreateAdherent"), "confirm_create_user", $formquestion, 'no');
+			$this->tpl['action_create_user'] = $form->formconfirm($_SERVER["PHP_SELF"]."?id=".$this->object->id, $langs->trans("CreateBerp3Login"), $langs->trans("ConfirmCreateAdherent"), "confirm_create_user", $formquestion, 'no');
 		}
 	}
 

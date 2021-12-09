@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2021		Laurent Destailleur	<eldy@users.sourceforge.net>
+/* Copyright (C) 2021			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,10 +31,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/member/modules_member.class.php';
 class mod_member_simple extends ModeleNumRefMembers
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	public $prefix = 'MEM';
 

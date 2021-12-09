@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2010-2011 Regis Houssin <regis.houssin@inodbox.com>
+/* Copyright (C) 2010-2011  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -249,7 +249,7 @@ for ($i = 1; $i <= 4; $i++) {
 
 <?php if (!empty($conf->adherent->enabled)) { ?>
 <tr>
-	<td width="25%" valign="top"><?php echo $langs->trans("LinkedToDolibarrMember"); ?></td>
+	<td width="25%" valign="top"><?php echo $langs->trans("LinkedToBerp3Member"); ?></td>
 	<td colspan="3"><?php echo $this->control->tpl['linked_member']; ?></td>
 </tr>
 <?php } ?>

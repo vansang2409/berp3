@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010-2018	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2011 		Laurent Destailleur	<eldy@users.sourceforge.net>
+/* Copyright (C) 2010-2018			
+ * Copyright (C) 2011 			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 class Canvas
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -57,7 +57,7 @@ class Canvas
 	/**
 	 *   Constructor
 	 *
-	 *   @param     DoliDB	$db          	Database handler
+	 *   @param     Berp3DB	$db          	Database handler
 	 *   @param     string   $actiontype		Action type ('create', 'view', 'edit', 'list')
 	 */
 	public function __construct($db, $actiontype = 'view')
@@ -101,7 +101,7 @@ class Canvas
 	{
 		global $conf, $langs;
 
-		// Set properties with value specific to dolibarr core: this->targetmodule, this->card, this->canvas
+		// Set properties with value specific to berp3 core: this->targetmodule, this->card, this->canvas
 		$this->targetmodule = $module;
 		$this->canvas = $canvas;
 		$this->card = $card;

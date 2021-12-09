@@ -5494,7 +5494,7 @@ class TCPDF {
 				$s .= ' '.$this->_dounderlinew($xdx, $basefonty, $width);
 			}
 			if ($this->linethrough) {
-				$s .= ' '.$this->_dolinethroughw($xdx, $basefonty, $width);
+				$s .= ' '.$this->_berp3nethroughw($xdx, $basefonty, $width);
 			}
 			if ($this->overline) {
 				$s .= ' '.$this->_dooverlinew($xdx, $basefonty, $width);
@@ -10173,9 +10173,9 @@ class TCPDF {
 	 * @param $txt (string) text to linethrough
 	 * @protected
 	 */
-	protected function _dolinethrough($x, $y, $txt) {
+	protected function _berp3nethrough($x, $y, $txt) {
 		$w = $this->GetStringWidth($txt);
-		return $this->_dolinethroughw($x, $y, $w);
+		return $this->_berp3nethroughw($x, $y, $w);
 	}
 
 	/**
@@ -10186,7 +10186,7 @@ class TCPDF {
 	 * @protected
 	 * @since 4.9.008 (2009-09-29)
 	 */
-	protected function _dolinethroughw($x, $y, $w) {
+	protected function _berp3nethroughw($x, $y, $w) {
 		$linew = - $this->CurrentFont['ut'] / 1000 * $this->FontSizePt;
 		return sprintf('%F %F %F %F re f', $x * $this->k, ((($this->h - $y) * $this->k) + $linew + ($this->FontSizePt / 3)), $w * $this->k, $linew);
 	}

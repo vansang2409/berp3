@@ -15,7 +15,7 @@ class OdfException extends Exception
  * You need Zip Extension or PclZip library
  *
  * @copyright  2008 - Julien Pauli - Cyril PIERRE de GEYER - Anaska (http://www.anaska.com)
- * @copyright  2010-2015 - Laurent Destailleur - eldy@users.sourceforge.net
+ * @copyright  2010-2015 -  - eldy@users.sourceforge.net
  * @copyright  2010 - Vikas Mahajan - http://vikasmahajan.wordpress.com
  * @copyright  2012 - Stephen Larroque - lrq3000@gmail.com
  * @license    https://www.gnu.org/copyleft/gpl.html  GPL License

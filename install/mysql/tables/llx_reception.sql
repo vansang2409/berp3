@@ -1,8 +1,8 @@
 -- ===================================================================
--- Copyright (C) 2003-2010 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2008-2010 Regis Houssin        <regis.houssin@capnetworks.com>
--- Copyright (C) 2011-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2012      Juanjo Menent		<jmenent@2byte.es>
+-- Copyright (C) 2003-2010 
+-- Copyright (C) 2008-2010 
+-- Copyright (C) 2011-2012 
+-- Copyright (C) 2012      
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ create table llx_reception
   fk_soc                integer            NOT NULL,
   fk_projet  		integer  DEFAULT NULL,
   
-  ref_ext               varchar(30),					-- reference into an external system (not used by dolibarr)
+  ref_ext               varchar(30),					-- reference into an external system (not used by berp3)
   ref_int				        varchar(30),					-- reference into an internal system (deprecated)
   ref_supplier          varchar(30),					-- customer number
   

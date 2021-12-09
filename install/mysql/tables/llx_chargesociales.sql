@@ -1,8 +1,8 @@
 -- ========================================================================
--- Copyright (C) 2001-2002 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
--- Copyright (C) 2017      Alexandre Spangaro   <aspangaro@open-dsi.fr>
--- Copyright (C) 2021      Gauthier VERDOL      <gauthier.verdol@atm-consulting.fr>
+-- Copyright (C) 2001-2002 
+-- Copyright (C) 2005-2009 
+-- Copyright (C) 2017      
+-- Copyright (C) 2021            
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

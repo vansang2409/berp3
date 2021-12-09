@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2014-2021  Frederic France      <frederic.france@netlogic.fr>
+ * Copyright (C) 2014-2021        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -91,7 +91,7 @@ class printing_printipp extends PrintingDriver
 	public $errors = array();
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -101,7 +101,7 @@ class printing_printipp extends PrintingDriver
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB      $db      Database handler
+	 *  @param      Berp3DB      $db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -136,7 +136,7 @@ class printing_printipp extends PrintingDriver
 		include_once DOL_DOCUMENT_ROOT.'/includes/printipp/CupsPrintIPP.php';
 
 		$ipp = new CupsPrintIPP();
-		$ipp->setLog(DOL_DATA_ROOT.'/dolibarr_printipp.log', 'file', 3); // logging very verbose
+		$ipp->setLog(DOL_DATA_ROOT.'/berp3_printipp.log', 'file', 3); // logging very verbose
 		$ipp->setHost($this->host);
 		$ipp->setPort($this->port);
 		$ipp->setJobName($file, true);
@@ -252,7 +252,7 @@ class printing_printipp extends PrintingDriver
 		global $conf, $db;
 		include_once DOL_DOCUMENT_ROOT.'/includes/printipp/CupsPrintIPP.php';
 		$ipp = new CupsPrintIPP();
-		$ipp->setLog(DOL_DATA_ROOT.'/dolibarr_printipp.log', 'file', 3); // logging very verbose
+		$ipp->setLog(DOL_DATA_ROOT.'/berp3_printipp.log', 'file', 3); // logging very verbose
 		$ipp->setHost($this->host);
 		$ipp->setPort($this->port);
 		$ipp->setUserName($this->userid);
@@ -275,7 +275,7 @@ class printing_printipp extends PrintingDriver
 
 		include_once DOL_DOCUMENT_ROOT.'/includes/printipp/CupsPrintIPP.php';
 		$ipp = new CupsPrintIPP();
-		$ipp->setLog(DOL_DATA_ROOT.'/dolibarr_printipp.log', 'file', 3); // logging very verbose
+		$ipp->setLog(DOL_DATA_ROOT.'/berp3_printipp.log', 'file', 3); // logging very verbose
 		$ipp->setHost($this->host);
 		$ipp->setPort($this->port);
 		$ipp->setUserName($this->userid);
@@ -301,7 +301,7 @@ class printing_printipp extends PrintingDriver
 		$html = '';
 		include_once DOL_DOCUMENT_ROOT.'/includes/printipp/CupsPrintIPP.php';
 		$ipp = new CupsPrintIPP();
-		$ipp->setLog(DOL_DATA_ROOT.'/dolibarr_printipp.log', 'file', 3); // logging very verbose
+		$ipp->setLog(DOL_DATA_ROOT.'/berp3_printipp.log', 'file', 3); // logging very verbose
 		$ipp->setHost($this->host);
 		$ipp->setPort($this->port);
 		$ipp->setUserName($this->userid);

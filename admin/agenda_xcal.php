@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2008-2015 	Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2012-2013	Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2012		Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2015		Jean-François Ferry	<jfefe@aternatik.fr>
+/* Copyright (C) 2008-2015 	
+ * Copyright (C) 2012-2013	
+ * Copyright (C) 2012				
+ * Copyright (C) 2015		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,10 +45,10 @@ if ($actionsave) {
 
 	$db->begin();
 
-	$i += dolibarr_set_const($db, 'MAIN_AGENDA_XCAL_EXPORTKEY', trim(GETPOST('MAIN_AGENDA_XCAL_EXPORTKEY', 'alpha')), 'chaine', 0, '', $conf->entity);
-	$i += dolibarr_set_const($db, 'MAIN_AGENDA_EXPORT_PAST_DELAY', trim(GETPOST('MAIN_AGENDA_EXPORT_PAST_DELAY', 'alpha')), 'chaine', 0, '', $conf->entity);
-	$i += dolibarr_set_const($db, 'MAIN_AGENDA_EXPORT_CACHE', trim(GETPOST('MAIN_AGENDA_EXPORT_CACHE', 'alpha')), 'chaine', 0, '', $conf->entity);
-	$i += dolibarr_set_const($db, 'AGENDA_EXPORT_FIX_TZ', trim(GETPOST('AGENDA_EXPORT_FIX_TZ', 'alpha')), 'chaine', 0, '', $conf->entity);
+	$i += berp3_set_const($db, 'MAIN_AGENDA_XCAL_EXPORTKEY', trim(GETPOST('MAIN_AGENDA_XCAL_EXPORTKEY', 'alpha')), 'chaine', 0, '', $conf->entity);
+	$i += berp3_set_const($db, 'MAIN_AGENDA_EXPORT_PAST_DELAY', trim(GETPOST('MAIN_AGENDA_EXPORT_PAST_DELAY', 'alpha')), 'chaine', 0, '', $conf->entity);
+	$i += berp3_set_const($db, 'MAIN_AGENDA_EXPORT_CACHE', trim(GETPOST('MAIN_AGENDA_EXPORT_CACHE', 'alpha')), 'chaine', 0, '', $conf->entity);
+	$i += berp3_set_const($db, 'AGENDA_EXPORT_FIX_TZ', trim(GETPOST('AGENDA_EXPORT_FIX_TZ', 'alpha')), 'chaine', 0, '', $conf->entity);
 
 	if ($i >= 4) {
 		$db->commit();
@@ -151,7 +151,7 @@ print "<br>";
 
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 $getentity = ($conf->entity > 1 ? "&entity=".$conf->entity : "");

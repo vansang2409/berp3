@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2013-2019	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2013-2019	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ $nowstring = dol_print_date(dol_now(), 'dayhourlog');
 
 llxHeader();
 
-print load_fiche_titre($langs->trans("PerfDolibarr"), '', 'title_setup');
+print load_fiche_titre($langs->trans("PerfBerp3"), '', 'title_setup');
 
 print '<span class="opacitymedium">'.$langs->trans("YouMayFindPerfAdviceHere", 'https://bonaerp.com/index.php/FAQ_Increase_Performance').'</span> (<a href="'.$_SERVER["PHP_SELF"].'">'.$langs->trans("Reload").'</a>)<br>';
 

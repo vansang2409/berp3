@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005       Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2005       
+ * Copyright (C) 2005-2009  
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,14 +47,14 @@ class mailing_fraise extends MailingTargets
 	public $picto = 'user';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
 	/**
 	 *    Constructor
 	 *
-	 *  @param        DoliDB        $db      Database handler
+	 *  @param        Berp3DB        $db      Database handler
 	 */
 	public function __construct($db)
 	{

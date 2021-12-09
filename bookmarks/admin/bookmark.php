@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2009 Laurent Destailleur  <eldy@users.sourceforge.org>
- * Copyright (C) 2011-2012 Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2004      
+ * Copyright (C) 2005-2009   
+ * Copyright (C) 2011-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ $action = GETPOST('action', 'aZ09');
 
 if ($action == 'setvalue') {
 	$showmenu = GETPOST('BOOKMARKS_SHOW_IN_MENU', 'alpha');
-	$res = dolibarr_set_const($db, "BOOKMARKS_SHOW_IN_MENU", $showmenu, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "BOOKMARKS_SHOW_IN_MENU", $showmenu, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;

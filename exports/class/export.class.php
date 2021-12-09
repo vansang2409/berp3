@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2011  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012  Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2012       Charles-Fr BENKE    <charles.fr@benke.fr>
- * Copyright (C) 2016       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2005-2011  
+ * Copyright (C) 2005-2012         
+ * Copyright (C) 2012       Charles-Fr BENKE    
+ * Copyright (C) 2016       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@
 class Export
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -67,7 +67,7 @@ class Export
 	/**
 	 *    Constructor
 	 *
-	 *    @param  	DoliDB		$db		Database handler
+	 *    @param  	Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2010-2012 Regis Houssin <regis.houssin@inodbox.com>
+/* Copyright (C) 2010-2012  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -128,8 +128,8 @@ if (!empty($this->control->tpl['action_delete'])) {
 <?php } ?>
 
 <tr>
-	<td><?php echo $langs->trans("DolibarrLogin"); ?></td>
-	<td colspan="3"><?php echo $this->control->tpl['dolibarr_user']; ?></td>
+	<td><?php echo $langs->trans("Berp3Login"); ?></td>
+	<td colspan="3"><?php echo $this->control->tpl['berp3_user']; ?></td>
 </tr>
 
 </table>
@@ -143,7 +143,7 @@ if (empty($user->socid)) {
 	}
 
 	if (!$this->control->tpl['user_id'] && $user->rights->user->user->creer) {
-		print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$this->control->tpl['id'].'&action=create_user&token='.newToken().'&canvas='.$canvas.'">'.$langs->trans("CreateDolibarrLogin").'</a>';
+		print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$this->control->tpl['id'].'&action=create_user&token='.newToken().'&canvas='.$canvas.'">'.$langs->trans("CreateBerp3Login").'</a>';
 	}
 
 	if ($user->rights->societe->contact->supprimer) {

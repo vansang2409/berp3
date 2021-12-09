@@ -1,18 +1,18 @@
 <?php
-/* Copyright (C) 2001-2007	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2014	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005		Eric Seigne				<eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2006		Andre Cianfarani		<acianfa@free.fr>
- * Copyright (C) 2014		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2014-2018	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2014-2019 	Philippe Grand 		    <philippe.grand@atoo-net.com>
+/* Copyright (C) 2001-2007	
+ * Copyright (C) 2004-2014	
+ * Copyright (C) 2005		
+ * Copyright (C) 2005-2017	
+ * Copyright (C) 2006				
+ * Copyright (C) 2014		
+ * Copyright (C) 2014-2018	
+ * Copyright (C) 2014-2019 	 		    
  * Copyright (C) 2014		Ion agorria				<ion@agorria.com>
- * Copyright (C) 2015		Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2015		Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2016		Ferran Marcet			<fmarcet@2byte.es>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2018		Nicolas ZABOURI			<info@inovea-conseil.com>
+ * Copyright (C) 2015		
+ * Copyright (C) 2015					
+ * Copyright (C) 2016					
+ * Copyright (C) 2018-2020  
+ * Copyright (C) 2018					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -115,7 +115,7 @@ if (empty($reshook)) {
 	if ($action == 'setlabelsellingprice' && $user->admin) {
 		require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 		$keyforlabel = 'PRODUIT_MULTIPRICES_LABEL'.GETPOST('pricelevel');
-		dolibarr_set_const($db, $keyforlabel, GETPOST('labelsellingprice', 'alpha'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, $keyforlabel, GETPOST('labelsellingprice', 'alpha'), 'chaine', 0, '', $conf->entity);
 		$action = '';
 	}
 

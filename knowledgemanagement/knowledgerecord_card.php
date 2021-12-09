@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2017 
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software; you can redistribute it and/or modify
@@ -22,7 +22,7 @@
  *		\brief      Page to create/edit/view knowledgerecord
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../main.inc.php';
 
 require_once DOL_DOCUMENT_ROOT.'/core/class/html.formcompany.class.php';

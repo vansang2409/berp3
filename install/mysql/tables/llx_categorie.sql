@@ -1,8 +1,8 @@
 -- ============================================================================
--- Copyright (C) 2005		Brice Davoleau		<e1davole@iu-vannes.fr>
--- Copyright (C) 2005		Matthieu Valleton	<mv@seeschloss.org>
--- Copyright (C) 2005-2012	Regis Houssin		<regis.houssin@inodbox.com>		
--- Copyright (C) 2017       Laurent Destailleur  <eldy@users.sourceforge.net>
+-- Copyright (C) 2005				<e1davole@iu-vannes.fr>
+-- Copyright (C) 2005			
+-- Copyright (C) 2005-2012					
+-- Copyright (C) 2017       
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ create table llx_categorie
 	entity          integer DEFAULT 1 NOT NULL,			-- multi company id
 	fk_parent		integer DEFAULT 0 NOT NULL,
 	label 		    varchar(180) NOT NULL,				-- category ref/name
-	ref_ext			varchar(255),						-- reference into an external system (not used by dolibarr)
+	ref_ext			varchar(255),						-- reference into an external system (not used by berp3)
 	type	        integer DEFAULT 1 NOT NULL,			-- category type (product, supplier, customer, member)
 	description 	text,								-- description of the category
     color           varchar(8),                         -- color

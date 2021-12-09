@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2009 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2020 Floiran Henry <florian.henry@scopen.fr>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2009 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2020 Floiran Henry 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

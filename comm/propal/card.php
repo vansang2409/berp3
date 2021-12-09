@@ -1,19 +1,19 @@
 <?php
-/* Copyright (C) 2001-2007  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2014 Laurent Destailleur   <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne           <eric.seigne@ryxeo.com>
- * Copyright (C) 2005      Marc Barilley / Ocebo <marc@ocebo.com>
- * Copyright (C) 2005-2012 Regis Houssin         <regis.houssin@inodbox.com>
- * Copyright (C) 2006      Andre Cianfarani      <acianfa@free.fr>
- * Copyright (C) 2010-2016 Juanjo Menent         <jmenent@2byte.es>
- * Copyright (C) 2010-2021 Philippe Grand        <philippe.grand@atoo-net.com>
- * Copyright (C) 2012-2013 Christophe Battarel   <christophe.battarel@altairis.fr>
- * Copyright (C) 2012      Cedric Salvador       <csalvador@gpcsolutions.fr>
- * Copyright (C) 2013-2014  Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2014       Ferran Marcet           <fmarcet@2byte.es>
- * Copyright (C) 2016       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2020	    Nicolas ZABOURI         <info@inovea-conseil.com>
+/* Copyright (C) 2001-2007  
+ * Copyright (C) 2004-2014 
+ * Copyright (C) 2004      
+ * Copyright (C) 2005      
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2006      
+ * Copyright (C) 2010-2016 
+ * Copyright (C) 2010-2021         
+ * Copyright (C) 2012-2013 
+ * Copyright (C) 2012      Cedric Salvador       
+ *   
+ * Copyright (C) 2014       
+ * Copyright (C) 2016       
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2020	             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1755,7 +1755,7 @@ if ($action == 'create') {
 	print '<td class="tdtop">'.$langs->trans('NotePublic').'</td>';
 	print '<td valign="top">';
 	$note_public = $object->getDefaultCreateValueFor('note_public', (is_object($objectsrc) ? $objectsrc->note_public : null));
-	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 
 	// Private note
@@ -1764,7 +1764,7 @@ if ($action == 'create') {
 		print '<td class="tdtop">'.$langs->trans('NotePrivate').'</td>';
 		print '<td valign="top">';
 		$note_private = $object->getDefaultCreateValueFor('note_private', ((!empty($origin) && !empty($originid) && is_object($objectsrc)) ? $objectsrc->note_private : null));
-		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 		print $doleditor->Create(1);
 		// print '<textarea name="note_private" wrap="soft" cols="70" rows="'.ROWS_3.'">'.$note_private.'.</textarea>
 		print '</td></tr>';

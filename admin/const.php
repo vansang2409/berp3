@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2013	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2013		Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2003		
+ * Copyright (C) 2004-2013	
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2013		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ if ($action == 'add' || (GETPOST('add') && $action != 'update')) {
 	}
 
 	if (!$error) {
-		if (dolibarr_set_const($db, $constname, $constvalue, 'chaine', 1, $constnote, $entity) >= 0) {
+		if (berp3_set_const($db, $constname, $constvalue, 'chaine', 1, $constnote, $entity) >= 0) {
 			setEventMessages($langs->trans("RecordSaved"), null, 'mesgs');
 			$action = "";
 			$constname = "";
@@ -98,7 +98,7 @@ if (!empty($consts) && $action == 'update') {
 	$nbmodified = 0;
 	foreach ($consts as $const) {
 		if (!empty($const["check"])) {
-			if (dolibarr_set_const($db, $const["name"], $const["value"], $const["type"], 1, $const["note"], $const["entity"]) >= 0) {
+			if (berp3_set_const($db, $const["name"], $const["value"], $const["type"], 1, $const["note"], $const["entity"]) >= 0) {
 				$nbmodified++;
 			} else {
 				dol_print_error($db);
@@ -116,7 +116,7 @@ if (!empty($consts) && $action == 'delete') {
 	$nbdeleted = 0;
 	foreach ($consts as $const) {
 		if (!empty($const["check"])) {	// Is checkbox checked
-			if (dolibarr_del_const($db, $const["rowid"], -1) >= 0) {
+			if (berp3_del_const($db, $const["rowid"], -1) >= 0) {
 				$nbdeleted++;
 			} else {
 				dol_print_error($db);
@@ -131,7 +131,7 @@ if (!empty($consts) && $action == 'delete') {
 
 // Delete line from delete picto
 if ($action == 'delete') {
-	if (dolibarr_del_const($db, $rowid, $entity) >= 0) {
+	if (berp3_del_const($db, $rowid, $entity) >= 0) {
 		setEventMessages($langs->trans("RecordDeleted"), null, 'mesgs');
 	} else {
 		dol_print_error($db);

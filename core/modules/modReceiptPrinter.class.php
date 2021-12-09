@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2014-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2015      Frederic France      <frederic.france@free.fr>
+/* Copyright (C) 2014-2015 
+ * Copyright (C) 2015            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,20 +25,20 @@
  *  \ingroup    printing
  *  \brief      Description and activation file for the module Receipt Printer
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 
 /**
  *  Class to describe and activate module Receipt Printer
  */
-class modReceiptPrinter extends DolibarrModules
+class modReceiptPrinter extends Berp3Modules
 {
 
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDB      $db      Database handler
+	 *  @param      Berp3DB      $db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -52,8 +52,8 @@ class modReceiptPrinter extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "ReceiptPrinterDesc";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or 'dolibarr_deprecated' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or 'berp3_deprecated' or version
+		$this->version = 'berp3';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
 		// If file is in theme/yourtheme/img directory under name object_pictovalue.png, use this->picto='pictovalue'
@@ -72,7 +72,7 @@ class modReceiptPrinter extends DolibarrModules
 		$this->requiredby = array(); // List of module ids to disable if this one is disabled
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(3, 9, -2); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(3, 9, -2); // Minimum version of Berp3 required by module
 		$this->conflictwith = array();
 		$this->langfiles = array("receiptprinter");
 
@@ -124,7 +124,7 @@ class modReceiptPrinter extends DolibarrModules
 
 	/**
 	 *      Function called when module is enabled.
-	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *      It also creates data directories
 	 *
 	 *      @param      string  $options    Options when enabling module ('', 'noboxes')

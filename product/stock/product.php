@@ -1,15 +1,15 @@
 <?php
-/* Copyright (C) 2001-2007 Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2020 Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne             <eric.seigne@ryxeo.com>
- * Copyright (C) 2005      Simon TOSSER            <simon@kornog-computing.com>
- * Copyright (C) 2005-2009 Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2013      Cédric Salvador         <csalvador.gpcsolutions.fr>
- * Copyright (C) 2013-2018 Juanjo Menent	       <jmenent@2byte.es>
- * Copyright (C) 2014-2015 Cédric Gross            <c.gross@kreiz-it.fr>
- * Copyright (C) 2015      Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2018-2019 Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2021	   Gauthier VERDOL         <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2001-2007 
+ * Copyright (C) 2004-2020 
+ * Copyright (C) 2004                   
+ * Copyright (C) 2005                  
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2013               <csalvador.gpcsolutions.fr>
+ * Copyright (C) 2013-2018 	       
+ * Copyright (C) 2014-2015 Cédric Gross            
+ * Copyright (C) 2015      
+ * Copyright (C) 2018-2019 
+ * Copyright (C) 2021	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -100,7 +100,7 @@ if (empty($id) && !empty($object->id)) {
 
 $modulepart = 'product';
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $canvas = !empty($object->canvas) ? $object->canvas : GETPOST("canvas");
 $objcanvas = null;
 if (!empty($canvas)) {

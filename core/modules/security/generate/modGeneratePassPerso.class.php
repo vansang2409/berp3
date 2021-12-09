@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2006-2011	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2014		Teddy Andreotti		<125155@supinfo.com>
- * Copyright (C) 2017		Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2011		
+ * Copyright (C) 2014				
+ * Copyright (C) 2017				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ class modGeneratePassPerso extends ModeleGenPassword
 	public $WithoutAmbi;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -65,7 +65,7 @@ class modGeneratePassPerso extends ModeleGenPassword
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db			Database handler
+	 *  @param		Berp3DB		$db			Database handler
 	 *	@param		Conf		$conf		Handler de conf
 	 *	@param		Translate	$langs		Handler de langue
 	 *	@param		User		$user		Handler du user connecte
@@ -82,7 +82,7 @@ class modGeneratePassPerso extends ModeleGenPassword
 
 		if (empty($conf->global->USER_PASSWORD_PATTERN)) {
 			// default value (10carac, 1maj, 1digit, 1spe,  3 repeat, no ambi at auto generation.
-			dolibarr_set_const($db, "USER_PASSWORD_PATTERN", '12;1;1;1;3;1', 'chaine', 0, '', $conf->entity);
+			berp3_set_const($db, "USER_PASSWORD_PATTERN", '12;1;1;1;3;1', 'chaine', 0, '', $conf->entity);
 		}
 
 		$this->Maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

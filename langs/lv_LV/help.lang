@@ -5,8 +5,8 @@ RemoteControlSupport=Tiešsaistes reālā laika/tālvadības atbalsts
 OtherSupport=Cits atbalsts
 ToSeeListOfAvailableRessources=Lai sazinātos / skatītu pieejamos resursus:
 HelpCenter=Palīdzības centrs
-DolibarrHelpCenter=BERP3 palīdzības un atbalsta centrs
-ToGoBackToDolibarr=Pretējā gadījumā <a href="%s"> noklikšķiniet šeit, lai turpinātu BERP3 lietošanu </a>.
+Berp3HelpCenter=BERP3 palīdzības un atbalsta centrs
+ToGoBackToBerp3=Pretējā gadījumā <a href="%s"> noklikšķiniet šeit, lai turpinātu BERP3 lietošanu </a>.
 TypeOfSupport=Atbalsta veids
 TypeSupportCommunauty=Kopiena (bezmaksas)
 TypeSupportCommercial=Komerciāli

@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2005		Rodolphe Quiedeville  <rodolphe@quiedeville.org>
- * Copyright (C) 2006-2011	Laurent Destailleur	  <eldy@users.sourceforge.net>
- * Copyright (C) 2009-2014	Regis Houssin		  <regis.houssin@inodbox.com>
- * Copyright (C) 2011		Juanjo Menent		  <jmenent@2byte.es>
- * Copyright (C) 2012		Christophe Battarel	  <christophe.battarel@altairis.fr>
- * Copyright (C) 2015		Marcos García         <marcosgdf@gmail.com>
- * Copyright (C) 2016		Charlie Benke         <charlie@patas-monkey.com>
- * Copyright (C) 2019-2021  Frédéric France       <frederic.france@netlogic.fr>
- * Copyright (C) 2020       Pierre Ardoin         <mapiolca@me.com>
+/* Copyright (C) 2005		
+ * Copyright (C) 2006-2011		  
+ * Copyright (C) 2009-2014			  
+ * Copyright (C) 2011				  
+ * Copyright (C) 2012			  
+ * Copyright (C) 2015		         
+ * Copyright (C) 2016		         
+ * Copyright (C) 2019-2021         
+ * Copyright (C) 2020                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ require_once DOL_DOCUMENT_ROOT.'/product/dynamic_price/class/price_parser.class.
 class ProductFournisseur extends Product
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -138,7 +138,7 @@ class ProductFournisseur extends Product
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -964,12 +964,12 @@ class ProductFournisseur extends Product
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'product_fournisseur_price'

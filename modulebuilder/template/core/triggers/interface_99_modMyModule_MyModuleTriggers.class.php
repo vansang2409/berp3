@@ -32,18 +32,18 @@
  * - The name property name must be MyTrigger
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for MyModule module
  */
-class InterfaceMyModuleTriggers extends DolibarrTriggers
+class InterfaceMyModuleTriggers extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -52,7 +52,7 @@ class InterfaceMyModuleTriggers extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "demo";
 		$this->description = "MyModule triggers.";
-		// 'development', 'experimental', 'dolibarr' or version
+		// 'development', 'experimental', 'berp3' or version
 		$this->version = 'development';
 		$this->picto = 'mymodule@mymodule';
 	}
@@ -79,7 +79,7 @@ class InterfaceMyModuleTriggers extends DolibarrTriggers
 
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file
 	 * is inside directory core/triggers
 	 *
@@ -96,7 +96,7 @@ class InterfaceMyModuleTriggers extends DolibarrTriggers
 			return 0; // If module is not enabled, we do nothing
 		}
 
-		// Put here code you want to execute when a Dolibarr business events occurs.
+		// Put here code you want to execute when a Berp3 business events occurs.
 		// Data and type of action are stored into $object and $action
 
 		// You can isolate code for each action in a separate method: this method should be named like the trigger in camelCase.

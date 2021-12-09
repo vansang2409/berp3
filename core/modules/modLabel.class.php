@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2009 Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2008      Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2007-2009        
+ * Copyright (C) 2008      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,19 +24,19 @@
  *	\brief      Description and activation file for the module Labels
  */
 
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to describe and enable module Label
  */
-class modLabel extends DolibarrModules
+class modLabel extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -48,7 +48,7 @@ class modLabel extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "Management of stickers";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
 		$this->version = 'development';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'generic';
@@ -94,7 +94,7 @@ class modLabel extends DolibarrModules
 
 	/**
 	 *		Function called when module is enabled.
-	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *		It also creates data directories
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')

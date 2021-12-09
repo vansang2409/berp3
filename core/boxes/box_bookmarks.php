@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2015      Frederic France      <frederic.france@free.fr>
+/* Copyright (C) 2005-2017 
+ * Copyright (C) 2015            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ class box_bookmarks extends ModeleBoxes
 	public $depends = array("bookmark");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -47,7 +47,7 @@ class box_bookmarks extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param)

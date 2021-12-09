@@ -1,5 +1,5 @@
 -- ===================================================================
--- Copyright (C) 2015	Laurent Destailleur	<eldy@users.sourceforge.net>
+-- Copyright (C) 2015		
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ CREATE TABLE llx_ecm_files
   label				varchar(128) NOT NULL,			-- contains hash of file content
   share				varchar(128) NULL,				-- contains hash for file sharing
   entity			integer DEFAULT 1 NOT NULL,		-- multi company id
-  filepath    		varchar(255) NOT NULL,   	    -- relative to dolibarr document dir. Example module/def
+  filepath    		varchar(255) NOT NULL,   	    -- relative to berp3 document dir. Example module/def
   filename          varchar(255) NOT NULL,			-- file name only without any directory
   src_object_type   varchar(64),	         		-- Source object type ('proposal', 'invoice', ...)
   src_object_id     integer,		             	-- Source object id

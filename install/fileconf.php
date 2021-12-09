@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2004       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004       Eric Seigne             <eric.seigne@ryxeo.com>
- * Copyright (C) 2004-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2004       Sebastien DiCintio      <sdicintio@ressource-toi.org>
- * Copyright (C) 2005-2011  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2016       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2004       
+ * Copyright (C) 2004                    
+ * Copyright (C) 2004-2012  
+ * Copyright (C) 2004                 
+ * Copyright (C) 2004             
+ * Copyright (C) 2005-2011  
+ * Copyright (C) 2016             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 /**
  *       \file       htdocs/install/fileconf.php
  *       \ingroup    install
- *       \brief      Ask all information required to build Dolibarr htdocs/conf/conf.php file (will be written to disk on next page step1)
+ *       \brief      Ask all information required to build Berp3 htdocs/conf/conf.php file (will be written to disk on next page step1)
  */
 
 include_once 'inc.php';
@@ -38,11 +38,11 @@ $langs->setDefaultLang($setuplang);
 
 $langs->loadLangs(array("install", "errors"));
 
-dolibarr_install_syslog("- fileconf: entering fileconf.php page");
+berp3_install_syslog("- fileconf: entering fileconf.php page");
 
-// You can force preselected values of the config step of Dolibarr by adding a file
+// You can force preselected values of the config step of Berp3 by adding a file
 // install.forced.php into directory htdocs/install (This is the case with some wizard
-// installer like DoliWamp, DoliMamp or DoliBuntu).
+// installer like Berp3Wamp, Berp3Mamp or Berp3Buntu).
 // We first init "forced values" to nothing.
 if (!isset($force_install_noedit)) {
 	$force_install_noedit = ''; // 1=To block vars specific to distrib, 2 to block all technical parameters
@@ -80,8 +80,8 @@ if (!isset($force_install_databaserootpass)) {
 // Now we load forced values from install.forced.php file.
 $useforcedwizard = false;
 $forcedfile = "./install.forced.php";
-if ($conffile == "/etc/dolibarr/conf.php") {
-	$forcedfile = "/etc/dolibarr/install.forced.php"; // Must be after inc.php
+if ($conffile == "/etc/berp3/conf.php") {
+	$forcedfile = "/etc/berp3/install.forced.php"; // Must be after inc.php
 }
 if (@file_exists($forcedfile)) {
 	$useforcedwizard = true;
@@ -96,13 +96,13 @@ if (@file_exists($forcedfile)) {
 
 session_start(); // To be able to keep info into session (used for not losing pass during navigation. pass must not transit through parmaeters)
 
-pHeader($langs->trans("ConfigurationFile"), "step1", "set", "", (empty($force_dolibarr_js_JQUERY) ? '' : $force_dolibarr_js_JQUERY.'/'), 'main-inside-bis');
+pHeader($langs->trans("ConfigurationFile"), "step1", "set", "", (empty($force_berp3_js_JQUERY) ? '' : $force_berp3_js_JQUERY.'/'), 'main-inside-bis');
 
 // Test if we can run a first install process
 if (!is_writable($conffile)) {
 	print $langs->trans("ConfFileIsNotWritable", $conffiletoshow);
-	dolibarr_install_syslog("fileconf: config file is not writable", LOG_WARNING);
-	dolibarr_install_syslog("- fileconf: end");
+	berp3_install_syslog("fileconf: config file is not writable", LOG_WARNING);
+	berp3_install_syslog("- fileconf: end");
 	pFooter(1, $setuplang, 'jscheckparam');
 	exit;
 }
@@ -138,12 +138,12 @@ if (!empty($force_install_message)) {
 		</td>
 	</tr>
 
-	<!-- Documents root $dolibarr_main_document_root -->
+	<!-- Documents root $berp3_main_document_root -->
 	<tr>
 		<td class="label"><label for="main_dir"><b><?php print $langs->trans("WebPagesDirectory"); ?></b></label></td>
 <?php
-if (empty($dolibarr_main_url_root)) {
-	$dolibarr_main_document_root = detect_dolibarr_main_document_root();
+if (empty($berp3_main_url_root)) {
+	$berp3_main_document_root = detect_berp3_main_document_root();
 }
 ?>
 		<td class="label">
@@ -151,7 +151,7 @@ if (empty($dolibarr_main_url_root)) {
 				   class="minwidth300"
 				   id="main_dir"
 				   name="main_dir"
-				   value="<?php print $dolibarr_main_document_root ?>"
+				   value="<?php print $berp3_main_document_root ?>"
 <?php
 if (!empty($force_install_noedit)) {
 	print ' disabled';
@@ -164,19 +164,19 @@ if (!empty($force_install_noedit)) {
 		print $langs->trans("Examples").":<br>";
 		?>
 		<ul>
-			<li>/var/www/dolibarr/htdocs</li>
-			<li>C:/wwwroot/dolibarr/htdocs</li>
+			<li>/var/www/berp3/htdocs</li>
+			<li>C:/wwwroot/berp3/htdocs</li>
 		</ul>
 		</td>
 	</tr>
 
-	<!-- Documents URL $dolibarr_main_data_root -->
+	<!-- Documents URL $berp3_main_data_root -->
 	<tr>
 		<td class="label"><label for="main_data_dir"><b><?php print $langs->trans("DocumentsDirectory"); ?></b></label></td>
 		<?php
-		$dolibarr_main_data_root = @$force_install_main_data_root;
-		if (empty($dolibarr_main_data_root)) {
-			$dolibarr_main_data_root = detect_dolibarr_main_data_root($dolibarr_main_document_root);
+		$berp3_main_data_root = @$force_install_main_data_root;
+		if (empty($berp3_main_data_root)) {
+			$berp3_main_data_root = detect_berp3_main_data_root($berp3_main_document_root);
 		}
 		?>
 		<td class="label">
@@ -184,7 +184,7 @@ if (!empty($force_install_noedit)) {
 				   class="minwidth300"
 				   id="main_data_dir"
 				   name="main_data_dir"
-				   value="<?php print $dolibarr_main_data_root ?>"
+				   value="<?php print $berp3_main_data_root ?>"
 <?php if (!empty($force_install_noedit)) {
 	print ' disabled';
 } ?>
@@ -196,16 +196,16 @@ if (!empty($force_install_noedit)) {
 		print $langs->trans("Examples").":<br>";
 		?>
 		<ul>
-			<li>/var/lib/dolibarr/documents</li>
-			<li>C:/My Documents/dolibarr/documents</li>
+			<li>/var/lib/berp3/documents</li>
+			<li>C:/My Documents/berp3/documents</li>
 		</ul>
 		</td>
 	</tr>
 
-	<!-- Root URL $dolibarr_main_url_root -->
+	<!-- Root URL $berp3_main_url_root -->
 	<?php
-	if (empty($dolibarr_main_url_root)) {
-		$dolibarr_main_url_root = detect_dolibarr_main_url_root();
+	if (empty($berp3_main_url_root)) {
+		$berp3_main_url_root = detect_berp3_main_url_root();
 	}
 	?>
 	<tr>
@@ -216,7 +216,7 @@ if (!empty($force_install_noedit)) {
 				   class="minwidth300"
 				   id="main_url"
 				   name="main_url"
-				   value="<?php print $dolibarr_main_url_root; ?> "
+				   value="<?php print $berp3_main_url_root; ?> "
 <?php if (!empty($force_install_noedit)) {
 	print ' disabled';
 }
@@ -226,8 +226,8 @@ if (!empty($force_install_noedit)) {
 		<td class="comment"><?php print $langs->trans("Examples").":<br>"; ?>
 		<ul>
 			<li>http://localhost/</li>
-			<li>http://www.myserver.com:8180/dolibarr</li>
-			<li>https://www.myvirtualfordolibarr.com/</li>
+			<li>http://www.myserver.com:8180/berp3</li>
+			<li>https://www.myvirtualforberp3.com/</li>
 		</ul>
 		</td>
 	</tr>
@@ -257,11 +257,11 @@ if (!empty($force_install_noedit)) {
 	}
 	?>
 
-	<!-- Dolibarr database -->
+	<!-- Berp3 database -->
 
 	<tr>
 		<td colspan="3" class="label"><br>
-		<h3><img class="valignmiddle inline-block paddingright" src="../theme/common/octicons/build/svg/database.svg" width="20" alt="webserver"> <?php echo $langs->trans("DolibarrDatabase"); ?></h3>
+		<h3><img class="valignmiddle inline-block paddingright" src="../theme/common/octicons/build/svg/database.svg" width="20" alt="webserver"> <?php echo $langs->trans("Berp3Database"); ?></h3>
 		</td>
 	</tr>
 
@@ -271,7 +271,7 @@ if (!empty($force_install_noedit)) {
 			<input type="text"
 				   id="db_name"
 				   name="db_name"
-				   value="<?php echo (!empty($dolibarr_main_db_name)) ? $dolibarr_main_db_name : ($force_install_database ? $force_install_database : 'dolibarr'); ?>"
+				   value="<?php echo (!empty($berp3_main_db_name)) ? $berp3_main_db_name : ($force_install_database ? $force_install_database : 'berp3'); ?>"
 				<?php if ($force_install_noedit == 2 && $force_install_database !== null) {
 					print ' disabled';
 				} ?>
@@ -282,8 +282,8 @@ if (!empty($force_install_noedit)) {
 
 
 	<?php
-	if (!isset($dolibarr_main_db_host)) {
-		$dolibarr_main_db_host = "localhost";
+	if (!isset($berp3_main_db_host)) {
+		$berp3_main_db_host = "localhost";
 	}
 	?>
 	<tr>
@@ -293,7 +293,7 @@ if (!empty($force_install_noedit)) {
 		<td class="label">
 		<?php
 
-		$defaultype = !empty($dolibarr_main_db_type) ? $dolibarr_main_db_type : ($force_install_type ? $force_install_type : 'mysqli');
+		$defaultype = !empty($berp3_main_db_type) ? $berp3_main_db_type : ($force_install_type ? $force_install_type : 'mysqli');
 
 		$modules = array();
 		$nbok = $nbko = 0;
@@ -306,10 +306,10 @@ if (!empty($force_install_noedit)) {
 			while (($file = readdir($handle)) !== false) {
 				if (is_readable($dir."/".$file) && preg_match('/^(.*)\.class\.php$/i', $file, $reg)) {
 					$type = $reg[1];
-					if ($type === 'DoliDB') {
+					if ($type === 'Berp3DB') {
 						continue; // Skip abstract class
 					}
-					$class = 'DoliDB'.ucfirst($type);
+					$class = 'Berp3DB'.ucfirst($type);
 					include_once $dir."/".$file;
 
 					if ($type == 'sqlite') {
@@ -397,7 +397,7 @@ if (!empty($force_install_noedit)) {
 			<input type="text"
 				   id="db_host"
 				   name="db_host"
-				   value="<?php print (!empty($force_install_dbserver) ? $force_install_dbserver : (!empty($dolibarr_main_db_host) ? $dolibarr_main_db_host : 'localhost')); ?>"
+				   value="<?php print (!empty($force_install_dbserver) ? $force_install_dbserver : (!empty($berp3_main_db_host) ? $berp3_main_db_host : 'localhost')); ?>"
 				<?php if ($force_install_noedit == 2 && $force_install_dbserver !== null) {
 					print ' disabled';
 				} ?>
@@ -414,7 +414,7 @@ if (!empty($force_install_noedit)) {
 			<input type="text"
 				   name="db_port"
 				   id="db_port"
-				   value="<?php print (!empty($force_install_port)) ? $force_install_port : $dolibarr_main_db_port; ?>"
+				   value="<?php print (!empty($force_install_port)) ? $force_install_port : $berp3_main_db_port; ?>"
 				<?php if ($force_install_noedit == 2 && $force_install_port !== null) {
 					print ' disabled';
 				} ?>
@@ -431,7 +431,7 @@ if (!empty($force_install_noedit)) {
 			<input type="text"
 				   id="db_prefix"
 				   name="db_prefix"
-				   value="<?php echo(!empty($force_install_prefix) ? $force_install_prefix : (!empty($dolibarr_main_db_prefix) ? $dolibarr_main_db_prefix : 'llx_')); ?>"
+				   value="<?php echo(!empty($force_install_prefix) ? $force_install_prefix : (!empty($berp3_main_db_prefix) ? $berp3_main_db_prefix : 'llx_')); ?>"
 				<?php if ($force_install_noedit == 2 && $force_install_prefix !== null) {
 					print ' disabled';
 				} ?>
@@ -464,7 +464,7 @@ if (!empty($force_install_noedit)) {
 			<input type="text"
 				   id="db_user"
 				   name="db_user"
-				   value="<?php print (!empty($force_install_databaselogin)) ? $force_install_databaselogin : $dolibarr_main_db_user; ?>"
+				   value="<?php print (!empty($force_install_databaselogin)) ? $force_install_databaselogin : $berp3_main_db_user; ?>"
 				<?php if ($force_install_noedit == 2 && $force_install_databaselogin !== null) {
 					print ' disabled';
 				} ?>
@@ -482,7 +482,7 @@ if (!empty($force_install_noedit)) {
 				   value="<?php
 					// If $force_install_databasepass is on, we don't want to set password, we just show '***'. Real value will be extracted from the forced install file at step1.
 					$autofill = ((!empty($_SESSION['dol_save_pass'])) ? $_SESSION['dol_save_pass'] : str_pad('', strlen($force_install_databasepass), '*'));
-					if (!empty($dolibarr_main_prod) && empty($_SESSION['dol_save_pass'])) {    // So value can't be found if install page still accessible
+					if (!empty($berp3_main_prod) && empty($_SESSION['dol_save_pass'])) {    // So value can't be found if install page still accessible
 						$autofill = '';
 					}
 					print dol_escape_htmltag($autofill);
@@ -560,7 +560,7 @@ if (!empty($force_install_noedit)) {
 				   value="<?php
 					// If $force_install_databaserootpass is on, we don't want to set password here, we just show '***'. Real value will be extracted from the forced install file at step1.
 					$autofill = ((!empty($force_install_databaserootpass)) ? str_pad('', strlen($force_install_databaserootpass), '*') : (isset($db_pass_root) ? $db_pass_root : ''));
-					if (!empty($dolibarr_main_prod)) {
+					if (!empty($berp3_main_prod)) {
 						$autofill = '';
 					}
 					// Do not autofill password if instance is a production instance
@@ -702,5 +702,5 @@ function jscheckparam()
 
 // $db->close();	Not database connexion yet
 
-dolibarr_install_syslog("- fileconf: end");
+berp3_install_syslog("- fileconf: end");
 pFooter($err, $setuplang, 'jscheckparam');

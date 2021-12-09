@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010-2011	Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011		Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2010-2011	
+ * Copyright (C) 2011		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ class ActionsCardCompany extends ActionsCardCommon
 	/**
 	 *    Constructor
 	 *
-	 *    @param	DoliDB	$db				Handler acces base de donnees
+	 *    @param	Berp3DB	$db				Handler acces base de donnees
 	 *    @param	string	$dirmodule		Name of directory of module
 	 *    @param	string	$targetmodule	Name of directory of module where canvas is stored
 	 *    @param	string	$canvas			Name of canvas

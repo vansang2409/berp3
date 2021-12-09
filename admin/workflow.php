@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004		Eric Seigne				<eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2021	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
+/* Copyright (C) 2004		
+ * Copyright (C) 2004		
+ * Copyright (C) 2005-2021	
+ * Copyright (C) 2005-2012	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,13 +43,13 @@ $action = GETPOST('action', 'aZ09');
  */
 
 if (preg_match('/set(.*)/', $action, $reg)) {
-	if (!dolibarr_set_const($db, $reg[1], '1', 'chaine', 0, '', $conf->entity) > 0) {
+	if (!berp3_set_const($db, $reg[1], '1', 'chaine', 0, '', $conf->entity) > 0) {
 		dol_print_error($db);
 	}
 }
 
 if (preg_match('/del(.*)/', $action, $reg)) {
-	if (!dolibarr_set_const($db, $reg[1], '0', 'chaine', 0, '', $conf->entity) > 0) {
+	if (!berp3_set_const($db, $reg[1], '0', 'chaine', 0, '', $conf->entity) > 0) {
 		dol_print_error($db);
 	}
 }

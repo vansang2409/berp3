@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2005 
+ * Copyright (C) 2004-2010 
+ * Copyright (C) 2004                
+ * Copyright (C) 2005-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ abstract class ModeleThirdPartyDoc extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 * 	@param	DoliDB		$db					Database handler
+	 * 	@param	Berp3DB		$db					Database handler
 	 *  @param	integer		$maxfilenamelength  Max length of value to show
 	 * 	@return	array							List of templates
 	 */
@@ -148,7 +148,7 @@ abstract class ModeleThirdPartyCode
 			return $langs->trans("VersionDevelopment");
 		} elseif ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
-		} elseif ($this->version == 'dolibarr') {
+		} elseif ($this->version == 'berp3') {
 			return DOL_VERSION;
 		} elseif ($this->version) {
 			return $this->version;
@@ -161,7 +161,7 @@ abstract class ModeleThirdPartyCode
 	/**
 	 *  Renvoie la liste des modeles de numérotation
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array|int					List of numbers
 	 */
@@ -334,7 +334,7 @@ abstract class ModeleAccountancyCode
 			return $langs->trans("VersionDevelopment");
 		} elseif ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
-		} elseif ($this->version == 'dolibarr') {
+		} elseif ($this->version == 'berp3') {
 			return DOL_VERSION;
 		} elseif ($this->version) {
 			return $this->version;
@@ -388,7 +388,7 @@ abstract class ModeleAccountancyCode
 	/**
 	 *  Set accountancy account code for a third party into this->code
 	 *
-	 *  @param	DoliDB	$db             Database handler
+	 *  @param	Berp3DB	$db             Database handler
 	 *  @param  Societe	$societe        Third party object
 	 *  @param  int		$type			'customer' or 'supplier'
 	 *  @return	int						>=0 if OK, <0 if KO
@@ -406,7 +406,7 @@ abstract class ModeleAccountancyCode
 /**
  *  Create a document onto disk according to template module.
  *
- *	@param	DoliDB		$db  			Database handler
+ *	@param	Berp3DB		$db  			Database handler
  *	@param  Facture		$object			Object invoice
  *  @param  string      $message        Message (not used, deprecated)
  *	@param	string		$modele			Force template to use ('' to not force)
@@ -418,7 +418,7 @@ abstract class ModeleAccountancyCode
  *  @deprecated Use the new function generateDocument of Objects class
  *  @see Societe::generateDocument()
  */
-function thirdparty_doc_create(DoliDB $db, Societe $object, $message, $modele, $outputlangs, $hidedetails = 0, $hidedesc = 0, $hideref = 0)
+function thirdparty_doc_create(Berp3DB $db, Societe $object, $message, $modele, $outputlangs, $hidedetails = 0, $hidedesc = 0, $hideref = 0)
 {
 	dol_syslog(__METHOD__." is deprecated", LOG_WARNING);
 

@@ -16,7 +16,7 @@ ModuleBuilderDescbuildpackage=Puede generar aquí un archivo de paquete "listo p
 EnterNameOfModuleToDeleteDesc=Puedes borrar tu módulo. ADVERTENCIA: ¡Todos los archivos de codificación del módulo (generados o creados manualmente) Y los datos estructurados y la documentación serán eliminados!
 EnterNameOfObjectToDeleteDesc=Puedes borrar un objeto. ADVERTENCIA: ¡Se eliminarán todos los archivos de codificación (generados o creados manualmente) relacionados con el objeto!
 BuildPackage=Paquete de construcción
-BuildPackageDesc=Puede generar un paquete zip de su aplicación para que esté listo para distribuirlo en cualquier Dolibarr. También puede distribuirlo o venderlo en el mercado como <a href="https://www.dolistore.com"> DoliStore.com </a>.
+BuildPackageDesc=Puede generar un paquete zip de su aplicación para que esté listo para distribuirlo en cualquier Berp3. También puede distribuirlo o venderlo en el mercado como <a href="https://www.berp3store.com"> Berp3Store.com </a>.
 BuildDocumentation=Crear documentación
 ModuleIsLive=Este módulo ha sido activado. Cualquier cambio puede romper una función en vivo actual.
 DescriptorFile=Archivo de descripción del módulo
@@ -67,7 +67,7 @@ HooksDefDesc=Defina en la propiedad <b>module_parts ['hooks'] </b>, en el descri
 TriggerDefDesc=Defina en el archivo de activación el código que desea ejecutar para cada evento empresarial ejecutado.
 SeeIDsInUse=Consulte ID en uso en su instalación.
 SeeReservedIDsRangeHere=Ver el rango de ID reservados
-ToolkitForDevelopers=Kit de herramientas para desarrolladores de Dolibarr
+ToolkitForDevelopers=Kit de herramientas para desarrolladores de Berp3
 TryToUseTheModuleBuilder=Si tiene conocimientos de SQL y PHP, puede usar el asistente de creación de módulos nativos. <br>Habilite el módulo <strong>%s</strong> y use el asistente haciendo clic <span class="fa fa-bug"></span> en el menú superior derecho. <br>Advertencia: esta es una función avanzada para desarrolladores, <b>no</b> experimente en su sitio de producción !
 SeeTopRightMenu=Ver <span class="fa fa-bug"></span>en el menú superior derecho
 InitStructureFromExistingTable=Construya la estructura de la cadena matriz de una tabla existente

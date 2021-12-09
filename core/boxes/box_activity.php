@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2012      Charles-François BENKE <charles.fr@benke.fr>
- * Copyright (C) 2005-2015 Laurent Destailleur    <eldy@users.sourceforge.net>
- * Copyright (C) 2014-2021 Frederic France        <frederic.france@netlogic.fr>
+/* Copyright (C) 2012       
+ * Copyright (C) 2005-2015     
+ * Copyright (C) 2014-2021         
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ class box_activity extends ModeleBoxes
 	public $depends = array("facture");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -50,7 +50,7 @@ class box_activity extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param)

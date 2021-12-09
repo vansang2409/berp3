@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2010-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2010-2014	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2012-2013	Christophe Battarel	<christophe.battarel@altairis.fr>
- * Copyright (C) 2012       Cédric Salvador     <csalvador@gpcsolutions.fr>
- * Copyright (C) 2014		Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2014       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2015-2016	Marcos García		<marcosgdf@gmail.com>
- * Copyright (C) 2018-2019  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2018		Ferran Marcet		<fmarcet@2byte.es>
+/* Copyright (C) 2010-2012			
+ * Copyright (C) 2010-2014		
+ * Copyright (C) 2012-2013		
+ * Copyright (C) 2012            
+ * Copyright (C) 2014		
+ * Copyright (C) 2014       
+ * Copyright (C) 2015-2016			
+ * Copyright (C) 2018-2019  
+ * Copyright (C) 2018				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

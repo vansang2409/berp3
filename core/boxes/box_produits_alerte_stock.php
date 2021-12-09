@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2005-2012 Maxime Kohlhaas      <mko@atm-consulting.fr>
- * Copyright (C) 2015-2021 Frédéric France      <frederic.france@netlogic.fr>
- * Copyright (C) 2015      Juanjo Menent	    <jmenent@2byte.es>
+/* Copyright (C) 2003      
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2005-2012       <mko@atm-consulting.fr>
+ * Copyright (C) 2015-2021 
+ * Copyright (C) 2015      	    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ class box_produits_alerte_stock extends ModeleBoxes
 	public $depends = array("produit");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -54,7 +54,7 @@ class box_produits_alerte_stock extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB	$db      	Database handler
+	 *  @param  Berp3DB	$db      	Database handler
 	 *  @param	string	$param		More parameters
 	 */
 	public function __construct($db, $param = '')

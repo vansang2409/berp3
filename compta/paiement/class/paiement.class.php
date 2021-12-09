@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2002-2004  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010  Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2004  
+ * Copyright (C) 2004-2010  
  * Copyright (C) 2005       Marc Barilley / Ocebo   <marc@ocebo.com>
- * Copyright (C) 2012       Cédric Salvador       <csalvador@gpcsolutions.fr>
- * Copyright (C) 2014       Raphaël Doursenaud    <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2014       Marcos García 		 <marcosgdf@gmail.com>
- * Copyright (C) 2015       Juanjo Menent		 <jmenent@2byte.es>
- * Copyright (C) 2018       Ferran Marcet		 <fmarcet@2byte.es>
- * Copyright (C) 2018       Thibault FOUCART		 <support@ptibogxiv.net>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2020       Andreu Bisquerra Gaya <jove@bisquerra.com>
- * Copyright (C) 2021       OpenDsi					<support@open-dsi.fr>
+ * Copyright (C) 2012       
+ * Copyright (C) 2014           
+ * Copyright (C) 2014        		 
+ * Copyright (C) 2015       		 
+ * Copyright (C) 2018       		 
+ * Copyright (C) 2018       Thibault FOUCART		 
+ * Copyright (C) 2018       
+ * Copyright (C) 2020        Gaya 
+ * Copyright (C) 2021       OpenDsi					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -145,7 +145,7 @@ class Paiement extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -239,7 +239,7 @@ class Paiement extends CommonObject
 		$totalamount_converted = 0;
 		$atleastonepaymentnotnull = 0;
 
-		if ($way == 'dolibarr') {
+		if ($way == 'berp3') {
 			$amounts = &$this->amounts;
 			$amounts_to_update = &$this->multicurrency_amounts;
 		} else {
@@ -280,7 +280,7 @@ class Paiement extends CommonObject
 			$this->ref_ext = '';
 		}
 
-		if ($way == 'dolibarr') {
+		if ($way == 'berp3') {
 			$total = $totalamount;
 			$mtotal = $totalamount_converted; // Maybe use price2num with MT for the converted value
 		} else {
@@ -601,7 +601,7 @@ class Paiement extends CommonObject
 				$totalamount = $this->total; // For backward compatibility
 			}
 
-			// if dolibarr currency != bank currency then we received an amount in customer currency (currently I don't manage the case : my currency is USD, the customer currency is EUR and he paid me in GBP. Seems no sense for me)
+			// if berp3 currency != bank currency then we received an amount in customer currency (currently I don't manage the case : my currency is USD, the customer currency is EUR and he paid me in GBP. Seems no sense for me)
 			if (!empty($conf->multicurrency->enabled) && $conf->currency != $acc->currency_code) {
 				$totalamount = $this->multicurrency_amount;
 			}
@@ -1095,13 +1095,13 @@ class Paiement extends CommonObject
 	/**
 	 * 	get the right way of payment
 	 *
-	 * 	@return 	string 	'dolibarr' if standard comportment or paid in main currency, 'customer' if payment received from multicurrency inputs
+	 * 	@return 	string 	'berp3' if standard comportment or paid in main currency, 'customer' if payment received from multicurrency inputs
 	 */
 	public function getWay()
 	{
 		global $conf;
 
-		$way = 'dolibarr';
+		$way = 'berp3';
 		if (!empty($conf->multicurrency->enabled)) {
 			foreach ($this->multicurrency_amounts as $value) {
 				if (!empty($value)) { // one value found then payment is in invoice currency

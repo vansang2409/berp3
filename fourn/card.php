@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2001-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Eric Seigne          <erics@rycks.com>
- * Copyright (C) 2004-2016 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2010 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2015 Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2001-2005 
+ * Copyright (C) 2003                
+ * Copyright (C) 2004-2016 
+ * Copyright (C) 2005-2010 
+ * Copyright (C) 2010-2015 
  * Copyright (C) 2014      Jean Heimburger      <jean@tiaris.info>
- * Copyright (C) 2015      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2015      Raphaël Doursenaud   <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2021       Frédéric France     <frederic.france@netlogic.fr>
+ * Copyright (C) 2015      
+ * Copyright (C) 2015         
+ * Copyright (C) 2021       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -354,7 +354,7 @@ if ($object->id > 0) {
 	if (!empty($conf->adherent->enabled)) {
 		$langs->load("members");
 		$langs->load("users");
-		print '<tr><td>'.$langs->trans("LinkedToDolibarrMember").'</td>';
+		print '<tr><td>'.$langs->trans("LinkedToBerp3Member").'</td>';
 		print '<td>';
 		$adh = new Adherent($db);
 		$result = $adh->fetch('', '', $object->id);
@@ -382,7 +382,7 @@ if ($object->id > 0) {
 
 	// Lien recap
 	$boxstat .= '<div class="box">';
-	$boxstat .= '<table summary="'.dol_escape_htmltag($langs->trans("DolibarrStateBoard")).'" class="border boxtable boxtablenobottom boxtablenotop" width="100%">';
+	$boxstat .= '<table summary="'.dol_escape_htmltag($langs->trans("Berp3StateBoard")).'" class="border boxtable boxtablenobottom boxtablenotop" width="100%">';
 	$boxstat .= '<tr class="impair nohover"><td colspan="2" class="tdboxstats nohover">';
 
 	if (!empty($conf->supplier_proposal->enabled)) {

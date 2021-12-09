@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2006-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2006-2008 
  * Copyright (C) 2021 Gaëtan MAISON <gm@ilad.org>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -53,7 +53,7 @@ class DolEditor
 	 *  @param 	string	$content		        		Content of WYSIWIG field
 	 *  @param	int		$width							Width in pixel of edit area (auto by default)
 	 *  @param 	int		$height			       		 	Height in pixel of edit area (200px by default)
-	 *  @param 	string	$toolbarname	       		 	Name of bar set to use ('Full', 'dolibarr_notes[_encoded]', 'dolibarr_details[_encoded]'=the less featured, 'dolibarr_mailings[_encoded]', 'dolibarr_readonly').
+	 *  @param 	string	$toolbarname	       		 	Name of bar set to use ('Full', 'berp3_notes[_encoded]', 'berp3_details[_encoded]'=the less featured, 'berp3_mailings[_encoded]', 'berp3_readonly').
 	 *  @param  string	$toolbarlocation       			Where bar is stored :
 	 *                       		                    'In' each window has its own toolbar
 	 *                              		            'Out:name' share toolbar into the div called 'name'

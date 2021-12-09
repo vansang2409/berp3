@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2016-2020 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2020 	   Nicolas ZABOURI		<info@inovea-conseil.com>
+/* Copyright (C) 2016-2020 
+ * Copyright (C) 2020 	   		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 
 define('NOSCANPOSTFORINJECTION', 1);
 define('NOSTYLECHECK', 1);
-define('USEDOLIBARREDITOR', 1);
+define('USEBERP3EDITOR', 1);
 define('FORCE_CKEDITOR', 1); // We need CKEditor, even if module is off.
 if (!defined('DISABLE_JS_GRAHP')) define('DISABLE_JS_GRAPH', 1);
 
@@ -225,8 +225,8 @@ if (empty($pageid) && empty($pageref) && $object->id > 0 && $action != 'createco
 }
 
 
-global $dolibarr_main_data_root;
-$pathofwebsite = $dolibarr_main_data_root.'/website/'.$websitekey;
+global $berp3_main_data_root;
+$pathofwebsite = $berp3_main_data_root.'/website/'.$websitekey;
 $filehtmlheader = $pathofwebsite.'/htmlheader.html';
 $filecss = $pathofwebsite.'/styles.css.php';
 $filejs = $pathofwebsite.'/javascript.js.php';
@@ -240,7 +240,7 @@ $filereadme = $pathofwebsite.'/README.md';
 $filemaster = $pathofwebsite.'/master.inc.php';
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -300,7 +300,7 @@ $manifestjsoncontentdefault .= '{
 	}],
 	"related_applications": [{
 		"platform": "play",
-		"url": "https://play.google.com/store/apps/details?id=com.nltechno.dolidroidpro"
+		"url": "https://play.google.com/store/apps/details?id=com.nltechno.berp3droidpro"
 	}]
 }';
 
@@ -414,25 +414,25 @@ if ($action == 'renamefile') {	// Must be after include DOL_DOCUMENT_ROOT.'/core
 }
 
 if ($action == 'seteditinline') {
-	dolibarr_set_const($db, 'WEBSITE_EDITINLINE', 1);
+	berp3_set_const($db, 'WEBSITE_EDITINLINE', 1);
 	setEventMessages($langs->trans("FeatureNotYetAvailable"), null, 'warnings');
-	//dolibarr_set_const($db, 'WEBSITE_SUBCONTAINERSINLINE', 0); // Force disable of 'Include dynamic content'
+	//berp3_set_const($db, 'WEBSITE_SUBCONTAINERSINLINE', 0); // Force disable of 'Include dynamic content'
 	header("Location: ".$_SERVER["PHP_SELF"].'?website='.GETPOST('website', 'alphanohtml').'&pageid='.GETPOST('pageid', 'int'));
 	exit;
 }
 if ($action == 'unseteditinline') {
-	dolibarr_del_const($db, 'WEBSITE_EDITINLINE');
+	berp3_del_const($db, 'WEBSITE_EDITINLINE');
 	header("Location: ".$_SERVER["PHP_SELF"].'?website='.GETPOST('website', 'alphanohtml').'&pageid='.GETPOST('pageid', 'int'));
 	exit;
 }
 if ($action == 'setshowsubcontainers') {
-	dolibarr_set_const($db, 'WEBSITE_SUBCONTAINERSINLINE', 1);
-	//dolibarr_set_const($db, 'WEBSITE_EDITINLINE', 0); // Force disable of edit inline
+	berp3_set_const($db, 'WEBSITE_SUBCONTAINERSINLINE', 1);
+	//berp3_set_const($db, 'WEBSITE_EDITINLINE', 0); // Force disable of edit inline
 	header("Location: ".$_SERVER["PHP_SELF"].'?website='.GETPOST('website', 'alphanohtml').'&pageid='.GETPOST('pageid', 'int'));
 	exit;
 }
 if ($action == 'unsetshowsubcontainers') {
-	dolibarr_del_const($db, 'WEBSITE_SUBCONTAINERSINLINE');
+	berp3_del_const($db, 'WEBSITE_SUBCONTAINERSINLINE');
 	header("Location: ".$_SERVER["PHP_SELF"].'?website='.GETPOST('website', 'alphanohtml').'&pageid='.GETPOST('pageid', 'int'));
 	exit;
 }
@@ -671,8 +671,8 @@ if ($action == 'addcontainer' && $usercanedit) {
 
 			$urltograbdirwithoutslash = dirname($urltograb.'.');
 			$urltograbdirrootwithoutslash = getRootURLFromURL($urltograbdirwithoutslash);
-			// Exemple, now $urltograbdirwithoutslash is https://www.dolimed.com/screenshots
-			// and $urltograbdirrootwithoutslash is https://www.dolimed.com
+			// Exemple, now $urltograbdirwithoutslash is https://www.berp3med.com/screenshots
+			// and $urltograbdirrootwithoutslash is https://www.berp3med.com
 		}
 
 		// Check pageurl is not already used
@@ -902,7 +902,7 @@ if ($action == 'addcontainer' && $usercanedit) {
 
 						getAllImages($object, $objectpage, $urltograbbis, $tmpgeturl['content'], $action, 1, $grabimages, $grabimagesinto);
 
-						// We try to convert the CSS we got by adding a prefix .bodywebsite with lessc to avoid conflicit with CSS of Dolibarr.
+						// We try to convert the CSS we got by adding a prefix .bodywebsite with lessc to avoid conflicit with CSS of Berp3.
 						include_once DOL_DOCUMENT_ROOT.'/core/class/lessc.class.php';
 						$lesscobj = new Lessc();
 						try {
@@ -935,7 +935,7 @@ if ($action == 'addcontainer' && $usercanedit) {
 
 				getAllImages($object, $objectpage, $urltograb, $tmp, $action, 1, $grabimages, $grabimagesinto);
 
-				// Normalize links href to Dolibarr internal naming
+				// Normalize links href to Berp3 internal naming
 				$tmp = preg_replace('/a href="\/([^\/"]+)\/([^\/"]+)"/', 'a href="/\1-\2.php"', $tmp);
 				$tmp = preg_replace('/a href="\/([^\/"]+)\/([^\/"]+)\/([^\/"]+)"/', 'a href="/\1-\2-\3.php"', $tmp);
 				$tmp = preg_replace('/a href="\/([^\/"]+)\/([^\/"]+)\/([^\/"]+)\/([^\/"]+)"/', 'a href="/\1-\2-\3-\4.php"', $tmp);
@@ -1167,7 +1167,7 @@ if ($action == 'addcontainer' && $usercanedit) {
 		}
 
 		if (!dol_is_file($filerobot)) {
-			$robotcontent = "# Robot file. Generated with Dolibarr\nUser-agent: *\nAllow: /public/\nDisallow: /administrator/";
+			$robotcontent = "# Robot file. Generated with Berp3\nUser-agent: *\nAllow: /public/\nDisallow: /administrator/";
 			$result = dolSaveRobotFile($filerobot, $robotcontent);
 		}
 
@@ -1182,7 +1182,7 @@ if ($action == 'addcontainer' && $usercanedit) {
 		}
 
 		if (!dol_is_file($filereadme)) {
-			$readmecontent = "Website generated by Dolibarr ERP CRM";
+			$readmecontent = "Website generated by Berp3 ERP CRM";
 			$result = dolSaveReadme($filereadme, $readmecontent);
 		}
 
@@ -1412,7 +1412,7 @@ if ($action == 'updatecss' && $usercanedit) {
 			/* We disable php code since htmlheader is never executed as an include but only read by fgets_content.
 			$htmlheadercontent.= "<?php // BEGIN PHP\n";
 			$htmlheadercontent.= '$websitekey=basename(__DIR__);'."\n";
-			$htmlheadercontent.= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) { require_once './master.inc.php'; } // Load env if not already loaded"."\n";
+			$htmlheadercontent.= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) { require_once './master.inc.php'; } // Load env if not already loaded"."\n";
 			$htmlheadercontent.= "require_once DOL_DOCUMENT_ROOT.'/core/lib/website.lib.php';\n";
 			$htmlheadercontent.= "require_once DOL_DOCUMENT_ROOT.'/core/website.inc.php';\n";
 			$htmlheadercontent.= "ob_start();\n";
@@ -1439,7 +1439,7 @@ if ($action == 'updatecss' && $usercanedit) {
 
 			$csscontent .= "<?php // BEGIN PHP\n";
 			$csscontent .= '$websitekey=basename(__DIR__);'."\n";
-			$csscontent .= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded\n"; // For the css, we need to set path of master using the dirname of css file.
+			$csscontent .= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded\n"; // For the css, we need to set path of master using the dirname of css file.
 			$csscontent .= "require_once DOL_DOCUMENT_ROOT.'/core/lib/website.lib.php';\n";
 			$csscontent .= "require_once DOL_DOCUMENT_ROOT.'/core/website.inc.php';\n";
 			$csscontent .= "ob_start();\n";
@@ -1469,7 +1469,7 @@ if ($action == 'updatecss' && $usercanedit) {
 
 			$jscontent .= "<?php // BEGIN PHP\n";
 			$jscontent .= '$websitekey=basename(__DIR__);'."\n";
-			$jscontent .= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded\n"; // For the css, we need to set path of master using the dirname of css file.
+			$jscontent .= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded\n"; // For the css, we need to set path of master using the dirname of css file.
 			$jscontent .= "require_once DOL_DOCUMENT_ROOT.'/core/lib/website.lib.php';\n";
 			$jscontent .= "require_once DOL_DOCUMENT_ROOT.'/core/website.inc.php';\n";
 			$jscontent .= "ob_start();\n";
@@ -1495,7 +1495,7 @@ if ($action == 'updatecss' && $usercanedit) {
 
 			/*$robotcontent.= "<?php // BEGIN PHP\n";
 			$robotcontent.= '$websitekey=basename(__DIR__);'."\n";
-			$robotcontent.= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) { require_once './master.inc.php'; } // Load env if not already loaded"."\n";
+			$robotcontent.= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) { require_once './master.inc.php'; } // Load env if not already loaded"."\n";
 			$robotcontent.= "require_once DOL_DOCUMENT_ROOT.'/core/lib/website.lib.php';\n";
 			$robotcontent.= "require_once DOL_DOCUMENT_ROOT.'/core/website.inc.php';\n";
 			$robotcontent.= "ob_start();\n";
@@ -1532,7 +1532,7 @@ if ($action == 'updatecss' && $usercanedit) {
 
 			$manifestjsoncontent .= "<?php // BEGIN PHP\n";
 			$manifestjsoncontent .= '$websitekey=basename(__DIR__);'."\n";
-			$manifestjsoncontent .= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded\n"; // For the css, we need to set path of master using the dirname of css file.
+			$manifestjsoncontent .= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded\n"; // For the css, we need to set path of master using the dirname of css file.
 			$manifestjsoncontent .= "require_once DOL_DOCUMENT_ROOT.'/core/lib/website.lib.php';\n";
 			$manifestjsoncontent .= "require_once DOL_DOCUMENT_ROOT.'/core/website.inc.php';\n";
 			$manifestjsoncontent .= "ob_start();\n";
@@ -1558,7 +1558,7 @@ if ($action == 'updatecss' && $usercanedit) {
 
 			/*$readmecontent.= "<?php // BEGIN PHP\n";
 			   $readmecontent.= '$websitekey=basename(__DIR__);'."\n";
-			   $readmecontent.= "if (! defined('USEDOLIBARRSERVER') && ! defined('USEDOLIBARREDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded"."\n";	// For the css, we need to set path of master using the dirname of css file.
+			   $readmecontent.= "if (! defined('USEBERP3SERVER') && ! defined('USEBERP3EDITOR')) { require_once __DIR__.'/master.inc.php'; } // Load env if not already loaded"."\n";	// For the css, we need to set path of master using the dirname of css file.
 			   $readmecontent.= "require_once DOL_DOCUMENT_ROOT.'/core/lib/website.lib.php';\n";
 			   $readmecontent.= "require_once DOL_DOCUMENT_ROOT.'/core/website.inc.php';\n";
 			   $readmecontent.= "ob_start();\n";
@@ -1924,7 +1924,7 @@ if ($usercanedit && (($action == 'updatesource' || $action == 'updatecontent' ||
 			$tmpwebsite = new Website($db);
 			if ($newwebsiteid > 0 && $newwebsiteid != $object->id) {
 				$tmpwebsite->fetch($newwebsiteid);
-				$pathofwebsitenew = $dolibarr_main_data_root.'/website/'.$tmpwebsite->ref;
+				$pathofwebsitenew = $berp3_main_data_root.'/website/'.$tmpwebsite->ref;
 			} else {
 				$tmpwebsite = $object;
 			}
@@ -2263,7 +2263,7 @@ if ($action == 'importsiteconfirm' && $usercanedit) {
 					$action = 'importsite';
 				} else {
 					// Force mode dynamic on
-					dolibarr_set_const($db, 'WEBSITE_SUBCONTAINERSINLINE', 1, 'chaine', 0, '', $conf->entity);
+					berp3_set_const($db, 'WEBSITE_SUBCONTAINERSINLINE', 1, 'chaine', 0, '', $conf->entity);
 
 					header("Location: ".$_SERVER["PHP_SELF"].'?website='.$object->ref);
 					exit();
@@ -2329,7 +2329,7 @@ if ($action == 'generatesitemaps' && $usercanedit) {
 				if (! preg_match('/^http/i', $domainname)) {
 					$domainname = 'https://'.$domainname;
 				}
-				//$pathofpage = $dolibarr_main_url_root.'/'.$pageurl.'.php';
+				//$pathofpage = $berp3_main_url_root.'/'.$pageurl.'.php';
 
 				// URL of sitemaps must end with trailing slash if page is ''
 				$loc = $domtree->createElement('loc', $domainname.'/'.$pageurl);
@@ -3074,7 +3074,7 @@ if (!GETPOST('hide_websitemenu')) {
 			$realpage = $urlwithroot.'/public/website/index.php?website='.$websitekey.'&pageref='.$websitepage->pageurl;
 			$pagealias = $websitepage->pageurl;
 
-			$htmltext = $langs->trans("PreviewSiteServedByDolibarr", $langs->transnoentitiesnoconv("Page"), $langs->transnoentitiesnoconv("Page"), $realpage, $dataroot);
+			$htmltext = $langs->trans("PreviewSiteServedByBerp3", $langs->transnoentitiesnoconv("Page"), $langs->transnoentitiesnoconv("Page"), $realpage, $dataroot);
 			$htmltext .= '<br>'.$langs->trans("CheckVirtualHostPerms", $langs->transnoentitiesnoconv("ReadPerm"), '{s1}');
 			$htmltext = str_replace('{s1}', $dataroot.'<br>'.DOL_DATA_ROOT.'/medias<br>'.DOL_DOCUMENT_ROOT, $htmltext);
 			//$htmltext .= '<br>'.$langs->trans("CheckVirtualHostPerms", $langs->transnoentitiesnoconv("WritePerm"), '{s1}');
@@ -4501,7 +4501,7 @@ if ($action == 'preview' || $action == 'createfromclone' || $action == 'createpa
 		// $filecss
 		// $filephp
 
-		// Ouput page under the Dolibarr top menu
+		// Ouput page under the Berp3 top menu
 		$objectpage->fetch($pageid);
 
 		$jscontent = @file_get_contents($filejs);
@@ -4567,7 +4567,7 @@ if ($action == 'preview' || $action == 'createfromclone' || $action == 'createpa
 			}
 		}
 		$tmpout .= $tmpstyleinheader."\n";
-		// Clean style that may affect global style of Dolibarr
+		// Clean style that may affect global style of Berp3
 		$tmpout = preg_replace('/}[\s\n]*body\s*{[^}]+}/ims', '}', $tmpout);
 		$out .= $tmpout;
 		$out .= '</style>'."\n";

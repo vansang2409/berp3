@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2020 Gauthier VERDOL <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2017  
+ * Copyright (C) 2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ class WorkstationUserGroup extends CommonObject
 	/** @var string $table_element Table name in SQL */
 	public $table_element = 'workstation_workstation_usergroup';
 
-	/** @var string $element Name of the element (tip for better integration in Dolibarr: this value should be the reflection of the class name with ucfirst() function) */
+	/** @var string $element Name of the element (tip for better integration in Berp3: this value should be the reflection of the class name with ucfirst() function) */
 	public $element = 'workstationusergroup';
 
 	/**
@@ -55,7 +55,7 @@ class WorkstationUserGroup extends CommonObject
 	/**
 	 * WorkstationUserGroup constructor.
 	 *
-	 * @param DoliDB    $db    Database connector
+	 * @param Berp3DB    $db    Database connector
 	 */
 	public function __construct($db)
 	{

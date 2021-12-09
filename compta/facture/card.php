@@ -1,20 +1,20 @@
 <?php
-/* Copyright (C) 2002-2006  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004       Eric Seigne             <eric.seigne@ryxeo.com>
- * Copyright (C) 2004-2020  Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2006  
+ * Copyright (C) 2004                    
+ * Copyright (C) 2004-2020  
  * Copyright (C) 2005       Marc Barilley / Ocebo   <marc@ocebo.com>
- * Copyright (C) 2005-2015  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2006       Andre Cianfarani        <acianfa@free.fr>
- * Copyright (C) 2010-2015  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2012-2013  Christophe Battarel     <christophe.battarel@altairis.fr>
- * Copyright (C) 2012-2013  Cédric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2012-2014  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2013       Jean-Francois FERRY     <jfefe@aternatik.fr>
- * Copyright (C) 2013-2014  Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2013       Cédric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2014-2019  Ferran Marcet           <fmarcet@2byte.es>
- * Copyright (C) 2015-2016  Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2005-2015  
+ * Copyright (C) 2006               
+ * Copyright (C) 2010-2015  
+ * Copyright (C) 2012-2013  
+ * Copyright (C) 2012-2013           
+ * Copyright (C) 2012-2014        
+ * Copyright (C) 2013            
+ *   
+ * Copyright (C) 2013                
+ * Copyright (C) 2014-2019  
+ * Copyright (C) 2015-2016  
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -3714,7 +3714,7 @@ if ($action == 'create') {
 	print $form->textwithpicto($langs->trans('NotePublic'), $htmltext);
 	print '</td>';
 	print '<td valign="top" colspan="2">';
-	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+	$doleditor = new DolEditor('note_public', $note_public, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 	print $doleditor->Create(1);
 
 	// Private note
@@ -3724,7 +3724,7 @@ if ($action == 'create') {
 		print $form->textwithpicto($langs->trans('NotePrivate'), $htmltext);
 		print '</td>';
 		print '<td valign="top" colspan="2">';
-		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+		$doleditor = new DolEditor('note_private', $note_private, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 		print $doleditor->Create(1);
 		// print '<textarea name="note_private" wrap="soft" cols="70" rows="'.ROWS_3.'">'.$note_private.'.</textarea>
 		print '</td></tr>';

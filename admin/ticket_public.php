@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2013-2018	Jean-François FERRY	<hello@librethic.io>
- * Copyright (C) 2016		Christophe Battarel	<christophe@altairis.fr>
+/* Copyright (C) 2013-2018		
+ * Copyright (C) 2016			
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,9 +50,9 @@ $error = 0;
 
 if ($action == 'setTICKET_ENABLE_PUBLIC_INTERFACE') {
 	if (GETPOST('value')) {
-		dolibarr_set_const($db, 'TICKET_ENABLE_PUBLIC_INTERFACE', 1, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'TICKET_ENABLE_PUBLIC_INTERFACE', 1, 'chaine', 0, '', $conf->entity);
 	} else {
-		dolibarr_set_const($db, 'TICKET_ENABLE_PUBLIC_INTERFACE', 0, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'TICKET_ENABLE_PUBLIC_INTERFACE', 0, 'chaine', 0, '', $conf->entity);
 	}
 }
 
@@ -61,7 +61,7 @@ if ($action == 'setvar') {
 
 	if (GETPOSTISSET('TICKET_ENABLE_PUBLIC_INTERFACE')) {	// only for no js case
 		$param_enable_public_interface = GETPOST('TICKET_ENABLE_PUBLIC_INTERFACE', 'alpha');
-		$res = dolibarr_set_const($db, 'TICKET_ENABLE_PUBLIC_INTERFACE', $param_enable_public_interface, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_ENABLE_PUBLIC_INTERFACE', $param_enable_public_interface, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -69,7 +69,7 @@ if ($action == 'setvar') {
 
 	if (GETPOSTISSET('TICKET_EMAIL_MUST_EXISTS')) {	// only for no js case
 		$param_must_exists = GETPOST('TICKET_EMAIL_MUST_EXISTS', 'alpha');
-		$res = dolibarr_set_const($db, 'TICKET_EMAIL_MUST_EXISTS', $param_must_exists, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_EMAIL_MUST_EXISTS', $param_must_exists, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -77,7 +77,7 @@ if ($action == 'setvar') {
 
 	if (GETPOSTISSET('TICKET_DISABLE_CUSTOMER_MAILS')) {	// only for no js case
 		$param_disable_email = GETPOST('TICKET_DISABLE_CUSTOMER_MAILS', 'alpha');
-		$res = dolibarr_set_const($db, 'TICKET_DISABLE_CUSTOMER_MAILS', $param_disable_email, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_DISABLE_CUSTOMER_MAILS', $param_disable_email, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -85,7 +85,7 @@ if ($action == 'setvar') {
 
 	if (GETPOSTISSET('TICKET_SHOW_COMPANY_LOGO')) {	// only for no js case
 		$param_show_module_logo = GETPOST('TICKET_SHOW_COMPANY_LOGO', 'alpha');
-		$res = dolibarr_set_const($db, 'TICKET_SHOW_COMPANY_LOGO', $param_show_module_logo, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_SHOW_COMPANY_LOGO', $param_show_module_logo, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -93,9 +93,9 @@ if ($action == 'setvar') {
 
 	$topic_interface = GETPOST('TICKET_PUBLIC_INTERFACE_TOPIC', 'nohtml');
 	if (!empty($topic_interface)) {
-		$res = dolibarr_set_const($db, 'TICKET_PUBLIC_INTERFACE_TOPIC', $topic_interface, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_PUBLIC_INTERFACE_TOPIC', $topic_interface, 'chaine', 0, '', $conf->entity);
 	} else {
-		$res = dolibarr_set_const($db, 'TICKET_PUBLIC_INTERFACE_TOPIC', '', 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_PUBLIC_INTERFACE_TOPIC', '', 'chaine', 0, '', $conf->entity);
 	}
 	if (!($res > 0)) {
 		$error++;
@@ -103,9 +103,9 @@ if ($action == 'setvar') {
 
 	$text_home = GETPOST('TICKET_PUBLIC_TEXT_HOME', 'restricthtml');
 	if (!empty($text_home)) {
-		$res = dolibarr_set_const($db, 'TICKET_PUBLIC_TEXT_HOME', $text_home, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_PUBLIC_TEXT_HOME', $text_home, 'chaine', 0, '', $conf->entity);
 	} else {
-		$res = dolibarr_set_const($db, 'TICKET_PUBLIC_TEXT_HOME', $langs->trans('TicketPublicInterfaceTextHome'), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_PUBLIC_TEXT_HOME', $langs->trans('TicketPublicInterfaceTextHome'), 'chaine', 0, '', $conf->entity);
 	}
 	if (!($res > 0)) {
 		$error++;
@@ -113,9 +113,9 @@ if ($action == 'setvar') {
 
 	$text_help = GETPOST('TICKET_PUBLIC_TEXT_HELP_MESSAGE', 'restricthtml');
 	if (!empty($text_help)) {
-		$res = dolibarr_set_const($db, 'TICKET_PUBLIC_TEXT_HELP_MESSAGE', $text_help, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_PUBLIC_TEXT_HELP_MESSAGE', $text_help, 'chaine', 0, '', $conf->entity);
 	} else {
-		$res = dolibarr_set_const($db, 'TICKET_PUBLIC_TEXT_HELP_MESSAGE', $langs->trans('TicketPublicPleaseBeAccuratelyDescribe'), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_PUBLIC_TEXT_HELP_MESSAGE', $langs->trans('TicketPublicPleaseBeAccuratelyDescribe'), 'chaine', 0, '', $conf->entity);
 	}
 	if (!($res > 0)) {
 		$error++;
@@ -123,9 +123,9 @@ if ($action == 'setvar') {
 
 	$mail_new_ticket = GETPOST('TICKET_MESSAGE_MAIL_NEW', 'restricthtml');
 	if (!empty($mail_new_ticket)) {
-		$res = dolibarr_set_const($db, 'TICKET_MESSAGE_MAIL_NEW', $mail_new_ticket, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_MESSAGE_MAIL_NEW', $mail_new_ticket, 'chaine', 0, '', $conf->entity);
 	} else {
-		$res = dolibarr_set_const($db, 'TICKET_MESSAGE_MAIL_NEW', $langs->trans('TicketMessageMailNewText'), 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_MESSAGE_MAIL_NEW', $langs->trans('TicketMessageMailNewText'), 'chaine', 0, '', $conf->entity);
 	}
 	if (!($res > 0)) {
 		$error++;
@@ -133,23 +133,23 @@ if ($action == 'setvar') {
 
 	$url_interface = GETPOST('TICKET_URL_PUBLIC_INTERFACE', 'alpha');
 	if (!empty($url_interface)) {
-		$res = dolibarr_set_const($db, 'TICKET_URL_PUBLIC_INTERFACE', $url_interface, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_URL_PUBLIC_INTERFACE', $url_interface, 'chaine', 0, '', $conf->entity);
 	} else {
-		$res = dolibarr_set_const($db, 'TICKET_URL_PUBLIC_INTERFACE', '', 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_URL_PUBLIC_INTERFACE', '', 'chaine', 0, '', $conf->entity);
 	}
 	if (!($res > 0)) {
 		$error++;
 	}
 
 	$param_public_notification_new_message_default_email = GETPOST('TICKET_PUBLIC_NOTIFICATION_NEW_MESSAGE_DEFAULT_EMAIL', 'alpha');
-	$res = dolibarr_set_const($db, 'TICKET_PUBLIC_NOTIFICATION_NEW_MESSAGE_DEFAULT_EMAIL', $param_public_notification_new_message_default_email, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, 'TICKET_PUBLIC_NOTIFICATION_NEW_MESSAGE_DEFAULT_EMAIL', $param_public_notification_new_message_default_email, 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
 
 	if ($conf->global->MAIN_FEATURES_LEVEL >= 2) {
 		$param_notification_also_main_addressemail = GETPOST('TICKET_NOTIFICATION_ALSO_MAIN_ADDRESS', 'alpha');
-		$res = dolibarr_set_const($db, 'TICKET_NOTIFICATION_ALSO_MAIN_ADDRESS', $param_notification_also_main_addressemail, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, 'TICKET_NOTIFICATION_ALSO_MAIN_ADDRESS', $param_notification_also_main_addressemail, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -308,7 +308,7 @@ if (!empty($conf->global->TICKET_ENABLE_PUBLIC_INTERFACE)) {
 	print '<tr><td>'.$langs->trans("TicketPublicInterfaceTextHomeLabelAdmin").'</label>';
 	print '</td><td>';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('TICKET_PUBLIC_TEXT_HOME', $public_text_home, '100%', 180, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
+	$doleditor = new DolEditor('TICKET_PUBLIC_TEXT_HOME', $public_text_home, '100%', 180, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
 	$doleditor->Create();
 	print '</td>';
 	print '<td class="center">';
@@ -320,7 +320,7 @@ if (!empty($conf->global->TICKET_ENABLE_PUBLIC_INTERFACE)) {
 	print '<tr><td>'.$langs->trans("TicketPublicInterfaceTextHelpMessageLabelAdmin").'</label>';
 	print '</td><td>';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('TICKET_PUBLIC_TEXT_HELP_MESSAGE', $public_text_help_message, '100%', 180, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
+	$doleditor = new DolEditor('TICKET_PUBLIC_TEXT_HELP_MESSAGE', $public_text_help_message, '100%', 180, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_2, 70);
 	$doleditor->Create();
 	print '</td>';
 	print '<td class="center">';
@@ -347,7 +347,7 @@ if (!empty($conf->global->TICKET_ENABLE_PUBLIC_INTERFACE)) {
 	print '<tr><td>'.$langs->trans("TicketNewEmailBodyLabel").'</label>';
 	print '</td><td>';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('TICKET_MESSAGE_MAIL_NEW', $mail_mesg_new, '100%', 120, 'dolibarr_mailings', '', false, true, $conf->global->FCKEDITOR_ENABLE_MAIL, ROWS_2, 70);
+	$doleditor = new DolEditor('TICKET_MESSAGE_MAIL_NEW', $mail_mesg_new, '100%', 120, 'berp3_mailings', '', false, true, $conf->global->FCKEDITOR_ENABLE_MAIL, ROWS_2, 70);
 	$doleditor->Create();
 	print '</td>';
 	print '<td class="center">';

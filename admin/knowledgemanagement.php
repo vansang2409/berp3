@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2017 
  * Copyright (C) 2021 SuperAdmin
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@
  * \brief   KnowledgeManagement setup page.
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../main.inc.php';
 
 global $langs, $user;
@@ -72,7 +72,7 @@ if ($action == 'updateMask') {
 	$maskorder = GETPOST('maskorder', 'alpha');
 
 	if ($maskconstorder) {
-		$res = dolibarr_set_const($db, $maskconstorder, $maskorder, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstorder, $maskorder, 'chaine', 0, '', $conf->entity);
 		if (!($res > 0)) {
 			$error++;
 		}
@@ -123,7 +123,7 @@ if ($action == 'updateMask') {
 	$tmpobjectkey = GETPOST('object');
 	if (!empty($tmpobjectkey)) {
 		$constforval = 'KNOWLEDGEMANAGEMENT_'.strtoupper($tmpobjectkey)."_ADDON";
-		dolibarr_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity);
 	}
 } elseif ($action == 'set') {
 	// Activate a model
@@ -135,7 +135,7 @@ if ($action == 'updateMask') {
 		if (!empty($tmpobjectkey)) {
 			$constforval = 'KNOWLEDGEMANAGEMENT_'.strtoupper($tmpobjectkey).'_ADDON_PDF';
 			if ($conf->global->$constforval == "$value") {
-				dolibarr_del_const($db, $constforval, $conf->entity);
+				berp3_del_const($db, $constforval, $conf->entity);
 			}
 		}
 	}
@@ -144,7 +144,7 @@ if ($action == 'updateMask') {
 	$tmpobjectkey = GETPOST('object');
 	if (!empty($tmpobjectkey)) {
 		$constforval = 'KNOWLEDGEMANAGEMENT_'.strtoupper($tmpobjectkey).'_ADDON_PDF';
-		if (dolibarr_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity)) {
+		if (berp3_set_const($db, $constforval, $value, 'chaine', 0, '', $conf->entity)) {
 			// The constant that was read before the new set
 			// We therefore requires a variable to have a coherent view
 			$conf->global->$constforval = $value;
@@ -160,7 +160,7 @@ if ($action == 'updateMask') {
 	$tmpobjectkey = GETPOST('object');
 	if (!empty($tmpobjectkey)) {
 		$constforval = 'KNOWLEDGEMANAGEMENT_'.strtoupper($tmpobjectkey).'_ADDON_PDF';
-		dolibarr_del_const($db, $constforval, $conf->entity);
+		berp3_del_const($db, $constforval, $conf->entity);
 	}
 }
 
@@ -212,7 +212,7 @@ if ($action == 'edit') {
 				print "</textarea>\n";
 			} elseif ($val['type']== 'html') {
 				require_once DOL_DOCUMENT_ROOT . '/core/class/doleditor.class.php';
-				$doleditor = new DolEditor($constname, $conf->global->{$constname}, '', 160, 'dolibarr_notes', '', false, false, $conf->fckeditor->enabled, ROWS_5, '90%');
+				$doleditor = new DolEditor($constname, $conf->global->{$constname}, '', 160, 'berp3_notes', '', false, false, $conf->fckeditor->enabled, ROWS_5, '90%');
 				$doleditor->Create();
 			} elseif ($val['type'] == 'yesno') {
 				print $form->selectyesno($constname, $conf->global->{$constname}, 1);
@@ -299,9 +299,9 @@ if ($action == 'edit') {
 					$ways = $c->print_all_ways(' &gt;&gt; ', 'none', 0, 1); // $ways[0] = "ccc2 >> ccc2a >> ccc2a1" with html formated text
 					$toprint = array();
 					foreach ($ways as $way) {
-						$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories"' . ($c->color ? ' style="background: #' . $c->color . ';"' : ' style="background: #bbb"') . '>' . $way . '</li>';
+						$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories"' . ($c->color ? ' style="background: #' . $c->color . ';"' : ' style="background: #bbb"') . '>' . $way . '</li>';
 					}
-					print '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">' . implode(' ', $toprint) . '</ul></div>';
+					print '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">' . implode(' ', $toprint) . '</ul></div>';
 				} elseif (preg_match('/thirdparty_type/', $val['type'])) {
 					if ($conf->global->{$constname}==2) {
 						print $langs->trans("Prospect");

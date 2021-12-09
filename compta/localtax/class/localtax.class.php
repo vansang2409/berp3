@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2011-2014	Juanjo Menent	<jmenent@2byte.es>
+/* Copyright (C) 2011-2014		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,7 +72,7 @@ class Localtax extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

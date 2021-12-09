@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2011 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2015      Marcos García        <marcosgdf@gmail.com>
+/* Copyright (C) 2005      
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2010-2011 
+ * Copyright (C) 2015      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class LignePrelevement
 	public $id;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -47,7 +47,7 @@ class LignePrelevement
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDb	$db			Database handler
+	 *  @param	Berp3Db	$db			Database handler
 	 */
 	public function __construct($db)
 	{
@@ -167,12 +167,12 @@ class LignePrelevement
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'prelevement_lignes'

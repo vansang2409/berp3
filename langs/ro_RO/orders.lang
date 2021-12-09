@@ -120,8 +120,8 @@ ConfirmCloneOrder=Sigur doriți să clonați această comandă <b>%s</b>?
 DispatchSupplierOrder=Recepţia comenzii de achiziție %s
 FirstApprovalAlreadyDone=Prima aprobare a fost deja făcută
 SecondApprovalAlreadyDone=A doua aprobare a fost deja făcută
-SupplierOrderReceivedInDolibarr=Comanda de achiziţie %s a fost recepţionată %s
-SupplierOrderSubmitedInDolibarr=Comanda de achiziţie %s a fost trimisă
+SupplierOrderReceivedInBerp3=Comanda de achiziţie %s a fost recepţionată %s
+SupplierOrderSubmitedInBerp3=Comanda de achiziţie %s a fost trimisă
 SupplierOrderClassifiedBilled=Comanda de achiziţie %s a fost setată ca facturată
 OtherOrders=Alte comenzi
 ##### Types de contacts #####

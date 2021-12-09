@@ -1,9 +1,9 @@
 <?php
 /* Copyright (C) 2003       Steve Dillon
  * Copyright (C) 2003       Laurent Passebecq
- * Copyright (C) 2001-2003  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003  Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2006-2013  Laurent Destailleur     <eldy@users.sourceforge.net>
+ * Copyright (C) 2001-2003  
+ * Copyright (C) 2002-2003        
+ * Copyright (C) 2006-2013  
  * Copyright (C) 2015       Francis Appels          <francis.appels@yahoo.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -291,7 +291,7 @@ class pdf_standardlabel extends CommonStickerGenerator
 
 		$pdf->SetTitle($title);
 		$pdf->SetSubject($title);
-		$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+		$pdf->SetCreator("Berp3 ".DOL_VERSION);
 		$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 		$pdf->SetKeyWords($keywords);
 		if (!empty($conf->global->MAIN_DISABLE_PDF_COMPRESSION)) {

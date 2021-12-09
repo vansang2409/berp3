@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=You can delete your module. WARNING: All coding fi
 EnterNameOfObjectToDeleteDesc=You can delete an object. WARNING: All coding files (generated or created manually) related to object will be deleted!
 DangerZone=危險區域
 BuildPackage=建立軟體包
-BuildPackageDesc=You can generate a zip package of your application so your are ready to distribute it on any Dolibarr. You can also distribute it or sell it on marketplace like <a href="https://www.dolistore.com">DoliStore.com</a>.
+BuildPackageDesc=You can generate a zip package of your application so your are ready to distribute it on any Berp3. You can also distribute it or sell it on marketplace like <a href="https://www.berp3store.com">Berp3Store.com</a>.
 BuildDocumentation=建立文件
 ModuleIsNotActive=This module is not activated yet. Go to %s to make it live or click here
 ModuleIsLive=此模組已被啟動。任何更改都可能會破壞目前的即時功能。

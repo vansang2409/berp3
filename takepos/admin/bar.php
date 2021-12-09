@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2008-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2011-2017 Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2008-2011 
+ * Copyright (C) 2011-2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ if (GETPOST('action', 'alpha') == 'set') {
 		$suplement_category = 0;
 	}
 
-	$res = dolibarr_set_const($db, "TAKEPOS_SUPPLEMENTS_CATEGORY", $suplement_category, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "TAKEPOS_SUPPLEMENTS_CATEGORY", $suplement_category, 'chaine', 0, '', $conf->entity);
 	if ($res <= 0) {
 		$error++;
 	}
@@ -205,7 +205,7 @@ if ($conf->global->TAKEPOS_BAR_RESTAURANT) {
 
 if (!empty($conf->global->TAKEPOS_BAR_RESTAURANT)) {
 	if ($conf->global->TAKEPOS_QR_MENU) {
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 		print '<br>';
 		print '<table class="noborder centpercent">';
@@ -228,8 +228,8 @@ if (!empty($conf->global->TAKEPOS_BAR_RESTAURANT)) {
 		print '<td>'.$langs->trans("Table").'</td><td>'.$langs->trans("URL").' - '.$langs->trans("AutoOrder").'</td><td class="right">'.$langs->trans("QR").'</td>';
 		print "</tr>\n";
 
-		//global $dolibarr_main_url_root;
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		//global $berp3_main_url_root;
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 		$sql = "SELECT rowid, entity, label, leftpos, toppos, floor FROM ".MAIN_DB_PREFIX."takepos_floor_tables";
 		$resql = $db->query($sql);

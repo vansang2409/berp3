@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2017  
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software; you can redistribute it and/or modify
@@ -140,9 +140,9 @@ class ConferenceOrBooth extends ActionComm
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 
@@ -243,11 +243,11 @@ class ConferenceOrBooth extends ActionComm
 	 */
 	public function fetch($id, $ref = null, $ref_ext = '', $email_msgid = '', $loadresources = 1)
 	{
-		global $dolibarr_main_url_root, $conf, $langs;
+		global $berp3_main_url_root, $conf, $langs;
 
 		$result = parent::fetch($id, $ref, $ref_ext, $email_msgid);
 
-		$link_subscription = $dolibarr_main_url_root.'/public/eventorganization/attendee_new.php?id='.urlencode($id).'&type=conf';
+		$link_subscription = $berp3_main_url_root.'/public/eventorganization/attendee_new.php?id='.urlencode($id).'&type=conf';
 
 		$encodedsecurekey = dol_hash($conf->global->EVENTORGANIZATION_SECUREKEY.'conferenceorbooth'.$id, 2);
 		$link_subscription .= '&securekey='.urlencode($encodedsecurekey);
@@ -777,7 +777,7 @@ class ConferenceOrBooth extends ActionComm
 	{
 		global $conf, $langs;
 
-		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/dolibarr_mydedicatedlofile.log';
+		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/berp3_mydedicatedlofile.log';
 
 		$error = 0;
 		$this->output = '';

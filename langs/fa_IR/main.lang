@@ -62,7 +62,7 @@ ErrorServiceUnavailableTryLater=در حال حاضر امکان ارائۀ خد�
 ErrorDuplicateField=مقدار تکراری در بخش منحصربه‌فرد
 ErrorSomeErrorWereFoundRollbackIsDone=چند خطا پیدا شده. تغییرات عقب‌گرد خواهد شد.
 ErrorConfigParameterNotDefined=مؤلفۀ <b>%s</b> در فایل پیکربندی BERP3 یهمی <b>conf.php</b> تعریف نشده است.
-ErrorCantLoadUserFromDolibarrDatabase=کاربر <b>%s</b> در پایگاه دادۀ BERP3 پیدا نشد.
+ErrorCantLoadUserFromBerp3Database=کاربر <b>%s</b> در پایگاه دادۀ BERP3 پیدا نشد.
 ErrorNoVATRateDefinedForSellerCountry=خطا، نرخ م‌ب‌اا برای کشور "%s" پیدا نشد.
 ErrorNoSocialContributionForSellerCountry=خطا، مالیات‌های اجتماعی/سیاست‌های مالی برای کشور "%s" تعریف نشده است.
 ErrorFailedToSaveFile=خطا، امکان ذخیرۀ فایل وجود نداشت.
@@ -94,7 +94,7 @@ RecordDeleted=ردیف، حذف شد
 RecordGenerated=ردیف، تولید شد
 LevelOfFeature=سطح قابلیت‌ها
 NotDefined=تعریف نشده
-DolibarrInHttpAuthenticationSoPasswordUseless=حالت اعتبارسنجی BERP3 در فایل پیکربندی <b>conf.php</b> به <b>%s</b> تنظیم شده است.<br> این به معنای آن است که پایگاه‌دادۀ گذرواژه نسبت به Dolibarr، خارجی است پس تغییر این بخش اثر نخواهد داشت.
+Berp3InHttpAuthenticationSoPasswordUseless=حالت اعتبارسنجی BERP3 در فایل پیکربندی <b>conf.php</b> به <b>%s</b> تنظیم شده است.<br> این به معنای آن است که پایگاه‌دادۀ گذرواژه نسبت به Berp3، خارجی است پس تغییر این بخش اثر نخواهد داشت.
 Administrator=مدیر
 Undefined=تعریف نشده
 PasswordForgotten=گذرواژه فراموش شده
@@ -112,9 +112,9 @@ DatabaseTypeManager=نوع مدیریت پایگاه‌داده
 RequestLastAccessInError=آخرین خطای دسترسی به پایگاه‌داده
 ReturnCodeLastAccessInError=کد آخرین خطای دسترسی به پایگاه‌داده
 InformationLastAccessInError=اطلاعات مربوط به آخرین خطای دسترسی به پایگاه داده
-DolibarrHasDetectedError=BERP3 با یک خطای فنی مواجه شده است
-YouCanSetOptionDolibarrMainProdToZero=شما می‌توانید فایل گزارش‌کار را مطالعه کرده یا در فایل پیکربندی گزینۀ $dolibarr_main_prod را برای دریافت اطلاعات بیشتر به '0' تغییر دهید
-InformationToHelpDiagnose=این اطلاعات برای اهداف تحلیل و بررسی قابل استفاده خواهد بود ( شما همچنان می‌توانید گزینۀ $dolibarr_main_prod را برای حذف این یادداشت‌ها به '1' تغییر دهید.
+Berp3HasDetectedError=BERP3 با یک خطای فنی مواجه شده است
+YouCanSetOptionBerp3MainProdToZero=شما می‌توانید فایل گزارش‌کار را مطالعه کرده یا در فایل پیکربندی گزینۀ $berp3_main_prod را برای دریافت اطلاعات بیشتر به '0' تغییر دهید
+InformationToHelpDiagnose=این اطلاعات برای اهداف تحلیل و بررسی قابل استفاده خواهد بود ( شما همچنان می‌توانید گزینۀ $berp3_main_prod را برای حذف این یادداشت‌ها به '1' تغییر دهید.
 MoreInformation=اطلاعات بیشتر
 TechnicalInformation=اطلاعات فنی
 TechnicalID=شناسۀ فنی
@@ -492,8 +492,8 @@ Generate=تولید
 Duration=مدت‌زمان
 TotalDuration=مدت‌زمان کل
 Summary=خلاصه
-DolibarrStateBoard=آمار پایگاه داده
-DolibarrWorkBoard=موارد باز
+Berp3StateBoard=آمار پایگاه داده
+Berp3WorkBoard=موارد باز
 NoOpenedElementToProcess=No open element to process
 Available=فعال
 NotYetAvailable=فعلا غیرفعال
@@ -763,7 +763,7 @@ PrintContentArea=نمایش صفحه برای چاپ‌کردن ناحیۀ مح�
 MenuManager=مدیریت فهرست
 WarningYouAreInMaintenanceMode=هشدار! شما در حالت تعمیرات هستید: تنها، ورودی <b>%s</b> در این حالت به استفاده از برنامه مجاز است
 CoreErrorTitle=خطای سامانه
-CoreErrorMessage=متاسفانه یک خطا اتفاق افتاد. لطفا با مدیر سامانه را برای بررسی گزارش‌کارها و یا غیرفعال کردن  $dolibarr_main_prod=1 برای دریافت اطلاعات بیشتر تماس بگیرید
+CoreErrorMessage=متاسفانه یک خطا اتفاق افتاد. لطفا با مدیر سامانه را برای بررسی گزارش‌کارها و یا غیرفعال کردن  $berp3_main_prod=1 برای دریافت اطلاعات بیشتر تماس بگیرید
 CreditCard=کارت‌اعتباری
 ValidatePayment=تائید پرداخت
 CreditOrDebitCard=کارت اعتباری یا نقدی
@@ -1113,11 +1113,11 @@ ByStatus=By status
 InformationMessage=اطلاعات
 Used=Used
 ASAP=As Soon As Possible
-CREATEInDolibarr=Record %s created
-MODIFYInDolibarr=Record %s modified
-DELETEInDolibarr=Record %s deleted
-VALIDATEInDolibarr=Record %s validated
-APPROVEDInDolibarr=Record %s approved
+CREATEInBerp3=Record %s created
+MODIFYInBerp3=Record %s modified
+DELETEInBerp3=Record %s deleted
+VALIDATEInBerp3=Record %s validated
+APPROVEDInBerp3=Record %s approved
 DefaultMailModel=Default Mail Model
 PublicVendorName=Public name of vendor
 DateOfBirth=تاریخ تولد

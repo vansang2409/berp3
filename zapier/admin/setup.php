@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2017  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2019       Frédéric FRANCE         <frederic.france@free.fr>
+/* Copyright (C) 2004-2017  
+ * Copyright (C) 2019       Frédéric FRANCE         
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  * \brief   Zapier setup page.
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../../main.inc.php';
 
 // Libraries
@@ -42,8 +42,8 @@ $action = GETPOST('action', 'aZ09');
 $backtopage = GETPOST('backtopage', 'alpha');
 
 $arrayofparameters = array(
-//	'ZAPIERFORDOLIBARR_MYPARAM1'=>array('css'=>'minwidth200', 'enabled'=>1),
-//	'ZAPIERFORDOLIBARR_MYPARAM2'=>array('css'=>'minwidth500', 'enabled'=>1)
+//	'ZAPIERFORBERP3_MYPARAM1'=>array('css'=>'minwidth200', 'enabled'=>1),
+//	'ZAPIERFORBERP3_MYPARAM2'=>array('css'=>'minwidth500', 'enabled'=>1)
 );
 
 if (empty($conf->zapier->enabled)) accessforbidden();
@@ -63,7 +63,7 @@ if ((float) DOL_VERSION >= 6) {
  * View
  */
 
-$page_name = "ZapierForDolibarrSetup";
+$page_name = "ZapierForBerp3Setup";
 $help_url = 'EN:Module_Zapier';
 llxHeader('', $langs->trans($page_name), $help_url);
 

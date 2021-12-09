@@ -1,10 +1,10 @@
 <?php
 /* Copyright (C) 2001      Fabien Seisen        <seisen@linuxfr.org>
- * Copyright (C) 2002-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2006      Andre Cianfarani     <acianfa@free.fr>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2015      Raphaël Doursenaud   <rdoursenaud@gpcsolutions.fr>
+ * Copyright (C) 2002-2005 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2006           
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2015         
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,15 +22,15 @@
 
 /**
  *	\file       htdocs/core/db/sqlite3.class.php
- *	\brief      Class file to manage Dolibarr database access for a SQLite database
+ *	\brief      Class file to manage Berp3 database access for a SQLite database
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/db/DoliDB.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/db/Berp3DB.class.php';
 
 /**
- *	Class to manage Dolibarr database access for a SQLite database
+ *	Class to manage Berp3 database access for a SQLite database
  */
-class DoliDBSqlite3 extends DoliDB
+class Berp3DBSqlite3 extends Berp3DB
 {
 	//! Database type
 	public $type = 'sqlite3';
@@ -65,8 +65,8 @@ class DoliDBSqlite3 extends DoliDB
 		if (!empty($conf->db->character_set)) {
 			$this->forcecharset = $conf->db->character_set;
 		}
-		if (!empty($conf->db->dolibarr_main_db_collation)) {
-			$this->forcecollate = $conf->db->dolibarr_main_db_collation;
+		if (!empty($conf->db->berp3_main_db_collation)) {
+			$this->forcecollate = $conf->db->berp3_main_db_collation;
 		}
 
 		$this->database_user = $user;
@@ -82,7 +82,7 @@ class DoliDBSqlite3 extends DoliDB
 			$this->connected = false;
 			$this->ok = false;
 			$this->error="Sqlite PHP functions for using Sqlite driver are not available in this version of PHP. Try to use another driver.";
-			dol_syslog(get_class($this)."::DoliDBSqlite3 : Sqlite PHP functions for using Sqlite driver are not available in this version of PHP. Try to use another driver.",LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBSqlite3 : Sqlite PHP functions for using Sqlite driver are not available in this version of PHP. Try to use another driver.",LOG_ERR);
 			return $this->ok;
 		}*/
 
@@ -91,7 +91,7 @@ class DoliDBSqlite3 extends DoliDB
 			$this->connected = false;
 			$this->ok = false;
 			$this->error=$langs->trans("ErrorWrongHostParameter");
-			dol_syslog(get_class($this)."::DoliDBSqlite3 : Erreur Connect, wrong host parameters",LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBSqlite3 : Erreur Connect, wrong host parameters",LOG_ERR);
 			return $this->ok;
 		}*/
 
@@ -121,7 +121,7 @@ class DoliDBSqlite3 extends DoliDB
 			$this->database_selected = false;
 			$this->database_name = '';
 			//$this->error=sqlite_connect_error();
-			dol_syslog(get_class($this)."::DoliDBSqlite3 : Error Connect ".$this->error, LOG_ERR);
+			dol_syslog(get_class($this)."::Berp3DBSqlite3 : Error Connect ".$this->error, LOG_ERR);
 		}
 
 		return $this->ok;
@@ -229,14 +229,14 @@ class DoliDBSqlite3 extends DoliDB
 				}
 
 				// alter table add primary key (field1, field2 ...) -> We create a unique index instead as dynamic creation of primary key is not supported
-				// ALTER TABLE llx_dolibarr_modules ADD PRIMARY KEY pk_dolibarr_modules (numero, entity);
+				// ALTER TABLE llx_berp3_modules ADD PRIMARY KEY pk_berp3_modules (numero, entity);
 				if (preg_match('/ALTER\s+TABLE\s*(.*)\s*ADD\s+PRIMARY\s+KEY\s*(.*)\s*\((.*)$/i', $line, $reg)) {
 					$line = "-- ".$line." replaced by --\n";
 					$line .= "CREATE UNIQUE INDEX ".$reg[2]." ON ".$reg[1]."(".$reg[3];
 				}
 
 				// Translate order to drop foreign keys
-				// ALTER TABLE llx_dolibarr_modules DROP FOREIGN KEY fk_xxx;
+				// ALTER TABLE llx_berp3_modules DROP FOREIGN KEY fk_xxx;
 				if (preg_match('/ALTER\s+TABLE\s*(.*)\s*DROP\s+FOREIGN\s+KEY\s*(.*)$/i', $line, $reg)) {
 					$line = "-- ".$line." replaced by --\n";
 					$line .= "ALTER TABLE ".$reg[1]." DROP CONSTRAINT ".$reg[2];
@@ -398,7 +398,7 @@ class DoliDBSqlite3 extends DoliDB
 	 */
 	public function query($query, $usesavepoint = 0, $type = 'auto', $result_mode = 0)
 	{
-		global $conf, $dolibarr_main_db_readonly;
+		global $conf, $berp3_main_db_readonly;
 
 		$ret = null;
 
@@ -456,7 +456,7 @@ class DoliDBSqlite3 extends DoliDB
 			return false; // Return false = error if empty request
 		}
 
-		if (!empty($dolibarr_main_db_readonly)) {
+		if (!empty($berp3_main_db_readonly)) {
 			if (preg_match('/^(INSERT|UPDATE|REPLACE|DELETE|CREATE|ALTER|TRUNCATE|DROP)/i', $query)) {
 				$this->lasterror = 'Application in read-only mode';
 				$this->lasterrno = 'APPREADONLY';
@@ -667,7 +667,7 @@ class DoliDBSqlite3 extends DoliDB
 			// Si il y a eu echec de connexion, $this->db n'est pas valide.
 			return 'DB_ERROR_FAILED_TO_CONNECT';
 		} else {
-			// Constants to convert error code to a generic Dolibarr error code
+			// Constants to convert error code to a generic Berp3 error code
 			/*$errorcode_map = array(
 			1004 => 'DB_ERROR_CANNOT_CREATE',
 			1005 => 'DB_ERROR_CANNOT_CREATE',
@@ -767,10 +767,10 @@ class DoliDBSqlite3 extends DoliDB
 		global $conf;
 
 		// Type of encryption (2: AES (recommended), 1: DES , 0: no encryption)
-		$cryptType = (!empty($conf->db->dolibarr_main_db_encryption) ? $conf->db->dolibarr_main_db_encryption : 0);
+		$cryptType = (!empty($conf->db->berp3_main_db_encryption) ? $conf->db->berp3_main_db_encryption : 0);
 
 		//Encryption key
-		$cryptKey = (!empty($conf->db->dolibarr_main_db_cryptkey) ? $conf->db->dolibarr_main_db_cryptkey : '');
+		$cryptKey = (!empty($conf->db->berp3_main_db_cryptkey) ? $conf->db->berp3_main_db_cryptkey : '');
 
 		$escapedstringwithquotes = ($withQuotes ? "'" : "").$this->escape($fieldorvalue).($withQuotes ? "'" : "");
 
@@ -796,10 +796,10 @@ class DoliDBSqlite3 extends DoliDB
 		global $conf;
 
 		// Type of encryption (2: AES (recommended), 1: DES , 0: no encryption)
-		$cryptType = ($conf->db->dolibarr_main_db_encryption ? $conf->db->dolibarr_main_db_encryption : 0);
+		$cryptType = ($conf->db->berp3_main_db_encryption ? $conf->db->berp3_main_db_encryption : 0);
 
 		//Encryption key
-		$cryptKey = (!empty($conf->db->dolibarr_main_db_cryptkey) ? $conf->db->dolibarr_main_db_cryptkey : '');
+		$cryptKey = (!empty($conf->db->berp3_main_db_cryptkey) ? $conf->db->berp3_main_db_cryptkey : '');
 
 		$return = $value;
 
@@ -850,7 +850,7 @@ class DoliDBSqlite3 extends DoliDB
 			$collation = $this->forcecollate;
 		}
 
-		// ALTER DATABASE dolibarr_db DEFAULT CHARACTER SET latin DEFAULT COLLATE latin1_swedish_ci
+		// ALTER DATABASE berp3_db DEFAULT CHARACTER SET latin DEFAULT COLLATE latin1_swedish_ci
 		$sql = "CREATE DATABASE ".$this->escape($database);
 		$sql .= " DEFAULT CHARACTER SET ".$this->escape($charset)." DEFAULT COLLATE ".$this->escape($collation);
 
@@ -1126,18 +1126,18 @@ class DoliDBSqlite3 extends DoliDB
 	/**
 	 * 	Create a user and privileges to connect to database (even if database does not exists yet)
 	 *
-	 *	@param	string	$dolibarr_main_db_host 		Ip serveur
-	 *	@param	string	$dolibarr_main_db_user 		Nom user a creer
-	 *	@param	string	$dolibarr_main_db_pass 		Mot de passe user a creer
-	 *	@param	string	$dolibarr_main_db_name		Database name where user must be granted
+	 *	@param	string	$berp3_main_db_host 		Ip serveur
+	 *	@param	string	$berp3_main_db_user 		Nom user a creer
+	 *	@param	string	$berp3_main_db_pass 		Mot de passe user a creer
+	 *	@param	string	$berp3_main_db_name		Database name where user must be granted
 	 *	@return	int									<0 if KO, >=0 if OK
 	 */
-	public function DDLCreateUser($dolibarr_main_db_host, $dolibarr_main_db_user, $dolibarr_main_db_pass, $dolibarr_main_db_name)
+	public function DDLCreateUser($berp3_main_db_host, $berp3_main_db_user, $berp3_main_db_pass, $berp3_main_db_name)
 	{
 		// phpcs:enable
 		$sql = "INSERT INTO user ";
 		$sql .= "(Host,User,password,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv,Index_Priv,Alter_priv,Lock_tables_priv)";
-		$sql .= " VALUES ('".$this->escape($dolibarr_main_db_host)."','".$this->escape($dolibarr_main_db_user)."',password('".addslashes($dolibarr_main_db_pass)."')";
+		$sql .= " VALUES ('".$this->escape($berp3_main_db_host)."','".$this->escape($berp3_main_db_user)."',password('".addslashes($berp3_main_db_pass)."')";
 		$sql .= ",'Y','Y','Y','Y','Y','Y','Y','Y','Y')";
 
 		dol_syslog(get_class($this)."::DDLCreateUser", LOG_DEBUG); // No sql to avoid password in log
@@ -1148,7 +1148,7 @@ class DoliDBSqlite3 extends DoliDB
 
 		$sql = "INSERT INTO db ";
 		$sql .= "(Host,Db,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv,Index_Priv,Alter_priv,Lock_tables_priv)";
-		$sql .= " VALUES ('".$this->escape($dolibarr_main_db_host)."','".$this->escape($dolibarr_main_db_name)."','".addslashes($dolibarr_main_db_user)."'";
+		$sql .= " VALUES ('".$this->escape($berp3_main_db_host)."','".$this->escape($berp3_main_db_name)."','".addslashes($berp3_main_db_user)."'";
 		$sql .= ",'Y','Y','Y','Y','Y','Y','Y','Y','Y')";
 
 		dol_syslog(get_class($this)."::DDLCreateUser", LOG_DEBUG);

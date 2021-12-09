@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004      Sebastien Di Cintio  <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
- * Copyright (C) 2005      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2006-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2011-2016 Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2019       Abbes Bahfir            <dolipar@dolipar.org>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004        
+ * Copyright (C) 2004             
+ * Copyright (C) 2005      
+ * Copyright (C) 2006-2011 
+ * Copyright (C) 2011-2016 
+ * Copyright (C) 2019       Abbes Bahfir            <berp3par@berp3par.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,85 +51,85 @@ if ($action == 'setvalue' && $user->admin) {
 	$error = 0;
 	$db->begin();
 
-	if (!dolibarr_set_const($db, 'LDAP_USER_DN', GETPOST("user"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_USER_DN', GETPOST("user"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_USER_OBJECT_CLASS', GETPOST("objectclass"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_USER_OBJECT_CLASS', GETPOST("objectclass"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FILTER_CONNECTION', GETPOST("filterconnection"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FILTER_CONNECTION', GETPOST("filterconnection"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_FULLNAME', GETPOST("fieldfullname"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_FULLNAME', GETPOST("fieldfullname"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_LOGIN', GETPOST("fieldlogin"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_LOGIN', GETPOST("fieldlogin"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_LOGIN_SAMBA', GETPOST("fieldloginsamba"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_LOGIN_SAMBA', GETPOST("fieldloginsamba"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_PASSWORD', GETPOST("fieldpassword"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_PASSWORD', GETPOST("fieldpassword"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_PASSWORD_CRYPTED', GETPOST("fieldpasswordcrypted"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_PASSWORD_CRYPTED', GETPOST("fieldpasswordcrypted"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_NAME', GETPOST("fieldname"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_NAME', GETPOST("fieldname"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_FIRSTNAME', GETPOST("fieldfirstname"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_FIRSTNAME', GETPOST("fieldfirstname"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_MAIL', GETPOST("fieldmail"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_MAIL', GETPOST("fieldmail"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_PHONE', GETPOST("fieldphone"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_PHONE', GETPOST("fieldphone"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_MOBILE', GETPOST("fieldmobile"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_MOBILE', GETPOST("fieldmobile"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_SKYPE', GETPOST("fieldskype"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_SKYPE', GETPOST("fieldskype"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_FAX', GETPOST("fieldfax"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_FAX', GETPOST("fieldfax"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_COMPANY', GETPOST("fieldcompany"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_COMPANY', GETPOST("fieldcompany"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_ADDRESS', GETPOST("fieldaddress"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_ADDRESS', GETPOST("fieldaddress"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_ZIP', GETPOST("fieldzip"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_ZIP', GETPOST("fieldzip"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_TOWN', GETPOST("fieldtown"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_TOWN', GETPOST("fieldtown"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_COUNTRY', GETPOST("fieldcountry"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_COUNTRY', GETPOST("fieldcountry"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_DESCRIPTION', GETPOST("fielddescription"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_DESCRIPTION', GETPOST("fielddescription"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_SID', GETPOST("fieldsid"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_SID', GETPOST("fieldsid"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_TITLE', GETPOST("fieldtitle"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_TITLE', GETPOST("fieldtitle"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_GROUPID', GETPOST("fieldgroupid"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_GROUPID', GETPOST("fieldgroupid"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_USERID', GETPOST("fielduserid"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_USERID', GETPOST("fielduserid"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_HOMEDIRECTORY', GETPOST("fieldhomedirectory"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_HOMEDIRECTORY', GETPOST("fieldhomedirectory"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_FIELD_HOMEDIRECTORYPREFIX', GETPOST("fieldhomedirectoryprefix"), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_FIELD_HOMEDIRECTORYPREFIX', GETPOST("fieldhomedirectoryprefix"), 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
 
@@ -139,7 +139,7 @@ if ($action == 'setvalue' && $user->admin) {
 	if ($key) {
 		$valkey = $conf->global->$key;
 	}
-	if (!dolibarr_set_const($db, 'LDAP_KEY_USERS', $valkey, 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'LDAP_KEY_USERS', $valkey, 'chaine', 0, '', $conf->entity)) {
 		$error++;
 	}
 
@@ -218,7 +218,7 @@ print '<br>';
 print '<table class="noborder centpercent">';
 
 print '<tr class="liste_titre">';
-print '<td>'.$langs->trans("LDAPDolibarrMapping").'</td>';
+print '<td>'.$langs->trans("LDAPBerp3Mapping").'</td>';
 print '<td colspan="2">'.$langs->trans("LDAPLdapMapping").'</td>';
 print '<td class="right">'.$langs->trans("LDAPNamingAttribute").'</td>';
 print "</tr>\n";
@@ -405,7 +405,7 @@ print '</form>';
 /*
  * Test de la connexion
  */
-if (getDolGlobalString('LDAP_SYNCHRO_ACTIVE') == 'dolibarr2ldap') {
+if (getDolGlobalString('LDAP_SYNCHRO_ACTIVE') == 'berp32ldap') {
 	$butlabel = $langs->trans("LDAPTestSynchroUser");
 	$testlabel = 'testuser';
 	$key = getDolGlobalString('LDAP_KEY_USERS');
@@ -413,7 +413,7 @@ if (getDolGlobalString('LDAP_SYNCHRO_ACTIVE') == 'dolibarr2ldap') {
 	$objectclass = getDolGlobalString('LDAP_USER_OBJECT_CLASS');
 
 	show_ldap_test_button($butlabel, $testlabel, $key, $dn, $objectclass);
-} elseif (getDolGlobalString('LDAP_SYNCHRO_ACTIVE') == 'ldap2dolibarr') {
+} elseif (getDolGlobalString('LDAP_SYNCHRO_ACTIVE') == 'ldap2berp3') {
 	$butlabel = $langs->trans("LDAPTestSearch");
 	$testlabel = 'testsearchuser';
 	$key = getDolGlobalString('LDAP_KEY_USERS');

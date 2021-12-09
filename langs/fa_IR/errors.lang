@@ -77,7 +77,7 @@ ErrorFieldCanNotContainSpecialNorUpperCharacters=بخش <b>%s</b> نباید ن�
 ErrorFieldMustHaveXChar=بخش <b>%s</b> حداقل باید %s نویسه داشته باشد.
 ErrorNoAccountancyModuleLoaded=هیچ واحد حساب‌داری فعال نیست
 ErrorExportDuplicateProfil=این نام نمایه برای این مجموعۀ صادرات قبلا وجود داشته باشد
-ErrorLDAPSetupNotComplete=تطبیق Dolibarr-LDAP کامل نیست.
+ErrorLDAPSetupNotComplete=تطبیق Berp3-LDAP کامل نیست.
 ErrorLDAPMakeManualTest=یک فایل .ldif در پوشۀ  %s تولید شد. تلاش کنید آن را از خط فرمان به شکل دستی اجرا کنید تا اطلاعات بیشتری در مورد خطاها داشته باشید.
 ErrorCantSaveADoneUserWithZeroPercentage=در صورتی که بخش "انجام شده توسط" هم پر شده باشد، امکان ذخیرۀ یک کنش با "وضعیت شروع نشده" نیست.
 ErrorRefAlreadyExists=Reference <b>%s</b> already exists.
@@ -132,7 +132,7 @@ ErrorWebServerUserHasNotPermission=حساب کاربری <b>%s</b> برای اج
 ErrorNoActivatedBarcode=هیچ نوع بارکدی فعال نشده
 ErrUnzipFails=امکان استخراج و unzip %s توسط ZipArchive وجود نداشت
 ErrNoZipEngine=هیچ موتوری برای فایل zip/unzip %s در این PHP وجود ندارد
-ErrorFileMustBeADolibarrPackage=فایل %s باید یک بستۀ zip از BERP3 باشد
+ErrorFileMustBeABerp3Package=فایل %s باید یک بستۀ zip از BERP3 باشد
 ErrorModuleFileRequired=شما باید یک بستۀ واحد BERP3 انتخاب کرده باشید
 ErrorPhpCurlNotInstalled=PHP CURL نصب نشده است، برای صحبت با Paypal ضروری است. 
 ErrorFailedToAddToMailmanList=اضافه کردن ردیف %s به فهرست Mailman %s یا پایگاه SPIP مقدور نبود
@@ -208,7 +208,7 @@ ErrorUserNotAssignedToTask=کاربر برای امکان محاسبۀ زمان 
 ErrorTaskAlreadyAssigned=وظیفه قبلا به کاربر محول شده است
 ErrorModuleFileSeemsToHaveAWrongFormat=ظاهرا بستۀ واحد وضعیت نامناسبی دارد
 ErrorModuleFileSeemsToHaveAWrongFormat2=At least one mandatory directory must exists into zip of module: <strong>%s</strong> or <strong>%s</strong>
-ErrorFilenameDosNotMatchDolibarrPackageRules=نام بستۀ واحد (<strong>%s</strong>) با نام مطلوب نگارش همخوان نیست: <strong>%s</strong>
+ErrorFilenameDosNotMatchBerp3PackageRules=نام بستۀ واحد (<strong>%s</strong>) با نام مطلوب نگارش همخوان نیست: <strong>%s</strong>
 ErrorDuplicateTrigger=خطا، نام ماشه-تریگر %s تکراری است. قبلا از %s بارگذاری شده است.
 ErrorNoWarehouseDefined=خطا، هیچ انباری تعریف نشده است.
 ErrorBadLinkSourceSetButBadValueForRef=پیوندی که استفاده کرده‌اید، معتبر نیست. یک 'مبدأ' برای پرداخت تعریف شده اما مقدار 'ref' یا مرجع، معتبر نیست

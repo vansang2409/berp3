@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2004       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2016  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2011-2018  Philippe Grand          <philippe.grand@atoo-net.com>
- * Copyright (C) 2011       Remy Younes             <ryounes@gmail.com>
- * Copyright (C) 2012-2015  Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2012       Christophe Battarel     <christophe.battarel@ltairis.fr>
- * Copyright (C) 2011-2016  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2015       Ferran Marcet           <fmarcet@2byte.es>
- * Copyright (C) 2016       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2004       
+ * Copyright (C) 2004-2018  
+ * Copyright (C) 2004                 
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2010-2016  
+ * Copyright (C) 2011-2018            
+ * Copyright (C) 2011                    
+ * Copyright (C) 2012-2015  
+ * Copyright (C) 2012            
+ * Copyright (C) 2011-2016  
+ * Copyright (C) 2015       
+ * Copyright (C) 2016             
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -173,7 +173,7 @@ $tabhelp[25] = array(
 
 $elementList = array();
 
-// We save list of template email Dolibarr can manage. This list can found by a grep into code on "->param['models']"
+// We save list of template email Berp3 can manage. This list can found by a grep into code on "->param['models']"
 $elementList = array();
 // Add all and none after the sort
 
@@ -740,7 +740,7 @@ if ($action == 'view') {
 			if (empty($conf->global->FCKEDITOR_ENABLE_MAIL)) {
 				$okforextended = false;
 			}
-			$doleditor = new DolEditor($tmpfieldlist, (!empty($obj->{$tmpfieldlist}) ? $obj->{$tmpfieldlist} : ''), '', 180, 'dolibarr_mailings', 'In', 0, false, $okforextended, ROWS_4, '90%');
+			$doleditor = new DolEditor($tmpfieldlist, (!empty($obj->{$tmpfieldlist}) ? $obj->{$tmpfieldlist} : ''), '', 180, 'berp3_mailings', 'In', 0, false, $okforextended, ROWS_4, '90%');
 			print $doleditor->Create(1);
 		}
 		print '</td>';
@@ -970,7 +970,7 @@ if ($resql) {
 							if (empty($conf->global->FCKEDITOR_ENABLE_MAIL)) {
 								$okforextended = false;
 							}
-							$doleditor = new DolEditor($tmpfieldlist.'-'.$rowid, (!empty($obj->{$tmpfieldlist}) ? $obj->{$tmpfieldlist} : ''), '', 500, 'dolibarr_mailings', 'In', 0, false, $okforextended, ROWS_6, '90%');
+							$doleditor = new DolEditor($tmpfieldlist.'-'.$rowid, (!empty($obj->{$tmpfieldlist}) ? $obj->{$tmpfieldlist} : ''), '', 500, 'berp3_mailings', 'In', 0, false, $okforextended, ROWS_6, '90%');
 							print $doleditor->Create(1);
 						}
 						if ($tmpfieldlist == 'content_lines') {
@@ -978,7 +978,7 @@ if ($resql) {
 							$okforextended = true;
 							if (empty($conf->global->FCKEDITOR_ENABLE_MAIL))
 								$okforextended = false;
-							$doleditor = new DolEditor($tmpfieldlist.'-'.$rowid, (! empty($obj->{$tmpfieldlist}) ? $obj->{$tmpfieldlist} : ''), '', 140, 'dolibarr_mailings', 'In', 0, false, $okforextended, ROWS_6, '90%');
+							$doleditor = new DolEditor($tmpfieldlist.'-'.$rowid, (! empty($obj->{$tmpfieldlist}) ? $obj->{$tmpfieldlist} : ''), '', 140, 'berp3_mailings', 'In', 0, false, $okforextended, ROWS_6, '90%');
 							print $doleditor->Create(1);
 						}
 						print '</td>';

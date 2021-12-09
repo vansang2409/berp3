@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2010       Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2019       Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2019       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2004       
+ * Copyright (C) 2010       
+ * Copyright (C) 2019       
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,10 +38,10 @@ class mod_codecompta_digitaria extends ModeleAccountancyCode
 	public $name = 'Digitaria';
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * Prefix customer accountancy code
@@ -161,7 +161,7 @@ class mod_codecompta_digitaria extends ModeleAccountancyCode
 	/**
 	 *  Set accountancy account code for a third party into this->code
 	 *
-	 *  @param	DoliDB	$db              Database handler
+	 *  @param	Berp3DB	$db              Database handler
 	 *  @param  Societe	$societe         Third party object
 	 *  @param  int		$type			'customer' or 'supplier'
 	 *  @return	int						>=0 if OK, <0 if KO
@@ -245,7 +245,7 @@ class mod_codecompta_digitaria extends ModeleAccountancyCode
 	/**
 	 *  Check accountancy account code for a third party into this->code
 	 *
-	 *  @param	DoliDB	$db             Database handler
+	 *  @param	Berp3DB	$db             Database handler
 	 *  @param  string	$code           Code of third party
 	 *  @param  int		$type			'customer' or 'supplier'
 	 *  @return	int						>=0 if OK, <0 if KO

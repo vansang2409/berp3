@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2015   Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2020		Frédéric France		<frederic.france@netlogic.fr>
+/* Copyright (C) 2015   
+ * Copyright (C) 2016	
+ * Copyright (C) 2020		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,11 +27,11 @@ require_once DOL_DOCUMENT_ROOT.'/user/class/user.class.php';
 /**
  * Class for API REST v1
  */
-class DolibarrApi
+class Berp3Api
 {
 
 	/**
-	 * @var DoliDb        $db Database object
+	 * @var Berp3Db        $db Database object
 	 */
 	protected $db;
 
@@ -43,13 +43,13 @@ class DolibarrApi
 	/**
 	 * Constructor
 	 *
-	 * @param	DoliDb	$db		        Database handler
+	 * @param	Berp3Db	$db		        Database handler
 	 * @param   string  $cachedir       Cache dir
 	 * @param   boolean $refreshCache   Update cache
 	 */
 	public function __construct($db, $cachedir = '', $refreshCache = false)
 	{
-		global $conf, $dolibarr_main_url_root;
+		global $conf, $berp3_main_url_root;
 
 		if (empty($cachedir)) {
 			$cachedir = $conf->api->dir_temp;
@@ -60,11 +60,11 @@ class DolibarrApi
 		$production_mode = (empty($conf->global->API_PRODUCTION_MODE) ? false : true);
 		$this->r = new Restler($production_mode, $refreshCache);
 
-		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+		$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 		$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 
 		$urlwithouturlrootautodetect = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim(DOL_MAIN_URL_ROOT));
-		$urlwithrootautodetect = $urlwithouturlroot.DOL_URL_ROOT; // This is to use local domain autodetected by dolibarr from url
+		$urlwithrootautodetect = $urlwithouturlroot.DOL_URL_ROOT; // This is to use local domain autodetected by berp3 from url
 
 		$this->r->setBaseUrls($urlwithouturlroot, $urlwithouturlrootautodetect);
 		$this->r->setAPIVersion(1);
@@ -285,7 +285,7 @@ class DolibarrApi
 			$feature2 = explode("|", $feature2);
 		}
 
-		return checkUserAccessToObject(DolibarrApiAccess::$user, $featuresarray, $resource_id, $dbtablename, $feature2, $dbt_keyfield, $dbt_select);
+		return checkUserAccessToObject(Berp3ApiAccess::$user, $featuresarray, $resource_id, $dbtablename, $feature2, $dbt_keyfield, $dbt_select);
 	}
 
 	// phpcs:disable PEAR.NamingConventions.ValidFunctionName.PublicUnderscore

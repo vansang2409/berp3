@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2005-2018	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2012		Marcos García		<marcosgdf@gmail.com>
- * Copyright (C) 2012		Charles-Fr BENKE	<charles.fr@benke.fr>
- * Copyright (C) 2015       Juanjo Menent       <jmenent@2byte.es>
+/* Copyright (C) 2005-2018		
+ * Copyright (C) 2005-2012			
+ * Copyright (C) 2012				
+ * Copyright (C) 2012		Charles-Fr BENKE	
+ * Copyright (C) 2015       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

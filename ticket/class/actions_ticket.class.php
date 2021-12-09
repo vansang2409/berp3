@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2013-2015 Jean-François FERRY <hello@librethic.io>
- * Copyright (C) 2016      Christophe Battarel <christophe@altairis.fr>
+/* Copyright (C) 2013-2015  
+ * Copyright (C) 2016       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ require_once DOL_DOCUMENT_ROOT.'/fichinter/class/fichinter.class.php';
 class ActionsTicket
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -83,7 +83,7 @@ class ActionsTicket
 	/**
 	 *    Constructor
 	 *
-	 *    @param DoliDB $db Database handler
+	 *    @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -209,7 +209,7 @@ class ActionsTicket
 			include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
 			$uselocalbrowser = true;
 			$ckeditorenabledforticket = $conf->global->FCKEDITOR_ENABLE_TICKET;
-			$doleditor = new DolEditor('message_initial', $msg, '100%', 250, 'dolibarr_details', 'In', true, $uselocalbrowser, $ckeditorenabledforticket, ROWS_9, '95%');
+			$doleditor = new DolEditor('message_initial', $msg, '100%', 250, 'berp3_details', 'In', true, $uselocalbrowser, $ckeditorenabledforticket, ROWS_9, '95%');
 			$doleditor->Create();
 		} else {
 			// Deal with format differences (text / HTML)

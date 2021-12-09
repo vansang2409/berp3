@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010-2013	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2010-2012	Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2010-2013		
+ * Copyright (C) 2010-2012			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/menubase.class.php';
 /**
  * Core function to output top menu auguria
  *
- * @param 	DoliDB	$db				Database handler
+ * @param 	Berp3DB	$db				Database handler
  * @param 	string	$atarget		Target (Example: '' or '_top')
  * @param 	int		$type_user     	0=Menu for backoffice, 1=Menu for front office
  * @param  	array	$tabMenu        If array with menu entries already loaded, we put this array here (in most cases, it's empty)
@@ -40,7 +40,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/menubase.class.php';
 function print_auguria_menu($db, $atarget, $type_user, &$tabMenu, &$menu, $noout = 0, $mode = '')
 {
 	global $user, $conf, $langs, $mysoc;
-	global $dolibarr_main_db_name;
+	global $berp3_main_db_name;
 
 	$mainmenu = (empty($_SESSION["mainmenu"]) ? '' : $_SESSION["mainmenu"]);
 	$leftmenu = (empty($_SESSION["leftmenu"]) ? '' : $_SESSION["leftmenu"]);
@@ -152,7 +152,7 @@ function print_auguria_menu($db, $atarget, $type_user, &$tabMenu, &$menu, $noout
 			 $urllogo=DOL_URL_ROOT.'/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file='.urlencode('logos/thumbs/'.$mysoc->logo_mini);
 			 }*/
 		} else {
-			$urllogo = DOL_URL_ROOT.'/theme/dolibarr_512x512_white.png';
+			$urllogo = DOL_URL_ROOT.'/theme/berp3_512x512_white.png';
 			$logoContainerAdditionalClass = '';
 		}
 
@@ -282,7 +282,7 @@ function print_end_menu_array_auguria()
  * Core function to output left menu auguria
  * Fill &$menu (example with $forcemainmenu='home' $forceleftmenu='all', return left menu tree of Home)
  *
- * @param	DoliDB		$db                 Database handler
+ * @param	Berp3DB		$db                 Database handler
  * @param 	array		$menu_array_before  Table of menu entries to show before entries of menu handler (menu->liste filled with menu->add)
  * @param   array		$menu_array_after   Table of menu entries to show after entries of menu handler (menu->liste filled with menu->add)
  * @param  	array		$tabMenu       		If array with menu entries already loaded, we put this array here (in most cases, it's empty)
@@ -295,7 +295,7 @@ function print_end_menu_array_auguria()
  */
 function print_left_auguria_menu($db, $menu_array_before, $menu_array_after, &$tabMenu, &$menu, $noout = 0, $forcemainmenu = '', $forceleftmenu = '', $moredata = null)
 {
-	global $user, $conf, $langs, $dolibarr_main_db_name, $mysoc;
+	global $user, $conf, $langs, $berp3_main_db_name, $mysoc;
 
 	$newmenu = $menu;
 

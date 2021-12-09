@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2019 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2019	   Nicolas ZABOURI	<info@inovea-conseil.com>
+/* Copyright (C) 2004-2019 
+ * Copyright (C) 2018-2019	   	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  *
  * You can also make a direct call the page with parameter like this:
- * htdocs/modulebuilder/index.php?module=Inventory@/pathtodolibarr/htdocs/product
+ * htdocs/modulebuilder/index.php?module=Inventory@/pathtoberp3/htdocs/product
  */
 
 /**
  *       \file       htdocs/modulebuilder/index.php
  *       \brief      Home page for module builder module
  *
- *       You can add parameter dirins=/home/ldestailleur/git/dolibarr/htdocs/mymodule to force generation of module
+ *       You can add parameter dirins=/home/ldestailleur/git/berp3/htdocs/mymodule to force generation of module
  *       into the dirins directory.
  */
 
@@ -74,7 +74,7 @@ if (!$user->admin && empty($conf->global->MODULEBUILDER_FOREVERYONE)) {
 
 
 // Dir for custom dirs
-$tmp = explode(',', $dolibarr_main_document_root_alt);
+$tmp = explode(',', $berp3_main_document_root_alt);
 $dirins = $tmp[0];
 $dirread = $dirins;
 $forceddirread = 0;
@@ -177,7 +177,7 @@ foreach ($dirsrootforscan as $dirread) {
 		$newdircustom = img_warning();
 	}
 	// If dirread was forced to somewhere else, by using URL
-	// htdocs/modulebuilder/index.php?module=Inventory@/home/ldestailleur/git/dolibarr/htdocs/product
+	// htdocs/modulebuilder/index.php?module=Inventory@/home/ldestailleur/git/berp3/htdocs/product
 	if (empty($i)) {
 		$textforlistofdirs .= $langs->trans("DirScanned").' : ';
 	} else {
@@ -1858,7 +1858,7 @@ if (is_array($listofmodules) && count($listofmodules) > 0) {
 						$linktoenabledisable .= ' <a href="'.$urltouse.(preg_match('/\?/', $urltouse) ? '&' : '?').'save_lastsearch_values=1&backtopage='.urlencode($backtourl).'" title="'.$langs->trans("Setup").'">'.img_picto($langs->trans("Setup"), "setup", 'style="padding-right: 8px"').'</a>';
 					} else {
 						// Case standard admin page (not a page provided by the
-						// module but a page provided by dolibarr)
+						// module but a page provided by berp3)
 						$urltouse = DOL_URL_ROOT.'/admin/'.$urlpage;
 						$linktoenabledisable .= ' <a href="'.$urltouse.(preg_match('/\?/', $urltouse) ? '&' : '?').'save_lastsearch_values=1&backtopage='.urlencode($backtourl).'" title="'.$langs->trans("Setup").'">'.img_picto($langs->trans("Setup"), "setup", 'style="padding-right: 8px"').'</a>';
 					}

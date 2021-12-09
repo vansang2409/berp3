@@ -5,8 +5,8 @@ RemoteControlSupport=Suport în timp real / remote
 OtherSupport=Alte tipuri de suport
 ToSeeListOfAvailableRessources=Pentru a contacta / vezi resurse disponibile:
 HelpCenter=Centrul de Ajutor
-DolibarrHelpCenter=BERP3 Help and Support Center
-ToGoBackToDolibarr=Otherwise, <a href="%s">click here to continue to use Dolibarr</a>.
+Berp3HelpCenter=BERP3 Help and Support Center
+ToGoBackToBerp3=Otherwise, <a href="%s">click here to continue to use Berp3</a>.
 TypeOfSupport=Type of support
 TypeSupportCommunauty=Comunitate (gratuit)
 TypeSupportCommercial=Comercial

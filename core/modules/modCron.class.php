@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2012      Nicolas Villa aka Boyquotes http://informetic.fr
- * Copyright (C) 2013      Florian Henry	<florian.henry@open-concept.pro>
+ * Copyright (C) 2013      	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,19 +23,19 @@
  *  \ingroup    cron
  *  \brief      Description and activation file for the module Jobs
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to describe a Cron module
  */
-class modCron extends DolibarrModules
+class modCron extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -49,9 +49,9 @@ class modCron extends DolibarrModules
 		$this->family = "base";
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
-		$this->description = "Enable the Dolibarr cron service";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		$this->description = "Enable the Berp3 cron service";
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.

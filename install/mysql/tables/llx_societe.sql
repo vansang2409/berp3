@@ -1,10 +1,10 @@
 -- ========================================================================
--- Copyright (C) 2000-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2004-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2005-2010 Regis Houssin        <regis.houssin@inodbox.com>
--- Copyright (C) 2010      Juanjo Menent        <dolibarr@2byte.es>
--- Copyright (C) 2014      Teddy Andreotti      <125155@supinfo.com>
--- Copyright (C) 2015      Marcos García        <marcosgdf@gmail.com>
+-- Copyright (C) 2000-2004 
+-- Copyright (C) 2004-2017 
+-- Copyright (C) 2005-2010 
+-- Copyright (C) 2010              <berp3@2byte.es>
+-- Copyright (C) 2014            
+-- Copyright (C) 2015      
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ create table llx_societe
   name_alias               varchar(128) NULL,
   entity                   integer DEFAULT 1 NOT NULL,                  -- multi company id
 
-  ref_ext                  varchar(255),                                -- reference into an external system (not used by dolibarr)
+  ref_ext                  varchar(255),                                -- reference into an external system (not used by berp3)
   ref_int                  varchar(255),                                -- reference into an internal system (deprecated)
 
   statut                   tinyint        DEFAULT 0,            		-- statut

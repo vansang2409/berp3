@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2004		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2013	Laurent Destailleur		<eldy@users.sourceforge.org>
- * Copyright (C) 2011		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2012		Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2013		Florian Henry			<florian.henry@open-concept.pro>
+/* Copyright (C) 2004		
+ * Copyright (C) 2005-2013			
+ * Copyright (C) 2011		
+ * Copyright (C) 2012		
+ * Copyright (C) 2013		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
  *		\ingroup    cron
  */
 
-// Dolibarr environment
+// Berp3 environment
 require '../../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/cron.lib.php';
@@ -44,7 +44,7 @@ if (!empty($actionsave)) {
 
 	$db->begin();
 
-	$i += dolibarr_set_const($db, 'CRON_KEY', GETPOST("CRON_KEY"), 'chaine', 0, '', 0);
+	$i += berp3_set_const($db, 'CRON_KEY', GETPOST("CRON_KEY"), 'chaine', 0, '', 0);
 
 	if ($i >= 1) {
 		$db->commit();

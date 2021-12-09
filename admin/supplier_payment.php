@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2015  Juanjo Menent				<jmenent@2byte.es>
- * Copyright (C) 2016  Laurent Destailleur          <eldy@users.sourceforge.net>
- * Copyright (C) 2020  Maxime DEMAREST              <maxime@indelog.fr>
+/* Copyright (C) 2015  
+ * Copyright (C) 2016  
+ * Copyright (C) 2020                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ if ($action == 'updateMask') {
 	$maskconstsupplierpayment = GETPOST('maskconstsupplierpayment', 'alpha');
 	$masksupplierpayment = GETPOST('masksupplierpayment', 'alpha');
 	if ($maskconstsupplierpayment) {
-		$res = dolibarr_set_const($db, $maskconstsupplierpayment, $masksupplierpayment, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstsupplierpayment, $masksupplierpayment, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -65,7 +65,7 @@ if ($action == 'updateMask') {
 		setEventMessages($langs->trans("Error"), null, 'errors');
 	}
 } elseif ($action == 'setmod') {
-	dolibarr_set_const($db, "SUPPLIER_PAYMENT_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "SUPPLIER_PAYMENT_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'set') {
 	// Activate a model
 	$ret = addDocumentModel($value, $type, $label, $scandir);
@@ -73,12 +73,12 @@ if ($action == 'updateMask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->FACTURE_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'SUPPLIER_PAYMENT_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'SUPPLIER_PAYMENT_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "SUPPLIER_PAYMENT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "SUPPLIER_PAYMENT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->FACTURE_ADDON_PDF = $value;
@@ -90,7 +90,7 @@ if ($action == 'updateMask') {
 		$ret = addDocumentModel($value, $type, $label, $scandir);
 	}
 } elseif ($action == 'unsetdoc') {
-	dolibarr_del_const($db, "SUPPLIER_PAYMENT_ADDON_PDF", $conf->entity);
+	berp3_del_const($db, "SUPPLIER_PAYMENT_ADDON_PDF", $conf->entity);
 } elseif ($action == 'specimen') {
 	$modele = GETPOST('module', 'alpha');
 
@@ -126,7 +126,7 @@ if ($action == 'updateMask') {
 		dol_syslog($langs->trans("ErrorModuleNotFound"), LOG_ERR);
 	}
 } elseif ($action == 'setparams') {
-	   $res = dolibarr_set_const($db, "PAYMENTS_FOURN_REPORT_GROUP_BY_MOD", GETPOST('PAYMENTS_FOURN_REPORT_GROUP_BY_MOD', 'int'), 'chaine', 0, '', $conf->entity);
+	   $res = berp3_set_const($db, "PAYMENTS_FOURN_REPORT_GROUP_BY_MOD", GETPOST('PAYMENTS_FOURN_REPORT_GROUP_BY_MOD', 'int'), 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}

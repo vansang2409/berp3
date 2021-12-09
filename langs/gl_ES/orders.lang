@@ -120,8 +120,8 @@ ConfirmCloneOrder=¿Está certo de querer clonar este pedimento <b>%s</b>?
 DispatchSupplierOrder=Recepción do pedimento a provedor %s
 FirstApprovalAlreadyDone=Primeira aprobación realizada
 SecondApprovalAlreadyDone=Segunda aprobación realizada
-SupplierOrderReceivedInDolibarr=Pedimento a provedor %s recibido %s
-SupplierOrderSubmitedInDolibarr=Pedimento a provedor %s solicitado
+SupplierOrderReceivedInBerp3=Pedimento a provedor %s recibido %s
+SupplierOrderSubmitedInBerp3=Pedimento a provedor %s solicitado
 SupplierOrderClassifiedBilled=Pedimento a provedor %s facturado
 OtherOrders=Outros pedimentos
 ##### Types de contacts #####

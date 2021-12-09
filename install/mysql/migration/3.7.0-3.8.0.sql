@@ -787,7 +787,7 @@ UPDATE llx_c_departements SET code_departement='T' WHERE ncc='TARRAGONA' AND fk_
 UPDATE llx_c_departements SET code_departement='TE' WHERE ncc='TERUEL' AND fk_region=402;
 UPDATE llx_c_departements SET code_departement='TO' WHERE ncc='TOLEDO' AND fk_region=404;
 UPDATE llx_c_departements SET code_departement='V' WHERE ncc='VALENCIA' AND fk_region=411;
-UPDATE llx_c_departements SET code_departement='VA' WHERE ncc='VALLADOLID' AND fk_region=403;
+UPDATE llx_c_departements SET code_departement='VA' WHERE ncc='VALLABERPD' AND fk_region=403;
 UPDATE llx_c_departements SET code_departement='BI' WHERE ncc='VIZCAYA' AND fk_region=419;
 UPDATE llx_c_departements SET code_departement='ZA' WHERE ncc='ZAMORA' AND fk_region=403;
 UPDATE llx_c_departements SET code_departement='Z' WHERE ncc='ZARAGOZA' AND fk_region=402;

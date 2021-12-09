@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2006-2014  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2011       Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2021		Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2014  
+ * Copyright (C) 2011       
+ * Copyright (C) 2015       
+ * Copyright (C) 2021				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,8 +57,8 @@ if (!$user->admin) {
 }
 
 if ($file && !$what) {
-	//print DOL_URL_ROOT.'/dolibarr_export.php';
-	header("Location: ".DOL_URL_ROOT.'/admin/tools/dolibarr_export.php?msg='.urlencode($langs->trans("ErrorFieldRequired", $langs->transnoentities("ExportMethod"))).(GETPOST('page_y', 'int') ? '&page_y='.GETPOST('page_y', 'int') : ''));
+	//print DOL_URL_ROOT.'/berp3_export.php';
+	header("Location: ".DOL_URL_ROOT.'/admin/tools/berp3_export.php?msg='.urlencode($langs->trans("ErrorFieldRequired", $langs->transnoentities("ExportMethod"))).(GETPOST('page_y', 'int') ? '&page_y='.GETPOST('page_y', 'int') : ''));
 	exit;
 }
 
@@ -130,9 +130,9 @@ if ($what == 'mysql') {
 	$cmddump = GETPOST("mysqldump", 'none'); // Do not sanitize here with 'alpha', will be sanitize later by dol_sanitizePathName and escapeshellarg
 	$cmddump = dol_sanitizePathName($cmddump);
 
-	if (!empty($dolibarr_main_restrict_os_commands)) {
-		$arrayofallowedcommand = explode(',', $dolibarr_main_restrict_os_commands);
-		dol_syslog("Command are restricted to ".$dolibarr_main_restrict_os_commands.". We check that one of this command is inside ".$cmddump);
+	if (!empty($berp3_main_restrict_os_commands)) {
+		$arrayofallowedcommand = explode(',', $berp3_main_restrict_os_commands);
+		dol_syslog("Command are restricted to ".$berp3_main_restrict_os_commands.". We check that one of this command is inside ".$cmddump);
 		$basenamecmddump = basename($cmddump);
 		if (!in_array($basenamecmddump, $arrayofallowedcommand)) {	// the provided command $cmddump must be an allowed command
 			$errormsg = $langs->trans('CommandIsNotInsideAllowedCommands');
@@ -140,7 +140,7 @@ if ($what == 'mysql') {
 	}
 
 	if (!$errormsg && $cmddump) {
-		dolibarr_set_const($db, 'SYSTEMTOOLS_MYSQLDUMP', $cmddump, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'SYSTEMTOOLS_MYSQLDUMP', $cmddump, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!$errormsg) {
@@ -166,10 +166,10 @@ if ($what == 'postgresql') {
 	$cmddump = dol_sanitizePathName($cmddump);
 
 	/* Not required, the command is output on screen but not ran for pgsql
-	if (! empty($dolibarr_main_restrict_os_commands))
+	if (! empty($berp3_main_restrict_os_commands))
 	{
-		$arrayofallowedcommand=explode(',', $dolibarr_main_restrict_os_commands);
-		dol_syslog("Command are restricted to ".$dolibarr_main_restrict_os_commands.". We check that one of this command is inside ".$cmddump);
+		$arrayofallowedcommand=explode(',', $berp3_main_restrict_os_commands);
+		dol_syslog("Command are restricted to ".$berp3_main_restrict_os_commands.". We check that one of this command is inside ".$cmddump);
 		$basenamecmddump=basename($cmddump);
 		if (! in_array($basenamecmddump, $arrayofallowedcommand))	// the provided command $cmddump must be an allowed command
 		{
@@ -178,7 +178,7 @@ if ($what == 'postgresql') {
 	} */
 
 	if (!$errormsg && $cmddump) {
-		dolibarr_set_const($db, 'SYSTEMTOOLS_POSTGRESQLDUMP', $cmddump, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'SYSTEMTOOLS_POSTGRESQLDUMP', $cmddump, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!$errormsg) {
@@ -212,12 +212,12 @@ if ($errormsg) {
 	}
 	/*else
 	{
-		setEventMessages($langs->trans("YouMustRunCommandFromCommandLineAfterLoginToUser",$dolibarr_main_db_user,$dolibarr_main_db_user), null, 'warnings');
+		setEventMessages($langs->trans("YouMustRunCommandFromCommandLineAfterLoginToUser",$berp3_main_db_user,$berp3_main_db_user), null, 'warnings');
 	}*/
 }
 
 
 // Redirect to backup page
-header("Location: dolibarr_export.php".(GETPOST('page_y', 'int') ? '?page_y='.GETPOST('page_y', 'int') : ''));
+header("Location: berp3_export.php".(GETPOST('page_y', 'int') ? '?page_y='.GETPOST('page_y', 'int') : ''));
 
 $db->close();

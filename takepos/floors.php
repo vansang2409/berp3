@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2018	Andreu Bisquerra	<jove@bisquerra.com>
+/* Copyright (C) 2018		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -119,7 +119,7 @@ if ($action == "add") {
  */
 
 // Title
-$title = 'TakePOS - Dolibarr '.DOL_VERSION;
+$title = 'TakePOS - Berp3 '.DOL_VERSION;
 if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 	$title = 'TakePOS - '.$conf->global->MAIN_APPLICATION_TITLE;
 }

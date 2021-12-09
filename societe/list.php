@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2001-2004  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2019  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2019  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2012       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2013-2015  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2015       Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2016-2018  Josep Lluis Amador      <joseplluis@lliuretic.cat>
- * Copyright (C) 2016       Ferran Marcet      	    <fmarcet@2byte.es>
+/* Copyright (C) 2001-2004  
+ * Copyright (C) 2004-2019  
+ * Copyright (C) 2005-2019  
+ * Copyright (C) 2012       
+ * Copyright (C) 2013-2015        
+ * Copyright (C) 2015       
+ * Copyright (C) 2016-2018  Josep Lluis Amador      
+ * Copyright (C) 2016             	    
  * Copyright (C) 2017       Rui Strecht      	    <rui.strecht@aliartalentos.com>
- * Copyright (C) 2017       Juanjo Menent      	    <jmenent@2byte.es>
- * Copyright (C) 2018       Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2020       Open-Dsi         		<support@open-dsi.fr>
- * Copyright (C) 2021		Frédéric France			<frederic.france@netlogic.fr>
+ * Copyright (C) 2017             	    
+ * Copyright (C) 2018                
+ * Copyright (C) 2020                		
+ * Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

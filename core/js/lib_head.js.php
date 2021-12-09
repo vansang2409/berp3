@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005-2018  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2014  Regis Houssin       <regis.houssin@inodbox.com>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2005-2018  
+ * Copyright (C) 2005-2014         
+ * Copyright (C) 2015       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,8 +57,8 @@ require_once '../../main.inc.php';
 
 // Define javascript type
 top_httphead('text/javascript; charset=UTF-8');
-// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-if (empty($dolibarr_nocache)) {
+// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+if (empty($berp3_nocache)) {
 	header('Cache-Control: max-age=10800, public, must-revalidate');
 } else {
 	header('Cache-Control: no-cache');
@@ -128,7 +128,7 @@ $langs->trans("SaturdayMin")
 );
 
 ?>
-// Javascript libraries for BERP3 ERP CRM (https://www.dolibarr.org)
+// Javascript libraries for BERP3 ERP CRM (https://www.berp3.org)
 
 // For jQuery date picker
 var tradMonths = <?php echo json_encode($tradMonths) ?>;
@@ -245,8 +245,8 @@ function dpChangeDay(dateFieldID, format)
  * Tags -------------+------------------------------- Year | yyyy (4 digits), yy
  * (2 digits) Month | MM (2 digits) Day of Month | dd (2 digits) Hour (1-12) |
  * hh (2 digits) Hour (0-23) | HH (2 digits) Minute | mm (2 digits) Second | ss
- * (2 digits) Author: Laurent Destailleur Author: Matelli (see
- * http://matelli.fr/showcases/patchs-dolibarr/update-date-input-in-action-form.html)
+ * (2 digits) Author:  Author: Matelli (see
+ * http://matelli.fr/showcases/patchs-berp3/update-date-input-in-action-form.html)
  * Licence: GPL
  * ==================================================================
  */
@@ -314,7 +314,7 @@ function formatDate(date,format)
  * Hour (0-23)  | HH (2 digits)
  * Minute       | mm (2 digits)
  * Second       | ss (2 digits)
- * Author: Laurent Destailleur
+ * Author: 
  * Licence: GPL
  * ==================================================================
  */
@@ -437,7 +437,7 @@ function getIntegerInString(str,i,minlength,maxlength)
  * =================================================================
  * Purpose: Clean string to have it url encoded
  * Input:   s
- * Author:  Laurent Destailleur
+ * Author:  
  * Licence: GPL
  * ==================================================================
  */
@@ -452,7 +452,7 @@ function urlencode(s) {
  * =================================================================
  * Purpose: Clean string to have it url encoded
  * Input:   s
- * Author:  Laurent Destailleur
+ * Author:  
  * Licence: GPL
  * ==================================================================
  */
@@ -475,7 +475,7 @@ function htmlEntityDecodeJs(inp){
  * =================================================================
  * Purpose: Applique un delai avant execution. Used for autocompletion of companies.
  * Input:   funct, delay
- * Author:  Regis Houssin
+ * Author:  
  * Licence: GPL
  * ==================================================================
  */
@@ -490,7 +490,7 @@ function htmlEntityDecodeJs(inp){
  * Purpose:
  * Clean values of a "Sortable.serialize". Used by drag and drop.
  * Input:   expr
- * Author:  Regis Houssin
+ * Author:  
  * Licence: GPL
  * ==================================================================
  */
@@ -509,7 +509,7 @@ function cleanSerialize(expr) {
  *          input field).
  * Input:   fieldId
  * Input:   message
- * Author:  Regis Houssin
+ * Author:  
  * Licence: GPL
  * ==================================================================
  */
@@ -527,7 +527,7 @@ function displayMessage(fieldId,message) {
  *          input field).
  * Input:   fiedId
  * Input:   message
- * Author:  Regis Houssin
+ * Author:  
  * Licence: GPL
  * ==================================================================
  */
@@ -823,7 +823,7 @@ function confirmConstantAction(action, url, code, input, box, entity, yesButton,
 						}
 					}
 				})
-				.addClass( "ui-widget ui-widget-content ui-corner-left dolibarrcombobox" );
+				.addClass( "ui-widget ui-widget-content ui-corner-left berp3combobox" );
 
 			input.data("ui-autocomplete")._renderItem = function( ul, item ) {
 				return $("<li>")

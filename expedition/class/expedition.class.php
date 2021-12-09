@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2003-2008	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2008	
+ * Copyright (C) 2005-2012	
  * Copyright (C) 2007		Franky Van Liedekerke	<franky.van.liedekerke@telenet.be>
- * Copyright (C) 2006-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2011-2020	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2013       Florian Henry		  	<florian.henry@open-concept.pro>
- * Copyright (C) 2014		Cedric GROSS			<c.gross@kreiz-it.fr>
- * Copyright (C) 2014-2015  Marcos García           <marcosgdf@gmail.com>
+ * Copyright (C) 2006-2012	
+ * Copyright (C) 2011-2020	
+ * Copyright (C) 2013       		  	
+ * Copyright (C) 2014		Cedric GROSS			
+ * Copyright (C) 2014-2015  
  * Copyright (C) 2014-2017  Francis Appels          <francis.appels@yahoo.com>
- * Copyright (C) 2015       Claudio Aschieri        <c.aschieri@19.coop>
- * Copyright (C) 2016		Ferran Marcet			<fmarcet@2byte.es>
- * Copyright (C) 2018       Nicolas ZABOURI			<info@inovea-conseil.com>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2015               
+ * Copyright (C) 2016					
+ * Copyright (C) 2018       			
+ * Copyright (C) 2018-2020  
  * Copyright (C) 2020       Lenin Rivas         	<lenin@leninrivas.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -201,7 +201,7 @@ class Expedition extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -757,7 +757,7 @@ class Expedition extends CommonObject
 						// line without batch detail
 
 						// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record.
-						$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentValidatedInDolibarr", $numref));
+						$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentValidatedInBerp3", $numref));
 
 						if ($result < 0) {
 							$error++;
@@ -770,7 +770,7 @@ class Expedition extends CommonObject
 
 						// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record.
 						// Note: ->fk_origin_stock = id into table llx_product_batch (may be rename into llx_product_stock_batch in another version)
-						$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentValidatedInDolibarr", $numref), '', $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
+						$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentValidatedInBerp3", $numref), '', $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
 						if ($result < 0) {
 							$error++;
 							$this->error = $mouvS->error;
@@ -1250,7 +1250,7 @@ class Expedition extends CommonObject
 						// no lot/serial
 						// We increment stock of product (and sub-products)
 						// We use warehouse selected for each line
-						$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $obj->qty, 0, $langs->trans("ShipmentCanceledInDolibarr", $this->ref)); // Price is set to 0, because we don't want to see WAP changed
+						$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $obj->qty, 0, $langs->trans("ShipmentCanceledInBerp3", $this->ref)); // Price is set to 0, because we don't want to see WAP changed
 						if ($result < 0) {
 							$error++; $this->errors = $this->errors + $mouvS->errors;
 							break;
@@ -1259,7 +1259,7 @@ class Expedition extends CommonObject
 						// We increment stock of batches
 						// We use warehouse selected for each line
 						foreach ($lotArray as $lot) {
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $lot->qty, 0, $langs->trans("ShipmentCanceledInDolibarr", $this->ref), $lot->eatby, $lot->sellby, $lot->batch); // Price is set to 0, because we don't want to see WAP changed
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $lot->qty, 0, $langs->trans("ShipmentCanceledInBerp3", $this->ref), $lot->eatby, $lot->sellby, $lot->batch); // Price is set to 0, because we don't want to see WAP changed
 							if ($result < 0) {
 								$error++; $this->errors = $this->errors + $mouvS->errors;
 								break;
@@ -1434,7 +1434,7 @@ class Expedition extends CommonObject
 						// no lot/serial
 						// We increment stock of product (and sub-products)
 						// We use warehouse selected for each line
-						$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $obj->qty, 0, $langs->trans("ShipmentDeletedInDolibarr", $this->ref)); // Price is set to 0, because we don't want to see WAP changed
+						$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $obj->qty, 0, $langs->trans("ShipmentDeletedInBerp3", $this->ref)); // Price is set to 0, because we don't want to see WAP changed
 						if ($result < 0) {
 							$error++; $this->errors = $this->errors + $mouvS->errors;
 							break;
@@ -1443,7 +1443,7 @@ class Expedition extends CommonObject
 						// We increment stock of batches
 						// We use warehouse selected for each line
 						foreach ($lotArray as $lot) {
-							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $lot->qty, 0, $langs->trans("ShipmentDeletedInDolibarr", $this->ref), $lot->eatby, $lot->sellby, $lot->batch); // Price is set to 0, because we don't want to see WAP changed
+							$result = $mouvS->reception($user, $obj->fk_product, $obj->fk_entrepot, $lot->qty, 0, $langs->trans("ShipmentDeletedInBerp3", $this->ref), $lot->eatby, $lot->sellby, $lot->batch); // Price is set to 0, because we don't want to see WAP changed
 							if ($result < 0) {
 								$error++; $this->errors = $this->errors + $mouvS->errors;
 								break;
@@ -2234,7 +2234,7 @@ class Expedition extends CommonObject
 							// line without batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentClassifyClosedInDolibarr", $numref));
+							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentClassifyClosedInBerp3", $numref));
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -2244,7 +2244,7 @@ class Expedition extends CommonObject
 							// line with batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentClassifyClosedInDolibarr", $numref), '', $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
+							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, $qty, $obj->subprice, $langs->trans("ShipmentClassifyClosedInBerp3", $numref), '', $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -2405,7 +2405,7 @@ class Expedition extends CommonObject
 							// line without batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ShipmentUnClassifyCloseddInDolibarr", $numref));
+							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ShipmentUnClassifyCloseddInBerp3", $numref));
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -2415,7 +2415,7 @@ class Expedition extends CommonObject
 							// line with batch detail
 
 							// We decrement stock of product (and sub-products) -> update table llx_product_stock (key of this table is fk_product+fk_entrepot) and add a movement record
-							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ShipmentUnClassifyCloseddInDolibarr", $numref), '', $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
+							$result = $mouvS->livraison($user, $obj->fk_product, $obj->fk_entrepot, -$qty, $obj->subprice, $langs->trans("ShipmentUnClassifyCloseddInBerp3", $numref), '', $this->db->jdate($obj->eatby), $this->db->jdate($obj->sellby), $obj->batch, $obj->fk_origin_stock);
 							if ($result < 0) {
 								$this->error = $mouvS->error;
 								$this->errors = $mouvS->errors;
@@ -2491,12 +2491,12 @@ class Expedition extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'expedition'
@@ -2539,7 +2539,7 @@ class ExpeditionLigne extends CommonObjectLine
 	public $fk_expedition;
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -2666,7 +2666,7 @@ class ExpeditionLigne extends CommonObjectLine
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

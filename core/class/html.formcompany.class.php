@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2008-2012	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2008-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2014		Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2008-2012		
+ * Copyright (C) 2008-2012			
+ * Copyright (C) 2014		
  * Copyright (C) 2017		Rui Strecht			<rui.strecht@aliartalentos.com>
- * Copyright (C) 2020       Open-Dsi         	<support@open-dsi.fr>
+ * Copyright (C) 2020                	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -831,9 +831,9 @@ class FormCompany extends Form
 		if ($rendermode === 'view') {
 			$toprint = array();
 			foreach ($contact->roles as $key => $val) {
-				$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories" style="background: #bbb;">'.$val['label'].'</li>';
+				$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories" style="background: #bbb;">'.$val['label'].'</li>';
 			}
-			return '<div class="select2-container-multi-dolibarr" style="width: 90%;" id="'.$htmlname.'"><ul class="select2-choices-dolibarr">'.implode(' ', $toprint).'</ul></div>';
+			return '<div class="select2-container-multi-berp3" style="width: 90%;" id="'.$htmlname.'"><ul class="select2-choices-berp3">'.implode(' ', $toprint).'</ul></div>';
 		}
 
 		if ($rendermode === 'edit') {

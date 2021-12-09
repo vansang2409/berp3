@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2008-2020	Laurent Destailleur			<eldy@users.sourceforge.net>
+/* Copyright (C) 2008-2020				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
 
 /**
  * Function to get a content from an URL (use proxy if proxy defined).
- * Support Dolibarr setup for timeout and proxy.
+ * Support Berp3 setup for timeout and proxy.
  * Enhancement of CURL to add an anti SSRF protection:
  * - you can set MAIN_SECURITY_ANTI_SSRF_SERVER_IP to set static ip of server
  * - common local lookup ips like 127.*.*.* are automatically added
@@ -57,7 +57,7 @@ function getURLContent($url, $postorget = 'GET', $param = '', $followlocation = 
 	 print $nvpStr;
 	 exit;*/
 	curl_setopt($ch, CURLOPT_VERBOSE, 1);
-	curl_setopt($ch, CURLOPT_USERAGENT, 'Dolibarr geturl function');
+	curl_setopt($ch, CURLOPT_USERAGENT, 'Berp3 geturl function');
 
 	// We use @ here because this may return warning if safe mode is on or open_basedir is on (following location is forbidden when safe mode is on).
 	// We force value to false so we will manage redirection ourself later.

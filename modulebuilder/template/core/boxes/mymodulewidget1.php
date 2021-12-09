@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2004-2017  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2021  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2017  
+ * Copyright (C) 2018-2021  
  * Copyright (C) ---Put here your own copyright and developer email---
  *
  * This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ include_once DOL_DOCUMENT_ROOT."/core/boxes/modules_boxes.php";
 /**
  * Class to manage the box
  *
- * Warning: for the box to be detected correctly by dolibarr,
+ * Warning: for the box to be detected correctly by berp3,
  * the filename should be the lowercase classname
  */
 class mymodulewidget1 extends ModeleBoxes
@@ -58,7 +58,7 @@ class mymodulewidget1 extends ModeleBoxes
 	public $depends = array('mymodule');
 
 	/**
-	 * @var DoliDb Database handler
+	 * @var Berp3Db Database handler
 	 */
 	public $db;
 
@@ -86,10 +86,10 @@ class mymodulewidget1 extends ModeleBoxes
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param string $param More parameters
 	 */
-	public function __construct(DoliDB $db, $param = '')
+	public function __construct(Berp3DB $db, $param = '')
 	{
 		global $user, $conf, $langs;
 		$langs->load("boxes");
@@ -106,7 +106,7 @@ class mymodulewidget1 extends ModeleBoxes
 	}
 
 	/**
-	 * Load data into info_box_contents array to show array later. Called by Dolibarr before displaying the box.
+	 * Load data into info_box_contents array to show array later. Called by Berp3 before displaying the box.
 	 *
 	 * @param int $max Maximum number of records to load
 	 * @return void
@@ -201,7 +201,7 @@ class mymodulewidget1 extends ModeleBoxes
 	}
 
 	/**
-	 * Method to show box. Called by Dolibarr eatch time it wants to display the box.
+	 * Method to show box. Called by Berp3 eatch time it wants to display the box.
 	 *
 	 * @param array $head       Array with properties of box title
 	 * @param array $contents   Array with properties of box lines

@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2002		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2009-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2016		Charlie Benke			<charlie@patas-monkey.com>
- * Copyright (C) 2018-2019  Thibault Foucart		<support@ptibogxiv.net>
- * Copyright (C) 2021     	Waël Almoman            <info@almoman.com>
+/* Copyright (C) 2002		
+ * Copyright (C) 2004-2008	
+ * Copyright (C) 2009-2017	
+ * Copyright (C) 2016					
+ * Copyright (C) 2018-2019  		
+ * Copyright (C) 2021     	            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -121,7 +121,7 @@ class AdherentType extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *	@param 		DoliDB		$db		Database handler
+	 *	@param 		Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -801,7 +801,7 @@ class AdherentType extends CommonObject
 		}
 		if (!empty($conf->global->LDAP_MEMBER_TYPE_FIELD_GROUPMEMBERS)) {
 			$valueofldapfield = array();
-			foreach ($this->members as $key => $val) {    // This is array of users for group into dolibarr database.
+			foreach ($this->members as $key => $val) {    // This is array of users for group into berp3 database.
 				$member = new Adherent($this->db);
 				$member->fetch($val->id, '', '', '', false, false);
 				$info2 = $member->_load_ldap_info();

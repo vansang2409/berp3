@@ -120,8 +120,8 @@ ConfirmCloneOrder=Vuoi davvero clonare l'ordine <b>%s</b>?
 DispatchSupplierOrder=Ricezione dell'ordine di acquisto %s
 FirstApprovalAlreadyDone=Prima approvazione già fatta
 SecondApprovalAlreadyDone=Seconda approvazione già fatta
-SupplierOrderReceivedInDolibarr=Ordine fornitore %s ricevuto %s
-SupplierOrderSubmitedInDolibarr=Ordine di acquisto %s inviato
+SupplierOrderReceivedInBerp3=Ordine fornitore %s ricevuto %s
+SupplierOrderSubmitedInBerp3=Ordine di acquisto %s inviato
 SupplierOrderClassifiedBilled=Purchase Order %s set billed
 OtherOrders=Altri ordini
 ##### Types de contacts #####

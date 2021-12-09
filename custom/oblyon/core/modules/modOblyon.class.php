@@ -1,11 +1,11 @@
 <?php
 /**
  * Copyright (C) 2015-2016  Nicolas Rivera      <nrivera.pro@gmail.com>
- * Copyright (C) 2015-2019  Open-DSI            <support@open-dsi.fr>
+ * Copyright (C) 2015-2019              
  *
- * Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@capnetworks.com>
+ * Copyright (C) 2003      
+ * Copyright (C) 2004-2012 
+ * Copyright (C) 2005-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,19 +27,19 @@
  *  \brief      Description and activation file for module MyModule
  */
 
-include_once DOL_DOCUMENT_ROOT .'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT .'/core/modules/Berp3Modules.class.php';
 
 
 /**
  * Description and activation class for module MyModule
  */
 
-class modOblyon extends DolibarrModules {
+class modOblyon extends Berp3Modules {
 
 /**
  * Constructor. Define names, constants, directories, boxes, permissions
  *
- * @param  DoliDB  $db  Database handler
+ * @param  Berp3DB  $db  Database handler
  */
 function __construct($db) {
 	global $langs,$conf;
@@ -47,7 +47,7 @@ function __construct($db) {
 	$this->db = $db;
 
 	// Id for module (must be unique).
-	// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+	// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 	$this->numero = 113900;
 	
 	// Key text used to identify module (for permissions, menus, etc...)
@@ -63,10 +63,10 @@ function __construct($db) {
 	// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 	$this->description = "Thème Oblyon";
 
-	// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
+	// Possible values for version are: 'development', 'experimental', 'berp3' or version
 	$this->version = '12.0.0';
 
-	$this->editor_name = 'Open-DSI | Monogramm';
+	$this->editor_name = ' | Monogramm';
 
 	$this->editor_url = "https://www.open-dsi.fr";
 
@@ -102,7 +102,7 @@ function __construct($db) {
 	$this->depends = array();		// List of modules id that must be enabled if this module is enabled
 	$this->requiredby = array();	// List of modules id to disable if this one is disabled
 	$this->phpmin = array(5,6);					// Minimum version of PHP required by module
-	$this->need_dolibarr_version = array(11,0);	// Minimum version of Dolibarr required by module
+	$this->need_berp3_version = array(11,0);	// Minimum version of Berp3 required by module
 	$this->langfiles = array("oblyon@oblyon");
 
 	// Constants
@@ -398,7 +398,7 @@ function __construct($db) {
 
 	/**
 	 * Function called when module is enabled.
-	 * The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 * The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 * It also creates data directories
 	 *
 	 * @param   string	$options  Options when enabling module ('', 'noboxes')
@@ -413,7 +413,7 @@ function __construct($db) {
 		if (file_exists(dol_buildpath('/core/menus/standard/oblyon_menu.php'))) unlink(dol_buildpath('/core/menus/standard/oblyon_menu.php'));
 		if (file_exists(dol_buildpath('/core/menus/standard/oblyon.lib.php'))) unlink(dol_buildpath('/core/menus/standard/oblyon.lib.php'));
 
-		dolibarr_set_const($this->db,'MAIN_THEME','oblyon');
+		berp3_set_const($this->db,'MAIN_THEME','oblyon');
 
 		return $this->_init($sql, $options);
 	}
@@ -429,13 +429,13 @@ function __construct($db) {
 	function remove($options='') {
 		$sql = array();
 
-		dolibarr_set_const($this->db,'MAIN_THEME','eldy');
-		dolibarr_set_const($this->db,'MAIN_MENU_INVERT',0);
+		berp3_set_const($this->db,'MAIN_THEME','eldy');
+		berp3_set_const($this->db,'MAIN_MENU_INVERT',0);
 		
-		dolibarr_del_const($this->db,'MAIN_MENU_STANDARD_FORCED');
-		dolibarr_del_const($this->db,'MAIN_MENUFRONT_STANDARD_FORCED');
-		dolibarr_del_const($this->db,'MAIN_MENU_SMARTPHONE_FORCED');
-		dolibarr_del_const($this->db,'MAIN_MENUFRONT_SMARTPHONE_FORCED');
+		berp3_del_const($this->db,'MAIN_MENU_STANDARD_FORCED');
+		berp3_del_const($this->db,'MAIN_MENUFRONT_STANDARD_FORCED');
+		berp3_del_const($this->db,'MAIN_MENU_SMARTPHONE_FORCED');
+		berp3_del_const($this->db,'MAIN_MENUFRONT_SMARTPHONE_FORCED');
 			
 		return $this->_remove($sql, $options);
 	}

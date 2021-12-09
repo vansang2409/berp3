@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2020 	   Gauthier VERDOL <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2005-2010 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2020 	    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,10 +31,10 @@ require_once DOL_DOCUMENT_ROOT . '/core/modules/workstation/modules_workstation.
 class mod_workstation_standard extends ModeleNumRefWorkstation
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	public $prefix = 'WKSTATION';
 

@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2019 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2007      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2013	   Juanjo Menent        <jmenent@2byte.es>
+/* Copyright (C) 2005-2019 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2007      
+ * Copyright (C) 2013	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,8 +48,8 @@ $action = GETPOST('action', 'aZ09');
 if ($action == 'set') {
 	$db->begin();
 
-	$result1 = dolibarr_set_const($db, "DEBUGBAR_LOGS_LINES_NUMBER", GETPOST('DEBUGBAR_LOGS_LINES_NUMBER', 'int'), 'chaine', 0, '', 0);
-	$result2 = dolibarr_set_const($db, "DEBUGBAR_USE_LOG_FILE", GETPOST('DEBUGBAR_USE_LOG_FILE', 'int'), 'chaine', 0, '', 0);
+	$result1 = berp3_set_const($db, "DEBUGBAR_LOGS_LINES_NUMBER", GETPOST('DEBUGBAR_LOGS_LINES_NUMBER', 'int'), 'chaine', 0, '', 0);
+	$result2 = berp3_set_const($db, "DEBUGBAR_USE_LOG_FILE", GETPOST('DEBUGBAR_USE_LOG_FILE', 'int'), 'chaine', 0, '', 0);
 	if ($result1 < 0 || $result2 < 0) {
 		$error++;
 	}

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (c) 2005-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (c) 2011      Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2020      Maxime DEMAREST      <maxime@indelog.fr>
+/* Copyright (C) 2003      
+ * Copyright (c) 2005-2013 
+ * Copyright (C) 2005-2009 
+ * Copyright (c) 2011      
+ * Copyright (C) 2020            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ class PropaleStats extends Stats
 	/**
 	 * Constructor
 	 *
-	 * @param 	DoliDB	$db		    Database handler
+	 * @param 	Berp3DB	$db		    Database handler
 	 * @param 	int		$socid	    Id third party for filter. This value must be forced during the new to external user company if user is an external user.
 	 * @param   int		$userid     Id user for filter (creation user)
 	 * @param 	string	$mode	    Option ('customer', 'supplier')

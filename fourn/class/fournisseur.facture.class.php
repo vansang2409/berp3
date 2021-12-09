@@ -1,18 +1,18 @@
 <?php
-/* Copyright (C) 2002-2004	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2004	
+ * Copyright (C) 2004-2012	
  * Copyright (C) 2004		Christophe Combelles	<ccomb@free.fr>
  * Copyright (C) 2005		Marc Barilley			<marc@ocebo.com>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2010-2020	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2013-2019	Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2013		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2014-2016	Marcos García			<marcosgdf@gmail.com>
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2010-2020	
+ * Copyright (C) 2013-2019	
+ * Copyright (C) 2013		
+ * Copyright (C) 2014-2016				
  * Copyright (C) 2015		Bahfir Abbes			<bafbes@gmail.com>
- * Copyright (C) 2015-2019	Ferran Marcet			<fmarcet@2byte.es>
- * Copyright (C) 2016-2021	Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2018       Nicolas ZABOURI			<info@inovea-conseil.com>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2015-2019				
+ * Copyright (C) 2016-2021	
+ * Copyright (C) 2018       			
+ * Copyright (C) 2018-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -358,7 +358,7 @@ class FactureFournisseur extends CommonInvoice
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1609,9 +1609,9 @@ class FactureFournisseur extends CommonInvoice
 							$up_ht_disc = price2num($up_ht_disc * (100 - $this->lines[$i]->remise_percent) / 100, 'MU');
 						}
 						if ($this->type == FactureFournisseur::TYPE_CREDIT_NOTE) {
-							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $up_ht_disc, $langs->trans("InvoiceValidatedInDolibarr", $num));
+							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $up_ht_disc, $langs->trans("InvoiceValidatedInBerp3", $num));
 						} else {
-							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $up_ht_disc, $langs->trans("InvoiceValidatedInDolibarr", $num));
+							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $up_ht_disc, $langs->trans("InvoiceValidatedInBerp3", $num));
 						}
 						if ($result < 0) {
 							$error++;
@@ -1734,9 +1734,9 @@ class FactureFournisseur extends CommonInvoice
 						$mouvP->origin = &$this;
 						// We increase stock for product
 						if ($this->type == FactureFournisseur::TYPE_CREDIT_NOTE) {
-							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceBackToDraftInDolibarr", $this->ref));
+							$result = $mouvP->reception($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceBackToDraftInBerp3", $this->ref));
 						} else {
-							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceBackToDraftInDolibarr", $this->ref));
+							$result = $mouvP->livraison($user, $this->lines[$i]->fk_product, $idwarehouse, $this->lines[$i]->qty, $this->lines[$i]->subprice, $langs->trans("InvoiceBackToDraftInBerp3", $this->ref));
 						}
 					}
 				}
@@ -2914,12 +2914,12 @@ class FactureFournisseur extends CommonInvoice
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'facture_fourn'
@@ -3204,7 +3204,7 @@ class SupplierInvoiceLine extends CommonObjectLine
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

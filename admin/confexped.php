@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2004-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2006      Andre Cianfarani     <acianfa@free.fr>
- * Copyright (C) 2011-2016 Juanjo Menent		<jmenent@2byte.es>ù
- * Copyright (C) 2015      Claudio Aschieri     <c.aschieri@19.coop>
+/* Copyright (C) 2004-2010 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2006           
+ * Copyright (C) 2011-2016 ù
+ * Copyright (C) 2015           
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,18 +46,18 @@ $action = GETPOST('action', 'aZ09');
 // Shipment note
 if (!empty($conf->expedition->enabled) && empty($conf->global->MAIN_SUBMODULE_EXPEDITION)) {
 	// This option should always be set to on when module is on.
-	dolibarr_set_const($db, "MAIN_SUBMODULE_EXPEDITION", "1", 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_SUBMODULE_EXPEDITION", "1", 'chaine', 0, '', $conf->entity);
 }
 /*
 if ($action == 'activate_sending')
 {
-	dolibarr_set_const($db, "MAIN_SUBMODULE_EXPEDITION", "1",'chaine',0,'',$conf->entity);
+	berp3_set_const($db, "MAIN_SUBMODULE_EXPEDITION", "1",'chaine',0,'',$conf->entity);
 	header("Location: confexped.php");
 	exit;
 }
 if ($action == 'disable_sending')
 {
-	dolibarr_del_const($db, "MAIN_SUBMODULE_EXPEDITION",$conf->entity);
+	berp3_del_const($db, "MAIN_SUBMODULE_EXPEDITION",$conf->entity);
 	header("Location: confexped.php");
 	exit;
 }
@@ -65,12 +65,12 @@ if ($action == 'disable_sending')
 
 // Delivery note
 if ($action == 'activate_delivery') {
-	dolibarr_set_const($db, "MAIN_SUBMODULE_EXPEDITION", "1", 'chaine', 0, '', $conf->entity); // We must also enable this
-	dolibarr_set_const($db, "MAIN_SUBMODULE_DELIVERY", "1", 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MAIN_SUBMODULE_EXPEDITION", "1", 'chaine', 0, '', $conf->entity); // We must also enable this
+	berp3_set_const($db, "MAIN_SUBMODULE_DELIVERY", "1", 'chaine', 0, '', $conf->entity);
 	header("Location: confexped.php");
 	exit;
 } elseif ($action == 'disable_delivery') {
-	dolibarr_del_const($db, "MAIN_SUBMODULE_DELIVERY", $conf->entity);
+	berp3_del_const($db, "MAIN_SUBMODULE_DELIVERY", $conf->entity);
 	header("Location: confexped.php");
 	exit;
 }

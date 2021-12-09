@@ -1,7 +1,7 @@
 -- ============================================================================
--- Copyright (C) 2005 Brice Davoleau <e1davole@iu-vannes.fr>
--- Copyright (C) 2005 Matthieu Valleton <mv@seeschloss.org>
--- Copyright (C) 2012 Juanjo Menent <jmenent@2byte.es>
+-- Copyright (C) 2005  <e1davole@iu-vannes.fr>
+-- Copyright (C) 2005  
+-- Copyright (C) 2012  
 -- Copyright (C) 2019 Quentin Vial-Gouteyron <quentin.vial-gouteyron@atm-consulting.fr>
 --
 -- This program is free software; you can redistribute it and/or modify

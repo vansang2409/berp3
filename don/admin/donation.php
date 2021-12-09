@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2005-2010  Laurent Destailleur  	<eldy@users.sourceforge.net>
- * Copyright (C) 2012-2015  Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2013-2017  Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2015-2020  Alexandre Spangaro		<aspangaro@open-dsi.fr>
+/* Copyright (C) 2005-2010    	
+ * Copyright (C) 2012-2015  
+ * Copyright (C) 2013-2017  
+ * Copyright (C) 2015-2020  
  * Copyright (C) 2015       Benoit Bruchard			<benoitb21@gmail.com>
- * Copyright (C) 2019       Thibault FOUCART		<support@ptibogxiv.net>
+ * Copyright (C) 2019       Thibault FOUCART		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ if ($action == 'specimen') {
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "DON_ADDON_MODEL", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "DON_ADDON_MODEL", $value, 'chaine', 0, '', $conf->entity)) {
 		// The constant that was read before the new set
 		// So we go through a variable for a coherent display
 		$conf->global->DON_ADDON_MODEL = $value;
@@ -99,7 +99,7 @@ if ($action == 'specimen') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->DON_ADDON_MODEL == "$value") {
-			dolibarr_del_const($db, 'DON_ADDON_MODEL', $conf->entity);
+			berp3_del_const($db, 'DON_ADDON_MODEL', $conf->entity);
 		}
 	}
 }
@@ -108,7 +108,7 @@ if ($action == 'specimen') {
 if ($action == 'set_DONATION_ACCOUNTINGACCOUNT') {
 	$account = GETPOST('DONATION_ACCOUNTINGACCOUNT', 'alpha');
 
-	$res = dolibarr_set_const($db, "DONATION_ACCOUNTINGACCOUNT", $account, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "DONATION_ACCOUNTINGACCOUNT", $account, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -126,7 +126,7 @@ if ($action == 'set_DONATION_ACCOUNTINGACCOUNT') {
 if ($action == 'set_DONATION_MESSAGE') {
 	$freemessage = GETPOST('DONATION_MESSAGE', 'restricthtml'); // No alpha here, we want exact string
 
-	$res = dolibarr_set_const($db, "DONATION_MESSAGE", $freemessage, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "DONATION_MESSAGE", $freemessage, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -145,7 +145,7 @@ if ($action == 'set_DONATION_MESSAGE') {
 $reg = array();
 if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -155,7 +155,7 @@ if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 
 if (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, $conf->entity) > 0) {
+	if (berp3_del_const($db, $code, $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {

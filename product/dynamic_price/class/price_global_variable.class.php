@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2012 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2014	   Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2007-2012 
+ * Copyright (C) 2014	   
  * Copyright (C) 2015      Ion Agorria          <ion@agorria.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -30,7 +30,7 @@
 class PriceGlobalVariable
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -66,7 +66,7 @@ class PriceGlobalVariable
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDb		$db      Database handler
+	 *  @param	Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

@@ -120,8 +120,8 @@ ConfirmCloneOrder=この注文のクローンを作成してもよいか<b>%s </
 DispatchSupplierOrder=注文書の受信%s
 FirstApprovalAlreadyDone=最初の承認はすでに行われている
 SecondApprovalAlreadyDone=2回目の承認はすでに完了している
-SupplierOrderReceivedInDolibarr=注文書%sが%sを受け取りた
-SupplierOrderSubmitedInDolibarr=注文書%sが送信された
+SupplierOrderReceivedInBerp3=注文書%sが%sを受け取りた
+SupplierOrderSubmitedInBerp3=注文書%sが送信された
 SupplierOrderClassifiedBilled=注文書%sセットの請求
 OtherOrders=他の注文
 ##### Types de contacts #####

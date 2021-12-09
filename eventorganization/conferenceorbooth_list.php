@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2021		Florian Henry			<florian.henry@scopen.fr>
+/* Copyright (C) 2007-2017 
+ * Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ if ($conf->categorie->enabled) {
 	require_once DOL_DOCUMENT_ROOT.'/categories/class/categorie.class.php';
 }
 
-global $dolibarr_main_url_root;
+global $berp3_main_url_root;
 
 // for other modules
 //dol_include_once('/othermodule/class/otherobject.class.php');
@@ -416,7 +416,7 @@ if ($projectid > 0) {
 
 	print '<tr><td valign="middle">'.$langs->trans("EventOrganizationICSLink").'</td><td>';
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT;
 
 	// Show message
@@ -432,7 +432,7 @@ if ($projectid > 0) {
 	print $form->textwithpicto($langs->trans("SuggestOrVoteForConfOrBooth"), $langs->trans("EvntOrgRegistrationHelpMessage"));
 	//print '</span>';
 	print '</td><td>';
-	$linksuggest = $dolibarr_main_url_root.'/public/project/index.php?id='.((int) $project->id);
+	$linksuggest = $berp3_main_url_root.'/public/project/index.php?id='.((int) $project->id);
 	$encodedsecurekey = dol_hash(getDolGlobalString('EVENTORGANIZATION_SECUREKEY').'conferenceorbooth'.((int) $project->id), 'md5');
 	$linksuggest .= '&securekey='.urlencode($encodedsecurekey);
 	//print '<div class="urllink">';
@@ -449,7 +449,7 @@ if ($projectid > 0) {
 	print $langs->trans("PublicAttendeeSubscriptionGlobalPage");
 	//print '</span>';
 	print '</td><td>';
-	$link_subscription = $dolibarr_main_url_root.'/public/eventorganization/attendee_new.php?id='.((int) $project->id).'&type=global';
+	$link_subscription = $berp3_main_url_root.'/public/eventorganization/attendee_new.php?id='.((int) $project->id).'&type=global';
 	$encodedsecurekey = dol_hash(getDolGlobalString('EVENTORGANIZATION_SECUREKEY').'conferenceorbooth'.((int) $project->id), 'md5');
 	$link_subscription .= '&securekey='.urlencode($encodedsecurekey);
 	//print '<div class="urllink">';

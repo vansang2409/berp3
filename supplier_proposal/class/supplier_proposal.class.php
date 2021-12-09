@@ -1,20 +1,20 @@
 <?php
-/* Copyright (C) 2002-2004 Rodolphe Quiedeville		<rodolphe@quiedeville.org>
- * Copyright (C) 2004      Eric Seigne				<eric.seigne@ryxeo.com>
- * Copyright (C) 2004-2011 Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2002-2004 		
+ * Copyright (C) 2004      
+ * Copyright (C) 2004-2011 
  * Copyright (C) 2005      Marc Barilley			<marc@ocebo.com>
- * Copyright (C) 2005-2013 Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2006      Andre Cianfarani			<acianfa@free.fr>
- * Copyright (C) 2008      Raphael Bertrand			<raphael.bertrand@resultic.fr>
- * Copyright (C) 2010-2020 Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2010-2018 Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2012-2014 Christophe Battarel  	<christophe.battarel@altairis.fr>
- * Copyright (C) 2013      Florian Henry		  	<florian.henry@open-concept.pro>
- * Copyright (C) 2014      Marcos García            <marcosgdf@gmail.com>
- * Copyright (C) 2016      Ferran Marcet            <fmarcet@2byte.es>
- * Copyright (C) 2018      Nicolas ZABOURI			<info@inovea-conseil.com>
- * Copyright (C) 2019-2020 Frédéric France          <frederic.france@netlogic.fr>
- * Copyright (C) 2020		Tobias Sekan			<tobias.sekan@startmail.com>
+ * Copyright (C) 2005-2013 
+ * Copyright (C) 2006      			
+ * Copyright (C) 2008      Raphael Bertrand			
+ * Copyright (C) 2010-2020 
+ * Copyright (C) 2010-2018 
+ * Copyright (C) 2012-2014   	
+ * Copyright (C) 2013      		  	
+ * Copyright (C) 2014                  
+ * Copyright (C) 2016                  
+ * Copyright (C) 2018      			
+ * Copyright (C) 2019-2020           
+ * Copyright (C) 2020					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -223,7 +223,7 @@ class SupplierProposal extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *	@param      DoliDB	$db         Database handler
+	 *	@param      Berp3DB	$db         Database handler
 	 *	@param      int		$socid		Id third party
 	 *	@param      int		$supplier_proposalid   Id supplier_proposal
 	 */
@@ -2668,12 +2668,12 @@ class SupplierProposal extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 * @param int $origin_id Old thirdparty id
 	 * @param int $dest_id New thirdparty id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'supplier_proposal'
@@ -2690,7 +2690,7 @@ class SupplierProposal extends CommonObject
 class SupplierProposalLine extends CommonObjectLine
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -2842,7 +2842,7 @@ class SupplierProposalLine extends CommonObjectLine
 	/**
 	 * 	Class line Contructor
 	 *
-	 * 	@param	DoliDB	$db	Database handler
+	 * 	@param	Berp3DB	$db	Database handler
 	 */
 	public function __construct($db)
 	{

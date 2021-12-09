@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2012 Florian Henry  <florian.henry@open-concept.pro>
+/* Copyright (C) 2006-2010 
+ * Copyright (C) 2012   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,10 +18,10 @@
 
 /**
  *       \file       htdocs/webservices/demo_wsclient_thirdparty.php
- *       \brief      Demo page to make a client call to Dolibarr WebServices "server_other"
+ *       \brief      Demo page to make a client call to Berp3 WebServices "server_other"
  */
 
-// This is to make Dolibarr working with Plesk
+// This is to make Berp3 working with Plesk
 set_include_path($_SERVER['DOCUMENT_ROOT'].'/htdocs');
 
 require_once '../master.inc.php';
@@ -33,7 +33,7 @@ $WS_METHOD_GETTHIRDSPARTY  = 'getThirdParty';
 $WS_METHOD_CREATETHIRDSPARTY = 'createThirdParty';
 $WS_METHOD_UPDATETHIRDSPARTY = 'updateThirdParty';
 $WS_METHOD_GETTHIRDSPARTYLIST = 'getListOfThirdParties';
-$ns='http://www.dolibarr.org/ns/';
+$ns='http://www.berp3.org/ns/';
 
 //Chosse action to do
 //$action='get';
@@ -53,7 +53,7 @@ if ($soapclient)
 
 // Call the WebService method and store its result in $result.
 $authentication=array(
-    'dolibarrkey'=>$conf->global->WEBSERVICES_KEY,
+    'berp3key'=>$conf->global->WEBSERVICES_KEY,
     'sourceapplication'=>'DEMO',
     'login'=>'admin',
     'password'=>'changeme',

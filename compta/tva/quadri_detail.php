@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2001-2003  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004       Eric Seigne             <eric.seigne@ryxeo.com>
- * Copyright (C) 2004-2013  Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2001-2003  
+ * Copyright (C) 2004                    
+ * Copyright (C) 2004-2013  
  * Copyright (C) 2006-2015  Yannick Warnier         <ywarnier@beeznest.org>
- * Copyright (C) 2014       Ferran Marcet           <fmarcet@2byte.es>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2019       Eric Seigne             <eric.seigne@cap-rel.fr>
- * Copyright (C) 2021       Open-Dsi                <support@open-dsi.fr>
+ * Copyright (C) 2014       
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2019       
+ * Copyright (C) 2021                       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

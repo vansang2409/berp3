@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2019 Laurent Destailleur          <eldy@users.sourceforge.net>
+/* Copyright (C) 2019 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ if ($action == 'updateMask') {
 	$maskmrp = GETPOST('maskMo', 'alpha');
 
 	if ($maskconstmrp) {
-		$res = dolibarr_set_const($db, $maskconstmrp, $maskmrp, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstmrp, $maskmrp, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -106,12 +106,12 @@ if ($action == 'updateMask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->MRP_MO_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'MRP_MO_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'MRP_MO_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "MRP_MO_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "MRP_MO_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// The constant that was read before the new set
 		// We therefore requires a variable to have a coherent view
 		$conf->global->MRP_MO_ADDON_PDF = $value;
@@ -126,10 +126,10 @@ if ($action == 'updateMask') {
 	// TODO Check if numbering module chosen can be activated
 	// by calling method canBeActivated
 
-	dolibarr_set_const($db, "MRP_MO_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "MRP_MO_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'set_MRP_MO_DRAFT_WATERMARK') {
 	$draft = GETPOST("MRP_MO_DRAFT_WATERMARK");
-	$res = dolibarr_set_const($db, "MRP_MO_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MRP_MO_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -143,7 +143,7 @@ if ($action == 'updateMask') {
 } elseif ($action == 'set_MRP_MO_FREE_TEXT') {
 	$freetext = GETPOST("MRP_MO_FREE_TEXT", 'restricthtml'); // No alpha here, we want exact string
 
-	$res = dolibarr_set_const($db, "MRP_MO_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MRP_MO_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -447,7 +447,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td><td class="right">';

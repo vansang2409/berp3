@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2019		Nicolas ZABOURI			<info@inovea-conseil.com>
+/* Copyright (C) 2003		
+ * Copyright (C) 2004-2012	
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2019					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -83,7 +83,7 @@ class InfoBox
 	/**
 	 *  Return array of boxes qualified for area and user
 	 *
-	 *  @param	DoliDB		$dbs				Database handler
+	 *  @param	Berp3DB		$dbs				Database handler
 	 *  @param	string		$mode			'available' or 'activated'
 	 *  @param	int			$zone			Name or area (-1 for all, 0 for Homepage, 1 for Accountancy, 2 for xxx, ...)
 	 *  @param  User|null   $user	  		Object user to filter
@@ -215,7 +215,7 @@ class InfoBox
 	/**
 	 *  Save order of boxes for area and user
 	 *
-	 *  @param	DoliDB	$dbs			Database handler
+	 *  @param	Berp3DB	$dbs			Database handler
 	 *  @param	int		$zone       	Name of area (0 for Homepage, ...)
 	 *  @param  string  $boxorder   	List of boxes with correct order 'A:123,456,...-B:789,321...'
 	 *  @param  int     $userid     	Id of user

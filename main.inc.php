@@ -1,20 +1,5 @@
 <?php
-/* Copyright (C) 2002-2007  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2003       Xavier Dutoit           <doli@sydesy.com>
- * Copyright (C) 2004-2021  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2021  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2014  Philippe Grand          <philippe.grand@atoo-net.com>
- * Copyright (C) 2008       Matteli
- * Copyright (C) 2011-2016  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2012       Christophe Battarel     <christophe.battarel@altairis.fr>
- * Copyright (C) 2014-2015  Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2020       Demarest Maxime         <maxime@indelog.fr>
- * Copyright (C) 2020       Charlene Benke          <charlie@patas-monkey.com>
- * Copyright (C) 2021       Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2021       Alexandre Spangaro      <aspangaro@open-dsi.fr>
+/* 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -266,7 +251,7 @@ if (!empty($_POST["DOL_AUTOSET_COOKIE"])) {
 	$cookiename = $tmpautoset[0];
 	$cookievalue = json_encode($cookiearrayvalue);
 	//var_dump('setcookie cookiename='.$cookiename.' cookievalue='.$cookievalue);
-	setcookie($cookiename, empty($cookievalue) ? '' : $cookievalue, empty($cookievalue) ? 0 : (time() + (86400 * 354)), '/', null, (empty($dolibarr_main_force_https) ? false : true), true); // keep cookie 1 year and add tag httponly
+	setcookie($cookiename, empty($cookievalue) ? '' : $cookievalue, empty($cookievalue) ? 0 : (time() + (86400 * 354)), '/', null, (empty($berp3_main_force_https) ? false : true), true); // keep cookie 1 year and add tag httponly
 	if (empty($cookievalue)) {
 		unset($_COOKIE[$cookiename]);
 	}
@@ -279,7 +264,7 @@ if (ini_get('session.save_handler') == 'user') {
 }
 
 // Init session. Name of session is specific to BERP3 instance.
-// Must be done after the include of filefunc.inc.php so global variables of conf file are defined (like $dolibarr_main_instance_unique_id or $dolibarr_main_force_https).
+// Must be done after the include of filefunc.inc.php so global variables of conf file are defined (like $berp3_main_instance_unique_id or $berp3_main_force_https).
 // Note: the function dol_getprefix is defined into functions.lib.php but may have been defined to return a different key to manage another area to protect.
 $prefix = dol_getprefix('');
 $sessionname = 'DOLSESSID_'.$prefix;
@@ -292,7 +277,7 @@ if (!empty($_COOKIE[$sessiontimeout])) {
 // This create lock, released by session_write_close() or end of page.
 // We need this lock as long as we read/write $_SESSION ['vars']. We can remove lock when finished.
 if (!defined('NOSESSION')) {
-	session_set_cookie_params(0, '/', null, (empty($dolibarr_main_force_https) ? false : true), true); // Add tag secure and httponly on session cookie (same as setting session.cookie_httponly into php.ini). Must be called before the session_start.
+	session_set_cookie_params(0, '/', null, (empty($berp3_main_force_https) ? false : true), true); // Add tag secure and httponly on session cookie (same as setting session.cookie_httponly into php.ini). Must be called before the session_start.
 	session_name($sessionname);
 	session_start();
 }
@@ -339,7 +324,7 @@ register_shutdown_function('dol_shutdown');
 if (!empty($conf->debugbar->enabled) && !GETPOST('dol_use_jmobile') && empty($_SESSION['dol_use_jmobile'])) {
 	global $debugbar;
 	include_once DOL_DOCUMENT_ROOT.'/debugbar/class/DebugBar.php';
-	$debugbar = new DolibarrDebugBar();
+	$debugbar = new Berp3DebugBar();
 	$renderer = $debugbar->getRenderer();
 	if (empty($conf->global->MAIN_HTML_HEADER)) {
 		$conf->global->MAIN_HTML_HEADER = '';
@@ -368,7 +353,7 @@ if (GETPOST('textbrowser', 'int') || (!empty($conf->browser->name) && $conf->bro
 	$conf->global->MAIN_OPTIMIZEFORTEXTBROWSER = 1;
 }
 
-// Force HTTPS if required ($conf->file->main_force_https is 0/1 or 'https dolibarr root url')
+// Force HTTPS if required ($conf->file->main_force_https is 0/1 or 'https berp3 root url')
 // $_SERVER["HTTPS"] is 'on' when link is https, otherwise $_SERVER["HTTPS"] is empty or 'off'
 if (!empty($conf->file->main_force_https) && (empty($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != 'on')) {
 	$newurl = '';
@@ -388,16 +373,16 @@ if (!empty($conf->file->main_force_https) && (empty($_SERVER["HTTPS"]) || $_SERV
 	// Start redirect
 	if ($newurl) {
 		header_remove(); // Clean header already set to be sure to remove any header like "Set-Cookie: DOLSESSID_..." from non HTTPS answers
-		dol_syslog("main.inc: dolibarr_main_force_https is on, we make a redirect to ".$newurl);
+		dol_syslog("main.inc: berp3_main_force_https is on, we make a redirect to ".$newurl);
 		header("Location: ".$newurl);
 		exit;
 	} else {
-		dol_syslog("main.inc: dolibarr_main_force_https is on but we failed to forge new https url so no redirect is done", LOG_WARNING);
+		dol_syslog("main.inc: berp3_main_force_https is on but we failed to forge new https url so no redirect is done", LOG_WARNING);
 	}
 }
 
-if (!defined('NOLOGIN') && !defined('NOIPCHECK') && !empty($dolibarr_main_restrict_ip)) {
-	$listofip = explode(',', $dolibarr_main_restrict_ip);
+if (!defined('NOLOGIN') && !defined('NOIPCHECK') && !empty($berp3_main_restrict_ip)) {
+	$listofip = explode(',', $berp3_main_restrict_ip);
 	$found = false;
 	foreach ($listofip as $ip) {
 		$ip = trim($ip);
@@ -431,9 +416,9 @@ if ((!empty($conf->global->MAIN_VERSION_LAST_UPGRADE) && ($conf->global->MAIN_VE
 || (empty($conf->global->MAIN_VERSION_LAST_UPGRADE) && !empty($conf->global->MAIN_VERSION_LAST_INSTALL) && ($conf->global->MAIN_VERSION_LAST_INSTALL != DOL_VERSION))) {
 	$versiontocompare = empty($conf->global->MAIN_VERSION_LAST_UPGRADE) ? $conf->global->MAIN_VERSION_LAST_INSTALL : $conf->global->MAIN_VERSION_LAST_UPGRADE;
 	require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
-	$dolibarrversionlastupgrade = preg_split('/[.-]/', $versiontocompare);
-	$dolibarrversionprogram = preg_split('/[.-]/', DOL_VERSION);
-	$rescomp = versioncompare($dolibarrversionprogram, $dolibarrversionlastupgrade);
+	$berp3versionlastupgrade = preg_split('/[.-]/', $versiontocompare);
+	$berp3versionprogram = preg_split('/[.-]/', DOL_VERSION);
+	$rescomp = versioncompare($berp3versionprogram, $berp3versionlastupgrade);
 	if ($rescomp > 0) {   // Programs have a version higher than database. We did not add "&& $rescomp < 3" because we want upgrade process for build upgrades
 		dol_syslog("main.inc: database version ".$versiontocompare." is lower than programs version ".DOL_VERSION.". Redirect to install page.", LOG_WARNING);
 		header("Location: ".DOL_URL_ROOT."/install/index.php");
@@ -459,10 +444,10 @@ if (!defined('NOTOKENRENEWAL') && !defined('NOSESSION')) {
 	}
 }
 
-//dol_syslog("aaaa - ".defined('NOCSRFCHECK')." - ".$dolibarr_nocsrfcheck." - ".$conf->global->MAIN_SECURITY_CSRF_WITH_TOKEN." - ".$_SERVER['REQUEST_METHOD']." - ".GETPOST('token', 'alpha'));
+//dol_syslog("aaaa - ".defined('NOCSRFCHECK')." - ".$berp3_nocsrfcheck." - ".$conf->global->MAIN_SECURITY_CSRF_WITH_TOKEN." - ".$_SERVER['REQUEST_METHOD']." - ".GETPOST('token', 'alpha'));
 
 // Check validity of token, only if option MAIN_SECURITY_CSRF_WITH_TOKEN enabled or if constant CSRFCHECK_WITH_TOKEN is set into page
-if ((!defined('NOCSRFCHECK') && empty($dolibarr_nocsrfcheck) && getDolGlobalInt('MAIN_SECURITY_CSRF_WITH_TOKEN')) || defined('CSRFCHECK_WITH_TOKEN')) {
+if ((!defined('NOCSRFCHECK') && empty($berp3_nocsrfcheck) && getDolGlobalInt('MAIN_SECURITY_CSRF_WITH_TOKEN')) || defined('CSRFCHECK_WITH_TOKEN')) {
 	// Array of action code where CSRFCHECK with token will be forced (so token must be provided on url request)
 	$sensitiveget = false;
 	if ((GETPOSTISSET('massaction') || GETPOST('action', 'aZ09')) && getDolGlobalInt('MAIN_SECURITY_CSRF_WITH_TOKEN') >= 3) {
@@ -506,7 +491,7 @@ if ((!defined('NOCSRFCHECK') && empty($dolibarr_nocsrfcheck) && getDolGlobalInt(
 				} else {
 					dol_syslog("--- Access to ".(empty($_SERVER["REQUEST_METHOD"]) ? '' : $_SERVER["REQUEST_METHOD"].' ').$_SERVER["PHP_SELF"]." refused by CSRF protection (POST method or GET with a sensible value for 'action' parameter) in main.inc.php. Token not provided.", LOG_WARNING);
 					print "Access to this page this way (POST method or GET with a sensible value for 'action' parameter) is refused by CSRF protection in main.inc.php. Token not provided.\n";
-					print "If you access your server behind a proxy using url rewriting and the parameter is provided by caller, you might check that all HTTP header are propagated (or add the line \$dolibarr_nocsrfcheck=1 into your conf.php file or MAIN_SECURITY_CSRF_WITH_TOKEN to 0";
+					print "If you access your server behind a proxy using url rewriting and the parameter is provided by caller, you might check that all HTTP header are propagated (or add the line \$berp3_nocsrfcheck=1 into your conf.php file or MAIN_SECURITY_CSRF_WITH_TOKEN to 0";
 					if (!empty($conf->global->MAIN_SECURITY_CSRF_WITH_TOKEN)) {
 						print " instead of ".$conf->global->MAIN_SECURITY_CSRF_WITH_TOKEN;
 					}
@@ -579,27 +564,27 @@ if (is_array($modulepart) && count($modulepart) > 0) {
 $login = '';
 if (!defined('NOLOGIN')) {
 	// $authmode lists the different method of identification to be tested in order of preference.
-	// Example: 'http', 'dolibarr', 'ldap', 'http,forceuser', '...'
+	// Example: 'http', 'berp3', 'ldap', 'http,forceuser', '...'
 
 	if (defined('MAIN_AUTHENTICATION_MODE')) {
-		$dolibarr_main_authentication = constant('MAIN_AUTHENTICATION_MODE');
+		$berp3_main_authentication = constant('MAIN_AUTHENTICATION_MODE');
 	} else {
 		// Authentication mode
-		if (empty($dolibarr_main_authentication)) {
-			$dolibarr_main_authentication = 'http,dolibarr';
+		if (empty($berp3_main_authentication)) {
+			$berp3_main_authentication = 'http,berp3';
 		}
 		// Authentication mode: forceuser
-		if ($dolibarr_main_authentication == 'forceuser' && empty($dolibarr_auto_user)) {
-			$dolibarr_auto_user = 'auto';
+		if ($berp3_main_authentication == 'forceuser' && empty($berp3_auto_user)) {
+			$berp3_auto_user = 'auto';
 		}
 	}
 	// Set authmode
-	$authmode = explode(',', $dolibarr_main_authentication);
+	$authmode = explode(',', $berp3_main_authentication);
 
 	// No authentication mode
 	if (!count($authmode)) {
 		$langs->load('main');
-		dol_print_error('', $langs->trans("ErrorConfigParameterNotDefined", 'dolibarr_main_authentication'));
+		dol_print_error('', $langs->trans("ErrorConfigParameterNotDefined", 'berp3_main_authentication'));
 		exit;
 	}
 
@@ -625,7 +610,7 @@ if (!defined('NOLOGIN')) {
 		//dol_syslog("POST key=".join(array_keys($_POST),',').' value='.join($_POST,','));
 
 		// If in demo mode, we check we go to home page through the public/demo/index.php page
-		if (!empty($dolibarr_main_demo) && $_SERVER['PHP_SELF'] == DOL_URL_ROOT.'/index.php') {  // We ask index page
+		if (!empty($berp3_main_demo) && $_SERVER['PHP_SELF'] == DOL_URL_ROOT.'/index.php') {  // We ask index page
 			if (empty($_SERVER['HTTP_REFERER']) || !preg_match('/public/', $_SERVER['HTTP_REFERER'])) {
 				dol_syslog("Call index page from another url than demo page (call is done from page ".$_SERVER['HTTP_REFERER'].")");
 				$url = '';
@@ -691,7 +676,7 @@ if (!defined('NOLOGIN')) {
 		if (defined('MAIN_AUTHENTICATION_POST_METHOD')) {
 			$allowedmethodtopostusername = constant('MAIN_AUTHENTICATION_POST_METHOD');
 		}
-		$usertotest = (!empty($_COOKIE['login_dolibarr']) ? preg_replace('/[^a-zA-Z0-9_\-]/', '', $_COOKIE['login_dolibarr']) : GETPOST("username", "alpha", $allowedmethodtopostusername));
+		$usertotest = (!empty($_COOKIE['login_berp3']) ? preg_replace('/[^a-zA-Z0-9_\-]/', '', $_COOKIE['login_berp3']) : GETPOST("username", "alpha", $allowedmethodtopostusername));
 		$passwordtotest = GETPOST('password', 'none', $allowedmethodtopostusername);
 		$entitytotest = (GETPOST('entity', 'int') ? GETPOST('entity', 'int') : (!empty($conf->entity) ? $conf->entity : 1));
 
@@ -700,10 +685,10 @@ if (!defined('NOLOGIN')) {
 		if (isset($_SERVER["REMOTE_USER"]) && in_array('http', $authmode)) {
 			$goontestloop = true;
 		}
-		if ($dolibarr_main_authentication == 'forceuser' && !empty($dolibarr_auto_user)) {
+		if ($berp3_main_authentication == 'forceuser' && !empty($berp3_auto_user)) {
 			$goontestloop = true;
 		}
-		if (GETPOST("username", "alpha", $allowedmethodtopostusername) || !empty($_COOKIE['login_dolibarr']) || GETPOST('openid_mode', 'alpha', 1)) {
+		if (GETPOST("username", "alpha", $allowedmethodtopostusername) || !empty($_COOKIE['login_berp3']) || GETPOST('openid_mode', 'alpha', 1)) {
 			$goontestloop = true;
 		}
 
@@ -720,7 +705,7 @@ if (!defined('NOLOGIN')) {
 		// Validation of login/pass/entity
 		// If ok, the variable login will be returned
 		// If error, we will put error message in session under the name dol_loginmesg
-		if ($test && $goontestloop && (GETPOST('actionlogin', 'aZ09') == 'login' || $dolibarr_main_authentication != 'dolibarr')) {
+		if ($test && $goontestloop && (GETPOST('actionlogin', 'aZ09') == 'login' || $berp3_main_authentication != 'berp3')) {
 			$login = checkLoginPassEntity($usertotest, $passwordtotest, $entitytotest, $authmode);
 			if ($login === '--bad-login-validity--') {
 				$login = '';
@@ -800,7 +785,7 @@ if (!defined('NOLOGIN')) {
 		if ($resultFetchUser <= 0) {
 			dol_syslog('User not found, connexion refused');
 			session_destroy();
-			session_set_cookie_params(0, '/', null, (empty($dolibarr_main_force_https) ? false : true), true); // Add tag secure and httponly on session cookie
+			session_set_cookie_params(0, '/', null, (empty($berp3_main_force_https) ? false : true), true); // Add tag secure and httponly on session cookie
 			session_name($sessionname);
 			session_start();
 
@@ -808,9 +793,9 @@ if (!defined('NOLOGIN')) {
 				// Load translation files required by page
 				$langs->loadLangs(array('main', 'errors'));
 
-				$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorCantLoadUserFromDolibarrDatabase", $login);
+				$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorCantLoadUserFromBerp3Database", $login);
 
-				$user->trigger_mesg = 'ErrorCantLoadUserFromDolibarrDatabase - login='.$login;
+				$user->trigger_mesg = 'ErrorCantLoadUserFromBerp3Database - login='.$login;
 			}
 			if ($resultFetchUser < 0) {
 				$_SESSION["dol_loginmesg"] = $user->error;
@@ -864,7 +849,7 @@ if (!defined('NOLOGIN')) {
 			// Account has been removed after login
 			dol_syslog("Can't load user even if session logged. _SESSION['dol_login']=".$login, LOG_WARNING);
 			session_destroy();
-			session_set_cookie_params(0, '/', null, (empty($dolibarr_main_force_https) ? false : true), true); // Add tag secure and httponly on session cookie
+			session_set_cookie_params(0, '/', null, (empty($berp3_main_force_https) ? false : true), true); // Add tag secure and httponly on session cookie
 			session_name($sessionname);
 			session_start();
 
@@ -872,9 +857,9 @@ if (!defined('NOLOGIN')) {
 				// Load translation files required by page
 				$langs->loadLangs(array('main', 'errors'));
 
-				$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorCantLoadUserFromDolibarrDatabase", $login);
+				$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorCantLoadUserFromBerp3Database", $login);
 
-				$user->trigger_mesg = 'ErrorCantLoadUserFromDolibarrDatabase - login='.$login;
+				$user->trigger_mesg = 'ErrorCantLoadUserFromBerp3Database - login='.$login;
 			}
 			if ($resultFetchUser < 0) {
 				$_SESSION["dol_loginmesg"] = $user->error;
@@ -1442,7 +1427,7 @@ function top_htmlhead($head, $title = '', $disablejs = 0, $disablehead = 0, $arr
 			print '<meta name="MAIN_FEATURES_LEVEL" content="'.getDolGlobalInt('MAIN_FEATURES_LEVEL').'">'."\n";
 		}
 		// Favicon
-		$favicon = DOL_URL_ROOT.'/theme/dolibarr_256x256_color.png';
+		$favicon = DOL_URL_ROOT.'/theme/berp3_256x256_color.png';
 		if (!empty($mysoc->logo_squarred_mini)) {
 			$favicon = DOL_URL_ROOT.'/viewimage.php?cache=1&modulepart=mycompany&file='.urlencode('logos/thumbs/'.$mysoc->logo_squarred_mini);
 		}
@@ -1484,7 +1469,7 @@ function top_htmlhead($head, $title = '', $disablejs = 0, $disablehead = 0, $arr
 		} else {
 			$titletoshow = dol_htmlentities($appli);
 		}
-		$titletoshow = str_replace("Dolibarr", "BERP3", $titletoshow);
+		$titletoshow = str_replace("Berp3", "BERP3", $titletoshow);
 
 		$parameters = array('title'=>$titletoshow);
 		$result = $hookmanager->executeHooks('setHtmlTitle', $parameters); // Note that $action and $object may have been modified by some hooks
@@ -1784,7 +1769,7 @@ function top_htmlhead($head, $title = '', $disablejs = 0, $disablehead = 0, $arr
 function top_menu($head, $title = '', $target = '', $disablejs = 0, $disablehead = 0, $arrayofjs = '', $arrayofcss = '', $morequerystring = '', $helppagename = '')
 {
 	global $user, $conf, $langs, $db;
-	global $dolibarr_main_authentication, $dolibarr_main_demo;
+	global $berp3_main_authentication, $berp3_main_demo;
 	global $hookmanager, $menumanager;
 
 	$searchform = '';
@@ -2019,7 +2004,7 @@ function top_menu($head, $title = '', $target = '', $disablejs = 0, $disablehead
 function top_menu_user($hideloginname = 0, $urllogout = '')
 {
 	global $langs, $conf, $db, $hookmanager, $user, $mysoc;
-	global $dolibarr_main_authentication, $dolibarr_main_demo;
+	global $berp3_main_authentication, $berp3_main_demo;
 	global $menumanager;
 
 	$langs->load('companies');
@@ -2787,7 +2772,7 @@ function left_menu($menu_array_before, $helppagename = '', $notused = '', $menu_
 			require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
 
 			if ($conf->global->MAIN_BUGTRACK_ENABLELINK == 'github') {
-				$bugbaseurl = 'https://github.com/Dolibarr/dolibarr/issues/new?labels=Bug';
+				$bugbaseurl = 'https://github.com/Berp3/berp3/issues/new?labels=Bug';
 				$bugbaseurl .= '&title=';
 				$bugbaseurl .= urlencode("Bug: ");
 				$bugbaseurl .= '&body=';
@@ -2815,7 +2800,7 @@ function left_menu($menu_array_before, $helppagename = '', $notused = '', $menu_
 				$bugbaseurl .= urlencode("## Steps to reproduce the behavior\n");
 				$bugbaseurl .= urlencode("[*Verbose description*]\n");
 				$bugbaseurl .= urlencode("\n");
-				$bugbaseurl .= urlencode("## [Attached files](https://help.github.com/articles/issue-attachments) (Screenshots, screencasts, dolibarr.log, debugging informations…)\n");
+				$bugbaseurl .= urlencode("## [Attached files](https://help.github.com/articles/issue-attachments) (Screenshots, screencasts, berp3.log, debugging informations…)\n");
 				$bugbaseurl .= urlencode("[*Files*]\n");
 				$bugbaseurl .= urlencode("\n");
 
@@ -3030,7 +3015,7 @@ if (!function_exists("llxFooter")) {
 		global $conf, $db, $langs, $user, $mysoc, $object, $hookmanager;
 		global $delayedhtmlcontent;
 		global $contextpage, $page, $limit;
-		global $dolibarr_distrib;
+		global $berp3_distrib;
 
 		$ext = 'layout='.$conf->browser->layout.'&version='.urlencode(DOL_VERSION);
 

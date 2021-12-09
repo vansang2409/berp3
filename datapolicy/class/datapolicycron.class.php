@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2018       Nicolas ZABOURI     <info@inovea-conseil.com>
- * Copyright (C) 2018-2020  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2018            
+ * Copyright (C) 2018-2020  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ class DataPolicyCron
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

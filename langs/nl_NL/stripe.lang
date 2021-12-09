@@ -1,6 +1,6 @@
 # BERP3 language file - Source file is en_US - stripe
 StripeSetup=Stripe-module instellen
-StripeDesc=Bied klanten een Stripe online betaalpagina voor betalingen met credit / cebit-kaarten via <a href="http://www.stripe.com" target="_blank">Stripe</a> . Dit kan worden gebruikt om uw klanten toe te staan ad-hocbetalingen te doen of voor betalingen met betrekking tot een bepaald Dolibarr-object (factuur, bestelling, ...)
+StripeDesc=Bied klanten een Stripe online betaalpagina voor betalingen met credit / cebit-kaarten via <a href="http://www.stripe.com" target="_blank">Stripe</a> . Dit kan worden gebruikt om uw klanten toe te staan ad-hocbetalingen te doen of voor betalingen met betrekking tot een bepaald Berp3-object (factuur, bestelling, ...)
 StripeOrCBDoPayment=Betaal met creditcard of Stripe
 FollowingUrlAreAvailableToMakePayments=De volgende URL's zijn beschikbaar om een pagina te bieden aan afnemers voor het doen van een betaling van BERP3 objecten
 PaymentForm=Betalingsformulier

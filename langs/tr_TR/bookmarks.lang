@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Bir yer imi URL'si seçildiğindeki davranış
 CreateBookmark=Yer imi oluştur
 SetHereATitleForLink=Yer imi için bir ad belirleyin
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Harici/mutlak bir bağlantı (https://URL) veya dahili/göreceli bir bağlantı (/DOLIBARR_ROOT/htdocs/...) kullanın
+UseAnExternalHttpLinkOrRelativeBerp3Link=Harici/mutlak bir bağlantı (https://URL) veya dahili/göreceli bir bağlantı (/BERP3_ROOT/htdocs/...) kullanın
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Bağlantı verilen sayfanın mevcut sekmede mi yoksa yeni sekmede mi açılacağını seçin
 BookmarksManagement=Yer imi yönetimi

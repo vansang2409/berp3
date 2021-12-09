@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2003      Eric Seigne          <erics@rycks.com>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2011 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2015      Frederic France      <frederic.france@free.fr>
+/* Copyright (C) 2003      
+ * Copyright (C) 2003                
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2005-2011 
+ * Copyright (C) 2015            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ class box_external_rss extends ModeleBoxes
 	public $depends = array("externalrss");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -53,7 +53,7 @@ class box_external_rss extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 * 	@param	DoliDB	$db			Database handler
+	 * 	@param	Berp3DB	$db			Database handler
 	 *  @param	string	$param		More parameters
 	 */
 	public function __construct($db, $param)

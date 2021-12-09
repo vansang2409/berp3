@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2007-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2007-2011 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@
 class Ccountry // extends CommonObject
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -73,7 +73,7 @@ class Ccountry // extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb		$db      Database handler
+	 *  @param      Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

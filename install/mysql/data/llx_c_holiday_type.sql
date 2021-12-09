@@ -1,10 +1,10 @@
--- Copyright (C) 2001-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2003      Jean-Louis Bergamo   <jlb@j1b.org>
--- Copyright (C) 2004-2009 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2004      Benoit Mortier       <benoit.mortier@opensides.be>
--- Copyright (C) 2004      Guillaume Delecourt  <guillaume.delecourt@opensides.be>
--- Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
--- Copyright (C) 2007 	   Patrick Raguin       <patrick.raguin@gmail.com>
+-- Copyright (C) 2001-2004 
+-- Copyright (C) 2003         
+-- Copyright (C) 2004-2009 
+-- Copyright (C) 2004             
+-- Copyright (C) 2004        
+-- Copyright (C) 2005-2009 
+-- Copyright (C) 2007 	          
 -- Copyright (C) 2012 	   Tommaso Basilici       <t.basilici@19.coop>
 --
 -- This program is free software; you can redistribute it and/or modify

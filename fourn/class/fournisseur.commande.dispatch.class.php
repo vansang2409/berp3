@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015 Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014 Juanjo Menent	      <jmenent@2byte.es>
+/* Copyright (C) 2015 
+ * Copyright (C) 2014 	      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ require_once DOL_DOCUMENT_ROOT."/reception/class/reception.class.php";
 class CommandeFournisseurDispatch extends CommonObjectLine
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -111,7 +111,7 @@ class CommandeFournisseurDispatch extends CommonObjectLine
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDb		$db      Database handler
+	 *  @param	Berp3Db		$db      Database handler
 	 */
 	public function __construct($db)
 	{

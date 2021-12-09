@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2013-2016  Olivier Geffroy         <jeff@jeffinfo.com>
- * Copyright (C) 2013-2016  Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2013-2021  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2016-2017  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2013-2016  
+ * Copyright (C) 2013-2016  
+ * Copyright (C) 2013-2021  
+ * Copyright (C) 2016-2017  
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -478,7 +478,7 @@ if ($action == 'delmouvconfirm' && $user->rights->accounting->mouvements->suppri
 }
 if ($action == 'setreexport') {
 	$setreexport = GETPOST('value', 'int');
-	if (!dolibarr_set_const($db, "ACCOUNTING_REEXPORT", $setreexport, 'yesno', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, "ACCOUNTING_REEXPORT", $setreexport, 'yesno', 0, '', $conf->entity)) {
 		$error++;
 	}
 

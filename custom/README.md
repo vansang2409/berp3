@@ -1,4 +1,4 @@
-# DOLIBARR ERP & CRM custom directory for external modules
+# BERP3 ERP & CRM custom directory for external modules
 
 This directory is dedicated to store external modules.
 To use it, just copy here the directory of the module into this directory.
@@ -15,13 +15,13 @@ For example on Linux OS: Get the module from the command
 
 Then create the symbolic link
 
-`ln -fs ~/git/newmodule/htdocs /path_to_dolibarr/htdocs/custom/newmodule`
+`ln -fs ~/git/newmodule/htdocs /path_to_berp3/htdocs/custom/newmodule`
 
 WARNING !!!
-Check also that the /custom directory is active by adding into dolibarr `conf/conf.php` file the following
-two lines, so dolibarr will also scan /custom directory to find external external modules:
+Check also that the /custom directory is active by adding into berp3 `conf/conf.php` file the following
+two lines, so berp3 will also scan /custom directory to find external external modules:
 
 ```php
-$dolibarr_main_url_root_alt='/custom';
-$dolibarr_main_document_root_alt='/path_to_dolibarr/htdocs/custom/';
+$berp3_main_url_root_alt='/custom';
+$berp3_main_document_root_alt='/path_to_berp3/htdocs/custom/';
 ```

@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2005		Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2021	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011		Herve Prot				<herve.prot@symeos.com>
- * Copyright (C) 2012		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2018		Juanjo Menent			<jmenent@2byte.es>
+/* Copyright (C) 2005		
+ * Copyright (C) 2005-2021	
+ * Copyright (C) 2005-2017	
+ * Copyright (C) 2011						
+ * Copyright (C) 2012		
+ * Copyright (C) 2018		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

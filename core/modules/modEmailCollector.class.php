@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2018 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,18 +23,18 @@
  *  \ingroup    emailcollector
  *  \brief      Description and activation file for the module emailcollector
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module emailcollector
  */
-class modEmailCollector extends DolibarrModules
+class modEmailCollector extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -43,7 +43,7 @@ class modEmailCollector extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 50320;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'emailcollector';
@@ -63,8 +63,8 @@ class modEmailCollector extends DolibarrModules
 		// Used only if file README.md and README-LL.md not found.
 		$this->descriptionlong = "EmailCollectorDescription";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3', 'berp3_deprecated' or a version string like 'x.y.z'
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where DAV is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -92,7 +92,7 @@ class modEmailCollector extends DolibarrModules
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with
 		$this->langfiles = array("admin");
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(7, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(7, 0); // Minimum version of Berp3 required by module
 		$this->warnings_activation = array(); // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		$this->warnings_activation_ext = array(); // Warning to show when we activate an external module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		//$this->automatic_activation = array('FR'=>'davWasAutomaticallyActivatedBecauseOfYourCountryChoice');
@@ -255,7 +255,7 @@ class modEmailCollector extends DolibarrModules
 
 	/**
 	 *	Function called when module is enabled.
-	 *	The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *	The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *	It also creates data directories
 	 *
 	 *	@param      string	$options    Options when enabling module ('', 'noboxes')
@@ -301,7 +301,7 @@ class modEmailCollector extends DolibarrModules
 		$tmpresql = $this->db->query($tmpsql);
 		if ($tmpresql) {
 			if ($this->db->num_rows($tmpresql) == 0) {
-				$descriptionA1 = 'This collector will scan your mailbox "Sent" directory to find emails that was sent as an answer of another email directly from your email software and not from BERP3. If such an email is found, the event of answer is recorded into Dolibarr.';
+				$descriptionA1 = 'This collector will scan your mailbox "Sent" directory to find emails that was sent as an answer of another email directly from your email software and not from BERP3. If such an email is found, the event of answer is recorded into Berp3.';
 
 				$sqlforexampleA1 = "INSERT INTO ".MAIN_DB_PREFIX."emailcollector_emailcollector (entity, ref, label, description, source_directory, date_creation, fk_user_creat, status)";
 				$sqlforexampleA1 .= " VALUES (".$conf->entity.", 'Collect_Responses_Out', 'Example to collect answers to emails done from your external email software', '".$this->db->escape($descriptionA1)."', 'Sent', '".$this->db->idate(dol_now())."', ".((int) $user->id).", 0)";

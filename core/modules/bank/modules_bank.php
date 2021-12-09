@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010-2014	Regis Houssin	<regis.houssin@inodbox.com>
- * Copyright (C) 2014       Marcos García   <marcosgdf@gmail.com>
+/* Copyright (C) 2010-2014	
+ * Copyright (C) 2014          
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ abstract class ModeleBankAccountDoc extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 *  @param	DoliDB	$db     			Database handler
+	 *  @param	Berp3DB	$db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */

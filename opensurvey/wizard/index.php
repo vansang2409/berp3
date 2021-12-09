@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2013	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2014	Marcos García		<marcosgdf@gmail.com>
- * Copyright (C) 2016	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2019       Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2013		
+ * Copyright (C) 2014			
+ * Copyright (C) 2016			
+ * Copyright (C) 2019       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

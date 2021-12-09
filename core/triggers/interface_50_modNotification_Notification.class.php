@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2006-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2011      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013-2014 Marcos García        <marcosgdf@gmail.com>
+/* Copyright (C) 2006-2011 
+ * Copyright (C) 2011      
+ *  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,13 +22,13 @@
  *  \ingroup    notification
  *  \brief      File of class of triggers for notification module
  */
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for notification module
  */
-class InterfaceNotification extends DolibarrTriggers
+class InterfaceNotification extends Berp3Triggers
 {
 	// @todo Defined also into notify.class.php
 	public $listofmanagedevents = array(
@@ -54,7 +54,7 @@ class InterfaceNotification extends DolibarrTriggers
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -63,13 +63,13 @@ class InterfaceNotification extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "notification";
 		$this->description = "Triggers of this module send email notifications according to Notification module setup.";
-		// 'development', 'experimental', 'dolibarr' or version
-		$this->version = self::VERSION_DOLIBARR;
+		// 'development', 'experimental', 'berp3' or version
+		$this->version = self::VERSION_BERP3;
 		$this->picto = 'email';
 	}
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file is inside directory htdocs/core/triggers or htdocs/module/code/triggers (and declared)
 	 *
 	 * @param string		$action		Event action code

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@capnetworks.com>
- * Copyright (C) 2011-2012 Philippe Grand	    <philippe.grand@atoo-net.com>
- * Copyright (C) 2020      Open-DSI	            <support@open-dsi.fr>
+/* Copyright (C) 2003      
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2011-2012 	    
+ * Copyright (C) 2020      	            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -113,7 +113,7 @@ abstract class ModeleNumRefTakepos
 		if ($this->version == 'experimental') {
 			return $langs->trans('VersionExperimental');
 		}
-		if ($this->version == 'dolibarr') {
+		if ($this->version == 'berp3') {
 			return DOL_VERSION;
 		}
 		if ($this->version) {

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2001-2003  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003  Jean-Louis Bergamo      <jlb@j1b.org>
- * Copyright (C) 2007-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2012       Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2018       Alexandre Spangaro      <aspangaro@open-dsi.fr>
+/* Copyright (C) 2001-2003  
+ * Copyright (C) 2002-2003        
+ * Copyright (C) 2007-2012  
+ * Copyright (C) 2012       
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ if (!defined('NOCSRFCHECK')) {
 	define("NOCSRFCHECK", 1); // We accept to go on this page from external web site.
 }
 if (!defined('NOIPCHECK')) {
-	define('NOIPCHECK', '1'); // Do not check IP defined into conf $dolibarr_main_restrict_ip
+	define('NOIPCHECK', '1'); // Do not check IP defined into conf $berp3_main_restrict_ip
 }
 if (!defined('NOBROWSERNOTIF')) {
 	define('NOBROWSERNOTIF', '1');

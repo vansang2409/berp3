@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2004-2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2019  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2017  Regis Houssin           <regis.houssin@inodbox.com>
+/* Copyright (C) 2004-2005  
+ * Copyright (C) 2004-2019  
+ * Copyright (C) 2004                 
+ * Copyright (C) 2005-2017  
  * Copyright (C) 2007       Franky Van Liedekerke   <franky.van.liedekerke@telenet.be>
- * Copyright (C) 2013       Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2013-2016  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2014       Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2015       Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2019       Josep Lluís Amador      <joseplluis@lliuretic.cat>
- * Copyright (C) 2020       Open-Dsi     			<support@open-dsi.fr>
+ * Copyright (C) 2013       
+ * Copyright (C) 2013-2016  
+ * Copyright (C) 2014       
+ * Copyright (C) 2015       
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2019             
+ * Copyright (C) 2020            			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,7 +67,7 @@ $extrafields->fetch_name_optionals_label($object->table_element);
 
 $socialnetworks = getArrayOfSocialNetworks();
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $object->getCanvas($id);
 $objcanvas = null;
 $canvas = (!empty($object->canvas) ? $object->canvas : GETPOST("canvas"));
@@ -1130,13 +1130,13 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 			// Note Public
 			print '<tr><td class="tdtop"><label for="note_public">'.$langs->trans("NotePublic").'</label></td><td colspan="3">';
-			$doleditor = new DolEditor('note_public', $object->note_public, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+			$doleditor = new DolEditor('note_public', $object->note_public, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 			print $doleditor->Create(1);
 			print '</td></tr>';
 
 			// Note Private
 			print '<tr><td class="tdtop"><label for="note_private">'.$langs->trans("NotePrivate").'</label></td><td colspan="3">';
-			$doleditor = new DolEditor('note_private', $object->note_private, '', 80, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+			$doleditor = new DolEditor('note_private', $object->note_private, '', 80, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 			print $doleditor->Create(1);
 			print '</td></tr>';
 
@@ -1198,14 +1198,14 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				print '</td></tr>';
 			}
 
-			// Login Dolibarr
-			print '<tr><td>'.$langs->trans("DolibarrLogin").'</td><td colspan="3">';
+			// Login Berp3
+			print '<tr><td>'.$langs->trans("Berp3Login").'</td><td colspan="3">';
 			if ($object->user_id) {
-				$dolibarr_user = new User($db);
-				$result = $dolibarr_user->fetch($object->user_id);
-				print $dolibarr_user->getLoginUrl(1);
+				$berp3_user = new User($db);
+				$result = $berp3_user->fetch($object->user_id);
+				print $berp3_user->getLoginUrl(1);
 			} else {
-				print '<span class="opacitymedium">'.$langs->trans("NoDolibarrAccess").'</span>';
+				print '<span class="opacitymedium">'.$langs->trans("NoBerp3Access").'</span>';
 			}
 			print '</td></tr>';
 
@@ -1279,7 +1279,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 					$text .= $langs->trans("UserWillBeInternalUser");
 				}
 			}
-			print $form->formconfirm($_SERVER["PHP_SELF"]."?id=".$object->id, $langs->trans("CreateDolibarrLogin"), $text, "confirm_create_user", $formquestion, 'yes');
+			print $form->formconfirm($_SERVER["PHP_SELF"]."?id=".$object->id, $langs->trans("CreateBerp3Login"), $text, "confirm_create_user", $formquestion, 'yes');
 		}
 
 		$linkback = '<a href="'.DOL_URL_ROOT.'/contact/list.php?restore_lastsearch_values=1">'.$langs->trans("BackToList").'</a>';
@@ -1452,13 +1452,13 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			print '</td></tr>';
 		}
 
-		print '<tr><td>'.$langs->trans("DolibarrLogin").'</td><td colspan="3">';
+		print '<tr><td>'.$langs->trans("Berp3Login").'</td><td colspan="3">';
 		if ($object->user_id) {
-			$dolibarr_user = new User($db);
-			$result = $dolibarr_user->fetch($object->user_id);
-			print $dolibarr_user->getLoginUrl(1);
+			$berp3_user = new User($db);
+			$result = $berp3_user->fetch($object->user_id);
+			print $berp3_user->getLoginUrl(1);
 		} else {
-			print $langs->trans("NoDolibarrAccess");
+			print $langs->trans("NoBerp3Access");
 		}
 		print '</td></tr>';
 
@@ -1500,7 +1500,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			}
 
 			if (!$object->user_id && $user->rights->user->user->creer) {
-				print '<a class="butAction" href="'.$_SERVER['PHP_SELF'].'?id='.$object->id.'&action=create_user&token='.newToken().'">'.$langs->trans("CreateDolibarrLogin").'</a>';
+				print '<a class="butAction" href="'.$_SERVER['PHP_SELF'].'?id='.$object->id.'&action=create_user&token='.newToken().'">'.$langs->trans("CreateBerp3Login").'</a>';
 			}
 
 			// Activer

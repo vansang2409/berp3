@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2017 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -363,7 +363,7 @@ if (!empty($withproject)) {
 
 	print '<tr><td valign="middle">'.$langs->trans("EventOrganizationICSLink").'</td><td>';
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT;
 
 	// Show message
@@ -379,7 +379,7 @@ if (!empty($withproject)) {
 	print $form->textwithpicto($langs->trans("SuggestOrVoteForConfOrBooth"), $langs->trans("EvntOrgRegistrationHelpMessage"));
 	//print '</span>';
 	print '</td><td>';
-	$linksuggest = $dolibarr_main_url_root.'/public/project/index.php?id='.$projectstatic->id;
+	$linksuggest = $berp3_main_url_root.'/public/project/index.php?id='.$projectstatic->id;
 	$encodedsecurekey = dol_hash($conf->global->EVENTORGANIZATION_SECUREKEY.'conferenceorbooth'.$projectstatic->id, 'md5');
 	$linksuggest .= '&securekey='.urlencode($encodedsecurekey);
 	//print '<div class="urllink">';
@@ -396,7 +396,7 @@ if (!empty($withproject)) {
 	print $langs->trans("PublicAttendeeSubscriptionGlobalPage");
 	//print '</span>';
 	print '</td><td>';
-	$link_subscription = $dolibarr_main_url_root.'/public/eventorganization/attendee_new.php?id='.$projectstatic->id.'&type=global';
+	$link_subscription = $berp3_main_url_root.'/public/eventorganization/attendee_new.php?id='.$projectstatic->id.'&type=global';
 	$encodedsecurekey = dol_hash($conf->global->EVENTORGANIZATION_SECUREKEY.'conferenceorbooth'.$projectstatic->id, 'md5');
 	$link_subscription .= '&securekey='.urlencode($encodedsecurekey);
 	//print '<div class="urllink">';

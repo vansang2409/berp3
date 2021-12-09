@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2007      Patrick Raguin       <patrick.raguin@gmail.com>
- * Copyright (C) 2009      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2008-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2007             
+ * Copyright (C) 2009      
+ * Copyright (C) 2008-2013 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 class MenuManager
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -46,7 +46,7 @@ class MenuManager
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDB		$db     	Database handler
+	 *  @param	Berp3DB		$db     	Database handler
 	 *  @param	int			$type_user	Type of user
 	 */
 	public function __construct($db, $type_user)

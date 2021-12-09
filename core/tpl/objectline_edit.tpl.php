@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2010-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2010-2020	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2012		Christophe Battarel	<christophe.battarel@altairis.fr>
- * Copyright (C) 2012       Cédric Salvador     <csalvador@gpcsolutions.fr>
- * Copyright (C) 2012-2014  Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2013		Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2010-2012			
+ * Copyright (C) 2010-2020		
+ * Copyright (C) 2012			
+ * Copyright (C) 2012            
+ * Copyright (C) 2012-2014  
+ * Copyright (C) 2013		
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -147,9 +147,9 @@ $coldisplay++;
 			$nbrows = $conf->global->MAIN_INPUT_DESC_HEIGHT;
 		}
 		$enable = (isset($conf->global->FCKEDITOR_ENABLE_DETAILS) ? $conf->global->FCKEDITOR_ENABLE_DETAILS : 0);
-		$toolbarname = 'dolibarr_details';
+		$toolbarname = 'berp3_details';
 		if (!empty($conf->global->FCKEDITOR_ENABLE_DETAILS_FULL)) {
-			$toolbarname = 'dolibarr_notes';
+			$toolbarname = 'berp3_notes';
 		}
 		$doleditor = new DolEditor('product_desc', $line->description, '', (empty($conf->global->MAIN_DOLEDITOR_HEIGHT) ? 164 : $conf->global->MAIN_DOLEDITOR_HEIGHT), $toolbarname, '', false, true, $enable, $nbrows, '98%');
 		$doleditor->Create();

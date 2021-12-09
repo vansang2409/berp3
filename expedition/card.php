@@ -1,17 +1,17 @@
 <?php
-/* Copyright (C) 2003-2008	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2005-2016	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005		Simon TOSSER			<simon@kornog-computing.com>
- * Copyright (C) 2005-2012	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2017	Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2013       Florian Henry		  	<florian.henry@open-concept.pro>
- * Copyright (C) 2013       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2014		Cedric GROSS			<c.gross@kreiz-it.fr>
+/* Copyright (C) 2003-2008	
+ * Copyright (C) 2005-2016	
+ * Copyright (C) 2005		
+ * Copyright (C) 2005-2012	
+ * Copyright (C) 2011-2017	
+ * Copyright (C) 2013       		  	
+ * Copyright (C) 2013       
+ * Copyright (C) 2014		Cedric GROSS			
  * Copyright (C) 2014-2017	Francis Appels			<francis.appels@yahoo.com>
- * Copyright (C) 2015		Claudio Aschieri		<c.aschieri@19.coop>
- * Copyright (C) 2016-2018	Ferran Marcet			<fmarcet@2byte.es>
+ * Copyright (C) 2015		
+ * Copyright (C) 2016-2018				
  * Copyright (C) 2016		Yasser Carreón			<yacasia@gmail.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2018       
  * Copyright (C) 2020       Lenin Rivas         	<lenin@leninrivas.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -930,7 +930,7 @@ if ($action == 'create') {
 			// Note Public
 			print '<tr><td>'.$langs->trans("NotePublic").'</td>';
 			print '<td colspan="3">';
-			$doleditor = new DolEditor('note_public', $object->note_public, '', 60, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
+			$doleditor = new DolEditor('note_public', $object->note_public, '', 60, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PUBLIC) ? 0 : 1, ROWS_3, '90%');
 			print $doleditor->Create(1);
 			print "</td></tr>";
 
@@ -938,7 +938,7 @@ if ($action == 'create') {
 			if ($object->note_private && !$user->socid) {
 				print '<tr><td>'.$langs->trans("NotePrivate").'</td>';
 				print '<td colspan="3">';
-				$doleditor = new DolEditor('note_private', $object->note_private, '', 60, 'dolibarr_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
+				$doleditor = new DolEditor('note_private', $object->note_private, '', 60, 'berp3_notes', 'In', 0, false, empty($conf->global->FCKEDITOR_ENABLE_NOTE_PRIVATE) ? 0 : 1, ROWS_3, '90%');
 				print $doleditor->Create(1);
 				print "</td></tr>";
 			}

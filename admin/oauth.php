@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015-2018  Frederic France     <frederic.france@netlogic.fr>
- * Copyright (C) 2016       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2015-2018       
+ * Copyright (C) 2016       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/oauth.lib.php';
 
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 
@@ -53,11 +53,11 @@ if ($action == 'update') {
 
 	foreach ($list as $constname) {
 		$constvalue = GETPOST($constname[1], 'alpha');
-		if (!dolibarr_set_const($db, $constname[1], $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, $constname[1], $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 		$constvalue = GETPOST($constname[2], 'alpha');
-		if (!dolibarr_set_const($db, $constname[2], $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, $constname[2], $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	}

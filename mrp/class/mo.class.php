@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017  Laurent Destailleur <eldy@users.sourceforge.net>
+/* Copyright (C) 2017  
  * Copyright (C) 2020  Lenin Rivas		   <lenin@leninrivas.com>
  * Copyright (C) ---Put here your own copyright and developer email---
  *
@@ -206,9 +206,9 @@ class Mo extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 
@@ -1267,7 +1267,7 @@ class Mo extends CommonObject
 	{
 		global $conf, $langs;
 
-		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/dolibarr_mydedicatedlofile.log';
+		//$conf->global->SYSLOG_FILE = 'DOL_DATA_ROOT/berp3_mydedicatedlofile.log';
 
 		$error = 0;
 		$this->output = '';
@@ -1386,7 +1386,7 @@ class Mo extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB 	$db 			Database handler
+	 * @param Berp3DB 	$db 			Database handler
 	 * @param int 		$origin_id 		Old thirdparty id
 	 * @param int 		$dest_id 		New thirdparty id
 	 * @return bool
@@ -1469,9 +1469,9 @@ class MoLine extends CommonObjectLine
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $conf, $langs;
 

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2015   	Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2016		Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2018-2020  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2015   	
+ * Copyright (C) 2016		
+ * Copyright (C) 2018-2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
  * API class for contracts
  *
  * @access protected
- * @class  DolibarrApiAccess {@requires user,external}
+ * @class  Berp3ApiAccess {@requires user,external}
  */
-class Contracts extends DolibarrApi
+class Contracts extends Berp3Api
 {
 
 	/**
@@ -67,7 +67,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function get($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->lire) {
+		if (!Berp3ApiAccess::$user->rights->contrat->lire) {
 			throw new RestException(401);
 		}
 
@@ -76,8 +76,8 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contract not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		$this->contract->fetchObjectLinked();
@@ -106,33 +106,33 @@ class Contracts extends DolibarrApi
 	{
 		global $db, $conf;
 
-		if (!DolibarrApiAccess::$user->rights->contrat->lire) {
+		if (!Berp3ApiAccess::$user->rights->contrat->lire) {
 			throw new RestException(401);
 		}
 
 		$obj_ret = array();
 
 		// case of external user, $thirdparty_ids param is ignored and replaced by user's socid
-		$socids = DolibarrApiAccess::$user->socid ? DolibarrApiAccess::$user->socid : $thirdparty_ids;
+		$socids = Berp3ApiAccess::$user->socid ? Berp3ApiAccess::$user->socid : $thirdparty_ids;
 
 		// If the internal user must only see his customers, force searching by him
 		$search_sale = 0;
-		if (!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) {
-			$search_sale = DolibarrApiAccess::$user->id;
+		if (!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) {
+			$search_sale = Berp3ApiAccess::$user->id;
 		}
 
 		$sql = "SELECT t.rowid";
-		if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
+		if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
 			$sql .= ", sc.fk_soc, sc.fk_user"; // We need these fields in order to filter by sale (including the case where the user can only see his prospects)
 		}
 		$sql .= " FROM ".MAIN_DB_PREFIX."contrat as t";
 
-		if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
+		if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
 			$sql .= ", ".MAIN_DB_PREFIX."societe_commerciaux as sc"; // We need this table joined to the select in order to filter by sale
 		}
 
 		$sql .= ' WHERE t.entity IN ('.getEntity('contrat').')';
-		if ((!DolibarrApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
+		if ((!Berp3ApiAccess::$user->rights->societe->client->voir && !$socids) || $search_sale > 0) {
 			$sql .= " AND t.fk_soc = sc.fk_soc";
 		}
 		if ($socids) {
@@ -147,11 +147,11 @@ class Contracts extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -196,7 +196,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function post($request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401, "Insufficient rights");
 		}
 		// Check mandatory fields
@@ -212,7 +212,7 @@ class Contracts extends DolibarrApi
 		  }
 		  $this->contract->lines = $lines;
 		}*/
-		if ($this->contract->create(DolibarrApiAccess::$user) < 0) {
+		if ($this->contract->create(Berp3ApiAccess::$user) < 0) {
 			throw new RestException(500, "Error creating contract", array_merge(array($this->contract->error), $this->contract->errors));
 		}
 
@@ -230,7 +230,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function getLines($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->lire) {
+		if (!Berp3ApiAccess::$user->rights->contrat->lire) {
 			throw new RestException(401);
 		}
 
@@ -239,8 +239,8 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contract not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 		$this->contract->getLinesArray();
 		$result = array();
@@ -262,7 +262,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function postLine($id, $request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 
@@ -271,8 +271,8 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contract not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		$request_data = (object) $request_data;
@@ -320,7 +320,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function putLine($id, $lineid, $request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 
@@ -329,8 +329,8 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contrat not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		$request_data = (object) $request_data;
@@ -383,7 +383,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function activateLine($id, $lineid, $datestart, $dateend = null, $comment = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 
@@ -392,11 +392,11 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contrat not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		$updateRes = $this->contract->active_line(DolibarrApiAccess::$user, $lineid, $datestart, $dateend, $comment);
+		$updateRes = $this->contract->active_line(Berp3ApiAccess::$user, $lineid, $datestart, $dateend, $comment);
 
 		if ($updateRes > 0) {
 			$result = $this->get($id);
@@ -421,7 +421,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function unactivateLine($id, $lineid, $datestart, $comment = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 
@@ -430,11 +430,11 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contrat not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		$updateRes = $this->contract->close_line(DolibarrApiAccess::$user, $lineid, $datestart, $comment);
+		$updateRes = $this->contract->close_line(Berp3ApiAccess::$user, $lineid, $datestart, $comment);
 
 		if ($updateRes > 0) {
 			$result = $this->get($id);
@@ -461,7 +461,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function deleteLine($id, $lineid)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 
@@ -470,13 +470,13 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contrat not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
 		// TODO Check the lineid $lineid is a line of object
 
-		$updateRes = $this->contract->deleteline($lineid, DolibarrApiAccess::$user);
+		$updateRes = $this->contract->deleteline($lineid, Berp3ApiAccess::$user);
 		if ($updateRes > 0) {
 			return $this->get($id);
 		} else {
@@ -494,7 +494,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function put($id, $request_data = null)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 
@@ -503,8 +503,8 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contrat not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 		foreach ($request_data as $field => $value) {
 			if ($field == 'id') {
@@ -513,7 +513,7 @@ class Contracts extends DolibarrApi
 			$this->contract->$field = $value;
 		}
 
-		if ($this->contract->update(DolibarrApiAccess::$user) > 0) {
+		if ($this->contract->update(Berp3ApiAccess::$user) > 0) {
 			return $this->get($id);
 		} else {
 			throw new RestException(500, $this->contract->error);
@@ -529,7 +529,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function delete($id)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->supprimer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->supprimer) {
 			throw new RestException(401);
 		}
 		$result = $this->contract->fetch($id);
@@ -537,11 +537,11 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contract not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		if (!$this->contract->delete(DolibarrApiAccess::$user)) {
+		if (!$this->contract->delete(Berp3ApiAccess::$user)) {
 			throw new RestException(500, 'Error when delete contract : '.$this->contract->error);
 		}
 
@@ -571,7 +571,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function validate($id, $notrigger = 0)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 		$result = $this->contract->fetch($id);
@@ -579,11 +579,11 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contract not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		$result = $this->contract->validate(DolibarrApiAccess::$user, '', $notrigger);
+		$result = $this->contract->validate(Berp3ApiAccess::$user, '', $notrigger);
 		if ($result == 0) {
 			throw new RestException(304, 'Error nothing done. May be object is already validated');
 		}
@@ -617,7 +617,7 @@ class Contracts extends DolibarrApi
 	 */
 	public function close($id, $notrigger = 0)
 	{
-		if (!DolibarrApiAccess::$user->rights->contrat->creer) {
+		if (!Berp3ApiAccess::$user->rights->contrat->creer) {
 			throw new RestException(401);
 		}
 		$result = $this->contract->fetch($id);
@@ -625,11 +625,11 @@ class Contracts extends DolibarrApi
 			throw new RestException(404, 'Contract not found');
 		}
 
-		if (!DolibarrApi::_checkAccessToResource('contrat', $this->contract->id)) {
-			throw new RestException(401, 'Access not allowed for login '.DolibarrApiAccess::$user->login);
+		if (!Berp3Api::_checkAccessToResource('contrat', $this->contract->id)) {
+			throw new RestException(401, 'Access not allowed for login '.Berp3ApiAccess::$user->login);
 		}
 
-		$result = $this->contract->closeAll(DolibarrApiAccess::$user, $notrigger);
+		$result = $this->contract->closeAll(Berp3ApiAccess::$user, $notrigger);
 		if ($result == 0) {
 			throw new RestException(304, 'Error nothing done. May be object is already close');
 		}

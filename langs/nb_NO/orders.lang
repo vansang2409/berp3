@@ -120,8 +120,8 @@ ConfirmCloneOrder=Er du sikker på at du vil klone denne ordren <b>%s</b>?
 DispatchSupplierOrder=Motta innkjøpsordre %s
 FirstApprovalAlreadyDone=Første godkjenning allerede utført
 SecondApprovalAlreadyDone=Andre gangs godkjenning allerede utført
-SupplierOrderReceivedInDolibarr=Innkjøpsordre %s mottatt %s
-SupplierOrderSubmitedInDolibarr=Innkjøpsordre %s sendt
+SupplierOrderReceivedInBerp3=Innkjøpsordre %s mottatt %s
+SupplierOrderSubmitedInBerp3=Innkjøpsordre %s sendt
 SupplierOrderClassifiedBilled=Innkjøpsordre %s satt til fakturert
 OtherOrders=Andre ordre
 ##### Types de contacts #####

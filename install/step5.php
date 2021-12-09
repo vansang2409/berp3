@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2017  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2004       Sebastien DiCintio      <sdicintio@ressource-toi.org>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2015-2016  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2004       
+ * Copyright (C) 2004-2017  
+ * Copyright (C) 2004                 
+ * Copyright (C) 2004             
+ * Copyright (C) 2005-2012  
+ * Copyright (C) 2015-2016        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,8 +30,8 @@ include_once 'inc.php';
 if (file_exists($conffile)) {
 	include_once $conffile;
 }
-require_once $dolibarr_main_document_root.'/core/lib/admin.lib.php';
-require_once $dolibarr_main_document_root.'/core/lib/security.lib.php'; // for dol_hash
+require_once $berp3_main_document_root.'/core/lib/admin.lib.php';
+require_once $berp3_main_document_root.'/core/lib/security.lib.php'; // for dol_hash
 
 global $langs;
 
@@ -67,21 +67,21 @@ $success = 0;
 
 $useforcedwizard = false;
 $forcedfile = "./install.forced.php";
-if ($conffile == "/etc/dolibarr/conf.php") {
-	$forcedfile = "/etc/dolibarr/install.forced.php";
+if ($conffile == "/etc/berp3/conf.php") {
+	$forcedfile = "/etc/berp3/install.forced.php";
 }
 if (@file_exists($forcedfile)) {
 	$useforcedwizard = true;
 	include_once $forcedfile;
 	// If forced install is enabled, replace post values. These are empty because form fields are disabled.
 	if ($force_install_noedit == 2) {
-		if (!empty($force_install_dolibarrlogin)) {
-			$login = $force_install_dolibarrlogin;
+		if (!empty($force_install_berp3login)) {
+			$login = $force_install_berp3login;
 		}
 	}
 }
 
-dolibarr_install_syslog("- step5: entering step5.php page");
+berp3_install_syslog("- step5: entering step5.php page");
 
 $error = 0;
 
@@ -128,27 +128,27 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 	$error = 0;
 
 	// If password is encoded, we decode it
-	if (preg_match('/crypted:/i', $dolibarr_main_db_pass) || !empty($dolibarr_main_db_encrypted_pass)) {
-		require_once $dolibarr_main_document_root.'/core/lib/security.lib.php';
-		if (preg_match('/crypted:/i', $dolibarr_main_db_pass)) {
-			$dolibarr_main_db_pass = preg_replace('/crypted:/i', '', $dolibarr_main_db_pass);
-			$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_pass);
-			$dolibarr_main_db_encrypted_pass = $dolibarr_main_db_pass; // We need to set this as it is used to know the password was initially crypted
+	if (preg_match('/crypted:/i', $berp3_main_db_pass) || !empty($berp3_main_db_encrypted_pass)) {
+		require_once $berp3_main_document_root.'/core/lib/security.lib.php';
+		if (preg_match('/crypted:/i', $berp3_main_db_pass)) {
+			$berp3_main_db_pass = preg_replace('/crypted:/i', '', $berp3_main_db_pass);
+			$berp3_main_db_pass = dol_decode($berp3_main_db_pass);
+			$berp3_main_db_encrypted_pass = $berp3_main_db_pass; // We need to set this as it is used to know the password was initially crypted
 		} else {
-			$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_encrypted_pass);
+			$berp3_main_db_pass = dol_decode($berp3_main_db_encrypted_pass);
 		}
 	}
 
-	$conf->db->type = $dolibarr_main_db_type;
-	$conf->db->host = $dolibarr_main_db_host;
-	$conf->db->port = $dolibarr_main_db_port;
-	$conf->db->name = $dolibarr_main_db_name;
-	$conf->db->user = $dolibarr_main_db_user;
-	$conf->db->pass = $dolibarr_main_db_pass;
-	$conf->db->dolibarr_main_db_encryption = isset($dolibarr_main_db_encryption) ? $dolibarr_main_db_encryption : '';
-	$conf->db->dolibarr_main_db_cryptkey = isset($dolibarr_main_db_cryptkey) ? $dolibarr_main_db_cryptkey : '';
+	$conf->db->type = $berp3_main_db_type;
+	$conf->db->host = $berp3_main_db_host;
+	$conf->db->port = $berp3_main_db_port;
+	$conf->db->name = $berp3_main_db_name;
+	$conf->db->user = $berp3_main_db_user;
+	$conf->db->pass = $berp3_main_db_pass;
+	$conf->db->berp3_main_db_encryption = isset($berp3_main_db_encryption) ? $berp3_main_db_encryption : '';
+	$conf->db->berp3_main_db_cryptkey = isset($berp3_main_db_cryptkey) ? $berp3_main_db_cryptkey : '';
 
-	$db = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+	$db = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 
 	// Create the global $hookmanager object
 	include_once DOL_DOCUMENT_ROOT.'/core/class/hookmanager.class.php';
@@ -161,7 +161,7 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 		// Active module user
 		$modName = 'modUser';
 		$file = $modName.".class.php";
-		dolibarr_install_syslog('step5: load module user '.DOL_DOCUMENT_ROOT."/core/modules/".$file, LOG_INFO);
+		berp3_install_syslog('step5: load module user '.DOL_DOCUMENT_ROOT."/core/modules/".$file, LOG_INFO);
 		include_once DOL_DOCUMENT_ROOT."/core/modules/".$file;
 		$objMod = new $modName($db);
 		$result = $objMod->init();
@@ -188,16 +188,16 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 				$numrows = $db->num_rows($resql);
 				if ($numrows == 0) {
 					// Define default setup for password encryption
-					dolibarr_set_const($db, "DATABASE_PWD_ENCRYPTED", "1", 'chaine', 0, '', $conf->entity);
-					dolibarr_set_const($db, "MAIN_SECURITY_SALT", dol_print_date(dol_now(), 'dayhourlog'), 'chaine', 0, '', 0); // All entities
+					berp3_set_const($db, "DATABASE_PWD_ENCRYPTED", "1", 'chaine', 0, '', $conf->entity);
+					berp3_set_const($db, "MAIN_SECURITY_SALT", dol_print_date(dol_now(), 'dayhourlog'), 'chaine', 0, '', 0); // All entities
 					if (function_exists('password_hash')) {
-						dolibarr_set_const($db, "MAIN_SECURITY_HASH_ALGO", 'password_hash', 'chaine', 0, '', 0); // All entities
+						berp3_set_const($db, "MAIN_SECURITY_HASH_ALGO", 'password_hash', 'chaine', 0, '', 0); // All entities
 					} else {
-						dolibarr_set_const($db, "MAIN_SECURITY_HASH_ALGO", 'sha1md5', 'chaine', 0, '', 0); // All entities
+						berp3_set_const($db, "MAIN_SECURITY_HASH_ALGO", 'sha1md5', 'chaine', 0, '', 0); // All entities
 					}
 				}
 
-				dolibarr_install_syslog('step5: DATABASE_PWD_ENCRYPTED = '.$conf->global->DATABASE_PWD_ENCRYPTED.' MAIN_SECURITY_HASH_ALGO = '.$conf->global->MAIN_SECURITY_HASH_ALGO, LOG_INFO);
+				berp3_install_syslog('step5: DATABASE_PWD_ENCRYPTED = '.$conf->global->DATABASE_PWD_ENCRYPTED.' MAIN_SECURITY_HASH_ALGO = '.$conf->global->MAIN_SECURITY_HASH_ALGO, LOG_INFO);
 			}
 
 			// Create user used to create the admin user
@@ -221,11 +221,11 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 				$success = 1;
 			} else {
 				if ($newuser->error == 'ErrorLoginAlreadyExists') {
-					dolibarr_install_syslog('step5: AdminLoginAlreadyExists', LOG_WARNING);
+					berp3_install_syslog('step5: AdminLoginAlreadyExists', LOG_WARNING);
 					print '<br><div class="warning">'.$langs->trans("AdminLoginAlreadyExists", $login)."</div><br>";
 					$success = 1;
 				} else {
-					dolibarr_install_syslog('step5: FailedToCreateAdminLogin '.$newuser->error, LOG_ERR);
+					berp3_install_syslog('step5: FailedToCreateAdminLogin '.$newuser->error, LOG_ERR);
 					print '<br><div class="error">'.$langs->trans("FailedToCreateAdminLogin").' '.$newuser->error.'</div><br><br>';
 				}
 			}
@@ -233,8 +233,8 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 			if ($success) {
 				// Insert MAIN_VERSION_FIRST_INSTALL in a dedicated transaction. So if it fails (when first install was already done), we can do other following requests.
 				$db->begin();
-				dolibarr_install_syslog('step5: set MAIN_VERSION_FIRST_INSTALL const to '.$targetversion, LOG_DEBUG);
-				$resql = $db->query("INSERT INTO ".MAIN_DB_PREFIX."const(name, value, type, visible, note, entity) values(".$db->encrypt('MAIN_VERSION_FIRST_INSTALL').", ".$db->encrypt($targetversion).", 'chaine', 0, 'Dolibarr version when first install', 0)");
+				berp3_install_syslog('step5: set MAIN_VERSION_FIRST_INSTALL const to '.$targetversion, LOG_DEBUG);
+				$resql = $db->query("INSERT INTO ".MAIN_DB_PREFIX."const(name, value, type, visible, note, entity) values(".$db->encrypt('MAIN_VERSION_FIRST_INSTALL').", ".$db->encrypt($targetversion).", 'chaine', 0, 'Berp3 version when first install', 0)");
 				if ($resql) {
 					$conf->global->MAIN_VERSION_FIRST_INSTALL = $targetversion;
 					$db->commit();
@@ -245,19 +245,19 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 
 				$db->begin();
 
-				dolibarr_install_syslog('step5: set MAIN_VERSION_LAST_INSTALL const to '.$targetversion, LOG_DEBUG);
+				berp3_install_syslog('step5: set MAIN_VERSION_LAST_INSTALL const to '.$targetversion, LOG_DEBUG);
 				$resql = $db->query("DELETE FROM ".MAIN_DB_PREFIX."const WHERE ".$db->decrypt('name')." = 'MAIN_VERSION_LAST_INSTALL'");
 				if (!$resql) {
 					dol_print_error($db, 'Error in setup program');
 				}
-				$resql = $db->query("INSERT INTO ".MAIN_DB_PREFIX."const(name,value,type,visible,note,entity) values(".$db->encrypt('MAIN_VERSION_LAST_INSTALL').", ".$db->encrypt($targetversion).", 'chaine', 0, 'Dolibarr version when last install', 0)");
+				$resql = $db->query("INSERT INTO ".MAIN_DB_PREFIX."const(name,value,type,visible,note,entity) values(".$db->encrypt('MAIN_VERSION_LAST_INSTALL').", ".$db->encrypt($targetversion).", 'chaine', 0, 'Berp3 version when last install', 0)");
 				if (!$resql) {
 					dol_print_error($db, 'Error in setup program');
 				}
 				$conf->global->MAIN_VERSION_LAST_INSTALL = $targetversion;
 
 				if ($useforcedwizard) {
-					dolibarr_install_syslog('step5: set MAIN_REMOVE_INSTALL_WARNING const to 1', LOG_DEBUG);
+					berp3_install_syslog('step5: set MAIN_REMOVE_INSTALL_WARNING const to 1', LOG_DEBUG);
 					$resql = $db->query("DELETE FROM ".MAIN_DB_PREFIX."const WHERE ".$db->decrypt('name')." = 'MAIN_REMOVE_INSTALL_WARNING'");
 					if (!$resql) {
 						dol_print_error($db, 'Error in setup program');
@@ -271,8 +271,8 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 
 				// If we ask to force some modules to be enabled
 				if (!empty($force_install_module)) {
-					if (!defined('DOL_DOCUMENT_ROOT') && !empty($dolibarr_main_document_root)) {
-						define('DOL_DOCUMENT_ROOT', $dolibarr_main_document_root);
+					if (!defined('DOL_DOCUMENT_ROOT') && !empty($berp3_main_document_root)) {
+						define('DOL_DOCUMENT_ROOT', $berp3_main_document_root);
 					}
 
 					$tmparray = explode(',', $force_install_module);
@@ -281,7 +281,7 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 						print $langs->trans("ActivateModule", $modtoactivatenew).'<br>';
 
 						$file = $modtoactivatenew.'.class.php';
-						dolibarr_install_syslog('step5: activate module file='.$file);
+						berp3_install_syslog('step5: activate module file='.$file);
 						$res = dol_include_once("/core/modules/".$file);
 
 						$res = activateModule($modtoactivatenew, 1);
@@ -291,7 +291,7 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 					}
 				}
 
-				dolibarr_install_syslog('step5: remove MAIN_NOT_INSTALLED const');
+				berp3_install_syslog('step5: remove MAIN_NOT_INSTALLED const');
 				$resql = $db->query("DELETE FROM ".MAIN_DB_PREFIX."const WHERE ".$db->decrypt('name')."='MAIN_NOT_INSTALLED'");
 				if (!$resql) {
 					dol_print_error($db, 'Error in setup program');
@@ -325,18 +325,18 @@ if ($action == "set" || empty($action) || preg_match('/upgrade/i', $action)) {
 			}
 
 			if ($tagdatabase) {
-				dolibarr_install_syslog('step5: set MAIN_VERSION_LAST_UPGRADE const to value '.$targetversion);
+				berp3_install_syslog('step5: set MAIN_VERSION_LAST_UPGRADE const to value '.$targetversion);
 				$resql = $db->query("DELETE FROM ".MAIN_DB_PREFIX."const WHERE ".$db->decrypt('name')." = 'MAIN_VERSION_LAST_UPGRADE'");
 				if (!$resql) {
 					dol_print_error($db, 'Error in setup program');
 				}
-				$resql = $db->query("INSERT INTO ".MAIN_DB_PREFIX."const(name, value, type, visible, note, entity) VALUES (".$db->encrypt('MAIN_VERSION_LAST_UPGRADE').", ".$db->encrypt($targetversion).", 'chaine', 0, 'Dolibarr version for last upgrade', 0)");
+				$resql = $db->query("INSERT INTO ".MAIN_DB_PREFIX."const(name, value, type, visible, note, entity) VALUES (".$db->encrypt('MAIN_VERSION_LAST_UPGRADE').", ".$db->encrypt($targetversion).", 'chaine', 0, 'Berp3 version for last upgrade', 0)");
 				if (!$resql) {
 					dol_print_error($db, 'Error in setup program');
 				}
 				$conf->global->MAIN_VERSION_LAST_UPGRADE = $targetversion;
 			} else {
-				dolibarr_install_syslog('step5: we run an upgrade to version '.$targetversion.' but database was already upgraded to '.$conf->global->MAIN_VERSION_LAST_UPGRADE.'. We keep MAIN_VERSION_LAST_UPGRADE as it is.');
+				berp3_install_syslog('step5: we run an upgrade to version '.$targetversion.' but database was already upgraded to '.$conf->global->MAIN_VERSION_LAST_UPGRADE.'. We keep MAIN_VERSION_LAST_UPGRADE as it is.');
 			}
 		} else {
 			print $langs->trans("ErrorFailedToConnect")."<br>";
@@ -396,7 +396,7 @@ if ($action == "set" && $success) {
 		print $langs->trans("MigrationNotFinished").'<br>';
 		print "<br>";
 
-		print '<div class="center"><a href="'.$dolibarr_main_url_root.'/install/index.php">';
+		print '<div class="center"><a href="'.$berp3_main_url_root.'/install/index.php">';
 		print '<span class="fas fa-link-alt"></span> '.$langs->trans("GoToUpgradePage");
 		print '</a></div>';
 	}
@@ -429,7 +429,7 @@ if ($action == "set" && $success) {
 		print "<br>";
 
 		$morehtml = '<br><div class="center"><a href="../index.php?mainmenu=home'.(isset($login) ? '&username='.urlencode($login) : '').'">';
-		$morehtml .= '<span class="fas fa-link-alt"></span> '.$langs->trans("GoToDolibarr").'...';
+		$morehtml .= '<span class="fas fa-link-alt"></span> '.$langs->trans("GoToBerp3").'...';
 		$morehtml .= '</a></div><br>';
 	} else {
 		// If here MAIN_VERSION_LAST_UPGRADE is not empty
@@ -453,9 +453,9 @@ $ret = 0;
 if ($error && isset($argv[1])) {
 	$ret = 1;
 }
-dolibarr_install_syslog("Exit ".$ret);
+berp3_install_syslog("Exit ".$ret);
 
-dolibarr_install_syslog("- step5: Dolibarr setup finished");
+berp3_install_syslog("- step5: Berp3 setup finished");
 
 pFooter(1, $setuplang, '', 0, $morehtml);
 

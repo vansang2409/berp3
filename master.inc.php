@@ -1,15 +1,5 @@
 <?php
-/* Copyright (C) 2002-2007	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Xavier Dutoit			<doli@sydesy.com>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio		<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier			<benoit.mortier@opensides.be>
- * Copyright (C) 2005-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2005		Simon Tosser			<simon@kornog-computing.com>
- * Copyright (C) 2006		Andre Cianfarani		<andre.cianfarani@acdeveloppement.net>
- * Copyright (C) 2010		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2011		Philippe Grand			<philippe.grand@atoo-net.com>
- * Copyright (C) 2014		Teddy Andreotti			<125155@supinfo.com>
+/* 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +18,7 @@
 /**
  *	\file       htdocs/master.inc.php
  * 	\ingroup	core
- *  \brief      File that defines environment for all Dolibarr process (pages or scripts)
+ *  \brief      File that defines environment for all Berp3 process (pages or scripts)
  * 				This script reads the conf file, init $lang, $db and and empty $user
  */
 
@@ -57,47 +47,47 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/conf.class.php';
 $conf = new Conf();
 
 // Set properties specific to database
-$conf->db->host = $dolibarr_main_db_host;
-$conf->db->port = $dolibarr_main_db_port;
-$conf->db->name = $dolibarr_main_db_name;
-$conf->db->user = $dolibarr_main_db_user;
-$conf->db->pass = empty($dolibarr_main_db_pass) ? '' : $dolibarr_main_db_pass;
-$conf->db->type = $dolibarr_main_db_type;
-$conf->db->prefix = $dolibarr_main_db_prefix;
-$conf->db->character_set = $dolibarr_main_db_character_set;
-$conf->db->dolibarr_main_db_collation = $dolibarr_main_db_collation;
-$conf->db->dolibarr_main_db_encryption = $dolibarr_main_db_encryption;
-$conf->db->dolibarr_main_db_cryptkey = $dolibarr_main_db_cryptkey;
+$conf->db->host = $berp3_main_db_host;
+$conf->db->port = $berp3_main_db_port;
+$conf->db->name = $berp3_main_db_name;
+$conf->db->user = $berp3_main_db_user;
+$conf->db->pass = empty($berp3_main_db_pass) ? '' : $berp3_main_db_pass;
+$conf->db->type = $berp3_main_db_type;
+$conf->db->prefix = $berp3_main_db_prefix;
+$conf->db->character_set = $berp3_main_db_character_set;
+$conf->db->berp3_main_db_collation = $berp3_main_db_collation;
+$conf->db->berp3_main_db_encryption = $berp3_main_db_encryption;
+$conf->db->berp3_main_db_cryptkey = $berp3_main_db_cryptkey;
 if (defined('TEST_DB_FORCE_TYPE')) {
 	$conf->db->type = constant('TEST_DB_FORCE_TYPE'); // Force db type (for test purpose, by PHP unit for example)
 }
 
 // Set properties specific to conf file
-$conf->file->main_limit_users = $dolibarr_main_limit_users;
-$conf->file->mailing_limit_sendbyweb = $dolibarr_mailing_limit_sendbyweb;
-$conf->file->mailing_limit_sendbycli = $dolibarr_mailing_limit_sendbycli;
-$conf->file->main_authentication = empty($dolibarr_main_authentication) ? '' : $dolibarr_main_authentication; // Identification mode
-$conf->file->main_force_https = empty($dolibarr_main_force_https) ? '' : $dolibarr_main_force_https; // Force https
-$conf->file->strict_mode = empty($dolibarr_strict_mode) ? '' : $dolibarr_strict_mode; // Force php strict mode (for debug)
-$conf->file->instance_unique_id = empty($dolibarr_main_instance_unique_id) ? (empty($dolibarr_main_cookie_cryptkey) ? '' : $dolibarr_main_cookie_cryptkey) : $dolibarr_main_instance_unique_id; // Unique id of instance
+$conf->file->main_limit_users = $berp3_main_limit_users;
+$conf->file->mailing_limit_sendbyweb = $berp3_mailing_limit_sendbyweb;
+$conf->file->mailing_limit_sendbycli = $berp3_mailing_limit_sendbycli;
+$conf->file->main_authentication = empty($berp3_main_authentication) ? '' : $berp3_main_authentication; // Identification mode
+$conf->file->main_force_https = empty($berp3_main_force_https) ? '' : $berp3_main_force_https; // Force https
+$conf->file->strict_mode = empty($berp3_strict_mode) ? '' : $berp3_strict_mode; // Force php strict mode (for debug)
+$conf->file->instance_unique_id = empty($berp3_main_instance_unique_id) ? (empty($berp3_main_cookie_cryptkey) ? '' : $berp3_main_cookie_cryptkey) : $berp3_main_instance_unique_id; // Unique id of instance
 $conf->file->dol_document_root = array('main' => (string) DOL_DOCUMENT_ROOT); // Define array of document root directories ('/home/htdocs')
-$conf->file->dol_url_root = array('main' => (string) DOL_URL_ROOT); // Define array of url root path ('' or '/dolibarr')
-if (!empty($dolibarr_main_document_root_alt)) {
-	// dolibarr_main_document_root_alt can contains several directories
-	$values = preg_split('/[;,]/', $dolibarr_main_document_root_alt);
+$conf->file->dol_url_root = array('main' => (string) DOL_URL_ROOT); // Define array of url root path ('' or '/berp3')
+if (!empty($berp3_main_document_root_alt)) {
+	// berp3_main_document_root_alt can contains several directories
+	$values = preg_split('/[;,]/', $berp3_main_document_root_alt);
 	$i = 0;
 	foreach ($values as $value) {
 		$conf->file->dol_document_root['alt'.($i++)] = (string) $value;
 	}
-	$values = preg_split('/[;,]/', $dolibarr_main_url_root_alt);
+	$values = preg_split('/[;,]/', $berp3_main_url_root_alt);
 	$i = 0;
 	foreach ($values as $value) {
 		if (preg_match('/^http(s)?:/', $value)) {
 			// Show error message
-			$correct_value = str_replace($dolibarr_main_url_root, '', $value);
+			$correct_value = str_replace($berp3_main_url_root, '', $value);
 			print '<b>Error:</b><br>'."\n";
-			print 'Wrong <b>$dolibarr_main_url_root_alt</b> value in <b>conf.php</b> file.<br>'."\n";
-			print 'We now use a relative path to $dolibarr_main_url_root to build alternate URLs.<br>'."\n";
+			print 'Wrong <b>$berp3_main_url_root_alt</b> value in <b>conf.php</b> file.<br>'."\n";
+			print 'We now use a relative path to $berp3_main_url_root to build alternate URLs.<br>'."\n";
 			print 'Value found: '.$value.'<br>'."\n";
 			print 'Should be replaced by: '.$correct_value.'<br>'."\n";
 			print "Or something like following examples:<br>\n";
@@ -135,11 +125,11 @@ if (!defined('NOREQUIRETRAN')) {
  */
 $db = null;
 if (!defined('NOREQUIREDB')) {
-	$db = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+	$db = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 
 	if ($db->error) {
 		// If we were into a website context
-		if (!defined('USEDOLIBARREDITOR') && !defined('USEDOLIBARRSERVER') && !empty($_SERVER['SCRIPT_FILENAME']) && (strpos($_SERVER['SCRIPT_FILENAME'], DOL_DATA_ROOT.'/website') === 0)) {
+		if (!defined('USEBERP3EDITOR') && !defined('USEBERP3SERVER') && !empty($_SERVER['SCRIPT_FILENAME']) && (strpos($_SERVER['SCRIPT_FILENAME'], DOL_DATA_ROOT.'/website') === 0)) {
 			$sapi_type = php_sapi_name();
 			if (substr($sapi_type, 0, 3) != 'cgi') {
 				http_response_code(503); // To tel search engine this is a temporary error
@@ -161,7 +151,7 @@ if (!defined('NOREQUIREDB')) {
 }
 
 // Now database connexion is known, so we can forget password
-//unset($dolibarr_main_db_pass); 	// We comment this because this constant is used in a lot of pages
+//unset($berp3_main_db_pass); 	// We comment this because this constant is used in a lot of pages
 unset($conf->db->pass); // This is to avoid password to be shown in memory/swap dump
 
 /*
@@ -201,7 +191,7 @@ if (!is_numeric($conf->entity)) {
 // Here we read database (llx_const table) and define $conf->global->XXX var.
 $conf->setValues($db);
 
-// Create object $mysoc (A thirdparty object that contains properties of companies managed by Dolibarr.
+// Create object $mysoc (A thirdparty object that contains properties of companies managed by Berp3.
 if (!defined('NOREQUIREDB') && !defined('NOREQUIRESOC')) {
 	require_once DOL_DOCUMENT_ROOT.'/societe/class/societe.class.php';
 

@@ -1,12 +1,12 @@
 <?php
-/* Copyright (c) 2005       Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (c) 2005-2018	Laurent Destailleur	 <eldy@users.sourceforge.net>
- * Copyright (c) 2005-2018	Regis Houssin		 <regis.houssin@inodbox.com>
- * Copyright (C) 2012		Florian Henry		 <florian.henry@open-concept.pro>
- * Copyright (C) 2014		Juanjo Menent		 <jmenent@2byte.es>
+/* Copyright (c) 2005       
+ * Copyright (c) 2005-2018		 
+ * Copyright (c) 2005-2018			 
+ * Copyright (C) 2012				 
+ * Copyright (C) 2014				 
  * Copyright (C) 2014		Alexis Algoud		 <alexis@atm-consulting.fr>
- * Copyright (C) 2018       Nicolas ZABOURI		 <info@inovea-conseil.com>
- * Copyright (C) 2019       Abbes Bahfir            <dolipar@dolipar.org>
+ * Copyright (C) 2018       		 
+ * Copyright (C) 2019       Abbes Bahfir            <berp3par@berp3par.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -134,7 +134,7 @@ class UserGroup extends CommonObject
 	/**
 	 *    Constructor de la classe
 	 *
-	 *    @param   DoliDb  $db     Database handler
+	 *    @param   Berp3Db  $db     Database handler
 	 */
 	public function __construct($db)
 	{
@@ -720,7 +720,7 @@ class UserGroup extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $langs, $conf, $db, $hookmanager;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER) && $withpicto) {
@@ -852,7 +852,7 @@ class UserGroup extends CommonObject
 		}
 		if (!empty($conf->global->LDAP_GROUP_FIELD_GROUPMEMBERS)) {
 			$valueofldapfield = array();
-			foreach ($this->members as $key => $val) {    // This is array of users for group into dolibarr database.
+			foreach ($this->members as $key => $val) {    // This is array of users for group into berp3 database.
 				$muser = new User($this->db);
 				$muser->fetch($val->id);
 				$info2 = $muser->_load_ldap_info();
@@ -883,7 +883,7 @@ class UserGroup extends CommonObject
 		$this->ref = 'SPECIMEN';
 		$this->specimen = 1;
 
-		$this->name = 'DOLIBARR GROUP SPECIMEN';
+		$this->name = 'BERP3 GROUP SPECIMEN';
 		$this->note = 'This is a note';
 		$this->datec = time();
 		$this->datem = time();

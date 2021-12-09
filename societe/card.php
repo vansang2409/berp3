@@ -1,18 +1,18 @@
 <?php
-/* Copyright (C) 2001-2007  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
+/* Copyright (C) 2001-2007  
  * Copyright (C) 2003       Brian Fraval            <brian@fraval.org>
- * Copyright (C) 2004-2015  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005       Eric Seigne             <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2017  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2008       Patrick Raguin          <patrick.raguin@auguria.net>
- * Copyright (C) 2010-2020  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2011-2021  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2015       Jean-François Ferry     <jfefe@aternatik.fr>
- * Copyright (C) 2015       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2018       Nicolas ZABOURI	        <info@inovea-conseil.com>
- * Copyright (C) 2018       Ferran Marcet		    <fmarcet@2byte.es.com>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2004-2015  
+ * Copyright (C) 2005                    
+ * Copyright (C) 2005-2017  
+ * Copyright (C) 2008                 <patrick.raguin@auguria.net>
+ * Copyright (C) 2010-2020  
+ * Copyright (C) 2011-2021  
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
+ * Copyright (C) 2015             
+ * Copyright (C) 2018       	        
+ * Copyright (C) 2018       		    <fmarcet@2byte.es.com>
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -116,7 +116,7 @@ if (!($object->id > 0) && $action == 'view') {
 	exit;
 }
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $canvas = $object->canvas ? $object->canvas : GETPOST("canvas");
 $objcanvas = null;
 if (!empty($canvas)) {
@@ -2866,7 +2866,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		// Module Adherent
 		if (!empty($conf->adherent->enabled)) {
 			$langs->load("members");
-			print '<tr><td>'.$langs->trans("LinkedToDolibarrMember").'</td>';
+			print '<tr><td>'.$langs->trans("LinkedToBerp3Member").'</td>';
 			print '<td>';
 			$adh = new Adherent($db);
 			$result = $adh->fetch('', '', $object->id);

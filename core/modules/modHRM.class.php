@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015-2021  Alexandre Spangaro  <aspangaro@open-dsi.fr>
+/* Copyright (C) 2015-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,18 +22,18 @@
  * \ingroup    HRM
  * \brief      Description and activation file for the module HRM
  */
-include_once DOL_DOCUMENT_ROOT."/core/modules/DolibarrModules.class.php";
+include_once DOL_DOCUMENT_ROOT."/core/modules/Berp3Modules.class.php";
 
 
 /**
  *		Description and activation class for module HRM
  */
-class modHRM extends DolibarrModules
+class modHRM extends Berp3Modules
 {
 	/**
 	 *  Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *  @param	DoliDB	$db		Database handler
+	 *  @param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -42,7 +42,7 @@ class modHRM extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 4000;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'hrm';
@@ -55,7 +55,7 @@ class modHRM extends DolibarrModules
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "HRM";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
 		$this->version = 'development';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
@@ -110,7 +110,7 @@ class modHRM extends DolibarrModules
 		$this->requiredby = array(); // List of module ids to disable if this one is disabled
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(11, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(11, 0); // Minimum version of Berp3 required by module
 		$this->langfiles = array("hrm");
 
 		// Constants
@@ -257,7 +257,7 @@ class modHRM extends DolibarrModules
 
 	/**
 	 *		Function called when module is enabled.
-	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *		It also creates data directories
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'newboxdefonly', 'noboxes')

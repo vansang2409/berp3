@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2001-2007	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2003		Jean-Louis Bergamo		<jlb@j1b.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2001-2007	
+ * Copyright (C) 2003		
+ * Copyright (C) 2004-2012	
  * Copyright (C) 2004		Christophe Combelles	<ccomb@free.fr>
- * Copyright (C) 2005-2010	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2013		Florian Henry			<florian.henry@open-concept.pro>
- * Copyright (C) 2015-2016	Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2015-2017	Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2016		Ferran Marcet   		<fmarcet@2byte.es>
+ * Copyright (C) 2005-2010	
+ * Copyright (C) 2013		
+ * Copyright (C) 2015-2016				
+ * Copyright (C) 2015-2017	
+ * Copyright (C) 2016		   		
  * Copyright (C) 2019		JC Prieto				<jcprieto@virtual20.com><prietojc@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -323,9 +323,9 @@ class Account extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDB		$db		Database handler
+	 *  @param	Berp3DB		$db		Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $langs;
 
@@ -1696,7 +1696,7 @@ class Account extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB 	$dbs 			Database handler
+	 * @param Berp3DB 	$dbs 			Database handler
 	 * @param int 		$origin_id 		Old thirdparty id
 	 * @param int 		$dest_id 		New thirdparty id
 	 * @return bool						True=SQL success, False=SQL error
@@ -1727,7 +1727,7 @@ class AccountLine extends CommonObject
 	public $error = '';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -1841,9 +1841,9 @@ class AccountLine extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDB	$db		Database handler
+	 *  @param	Berp3DB	$db		Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}

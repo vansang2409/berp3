@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=Може да изтриете модула си. 
 EnterNameOfObjectToDeleteDesc=Може да изтриете обект. ВНИМАНИЕ: Всички файлове с код (генерирани или създадени ръчно), свързани с обекта, ще бъдат изтрити!
 DangerZone=Опасна зона
 BuildPackage=Създаване на пакет
-BuildPackageDesc=Може да генерирате zip пакет, така че да сте готови да го разпространите към всеки Dolibarr. Може също така да го разпространите или да го продадете в онлайн магазина <a href="https://www.dolistore.com">DoliStore.com</a>.
+BuildPackageDesc=Може да генерирате zip пакет, така че да сте готови да го разпространите към всеки Berp3. Може също така да го разпространите или да го продадете в онлайн магазина <a href="https://www.berp3store.com">Berp3Store.com</a>.
 BuildDocumentation=Създаване на документация
 ModuleIsNotActive=This module is not activated yet. Go to %s to make it live or click here
 ModuleIsLive=Този модул е активиран. Всяка промяна може да прекъсне текуща функция.
@@ -101,7 +101,7 @@ HooksDefDesc=Определете в свойството <b>module_parts['hooks
 TriggerDefDesc=Дефинирайте във файла на тригера код, който искате да изпълните за всяко бизнес събитие.
 SeeIDsInUse=Вижте идентификаторите, които се използват във вашата инсталация.
 SeeReservedIDsRangeHere=Вижте обхвата от запазени идентификатори
-ToolkitForDevelopers=Инструментариум за разработчици на Dolibarr
+ToolkitForDevelopers=Инструментариум за разработчици на Berp3
 TryToUseTheModuleBuilder=Ако имате познания за SQL и PHP може да използвате съветника за създаване на BERP3 модул.<br>Активирайте модула <strong>%s</strong> и използвайте съветника като кликнете върху <span class="fa fa-bug"></span> в десния край на горното меню.<br>ВНИМАНИЕ: Това е функция за опитни разработчици, <b>не</b> правете експеримент на вашата работна система!
 SeeTopRightMenu=Вижте <span class="fa fa-bug"></span> в десния край на горното меню
 AddLanguageFile=Добавяне на езиков файл

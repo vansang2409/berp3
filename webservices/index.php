@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2011	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2011		Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2011		
+ * Copyright (C) 2011				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,10 +18,10 @@
 
 /**
  *       \file       htdocs/webservices/server_invoice.php
- *       \brief      File that is entry point to call Dolibarr WebServices
+ *       \brief      File that is entry point to call Berp3 WebServices
  */
 
-// This is to make Dolibarr working with Plesk
+// This is to make Berp3 working with Plesk
 set_include_path($_SERVER['DOCUMENT_ROOT'].'/htdocs');
 
 require_once '../master.inc.php';
@@ -35,12 +35,12 @@ $langs->load("admin");
  * View
  */
 
-dol_syslog("Call Dolibarr webservices interfaces");
+dol_syslog("Call Berp3 webservices interfaces");
 
 // Enable and test if module web services is enabled
 if (empty($conf->global->MAIN_MODULE_WEBSERVICES)) {
 	$langs->load("admin");
-	dol_syslog("Call Dolibarr webservices interfaces with module webservices disabled");
+	dol_syslog("Call Berp3 webservices interfaces with module webservices disabled");
 	print $langs->trans("WarningModuleNotActive", 'WebServices').'.<br><br>';
 	print $langs->trans("ToActivateModule");
 	exit;

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2019  Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2019-2021  Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2018  
+ * Copyright (C) 2018-2019           
+ * Copyright (C) 2019-2021  
  * Copyright (C) 2021 Dorian Laurent <i.merraha@sofimedmaroc.com>
  * Copyright (C) 2021 NextGestion <contact@nextgestion.com>
  *
@@ -27,19 +27,19 @@
  *  \ingroup    partnership
  *  \brief      Description and activation file for module Partnership
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *  Description and activation class for module Partnership
  *  This module is base on this specification :
  *  https://bonaerp.com/index.php?title=Draft:Module_Partnership_management#Note
  */
-class modPartnership extends DolibarrModules
+class modPartnership extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -47,7 +47,7 @@ class modPartnership extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 58000;
 
 		// Key text used to identify module (for permissions, menus, etc...)
@@ -74,7 +74,7 @@ class modPartnership extends DolibarrModules
 		// $this->editor_name = 'Editor name';
 		// $this->editor_url = 'https://www.example.com';
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
+		// Possible values for version are: 'development', 'experimental', 'berp3', 'berp3_deprecated' or a version string like 'x.y.z'
 		$this->version = 'development';
 		// Url to the file with your last numberversion of this module
 		//$this->url_last_version = 'http://www.example.com/versionmodule.txt';
@@ -148,7 +148,7 @@ class modPartnership extends DolibarrModules
 
 		// Prerequisites
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(11, -3); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(11, -3); // Minimum version of Berp3 required by module
 
 		// Messages at activation
 		$this->warnings_activation = array(); // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
@@ -253,7 +253,7 @@ class modPartnership extends DolibarrModules
 
 		$this->cronjobs = array(
 			0	=> array('priority'=>60, 'label'=>'CancelPartnershipForExpiredMembers', 'jobtype'=>'method', 'class'=>'/partnership/class/partnershiputils.class.php', 'objectname'=>'PartnershipUtils', 'method'=>'doCancelStatusOfMemberPartnership', 'parameters'=>'',      'comment'=>'Cancel status of partnership when subscription is expired + x days.', 'frequency'=>1, 'unitfrequency'=>86400, 'status'=>1, 'test'=>'$conf->partnership->enabled', 'datestart'=>$datestart),
-			1	=> array('priority'=>61, 'label'=>'PartnershipCheckBacklink', 'jobtype'=>'method', 'class'=>'/partnership/class/partnershiputils.class.php', 'objectname'=>'PartnershipUtils', 'method'=>'doWarningOfPartnershipIfDolibarrBacklinkNotfound', 'parameters'=>'',      'comment'=>'Warning of partnership if Dolibarr backlink not found on partner website.', 'frequency'=>1, 'unitfrequency'=>86400, 'status'=>0, 'test'=>'$conf->partnership->enabled', 'datestart'=>$datestart),
+			1	=> array('priority'=>61, 'label'=>'PartnershipCheckBacklink', 'jobtype'=>'method', 'class'=>'/partnership/class/partnershiputils.class.php', 'objectname'=>'PartnershipUtils', 'method'=>'doWarningOfPartnershipIfBerp3BacklinkNotfound', 'parameters'=>'',      'comment'=>'Warning of partnership if Berp3 backlink not found on partner website.', 'frequency'=>1, 'unitfrequency'=>86400, 'status'=>0, 'test'=>'$conf->partnership->enabled', 'datestart'=>$datestart),
 		);
 
 		// Permissions provided by this module
@@ -398,7 +398,7 @@ class modPartnership extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories
 	 *
 	 *  @param      string  $options    Options when enabling module ('', 'noboxes')

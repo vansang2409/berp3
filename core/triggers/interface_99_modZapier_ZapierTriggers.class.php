@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017-2020  Frédéric France     <frederic.france@netlogic.fr>
+/* Copyright (C) 2017-2020  
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,18 +31,18 @@
  * - The name property name must be MyTrigger
  */
 
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for Zapier module
  */
-class InterfaceZapierTriggers extends DolibarrTriggers
+class InterfaceZapierTriggers extends Berp3Triggers
 {
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -51,13 +51,13 @@ class InterfaceZapierTriggers extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "technic";
 		$this->description = "Zapier triggers.";
-		// 'development', 'experimental', 'dolibarr' or version
+		// 'development', 'experimental', 'berp3' or version
 		$this->version = self::VERSION_DEVELOPMENT;
 		$this->picto = 'zapier';
 	}
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file
 	 * is inside directory core/triggers
 	 *

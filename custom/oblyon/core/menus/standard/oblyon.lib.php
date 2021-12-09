@@ -1,11 +1,11 @@
 <?php
 /**
  * Copyright (C) 2013-2016  Nicolas Rivera      <nrivera.pro@gmail.com>
- * Copyright (C) 2015-2019  Open-DSI            <support@open-dsi.fr>
+ * Copyright (C) 2015-2019              
  *
- * Copyright (C) 2010-2013  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2010       Regis Houssin       <regis.houssin@capnetworks.com>
- * Copyright (C) 2012-2013  Juanjo Menent       <jmenent@2byte.es>
+ * Copyright (C) 2010-2013  
+ * Copyright (C) 2010              <regis.houssin@capnetworks.com>
+ * Copyright (C) 2012-2013  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ $langs->load ( "oblyon@oblyon");
 /**
  * Core function to output top menu oblyon
  *
- * @param 	DoliDB	$db				Database handler
+ * @param 	Berp3DB	$db				Database handler
  * @param 	string	$atarget		Target
  * @param 	int		$type_user	 	0=Menu for backoffice, 1=Menu for front office
  * @param	array	&$tabMenu		 If array with menu entries already loaded, we put this array here (in most cases, it's empty)
@@ -43,7 +43,7 @@ $langs->load ( "oblyon@oblyon");
  * @return	void
  */
 function print_oblyon_menu($db,$atarget,$type_user,&$tabMenu,&$menu,$noout=0,$forcemainmenu='',$forceleftmenu='',$moredata=null) {
-	global $user,$conf,$langs,$dolibarr_main_db_name,$mysoc;
+	global $user,$conf,$langs,$berp3_main_db_name,$mysoc;
 
 	$mainmenu=(empty($_SESSION["mainmenu"])?'':$_SESSION["mainmenu"]);
 	$leftmenu=(empty($_SESSION["leftmenu"])?'':$_SESSION["leftmenu"]);
@@ -70,7 +70,7 @@ function print_oblyon_menu($db,$atarget,$type_user,&$tabMenu,&$menu,$noout=0,$fo
         }*/
         else
         {
-            $urllogo=DOL_URL_ROOT.'/theme/dolibarr_logo.png';
+            $urllogo=DOL_URL_ROOT.'/theme/berp3_logo.png';
             $logoContainerAdditionalClass = '';
         }
         $title=$langs->trans("GoIntoSetupToChangeLogo");
@@ -553,7 +553,7 @@ function print_end_menu_array() {
 /**
  * Core function to output left menu oblyon
  *
- * @param	DoliDB		$db				 Database handler
+ * @param	Berp3DB		$db				 Database handler
  * @param 	array		$menu_array_before	Table of menu entries to show before entries of menu handler (menu->liste filled with menu->add)
  * @param	 array		$menu_array_after	 Table of menu entries to show after entries of menu handler (menu->liste filled with menu->add)
  * @param	array		&$tabMenu		 	If array with menu entries already loaded, we put this array here (in most cases, it's empty)
@@ -566,7 +566,7 @@ function print_end_menu_array() {
  */
 function print_left_oblyon_menu($db,$menu_array_before,$menu_array_after,&$tabMenu,&$menu,$noout=0,$forcemainmenu='',$forceleftmenu='',$moredata=null)
 {
-	global $user,$conf,$langs,$dolibarr_main_db_name,$mysoc;
+	global $user,$conf,$langs,$berp3_main_db_name,$mysoc;
 
 	$newmenu = $menu;
 
@@ -596,7 +596,7 @@ function print_left_oblyon_menu($db,$menu_array_before,$menu_array_after,&$tabMe
         }*/
         else
         {
-            $urllogo=DOL_URL_ROOT.'/theme/dolibarr_logo.png';
+            $urllogo=DOL_URL_ROOT.'/theme/berp3_logo.png';
             $logoContainerAdditionalClass = '';
         }
         $title=$langs->trans("GoIntoSetupToChangeLogo");
@@ -706,7 +706,7 @@ function print_left_oblyon_menu($db,$menu_array_before,$menu_array_after,&$tabMe
 				// Load translation files required by the page
 				$langs->loadLangs(array('admin', 'help', 'cron'));
 
-				$newmenu->add('/admin/system/dolibarr.php?mainmenu=home&amp;leftmenu=admintools_info', $langs->trans('InfoDolibarr'), 1);
+				$newmenu->add('/admin/system/berp3.php?mainmenu=home&amp;leftmenu=admintools_info', $langs->trans('InfoBerp3'), 1);
 
                 if (! empty($menu_invert)) $leftmenu= 'admintools_info';
 
@@ -723,8 +723,8 @@ function print_left_oblyon_menu($db,$menu_array_before,$menu_array_after,&$tabMe
 				$newmenu->add('/admin/system/database.php?mainmenu=home&amp;leftmenu=admintools', $langs->trans('InfoDatabase'), 1);
 				if (function_exists('eaccelerator_info')) $newmenu->add("/admin/tools/eaccelerator.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("EAccelerator"),1);
 				//$newmenu->add("/admin/system/perf.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("InfoPerf"),1);
-				$newmenu->add("/admin/tools/dolibarr_export.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Backup"),1);
-				$newmenu->add("/admin/tools/dolibarr_import.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Restore"),1);
+				$newmenu->add("/admin/tools/berp3_export.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Backup"),1);
+				$newmenu->add("/admin/tools/berp3_import.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Restore"),1);
 				$newmenu->add("/admin/tools/update.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("MenuUpgrade"),1);
 				$newmenu->add("/admin/tools/purge.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Purge"),1);
 				$newmenu->add("/admin/tools/listevents.php?mainmenu=home&amp;leftmenu=admintools", $langs->trans("Audit"),1);

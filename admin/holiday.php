@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2011-2019      Juanjo Menent	    <jmenent@2byte.es>
- * Copyright (C) 2011-2018      Philippe Grand	    <philippe.grand@atoo-net.com>
- * Copyright (C) 2018		    Charlene Benke		<charlie@patas-monkey.com>
- * Copyright (C) 2018			Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2011-2019      	    
+ * Copyright (C) 2011-2018      	    
+ * Copyright (C) 2018		    		
+ * Copyright (C) 2018			
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ if ($action == 'updateMask') {
 	$maskconst = GETPOST('maskconstholiday', 'alpha');
 	$maskvalue = GETPOST('maskholiday', 'alpha');
 	if ($maskconst) {
-		$res = dolibarr_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -111,12 +111,12 @@ if ($action == 'updateMask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->HOLIDAY_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'HOLIDAY_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'HOLIDAY_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "HOLIDAY_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "HOLIDAY_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->HOLIDAY_ADDON_PDF = $value;
@@ -131,13 +131,13 @@ if ($action == 'updateMask') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "HOLIDAY_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "HOLIDAY_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'set_other') {
 	$freetext = GETPOST('HOLIDAY_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
-	$res1 = dolibarr_set_const($db, "HOLIDAY_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res1 = berp3_set_const($db, "HOLIDAY_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	$draft = GETPOST('HOLIDAY_DRAFT_WATERMARK', 'alpha');
-	$res2 = dolibarr_set_const($db, "HOLIDAY_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res2 = berp3_set_const($db, "HOLIDAY_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 
 	if (!$res1 > 0 || !$res2 > 0) {
 		$error++;
@@ -539,7 +539,7 @@ if ($conf->global->MAIN_FEATURES_LEVEL >= 2) {
 		print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 	} else {
 		include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+		$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 		print $doleditor->Create();
 	}
 	print '</td></tr>'."\n";

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2005-2008  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2015  Regis Houssin           <regis.houssin@inodbox.com>
+/* Copyright (C) 2005-2008  
+ * Copyright (C) 2005-2015  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,10 +31,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/facture/modules_facture.php';
 class mod_facture_terre extends ModeleNumRefFactures
 {
 	/**
-	 * Dolibarr version of the loaded document 'development', 'experimental', 'dolibarr'
+	 * Berp3 version of the loaded document 'development', 'experimental', 'berp3'
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	/**
 	 * Prefix for invoices

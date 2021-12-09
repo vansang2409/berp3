@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2010 Laurent Destailleur         <eldy@users.sourceforge.net>
+/* Copyright (C) 2010          
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 class GoogleAPI
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -41,7 +41,7 @@ class GoogleAPI
 	/**
 	 * Constructor
 	 *
-	 * @param 	DoliDB		$db			Database handler
+	 * @param 	Berp3DB		$db			Database handler
 	 * @param	string		$key		Google key
 	 */
 	public function __construct($db, $key)

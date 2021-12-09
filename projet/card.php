@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2001-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2016 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2001-2005 
+ * Copyright (C) 2004-2016 
+ * Copyright (C) 2005-2012 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -682,7 +682,7 @@ if ($action == 'create' && $user->rights->projet->creer) {
 	// Description
 	print '<tr><td class="tdtop">'.$langs->trans("Description").'</td>';
 	print '<td>';
-	$doleditor = new DolEditor('description', GETPOST("description", 'restricthtml'), '', 90, 'dolibarr_notes', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_SOCIETE'), ROWS_3, '90%');
+	$doleditor = new DolEditor('description', GETPOST("description", 'restricthtml'), '', 90, 'berp3_notes', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_SOCIETE'), ROWS_3, '90%');
 	$doleditor->Create();
 	print '</td></tr>';
 
@@ -968,7 +968,7 @@ if ($action == 'create' && $user->rights->projet->creer) {
 		// Description
 		print '<tr><td class="tdtop">'.$langs->trans("Description").'</td>';
 		print '<td>';
-		$doleditor = new DolEditor('description', $object->description, '', 90, 'dolibarr_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_3, '90%');
+		$doleditor = new DolEditor('description', $object->description, '', 90, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_SOCIETE, ROWS_3, '90%');
 		$doleditor->Create();
 		print '</td></tr>';
 

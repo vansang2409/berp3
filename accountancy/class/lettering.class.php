@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004-2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2013       Olivier Geffroy         <jeff@jeffinfo.com>
- * Copyright (C) 2013-2019  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2004-2005  
+ * Copyright (C) 2013       
+ * Copyright (C) 2013-2019  
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

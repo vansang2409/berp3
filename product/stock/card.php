@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2003-2006	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2005		Simon Tosser			<simon@kornog-computing.com>
- * Copyright (C) 2005-2014	Regis Houssin			<regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2006	
+ * Copyright (C) 2004-2011	
+ * Copyright (C) 2005		Simon Tosser			
+ * Copyright (C) 2005-2014	
  * Copyright (C) 2016	    Francis Appels       	<francis.appels@yahoo.com>
  * Copyright (C) 2021		Noé Cendrier			<noe.cendrier@altairis.fr>
- * Copyright (C) 2021		Frédéric France			<frederic.france@netlogic.fr>
+ * Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -320,7 +320,7 @@ if ($action == 'create') {
 	print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 	// Editeur wysiwyg
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('desc', (!empty($object->description) ? $object->description : ''), '', 180, 'dolibarr_notes', 'In', false, true, empty($conf->fckeditor->enabled) ? '' : $conf->fckeditor->enabled, ROWS_5, '90%');
+	$doleditor = new DolEditor('desc', (!empty($object->description) ? $object->description : ''), '', 180, 'berp3_notes', 'In', false, true, empty($conf->fckeditor->enabled) ? '' : $conf->fckeditor->enabled, ROWS_5, '90%');
 	$doleditor->Create();
 	print '</td></tr>';
 
@@ -858,7 +858,7 @@ if ($action == 'create') {
 			print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 			// Editeur wysiwyg
 			require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-			$doleditor = new DolEditor('desc', $object->description, '', 180, 'dolibarr_notes', 'In', false, true, $conf->fckeditor->enabled, ROWS_5, '90%');
+			$doleditor = new DolEditor('desc', $object->description, '', 180, 'berp3_notes', 'In', false, true, $conf->fckeditor->enabled, ROWS_5, '90%');
 			$doleditor->Create();
 			print '</td></tr>';
 

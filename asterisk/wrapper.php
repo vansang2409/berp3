@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2009-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2009-2010 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@
  *  \brief      File that is entry point to call an Asterisk server
  *	\remarks	To be used, an Asterisk user must be created by adding this
  * 				in /etc/asterisk/manager.conf
- * 				[dolibarr]
- * 				secret = dolibarr
+ * 				[berp3]
+ * 				secret = berp3
  * 				deny=0.0.0.0/0.0.0.0
  * 				permit=127.0.0.1/255.255.255.0
  * 				read = system,call,log,verbose,command,agent,user
@@ -178,7 +178,7 @@ if (!empty($number)) {
 	if ($pos === false) {
 		$errno = 0;
 		$errstr = 0;
-		$strCallerId = "Dolibarr caller $found <".strtolower($number).">";
+		$strCallerId = "Berp3 caller $found <".strtolower($number).">";
 		$oSocket = @fsockopen($strHost, $port, $errno, $errstr, 10);
 		if (!$oSocket) {
 			print '<body>'."\n";

@@ -1,5 +1,5 @@
--- Module to manage resources into Dolibarr ERP/CRM
--- Copyright (C) 2013       Jean-François Ferry   <jfefe@aternatik.fr>
+-- Module to manage resources into Berp3 ERP/CRM
+-- Copyright (C) 2013       
 -- Copyright (C) 2016		    Gilles Poirier		    <glgpoirier@gmail.com>
 --
 -- This program is free software: you can redistribute it and/or modify

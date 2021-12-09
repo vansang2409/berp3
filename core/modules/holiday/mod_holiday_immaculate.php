@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2011-2019		Juanjo Menent	    <jmenent@2byte.es>
- * Copyright (C) 2018			Charlene Benke		<charlie@patas-monkey.com>
+/* Copyright (C) 2011-2019			    
+ * Copyright (C) 2018					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,10 +31,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/holiday/modules_holiday.php';
 class mod_holiday_immaculate extends ModelNumRefHolidays
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	/**
 	 * @var string Error message

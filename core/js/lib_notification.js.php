@@ -1,7 +1,7 @@
 <?php
 /* Copyright (C) 2016	   Sergio Sanchis		<sergiosanchis@hotmail.com>
- * Copyright (C) 2017	   Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2020	   Destailleur Laurent  <eldy@users.sourceforge.net>
+ * Copyright (C) 2017	   
+ * Copyright (C) 2020	     
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,8 +51,8 @@ require_once '../../main.inc.php';
  */
 
 top_httphead('text/javascript; charset=UTF-8');
-// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-if (empty($dolibarr_nocache)) {
+// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+if (empty($berp3_nocache)) {
 	header('Cache-Control: max-age=10800, public, must-revalidate');
 } else {
 	header('Cache-Control: no-cache');

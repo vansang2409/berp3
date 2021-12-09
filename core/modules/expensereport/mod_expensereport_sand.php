@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Maxime Kohlhaas <support@atm-consulting.fr>
+/* Copyright (C) 2017  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,10 +31,10 @@ require_once DOL_DOCUMENT_ROOT.'/core/modules/expensereport/modules_expenserepor
 class mod_expensereport_sand extends ModeleNumRefExpenseReport
 {
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr'; // 'development', 'experimental', 'dolibarr'
+	public $version = 'berp3'; // 'development', 'experimental', 'berp3'
 
 	/**
 	 * @var string Error message

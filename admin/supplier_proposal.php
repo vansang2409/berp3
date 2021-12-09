@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2003-2004 Rodolphe Quiedeville        <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur         <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio         <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier              <benoit.mortier@opensides.be>
- * Copyright (C) 2004      Eric Seigne                 <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2012 Regis Houssin               <regis.houssin@inodbox.com>
- * Copyright (C) 2008      Raphael Bertrand (Resultic) <raphael.bertrand@resultic.fr>
- * Copyright (C) 2011-2013 Juanjo Menent               <jmenent@2byte.es>
- * Copyright (C) 2015      Jean-François Ferry		   <jfefe@aternatik.fr>
+/* Copyright (C) 2003-2004         
+ * Copyright (C) 2004-2011          
+ * Copyright (C) 2004               
+ * Copyright (C) 2004                    
+ * Copyright (C) 2004                       
+ * Copyright (C) 2005-2012                
+ * Copyright (C) 2008       
+ * Copyright (C) 2011-2013                
+ * Copyright (C) 2015      		   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,7 +55,7 @@ if ($action == 'updateMask') {
 	$maskconstsupplier_proposal = GETPOST('maskconstsupplier_proposal', 'alpha');
 	$masksupplier_proposal = GETPOST('masksupplier_proposal', 'alpha');
 	if ($maskconstsupplier_proposal) {
-		$res = dolibarr_set_const($db, $maskconstsupplier_proposal, $masksupplier_proposal, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstsupplier_proposal, $masksupplier_proposal, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -108,7 +108,7 @@ if ($action == 'specimen') {
 if ($action == 'set_SUPPLIER_PROPOSAL_DRAFT_WATERMARK') {
 	$draft = GETPOST('SUPPLIER_PROPOSAL_DRAFT_WATERMARK', 'alpha');
 
-	$res = dolibarr_set_const($db, "SUPPLIER_PROPOSAL_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "SUPPLIER_PROPOSAL_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 	if (!($res > 0)) {
 		$error++;
 	}
@@ -123,7 +123,7 @@ if ($action == 'set_SUPPLIER_PROPOSAL_DRAFT_WATERMARK') {
 if ($action == 'set_SUPPLIER_PROPOSAL_FREE_TEXT') {
 	$freetext = GETPOST('SUPPLIER_PROPOSAL_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
 
-	$res = dolibarr_set_const($db, "SUPPLIER_PROPOSAL_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "SUPPLIER_PROPOSAL_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -137,7 +137,7 @@ if ($action == 'set_SUPPLIER_PROPOSAL_FREE_TEXT') {
 }
 
 if ($action == 'set_BANK_ASK_PAYMENT_BANK_DURING_SUPPLIER_PROPOSAL') {
-	$res = dolibarr_set_const($db, "BANK_ASK_PAYMENT_BANK_DURING_SUPPLIER_PROPOSAL", $value, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "BANK_ASK_PAYMENT_BANK_DURING_SUPPLIER_PROPOSAL", $value, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -157,11 +157,11 @@ if ($action == 'set') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->SUPPLIER_PROPOSAL_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'SUPPLIER_PROPOSAL_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'SUPPLIER_PROPOSAL_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
-	if (dolibarr_set_const($db, "SUPPLIER_PROPOSAL_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "SUPPLIER_PROPOSAL_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		$conf->global->SUPPLIER_PROPOSAL_ADDON_PDF = $value;
 	}
 
@@ -174,7 +174,7 @@ if ($action == 'set') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "SUPPLIER_PROPOSAL_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "SUPPLIER_PROPOSAL_ADDON", $value, 'chaine', 0, '', $conf->entity);
 }
 
 
@@ -475,7 +475,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td><td class="right">';

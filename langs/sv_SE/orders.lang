@@ -120,8 +120,8 @@ ConfirmCloneOrder=Är du säker på att du vill klona denna beställning <b> %s 
 DispatchSupplierOrder=Ta emot inköpsorder %s
 FirstApprovalAlreadyDone=Första godkännande redan gjort
 SecondApprovalAlreadyDone=Andra godkännande redan gjort
-SupplierOrderReceivedInDolibarr=Beställningsorder %s fick %s
-SupplierOrderSubmitedInDolibarr=Beställningsnummer %s skickat
+SupplierOrderReceivedInBerp3=Beställningsorder %s fick %s
+SupplierOrderSubmitedInBerp3=Beställningsnummer %s skickat
 SupplierOrderClassifiedBilled=Beställningsorder %s set fakturerad
 OtherOrders=Övriga beställningar
 ##### Types de contacts #####

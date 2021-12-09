@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003-2004 Rodolphe Quiedeville         <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur          <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Sebastien Di Cintio          <sdicintio@ressource-toi.org>
- * Copyright (C) 2004      Benoit Mortier               <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2014 Regis Houssin                <regis.houssin@inodbox.com>
- * Copyright (C) 2008      Raphael Bertrand (Resultic)  <raphael.bertrand@resultic.fr>
- * Copyright (C) 2011-2013 Juanjo Menent			    <jmenent@2byte.es>
- * Copyright (C) 2011-2018 Philippe Grand			    <philippe.grand@atoo-net.com>
+/* Copyright (C) 2003-2004 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2004                
+ * Copyright (C) 2004                     
+ * Copyright (C) 2005-2014 
+ * Copyright (C) 2008      
+ * Copyright (C) 2011-2013 			    
+ * Copyright (C) 2011-2018 			    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ if ($action == 'updateMask') {
 	$maskconst = GETPOST('maskconst', 'alpha');
 	$maskvalue = GETPOST('maskvalue', 'alpha');
 	if ($maskconst) {
-		$res = dolibarr_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconst, $maskvalue, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -111,12 +111,12 @@ if ($action == 'updateMask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->FICHEINTER_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'FICHEINTER_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'FICHEINTER_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "FICHEINTER_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "FICHEINTER_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->FICHEINTER_ADDON_PDF = $value;
@@ -131,10 +131,10 @@ if ($action == 'updateMask') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "FICHEINTER_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "FICHEINTER_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'set_FICHINTER_FREE_TEXT') {
 	$freetext = GETPOST('FICHINTER_FREE_TEXT', 'restricthtml'); // No alpha here, we want exact string
-	$res = dolibarr_set_const($db, "FICHINTER_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FICHINTER_FREE_TEXT", $freetext, 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -147,7 +147,7 @@ if ($action == 'updateMask') {
 	}
 } elseif ($action == 'set_FICHINTER_DRAFT_WATERMARK') {
 	$draft = GETPOST('FICHINTER_DRAFT_WATERMARK', 'alpha');
-	$res = dolibarr_set_const($db, "FICHINTER_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FICHINTER_DRAFT_WATERMARK", trim($draft), 'chaine', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -160,7 +160,7 @@ if ($action == 'updateMask') {
 	}
 } elseif ($action == 'set_FICHINTER_PRINT_PRODUCTS') {
 	$val = GETPOST('FICHINTER_PRINT_PRODUCTS', 'alpha');
-	$res = dolibarr_set_const($db, "FICHINTER_PRINT_PRODUCTS", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FICHINTER_PRINT_PRODUCTS", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -173,7 +173,7 @@ if ($action == 'updateMask') {
 	}
 } elseif ($action == 'set_FICHINTER_USE_SERVICE_DURATION') {
 	$val = GETPOST('FICHINTER_USE_SERVICE_DURATION', 'alpha');
-	$res = dolibarr_set_const($db, "FICHINTER_USE_SERVICE_DURATION", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FICHINTER_USE_SERVICE_DURATION", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -186,7 +186,7 @@ if ($action == 'updateMask') {
 	}
 } elseif ($action == 'set_FICHINTER_WITHOUT_DURATION') {
 	$val = GETPOST('FICHINTER_WITHOUT_DURATION', 'alpha');
-	$res = dolibarr_set_const($db, "FICHINTER_WITHOUT_DURATION", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FICHINTER_WITHOUT_DURATION", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -199,7 +199,7 @@ if ($action == 'updateMask') {
 	}
 } elseif ($action == 'set_FICHINTER_DATE_WITHOUT_HOUR') {
 	$val = GETPOST('FICHINTER_DATE_WITHOUT_HOUR', 'alpha');
-	$res = dolibarr_set_const($db, "FICHINTER_DATE_WITHOUT_HOUR", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "FICHINTER_DATE_WITHOUT_HOUR", ($val == 'on' ? 1 : 0), 'bool', 0, '', $conf->entity);
 
 	if (!($res > 0)) {
 		$error++;
@@ -508,7 +508,7 @@ if (empty($conf->global->PDF_ALLOW_HTML_FOR_FREE_TEXT)) {
 	print '<textarea name="'.$variablename.'" class="flat" cols="120">'.$conf->global->$variablename.'</textarea>';
 } else {
 	include_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'dolibarr_notes');
+	$doleditor = new DolEditor($variablename, $conf->global->$variablename, '', 80, 'berp3_notes');
 	print $doleditor->Create();
 }
 print '</td><td class="right">';

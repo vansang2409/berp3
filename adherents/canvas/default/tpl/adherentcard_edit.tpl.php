@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2010 Regis Houssin  <regis.houssin@inodbox.com>
- * Copyright (C) 2012 Philippe Grand <philippe.grand@atoo-net.com>
+/* Copyright (C) 2010   
+ * Copyright (C) 2012  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -128,8 +128,8 @@ echo $this->control->tpl['ajax_selectcountry'];
 </tr>
 
 <tr>
-	<td><?php echo $langs->trans("DolibarrLogin"); ?></td>
-	<td colspan="3"><?php echo $this->control->tpl['dolibarr_user']; ?></td>
+	<td><?php echo $langs->trans("Berp3Login"); ?></td>
+	<td colspan="3"><?php echo $this->control->tpl['berp3_user']; ?></td>
 </tr>
 
 <tr>

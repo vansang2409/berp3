@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004-2013 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013      Juanjo Menent 		<jmenent@2byte.es>
+/* Copyright (C) 2004-2013 
+ * Copyright (C) 2005-2012 
+ * Copyright (C) 2013       		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ $action = GETPOST('action', 'aZ09');
 if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
 	$value = (GETPOST($code, 'alpha') ? GETPOST($code, 'alpha') : 1);
-	if (dolibarr_set_const($db, $code, $value, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, $value, 'chaine', 0, '', $conf->entity) > 0) {
 		Header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -54,15 +54,15 @@ if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 	}
 } elseif (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, $conf->entity) > 0) {
+	if (berp3_del_const($db, $code, $conf->entity) > 0) {
 		Header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
 		dol_print_error($db);
 	}
 } elseif ($action == 'updateform') {
-	$res1 = dolibarr_set_const($db, "MAIN_APPLICATION_TITLE", GETPOST("MAIN_APPLICATION_TITLE", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-	$res2 = dolibarr_set_const($db, "MAIN_SESSION_TIMEOUT", GETPOST("MAIN_SESSION_TIMEOUT", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+	$res1 = berp3_set_const($db, "MAIN_APPLICATION_TITLE", GETPOST("MAIN_APPLICATION_TITLE", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+	$res2 = berp3_set_const($db, "MAIN_SESSION_TIMEOUT", GETPOST("MAIN_SESSION_TIMEOUT", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 	if ($res1 && $res2) {
 		setEventMessages($langs->trans("RecordModifiedSuccessfully"), null, 'mesgs');
 	}

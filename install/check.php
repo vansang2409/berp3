@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2004-2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2015  Laurent Destailleur     <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2005  
+ * Copyright (C) 2004-2015  
  * Copyright (C) 2005       Marc Barilley / Ocebo   <marc@ocebo.com>
- * Copyright (C) 2005-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2013-2014  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2014       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2015-2016  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+ * Copyright (C) 2005-2012  
+ *   
+ * Copyright (C) 2014       
+ * Copyright (C) 2015-2016        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,15 +44,15 @@ $langs->load("install");
 // Now we load forced/pre-set values from install.forced.php file.
 $useforcedwizard = false;
 $forcedfile = "./install.forced.php";
-if ($conffile == "/etc/dolibarr/conf.php") {
-	$forcedfile = "/etc/dolibarr/install.forced.php";
+if ($conffile == "/etc/berp3/conf.php") {
+	$forcedfile = "/etc/berp3/install.forced.php";
 }
 if (@file_exists($forcedfile)) {
 	$useforcedwizard = true;
 	include_once $forcedfile;
 }
 
-dolibarr_install_syslog("- check: Dolibarr install/upgrade process started");
+berp3_install_syslog("- check: Berp3 install/upgrade process started");
 
 
 /*
@@ -156,7 +156,7 @@ if (!function_exists("utf8_encode")) {
 
 
 // Check if intl methods are supported
-if (empty($_SERVER["SERVER_ADMIN"]) || $_SERVER["SERVER_ADMIN"] != 'doliwamp@localhost') {
+if (empty($_SERVER["SERVER_ADMIN"]) || $_SERVER["SERVER_ADMIN"] != 'berp3wamp@localhost') {
 	if (!function_exists("locale_get_primary_language") || !function_exists("locale_get_region")) {
 		$langs->load("errors");
 		print '<img src="../theme/eldy/img/warning.png" alt="Error" class="valignmiddle"> '.$langs->trans("ErrorPHPDoesNotSupportIntl")."<br>\n";
@@ -203,7 +203,7 @@ if ($memmaxorig != '') {
 // If that config file is present and filled
 clearstatcache();
 if (is_readable($conffile) && filesize($conffile) > 8) {
-	dolibarr_install_syslog("check: conf file '".$conffile."' already defined");
+	berp3_install_syslog("check: conf file '".$conffile."' already defined");
 	$confexists = 1;
 	include_once $conffile;
 
@@ -216,16 +216,16 @@ if (is_readable($conffile) && filesize($conffile) > 8) {
 	}
 } else {
 	// If not, we create it
-	dolibarr_install_syslog("check: we try to create conf file '".$conffile."'");
+	berp3_install_syslog("check: we try to create conf file '".$conffile."'");
 	$confexists = 0;
 
 	// First we try by copying example
 	if (@copy($conffile.".example", $conffile)) {
 		// Success
-		dolibarr_install_syslog("check: successfully copied file ".$conffile.".example into ".$conffile);
+		berp3_install_syslog("check: successfully copied file ".$conffile.".example into ".$conffile);
 	} else {
 		// If failed, we try to create an empty file
-		dolibarr_install_syslog("check: failed to copy file ".$conffile.".example into ".$conffile.". We try to create it.", LOG_WARNING);
+		berp3_install_syslog("check: failed to copy file ".$conffile.".example into ".$conffile.". We try to create it.", LOG_WARNING);
 
 		$fp = @fopen($conffile, "w");
 		if ($fp) {
@@ -233,7 +233,7 @@ if (is_readable($conffile) && filesize($conffile) > 8) {
 			@fputs($fp, "\n");
 			fclose($fp);
 		} else {
-			dolibarr_install_syslog("check: failed to create a new file ".$conffile." into current dir ".getcwd().". Please check permissions.", LOG_ERR);
+			berp3_install_syslog("check: failed to create a new file ".$conffile." into current dir ".getcwd().". Please check permissions.", LOG_ERR);
 		}
 	}
 
@@ -291,32 +291,32 @@ if (!file_exists($conffile)) {
 		// Try to create db connection
 		if (file_exists($conffile)) {
 			include_once $conffile;
-			if (!empty($dolibarr_main_db_type) && !empty($dolibarr_main_document_root)) {
-				if (!file_exists($dolibarr_main_document_root."/core/lib/admin.lib.php")) {
-					print '<span class="error">A '.$conffiletoshow.' file exists with a dolibarr_main_document_root to '.$dolibarr_main_document_root.' that seems wrong. Try to fix or remove the '.$conffiletoshow.' file.</span><br>'."\n";
-					dol_syslog("A '".$conffiletoshow."' file exists with a dolibarr_main_document_root to ".$dolibarr_main_document_root." that seems wrong. Try to fix or remove the '".$conffiletoshow."' file.", LOG_WARNING);
+			if (!empty($berp3_main_db_type) && !empty($berp3_main_document_root)) {
+				if (!file_exists($berp3_main_document_root."/core/lib/admin.lib.php")) {
+					print '<span class="error">A '.$conffiletoshow.' file exists with a berp3_main_document_root to '.$berp3_main_document_root.' that seems wrong. Try to fix or remove the '.$conffiletoshow.' file.</span><br>'."\n";
+					dol_syslog("A '".$conffiletoshow."' file exists with a berp3_main_document_root to ".$berp3_main_document_root." that seems wrong. Try to fix or remove the '".$conffiletoshow."' file.", LOG_WARNING);
 				} else {
-					require_once $dolibarr_main_document_root.'/core/lib/admin.lib.php';
+					require_once $berp3_main_document_root.'/core/lib/admin.lib.php';
 
 					// If password is encoded, we decode it
-					if (preg_match('/crypted:/i', $dolibarr_main_db_pass) || !empty($dolibarr_main_db_encrypted_pass)) {
-						require_once $dolibarr_main_document_root.'/core/lib/security.lib.php';
-						if (preg_match('/crypted:/i', $dolibarr_main_db_pass)) {
-							$dolibarr_main_db_encrypted_pass = preg_replace('/crypted:/i', '', $dolibarr_main_db_pass); // We need to set this as it is used to know the password was initially crypted
-							$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_encrypted_pass);
+					if (preg_match('/crypted:/i', $berp3_main_db_pass) || !empty($berp3_main_db_encrypted_pass)) {
+						require_once $berp3_main_document_root.'/core/lib/security.lib.php';
+						if (preg_match('/crypted:/i', $berp3_main_db_pass)) {
+							$berp3_main_db_encrypted_pass = preg_replace('/crypted:/i', '', $berp3_main_db_pass); // We need to set this as it is used to know the password was initially crypted
+							$berp3_main_db_pass = dol_decode($berp3_main_db_encrypted_pass);
 						} else {
-							$dolibarr_main_db_pass = dol_decode($dolibarr_main_db_encrypted_pass);
+							$berp3_main_db_pass = dol_decode($berp3_main_db_encrypted_pass);
 						}
 					}
 
 					// $conf already created in inc.php
-					$conf->db->type = $dolibarr_main_db_type;
-					$conf->db->host = $dolibarr_main_db_host;
-					$conf->db->port = $dolibarr_main_db_port;
-					$conf->db->name = $dolibarr_main_db_name;
-					$conf->db->user = $dolibarr_main_db_user;
-					$conf->db->pass = $dolibarr_main_db_pass;
-					$db = getDoliDBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
+					$conf->db->type = $berp3_main_db_type;
+					$conf->db->host = $berp3_main_db_host;
+					$conf->db->port = $berp3_main_db_port;
+					$conf->db->name = $berp3_main_db_name;
+					$conf->db->user = $berp3_main_db_user;
+					$conf->db->pass = $berp3_main_db_pass;
+					$db = getBerp3DBInstance($conf->db->type, $conf->db->host, $conf->db->user, $conf->db->pass, $conf->db->name, $conf->db->port);
 					if ($db->connected && $db->database_selected) {
 						$ok = true;
 					}
@@ -326,14 +326,14 @@ if (!file_exists($conffile)) {
 
 		// If database access is available, we set more variables
 		if ($ok) {
-			if (empty($dolibarr_main_db_encryption)) {
-				$dolibarr_main_db_encryption = 0;
+			if (empty($berp3_main_db_encryption)) {
+				$berp3_main_db_encryption = 0;
 			}
-			$conf->db->dolibarr_main_db_encryption = $dolibarr_main_db_encryption;
-			if (empty($dolibarr_main_db_cryptkey)) {
-				$dolibarr_main_db_cryptkey = '';
+			$conf->db->berp3_main_db_encryption = $berp3_main_db_encryption;
+			if (empty($berp3_main_db_cryptkey)) {
+				$berp3_main_db_cryptkey = '';
 			}
-			$conf->db->dolibarr_main_db_cryptkey = $dolibarr_main_db_cryptkey;
+			$conf->db->berp3_main_db_cryptkey = $berp3_main_db_cryptkey;
 
 			$conf->setValues($db);
 			// Reset forced setup after the setValues
@@ -344,8 +344,8 @@ if (!file_exists($conffile)) {
 
 			// Current version is $conf->global->MAIN_VERSION_LAST_UPGRADE
 			// Version to install is DOL_VERSION
-			$dolibarrlastupgradeversionarray = preg_split('/[\.-]/', isset($conf->global->MAIN_VERSION_LAST_UPGRADE) ? $conf->global->MAIN_VERSION_LAST_UPGRADE : (isset($conf->global->MAIN_VERSION_LAST_INSTALL) ? $conf->global->MAIN_VERSION_LAST_INSTALL : ''));
-			$dolibarrversiontoinstallarray = versiondolibarrarray();
+			$berp3lastupgradeversionarray = preg_split('/[\.-]/', isset($conf->global->MAIN_VERSION_LAST_UPGRADE) ? $conf->global->MAIN_VERSION_LAST_UPGRADE : (isset($conf->global->MAIN_VERSION_LAST_INSTALL) ? $conf->global->MAIN_VERSION_LAST_INSTALL : ''));
+			$berp3versiontoinstallarray = versionberp3array();
 		}
 
 		// Show title
@@ -367,7 +367,7 @@ if (!file_exists($conffile)) {
 		$available_choices = array();
 		$notavailable_choices = array();
 
-		if (empty($dolibarr_main_db_host)) {	// This means install process was not run
+		if (empty($berp3_main_db_host)) {	// This means install process was not run
 			$foundrecommandedchoice = 1; // To show only once
 		}
 
@@ -377,7 +377,7 @@ if (!file_exists($conffile)) {
 		$choice .= '</td>';
 		$choice .= '<td class="listofchoicesdesc">';
 		$choice .= $langs->trans("FreshInstallDesc");
-		if (empty($dolibarr_main_db_host)) {	// This means install process was not run
+		if (empty($berp3_main_db_host)) {	// This means install process was not run
 			$choice .= '<br>';
 			//print $langs->trans("InstallChoiceRecommanded",DOL_VERSION,$conf->global->MAIN_VERSION_LAST_UPGRADE);
 			$choice .= '<div class="center"><div class="ok suggestedchoice">'.$langs->trans("InstallChoiceSuggested").'</div></div>';
@@ -403,7 +403,7 @@ if (!file_exists($conffile)) {
 
 		// Show upgrade lines
 		$allowupgrade = true;
-		if (empty($dolibarr_main_db_host)) {	// This means install process was not run
+		if (empty($berp3_main_db_host)) {	// This means install process was not run
 			$allowupgrade = false;
 		}
 		if (defined("MAIN_NOT_INSTALLED")) {
@@ -446,21 +446,21 @@ if (!file_exists($conffile)) {
 			$versionfrom = $migarray['from'];
 			$versionto = $migarray['to'];
 			$versionarray = preg_split('/[\.-]/', $version);
-			$dolibarrversionfromarray = preg_split('/[\.-]/', $versionfrom);
-			$dolibarrversiontoarray = preg_split('/[\.-]/', $versionto);
+			$berp3versionfromarray = preg_split('/[\.-]/', $versionfrom);
+			$berp3versiontoarray = preg_split('/[\.-]/', $versionto);
 			// Define string newversionxxx that are used for text to show
 			$newversionfrom = preg_replace('/(\.[0-9]+)$/i', '.*', $versionfrom);
 			$newversionto = preg_replace('/(\.[0-9]+)$/i', '.*', $versionto);
 			$newversionfrombis = '';
-			if (versioncompare($dolibarrversiontoarray, $versionarray) < -2) {	// From x.y.z -> x.y.z+1
+			if (versioncompare($berp3versiontoarray, $versionarray) < -2) {	// From x.y.z -> x.y.z+1
 				$newversionfrombis = ' '.$langs->trans("or").' '.$versionto;
 			}
 
 			if ($ok) {
-				if (count($dolibarrlastupgradeversionarray) >= 2) {	// If database access is available and last upgrade version is known
+				if (count($berp3lastupgradeversionarray) >= 2) {	// If database access is available and last upgrade version is known
 					// Now we check if this is the first qualified choice
 					if ($allowupgrade && empty($foundrecommandedchoice) &&
-						(versioncompare($dolibarrversiontoarray, $dolibarrlastupgradeversionarray) > 0 || versioncompare($dolibarrversiontoarray, $versionarray) < -2)
+						(versioncompare($berp3versiontoarray, $berp3lastupgradeversionarray) > 0 || versioncompare($berp3versiontoarray, $versionarray) < -2)
 					) {
 						$foundrecommandedchoice = 1; // To show only once
 						$recommended_choice = true;
@@ -572,5 +572,5 @@ $(".runupgrade").click(function() {
 
 </script>';
 
-dolibarr_install_syslog("- check: end");
+berp3_install_syslog("- check: end");
 pFooter(1); // Never display next button

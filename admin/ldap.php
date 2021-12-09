@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2004       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004       Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2005-2017  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2006-2020  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2011-2013  Juanjo Menent           <jmenent@2byte.es>
+/* Copyright (C) 2004       
+ * Copyright (C) 2004            
+ * Copyright (C) 2004                 
+ * Copyright (C) 2005-2017  
+ * Copyright (C) 2006-2020  
+ * Copyright (C) 2011-2013  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,43 +60,43 @@ if (empty($reshook)) {
 
 		$db->begin();
 
-		if (!dolibarr_set_const($db, 'LDAP_SERVER_TYPE', GETPOST("type", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SERVER_TYPE', GETPOST("type", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_SERVER_PROTOCOLVERSION', GETPOST("LDAP_SERVER_PROTOCOLVERSION", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SERVER_PROTOCOLVERSION', GETPOST("LDAP_SERVER_PROTOCOLVERSION", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_SERVER_HOST', GETPOST("host", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SERVER_HOST', GETPOST("host", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_SERVER_HOST_SLAVE', GETPOST("slave", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SERVER_HOST_SLAVE', GETPOST("slave", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_SERVER_PORT', GETPOST("port", 'int'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SERVER_PORT', GETPOST("port", 'int'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_SERVER_DN', GETPOST("dn", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SERVER_DN', GETPOST("dn", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_ADMIN_DN', GETPOST("admin", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_ADMIN_DN', GETPOST("admin", 'alphanohtml'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_ADMIN_PASS', GETPOST("pass", 'none'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_ADMIN_PASS', GETPOST("pass", 'none'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_SERVER_USE_TLS', GETPOST("usetls", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SERVER_USE_TLS', GETPOST("usetls", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_SYNCHRO_ACTIVE', GETPOST("activesynchro", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_SYNCHRO_ACTIVE', GETPOST("activesynchro", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_CONTACT_ACTIVE', GETPOST("activecontact", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_CONTACT_ACTIVE', GETPOST("activecontact", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_MEMBER_ACTIVE', GETPOST("activemembers", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_MEMBER_ACTIVE', GETPOST("activemembers", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
-		if (!dolibarr_set_const($db, 'LDAP_MEMBER_TYPE_ACTIVE', GETPOST("activememberstypes", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'LDAP_MEMBER_TYPE_ACTIVE', GETPOST("activememberstypes", 'aZ09'), 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 
@@ -148,8 +148,8 @@ print "</tr>\n";
 print '<tr class="oddeven"><td>'.$langs->trans("LDAPDnSynchroActive").'</td><td>';
 $arraylist = array();
 $arraylist['0'] = $langs->trans("No");
-$arraylist['ldap2dolibarr'] = $langs->trans("LDAPToDolibarr");
-$arraylist['dolibarr2ldap'] = $langs->trans("DolibarrToLDAP");
+$arraylist['ldap2berp3'] = $langs->trans("LDAPToBerp3");
+$arraylist['berp32ldap'] = $langs->trans("Berp3ToLDAP");
 print $form->selectarray('activesynchro', $arraylist, $conf->global->LDAP_SYNCHRO_ACTIVE);
 print '</td><td><span class="opacitymedium">'.$langs->trans("LDAPDnSynchroActiveExample").'</span>';
 if ($conf->global->LDAP_SYNCHRO_ACTIVE && !$conf->global->LDAP_USER_DN) {
@@ -162,7 +162,7 @@ if (!empty($conf->societe->enabled)) {
 	print '<tr class="oddeven"><td>'.$langs->trans("LDAPDnContactActive").'</td><td>';
 	$arraylist = array();
 	$arraylist['0'] = $langs->trans("No");
-	$arraylist['1'] = $langs->trans("DolibarrToLDAP");
+	$arraylist['1'] = $langs->trans("Berp3ToLDAP");
 	print $form->selectarray('activecontact', $arraylist, $conf->global->LDAP_CONTACT_ACTIVE);
 	print '</td><td><span class="opacitymedium">'.$langs->trans("LDAPDnContactActiveExample").'</span></td></tr>';
 }
@@ -172,8 +172,8 @@ if (!empty($conf->adherent->enabled)) {
 	print '<tr class="oddeven"><td>'.$langs->trans("LDAPDnMemberActive").'</td><td>';
 	$arraylist = array();
 	$arraylist['0'] = $langs->trans("No");
-	$arraylist['1'] = $langs->trans("DolibarrToLDAP");
-	$arraylist['ldap2dolibarr'] = $langs->trans("LDAPToDolibarr").' ('.$langs->trans("SupportedForLDAPImportScriptOnly").')';
+	$arraylist['1'] = $langs->trans("Berp3ToLDAP");
+	$arraylist['ldap2berp3'] = $langs->trans("LDAPToBerp3").' ('.$langs->trans("SupportedForLDAPImportScriptOnly").')';
 	print $form->selectarray('activemembers', $arraylist, $conf->global->LDAP_MEMBER_ACTIVE);
 	print '</td><td><span class="opacitymedium">'.$langs->trans("LDAPDnMemberActiveExample").'</span></td></tr>';
 }
@@ -183,8 +183,8 @@ if (!empty($conf->adherent->enabled)) {
 	print '<tr class="oddeven"><td>'.$langs->trans("LDAPDnMemberTypeActive").'</td><td>';
 	$arraylist = array();
 	$arraylist['0'] = $langs->trans("No");
-	$arraylist['1'] = $langs->trans("DolibarrToLDAP");
-	$arraylist['ldap2dolibarr'] = $langs->trans("LDAPToDolibarr").' ('.$langs->trans("SupportedForLDAPImportScriptOnly").')';
+	$arraylist['1'] = $langs->trans("Berp3ToLDAP");
+	$arraylist['ldap2berp3'] = $langs->trans("LDAPToBerp3").' ('.$langs->trans("SupportedForLDAPImportScriptOnly").')';
 	print $form->selectarray('activememberstypes', $arraylist, $conf->global->LDAP_MEMBER_TYPE_ACTIVE);
 	print '</td><td><span class="opacitymedium">'.$langs->trans("LDAPDnMemberTypeActiveExample").'</span></td></tr>';
 }

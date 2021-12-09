@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2010-2014	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2011-2016	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2011-2015	Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2011-2018	Philippe Grand		<philippe.grand@atoo-net.com>
- * Copyright (C) 2013		Florian Henry		<florian.henry@open-concept.pro>
- * Copyright (C) 2015       Marcos García       <marcosgdf@gmail.com>
- * Copyright (C) 2018		Ferran Marcet		<fmarcet@2byte.es>
+/* Copyright (C) 2010-2014			
+ * Copyright (C) 2011-2016		
+ * Copyright (C) 2011-2015	
+ * Copyright (C) 2011-2018			
+ * Copyright (C) 2013		
+ * Copyright (C) 2015              
+ * Copyright (C) 2018				
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ if ($action == 'updateMask') {
 	$maskproject = GETPOST('maskproject', 'alpha');
 
 	if ($maskconstproject) {
-		$res = dolibarr_set_const($db, $maskconstproject, $maskproject, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstproject, $maskproject, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -77,7 +77,7 @@ if ($action == 'updateMaskTask') {
 	$masktaskt = GETPOST('masktask', 'alpha');
 
 	if ($maskconstmasktask) {
-		$res = dolibarr_set_const($db, $maskconstmasktask, $masktaskt, 'chaine', 0, '', $conf->entity);
+		$res = berp3_set_const($db, $maskconstmasktask, $masktaskt, 'chaine', 0, '', $conf->entity);
 	}
 
 	if (!($res > 0)) {
@@ -167,19 +167,19 @@ if ($action == 'updateMaskTask') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->PROJECT_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'PROJECT_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'PROJECT_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'deltask') {
 	$ret = delDocumentModel($value, 'project_task');
 	if ($ret > 0) {
 		if ($conf->global->PROJECT_TASK_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'PROJECT_TASK_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'PROJECT_TASK_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	dolibarr_set_const($db, "PROJECT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "PROJECT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity);
 
 	// On active le modele
 	$ret = delDocumentModel($value, $type);
@@ -187,7 +187,7 @@ if ($action == 'updateMaskTask') {
 		$ret = addDocumentModel($value, $type, $label, $scandir);
 	}
 } elseif ($action == 'setdoctask') {
-	if (dolibarr_set_const($db, "PROJECT_TASK_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "PROJECT_TASK_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->PROJECT_TASK_ADDON_PDF = $value;
@@ -202,30 +202,30 @@ if ($action == 'updateMaskTask') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "PROJECT_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "PROJECT_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'setmodtask') {
 	// TODO Verifier si module numerotation choisi peut etre active
 	// par appel methode canBeActivated
 
-	dolibarr_set_const($db, "PROJECT_TASK_ADDON", $value, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, "PROJECT_TASK_ADDON", $value, 'chaine', 0, '', $conf->entity);
 } elseif ($action == 'updateoptions') {
 	if (GETPOST('PROJECT_USE_SEARCH_TO_SELECT')) {
 		$companysearch = GETPOST('activate_PROJECT_USE_SEARCH_TO_SELECT', 'alpha');
-		if (dolibarr_set_const($db, "PROJECT_USE_SEARCH_TO_SELECT", $companysearch, 'chaine', 0, '', $conf->entity)) {
+		if (berp3_set_const($db, "PROJECT_USE_SEARCH_TO_SELECT", $companysearch, 'chaine', 0, '', $conf->entity)) {
 			$conf->global->PROJECT_USE_SEARCH_TO_SELECT = $companysearch;
 		}
 	}
 	if (GETPOST('PROJECT_ALLOW_TO_LINK_FROM_OTHER_COMPANY')) {
 		$projectToSelect = GETPOST('projectToSelect', 'alpha');
-		dolibarr_set_const($db, 'PROJECT_ALLOW_TO_LINK_FROM_OTHER_COMPANY', $projectToSelect, 'chaine', 0, '', $conf->entity); //Allow to disable this configuration if empty value
+		berp3_set_const($db, 'PROJECT_ALLOW_TO_LINK_FROM_OTHER_COMPANY', $projectToSelect, 'chaine', 0, '', $conf->entity); //Allow to disable this configuration if empty value
 	}
 	if (GETPOST('PROJECT_TIMESHEET_PREVENT_AFTER_MONTHS')) {
 		$timesheetFreezeDuration = GETPOST('timesheetFreezeDuration', 'alpha');
-		dolibarr_set_const($db, 'PROJECT_TIMESHEET_PREVENT_AFTER_MONTHS', intval($timesheetFreezeDuration), 'chaine', 0, '', $conf->entity); //Allow to disable this configuration if empty value
+		berp3_set_const($db, 'PROJECT_TIMESHEET_PREVENT_AFTER_MONTHS', intval($timesheetFreezeDuration), 'chaine', 0, '', $conf->entity); //Allow to disable this configuration if empty value
 	}
 } elseif (preg_match('/^(set|del)_?([A-Z_]+)$/', $action, $reg)) {
 	// Set boolean (on/off) constants
-	if (!dolibarr_set_const($db, $reg[2], ($reg[1] === 'set' ? '1' : '0'), 'chaine', 0, '', $conf->entity) > 0) {
+	if (!berp3_set_const($db, $reg[2], ($reg[1] === 'set' ? '1' : '0'), 'chaine', 0, '', $conf->entity) > 0) {
 		dol_print_error($db);
 	}
 }

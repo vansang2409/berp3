@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2013-2014	Jean-François Ferry	<jfefe@aternatik.fr>
+/* 	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -232,7 +232,7 @@ if ($action == 'create' || $object->fetch($id, $ref) > 0) {
 		print '<tr><td class="tdtop">'.$langs->trans("Description").'</td>';
 		print '<td>';
 		require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-		$doleditor = new DolEditor('description', ($description ? $description : $object->description), '', '200', 'dolibarr_notes', false);
+		$doleditor = new DolEditor('description', ($description ? $description : $object->description), '', '200', 'berp3_notes', false);
 		$doleditor->Create();
 		print '</td></tr>';
 

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2018  ptibogxiv	<support@ptibogxiv.net>
+ * Copyright (C) 2018  ptibogxiv	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,18 +27,18 @@
  *              - Le nom de la classe doit etre InterfaceMytrigger
  *              - Le nom de la propriete name doit etre Mytrigger
  */
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for stripe module
  */
-class InterfaceStripe extends DolibarrTriggers
+class InterfaceStripe extends Berp3Triggers
 {
 	/**
 	 *   Constructor
 	 *
-	 *   @param DoliDB $db Database handler
+	 *   @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -47,12 +47,12 @@ class InterfaceStripe extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = 'stripe';
 		$this->description = "Triggers of the module Stripe";
-		$this->version = self::VERSION_DOLIBARR; // 'development', 'experimental', 'dolibarr' or version
+		$this->version = self::VERSION_BERP3; // 'development', 'experimental', 'berp3' or version
 		$this->picto = 'stripe';
 	}
 
 	/**
-	 * Function called when a Dolibarrr business event is done.
+	 * Function called when a Berp3r business event is done.
 	 * All functions "runTrigger" are triggered if file
 	 * is inside directory core/triggers
 	 *
@@ -65,7 +65,7 @@ class InterfaceStripe extends DolibarrTriggers
 	 */
 	public function runTrigger($action, $object, User $user, Translate $langs, Conf $conf)
 	{
-		// Put here code you want to execute when a Dolibarr business event occurs.
+		// Put here code you want to execute when a Berp3 business event occurs.
 		// Data and type of action are stored into $object and $action
 		global $langs, $db, $conf;
 

@@ -1,16 +1,16 @@
 <?php
-/* Copyright (C) 2006-2011  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2006       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2007       Patrick Raguin          <patrick.raguin@gmail.com>
- * Copyright (C) 2010-2012  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2013-2014  Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2013-2014  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2013       Christophe Battarel     <contact@altairis.fr>
- * Copyright (C) 2013-2018  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2015-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2006-2011  
+ * Copyright (C) 2006       
+ * Copyright (C) 2007                 
+ * Copyright (C) 2010-2012  
+ *   
+ *   
+ * Copyright (C) 2013            <contact@altairis.fr>
+ * Copyright (C) 2013-2018  
+ * Copyright (C) 2015-2021  
+ * Copyright (C) 2015             
  * Copyright (C) 2017       Rui Strecht             <rui.strecht@aliartalentos.com>
- * Copyright (C) 2018       Ferran Marcet           <fmarcet@2byte.es>
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -488,7 +488,7 @@ function societe_admin_prepare_head()
  *    										'2'=Return code from id,
  *    										'3'=Return id from code,
  * 	   										'all'=Return array('id'=>,'code'=>,'label'=>)
- *    @param      DoliDB	$dbtouse       	Database handler (using in global way may fail because of conflicts with some autoload features)
+ *    @param      Berp3DB	$dbtouse       	Database handler (using in global way may fail because of conflicts with some autoload features)
  *    @param      Translate	$outputlangs	Langs object for output translation
  *    @param      int		$entconv       	0=Return value without entities and not converted to output charset, 1=Ready for html output
  *    @param      int		$searchlabel    Label of country to search (warning: searching on label is not reliable)
@@ -567,7 +567,7 @@ function getCountry($searchkey, $withcode = '', $dbtouse = 0, $outputlangs = '',
  *    										'1'=Return string code + label,
  *    						  				'2'=Return code,
  *    						  				'all'=return array('id'=>,'code'=>,'label'=>)
- *    @param	DoliDB		$dbtouse		Database handler (using in global way may fail because of conflicts with some autoload features)
+ *    @param	Berp3DB		$dbtouse		Database handler (using in global way may fail because of conflicts with some autoload features)
  *    @param    int			$withregion   	'0'=Ignores region,
  *    										'1'=Add region name/code/id as needed to output,
  *    @param    Translate	$outputlangs	Langs object for output translation, not fully implemented yet
@@ -776,7 +776,7 @@ function isInEEC($object)
  *
  *		@param	Conf		$conf			Object conf
  * 		@param	Translate	$langs			Object langs
- * 		@param	DoliDB		$db				Database handler
+ * 		@param	Berp3DB		$db				Database handler
  * 		@param	Object		$object			Third party object
  *      @param  string		$backtopage		Url to go once contact is created
  *      @param  int         $nocreatelink   1=Hide create project link
@@ -900,7 +900,7 @@ function show_projects($conf, $langs, $db, $object, $backtopage = '', $nocreatel
  *
  *		@param	Conf		$conf		Object conf
  * 		@param	Translate	$langs		Object langs
- * 		@param	DoliDB		$db			Database handler
+ * 		@param	Berp3DB		$db			Database handler
  * 		@param	Societe		$object		Third party object
  *      @param  string		$backtopage	Url to go once contact is created
  *      @return	int
@@ -1328,7 +1328,7 @@ function show_contacts($conf, $langs, $db, $object, $backtopage = '')
  *
  * 		@param	Conf		$conf		        Object conf
  * 		@param	Translate	$langs		        Object langs
- * 		@param	DoliDB		$db			        Object db
+ * 		@param	Berp3DB		$db			        Object db
  * 		@param	Adherent|Societe    $filterobj  Object thirdparty or member
  * 		@param	Contact		$objcon	            Object contact
  *      @param  int			$noprint	        Return string but does not output it
@@ -1354,7 +1354,7 @@ function show_actions_todo($conf, $langs, $db, $filterobj, $objcon = '', $noprin
  *
  * 		@param	Conf		       $conf		   Object conf
  * 		@param	Translate	       $langs		   Object langs
- * 		@param	DoliDB		       $db			   Object db
+ * 		@param	Berp3DB		       $db			   Object db
  * 		@param	mixed			   $filterobj	   Filter on object Adherent|Societe|Project|Product|CommandeFournisseur|Dolresource|Ticket... to list events linked to an object
  * 		@param	Contact		       $objcon		   Filter on object contact to filter events on a contact
  *      @param  int			       $noprint        Return string but does not output it
@@ -1944,7 +1944,7 @@ function show_actions_done($conf, $langs, $db, $filterobj, $objcon = '', $noprin
  *
  *		@param	Conf		$conf		Object conf
  * 		@param	Translate	$langs		Object langs
- * 		@param	DoliDB		$db			Database handler
+ * 		@param	Berp3DB		$db			Database handler
  * 		@param	Societe		$object		Third party object
  * 		@return	int
  */

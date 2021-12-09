@@ -1,12 +1,12 @@
 <?php
-/* Copyright (C) 2003		Rodolphe Quiedeville		<rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010	Laurent Destailleur			<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin				<regis.houssin@inodbox.com>
- * Copyright (C) 2008		Raphael Bertrand (Resultic)	<raphael.bertrand@resultic.fr>
+/* Copyright (C) 2003				
+ * Copyright (C) 2004-2010				
+ * Copyright (C) 2005-2012					
+ * Copyright (C) 2008			
  * Copyright (C) 2011		Fabrice CHERRIER
- * Copyright (C) 2013-2020  Philippe Grand	            <philippe.grand@atoo-net.com>
- * Copyright (C) 2015       Marcos García               <marcosgdf@gmail.com>
- * Copyright (C) 2018-2020  Frédéric France             <frederic.france@netlogic.fr>
+ *   	            
+ * Copyright (C) 2015                      
+ * Copyright (C) 2018-2020               
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ require_once DOL_DOCUMENT_ROOT.'/product/class/product.class.php';
 class pdf_strato extends ModelePDFContract
 {
 	/**
-	 * @var DoliDb Database handler
+	 * @var Berp3Db Database handler
 	 */
 	public $db;
 
@@ -72,10 +72,10 @@ class pdf_strato extends ModelePDFContract
 	public $phpmin = array(5, 6);
 
 	/**
-	 * Dolibarr version of the loaded document
+	 * Berp3 version of the loaded document
 	 * @var string
 	 */
-	public $version = 'dolibarr';
+	public $version = 'berp3';
 
 	/**
 	 * @var int page_largeur
@@ -127,7 +127,7 @@ class pdf_strato extends ModelePDFContract
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -254,7 +254,7 @@ class pdf_strato extends ModelePDFContract
 
 				$pdf->SetTitle($outputlangs->convToOutputCharset($object->ref));
 				$pdf->SetSubject($outputlangs->transnoentities("ContractCard"));
-				$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+				$pdf->SetCreator("Berp3 ".DOL_VERSION);
 				$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 				$pdf->SetKeyWords($outputlangs->convToOutputCharset($object->ref)." ".$outputlangs->transnoentities("ContractCard")." ".$outputlangs->convToOutputCharset($object->thirdparty->name));
 				if (!empty($conf->global->MAIN_DISABLE_PDF_COMPRESSION)) {

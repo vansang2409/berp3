@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2008-2021 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2008-2021 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2020	   Ferran Marcet        <fmarcet@2byte.es>
+/* Copyright (C) 2008-2021 
+ * Copyright (C) 2008-2021 
+ * Copyright (C) 2020	   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 /**
  *  \file		htdocs/core/lib/security.lib.php
  *  \ingroup    core
- *  \brief		Set of function used for dolibarr security (common function included into filefunc.inc.php)
+ *  \brief		Set of function used for berp3 security (common function included into filefunc.inc.php)
  *  			Warning, this file must not depends on other library files, except function.lib.php
  *  			because it is used at low code level.
  */

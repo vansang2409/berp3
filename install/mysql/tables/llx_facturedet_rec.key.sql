@@ -1,7 +1,7 @@
 -- ===================================================================
--- Copyright (C) 2005 Laurent Destailleur  <eldy@users.sourceforge.net>
--- Copyright (C) 2011 Regis Houssin        <regis.houssin@inodbox.com>
--- Copyright (C) 2012 Cedric Salvador      <csalvador@gpcsolutions.fr>
+-- Copyright (C) 2005 
+-- Copyright (C) 2011 
+-- Copyright (C) 2012 Cedric Salvador      
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

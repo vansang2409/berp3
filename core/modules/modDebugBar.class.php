@@ -23,19 +23,19 @@
  *  \ingroup    debugbar
  *  \brief     Description and activation file for the module debugbar
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *	Class to describe and enable module
  */
-class modDebugBar extends DolibarrModules
+class modDebugBar extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -51,8 +51,8 @@ class modDebugBar extends DolibarrModules
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
 		$this->description = "A tool for developper adding a debug bar in your browser.";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		$this->picto = 'bug';
 
@@ -89,7 +89,7 @@ class modDebugBar extends DolibarrModules
 
 	/**
 	 *      Function called when module is enabled.
-	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *      The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *      It also creates data directories.
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')

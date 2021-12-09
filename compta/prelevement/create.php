@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2005       Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2010-2020  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2010-2012  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2018       Nicolas ZABOURI         <info@inovea-conseil.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2005       
+ * Copyright (C) 2010-2020  
+ * Copyright (C) 2005-2009  
+ * Copyright (C) 2010-2012  
+ * Copyright (C) 2018                
+ * Copyright (C) 2018       
  * Copyright (C) 2019       Markus Welters          <markus@welters.de>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -86,14 +86,14 @@ if (empty($reshook)) {
 	// Change customer bank information to withdraw
 	if ($action == 'modify') {
 		for ($i = 1; $i < 9; $i++) {
-			dolibarr_set_const($db, GETPOST("nom$i"), GETPOST("value$i"), 'chaine', 0, '', $conf->entity);
+			berp3_set_const($db, GETPOST("nom$i"), GETPOST("value$i"), 'chaine', 0, '', $conf->entity);
 		}
 	}
 	if ($action == 'create') {
 		$default_account = ($type == 'bank-transfer' ? 'PAYMENTBYBANKTRANSFER_ID_BANKACCOUNT' : 'PRELEVEMENT_ID_BANKACCOUNT');
 
 		if ($id_bankaccount != $conf->global->{$default_account}) {
-			$res = dolibarr_set_const($db, $default_account, $id_bankaccount, 'chaine', 0, '', $conf->entity); //Set as default
+			$res = berp3_set_const($db, $default_account, $id_bankaccount, 'chaine', 0, '', $conf->entity); //Set as default
 		}
 
 		require_once DOL_DOCUMENT_ROOT.'/compta/bank/class/account.class.php';

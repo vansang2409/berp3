@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003-2007 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2011 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2014 	   Charles-Fr BENKE        <charles.fr@benke.fr>
- * Copyright (C) 2015      Frederic France      <frederic.france@free.fr>
+/* Copyright (C) 2003-2007 
+ * Copyright (C) 2004-2011 
+ * Copyright (C) 2005-2011 
+ * Copyright (C) 2014 	   Charles-Fr BENKE        
+ * Copyright (C) 2015            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ class box_actions extends ModeleBoxes
 	public $depends = array("agenda");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -51,7 +51,7 @@ class box_actions extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB	$db      	Database handler
+	 *  @param  Berp3DB	$db      	Database handler
 	 *  @param	string	$param		More parameters
 	 */
 	public function __construct($db, $param)

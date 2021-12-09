@@ -1,6 +1,6 @@
 <?php
 /* Lead
- * Copyright (C) 2014-2015 Florian HENRY <florian.henry@open-concept.pro>
+ * Copyright (C) 2014-2015 Florian HENRY 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ class TaskStats extends Stats
 	/**
 	 * Constructor of the class
 	 *
-	 * @param   DoliDb  $db     Database handler
+	 * @param   Berp3Db  $db     Database handler
 	 */
 	public function __construct($db)
 	{

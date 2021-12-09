@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2015-2018  Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2016       Charlie Benke		<charlie@patas-monkey.com>
+/* Copyright (C) 2015-2018  
+ * Copyright (C) 2016       		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

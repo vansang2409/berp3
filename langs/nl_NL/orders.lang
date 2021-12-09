@@ -120,8 +120,8 @@ ConfirmCloneOrder=Weet u zeker dat u order <b>%s</b> wilt klonen?
 DispatchSupplierOrder=Aankooporder ontvangen %s
 FirstApprovalAlreadyDone=Eerste goedkeuring al gedaan
 SecondApprovalAlreadyDone=Tweede goedkeuring al gedaan
-SupplierOrderReceivedInDolibarr=Bestelling %s heeft %s ontvangen
-SupplierOrderSubmitedInDolibarr=Bestelling %s verzonden
+SupplierOrderReceivedInBerp3=Bestelling %s heeft %s ontvangen
+SupplierOrderSubmitedInBerp3=Bestelling %s verzonden
 SupplierOrderClassifiedBilled=Bestelling %s gemerkt gefactureerd
 OtherOrders=Andere opdrachten
 ##### Types de contacts #####

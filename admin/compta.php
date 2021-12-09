@@ -1,11 +1,11 @@
 <?php
-/* Copyright (C) 2004      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2013 Juanjo Menent	    <jmenent@2byte.es>
- * Copyright (C) 2013-2017 Philippe Grand	    <philippe.grand@atoo-net.com>
- * Copyright (C) 2014      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2020      Maxime DEMAREST      <maxime@indelog.fr>
+/* Copyright (C) 2004      
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2011-2013 	    
+ * Copyright (C) 2013-2017 	    
+ * Copyright (C) 2014      
+ * Copyright (C) 2020            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,7 +69,7 @@ if ($action == 'update') {
 
 
 	if (in_array($accounting_mode, $accounting_modes)) {
-		if (!dolibarr_set_const($db, 'ACCOUNTING_MODE', $accounting_mode, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'ACCOUNTING_MODE', $accounting_mode, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	} else {
@@ -79,7 +79,7 @@ if ($action == 'update') {
 	foreach ($list as $constname) {
 		$constvalue = GETPOST($constname, 'alpha');
 
-		if (!dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	}
@@ -87,13 +87,13 @@ if ($action == 'update') {
 	$report_include_varpay = GETPOST('ACCOUNTING_REPORTS_INCLUDE_VARPAY', 'alpha');
 	if (!empty($report_include_varpay)) {
 		if ($report_include_varpay == 'yes') {
-			if (!dolibarr_set_const($db, 'ACCOUNTING_REPORTS_INCLUDE_VARPAY', 1, 'chaine', 0, '', $conf->entity)) {
+			if (!berp3_set_const($db, 'ACCOUNTING_REPORTS_INCLUDE_VARPAY', 1, 'chaine', 0, '', $conf->entity)) {
 				$error++;
 			}
 		}
 	}
 	if ($report_include_varpay == 'no') {
-		if (!dolibarr_del_const($db, 'ACCOUNTING_REPORTS_INCLUDE_VARPAY', $conf->entity)) {
+		if (!berp3_del_const($db, 'ACCOUNTING_REPORTS_INCLUDE_VARPAY', $conf->entity)) {
 			$error++;
 		}
 	}
@@ -101,13 +101,13 @@ if ($action == 'update') {
 	$report_include_loan = GETPOST('ACCOUNTING_REPORTS_INCLUDE_LOAN', 'alpha');
 	if (!empty($report_include_loan)) {
 		if ($report_include_loan == 'yes') {
-			if (!dolibarr_set_const($db, 'ACCOUNTING_REPORTS_INCLUDE_LOAN', 1, 'chaine', 0, '', $conf->entity)) {
+			if (!berp3_set_const($db, 'ACCOUNTING_REPORTS_INCLUDE_LOAN', 1, 'chaine', 0, '', $conf->entity)) {
 				$error++;
 			}
 		}
 	}
 	if ($report_include_loan == 'no') {
-		if (!dolibarr_del_const($db, 'ACCOUNTING_REPORTS_INCLUDE_LOAN', $conf->entity)) {
+		if (!berp3_del_const($db, 'ACCOUNTING_REPORTS_INCLUDE_LOAN', $conf->entity)) {
 			$error++;
 		}
 	}

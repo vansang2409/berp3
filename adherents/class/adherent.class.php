@@ -1,19 +1,5 @@
 <?php
-/* Copyright (C) 2002-2003	Rodolphe Quiedeville	<rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003	Jean-Louis Bergamo		<jlb@j1b.org>
- * Copyright (C) 2004-2012	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2004		Sebastien Di Cintio		<sdicintio@ressource-toi.org>
- * Copyright (C) 2004		Benoit Mortier			<benoit.mortier@opensides.be>
- * Copyright (C) 2009-2017	Regis Houssin			<regis.houssin@inodbox.com>
- * Copyright (C) 2014-2018	Alexandre Spangaro		<aspangaro@open-dsi.fr>
- * Copyright (C) 2015		Marcos García			<marcosgdf@gmail.com>
- * Copyright (C) 2015-2020	Frédéric France			<frederic.france@netlogic.fr>
- * Copyright (C) 2015		Raphaël Doursenaud		<rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2016		Juanjo Menent			<jmenent@2byte.es>
- * Copyright (C) 2018-2019	Thibault FOUCART		<support@ptibogxiv.net>
- * Copyright (C) 2019		Nicolas ZABOURI 		<info@inovea-conseil.com>
- * Copyright (C) 2020		Josep Lluís Amador 		<joseplluis@lliuretic.cat>
- * Copyright (C) 2021		Waël Almoman            <info@almoman.com>
+/* 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -363,7 +349,7 @@ class Adherent extends CommonObject
 	/**
 	 *	Constructor
 	 *
-	 *	@param 		DoliDB		$db		Database handler
+	 *	@param 		Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -2515,11 +2501,11 @@ class Adherent extends CommonObject
 		$this->entity = 1;
 		$this->specimen = 1;
 		$this->civility_id = 0;
-		$this->lastname = 'DOLIBARR';
+		$this->lastname = 'BERP3';
 		$this->firstname = 'SPECIMEN';
 		$this->gender = 'man';
-		$this->login = 'dolibspec';
-		$this->pass = 'dolibspec';
+		$this->login = 'berp3bspec';
+		$this->pass = 'berp3bspec';
 		$this->company = 'Societe ABC';
 		$this->address = '61 jump street';
 		$this->zip = '75000';
@@ -2840,7 +2826,7 @@ class Adherent extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param DoliDB 	$db 			Database handler
+	 * @param Berp3DB 	$db 			Database handler
 	 * @param int 		$origin_id 		Old thirdparty id
 	 * @param int 		$dest_id 		New thirdparty id
 	 * @return bool
@@ -2975,7 +2961,7 @@ class Adherent extends CommonObject
 							$to = $adherent->email;
 
 							$trackid = 'mem'.$adherent->id;
-							$moreinheader = 'X-Dolibarr-Info: sendReminderForExpiredSubscription'."\r\n";
+							$moreinheader = 'X-Berp3-Info: sendReminderForExpiredSubscription'."\r\n";
 
 							include_once DOL_DOCUMENT_ROOT.'/core/class/CMailFile.class.php';
 							$cmail = new CMailFile($subject, $to, $from, $msg, array(), array(), array(), '', '', 0, 1, '', '', $trackid, $moreinheader);

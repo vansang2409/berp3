@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2007 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2007 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,12 +34,12 @@
  */
 function check_user_password_forceuser($usertotest, $passwordtotest, $entitytotest)
 {
-	// Variable dolibarr_auto_user must be defined in conf.php file
-	global $dolibarr_auto_user;
+	// Variable berp3_auto_user must be defined in conf.php file
+	global $berp3_auto_user;
 
 	dol_syslog("functions_forceuser::check_user_password_forceuser");
 
-	$login = $dolibarr_auto_user;
+	$login = $berp3_auto_user;
 	if (empty($login)) {
 		$login = 'auto';
 	}

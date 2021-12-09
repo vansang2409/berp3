@@ -1,10 +1,10 @@
 <?php
 /* Copyright (C) 2016   Xebax Christy           <xebax@wanadoo.fr>
- * Copyright (C) 2016	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2017	Regis Houssin	        <regis.houssin@inodbox.com>
+ * Copyright (C) 2016	
+ * Copyright (C) 2017		        
  * Copyright (C) 2017	Neil Orley	            <neil.orley@oeris.fr>
- * Copyright (C) 2018-2021   Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2018-2021   Thibault FOUCART        <support@ptibogxiv.net>
+ * Copyright (C) 2018-2021   
+ * Copyright (C) 2018-2021          
  *
  *
  * This program is free software; you can redistribute it and/or modify
@@ -32,9 +32,9 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/ccountry.class.php';
  * API class for dictionaries
  *
  * @access protected
- * @class DolibarrApiAccess {@requires user,external}
+ * @class Berp3ApiAccess {@requires user,external}
  */
-class Setup extends DolibarrApi
+class Setup extends Berp3Api
 {
 	private $translations = null;
 
@@ -67,7 +67,7 @@ class Setup extends DolibarrApi
 	{
 		$list = array();
 
-		if (!DolibarrApiAccess::$user->rights->commande->lire) {
+		if (!Berp3ApiAccess::$user->rights->commande->lire) {
 			throw new RestException(401);
 		}
 
@@ -76,11 +76,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(400, 'error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -130,7 +130,7 @@ class Setup extends DolibarrApi
 	{
 		$list = array();
 
-		if (!DolibarrApiAccess::$user->rights->commande->lire) {
+		if (!Berp3ApiAccess::$user->rights->commande->lire) {
 			throw new RestException(401);
 		}
 
@@ -139,11 +139,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(400, 'error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -193,7 +193,7 @@ class Setup extends DolibarrApi
 	{
 		$list = array();
 
-		if (!DolibarrApiAccess::$user->rights->propal->lire && !DolibarrApiAccess::$user->rights->commande->lire && !DolibarrApiAccess::$user->rights->facture->lire) {
+		if (!Berp3ApiAccess::$user->rights->propal->lire && !Berp3ApiAccess::$user->rights->commande->lire && !Berp3ApiAccess::$user->rights->facture->lire) {
 			throw new RestException(401);
 		}
 
@@ -203,11 +203,11 @@ class Setup extends DolibarrApi
 		$sql .= " AND t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(400, 'error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			  $regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -242,7 +242,7 @@ class Setup extends DolibarrApi
 	 *
 	 * The names of the states will be translated to the given language if
 	 * the $lang parameter is provided. The value of $lang must be a language
-	 * code supported by Dolibarr, for example 'en_US' or 'fr_FR'.
+	 * code supported by Berp3, for example 'en_US' or 'fr_FR'.
 	 * The returned list is sorted by state ID.
 	 *
 	 * @param string    $sortfield  Sort field
@@ -267,11 +267,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE 1 = 1";
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -341,7 +341,7 @@ class Setup extends DolibarrApi
 	 *
 	 * The names of the countries will be translated to the given language if
 	 * the $lang parameter is provided. The value of $lang must be a language
-	 * code supported by Dolibarr, for example 'en_US' or 'fr_FR'.
+	 * code supported by Berp3, for example 'en_US' or 'fr_FR'.
 	 * The returned list is sorted by country ID.
 	 *
 	 * @param string    $sortfield  Sort field
@@ -367,11 +367,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE 1 = 1";
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -533,7 +533,7 @@ class Setup extends DolibarrApi
 	{
 		$list = array();
 
-		if (!DolibarrApiAccess::$user->rights->commande->lire) {
+		if (!Berp3ApiAccess::$user->rights->commande->lire) {
 			throw new RestException(401);
 		}
 
@@ -542,11 +542,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(400, 'error when validating parameter sqlfilters '.$sqlfilters);
 			}
 				  $regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -657,11 +657,11 @@ class Setup extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -720,11 +720,11 @@ class Setup extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -787,11 +787,11 @@ class Setup extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -849,11 +849,11 @@ class Setup extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -921,11 +921,11 @@ class Setup extends DolibarrApi
 
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -972,7 +972,7 @@ class Setup extends DolibarrApi
 	{
 		$list = array();
 
-		if (!DolibarrApiAccess::$user->admin) {
+		if (!Berp3ApiAccess::$user->admin) {
 			throw new RestException(401, 'Only an admin user can get list of extrafields');
 		}
 
@@ -991,11 +991,11 @@ class Setup extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 		$sql .= $this->db->order($sortfield, $sortorder);
@@ -1064,11 +1064,11 @@ class Setup extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1118,7 +1118,7 @@ class Setup extends DolibarrApi
 	{
 		$list = array();
 
-		if (!DolibarrApiAccess::$user->rights->propal->lire && !DolibarrApiAccess::$user->rights->commande->lire && !DolibarrApiAccess::$user->rights->facture->lire) {
+		if (!Berp3ApiAccess::$user->rights->propal->lire && !Berp3ApiAccess::$user->rights->commande->lire && !Berp3ApiAccess::$user->rights->facture->lire) {
 			throw new RestException(401);
 		}
 
@@ -1128,11 +1128,11 @@ class Setup extends DolibarrApi
 		$sql .= " AND t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(400, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 				$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1186,11 +1186,11 @@ class Setup extends DolibarrApi
 		$sql .= " AND t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(400, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 				$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1244,11 +1244,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1306,11 +1306,11 @@ class Setup extends DolibarrApi
 		}
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1364,11 +1364,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1429,11 +1429,11 @@ class Setup extends DolibarrApi
 		$sql .= " AND t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1487,11 +1487,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1545,11 +1545,11 @@ class Setup extends DolibarrApi
 		$sql .= " WHERE t.active = ".((int) $active);
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1605,11 +1605,11 @@ class Setup extends DolibarrApi
 		// if ($module)    $sql .= " AND t.module LIKE '%".$this->db->escape($module)."%'";
 		// Add sql filters
 		if ($sqlfilters) {
-			if (!DolibarrApi::_checkFilters($sqlfilters)) {
+			if (!Berp3Api::_checkFilters($sqlfilters)) {
 				throw new RestException(503, 'Error when validating parameter sqlfilters '.$sqlfilters);
 			}
 			$regexstring = '\(([^:\'\(\)]+:[^:\'\(\)]+:[^\(\)]+)\)';
-			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'DolibarrApi::_forge_criteria_callback', $sqlfilters).")";
+			$sql .= " AND (".preg_replace_callback('/'.$regexstring.'/', 'Berp3Api::_forge_criteria_callback', $sqlfilters).")";
 		}
 
 
@@ -1652,8 +1652,8 @@ class Setup extends DolibarrApi
 	{
 		global $conf, $mysoc;
 
-		if (!DolibarrApiAccess::$user->admin
-			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_GET_COMPANY) || DolibarrApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_GET_COMPANY)) {
+		if (!Berp3ApiAccess::$user->admin
+			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_GET_COMPANY) || Berp3ApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_GET_COMPANY)) {
 				throw new RestException(403, 'Error API open to admin users only or to the users with logins defined into constant API_LOGINS_ALLOWED_FOR_GET_COMPANY');
 		}
 
@@ -1717,8 +1717,8 @@ class Setup extends DolibarrApi
 	{
 		global $conf;
 
-		if (!DolibarrApiAccess::$user->admin
-			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_CONST_READ) || DolibarrApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_CONST_READ)) {
+		if (!Berp3ApiAccess::$user->admin
+			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_CONST_READ) || Berp3ApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_CONST_READ)) {
 			throw new RestException(403, 'Error API open to admin users only or to the users with logins defined into constant API_LOGINS_ALLOWED_FOR_CONST_READ');
 		}
 
@@ -1735,7 +1735,7 @@ class Setup extends DolibarrApi
 	/**
 	 * Do a test of integrity for files and setup.
 	 *
-	 * @param string	$target			Can be 'local' or 'default' or Url of the signatures file to use for the test. Must be reachable by the tested Dolibarr.
+	 * @param string	$target			Can be 'local' or 'default' or Url of the signatures file to use for the test. Must be reachable by the tested Berp3.
 	 * @return array					Result of file and setup integrity check
 	 *
 	 * @url     GET checkintegrity
@@ -1749,8 +1749,8 @@ class Setup extends DolibarrApi
 	{
 		global $langs, $conf;
 
-		if (!DolibarrApiAccess::$user->admin
-			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_INTEGRITY_CHECK) || DolibarrApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_INTEGRITY_CHECK)) {
+		if (!Berp3ApiAccess::$user->admin
+			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_INTEGRITY_CHECK) || Berp3ApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_INTEGRITY_CHECK)) {
 			throw new RestException(403, 'Error API open to admin users only or to the users with logins defined into constant API_LOGINS_ALLOWED_FOR_INTEGRITY_CHECK');
 		}
 
@@ -1778,7 +1778,7 @@ class Setup extends DolibarrApi
 			$xmlremote = $conf->global->$param;
 		}
 		if (empty($xmlremote)) {
-			$xmlremote = 'https://www.dolibarr.org/files/stable/signatures/filelist-'.DOL_VERSION.'.xml';
+			$xmlremote = 'https://www.berp3.org/files/stable/signatures/filelist-'.DOL_VERSION.'.xml';
 		}
 		if ($xmlremote && !preg_match('/^https?:\/\//i', $xmlremote)) {
 			$langs->load("errors");
@@ -1815,7 +1815,7 @@ class Setup extends DolibarrApi
 			$out = '';
 
 			// Forced constants
-			if (is_object($xml->dolibarr_constants[0])) {
+			if (is_object($xml->berp3_constants[0])) {
 				$out .= load_fiche_titre($langs->trans("ForcedConstants"));
 
 				$out .= '<div class="div-table-responsive-no-min">';
@@ -1828,7 +1828,7 @@ class Setup extends DolibarrApi
 				$out .= '</tr>'."\n";
 
 				$i = 0;
-				foreach ($xml->dolibarr_constants[0]->constant as $constant) {    // $constant is a simpleXMLElement
+				foreach ($xml->berp3_constants[0]->constant as $constant) {    // $constant is a simpleXMLElement
 					$constname = $constant['name'];
 					$constvalue = (string) $constant;
 					$constvalue = (empty($constvalue) ? '0' : $constvalue);
@@ -1860,8 +1860,8 @@ class Setup extends DolibarrApi
 			}
 
 			// Scan htdocs
-			if (is_object($xml->dolibarr_htdocs_dir[0])) {
-				$includecustom = (empty($xml->dolibarr_htdocs_dir[0]['includecustom']) ? 0 : $xml->dolibarr_htdocs_dir[0]['includecustom']);
+			if (is_object($xml->berp3_htdocs_dir[0])) {
+				$includecustom = (empty($xml->berp3_htdocs_dir[0]['includecustom']) ? 0 : $xml->berp3_htdocs_dir[0]['includecustom']);
 
 				// Define qualified files (must be same than into generate_filelist_xml.php and in api_setup.class.php)
 				$regextoinclude = '\.(php|php3|php4|php5|phtml|phps|phar|inc|css|scss|html|xml|js|json|tpl|jpg|jpeg|png|gif|ico|sql|lang|txt|yml|bak|md|mp3|mp4|wav|mkv|z|gz|zip|rar|tar|less|svg|eot|woff|woff2|ttf|manifest)$';
@@ -1869,7 +1869,7 @@ class Setup extends DolibarrApi
 				$scanfiles = dol_dir_list(DOL_DOCUMENT_ROOT, 'files', 1, $regextoinclude, $regextoexclude);
 
 				// Fill file_list with files in signature, new files, modified files
-				$ret = getFilesUpdated($file_list, $xml->dolibarr_htdocs_dir[0], '', DOL_DOCUMENT_ROOT, $checksumconcat); // Fill array $file_list
+				$ret = getFilesUpdated($file_list, $xml->berp3_htdocs_dir[0], '', DOL_DOCUMENT_ROOT, $checksumconcat); // Fill array $file_list
 				// Complete with list of new files
 				foreach ($scanfiles as $keyfile => $valfile) {
 					$tmprelativefilename = preg_replace('/^'.preg_quote(DOL_DOCUMENT_ROOT, '/').'/', '', $valfile['fullname']);
@@ -2006,14 +2006,14 @@ class Setup extends DolibarrApi
 					//setEventMessages($langs->trans("FileIntegritySomeFilesWereRemovedOrModified"), null, 'warnings');
 				}
 			} else {
-				throw new RestException(500, 'Error: Failed to found dolibarr_htdocs_dir into XML file '.$xmlfile);
+				throw new RestException(500, 'Error: Failed to found berp3_htdocs_dir into XML file '.$xmlfile);
 			}
 
 
 			// Scan scripts
 			asort($checksumconcat); // Sort list of checksum
 			$checksumget = md5(join(',', $checksumconcat));
-			$checksumtoget = trim((string) $xml->dolibarr_htdocs_dir_checksum);
+			$checksumtoget = trim((string) $xml->berp3_htdocs_dir_checksum);
 
 			$outexpectedchecksum = ($checksumtoget ? $checksumtoget : $langs->trans("Unknown"));
 			if ($checksumget == $checksumtoget) {
@@ -2055,8 +2055,8 @@ class Setup extends DolibarrApi
 	{
 		global $conf;
 
-		if (!DolibarrApiAccess::$user->admin
-			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_GET_MODULES) || DolibarrApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_GET_MODULES)) {
+		if (!Berp3ApiAccess::$user->admin
+			&& (empty($conf->global->API_LOGINS_ALLOWED_FOR_GET_MODULES) || Berp3ApiAccess::$user->login != $conf->global->API_LOGINS_ALLOWED_FOR_GET_MODULES)) {
 			throw new RestException(403, 'Error API open to admin users only or to the users with logins defined into constant API_LOGINS_ALLOWED_FOR_GET_MODULES');
 		}
 

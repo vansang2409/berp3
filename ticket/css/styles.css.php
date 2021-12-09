@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2018	Laurent Destailleur		<eldy@users.sourceforge.net>
+/* Copyright (C) 2018	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,8 +50,8 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
 
 // Define css type
 top_httphead('text/css');
-// Important: Following code is to avoid page request by browser and PHP CPU at each Dolibarr page access.
-if (empty($dolibarr_nocache)) {
+// Important: Following code is to avoid page request by browser and PHP CPU at each Berp3 page access.
+if (empty($berp3_nocache)) {
 	header('Cache-Control: max-age=3600, public, must-revalidate');
 } else {
 	header('Cache-Control: no-cache');

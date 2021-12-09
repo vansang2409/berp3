@@ -5,8 +5,8 @@ RemoteControlSupport=Online valós idejű / távoli támogatás
 OtherSupport=Más jellegü támogatás
 ToSeeListOfAvailableRessources=Kapcsolatba lépni / látni az elérhető erőforrásokat:
 HelpCenter=Segítség Központ
-DolibarrHelpCenter=BERP3 Súgó és támogatás központ
-ToGoBackToDolibarr=Ellenkező esetben kattintson ide, <a href="%s"> hogy továbbra is használja a BERP3 </a>.
+Berp3HelpCenter=BERP3 Súgó és támogatás központ
+ToGoBackToBerp3=Ellenkező esetben kattintson ide, <a href="%s"> hogy továbbra is használja a BERP3 </a>.
 TypeOfSupport=A támogatás típusa
 TypeSupportCommunauty=Közösség (ingyenes)
 TypeSupportCommercial=Üzleti

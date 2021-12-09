@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2014	    Alexandre Spangaro	<aspangaro@open-dsi.fr>
- * Copyright (C) 2015-2021  Frederic France		<frederic.france@free.fr>
- * Copyright (C) 2017	    Regis Houssin		<regis.houssin@inodbox.com>
+/* Copyright (C) 2014	    
+ * Copyright (C) 2015-2021  		
+ * Copyright (C) 2017	    		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ $confirm = GETPOST('confirm', 'alpha');
 
 $object = new Contact($db);
 
-// Get object canvas (By default, this is not defined, so standard usage of dolibarr)
+// Get object canvas (By default, this is not defined, so standard usage of berp3)
 $object->getCanvas($id);
 $objcanvas = null;
 $canvas = (!empty($object->canvas) ? $object->canvas : GETPOST("canvas"));

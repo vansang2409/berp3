@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2011 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2017 	   Nicolas Zabouri      <info@inovea-conseil.com>
+/* Copyright (C) 2003      
+ * Copyright (C) 2005-2017 
+ * Copyright (C) 2005-2011 
+ * Copyright (C) 2017 	   Nicolas Zabouri      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ class box_scheduled_jobs extends ModeleBoxes
 	public $depends = array("cron");
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -54,7 +54,7 @@ class box_scheduled_jobs extends ModeleBoxes
 	/**
 	 *  Constructor
 	 *
-	 *  @param  DoliDB  $db         Database handler
+	 *  @param  Berp3DB  $db         Database handler
 	 *  @param  string  $param      More parameters
 	 */
 	public function __construct($db, $param)

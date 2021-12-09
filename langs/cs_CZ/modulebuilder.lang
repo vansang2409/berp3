@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=Modul můžete smazat. VAROVÁNÍ: Všechny kódov
 EnterNameOfObjectToDeleteDesc=Objekt můžete odstranit. VAROVÁNÍ: Všechny kódované soubory (vytvořené nebo vytvořené ručně) související s objektem budou vymazány!
 DangerZone=Nebezpečná zóna
 BuildPackage=Sestavte balíček
-BuildPackageDesc=Můžete si vytvořit balíček ZIP vaší aplikace, abyste byli připraveni distribuovat jej na libovolném Dolibarru. Můžete jej také distribuovat nebo prodávat na trhu jako <a href="https://www.dolistore.com"> DoliStore.com </a>.
+BuildPackageDesc=Můžete si vytvořit balíček ZIP vaší aplikace, abyste byli připraveni distribuovat jej na libovolném Berp3u. Můžete jej také distribuovat nebo prodávat na trhu jako <a href="https://www.berp3store.com"> Berp3Store.com </a>.
 BuildDocumentation=Vytvoření dokumentace
 ModuleIsNotActive=Tento modul ještě není aktivován. Chcete-li ji zveřejnit, přejděte na %s nebo klikněte zde
 ModuleIsLive=Tento modul byl aktivován. Jakákoli změna na něm může narušit aktuální aktivní funkci.
@@ -101,7 +101,7 @@ HooksDefDesc=Definujte v <b> module_parts ['hooks'] </b> vlastnost, v deskriptor
 TriggerDefDesc=Definujte ve spouštěcím souboru kód, který chcete provést pro každou provedenou událost.
 SeeIDsInUse=Viz ID používané ve vaší instalaci
 SeeReservedIDsRangeHere=Viz rozsah vyhrazených ID
-ToolkitForDevelopers=Toolkit pro vývojáře Dolibarr
+ToolkitForDevelopers=Toolkit pro vývojáře Berp3
 TryToUseTheModuleBuilder=Pokud máte znalosti o SQL a PHP, můžete použít průvodce nativní modul builder. <br> Povolte modul <strong> %s </strong> a pomocí průvodce klikněte na <span class="fa fa-bug"> </span> v pravé horní nabídce. <br> Upozornění: Jedná se o pokročilou funkci vývojáře, <b>nestačí </b>experiment   na vaší produkční stránce!
 SeeTopRightMenu=Viz <span class="fa fa-bug"> </span> v pravé horní nabídce
 AddLanguageFile=Přidat jazyk

@@ -155,7 +155,7 @@ ALTER TABLE llx_bank_account ADD COLUMN ics_transfer varchar(32) NULL;
 ALTER TABLE llx_facture MODIFY COLUMN date_valid DATETIME NULL DEFAULT NULL;
 
 
--- VMYSQL4.1 INSERT INTO llx_boxes_def (file, entity) SELECT  'box_dolibarr_state_board.php', 1 FROM DUAL WHERE NOT EXISTS (SELECT * FROM llx_boxes_def WHERE file = 'box_dolibarr_state_board.php' AND entity = 1);
+-- VMYSQL4.1 INSERT INTO llx_boxes_def (file, entity) SELECT  'box_berp3_state_board.php', 1 FROM DUAL WHERE NOT EXISTS (SELECT * FROM llx_boxes_def WHERE file = 'box_berp3_state_board.php' AND entity = 1);
 
 -- VMYSQL4.1 INSERT INTO llx_boxes_def (file, entity) SELECT  'box_members_last_modified.php', 1 FROM DUAL WHERE NOT EXISTS (SELECT * FROM llx_boxes_def WHERE file = 'box_members_last_modified.php' AND entity = 1);
 -- VMYSQL4.1 INSERT INTO llx_boxes_def (file, entity) SELECT  'box_members_last_subscriptions.php', 1 FROM DUAL WHERE NOT EXISTS (SELECT * FROM llx_boxes_def WHERE file = 'box_members_last_subscriptions.php' AND entity = 1);

@@ -1,22 +1,22 @@
 <?php
-/* Copyright (C) 2002-2006  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2021  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Eric Seigne             <eric.seigne@ryxeo.com>
+/* Copyright (C) 2002-2006  
+ * Copyright (C) 2004-2021  
+ * Copyright (C) 2004                    
  * Copyright (C) 2003       Brian Fraval            <brian@fraval.org>
- * Copyright (C) 2006       Andre Cianfarani        <acianfa@free.fr>
- * Copyright (C) 2005-2017  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2008       Patrick Raguin          <patrick.raguin@auguria.net>
- * Copyright (C) 2010-2018  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2013       Florian Henry           <florian.henry@open-concept.pro>
- * Copyright (C) 2013-2021  Alexandre Spangaro      <aspangaro@open-dsi.fr>
+ * Copyright (C) 2006               
+ * Copyright (C) 2005-2017  
+ * Copyright (C) 2008                 <patrick.raguin@auguria.net>
+ * Copyright (C) 2010-2018  
+ * Copyright (C) 2013       
+ * Copyright (C) 2013-2021  
  * Copyright (C) 2013       Peter Fontaine          <contact@peterfontaine.fr>
- * Copyright (C) 2014-2015  Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2015       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+ * Copyright (C) 2014-2015  
+ * Copyright (C) 2015             
  * Copyright (C) 2017       Rui Strecht			    <rui.strecht@aliartalentos.com>
- * Copyright (C) 2018	    Philippe Grand	        <philippe.grand@atoo-net.com>
- * Copyright (C) 2019-2020  Josep Lluís Amador      <joseplluis@lliuretic.cat>
- * Copyright (C) 2019-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2020       Open-Dsi         		<support@open-dsi.fr>
+ * Copyright (C) 2018	    	        
+ * Copyright (C) 2019-2020        
+ * Copyright (C) 2019-2021  
+ * Copyright (C) 2020                		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -796,7 +796,7 @@ class Societe extends CommonObject
 	/**
 	 *    Constructor
 	 *
-	 *    @param	DoliDB		$db		Database handler
+	 *    @param	Berp3DB		$db		Database handler
 	 */
 	public function __construct($db)
 	{
@@ -869,7 +869,7 @@ class Societe extends CommonObject
 
 		$this->db->begin();
 
-		// For automatic creation during create action (not used by Dolibarr GUI, can be used by scripts)
+		// For automatic creation during create action (not used by Berp3 GUI, can be used by scripts)
 		if ($this->code_client == -1 || $this->code_client === 'auto') {
 			$this->get_codeclient($this, 0);
 		}
@@ -1639,7 +1639,7 @@ class Societe extends CommonObject
 	 *
 	 *    @param	int		$rowid			Id of third party to load
 	 *    @param    string	$ref			Reference of third party, name (Warning, this can return several records)
-	 *    @param    string	$ref_ext       	External reference of third party (Warning, this information is a free field not provided by Dolibarr)
+	 *    @param    string	$ref_ext       	External reference of third party (Warning, this information is a free field not provided by Berp3)
 	 *    @param    string	$barcode       	Barcode of third party to load
 	 *    @param    string	$idprof1		Prof id 1 of third party (Warning, this can return several records)
 	 *    @param    string	$idprof2		Prof id 2 of third party (Warning, this can return several records)
@@ -4752,12 +4752,12 @@ class Societe extends CommonObject
 	 * Function used to replace a thirdparty id with another one.
 	 * It must be used within a transaction to avoid trouble
 	 *
-	 * @param 	DoliDB 	$db 		Database handler
+	 * @param 	Berp3DB 	$db 		Database handler
 	 * @param 	int 	$origin_id 	Old thirdparty id (will be removed)
 	 * @param 	int 	$dest_id 	New thirdparty id
 	 * @return 	bool				True if success, False if error
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		if ($origin_id == $dest_id) {
 			dol_syslog('Error: Try to merge a thirdparty into itself');

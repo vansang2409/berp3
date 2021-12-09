@@ -1,4 +1,4 @@
--- Copyright (C) 2018 Abbes Bahfir         <dolipar@dolipar.org>
+-- Copyright (C) 2018 Abbes Bahfir         <berp3par@berp3par.org>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

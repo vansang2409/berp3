@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2004-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2004-2018 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,18 +23,18 @@
  *  \ingroup    dav
  *  \brief      Description and activation file for the module dav
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module dav
  */
-class modDav extends DolibarrModules
+class modDav extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -43,7 +43,7 @@ class modDav extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 50310;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'dav';
@@ -63,8 +63,8 @@ class modDav extends DolibarrModules
 		// Used only if file README.md and README-LL.md not found.
 		$this->descriptionlong = "davDescription";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3', 'berp3_deprecated' or a version string like 'x.y.z'
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where DAV is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -92,7 +92,7 @@ class modDav extends DolibarrModules
 		$this->conflictwith = array(); // List of module class names as string this module is in conflict with
 		$this->langfiles = array("admin");
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(7, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(7, 0); // Minimum version of Berp3 required by module
 		$this->warnings_activation = array(); // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		$this->warnings_activation_ext = array(); // Warning to show when we activate an external module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		//$this->automatic_activation = array('FR'=>'davWasAutomaticallyActivatedBecauseOfYourCountryChoice');
@@ -258,7 +258,7 @@ class modDav extends DolibarrModules
 
 	/**
 	 *	Function called when module is enabled.
-	 *	The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *	The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *	It also creates data directories
 	 *
 	 *	@param      string	$options    Options when enabling module ('', 'noboxes')

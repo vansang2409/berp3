@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2008-2016	Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2011		Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2011-2017  Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2015		Jean-François Ferry	    <jfefe@aternatik.fr>
- * Copyright (C) 2016		Charlie Benke		    <charlie@patas-monkey.com>
- * Copyright (C) 2017       Open-DSI                <support@open-dsi.fr>
+/* Copyright (C) 2008-2016	
+ * Copyright (C) 2011		
+ * Copyright (C) 2011-2017  
+ * Copyright (C) 2015			    
+ * Copyright (C) 2016				    
+ * Copyright (C) 2017                       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ $reg = array();
 if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
 	$value = (GETPOST($code, 'alpha') ? GETPOST($code, 'alpha') : 1);
-	if (dolibarr_set_const($db, $code, $value, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, $value, 'chaine', 0, '', $conf->entity) > 0) {
 		Header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -67,7 +67,7 @@ if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 
 if (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, $conf->entity) > 0) {
+	if (berp3_del_const($db, $code, $conf->entity) > 0) {
 		Header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -77,10 +77,10 @@ if (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 if ($action == 'set') {
 	$getDefaultFilter = GETPOST('AGENDA_DEFAULT_FILTER_TYPE');
 	$defaultfilter = (is_array($getDefaultFilter)) ? implode(',', $getDefaultFilter) : $getDefaultFilter;
-	dolibarr_set_const($db, 'AGENDA_USE_EVENT_TYPE_DEFAULT', GETPOST('AGENDA_USE_EVENT_TYPE_DEFAULT'), 'chaine', 0, '', $conf->entity);
-	dolibarr_set_const($db, 'AGENDA_DEFAULT_FILTER_TYPE', $defaultfilter, 'chaine', 0, '', $conf->entity);
-	dolibarr_set_const($db, 'AGENDA_DEFAULT_FILTER_STATUS', GETPOST('AGENDA_DEFAULT_FILTER_STATUS'), 'chaine', 0, '', $conf->entity);
-	dolibarr_set_const($db, 'AGENDA_DEFAULT_VIEW', GETPOST('AGENDA_DEFAULT_VIEW'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, 'AGENDA_USE_EVENT_TYPE_DEFAULT', GETPOST('AGENDA_USE_EVENT_TYPE_DEFAULT'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, 'AGENDA_DEFAULT_FILTER_TYPE', $defaultfilter, 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, 'AGENDA_DEFAULT_FILTER_STATUS', GETPOST('AGENDA_DEFAULT_FILTER_STATUS'), 'chaine', 0, '', $conf->entity);
+	berp3_set_const($db, 'AGENDA_DEFAULT_VIEW', GETPOST('AGENDA_DEFAULT_VIEW'), 'chaine', 0, '', $conf->entity);
 
 	$defaultValues = new DefaultValues($db);
 	$result = $defaultValues->fetchAll('', '', 0, 0, array('t.page'=>'comm/action/card.php', 't.param'=>'complete', 't.user_id'=>'0', 't.type'=>'createform', 't.entity'=>$conf->entity));
@@ -148,12 +148,12 @@ if ($action == 'set') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->ACTION_EVENT_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'ACTION_EVENT_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'ACTION_EVENT_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "ACTION_EVENT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "ACTION_EVENT_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// La constante qui a ete lue en avant du nouveau set
 		// on passe donc par une variable pour avoir un affichage coherent
 		$conf->global->ACTION_EVENT_ADDON_PDF = $value;

@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2004-2005  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2010  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2016       Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
+/* Copyright (C) 2004-2005  
+ * Copyright (C) 2004-2010  
+ * Copyright (C) 2016             
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ global $langs;
 $err = 0;
 
 // If the config file exists and is filled, we're not on first install so we skip the language selection page
-if (file_exists($conffile) && isset($dolibarr_main_url_root)) {
+if (file_exists($conffile) && isset($berp3_main_url_root)) {
 	header("Location: check.php?testget=ok");
 	exit;
 }

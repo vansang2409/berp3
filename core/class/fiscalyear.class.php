@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2014-2020  Alexandre Spangaro  <aspangaro@open-dsi.fr>
- * Copyright (C) 2020       OScss-Shop          <support@oscss-shop.fr>
+/* Copyright (C) 2014-2020  
+ * Copyright (C) 2020                 
  *
  *
  * This program is free software; you can redistribute it and/or modify
@@ -106,9 +106,9 @@ class Fiscalyear extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param	DoliDB		$db		Database handler
+	 * @param	Berp3DB		$db		Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		global $langs;
 

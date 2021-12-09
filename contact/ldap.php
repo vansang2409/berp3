@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2006-2010	Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2006-2017	Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2006-2010	
+ * Copyright (C) 2006-2017	
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,7 +51,7 @@ if ($id > 0) {
  * Actions
  */
 
-if ($action == 'dolibarr2ldap') {
+if ($action == 'berp32ldap') {
 	$db->begin();
 
 	$ldap = new Ldap();
@@ -136,13 +136,13 @@ print dol_get_fiche_end();
  */
 print '<div class="tabsAction">';
 
-if (!empty($conf->global->LDAP_CONTACT_ACTIVE) && $conf->global->LDAP_CONTACT_ACTIVE != 'ldap2dolibarr') {
-	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=dolibarr2ldap">'.$langs->trans("ForceSynchronize").'</a>';
+if (!empty($conf->global->LDAP_CONTACT_ACTIVE) && $conf->global->LDAP_CONTACT_ACTIVE != 'ldap2berp3') {
+	print '<a class="butAction" href="'.$_SERVER["PHP_SELF"].'?id='.$object->id.'&amp;action=berp32ldap">'.$langs->trans("ForceSynchronize").'</a>';
 }
 
 print "</div>\n";
 
-if (!empty($conf->global->LDAP_CONTACT_ACTIVE) && $conf->global->LDAP_CONTACT_ACTIVE != 'ldap2dolibarr') {
+if (!empty($conf->global->LDAP_CONTACT_ACTIVE) && $conf->global->LDAP_CONTACT_ACTIVE != 'ldap2berp3') {
 	print "<br>\n";
 }
 

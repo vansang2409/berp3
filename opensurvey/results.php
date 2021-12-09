@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2013-2020  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2014       Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/*   
+ * Copyright (C) 2014       
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -480,7 +480,7 @@ print '</td></tr>';
 // Description
 print '<tr><td class="tdtop">'.$langs->trans("Description").'</td><td>';
 if ($action == 'edit') {
-	$doleditor = new DolEditor('nouveauxcommentaires', $object->description, '', 120, 'dolibarr_notes', 'In', 1, 1, 1, ROWS_7, '90%');
+	$doleditor = new DolEditor('nouveauxcommentaires', $object->description, '', 120, 'berp3_notes', 'In', 1, 1, 1, ROWS_7, '90%');
 	$doleditor->Create(0, '');
 } else {
 	print (dol_textishtml($object->description) ? $object->description : dol_nl2br($object->description, 1, true));
@@ -534,7 +534,7 @@ print '</td></tr>';
 print '<tr><td>'.$langs->trans("UrlForSurvey", '').'</td><td>';
 
 // Define $urlwithroot
-$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 $urlwithroot = $urlwithouturlroot.DOL_URL_ROOT; // This is to use external domain name found into config file
 //$urlwithroot=DOL_MAIN_URL_ROOT;					// This is to use same domain name than current
 

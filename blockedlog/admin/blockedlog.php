@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017      ATM Consulting      <contact@atm-consulting.fr>
- * Copyright (C) 2017-2018 Laurent Destailleur <eldy@destailleur.fr>
+/* Copyright (C) 2017            
+ * Copyright (C) 2017-2018  <eldy@destailleur.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ if (preg_match('/set_(.*)/', $action, $reg)) {
 		$values = implode(',', $values);
 	}
 
-	if (dolibarr_set_const($db, $code, $values, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, $values, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"].($withtab ? '?withtab='.$withtab : ''));
 		exit;
 	} else {
@@ -62,7 +62,7 @@ if (preg_match('/set_(.*)/', $action, $reg)) {
 
 if (preg_match('/del_(.*)/', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, 0) > 0) {
+	if (berp3_del_const($db, $code, 0) > 0) {
 		Header("Location: ".$_SERVER["PHP_SELF"].($withtab ? '?withtab='.$withtab : ''));
 		exit;
 	} else {

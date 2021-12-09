@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2004-2011	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2012-2013	Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2019		Christophe Battarel <christophe@altairis.fr>
+/* Copyright (C) 2004-2011		
+ * Copyright (C) 2005-2012			
+ * Copyright (C) 2012-2013	
+ * Copyright (C) 2019		 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,12 +34,12 @@ $langs->loadLangs(array('admin', 'fckeditor'));
 
 $action = GETPOST('action', 'aZ09');
 // Possible modes are:
-// dolibarr_details
-// dolibarr_notes
-// dolibarr_readonly
-// dolibarr_mailings
+// berp3_details
+// berp3_notes
+// berp3_readonly
+// berp3_mailings
 // Full (not sure this one is used)
-$mode = GETPOST('mode') ?GETPOST('mode', 'alpha') : 'dolibarr_notes';
+$mode = GETPOST('mode') ?GETPOST('mode', 'alpha') : 'berp3_notes';
 
 if (!$user->admin) {
 	accessforbidden();
@@ -90,16 +90,16 @@ $picto = array(
 
 foreach ($modules as $const => $desc) {
 	if ($action == 'enable_'.strtolower($const)) {
-		dolibarr_set_const($db, "FCKEDITOR_ENABLE_".$const, "1", 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "FCKEDITOR_ENABLE_".$const, "1", 'chaine', 0, '', $conf->entity);
 		// If fckeditor is active in the product/service description, it is activated in the forms
 		if ($const == 'PRODUCTDESC' && !empty($conf->global->PRODUIT_DESC_IN_FORM)) {
-			dolibarr_set_const($db, "FCKEDITOR_ENABLE_DETAILS", "1", 'chaine', 0, '', $conf->entity);
+			berp3_set_const($db, "FCKEDITOR_ENABLE_DETAILS", "1", 'chaine', 0, '', $conf->entity);
 		}
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	}
 	if ($action == 'disable_'.strtolower($const)) {
-		dolibarr_del_const($db, "FCKEDITOR_ENABLE_".$const, $conf->entity);
+		berp3_del_const($db, "FCKEDITOR_ENABLE_".$const, $conf->entity);
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	}
@@ -110,7 +110,7 @@ if (GETPOST('save', 'alpha')) {
 
 	$fckeditor_skin = GETPOST('fckeditor_skin', 'alpha');
 	if (!empty($fckeditor_skin)) {
-		if (!dolibarr_set_const($db, 'FCKEDITOR_SKIN', $fckeditor_skin, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'FCKEDITOR_SKIN', $fckeditor_skin, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	} else {
@@ -119,7 +119,7 @@ if (GETPOST('save', 'alpha')) {
 
 	$fckeditor_test = GETPOST('formtestfield', 'restricthtml');
 	if (!empty($fckeditor_test)) {
-		if (!dolibarr_set_const($db, 'FCKEDITOR_TEST', $fckeditor_test, 'chaine', 0, '', $conf->entity)) {
+		if (!berp3_set_const($db, 'FCKEDITOR_TEST', $fckeditor_test, 'chaine', 0, '', $conf->entity)) {
 			$error++;
 		}
 	} else {
@@ -186,7 +186,7 @@ if (empty($conf->use_javascript_ajax)) {
 	show_skin(null, 1);
 	print '<br>'."\n";
 
-	$listofmodes = array('dolibarr_mailings', 'dolibarr_notes', 'dolibarr_details', 'dolibarr_readonly', 'Full', 'Full_inline');
+	$listofmodes = array('berp3_mailings', 'berp3_notes', 'berp3_details', 'berp3_readonly', 'Full', 'Full_inline');
 	$linkstomode = '';
 	foreach ($listofmodes as $newmode) {
 		if ($linkstomode) {
@@ -207,7 +207,7 @@ if (empty($conf->use_javascript_ajax)) {
 	print '<input type="hidden" name="mode" value="'.dol_escape_htmltag($mode).'">';
 	if ($mode != 'Full_inline') {
 		$uselocalbrowser = true;
-		$readonly = ($mode == 'dolibarr_readonly' ? 1 : 0);
+		$readonly = ($mode == 'berp3_readonly' ? 1 : 0);
 		$editor = new DolEditor('formtestfield', isset($conf->global->FCKEDITOR_TEST) ? $conf->global->FCKEDITOR_TEST : 'Test', '', 200, $mode, 'In', true, $uselocalbrowser, 1, 120, 8, $readonly);
 		$editor->Create();
 	} else {

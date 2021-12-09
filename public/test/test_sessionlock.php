@@ -53,7 +53,7 @@ print '<br>';
 require '../../main.inc.php';
 
 /* No need for this.
-if ($dolibarr_main_prod) {
+if ($berp3_main_prod) {
 	accessforbidden();
 }
 */

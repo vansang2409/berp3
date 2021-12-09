@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2007-2018 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2007-2018 
  * Copyright (C) 2018      All-3kcis       		 <contact@all-3kcis.fr>
  * Copyright (C) 2021      Noé Cendrier         <noe.cendrier@altairis.fr>
  *

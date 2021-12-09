@@ -1,4 +1,4 @@
-# CHANGELOG MYMODULE FOR [DOLIBARR ERP CRM](https://www.dolibarr.org)
+# CHANGELOG MYMODULE FOR [BERP3 ERP CRM](https://www.berp3.org)
 
 ## 1.0
 

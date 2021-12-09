@@ -1,7 +1,7 @@
 <?php
 /*
- * Copyright (C) 2014-2016  Jean-François Ferry	<hello@librethic.io>
- * 				 2016       Christophe Battarel <christophe@altairis.fr>
+ * Copyright (C) 2014-2016  	
+ * 				 2016        
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,18 +22,18 @@
  *  \ingroup    core
  *  \brief      File of trigger for ticket module
  */
-require_once DOL_DOCUMENT_ROOT.'/core/triggers/dolibarrtriggers.class.php';
+require_once DOL_DOCUMENT_ROOT.'/core/triggers/berp3triggers.class.php';
 
 
 /**
  *  Class of triggers for ticket module
  */
-class InterfaceTicketEmail extends DolibarrTriggers
+class InterfaceTicketEmail extends Berp3Triggers
 {
 	/**
 	 *   Constructor
 	 *
-	 *   @param DoliDB $db Database handler
+	 *   @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -42,12 +42,12 @@ class InterfaceTicketEmail extends DolibarrTriggers
 		$this->name = preg_replace('/^Interface/i', '', get_class($this));
 		$this->family = "ticket";
 		$this->description = "Triggers of the module ticket to send notifications to internal users and to third-parties";
-		$this->version = self::VERSION_DOLIBARR; // 'development', 'experimental', 'dolibarr' or version
+		$this->version = self::VERSION_BERP3; // 'development', 'experimental', 'berp3' or version
 		$this->picto = 'ticket';
 	}
 
 	/**
-	 *      Function called when a Dolibarrr business event is done.
+	 *      Function called when a Berp3r business event is done.
 	 *      All functions "runTrigger" are triggered if file is inside directory htdocs/core/triggers
 	 *
 	 *      @param  string    $action Event action code

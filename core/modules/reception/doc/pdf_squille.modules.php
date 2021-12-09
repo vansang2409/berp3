@@ -42,7 +42,7 @@ class pdf_squille extends ModelePdfReception
 	/**
 	 *	Constructor
 	 *
-	 *	@param	DoliDB	$db		Database handler
+	 *	@param	Berp3DB	$db		Database handler
 	 */
 	public function __construct($db = 0)
 	{
@@ -241,7 +241,7 @@ class pdf_squille extends ModelePdfReception
 
 				$pdf->SetTitle($outputlangs->convToOutputCharset($object->ref));
 				$pdf->SetSubject($outputlangs->transnoentities("Reception"));
-				$pdf->SetCreator("Dolibarr ".DOL_VERSION);
+				$pdf->SetCreator("Berp3 ".DOL_VERSION);
 				$pdf->SetAuthor($outputlangs->convToOutputCharset($user->getFullName($outputlangs)));
 				$pdf->SetKeyWords($outputlangs->convToOutputCharset($object->ref)." ".$outputlangs->transnoentities("Reception"));
 				if (!empty($conf->global->MAIN_DISABLE_PDF_COMPRESSION)) {

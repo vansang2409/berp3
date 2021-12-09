@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville     <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2011 Laurent Destailleur      <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2012 Regis Houssin            <regis.houssin@capnetworks.com>
+/* Copyright (C) 2003-2005      
+ * Copyright (C) 2004-2011       
+ * Copyright (C) 2005-2012             <regis.houssin@capnetworks.com>
  * Copyright (C) 2018	   Quentin Vial-Gouteyron   <quentin.vial-gouteyron@atm-consulting.fr>
- * Copyright (C) 2019      Nicolas ZABOURI          <info@inovea-conseil.com>
+ * Copyright (C) 2019                
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

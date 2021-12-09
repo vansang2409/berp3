@@ -1,8 +1,8 @@
 <?php
 /* Copyright (C) 2012       Nicolas Villa aka Boyquotes http://informetic.fr
- * Copyright (C) 2013       Florian Henry           <florian.henry@open-concpt.pro>
- * Copyright (C) 2013-2016  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2013                  <florian.henry@open-concpt.pro>
+ * Copyright (C) 2013-2016  
+ * Copyright (C) 2018-2021  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -407,7 +407,7 @@ if (($action == "create") || ($action == "edit")) {
 
 	print '<tr><td>';
 	print $langs->trans('CronNote')."</td><td>";
-	$doleditor = new DolEditor('note', $object->note_private, '', 160, 'dolibarr_notes', 'In', true, false, 0, ROWS_4, '90%');
+	$doleditor = new DolEditor('note', $object->note_private, '', 160, 'berp3_notes', 'In', true, false, 0, ROWS_4, '90%');
 	$doleditor->Create();
 	print "</td>";
 	print "<td>";

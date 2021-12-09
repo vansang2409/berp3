@@ -120,8 +120,8 @@ ConfirmCloneOrder=Vai jūs tiešām vēlaties klonēt šo pasūtījumu <b>%s</b>
 DispatchSupplierOrder=Pirkuma pasūtījuma saņemšana %s
 FirstApprovalAlreadyDone=Pirmais apstiprinājums jau ir izdarīts
 SecondApprovalAlreadyDone=Otrais apstiprinājums jau veikts
-SupplierOrderReceivedInDolibarr=Pirkuma pasūtījumu %s saņēma %s
-SupplierOrderSubmitedInDolibarr=Pirkuma pasūtījums %s iesniegts
+SupplierOrderReceivedInBerp3=Pirkuma pasūtījumu %s saņēma %s
+SupplierOrderSubmitedInBerp3=Pirkuma pasūtījums %s iesniegts
 SupplierOrderClassifiedBilled=Pirkuma pasūtījums %s, kas ir iekasēts
 OtherOrders=Citi pasūtījumi
 ##### Types de contacts #####

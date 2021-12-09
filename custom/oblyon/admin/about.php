@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2015       Nicolas Rivera      <nrivera.pro@gmail.com>
- * Copyright (C) 2015-2019  Open-DSI            <support@open-dsi.fr>
+ * Copyright (C) 2015-2019              
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
  * \ingroup		oblyon
  * \brief		About Page < Oblyon Theme Configurator >
  */
-// Dolibarr environment
+// Berp3 environment
 $res = @include '../../main.inc.php'; // From htdocs directory
 if (! $res) {
 	$res = @include '../../../main.inc.php'; // From "custom" directory
@@ -68,9 +68,9 @@ print '<table class="noborder" width="100%">';
 print '<tr class="liste_titre"><td colspan="2">' . $langs->trans("Authors") . '</td>';
 print '</tr>'."\n";
 
-// Alexandre Spangaro
+// 
 print '<tr>';
-print '<td width="310px"><img src="../img/opendsi_dolibarr_preferred_partner.png" /></td>'."\n";
+print '<td width="310px"><img src="../img/opendsi_berp3_preferred_partner.png" /></td>'."\n";
 print '<td align="left" valign="top"><p>'.$langs->trans("OpenDsiAboutDesc").'</p></td>'."\n";
 print '</tr>'."\n";
 

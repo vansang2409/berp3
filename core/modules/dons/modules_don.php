@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005      Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2003-2005 
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2004                
+ * Copyright (C) 2005      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ abstract class ModeleDon extends CommonDocGenerator
 	/**
 	 *  Return list of active generation modules
 	 *
-	 *  @param	DoliDB  $db     			Database handler
+	 *  @param	Berp3DB  $db     			Database handler
 	 *  @param  integer $maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */
@@ -145,7 +145,7 @@ abstract class ModeleNumRefDons
 		if ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
 		}
-		if ($this->version == 'dolibarr') {
+		if ($this->version == 'berp3') {
 			return DOL_VERSION;
 		}
 		if ($this->version) {

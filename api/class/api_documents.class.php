@@ -1,7 +1,7 @@
 <?php
 /* Copyright (C) 2016   Xebax Christy           <xebax@wanadoo.fr>
- * Copyright (C) 2016	Laurent Destailleur		<eldy@users.sourceforge.net>
- * Copyright (C) 2016   Jean-François Ferry     <jfefe@aternatik.fr>
+ * Copyright (C) 2016	
+ * Copyright (C) 2016   
  *
  * This program is free software you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';
  * @access protected
  * @class Documents {@requires user,external}
  */
-class Documents extends DolibarrApi
+class Documents extends Berp3Api
 {
 
 	/**
@@ -90,7 +90,7 @@ class Documents extends DolibarrApi
 		$relativefile = $tmpreldir.dol_sanitizeFileName($object->ref); */
 		$relativefile = $original_file;
 
-		$check_access = dol_check_secure_access_document($modulepart, $relativefile, $entity, DolibarrApiAccess::$user, '', 'read');
+		$check_access = dol_check_secure_access_document($modulepart, $relativefile, $entity, Berp3ApiAccess::$user, '', 'read');
 		$accessallowed = $check_access['accessallowed'];
 		$sqlprotectagainstexternals = $check_access['sqlprotectagainstexternals'];
 		$original_file = $check_access['original_file'];
@@ -165,7 +165,7 @@ class Documents extends DolibarrApi
 		$relativefile = $tmpreldir.dol_sanitizeFileName($object->ref); */
 		$relativefile = $original_file;
 
-		$check_access = dol_check_secure_access_document($modulepart, $relativefile, $entity, DolibarrApiAccess::$user, '', 'write');
+		$check_access = dol_check_secure_access_document($modulepart, $relativefile, $entity, Berp3ApiAccess::$user, '', 'write');
 		$accessallowed              = $check_access['accessallowed'];
 		$sqlprotectagainstexternals = $check_access['sqlprotectagainstexternals'];
 		$original_file              = $check_access['original_file'];
@@ -272,7 +272,7 @@ class Documents extends DolibarrApi
 		if ($modulepart == 'societe' || $modulepart == 'thirdparty') {
 			require_once DOL_DOCUMENT_ROOT.'/societe/class/societe.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->societe->lire) {
+			if (!Berp3ApiAccess::$user->rights->societe->lire) {
 				throw new RestException(401);
 			}
 
@@ -287,7 +287,7 @@ class Documents extends DolibarrApi
 			require_once DOL_DOCUMENT_ROOT.'/user/class/user.class.php';
 
 			// Can get doc if has permission to read all user or if it is user itself
-			if (!DolibarrApiAccess::$user->rights->user->user->lire && DolibarrApiAccess::$user->id != $id) {
+			if (!Berp3ApiAccess::$user->rights->user->user->lire && Berp3ApiAccess::$user->id != $id) {
 				throw new RestException(401);
 			}
 
@@ -301,7 +301,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'adherent' || $modulepart == 'member') {
 			require_once DOL_DOCUMENT_ROOT.'/adherents/class/adherent.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->adherent->lire) {
+			if (!Berp3ApiAccess::$user->rights->adherent->lire) {
 				throw new RestException(401);
 			}
 
@@ -315,7 +315,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'propal' || $modulepart == 'proposal') {
 			require_once DOL_DOCUMENT_ROOT.'/comm/propal/class/propal.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->propal->lire) {
+			if (!Berp3ApiAccess::$user->rights->propal->lire) {
 				throw new RestException(401);
 			}
 
@@ -329,7 +329,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'supplier_proposal') {
 			require_once DOL_DOCUMENT_ROOT.'/supplier_proposal/class/supplier_proposal.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->supplier_proposal->read) {
+			if (!Berp3ApiAccess::$user->rights->supplier_proposal->read) {
 				throw new RestException(401);
 			}
 
@@ -343,7 +343,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'commande' || $modulepart == 'order') {
 			require_once DOL_DOCUMENT_ROOT.'/commande/class/commande.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->commande->lire) {
+			if (!Berp3ApiAccess::$user->rights->commande->lire) {
 				throw new RestException(401);
 			}
 
@@ -359,7 +359,7 @@ class Documents extends DolibarrApi
 
 			require_once DOL_DOCUMENT_ROOT.'/fourn/class/fournisseur.commande.class.php';
 
-			if (empty(DolibarrApiAccess::$user->rights->fournisseur->commande->lire) && empty(DolibarrApiAccess::$user->rights->supplier_order->lire)) {
+			if (empty(Berp3ApiAccess::$user->rights->fournisseur->commande->lire) && empty(Berp3ApiAccess::$user->rights->supplier_order->lire)) {
 				throw new RestException(401);
 			}
 
@@ -373,7 +373,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'shipment' || $modulepart == 'expedition') {
 			require_once DOL_DOCUMENT_ROOT.'/expedition/class/expedition.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->expedition->lire) {
+			if (!Berp3ApiAccess::$user->rights->expedition->lire) {
 				throw new RestException(401);
 			}
 
@@ -387,7 +387,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'facture' || $modulepart == 'invoice') {
 			require_once DOL_DOCUMENT_ROOT.'/compta/facture/class/facture.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->facture->lire) {
+			if (!Berp3ApiAccess::$user->rights->facture->lire) {
 				throw new RestException(401);
 			}
 
@@ -403,7 +403,7 @@ class Documents extends DolibarrApi
 
 			require_once DOL_DOCUMENT_ROOT.'/fourn/class/fournisseur.facture.class.php';
 
-			if (empty(DolibarrApiAccess::$user->rights->fournisseur->facture->lire) && empty(DolibarrApiAccess::$user->rights->supplier_invoice->lire)) {
+			if (empty(Berp3ApiAccess::$user->rights->fournisseur->facture->lire) && empty(Berp3ApiAccess::$user->rights->supplier_invoice->lire)) {
 				throw new RestException(401);
 			}
 
@@ -417,7 +417,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'produit' || $modulepart == 'product') {
 			require_once DOL_DOCUMENT_ROOT.'/product/class/product.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->produit->lire) {
+			if (!Berp3ApiAccess::$user->rights->produit->lire) {
 				throw new RestException(401);
 			}
 
@@ -433,7 +433,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'agenda' || $modulepart == 'action' || $modulepart == 'event') {
 			require_once DOL_DOCUMENT_ROOT.'/comm/action/class/actioncomm.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->agenda->myactions->read && !DolibarrApiAccess::$user->rights->agenda->allactions->read) {
+			if (!Berp3ApiAccess::$user->rights->agenda->myactions->read && !Berp3ApiAccess::$user->rights->agenda->allactions->read) {
 				throw new RestException(401);
 			}
 
@@ -447,7 +447,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'expensereport') {
 			require_once DOL_DOCUMENT_ROOT.'/expensereport/class/expensereport.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->expensereport->read && !DolibarrApiAccess::$user->rights->expensereport->read) {
+			if (!Berp3ApiAccess::$user->rights->expensereport->read && !Berp3ApiAccess::$user->rights->expensereport->read) {
 				throw new RestException(401);
 			}
 
@@ -461,7 +461,7 @@ class Documents extends DolibarrApi
 		} elseif ($modulepart == 'categorie' || $modulepart == 'category') {
 			require_once DOL_DOCUMENT_ROOT.'/categories/class/categorie.class.php';
 
-			if (!DolibarrApiAccess::$user->rights->categorie->lire) {
+			if (!Berp3ApiAccess::$user->rights->categorie->lire) {
 				throw new RestException(401);
 			}
 
@@ -476,7 +476,7 @@ class Documents extends DolibarrApi
 			throw new RestException(500, 'Modulepart Ecm not implemented yet.');
 			// // require_once DOL_DOCUMENT_ROOT.'/ecm/class/ecmdirectory.class.php';
 
-			// if (!DolibarrApiAccess::$user->rights->ecm->read) {
+			// if (!Berp3ApiAccess::$user->rights->ecm->read) {
 			// 	throw new RestException(401);
 			// }
 
@@ -563,7 +563,7 @@ class Documents extends DolibarrApi
 			throw new RestException(400, 'Modulepart not provided.');
 		}
 
-		if (!DolibarrApiAccess::$user->rights->ecm->upload) {
+		if (!Berp3ApiAccess::$user->rights->ecm->upload) {
 			throw new RestException(401);
 		}
 
@@ -579,7 +579,7 @@ class Documents extends DolibarrApi
 
 		// Define $uploadir
 		$object = null;
-		$entity = DolibarrApiAccess::$user->entity;
+		$entity = Berp3ApiAccess::$user->entity;
 		if (empty($entity)) {
 			$entity = 1;
 		}
@@ -659,7 +659,7 @@ class Documents extends DolibarrApi
 
 			$relativefile = $tmpreldir.dol_sanitizeFileName($object->ref);
 
-			$tmp = dol_check_secure_access_document($modulepart, $relativefile, $entity, DolibarrApiAccess::$user, $ref, 'write');
+			$tmp = dol_check_secure_access_document($modulepart, $relativefile, $entity, Berp3ApiAccess::$user, $ref, 'write');
 			$upload_dir = $tmp['original_file']; // No dirname here, tmp['original_file'] is already the dir because dol_check_secure_access_document was called with param original_file that is only the dir
 
 			if (empty($upload_dir) || $upload_dir == '/') {
@@ -674,7 +674,7 @@ class Documents extends DolibarrApi
 			}
 
 			$relativefile = $subdir;
-			$tmp = dol_check_secure_access_document($modulepart, $relativefile, $entity, DolibarrApiAccess::$user, '', 'write');
+			$tmp = dol_check_secure_access_document($modulepart, $relativefile, $entity, Berp3ApiAccess::$user, '', 'write');
 			$upload_dir = $tmp['original_file']; // No dirname here, tmp['original_file'] is already the dir because dol_check_secure_access_document was called with param original_file that is only the dir
 
 			if (empty($upload_dir) || $upload_dir == '/') {
@@ -763,7 +763,7 @@ class Documents extends DolibarrApi
 		$relativefile = $tmpreldir.dol_sanitizeFileName($object->ref); */
 		$relativefile = $original_file;
 
-		$check_access = dol_check_secure_access_document($modulepart, $relativefile, $entity, DolibarrApiAccess::$user, '', 'read');
+		$check_access = dol_check_secure_access_document($modulepart, $relativefile, $entity, Berp3ApiAccess::$user, '', 'read');
 		$accessallowed = $check_access['accessallowed'];
 		$sqlprotectagainstexternals = $check_access['sqlprotectagainstexternals'];
 		$original_file = $check_access['original_file'];

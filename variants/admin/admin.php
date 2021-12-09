@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2016   Marcos García   <marcosgdf@gmail.com>
- * Copyright (C) 2018   Frédéric France <frederic.france@netlogic.fr>
+/* Copyright (C) 2016      
+ * Copyright (C) 2018    
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,12 +39,12 @@ $error = 0;
 if ($action) {
 	$value = GETPOST('PRODUIT_ATTRIBUTES_HIDECHILD');
 
-	if (!dolibarr_set_const($db, 'PRODUIT_ATTRIBUTES_HIDECHILD', $value, 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'PRODUIT_ATTRIBUTES_HIDECHILD', $value, 'chaine', 0, '', $conf->entity)) {
 		setEventMessages($langs->trans('CoreErrorMessage'), null, 'errors');
 		$error++;
 	}
 
-	if (!dolibarr_set_const($db, 'PRODUIT_ATTRIBUTES_SEPARATOR', GETPOST('PRODUIT_ATTRIBUTES_SEPARATOR'), 'chaine', 0, '', $conf->entity)) {
+	if (!berp3_set_const($db, 'PRODUIT_ATTRIBUTES_SEPARATOR', GETPOST('PRODUIT_ATTRIBUTES_SEPARATOR'), 'chaine', 0, '', $conf->entity)) {
 		setEventMessages($langs->trans('CoreErrorMessage'), null, 'errors');
 		$error++;
 	}

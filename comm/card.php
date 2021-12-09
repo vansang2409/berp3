@@ -1,15 +1,15 @@
 <?php
-/* Copyright (C) 2001-2005 Rodolphe Quiedeville        <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2020 Laurent Destailleur         <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne                 <eric.seigne@ryxeo.com>
- * Copyright (C) 2006      Andre Cianfarani            <acianfa@free.fr>
- * Copyright (C) 2005-2017 Regis Houssin               <regis.houssin@inodbox.com>
- * Copyright (C) 2008      Raphael Bertrand (Resultic) <raphael.bertrand@resultic.fr>
- * Copyright (C) 2010-2020 Juanjo Menent               <jmenent@2byte.es>
- * Copyright (C) 2013      Alexandre Spangaro          <aspangaro@open-dsi.fr>
- * Copyright (C) 2015-2021 Frédéric France             <frederic.france@netlogic.fr>
- * Copyright (C) 2015      Marcos García               <marcosgdf@gmail.com>
- * Copyright (C) 2020      Open-Dsi         		   <support@open-dsi.fr>
+/* Copyright (C) 2001-2005         
+ * Copyright (C) 2004-2020          
+ * Copyright (C) 2004                       
+ * Copyright (C) 2006                  
+ * Copyright (C) 2005-2017                
+ * Copyright (C) 2008       
+ * Copyright (C) 2010-2020                
+ * Copyright (C) 2013                
+ * Copyright (C) 2015-2021              
+ * Copyright (C) 2015                     
+ * Copyright (C) 2020               		   
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -623,7 +623,7 @@ if ($object->id > 0) {
 		$langs->load("members");
 		$langs->load("users");
 
-		print '<tr><td class="titlefield">'.$langs->trans("LinkedToDolibarrMember").'</td>';
+		print '<tr><td class="titlefield">'.$langs->trans("LinkedToBerp3Member").'</td>';
 		print '<td>';
 		$adh = new Adherent($db);
 		$result = $adh->fetch('', '', $object->id);
@@ -692,7 +692,7 @@ if ($object->id > 0) {
 
 	// Lien recap
 	$boxstat .= '<div class="box">';
-	$boxstat .= '<table summary="'.dol_escape_htmltag($langs->trans("DolibarrStateBoard")).'" class="border boxtable boxtablenobottom boxtablenotop" width="100%">';
+	$boxstat .= '<table summary="'.dol_escape_htmltag($langs->trans("Berp3StateBoard")).'" class="border boxtable boxtablenobottom boxtablenotop" width="100%">';
 	$boxstat .= '<tr class="impair nohover"><td colspan="2" class="tdboxstats nohover">';
 
 	if (!empty($conf->propal->enabled) && $user->rights->propal->lire) {

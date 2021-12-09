@@ -1,10 +1,10 @@
 <?php
-/* Copyright (C) 2006      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2008-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2012-2013 Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2013-2018 Philippe Grand       <philippe.grand@atoo-net.com>
- * Copyright (C) 2013      Florian Henry        <florian.henry@open-concept.pro>
+/* Copyright (C) 2006      
+ * Copyright (C) 2008-2010 
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2012-2013 
+ * Copyright (C) 2013-2018        
+ * Copyright (C) 2013      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,20 +56,20 @@ if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 
 	// If constant is for a unique choice, delete other choices
 	if (in_array($code, array('STOCK_CALCULATE_ON_BILL', 'STOCK_CALCULATE_ON_VALIDATE_ORDER', 'STOCK_CALCULATE_ON_SHIPMENT', 'STOCK_CALCULATE_ON_SHIPMENT_CLOSE'))) {
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_BILL', $conf->entity);
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_VALIDATE_ORDER', $conf->entity);
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_SHIPMENT', $conf->entity);
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_SHIPMENT_CLOSE', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_BILL', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_VALIDATE_ORDER', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_SHIPMENT', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_SHIPMENT_CLOSE', $conf->entity);
 	}
 	if (in_array($code, array('STOCK_CALCULATE_ON_SUPPLIER_BILL', 'STOCK_CALCULATE_ON_SUPPLIER_VALIDATE_ORDER', 'STOCK_CALCULATE_ON_RECEPTION', 'STOCK_CALCULATE_ON_RECEPTION_CLOSE', 'STOCK_CALCULATE_ON_SUPPLIER_DISPATCH_ORDER'))) {
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_SUPPLIER_BILL', $conf->entity);
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_SUPPLIER_VALIDATE_ORDER', $conf->entity);
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_RECEPTION', $conf->entity);
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_RECEPTION_CLOSE', $conf->entity);
-		dolibarr_del_const($db, 'STOCK_CALCULATE_ON_SUPPLIER_DISPATCH_ORDER', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_SUPPLIER_BILL', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_SUPPLIER_VALIDATE_ORDER', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_RECEPTION', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_RECEPTION_CLOSE', $conf->entity);
+		berp3_del_const($db, 'STOCK_CALCULATE_ON_SUPPLIER_DISPATCH_ORDER', $conf->entity);
 	}
 
-	if (dolibarr_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
+	if (berp3_set_const($db, $code, 1, 'chaine', 0, '', $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -79,7 +79,7 @@ if (preg_match('/set_([a-z0-9_\-]+)/i', $action, $reg)) {
 
 if (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 	$code = $reg[1];
-	if (dolibarr_del_const($db, $code, $conf->entity) > 0) {
+	if (berp3_del_const($db, $code, $conf->entity) > 0) {
 		header("Location: ".$_SERVER["PHP_SELF"]);
 		exit;
 	} else {
@@ -89,9 +89,9 @@ if (preg_match('/del_([a-z0-9_\-]+)/i', $action, $reg)) {
 
 if ($action == 'warehouse') {
 	$value = GETPOST('default_warehouse', 'alpha');
-	$res = dolibarr_set_const($db, "MAIN_DEFAULT_WAREHOUSE", $value, 'chaine', 0, '', $conf->entity);
+	$res = berp3_set_const($db, "MAIN_DEFAULT_WAREHOUSE", $value, 'chaine', 0, '', $conf->entity);
 	if ($value == -1 || empty($value) && !empty($conf->global->MAIN_DEFAULT_WAREHOUSE)) {
-		$res = dolibarr_del_const($db, "MAIN_DEFAULT_WAREHOUSE", $conf->entity);
+		$res = berp3_del_const($db, "MAIN_DEFAULT_WAREHOUSE", $conf->entity);
 	}
 	if (!($res > 0)) {
 		$error++;
@@ -139,12 +139,12 @@ if ($action == 'specimen') {
 	$ret = delDocumentModel($value, $type);
 	if ($ret > 0) {
 		if ($conf->global->STOCK_ADDON_PDF == "$value") {
-			dolibarr_del_const($db, 'STOCK_ADDON_PDF', $conf->entity);
+			berp3_del_const($db, 'STOCK_ADDON_PDF', $conf->entity);
 		}
 	}
 } elseif ($action == 'setdoc') {
 	// Set default model
-	if (dolibarr_set_const($db, "STOCK_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
+	if (berp3_set_const($db, "STOCK_ADDON_PDF", $value, 'chaine', 0, '', $conf->entity)) {
 		// The constant that was read before the new set
 		// We therefore requires a variable to have a coherent view
 		$conf->global->STOCK_ADDON_PDF = $value;

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2007-2011 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2007-2011 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,12 +36,12 @@ function check_user_password_ldap($usertotest, $passwordtotest, $entitytotest)
 {
 	global $db, $conf, $langs;
 	global $_POST;
-	global $dolibarr_main_auth_ldap_host, $dolibarr_main_auth_ldap_port;
-	global $dolibarr_main_auth_ldap_version, $dolibarr_main_auth_ldap_servertype;
-	global $dolibarr_main_auth_ldap_login_attribute, $dolibarr_main_auth_ldap_dn;
-	global $dolibarr_main_auth_ldap_admin_login, $dolibarr_main_auth_ldap_admin_pass;
-	global $dolibarr_main_auth_ldap_filter;
-	global $dolibarr_main_auth_ldap_debug;
+	global $berp3_main_auth_ldap_host, $berp3_main_auth_ldap_port;
+	global $berp3_main_auth_ldap_version, $berp3_main_auth_ldap_servertype;
+	global $berp3_main_auth_ldap_login_attribute, $berp3_main_auth_ldap_dn;
+	global $berp3_main_auth_ldap_admin_login, $berp3_main_auth_ldap_admin_pass;
+	global $berp3_main_auth_ldap_filter;
+	global $berp3_main_auth_ldap_debug;
 
 	// Force master entity in transversal mode
 	$entity = $entitytotest;
@@ -67,16 +67,16 @@ function check_user_password_ldap($usertotest, $passwordtotest, $entitytotest)
 		dol_syslog("functions_ldap::check_user_password_ldap usertotest=".$usertotest." passwordtotest=".preg_replace('/./', '*', $passwordtotest)." entitytotest=".$entitytotest);
 
 		// If test username/password asked, we define $test=false and $login var if ok, set $_SESSION["dol_loginmesg"] if ko
-		$ldaphost = $dolibarr_main_auth_ldap_host;
-		$ldapport = $dolibarr_main_auth_ldap_port;
-		$ldapversion = $dolibarr_main_auth_ldap_version;
-		$ldapservertype = (empty($dolibarr_main_auth_ldap_servertype) ? 'openldap' : $dolibarr_main_auth_ldap_servertype);
+		$ldaphost = $berp3_main_auth_ldap_host;
+		$ldapport = $berp3_main_auth_ldap_port;
+		$ldapversion = $berp3_main_auth_ldap_version;
+		$ldapservertype = (empty($berp3_main_auth_ldap_servertype) ? 'openldap' : $berp3_main_auth_ldap_servertype);
 
-		$ldapuserattr = $dolibarr_main_auth_ldap_login_attribute;
-		$ldapdn = $dolibarr_main_auth_ldap_dn;
-		$ldapadminlogin = $dolibarr_main_auth_ldap_admin_login;
-		$ldapadminpass = $dolibarr_main_auth_ldap_admin_pass;
-		$ldapdebug = (empty($dolibarr_main_auth_ldap_debug) || $dolibarr_main_auth_ldap_debug == "false" ? false : true);
+		$ldapuserattr = $berp3_main_auth_ldap_login_attribute;
+		$ldapdn = $berp3_main_auth_ldap_dn;
+		$ldapadminlogin = $berp3_main_auth_ldap_admin_login;
+		$ldapadminpass = $berp3_main_auth_ldap_admin_pass;
+		$ldapdebug = (empty($berp3_main_auth_ldap_debug) || $berp3_main_auth_ldap_debug == "false" ? false : true);
 
 		if ($ldapdebug) {
 			print "DEBUG: Logging LDAP steps<br>\n";
@@ -102,10 +102,10 @@ function check_user_password_ldap($usertotest, $passwordtotest, $entitytotest)
 
 		// Define $userSearchFilter
 		$userSearchFilter = "";
-		if (empty($dolibarr_main_auth_ldap_filter)) {
+		if (empty($berp3_main_auth_ldap_filter)) {
 			$userSearchFilter = "(".$ldapuserattr."=".$usertotest.")";
 		} else {
-			$userSearchFilter = str_replace('%1%', $usertotest, $dolibarr_main_auth_ldap_filter);
+			$userSearchFilter = str_replace('%1%', $usertotest, $berp3_main_auth_ldap_filter);
 		}
 
 		// If admin login provided
@@ -180,9 +180,9 @@ function check_user_password_ldap($usertotest, $passwordtotest, $entitytotest)
 					return '--bad-login-validity--';
 				}
 
-				// ldap2dolibarr synchronisation
-				if ($login && !empty($conf->ldap->enabled) && $conf->global->LDAP_SYNCHRO_ACTIVE == 'ldap2dolibarr') {	// ldap2dolibarr synchronisation
-					dol_syslog("functions_ldap::check_user_password_ldap Sync ldap2dolibarr");
+				// ldap2berp3 synchronisation
+				if ($login && !empty($conf->ldap->enabled) && $conf->global->LDAP_SYNCHRO_ACTIVE == 'ldap2berp3') {	// ldap2berp3 synchronisation
+					dol_syslog("functions_ldap::check_user_password_ldap Sync ldap2berp3");
 
 					// On charge les attributs du user ldap
 					if ($ldapdebug) {
@@ -200,7 +200,7 @@ function check_user_password_ldap($usertotest, $passwordtotest, $entitytotest)
 						print "DEBUG: badPasswordTime = ".dol_print_date($ldap->badpwdtime, 'day')."<br>\n";
 					}
 
-					// On recherche le user dolibarr en fonction de son SID ldap (only for Active Directory)
+					// On recherche le user berp3 en fonction de son SID ldap (only for Active Directory)
 					$sid = null;
 					if ($conf->global->LDAP_SERVER_TYPE == "activedirectory") {
 						$sid = $ldap->getObjectSid($login);
@@ -213,7 +213,7 @@ function check_user_password_ldap($usertotest, $passwordtotest, $entitytotest)
 					$resultFetchUser = $usertmp->fetch('', $login, $sid, 1, ($entitytotest > 0 ? $entitytotest : -1));
 					if ($resultFetchUser > 0) {
 						dol_syslog("functions_ldap::check_user_password_ldap Sync user found user id=".$usertmp->id);
-						// On verifie si le login a change et on met a jour les attributs dolibarr
+						// On verifie si le login a change et on met a jour les attributs berp3
 
 						if ($usertmp->login != $ldap->login && $ldap->login) {
 							$usertmp->login = $ldap->login;
@@ -221,7 +221,7 @@ function check_user_password_ldap($usertotest, $passwordtotest, $entitytotest)
 							// TODO Que faire si update echoue car on update avec un login deja existant pour un autre compte.
 						}
 
-						//$resultUpdate = $usertmp->update_ldap2dolibarr($ldap);
+						//$resultUpdate = $usertmp->update_ldap2berp3($ldap);
 					}
 
 					unset($usertmp);

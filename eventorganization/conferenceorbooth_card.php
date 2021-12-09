@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2021		Florian Henry			<florian.henry@scopen.fr>
+/* Copyright (C) 2017 
+ * Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -328,7 +328,7 @@ if (!empty($withproject)) {
 
 	print '<tr><td valign="middle">'.$langs->trans("EventOrganizationICSLink").'</td><td>';
 	// Define $urlwithroot
-	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($dolibarr_main_url_root));
+	$urlwithouturlroot = preg_replace('/'.preg_quote(DOL_URL_ROOT, '/').'$/i', '', trim($berp3_main_url_root));
 	$urlwithroot = $urlwithouturlroot.DOL_URL_ROOT;
 
 	// Show message
@@ -473,7 +473,7 @@ if ($object->id > 0 && (empty($action) || ($action != 'edit' && $action != 'crea
 
 	// Object card
 	// ------------------------------------------------------------
-	http://dolibarr.local/eventorganization/conferenceorbooth_list.php?projectid=7
+	http://berp3.local/eventorganization/conferenceorbooth_list.php?projectid=7
 	$linkback = '<a href="'.dol_buildpath('/eventorganization/conferenceorbooth_list.php', 1).'?projectid='.$object->fk_project.$withProjectUrl.'">'.$langs->trans("BackToList").'</a>';
 
 	$morehtmlref = '<div class="refidno">';
@@ -514,7 +514,7 @@ if ($object->id > 0 && (empty($action) || ($action != 'edit' && $action != 'crea
 				print '">';
 				$sourcetouse = 'boothlocation';
 				$reftouse = $fac->id;
-				$redirection = $dolibarr_main_url_root.'/public/payment/newpayment.php?source='.$sourcetouse.'&ref='.$reftouse.'&booth='.$object->id;
+				$redirection = $berp3_main_url_root.'/public/payment/newpayment.php?source='.$sourcetouse.'&ref='.$reftouse.'&booth='.$object->id;
 				if (!empty($conf->global->PAYMENT_SECURITY_TOKEN)) {
 					if (!empty($conf->global->PAYMENT_SECURITY_TOKEN_UNIQUE)) {
 						$redirection .= '&securekey='.dol_hash($conf->global->PAYMENT_SECURITY_TOKEN . $sourcetouse . $reftouse, 2); // Use the source in the hash to avoid duplicates if the references are identical

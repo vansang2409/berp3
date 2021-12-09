@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=Pode eliminar o seu módulo. AVISO: Eliminaranse t
 EnterNameOfObjectToDeleteDesc=Pode eliminar un obxecto. AVISO: Eliminaranse todos os ficheiros de codificación (xerados ou creados manualmente) relacionados co obxecto.
 DangerZone=Zona de perigo
 BuildPackage=Construír o paquete
-BuildPackageDesc=Pode xerar un paquete zip da súa aplicación para que estea listo para distribuílo en calquera Dolibarr. Tamén podes distribuílo ou vendelo no mercado como <a href="https://www.dolistore.com"> DoliStore.com </a>.
+BuildPackageDesc=Pode xerar un paquete zip da súa aplicación para que estea listo para distribuílo en calquera Berp3. Tamén podes distribuílo ou vendelo no mercado como <a href="https://www.berp3store.com"> Berp3Store.com </a>.
 BuildDocumentation=Documentación de compilación
 ModuleIsNotActive=Este módulo aínda non está activado. Vaia a %s para activalo ou faga clic aquí
 ModuleIsLive=Este módulo activouse. Calquera cambio pode romper unha función activa actualmente.
@@ -101,7 +101,7 @@ HooksDefDesc=Define na propiedade <b> module_parts ['hooks'] </b>, no descriptor
 TriggerDefDesc=Defina no ficheiro de activación o código que desexa executar para cada evento empresarial executado.
 SeeIDsInUse=Ver identificacións en uso na súa instalación
 SeeReservedIDsRangeHere=Ver o rango de identificacións reservadas
-ToolkitForDevelopers=Kit de ferramentas para desenvolvedores Dolibarr
+ToolkitForDevelopers=Kit de ferramentas para desenvolvedores Berp3
 TryToUseTheModuleBuilder=Se ten coñecemento de SQL e PHP, pode empregar o asistente para o creador de módulos nativos. <br> Active o módulo <strong>%s </strong> e use o asistente facendo clic no <span class="fa fa-bug "> </span> no menú superior dereito. <br> Aviso: esta é unha función avanzada para desenvolvedores, <b> non </b> experimente no seu sitio de produción.
 SeeTopRightMenu=Ver <span class="fa fa-bug"> </span> no menú superior dereito
 AddLanguageFile=Engadir ficheiro de idioma

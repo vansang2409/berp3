@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2015  Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2015       Charlie BENKE        <charlie@patas-monkey.com>
- * Copyright (C) 2017-2019  Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2021		Gauthier VERDOL         <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2005-2015  
+ * Copyright (C) 2015       Charlie BENKE        
+ * Copyright (C) 2017-2019  
+ * Copyright (C) 2021		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2009 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,23 +17,23 @@
 
 /**
  *      \defgroup   webservices     Module webservices
- *      \brief      Module to enable the Dolibarr server of web services
+ *      \brief      Module to enable the Berp3 server of web services
  *       \file       htdocs/core/modules/modWebServices.class.php
  *       \ingroup    webservices
  *       \brief      Description and activation file for the module webservices
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *	Class to describe a WebServices module
  */
-class modWebServices extends DolibarrModules
+class modWebServices extends Berp3Modules
 {
 
 	/**
 	 *   Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 *   @param      DoliDB		$db      Database handler
+	 *   @param      Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -44,9 +44,9 @@ class modWebServices extends DolibarrModules
 		$this->module_position = '25';
 		// Module label (no space allowed), used if translation string 'ModuleXXXName' not found (where XXX is value of numeric property 'numero' of module)
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
-		$this->description = "Enable the Dolibarr web services server";
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or version
-		$this->version = 'dolibarr';
+		$this->description = "Enable the Berp3 web services server";
+		// Possible values for version are: 'development', 'experimental', 'berp3' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.

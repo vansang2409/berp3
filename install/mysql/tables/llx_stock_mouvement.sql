@@ -1,6 +1,6 @@
 -- ============================================================================
--- Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
--- Copyright (C) 2009-2015 Laurent Destailleur  <eldy@users.sourceofrge.net>
+-- Copyright (C) 2003      
+-- Copyright (C) 2009-2015   <eldy@users.sourceofrge.net>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by

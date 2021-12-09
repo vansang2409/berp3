@@ -25,7 +25,7 @@ EnterNameOfModuleToDeleteDesc=You can delete your module. WARNING: All coding fi
 EnterNameOfObjectToDeleteDesc=You can delete an object. WARNING: All coding files (generated or created manually) related to object will be deleted!
 DangerZone=Danger zone
 BuildPackage=Crea pacchetto
-BuildPackageDesc=You can generate a zip package of your application so your are ready to distribute it on any Dolibarr. You can also distribute it or sell it on marketplace like <a href="https://www.dolistore.com">DoliStore.com</a>.
+BuildPackageDesc=You can generate a zip package of your application so your are ready to distribute it on any Berp3. You can also distribute it or sell it on marketplace like <a href="https://www.berp3store.com">Berp3Store.com</a>.
 BuildDocumentation=Build documentation
 ModuleIsNotActive=Questo modulo non è ancora attivato. Vai su %s per renderlo live o fai clic qui
 ModuleIsLive=This module has been activated. Any change may break a current live feature.

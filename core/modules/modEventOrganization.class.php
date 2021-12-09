@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2021		Florian Henry			<florian.henry@scopen.fr>
+/* Copyright (C) 2021					
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,19 +23,19 @@
  *  \ingroup    eventorganization
  *  \brief      Description and activation file for the EventOrganization
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 /**
  *  Description and activation class for module EventOrganization
  *  This module is base on this specification :
  *  https://bonaerp.com/index.php/Draft:Module_Event_Organization
  */
-class modEventOrganization extends DolibarrModules
+class modEventOrganization extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -123,7 +123,7 @@ class modEventOrganization extends DolibarrModules
 
 		// Prerequisites
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(13, -3); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(13, -3); // Minimum version of Berp3 required by module
 
 		// Messages at activation
 		$this->warnings_activation = array(); // Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
@@ -341,7 +341,7 @@ class modEventOrganization extends DolibarrModules
 
 	/**
 	 *  Function called when module is enabled.
-	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *  The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *  It also creates data directories
 	 *
 	 *  @param      string  $options    Options when enabling module ('', 'noboxes')

@@ -1,5 +1,5 @@
 -- ============================================================================
--- Copyright (C) 2016       Laurent Destailleur  <eldy@users.sourceforge.net>
+-- Copyright (C) 2016       
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ create table llx_user_employment
   rowid             integer AUTO_INCREMENT PRIMARY KEY,
   entity            integer DEFAULT 1 NOT NULL, -- multi company id
   ref				varchar(50),				-- reference
-  ref_ext			varchar(50),				-- reference into an external system (not used by dolibarr)
+  ref_ext			varchar(50),				-- reference into an external system (not used by berp3)
   fk_user			integer,
   datec             datetime,
   tms               timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

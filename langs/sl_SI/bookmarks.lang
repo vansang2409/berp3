@@ -15,6 +15,6 @@ UrlOrLink=URL
 BehaviourOnClick=Behaviour when a bookmark URL is selected
 CreateBookmark=Kreiraj zaznamek
 SetHereATitleForLink=Nastavi naziv zaznamka
-UseAnExternalHttpLinkOrRelativeDolibarrLink=Uporabi zunanji http URL ali odvisni BERP3 URL
+UseAnExternalHttpLinkOrRelativeBerp3Link=Uporabi zunanji http URL ali odvisni BERP3 URL
 ChooseIfANewWindowMustBeOpenedOnClickOnBookmark=Choose if linked page must open in new window or not
 BookmarksManagement=Urejanje zaznamkov

@@ -1,8 +1,8 @@
 Module Builder
 ==============
 
-This is a module to provide embedded tools to develop your own application/features inside Dolibarr ERP CRM software.
-It provide tools for module developers to kickstart their project and give an hands-on sample of which features Dolibarr
+This is a module to provide embedded tools to develop your own application/features inside Berp3 ERP CRM software.
+It provide tools for module developers to kickstart their project and give an hands-on sample of which features Berp3
 has to offer for module development.
 
 If you don't need to develop your own module/application, you just don't need this.
@@ -14,4 +14,4 @@ Documentation
 
 [Module tutorial](https://bonaerp.com/index.php/Module_development)
 
-[Dolibarr development](https://bonaerp.com/index.php/Developer_documentation)
+[Berp3 development](https://bonaerp.com/index.php/Developer_documentation)

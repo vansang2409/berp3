@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017      ATM Consulting      <contact@atm-consulting.fr>
- * Copyright (C) 2017-2020 Laurent Destailleur <eldy@destailleur.fr>
+/* Copyright (C) 2017            
+ * Copyright (C) 2017-2020  <eldy@destailleur.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -120,9 +120,9 @@ class BlockedLog
 	/**
 	 *      Constructor
 	 *
-	 *      @param		DoliDB		$db      Database handler
+	 *      @param		Berp3DB		$db      Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 	}
@@ -1124,7 +1124,7 @@ class BlockedLog
 
 			$fingerprint = dol_hash(print_r($mysoc, true).getRandomPassword(1), '5');
 
-			dolibarr_set_const($db, 'BLOCKEDLOG_ENTITY_FINGERPRINT', $fingerprint, 'chaine', 0, 'Numeric Unique Fingerprint', $conf->entity);
+			berp3_set_const($db, 'BLOCKEDLOG_ENTITY_FINGERPRINT', $fingerprint, 'chaine', 0, 'Numeric Unique Fingerprint', $conf->entity);
 
 			$conf->global->BLOCKEDLOG_ENTITY_FINGERPRINT = $fingerprint;
 		}

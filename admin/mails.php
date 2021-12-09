@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2007-2020 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2009-2012 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2013	   Juanjo Menent		<jmenent@2byte.es>
- * Copyright (C) 2016      Jonathan TISSEAU     <jonathan.tisseau@86dev.fr>
+/* Copyright (C) 2007-2020 
+ * Copyright (C) 2009-2012 
+ * Copyright (C) 2013	   
+ * Copyright (C) 2016           
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -79,28 +79,28 @@ if ($action == 'update' && !$cancel) {
 	}
 
 	if (!$error) {
-		dolibarr_set_const($db, "MAIN_DISABLE_ALL_MAILS", GETPOST("MAIN_DISABLE_ALL_MAILS", 'int'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_FORCE_SENDTO", GETPOST("MAIN_MAIL_FORCE_SENDTO", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_ENABLED_USER_DEST_SELECT", GETPOST("MAIN_MAIL_ENABLED_USER_DEST_SELECT", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_DISABLE_ALL_MAILS", GETPOST("MAIN_DISABLE_ALL_MAILS", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_FORCE_SENDTO", GETPOST("MAIN_MAIL_FORCE_SENDTO", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_ENABLED_USER_DEST_SELECT", GETPOST("MAIN_MAIL_ENABLED_USER_DEST_SELECT", 'int'), 'chaine', 0, '', $conf->entity);
 		// Send mode parameters
-		dolibarr_set_const($db, "MAIN_MAIL_SENDMODE", GETPOST("MAIN_MAIL_SENDMODE", 'aZ09'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_SMTP_PORT", GETPOST("MAIN_MAIL_SMTP_PORT", 'int'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_SMTP_SERVER", GETPOST("MAIN_MAIL_SMTP_SERVER", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_SMTPS_ID", GETPOST("MAIN_MAIL_SMTPS_ID", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_SMTPS_PW", GETPOST("MAIN_MAIL_SMTPS_PW", 'none'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_TLS", GETPOST("MAIN_MAIL_EMAIL_TLS", 'int'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_STARTTLS", GETPOST("MAIN_MAIL_EMAIL_STARTTLS", 'int'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_SMTP_ALLOW_SELF_SIGNED", GETPOST("MAIN_MAIL_EMAIL_SMTP_ALLOW_SELF_SIGNED", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_SENDMODE", GETPOST("MAIN_MAIL_SENDMODE", 'aZ09'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_SMTP_PORT", GETPOST("MAIN_MAIL_SMTP_PORT", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_SMTP_SERVER", GETPOST("MAIN_MAIL_SMTP_SERVER", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_SMTPS_ID", GETPOST("MAIN_MAIL_SMTPS_ID", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_SMTPS_PW", GETPOST("MAIN_MAIL_SMTPS_PW", 'none'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_TLS", GETPOST("MAIN_MAIL_EMAIL_TLS", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_STARTTLS", GETPOST("MAIN_MAIL_EMAIL_STARTTLS", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_SMTP_ALLOW_SELF_SIGNED", GETPOST("MAIN_MAIL_EMAIL_SMTP_ALLOW_SELF_SIGNED", 'int'), 'chaine', 0, '', $conf->entity);
 
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_DKIM_ENABLED", GETPOST("MAIN_MAIL_EMAIL_DKIM_ENABLED", 'int'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_DKIM_DOMAIN", GETPOST("MAIN_MAIL_EMAIL_DKIM_DOMAIN", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_DKIM_SELECTOR", GETPOST("MAIN_MAIL_EMAIL_DKIM_SELECTOR", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_DKIM_PRIVATE_KEY", GETPOST("MAIN_MAIL_EMAIL_DKIM_PRIVATE_KEY", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_DKIM_ENABLED", GETPOST("MAIN_MAIL_EMAIL_DKIM_ENABLED", 'int'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_DKIM_DOMAIN", GETPOST("MAIN_MAIL_EMAIL_DKIM_DOMAIN", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_DKIM_SELECTOR", GETPOST("MAIN_MAIL_EMAIL_DKIM_SELECTOR", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_DKIM_PRIVATE_KEY", GETPOST("MAIN_MAIL_EMAIL_DKIM_PRIVATE_KEY", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 		// Content parameters
-		dolibarr_set_const($db, "MAIN_MAIL_EMAIL_FROM", GETPOST("MAIN_MAIL_EMAIL_FROM", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_ERRORS_TO", GETPOST("MAIN_MAIL_ERRORS_TO", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, "MAIN_MAIL_AUTOCOPY_TO", GETPOST("MAIN_MAIL_AUTOCOPY_TO", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, 'MAIN_MAIL_DEFAULT_FROMTYPE', GETPOST('MAIN_MAIL_DEFAULT_FROMTYPE', 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_EMAIL_FROM", GETPOST("MAIN_MAIL_EMAIL_FROM", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_ERRORS_TO", GETPOST("MAIN_MAIL_ERRORS_TO", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, "MAIN_MAIL_AUTOCOPY_TO", GETPOST("MAIN_MAIL_AUTOCOPY_TO", 'alphanohtml'), 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, 'MAIN_MAIL_DEFAULT_FROMTYPE', GETPOST('MAIN_MAIL_DEFAULT_FROMTYPE', 'alphanohtml'), 'chaine', 0, '', $conf->entity);
 
 		header("Location: ".$_SERVER["PHP_SELF"]."?mainmenu=home&leftmenu=setup");
 		exit;
@@ -843,7 +843,7 @@ if ($action == 'edit') {
 				// TODO Add a key to allow to show the IP/name of server detected dynamically
 				$text .= ($text ? '<br><br>' : '').'<!-- MAIN_EXTERNAL_SMTP_CLIENT_IP_ADDRESS -->'.$langs->trans("WarningPHPMail2", $conf->global->MAIN_EXTERNAL_SMTP_CLIENT_IP_ADDRESS);
 			}
-			if (!empty($conf->global->MAIN_EXTERNAL_SMTP_SPF_STRING_TO_ADD)) {	// Should be required only if you have preset the Dolibarr to use your own SMTP and you want to warn users to update their domain name to match your SMTP server.
+			if (!empty($conf->global->MAIN_EXTERNAL_SMTP_SPF_STRING_TO_ADD)) {	// Should be required only if you have preset the Berp3 to use your own SMTP and you want to warn users to update their domain name to match your SMTP server.
 				// List of string to add in SPF if we use the smtp method. Example 'include:spf.mydomain.com'
 				$text .= ($text ? '<br><br>' : '').'<!-- MAIN_EXTERNAL_SMTP_SPF_STRING_TO_ADD -->'.$langs->trans("WarningPHPMailSPF", $conf->global->MAIN_EXTERNAL_SMTP_SPF_STRING_TO_ADD);
 			}
@@ -923,7 +923,7 @@ if ($action == 'edit') {
 		$formmail->withcancel = 1;
 		$formmail->withdeliveryreceipt = 1;
 		$formmail->withfckeditor = ($action == 'testhtml' ? 1 : 0);
-		$formmail->ckeditortoolbar = 'dolibarr_mailings';
+		$formmail->ckeditortoolbar = 'berp3_mailings';
 		// Tableau des substitutions
 		$formmail->substit = $substitutionarrayfortest;
 		// Tableau des parametres complementaires du post

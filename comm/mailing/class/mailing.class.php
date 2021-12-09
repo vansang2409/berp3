@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2005      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2005-2016 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2005      
+ * Copyright (C) 2005-2016 
+ * Copyright (C) 2005-2009 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -179,7 +179,7 @@ class Mailing extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param      DoliDb      $db      Database handler
+	 *  @param      Berp3Db      $db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -678,7 +678,7 @@ class Mailing extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $morecss = '', $save_lastsearch_value = -1)
 	{
 		global $db, $conf, $langs, $hookmanager;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 		if (!empty($conf->dol_no_mouse_hover)) {

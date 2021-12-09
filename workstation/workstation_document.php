@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2007-2017 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2020 Gauthier VERDOL <gauthier.verdol@atm-consulting.fr>
+/* Copyright (C) 2007-2017 
+ * Copyright (C) 2020  
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  *  \brief      Tab for documents linked to Workstation
  */
 
-// Load Dolibarr environment
+// Load Berp3 environment
 require '../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/company.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';

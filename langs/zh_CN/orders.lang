@@ -120,8 +120,8 @@ ConfirmCloneOrder=您确定要克隆此订单<b> %s </b>吗？
 DispatchSupplierOrder=Receiving purchase order %s
 FirstApprovalAlreadyDone=审批已完成
 SecondApprovalAlreadyDone=第二次批准已经完成
-SupplierOrderReceivedInDolibarr=采购订单%s收到%s
-SupplierOrderSubmitedInDolibarr=Purchase Order %s submitted
+SupplierOrderReceivedInBerp3=采购订单%s收到%s
+SupplierOrderSubmitedInBerp3=Purchase Order %s submitted
 SupplierOrderClassifiedBilled=采购订单%s设置开票
 OtherOrders=其他订单
 ##### Types de contacts #####

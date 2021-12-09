@@ -1,26 +1,26 @@
 <?php
-/* Copyright (c) 2002-2007  Rodolphe Quiedeville    <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2012  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2004       Benoit Mortier          <benoit.mortier@opensides.be>
- * Copyright (C) 2004       Sebastien Di Cintio     <sdicintio@ressource-toi.org>
- * Copyright (C) 2004       Eric Seigne             <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2017  Regis Houssin           <regis.houssin@inodbox.com>
- * Copyright (C) 2006       Andre Cianfarani        <acianfa@free.fr>
+/* Copyright (c) 2002-2007  
+ * Copyright (C) 2004-2012  
+ * Copyright (C) 2004                 
+ * Copyright (C) 2004            
+ * Copyright (C) 2004                    
+ * Copyright (C) 2005-2017  
+ * Copyright (C) 2006               
  * Copyright (C) 2006       Marc Barilley/Ocebo     <marc@ocebo.com>
  * Copyright (C) 2007       Franky Van Liedekerke   <franky.van.liedekerker@telenet.be>
- * Copyright (C) 2007       Patrick Raguin          <patrick.raguin@gmail.com>
- * Copyright (C) 2010       Juanjo Menent           <jmenent@2byte.es>
- * Copyright (C) 2010-2021  Philippe Grand          <philippe.grand@atoo-net.com>
- * Copyright (C) 2011       Herve Prot              <herve.prot@symeos.com>
- * Copyright (C) 2012-2016  Marcos García           <marcosgdf@gmail.com>
- * Copyright (C) 2012       Cedric Salvador         <csalvador@gpcsolutions.fr>
- * Copyright (C) 2012-2015  Raphaël Doursenaud      <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2014-2020  Alexandre Spangaro      <aspangaro@open-dsi.fr>
- * Copyright (C) 2018-2021  Ferran Marcet           <fmarcet@2byte.es>
- * Copyright (C) 2018-2021  Frédéric France         <frederic.france@netlogic.fr>
- * Copyright (C) 2018       Nicolas ZABOURI	        <info@inovea-conseil.com>
- * Copyright (C) 2018       Christophe Battarel     <christophe@altairis.fr>
- * Copyright (C) 2018       Josep Lluis Amador      <joseplluis@lliuretic.cat>
+ * Copyright (C) 2007                 
+ * Copyright (C) 2010       
+ * Copyright (C) 2010-2021            
+ * Copyright (C) 2011                     
+ * Copyright (C) 2012-2016  
+ * Copyright (C) 2012       Cedric Salvador         
+ * Copyright (C) 2012-2015        
+ * Copyright (C) 2014-2020  
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2018-2021  
+ * Copyright (C) 2018       	        
+ * Copyright (C) 2018       
+ * Copyright (C) 2018       Josep Lluis Amador      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@
 class Form
 {
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -81,7 +81,7 @@ class Form
 	/**
 	 * Constructor
 	 *
-	 * @param		DoliDB		$db      Database handler
+	 * @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -96,7 +96,7 @@ class Form
 	 * @param   string	$preselected    Value to show/edit (not used in this function)
 	 * @param	object	$object			Object
 	 * @param	boolean	$perm			Permission to allow button to edit parameter. Set it to 0 to have a not edited field.
-	 * @param	string	$typeofdata		Type of data ('string' by default, 'email', 'amount:99', 'numeric:99', 'text' or 'textarea:rows:cols', 'datepicker' ('day' do not work, don't know why), 'checkbox:ckeditor:dolibarr_zzz:width:height:savemethod:1:rows:cols', 'select;xxx[:class]'...)
+	 * @param	string	$typeofdata		Type of data ('string' by default, 'email', 'amount:99', 'numeric:99', 'text' or 'textarea:rows:cols', 'datepicker' ('day' do not work, don't know why), 'checkbox:ckeditor:berp3_zzz:width:height:savemethod:1:rows:cols', 'select;xxx[:class]'...)
 	 * @param	string	$moreparam		More param to add on a href URL.
 	 * @param   int     $fieldrequired  1 if we want to show field as mandatory using the "fieldrequired" CSS.
 	 * @param   int     $notabletag     1=Do not output table tags but output a ':', 2=Do not output table tags and no ':', 3=Do not output table tags but output a ' '
@@ -192,7 +192,7 @@ class Form
 	 * @param	string	$value			Value to show/edit
 	 * @param	object	$object			Object
 	 * @param	boolean	$perm			Permission to allow button to edit parameter
-	 * @param	string	$typeofdata		Type of data ('string' by default, 'email', 'amount:99', 'numeric:99', 'text' or 'textarea:rows:cols%', 'datepicker' ('day' do not work, don't know why), 'dayhour' or 'datepickerhour', 'ckeditor:dolibarr_zzz:width:height:savemethod:toolbarstartexpanded:rows:cols', 'select;xkey:xval,ykey:yval,...')
+	 * @param	string	$typeofdata		Type of data ('string' by default, 'email', 'amount:99', 'numeric:99', 'text' or 'textarea:rows:cols%', 'datepicker' ('day' do not work, don't know why), 'dayhour' or 'datepickerhour', 'ckeditor:berp3_zzz:width:height:savemethod:toolbarstartexpanded:rows:cols', 'select;xkey:xval,ykey:yval,...')
 	 * @param	string	$editvalue		When in edit mode, use this value as $value instead of value (for example, you can provide here a formated price instead of numeric value). Use '' to use same than $value
 	 * @param	object	$extObject		External object
 	 * @param	mixed	$custommsg		String or Array of custom messages : eg array('success' => 'MyMessage', 'error' => 'MyMessage')
@@ -270,9 +270,9 @@ class Form
 					}
 					$ret .= $this->selectarray($htmlname, $arraylist, $value);
 				} elseif (preg_match('/^ckeditor/', $typeofdata)) {
-					$tmp = explode(':', $typeofdata); // Example: ckeditor:dolibarr_zzz:width:height:savemethod:toolbarstartexpanded:rows:cols:uselocalbrowser
+					$tmp = explode(':', $typeofdata); // Example: ckeditor:berp3_zzz:width:height:savemethod:toolbarstartexpanded:rows:cols:uselocalbrowser
 					require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-					$doleditor = new DolEditor($htmlname, ($editvalue ? $editvalue : $value), ($tmp[2] ? $tmp[2] : ''), ($tmp[3] ? $tmp[3] : '100'), ($tmp[1] ? $tmp[1] : 'dolibarr_notes'), 'In', ($tmp[5] ? $tmp[5] : 0), (isset($tmp[8]) ? ($tmp[8] ?true:false) : true), true, ($tmp[6] ? $tmp[6] : '20'), ($tmp[7] ? $tmp[7] : '100'));
+					$doleditor = new DolEditor($htmlname, ($editvalue ? $editvalue : $value), ($tmp[2] ? $tmp[2] : ''), ($tmp[3] ? $tmp[3] : '100'), ($tmp[1] ? $tmp[1] : 'berp3_notes'), 'In', ($tmp[5] ? $tmp[5] : 0), (isset($tmp[8]) ? ($tmp[8] ?true:false) : true), true, ($tmp[6] ? $tmp[6] : '20'), ($tmp[7] ? $tmp[7] : '100'));
 					$ret .= $doleditor->Create(1);
 				}
 				if (empty($notabletag)) {
@@ -357,7 +357,7 @@ class Form
 	 * @param   string	$fieldname		Name of the field
 	 * @param	object	$object			Object
 	 * @param	boolean	$perm			Permission to allow button to edit parameter. Set it to 0 to have a not edited field.
-	 * @param	string	$typeofdata		Type of data ('string' by default, 'email', 'amount:99', 'numeric:99', 'text' or 'textarea:rows:cols', 'datepicker' ('day' do not work, don't know why), 'ckeditor:dolibarr_zzz:width:height:savemethod:1:rows:cols', 'select;xxx[:class]'...)
+	 * @param	string	$typeofdata		Type of data ('string' by default, 'email', 'amount:99', 'numeric:99', 'text' or 'textarea:rows:cols', 'datepicker' ('day' do not work, don't know why), 'ckeditor:berp3_zzz:width:height:savemethod:1:rows:cols', 'select;xxx[:class]'...)
 	 * @param	string	$check			Same coe than $check parameter of GETPOST()
 	 * @param	string	$morecss		More CSS
 	 * @return	string   		      	HTML code for the edit of alternative language
@@ -430,7 +430,7 @@ class Form
 	 * @param	string	$value			Value to show/edit
 	 * @param	string	$htmlname		DIV ID (field name)
 	 * @param	int		$condition		Condition to edit
-	 * @param	string	$inputType		Type of input ('string', 'numeric', 'datepicker' ('day' do not work, don't know why), 'textarea:rows:cols', 'ckeditor:dolibarr_zzz:width:height:?:1:rows:cols', 'select:loadmethod:savemethod:buttononly')
+	 * @param	string	$inputType		Type of input ('string', 'numeric', 'datepicker' ('day' do not work, don't know why), 'textarea:rows:cols', 'ckeditor:berp3_zzz:width:height:?:1:rows:cols', 'select:loadmethod:savemethod:buttononly')
 	 * @param	string	$editvalue		When in edit mode, use this value as $value instead of value
 	 * @param	object	$extObject		External object
 	 * @param	mixed	$custommsg		String or Array of custom messages : eg array('success' => 'MyMessage', 'error' => 'MyMessage')
@@ -627,7 +627,7 @@ class Form
 			if ($tooltiptrigger == '') {
 				$paramfortooltipimg .= ' title="'.($noencodehtmltext ? $htmltext : dol_escape_htmltag($htmltext, 1)).'"'; // Attribut to put on img tag to store tooltip
 			} else {
-				$paramfortooltipimg .= ' dolid="'.$tooltiptrigger.'"';
+				$paramfortooltipimg .= ' berp3d="'.$tooltiptrigger.'"';
 			}
 		} else {
 			$paramfortooltipimg = ($extracss ? ' class="'.$extracss.'"' : '').($extrastyle ? ' style="'.$extrastyle.'"' : ''); // Attribut to put on td text tag
@@ -637,7 +637,7 @@ class Form
 			if ($tooltiptrigger == '') {
 				$paramfortooltiptd .= ' title="'.($noencodehtmltext ? $htmltext : dol_escape_htmltag($htmltext, 1)).'"'; // Attribut to put on td tag to store tooltip
 			} else {
-				$paramfortooltiptd .= ' dolid="'.$tooltiptrigger.'"';
+				$paramfortooltiptd .= ' berp3d="'.$tooltiptrigger.'"';
 			}
 		} else {
 			$paramfortooltiptd = ($extracss ? ' class="'.$extracss.'"' : '').($extrastyle ? ' style="'.$extrastyle.'"' : ''); // Attribut to put on td text tag
@@ -7478,7 +7478,7 @@ class Form
 				$sql .= natural_search(explode(',', $fieldstoshow), $searchkey);
 			}
 			if ($objecttmp->filter) {	 // Syntax example "(t.ref:like:'SO-%') and (t.date_creation:<:'20160101')"
-				/*if (! DolibarrApi::_checkFilters($objecttmp->filter))
+				/*if (! Berp3Api::_checkFilters($objecttmp->filter))
 				{
 					throw new RestException(503, 'Error when validating parameter sqlfilters '.$objecttmp->filter);
 				}*/
@@ -7740,7 +7740,7 @@ class Form
 		global $conf, $langs;
 		global $delayedhtmlcontent;	// Will be used later outside of this function
 
-		// TODO Use an internal dolibarr component instead of select2
+		// TODO Use an internal berp3 component instead of select2
 		if (empty($conf->global->MAIN_USE_JQUERY_MULTISELECT) && !defined('REQUIRE_JQUERY_MULTISELECT')) {
 			return '';
 		}
@@ -7844,7 +7844,7 @@ class Form
 		global $conf, $langs;
 		global $delayedhtmlcontent;	// Will be used later outside of this function
 
-		// TODO Use an internal dolibarr component instead of select2
+		// TODO Use an internal berp3 component instead of select2
 		if (empty($conf->global->MAIN_USE_JQUERY_MULTISELECT) && !defined('REQUIRE_JQUERY_MULTISELECT')) {
 			return '';
 		}
@@ -8188,10 +8188,10 @@ class Form
 			foreach ($categories as $c) {
 				$ways = $c->print_all_ways(' &gt;&gt; ', ($nolink ? 'none' : ''), 0, 1); // $ways[0] = "ccc2 >> ccc2a >> ccc2a1" with html formated text
 				foreach ($ways as $way) {
-					$toprint[] = '<li class="select2-search-choice-dolibarr noborderoncategories"'.($c->color ? ' style="background: #'.$c->color.';"' : ' style="background: #bbb"').'>'.$way.'</li>';
+					$toprint[] = '<li class="select2-search-choice-berp3 noborderoncategories"'.($c->color ? ' style="background: #'.$c->color.';"' : ' style="background: #bbb"').'>'.$way.'</li>';
 				}
 			}
-			return '<div class="select2-container-multi-dolibarr" style="width: 90%;"><ul class="select2-choices-dolibarr">'.implode(' ', $toprint).'</ul></div>';
+			return '<div class="select2-container-multi-berp3" style="width: 90%;"><ul class="select2-choices-berp3">'.implode(' ', $toprint).'</ul></div>';
 		}
 
 		if ($rendermode == 0) {

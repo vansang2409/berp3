@@ -5,10 +5,10 @@ Oblyon free theme for BERP3 ERP & CRM
 
 This theme is actually composed of two things:
 * a "_regular_" BERP3 theme (stored in `htdocs/theme`)
-* a custom Dolibarr module (stored in `htdocs/custom`)
+* a custom Berp3 module (stored in `htdocs/custom`)
 
-To install Oblyon, you must copy the content of the `htdocs` folder into your Dolibarr `htdocs` folder.
-Make sure to install the appropriate branch for your Dolibarr version.
+To install Oblyon, you must copy the content of the `htdocs` folder into your Berp3 `htdocs` folder.
+Make sure to install the appropriate branch for your Berp3 version.
 
 ## How to use
 
@@ -16,7 +16,7 @@ To use the theme, you **must** activate the module. When activating the module, 
 
 **Warnings**:
 * Activating the theme alone will result in unexpected behaviors!
-* Changing the theme in Dolibarr in the user profile settings while the Oblyon module is active will also result in unexpected behaviors!
+* Changing the theme in Berp3 in the user profile settings while the Oblyon module is active will also result in unexpected behaviors!
 
 ## Issues / Request
 

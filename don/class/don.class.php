@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2002      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2008 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2009      Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2014      Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2015-2017 Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2016      Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2019      Thibault FOUCART     <support@ptibogxiv.net>
- * Copyright (C) 2019-2020 Frédéric France      <frederic.france@netlogic.fr>
- * Copyright (C) 2021      Maxime DEMAREST      <maxime@indelog.fr>
+/* Copyright (C) 2002      
+ * Copyright (C) 2004-2008 
+ * Copyright (C) 2009      
+ * Copyright (C) 2014      
+ * Copyright (C) 2015-2017 
+ * Copyright (C) 2016      
+ * Copyright (C) 2019          
+ * Copyright (C) 2019-2020 
+ * Copyright (C) 2021            
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -142,7 +142,7 @@ class Don extends CommonObject
 	/**
 	 *  Constructor
 	 *
-	 *  @param	DoliDB	$db 	Database handler
+	 *  @param	Berp3DB	$db 	Database handler
 	 */
 	public function __construct($db)
 	{
@@ -1086,12 +1086,12 @@ class Don extends CommonObject
 	/**
 	 * Function used to replace a thirdparty id with another one.
 	 *
-	 * @param  DoliDB  $db             Database handler
+	 * @param  Berp3DB  $db             Database handler
 	 * @param  int     $origin_id      Old third-party id
 	 * @param  int     $dest_id        New third-party id
 	 * @return bool
 	 */
-	public static function replaceThirdparty(DoliDB $db, $origin_id, $dest_id)
+	public static function replaceThirdparty(Berp3DB $db, $origin_id, $dest_id)
 	{
 		$tables = array(
 			'don'

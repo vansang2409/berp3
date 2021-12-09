@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2013-2016 Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2013-2014 Olivier Geffroy      <jeff@jeffinfo.com>
- * Copyright (C) 2015      Ari Elbaz (elarifr)  <github@accedinfo.com>
- * Copyright (C) 2016      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2016-2020 Alexandre Spangaro   <aspangaro@open-dsi.fr>
+/* Copyright (C) 2013-2016 
+ *  
+ * Copyright (C) 2015      
+ * Copyright (C) 2016      
+ * Copyright (C) 2016-2020 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ class FormAccounting extends Form
 	private $options_cache = array();
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -47,7 +47,7 @@ class FormAccounting extends Form
 	/**
 	 * Constructor
 	 *
-	 * @param		DoliDB		$db      Database handler
+	 * @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{

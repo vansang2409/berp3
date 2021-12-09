@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2005-2010 Laurent Destailleur  <eldy@users.sourceforge.net>
+/* Copyright (C) 2005-2010 
  *
 * This file is an example to follow to add your own email selector inside
-* the Dolibarr email tool.
+* the Berp3 email tool.
 * Follow instructions given in README file to know what to change to build
 * your own emailing list selector.
 * Code that need to be changed in this file are marked by "CHANGE THIS" tag.
@@ -22,7 +22,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
  */
 class mailing_thirdparties_services_expired extends MailingTargets
 {
-	public $name = 'DolibarrContractsLinesExpired';
+	public $name = 'Berp3ContractsLinesExpired';
 	// This label is used if no translation is found for key XXX neither MailingModuleDescXXX where XXX=name is found
 	public $desc = 'Third parties with expired contract\'s lines';
 	public $require_admin = 0;
@@ -35,7 +35,7 @@ class mailing_thirdparties_services_expired extends MailingTargets
 	public $picto = 'company';
 
 	/**
-	 * @var DoliDB Database handler.
+	 * @var Berp3DB Database handler.
 	 */
 	public $db;
 
@@ -45,7 +45,7 @@ class mailing_thirdparties_services_expired extends MailingTargets
 	/**
 	 *	Constructor
 	 *
-	 *  @param		DoliDB		$db      Database handler
+	 *  @param		Berp3DB		$db      Database handler
 	 */
 	public function __construct($db)
 	{
@@ -65,7 +65,7 @@ class mailing_thirdparties_services_expired extends MailingTargets
 		$result = $this->db->query($sql);
 		if ($result) {
 			$num = $this->db->num_rows($result);
-			dol_syslog("dolibarr_services_expired.modules.php:mailing_dolibarr_services_expired ".$num." services found");
+			dol_syslog("berp3_services_expired.modules.php:mailing_berp3_services_expired ".$num." services found");
 
 			$i = 0;
 			while ($i < $num) {
@@ -189,7 +189,7 @@ class mailing_thirdparties_services_expired extends MailingTargets
 	{
 		$now = dol_now();
 
-		// Example: return parent::getNbOfRecipients("SELECT count(*) as nb from dolibarr_table");
+		// Example: return parent::getNbOfRecipients("SELECT count(*) as nb from berp3_table");
 		// Example: return 500;
 		$sql = "SELECT count(*) as nb";
 		$sql .= " FROM ".MAIN_DB_PREFIX."societe as s, ".MAIN_DB_PREFIX."contrat as c";

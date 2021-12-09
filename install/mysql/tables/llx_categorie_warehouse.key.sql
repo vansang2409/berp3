@@ -1,5 +1,5 @@
 -- ============================================================================
--- Copyright (C) 2007 Patrick Raguin            <patrick.raguin@gmail.com>
+-- Copyright (C) 2007             
 -- Copyright (C) 2019 Quentin Vial-Gouteyron    <quentin.vial-gouteyron@atm-consulting.fr>
 --
 -- This program is free software; you can redistribute it and/or modify

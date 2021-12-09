@@ -1,8 +1,8 @@
 <?php
-/* Copyright (C) 2003      Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2005-2016 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2016      Pierre-Henry Favre  <phf@atm-consulting.fr>
+/* Copyright (C) 2003      
+ * Copyright (C) 2004-2015 
+ * Copyright (C) 2005-2016 
+ * Copyright (C) 2016      
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,18 +25,18 @@
  *  \ingroup    multicurrency
  *  \brief      Description and activation file for the module MultiCurrency
  */
-include_once DOL_DOCUMENT_ROOT.'/core/modules/DolibarrModules.class.php';
+include_once DOL_DOCUMENT_ROOT.'/core/modules/Berp3Modules.class.php';
 
 
 /**
  *  Description and activation class for module MyModule
  */
-class modMultiCurrency extends DolibarrModules
+class modMultiCurrency extends Berp3Modules
 {
 	/**
 	 * Constructor. Define names, constants, directories, boxes, permissions
 	 *
-	 * @param DoliDB $db Database handler
+	 * @param Berp3DB $db Database handler
 	 */
 	public function __construct($db)
 	{
@@ -45,7 +45,7 @@ class modMultiCurrency extends DolibarrModules
 		$this->db = $db;
 
 		// Id for module (must be unique).
-		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
+		// Use here a free id (See in Home -> System information -> Berp3 for list of used modules id).
 		$this->numero = 40000;
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'multicurrency';
@@ -61,8 +61,8 @@ class modMultiCurrency extends DolibarrModules
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "Module to manage several foreign currencies in prices and documents";
 
-		// Possible values for version are: 'development', 'experimental', 'dolibarr' or 'dolibarr_deprecated' or version
-		$this->version = 'dolibarr';
+		// Possible values for version are: 'development', 'experimental', 'berp3' or 'berp3_deprecated' or version
+		$this->version = 'berp3';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -89,7 +89,7 @@ class modMultiCurrency extends DolibarrModules
 		$this->requiredby = array(); // List of modules id to disable if this one is disabled
 		$this->conflictwith = array(); // List of modules id this module is in conflict with
 		$this->phpmin = array(5, 6); // Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(3, 0); // Minimum version of Dolibarr required by module
+		$this->need_berp3_version = array(3, 0); // Minimum version of Berp3 required by module
 		$this->langfiles = array("multicurrency");
 
 		// Constants
@@ -255,7 +255,7 @@ class modMultiCurrency extends DolibarrModules
 
 	/**
 	 *		Function called when module is enabled.
-	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Dolibarr database.
+	 *		The init function add constants, boxes, permissions and menus (defined in constructor) into Berp3 database.
 	 *		It also creates data directories
 	 *
 	 *      @param      string	$options    Options when enabling module ('', 'noboxes')

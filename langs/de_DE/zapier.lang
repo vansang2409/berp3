@@ -1,4 +1,4 @@
-# Copyright (C) 2019 Frédéric FRANCE <frederic.france@free.fr>
+# Copyright (C) 2019 Frédéric FRANCE 
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,9 +13,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-ModuleZapierForDolibarrName = Zapier für Dolibarr
-ModuleZapierForDolibarrDesc = Modul: Zapier für Dolibarr
-ZapierForDolibarrSetup=Zapier für BERP3 einrichten
+ModuleZapierForBerp3Name = Zapier für Berp3
+ModuleZapierForBerp3Desc = Modul: Zapier für Berp3
+ZapierForBerp3Setup=Zapier für BERP3 einrichten
 ZapierDescription=Schnittstelle mit Zapier
 ZapierAbout=Über das Modul Zapier
-ZapierSetupPage=Es ist kein Setup auf Dolibarr-Seite erforderlich, um Zapier zu verwenden. Sie müssen jedoch ein Paket auf Zapier generieren und veröffentlichen, um Zapier mit BERP3 verwenden zu können. Siehe Dokumentation auf <a href="https://bonaerp.com/index.php/Module_Zapier"> dieser Wiki-Seite </a> .
+ZapierSetupPage=Es ist kein Setup auf Berp3-Seite erforderlich, um Zapier zu verwenden. Sie müssen jedoch ein Paket auf Zapier generieren und veröffentlichen, um Zapier mit BERP3 verwenden zu können. Siehe Dokumentation auf <a href="https://bonaerp.com/index.php/Module_Zapier"> dieser Wiki-Seite </a> .

@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2017		ATM-Consulting  	 <support@atm-consulting.fr>
- * Copyright (C) 2020		Maxime DEMAREST  	 <maxime@indelog.fr>
+/* Copyright (C) 2017		ATM-Consulting  	 
+ * Copyright (C) 2020		  	 
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

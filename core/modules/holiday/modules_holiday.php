@@ -1,13 +1,13 @@
 <?php
-/* Copyright (C) 2003-2004 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2004-2007 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2009 Regis Houssin        <regis.houssin@inodbox.com>
- * Copyright (C) 2006      Andre Cianfarani     <acianfa@free.fr>
- * Copyright (C) 2011      Juanjo Menent	    <jmenent@2byte.es>
- * Copyright (C) 2013      Philippe Grand	    <philippe.grand@atoo-net.com>
- * Copyright (C) 2014      Marcos García        <marcosgdf@gmail.com>
- * Copyright (C) 2018      Charlene Benke		<charlie@patas-monkey.com>
+/* Copyright (C) 2003-2004 
+ * Copyright (C) 2004-2007 
+ * Copyright (C) 2004                
+ * Copyright (C) 2005-2009 
+ * Copyright (C) 2006           
+ * Copyright (C) 2011      	    
+ * Copyright (C) 2013      	    
+ * Copyright (C) 2014      
+ * Copyright (C) 2018      		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,7 +48,7 @@ abstract class ModelePDFHoliday extends CommonDocGenerator
 	/**
 	 *	Return list of active generation modules
 	 *
-	 *  @param  DoliDB  $db     			Database handler
+	 *  @param  Berp3DB  $db     			Database handler
 	 *  @param  integer	$maxfilenamelength  Max length of value to show
 	 *  @return	array						List of templates
 	 */
@@ -149,7 +149,7 @@ class ModelNumRefHolidays
 			return $langs->trans("VersionDevelopment");
 		} elseif ($this->version == 'experimental') {
 			return $langs->trans("VersionExperimental");
-		} elseif ($this->version == 'dolibarr') {
+		} elseif ($this->version == 'berp3') {
 			return DOL_VERSION;
 		} elseif ($this->version) {
 			return $this->version;

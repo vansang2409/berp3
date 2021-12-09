@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015-2019  Open-DSI            <support@open-dsi.fr>
+/* Copyright (C) 2015-2019              
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
  * 	\brief		Dashboard color Page < Oblyon Theme Configurator >
  */
 
-// Dolibarr environment
+// Berp3 environment
 $res = @include("../../main.inc.php"); // From htdocs directory
 if (! $res) {
   $res = @include("../../../main.inc.php"); // From "custom" directory
@@ -66,10 +66,10 @@ if ($action == 'set') {
     $name = GETPOST ( 'name', 'text' );
 
     if ($value == 1) {
-        $res = dolibarr_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
+        $res = berp3_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
         if (! $res > 0) $error ++;
     } else {
-        $res = dolibarr_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
+        $res = berp3_set_const($db, $name, $value, 'yesno', 0, '', $conf->entity);
         if (! $res > 0) $error ++;
     }
 
@@ -88,15 +88,15 @@ if ($action == 'update') {
 		$constvalue = GETPOST($constname, 'alpha');
 		$constvalue = '#'.$constvalue;
 
-		if (! dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (! berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error ++;
 		}
 	}
 
     if (empty(GETPOST('THEME_AGRESSIVENESS_RATIO'))) {
-        $res = dolibarr_set_const($db, 'THEME_AGRESSIVENESS_RATIO', '-50', 'chaine', 0, '', $conf->entity);
+        $res = berp3_set_const($db, 'THEME_AGRESSIVENESS_RATIO', '-50', 'chaine', 0, '', $conf->entity);
     } else {
-        $res = dolibarr_set_const($db, 'THEME_AGRESSIVENESS_RATIO', GETPOST('THEME_AGRESSIVENESS_RATIO'),'chaine',0,'',$conf->entity);
+        $res = berp3_set_const($db, 'THEME_AGRESSIVENESS_RATIO', GETPOST('THEME_AGRESSIVENESS_RATIO'),'chaine',0,'',$conf->entity);
     }
 
     if (! $res > 0) $error++;

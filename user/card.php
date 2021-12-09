@@ -1,19 +1,19 @@
 <?php
-/* Copyright (C) 2002-2006 Rodolphe Quiedeville <rodolphe@quiedeville.org>
- * Copyright (C) 2002-2003 Jean-Louis Bergamo   <jlb@j1b.org>
- * Copyright (C) 2004-2020 Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2004      Eric Seigne          <eric.seigne@ryxeo.com>
- * Copyright (C) 2005-2021 Regis Houssin        <regis.houssin@inodbox.com>
+/* Copyright (C) 2002-2006 
+ * Copyright (C) 2002-2003    
+ * Copyright (C) 2004-2020 
+ * Copyright (C) 2004                
+ * Copyright (C) 2005-2021 
  * Copyright (C) 2005      Lionel Cousteix      <etm_ltd@tiscali.co.uk>
- * Copyright (C) 2011      Herve Prot           <herve.prot@symeos.com>
- * Copyright (C) 2012-2018 Juanjo Menent        <jmenent@2byte.es>
- * Copyright (C) 2013      Florian Henry        <florian.henry@open-concept.pro>
- * Copyright (C) 2013-2016 Alexandre Spangaro   <aspangaro@open-dsi.fr>
- * Copyright (C) 2015-2017 Jean-François Ferry  <jfefe@aternatik.fr>
- * Copyright (C) 2015      Ari Elbaz (elarifr)  <github@accedinfo.com>
- * Copyright (C) 2015-2018 Charlene Benke       <charlie@patas-monkey.com>
- * Copyright (C) 2016      Raphaël Doursenaud   <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2018-2021  Frédéric France     <frederic.france@netlogic.fr>
+ * Copyright (C) 2011                 
+ * Copyright (C) 2012-2018 
+ * Copyright (C) 2013      
+ * Copyright (C) 2013-2016 
+ * Copyright (C) 2015-2017 
+ * Copyright (C) 2015      
+ * Copyright (C) 2015-2018        
+ * Copyright (C) 2016         
+ * Copyright (C) 2018-2021  
  * Copyright (C) 2018       David Beniamine     <David.Beniamine@Tetras-Libre.fr>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -731,8 +731,8 @@ if ($action == 'create' || $action == 'adduserldap') {
 	print "<br>";
 
 
-	if (!empty($conf->ldap->enabled) && (isset($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE == 'ldap2dolibarr')) {
-		// Show form to add an account from LDAP if sync LDAP -> Dolibarr is set
+	if (!empty($conf->ldap->enabled) && (isset($conf->global->LDAP_SYNCHRO_ACTIVE) && $conf->global->LDAP_SYNCHRO_ACTIVE == 'ldap2berp3')) {
+		// Show form to add an account from LDAP if sync LDAP -> Berp3 is set
 		$ldap = new Ldap();
 		$result = $ldap->connect_bind();
 		if ($result >= 0) {
@@ -981,15 +981,15 @@ if ($action == 'create' || $action == 'adduserldap') {
 	print '<tr><td class="fieldrequired">'.$langs->trans("Password").'</td>';
 	print '<td>';
 	$valuetoshow = '';
-	if (preg_match('/ldap/', $dolibarr_main_authentication)) {
+	if (preg_match('/ldap/', $berp3_main_authentication)) {
 		$valuetoshow .= ($valuetoshow ? ', ' : '').$langs->trans("PasswordOfUserInLDAP");
 	}
-	if (preg_match('/http/', $dolibarr_main_authentication)) {
+	if (preg_match('/http/', $berp3_main_authentication)) {
 		$valuetoshow .= ($valuetoshow ? ', ' : '').$langs->trans("HTTPBasicPassword");
 	}
-	if (preg_match('/dolibarr/', $dolibarr_main_authentication)) {
+	if (preg_match('/berp3/', $berp3_main_authentication)) {
 		if (!empty($ldap_pass)) {	// For very old system comaptibilty. Now clear password can't be viewed from LDAP read
-			$valuetoshow .= ($valuetoshow ? ', ' : '').'<input type="hidden" name="password" value="'.$ldap_pass.'">'; // Dolibarr password is preffiled with LDAP known password
+			$valuetoshow .= ($valuetoshow ? ', ' : '').'<input type="hidden" name="password" value="'.$ldap_pass.'">'; // Berp3 password is preffiled with LDAP known password
 			$valuetoshow .= preg_replace('/./i', '*', $ldap_pass);
 		} else {
 			// We do not use a field password but a field text to show new password to use.
@@ -1191,7 +1191,7 @@ if ($action == 'create' || $action == 'adduserldap') {
 	print $langs->trans("Note");
 	print '</td><td>';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('note', GETPOSTISSET('note') ? GETPOST('note', 'restricthtml') : '', '', 120, 'dolibarr_notes', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_SOCIETE'), ROWS_3, '90%');
+	$doleditor = new DolEditor('note', GETPOSTISSET('note') ? GETPOST('note', 'restricthtml') : '', '', 120, 'berp3_notes', '', false, true, getDolGlobalString('FCKEDITOR_ENABLE_SOCIETE'), ROWS_3, '90%');
 	$doleditor->Create();
 	print "</td></tr>\n";
 
@@ -1199,7 +1199,7 @@ if ($action == 'create' || $action == 'adduserldap') {
 	print '<tr><td class="tdtop">'.$langs->trans("Signature").'</td>';
 	print '<td class="wordbreak">';
 	require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-	$doleditor = new DolEditor('signature', GETPOST('signature', 'restricthtml'), '', 138, 'dolibarr_notes', 'In', true, true, empty($conf->global->FCKEDITOR_ENABLE_USERSIGN) ? 0 : 1, ROWS_4, '90%');
+	$doleditor = new DolEditor('signature', GETPOST('signature', 'restricthtml'), '', 138, 'berp3_notes', 'In', true, true, empty($conf->global->FCKEDITOR_ENABLE_USERSIGN) ? 0 : 1, ROWS_4, '90%');
 	print $doleditor->Create(1);
 	print '</td></tr>';
 
@@ -1409,7 +1409,7 @@ if ($action == 'create' || $action == 'adduserldap') {
 			print '<tr><td class="titlefieldmiddle">'.$langs->trans("Login").'</td>';
 			if (!empty($object->ldap_sid) && $object->statut == 0) {
 				print '<td class="error">';
-				print $langs->trans("LoginAccountDisableInDolibarr");
+				print $langs->trans("LoginAccountDisableInBerp3");
 				print '</td>';
 			} else {
 				print '<td>';
@@ -1685,7 +1685,7 @@ if ($action == 'create' || $action == 'adduserldap') {
 			// Module Adherent
 			if (!empty($conf->adherent->enabled)) {
 				$langs->load("members");
-				print '<tr><td>'.$langs->trans("LinkedToDolibarrMember").'</td>';
+				print '<tr><td>'.$langs->trans("LinkedToBerp3Member").'</td>';
 				print '<td>';
 				if ($object->fk_member) {
 					$adh = new Adherent($db);
@@ -1743,7 +1743,7 @@ if ($action == 'create' || $action == 'adduserldap') {
 
 			print '<td class="wordbreak">';
 			$valuetoshow = '';
-			if (preg_match('/ldap/', $dolibarr_main_authentication)) {
+			if (preg_match('/ldap/', $berp3_main_authentication)) {
 				if (!empty($object->ldap_sid)) {
 					if ($passDoNotExpire) {
 						$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '').$langs->trans("LdapUacf_".$statutUACF);
@@ -1758,10 +1758,10 @@ if ($action == 'create' || $action == 'adduserldap') {
 					$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '').$langs->trans("PasswordOfUserInLDAP");
 				}
 			}
-			if (preg_match('/http/', $dolibarr_main_authentication)) {
+			if (preg_match('/http/', $berp3_main_authentication)) {
 				$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '').$langs->trans("HTTPBasicPassword");
 			}
-			if (preg_match('/dolibarr/', $dolibarr_main_authentication)) {
+			if (preg_match('/berp3/', $berp3_main_authentication)) {
 				if ($object->pass) {
 					$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '');
 					$valuetoshow .= '<span class="opacitymedium">'.$langs->trans("Hidden").'</span>';
@@ -2292,13 +2292,13 @@ if ($action == 'create' || $action == 'adduserldap') {
 			print '<tr><td class="titlefieldcreate">'.$langs->trans("Password").'</td>';
 			print '<td>';
 			$valuetoshow = '';
-			if (preg_match('/ldap/', $dolibarr_main_authentication)) {
+			if (preg_match('/ldap/', $berp3_main_authentication)) {
 				$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '').$langs->trans("PasswordOfUserInLDAP");
 			}
-			if (preg_match('/http/', $dolibarr_main_authentication)) {
-				$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '').$form->textwithpicto($text, $langs->trans("DolibarrInHttpAuthenticationSoPasswordUseless", $dolibarr_main_authentication), 1, 'warning');
+			if (preg_match('/http/', $berp3_main_authentication)) {
+				$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '').$form->textwithpicto($text, $langs->trans("Berp3InHttpAuthenticationSoPasswordUseless", $berp3_main_authentication), 1, 'warning');
 			}
-			if (preg_match('/dolibarr/', $dolibarr_main_authentication)) {
+			if (preg_match('/berp3/', $berp3_main_authentication)) {
 				if ($caneditpassword) {
 					$valuetoshow .= ($valuetoshow ? (' '.$langs->trans("or").' ') : '').'<input maxlength="128" type="password" class="flat" name="password" value="'.$object->pass.'" autocomplete="new-password">';
 				} else {
@@ -2572,7 +2572,7 @@ if ($action == 'create' || $action == 'adduserldap') {
 			// Module Adherent
 			if (!empty($conf->adherent->enabled)) {
 				$langs->load("members");
-				print '<tr><td>'.$langs->trans("LinkedToDolibarrMember").'</td>';
+				print '<tr><td>'.$langs->trans("LinkedToBerp3Member").'</td>';
 				print '<td>';
 				if ($object->fk_member) {
 					$adh = new Adherent($db);
@@ -2619,7 +2619,7 @@ if ($action == 'create' || $action == 'adduserldap') {
 			print '<td>';
 			if ($caneditfield) {
 				require_once DOL_DOCUMENT_ROOT.'/core/class/doleditor.class.php';
-				$doleditor = new DolEditor('signature', $object->signature, '', 138, 'dolibarr_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_USERSIGN) ? 0 : 1, ROWS_4, '90%');
+				$doleditor = new DolEditor('signature', $object->signature, '', 138, 'berp3_notes', 'In', false, true, empty($conf->global->FCKEDITOR_ENABLE_USERSIGN) ? 0 : 1, ROWS_4, '90%');
 				print $doleditor->Create(1);
 			} else {
 				print dol_htmlentitiesbr($object->signature);

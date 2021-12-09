@@ -1,6 +1,6 @@
 <?php
-/* Copyright (C) 2011      Laurent Destailleur  <eldy@users.sourceforge.net>
- * Copyright (C) 2003-2010 Frederico Caldeira Knabben
+/* Copyright (C) 2011      
+ * Copyright (C) 2003-2010 
  *
  * Source modified from part of fckeditor (http://www.fckeditor.net)
  * retrieved as GPL v2 or later
@@ -26,7 +26,7 @@ require '../../../../main.inc.php';
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <!--
  * FCKeditor - The text editor for Internet - http://www.fckeditor.net
- * Copyright (C) 2003-2010 Frederico Caldeira Knabben
+ * Copyright (C) 2003-2010 
  *
  * == BEGIN LICENSE ==
  *

@@ -1,9 +1,9 @@
 <?php
-/* Copyright (C) 2007-2018  Laurent Destailleur <eldy@users.sourceforge.net>
- * Copyright (C) 2014       Juanjo Menent       <jmenent@2byte.es>
- * Copyright (C) 2015       Florian Henry       <florian.henry@open-concept.pro>
- * Copyright (C) 2015       Raphaël Doursenaud  <rdoursenaud@gpcsolutions.fr>
- * Copyright (C) 2018       Frédéric France         <frederic.france@netlogic.fr>
+/* Copyright (C) 2007-2018  
+ * Copyright (C) 2014       
+ * Copyright (C) 2015       
+ * Copyright (C) 2015       
+ * Copyright (C) 2018       
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -135,9 +135,9 @@ class Website extends CommonObject
 	/**
 	 * Constructor
 	 *
-	 * @param DoliDb $db Database handler
+	 * @param Berp3Db $db Database handler
 	 */
-	public function __construct(DoliDB $db)
+	public function __construct(Berp3DB $db)
 	{
 		$this->db = $db;
 		return 1;
@@ -268,10 +268,10 @@ class Website extends CommonObject
 		}
 
 		if (!$error) {
-			$stringtodolibarrfile = "# Some properties for BERP3 web site CMS\n";
-			$stringtodolibarrfile .= "param=value\n";
-			//print $conf->website->dir_output.'/'.$this->ref.'/.dolibarr';exit;
-			file_put_contents($conf->website->dir_output.'/'.$this->ref.'/.dolibarr', $stringtodolibarrfile);
+			$stringtoberp3file = "# Some properties for BERP3 web site CMS\n";
+			$stringtoberp3file .= "param=value\n";
+			//print $conf->website->dir_output.'/'.$this->ref.'/.berp3';exit;
+			file_put_contents($conf->website->dir_output.'/'.$this->ref.'/.berp3', $stringtoberp3file);
 		}
 
 		// Commit or rollback
@@ -648,7 +648,7 @@ class Website extends CommonObject
 	public function createFromClone($user, $fromid, $newref, $newlang = '')
 	{
 		global $conf, $langs;
-		global $dolibarr_main_data_root;
+		global $berp3_main_data_root;
 
 		$now = dol_now();
 		$error = 0;
@@ -671,8 +671,8 @@ class Website extends CommonObject
 		$oldidforhome = $object->fk_default_home;
 		$oldref = $object->ref;
 
-		$pathofwebsiteold = $dolibarr_main_data_root.'/website/'.$oldref;
-		$pathofwebsitenew = $dolibarr_main_data_root.'/website/'.$newref;
+		$pathofwebsiteold = $berp3_main_data_root.'/website/'.$oldref;
+		$pathofwebsitenew = $berp3_main_data_root.'/website/'.$newref;
 		dol_delete_dir_recursive($pathofwebsitenew);
 
 		$fileindex = $pathofwebsitenew.'/index.php';
@@ -811,7 +811,7 @@ class Website extends CommonObject
 	public function getNomUrl($withpicto = 0, $option = '', $notooltip = 0, $maxlen = 24, $morecss = '')
 	{
 		global $langs, $conf, $db;
-		global $dolibarr_main_authentication, $dolibarr_main_demo;
+		global $berp3_main_authentication, $berp3_main_demo;
 		global $menumanager;
 
 
@@ -1091,7 +1091,7 @@ class Website extends CommonObject
 			}
 		}
 
-		$line = "\n-- For Dolibarr v14+ --;\n";
+		$line = "\n-- For Berp3 v14+ --;\n";
 		$line .= "UPDATE llx_website SET lang = '".$this->db->escape($this->fk_default_lang)."' WHERE rowid = __WEBSITE_ID__;\n";
 		$line .= "UPDATE llx_website SET otherlang = '".$this->db->escape($this->otherlang)."' WHERE rowid = __WEBSITE_ID__;\n";
 		$line .= "\n";

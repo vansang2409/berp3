@@ -1,7 +1,7 @@
 <?php
-/* Copyright (C) 2007-2020	Laurent Destailleur	<eldy@users.sourceforge.net>
- * Copyright (C) 2009-2018	Regis Houssin		<regis.houssin@inodbox.com>
- * Copyright (C) 2010		Juanjo Menent		<jmenent@2byte.es>
+/* Copyright (C) 2007-2020		
+ * Copyright (C) 2009-2018			
+ * Copyright (C) 2010		
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -78,11 +78,11 @@ if ($action == 'update') {
 	}
 
 	if (!$error) {
-		dolibarr_set_const($db, $mainmaxdecimalsunit, $valmainmaxdecimalsunit, 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, $mainmaxdecimalstot, $valmainmaxdecimalstot, 'chaine', 0, '', $conf->entity);
-		dolibarr_set_const($db, $mainmaxdecimalsshown, $valmainmaxdecimalsshown, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, $mainmaxdecimalsunit, $valmainmaxdecimalsunit, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, $mainmaxdecimalstot, $valmainmaxdecimalstot, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, $mainmaxdecimalsshown, $valmainmaxdecimalsshown, 'chaine', 0, '', $conf->entity);
 
-		dolibarr_set_const($db, $mainroundingruletot, $valmainroundingruletot, 'chaine', 0, '', $conf->entity);
+		berp3_set_const($db, $mainroundingruletot, $valmainroundingruletot, 'chaine', 0, '', $conf->entity);
 
 		header("Location: ".$_SERVER["PHP_SELF"]."?mainmenu=home&leftmenu=setup".(!empty($currencycode) ? '&currencycode='.$currencycode : ''));
 		exit;

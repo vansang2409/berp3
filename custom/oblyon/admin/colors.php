@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2015-2019  Open-DSI            <support@open-dsi.fr>
+/* Copyright (C) 2015-2019              
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
  * 	\brief		Color Page < Oblyon Theme Configurator >
  */
 
-// Dolibarr environment
+// Berp3 environment
 $res = @include("../../main.inc.php"); // From htdocs directory
 if (! $res) {
   $res = @include("../../../main.inc.php"); // From "custom" directory
@@ -88,7 +88,7 @@ if ($action == 'update') {
 		$constvalue = GETPOST($constname, 'alpha');
 		$constvalue = '#'.$constvalue;
 
-		if (! dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (! berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error ++;
 		}
 	}
@@ -97,7 +97,7 @@ if ($action == 'update') {
 		$constvalue = GETPOST($constname, 'alpha');
 		$constvalue = '#'.$constvalue;
 
-		if (! dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (! berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error ++;
 		}
 	}
@@ -106,7 +106,7 @@ if ($action == 'update') {
         $constvalue = GETPOST($constname, 'alpha');
         $constvalue = '#'.$constvalue;
 
-        if (! dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+        if (! berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
             $error ++;
         }
     }
@@ -115,7 +115,7 @@ if ($action == 'update') {
 		$constvalue = GETPOST($constname, 'alpha');
 		$constvalue = '#'.$constvalue;
 
-		if (! dolibarr_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
+		if (! berp3_set_const($db, $constname, $constvalue, 'chaine', 0, '', $conf->entity)) {
 			$error ++;
 		}
 	}
@@ -137,39 +137,39 @@ if ($action == 'settheme') {
 		$_SESSION['dol_resetcache']=dol_print_date(dol_now(),'dayhourlog');
 		$mesg = "<font class='ok'>".$langs->trans("ThemeOblyonNightApplied")."</font>";
 
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#222222','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#333333','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#222222','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#333333','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#2C2C2C','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#222222','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#2C2C2C','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#222222','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
 
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0088cc','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0044cc','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0088cc','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0044cc','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_MAIN", '#E09430','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BCKGRD", '#333333','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#2C2C2C','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#333333','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BLINE", '#444444','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE", '#ECECEC','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#FCFCFC','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_MAIN", '#E09430','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BCKGRD", '#333333','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#2C2C2C','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#333333','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BLINE", '#444444','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE", '#ECECEC','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#FCFCFC','chaine',0,'',$conf->entity);
 
 		// Use Eldy customization to improve configuration
-		dolibarr_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '1','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKBODY", '#333333','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '#222222','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_VERMENU_BACK1", '#2c2c2c','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '#fefefe','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKTITLE1", '#e09430','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLE", '#fcfcfc','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEIMPAIR1", '#3c3c3c','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEPAIR1", '#444444','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTLINK", '#e09430','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_USE_HOVER", '#222222','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '1','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKBODY", '#333333','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '#222222','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_VERMENU_BACK1", '#2c2c2c','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '#fefefe','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKTITLE1", '#e09430','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLE", '#fcfcfc','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEIMPAIR1", '#3c3c3c','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEPAIR1", '#444444','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTLINK", '#e09430','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_USE_HOVER", '#222222','chaine',0,'',$conf->entity);
 	}
 
 	// Theme Oblyon Blue
@@ -177,39 +177,39 @@ if ($action == 'settheme') {
 		$_SESSION['dol_resetcache']=dol_print_date(dol_now(),'dayhourlog');
 		$mesg = "<font class='ok'>".$langs->trans("ThemeOblyonBlueApplied")."</font>";
 
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#092D5C','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#0D4185','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#092D5C','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#0D4185','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#092D5C','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#0D4185','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#092D5C','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#0D4185','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
 
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0088cc','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0044cc','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0088cc','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0044cc','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_MAIN", '#E09430','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#ffffff','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BLINE", '#FCFCFC','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE", '#444444','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#222222','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_MAIN", '#E09430','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#ffffff','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BLINE", '#FCFCFC','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE", '#444444','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#222222','chaine',0,'',$conf->entity);
 
 		// Disable Eldy customization to ensure display
-		dolibarr_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '0','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKBODY", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_VERMENU_BACK1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKTITLE1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLE", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEIMPAIR1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEPAIR1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTLINK", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_USE_HOVER", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '0','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKBODY", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_VERMENU_BACK1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKTITLE1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLE", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEIMPAIR1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEPAIR1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTLINK", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_USE_HOVER", '','chaine',0,'',$conf->entity);
 	}
 
 	// Theme Oblyon Dark
@@ -217,39 +217,39 @@ if ($action == 'settheme') {
 		$_SESSION['dol_resetcache']=dol_print_date(dol_now(),'dayhourlog');
 		$mesg = "<font class='ok'>".$langs->trans("ThemeOblyonDarkApplied")."</font>";
 
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#333333','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#0083A2','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#333333','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#0083A2','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#333333','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#0083A2','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#333333','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#0083A2','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#F4F4F4','chaine',0,'',$conf->entity);
 
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0083A2','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0063A2','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0083A2','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0063A2','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_MAIN", '#0083A2','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#FFFFFF','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BLINE", '#FFFFFF','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE", '#444444','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#222222','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_MAIN", '#0083A2','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#FFFFFF','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BLINE", '#FFFFFF','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE", '#444444','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#222222','chaine',0,'',$conf->entity);
 
 		// Disable Eldy customization to ensure display
-		dolibarr_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '0','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKBODY", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_VERMENU_BACK1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKTITLE1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLE", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEIMPAIR1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEPAIR1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTLINK", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_USE_HOVER", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '0','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKBODY", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_VERMENU_BACK1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKTITLE1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLE", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEIMPAIR1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEPAIR1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTLINK", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_USE_HOVER", '','chaine',0,'',$conf->entity);
 	}
 
 	// Theme Oblyon Green
@@ -257,39 +257,39 @@ if ($action == 'settheme') {
 		$_SESSION['dol_resetcache']=dol_print_date(dol_now(),'dayhourlog');
 		$mesg = "<font class='ok'>".$langs->trans("ThemeOblyonGreenApplied")."</font>";
 
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#34495E','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#2C3E50','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#FFFFFF','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD", '#34495E','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_BCKGRD_HOVER", '#2C3E50','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_TOPMENU_TXT", '#FFFFFF','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#2ECC71','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#29B564','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#FFFFFF','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD", '#2ECC71','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_BCKGRD_HOVER", '#29B564','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LEFTMENU_TXT", '#FFFFFF','chaine',0,'',$conf->entity);
 
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0088cc','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0044cc','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
-        dolibarr_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION1", '#0088cc','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_ACTION2", '#0044cc','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE1", '#cc8800','chaine',0,'',$conf->entity);
+        berp3_set_const($db, "OBLYON_COLOR_BUTTON_DELETE2", '#cc4400','chaine',0,'',$conf->entity);
 
-		dolibarr_set_const($db, "OBLYON_COLOR_MAIN", '#0083A2','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BCKGRD", '#F5F5F5','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#FFFFFF','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_BLINE", '#FFFFFF','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE", '#444444','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#222222','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_MAIN", '#0083A2','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BCKGRD", '#F5F5F5','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGO_BCKGRD", '#FFFFFF','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_LOGIN_BCKGRD", '#F4F4F4','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_BLINE", '#FFFFFF','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE", '#444444','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "OBLYON_COLOR_FLINE_HOVER", '#222222','chaine',0,'',$conf->entity);
 
 		// Disable Eldy customization to ensure display
-		dolibarr_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '0','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKBODY", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_VERMENU_BACK1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_BACKTITLE1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTTITLE", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEIMPAIR1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_LINEPAIR1", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_TEXTLINK", '','chaine',0,'',$conf->entity);
-		dolibarr_set_const($db, "THEME_ELDY_USE_HOVER", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_ENABLE_PERSONALIZED", '0','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKBODY", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TOPMENU_BACK1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_VERMENU_BACK1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLENOTAB", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_BACKTITLE1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTTITLE", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEIMPAIR1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_LINEPAIR1", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_TEXTLINK", '','chaine',0,'',$conf->entity);
+		berp3_set_const($db, "THEME_ELDY_USE_HOVER", '','chaine',0,'',$conf->entity);
 	}
 	
 }
