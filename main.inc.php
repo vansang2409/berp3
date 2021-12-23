@@ -2691,7 +2691,7 @@ function left_menu($menu_array_before, $helppagename = '', $notused = '', $menu_
 	$searchform = '';
 
 	if (!empty($menu_array_before)) {
-		dol_syslog("Deprecated parameter menu_array_before was used when calling main::left_menu function. Menu entries of module should now be defined into module descriptor and not provided when calling left_menu.", LOG_WARNING);
+		dol_syslog("Deprecated parameter menu_array_before was used when calling main::left_menu function. Menu entries of module should now be defined into module descriptor and not provided when calling .", LOG_WARNING);
 	}
 
 	if (empty($conf->dol_hide_leftmenu) && (!defined('NOREQUIREMENU') || !constant('NOREQUIREMENU'))) {

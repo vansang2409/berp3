@@ -201,7 +201,16 @@ foreach ($object->fields as $key => $val) {
 // Add none object fields to fields for list
 $arrayfields['country.code_iso'] = array('label'=>"Country", 'position'=>22, 'checked'=>0);
 if (empty($conf->global->SOCIETE_DISABLE_CONTACTS)) {
-	$arrayfields['s.nom'] = array('label'=>"ThirdParty", 'position'=>25, 'checked'=>1);
+	if(GETPOST('type')=='f')
+	{
+		$arrayfields['s.nom'] = array('label'=>"Supplier", 'position'=>25, 'checked'=>1);
+	}
+	if(GETPOST('type')=='p' || GETPOST('type')=='c')
+	{
+		$arrayfields['s.nom'] = array('label'=>"Customer", 'position'=>25, 'checked'=>1);
+	}
+
+	
 }
 
 $arrayfields['unsubscribed'] = array(

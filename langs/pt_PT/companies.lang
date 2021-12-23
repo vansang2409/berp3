@@ -449,7 +449,7 @@ CurrentOutstandingBill=Risco alcançado
 OutstandingBill=Montante máximo para faturas pendentes
 OutstandingBillReached=Montante máximo para faturas pendente foi alcançado
 OrderMinAmount=Quantidade mínima para encomenda
-MonkeyNumRefModelDesc=Return a number in the format %syymm-nnnn for the customer code and %syymm-nnnn for the vendor code where yy is year, mm is month and nnnn is a sequencial auto-incrementing number with no break and no return to 0.
+MonkeyNumRefModelDesc=Return a number in the format %syymm-nnnn for the customer code and %syymm-nnnn for the Supplier Code where yy is year, mm is month and nnnn is a sequencial auto-incrementing number with no break and no return to 0.
 LeopardNumRefModelDesc=Código de cliente/fornecedor livre sem verificação. pode ser modificado em qualquer momento.
 ManagingDirectors=Nome Diretor(es) (DE, diretor, presidente ...)
 MergeOriginThirdparty=Terceiro duplicado (terceiro que deseja eliminar)
@@ -460,7 +460,7 @@ SaleRepresentativeLogin=Nome de utilizador do representante de vendas
 SaleRepresentativeFirstname=Primeiro nome do representante de vendas
 SaleRepresentativeLastname=Último nome do representante de vendas
 ErrorThirdpartiesMerge=Houve um erro ao eliminar os terceiros. Por favor, verifique o registo. As alterações foram revertidas.
-NewCustomerSupplierCodeProposed=Customer or Vendor code already used, a new code is suggested
+NewCustomerSupplierCodeProposed=Customer or Supplier Code already used, a new code is suggested
 KeepEmptyIfGenericAddress=Keep this field empty if this address is a generic address
 #Imports
 PaymentTypeCustomer=Payment Type - Customer

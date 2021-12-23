@@ -1367,7 +1367,7 @@ GroupsDocModules=Document templates for documents generated from a group record
 HRMSetup=人力资源管理模块设置
 ##### Company setup #####
 CompanySetup=客户/供应商模块及其相关参数设置
-CompanyCodeChecker=Options for automatic generation of customer/vendor codes
+CompanyCodeChecker=Options for automatic generation of customer/Supplier Codes
 AccountCodeManager=Options for automatic generation of customer/vendor accounting codes
 NotificationsDesc=Email notifications can be sent automatically for some BERP3 events.<br>Recipients of notifications can be defined:
 NotificationsDescUser=* per user, one user at a time.

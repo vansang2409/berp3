@@ -66,6 +66,10 @@ div.mainmenu.companies::before {
 	content: "\f1ad";
 }
 
+div.mainmenu.customers::before {
+	content: "\f007";
+}
+
 div.mainmenu.commercial::before {
 	content: "\f0f2";
 }

@@ -3125,7 +3125,7 @@ class Societe extends CommonObject
 
 	// phpcs:disable PEAR.NamingConventions.ValidFunctionName.ScopeNotCamelCaps
 	/**
-	 *  Assigns a vendor code from the code control module.
+	 *  Assigns a Supplier Code from the code control module.
 	 *  Return value is stored into this->code_fournisseur
 	 *
 	 *	@param	Societe		$objsoc		Object thirdparty
@@ -3197,7 +3197,7 @@ class Societe extends CommonObject
 
 	// phpcs:disable PEAR.NamingConventions.ValidFunctionName.ScopeNotCamelCaps
 	/**
-	 *    Check if a vendor code is editable in the code control module configuration
+	 *    Check if a Supplier Code is editable in the code control module configuration
 	 *
 	 *    @return     int		0=No, 1=Yes
 	 */

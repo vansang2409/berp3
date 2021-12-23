@@ -259,7 +259,7 @@ class FormProduct
 			}
 		}
 
-		$out .= '<select class="flat'.($morecss ? ' '.$morecss : '').'"'.($disabled ? ' disabled' : '').' id="'.$htmlname.'" name="'.($htmlname.($disabled ? '_disabled' : '')).'">';
+		$out .= '<select class="flat'.($morecss ? ' '.$morecss : '').' width100p"'.($disabled ? ' disabled' : '').' id="'.$htmlname.'" name="'.($htmlname.($disabled ? '_disabled' : '')).' " style="width:100%">';
 		if ($empty) {
 			$out .= '<option value="-1">'.($empty_label ? $empty_label : '&nbsp;').'</option>';
 		}
@@ -414,7 +414,7 @@ class FormProduct
 			dol_print_error($db);
 			return -1;
 		} else {
-			$return .= '<select class="flat'.($morecss ? ' '.$morecss : '').'" name="'.$name.'" id="'.$name.'">';
+			$return .= '<select class="flat'.($morecss ? ' '.$morecss : '').'" name="'.$name.'" id="'.$name.'" style="width:82px">';
 			if ($adddefault || $adddefault === '') {
 				$return .= '<option value="0">'.($adddefault ? $langs->trans("Default") : '').'</option>';
 			}
@@ -483,7 +483,7 @@ class FormProduct
 			dol_print_error($db);
 			return -1;
 		} else {
-			$return .= '<select class="flat" name="'.$name.'" id="'.$name.'">';
+			$return .= '<select class="flat width100p" name="'.$name.'" id="'.$name.'">';
 			if ($showempty || ($selected == '' || $selected == '-1')) {
 				$return .= '<option value="-1"';
 				if ($selected == '' || $selected == '-1') {

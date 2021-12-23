@@ -120,10 +120,14 @@ $(document).ready(function () {
 </script>
 <?php } ?>
 
-<div class="login_center center"<?php print empty($conf->global->MAIN_LOGIN_BACKGROUND) ? ' style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat; background-image: linear-gradient(rgb('.$colorbackhmenu1.',0.3), rgb(240,240,240));"' : '' ?>>
-<div class="login_vertical_align">
+<div class="login_center center"<?php print empty($conf->global->MAIN_LOGIN_BACKGROUND) ? ' style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat;background-color: #ffffff;"' : '' ?>>
+<div class="login_vertical_align" style="background-color: #ffffff;">
+<div id="login_left">
+	<img alt="" src="<?php echo $urllogo; ?>" id="img_logo" />
+</div>
 
-<form id="login" name="login" method="post" action="<?php echo $php_self; ?>">
+<br>
+<form id="login" name="login" method="post" action="<?php echo $php_self; ?>" >
 <input type="hidden" name="token" value="<?php echo newToken(); ?>" />
 <input type="hidden" name="actionlogin" value="login">
 <input type="hidden" name="loginfunction" value="loginfunction" />
@@ -149,41 +153,35 @@ $(document).ready(function () {
 
 
 
-<div class="login_table">
+<div class="login_table" style="min-height: 285px;">
 
 <div id="login_line1">
 
-<div id="login_left">
-<img alt="" src="<?php echo $urllogo; ?>" id="img_logo" />
-</div>
-
-<br>
-
-<div id="login_right">
+<div id="login_right" style="border-radius:5px;">
 
 <div class="tagtable left centpercent" title="<?php echo $langs->trans("EnterLoginDetail"); ?>">
 
 <!-- Login -->
 <div class="trinputlogin">
-<div class="tagtd nowraponall center valignmiddle tdinputlogin">
+<div class="tagtd nowraponall center valignmiddle tdinputlogin" style="min-width: 450px;">
 <?php if (!empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER)) {
 	?><label for="username" class="hidden"><?php echo $langs->trans("Login"); ?></label><?php
 } ?>
 <!-- <span class="span-icon-user">-->
-<span class="fa fa-user"></span>
-<input type="text" id="username" maxlength="255" placeholder="<?php echo $langs->trans("Login"); ?>" name="username" class="flat input-icon-user minwidth150" value="<?php echo dol_escape_htmltag($login); ?>" tabindex="1" autofocus="autofocus" />
+<span class="span"  >Email Address</span>
+<input type="text" id="username" maxlength="255" placeholder="<?php echo $langs->trans("Email Address"); ?>" name="username" class="input" value="<?php echo dol_escape_htmltag($login); ?>" tabindex="1" autofocus="autofocus" />
 </div>
 </div>
 
 <!-- Password -->
 <div class="trinputlogin">
-<div class="tagtd nowraponall center valignmiddle tdinputlogin">
+<div class="tagtd nowraponall center valignmiddle tdinputlogin" style="min-width: 450px;">
 <?php if (!empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER)) {
 	?><label for="password" class="hidden"><?php echo $langs->trans("Password"); ?></label><?php
 } ?>
 <!--<span class="span-icon-password">-->
-<span class="fa fa-key"></span>
-<input type="password" id="password" maxlength="128" placeholder="<?php echo $langs->trans("Password"); ?>" name="password" class="flat input-icon-password minwidth150" value="<?php echo dol_escape_htmltag($password); ?>" tabindex="2" autocomplete="<?php echo empty($conf->global->MAIN_LOGIN_ENABLE_PASSWORD_AUTOCOMPLETE) ? 'off' : 'on'; ?>" />
+<span class="span">Password</span>
+<input type="password" id="password" maxlength="128" placeholder="<?php echo $langs->trans("Password"); ?>" name="password" class="input" value="<?php echo dol_escape_htmltag($password); ?>" tabindex="2" autocomplete="<?php echo empty($conf->global->MAIN_LOGIN_ENABLE_PASSWORD_AUTOCOMPLETE) ? 'off' : 'on'; ?>" />
 </div></div>
 
 <?php
@@ -242,7 +240,24 @@ if (!empty($morelogincontent)) {
 <!-- Button Connection -->
 <br>
 <div id="login-submit-wrapper">
-<input type="submit" class="button" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" />
+    <div style="padding: 0 35px; max-width:50%; float:left">
+	  	<div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
+            <div class="g-recaptcha float-left" data-sitekey="6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm">
+				<div style="width: 304px; height: 78px;">
+					<div>
+						<iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm&amp;co=aHR0cHM6Ly9haW9zdy5jb206NDQz&amp;hl=vi&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=normal&amp;cb=5c2owwngl1x" width="304" height="78" role="presentation" name="a-53ql1hk758w5" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+			 		</div>
+					<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+				</div>
+				<iframe style="display: none;"></iframe>
+			</div>
+            <div class="invalid-feedback" id="err_g-recaptcha-response"></div>
+        </div>
+	</div>
+    <div style="padding: 0 35px; max-width:50%; float:right">
+		<button type="submit" class="" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Login</button>
+		<button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Support</button>
+	</div>
 </div>
 
 <?php
@@ -262,13 +277,13 @@ if ($forgetpasslink || $helpcenterlink) {
 	}
 
 	echo '<br>';
-	echo '<div class="center" style="margin-top: 5px;">';
+	echo '<div class="" style="margin-top: 5px;margin-left: 35px;float:left;width:100%;text-align:left;color:#0178c8;">';
 	if ($forgetpasslink) {
 		$url = DOL_URL_ROOT.'/user/passwordforgotten.php'.$moreparam;
 		if (!empty($conf->global->MAIN_PASSWORD_FORGOTLINK)) {
 			$url = $conf->global->MAIN_PASSWORD_FORGOTLINK;
 		}
-		echo '<a class="alogin" href="'.dol_escape_htmltag($url).'">';
+		echo '<a class="alogin" style="color:#0178c8;" href="'.dol_escape_htmltag($url).'">';
 		echo $langs->trans('PasswordForgotten');
 		echo '</a>';
 	}
@@ -312,12 +327,21 @@ if (isset($conf->file->main_authentication) && preg_match('/openid/', $conf->fil
 
 </div> <!-- end login line 2 -->
 
+	
+
 </div> <!-- end login table -->
 
 
 </form>
 
-
+<div style="max-width:570px;background-color:white;margin:auto;">
+    <div>
+  	 <a href="https://bona.com.sg/" target="_blank" style="color: #343a40;font-weight: bold;font-size: .875rem;">Bona ERP by Bona Technologies</a>
+  	</div>
+	<div>
+		<img src="https://aiosw.com/user2/bonaforce/img/unnamed.png" alt="" class="img-fluid">
+	</div>
+</div>
 <?php
 // Show error message if defined
 if (!empty($_SESSION['dol_loginmesg'])) {
@@ -420,8 +444,11 @@ if (!empty($conf->google->enabled) && !empty($conf->global->MAIN_GOOGLE_AD_CLIEN
 
 
 </div>
+ 	
 </div><!-- end of center -->
 
+
+  
 
 </body>
 </html>

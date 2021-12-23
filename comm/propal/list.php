@@ -52,7 +52,8 @@ $langs->loadLangs(array('companies', 'propal', 'compta', 'bills', 'orders', 'pro
 if (!empty($conf->expedition->enabled)) {
 	$langs->loadLangs(array('sendings'));
 }
-
+// turn off warning reporting
+error_reporting(E_ERROR | E_PARSE);
 $socid = GETPOST('socid', 'int');
 
 $action = GETPOST('action', 'aZ09');

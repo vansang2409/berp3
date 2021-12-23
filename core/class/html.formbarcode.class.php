@@ -150,11 +150,11 @@ class FormBarCode
 			$i = 0;
 
 			if ($useempty && $num > 0) {
-				$out .= '<select class="flat minwidth75imp" name="'.$htmlname.'" id="select_'.$htmlname.'">';
+				$out .= '<select class="flat minwidth75imp width100p" name="'.$htmlname.'" id="select_'.$htmlname.'">';
 				$out .= '<option value="0">&nbsp;</option>';
 			} else {
 				$langs->load("errors");
-				$out .= '<select disabled class="flat minwidth75imp" name="'.$htmlname.'" id="select_'.$htmlname.'">';
+				$out .= '<select disabled class="flat minwidth75imp width100p" name="'.$htmlname.'" id="select_'.$htmlname.'">';
 				$out .= '<option value="0" selected>'.$langs->trans('ErrorNoActivatedBarcode').'</option>';
 			}
 

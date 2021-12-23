@@ -2451,6 +2451,10 @@ div.mainmenu.companies {
 	background-image: url(<?php echo dol_buildpath($path.'/theme/'.$theme.'/img/menus/company.png', 1) ?>);
 }
 
+div.mainmenu.customers {
+	background-image: url(<?php echo dol_buildpath($path.'/theme/'.$theme.'/img/menus/customers.png', 1) ?>);
+}
+
 div.mainmenu.commercial {
 	background-image: url(<?php echo dol_buildpath($path.'/theme/'.$theme.'/img/menus/commercial.png', 1) ?>);
 }
@@ -6927,6 +6931,7 @@ if (!empty($conf->global->THEME_CUSTOM_CSS)) {
 if (is_object($db)) {
 	$db->close();
 }
+
 ?>
 
 /* This must be at end */

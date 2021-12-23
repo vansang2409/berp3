@@ -141,7 +141,7 @@ class DolEditor
 			//$out.= '<textarea id="'.$this->htmlname.'" name="'.$this->htmlname.'" '.($this->readonly?' disabled':'').' rows="'.$this->rows.'"'.(preg_match('/%/',$this->cols)?' style="margin-top: 5px; width: '.$this->cols.'"':' cols="'.$this->cols.'"').' class="flat">';
 			// TODO We do not put the 'disabled' tag because on a read form, it change style with grey.
 			//print $this->content;
-			$out .= '<textarea id="'.$this->htmlname.'" name="'.$this->htmlname.'" rows="'.$this->rows.'"'.(preg_match('/%/', $this->cols) ? ' style="margin-top: 5px; width: '.$this->cols.'"' : ' cols="'.$this->cols.'"').' class="flat">';
+			$out .= '<textarea id="'.$this->htmlname.'" name="'.$this->htmlname.'" rows="'.$this->rows.'"'.(preg_match('/%/', $this->cols) ? ' style="margin-top: 5px; width:100%"' : ' cols="'.$this->cols.'"').' class="flat width100p">';
 			$out .= htmlspecialchars($this->content);
 			$out .= '</textarea>';
 

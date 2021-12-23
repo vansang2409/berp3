@@ -87,10 +87,15 @@ $(document).ready(function () {
 <?php } ?>
 
 
-<div class="login_center center"<?php print empty($conf->global->MAIN_LOGIN_BACKGROUND) ? ' style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat; background-image: linear-gradient(rgb('.$colorbackhmenu1.',0.3), rgb(240,240,240));"' : '' ?>>
+<div class="login_center center"<?php print empty($conf->global->MAIN_LOGIN_BACKGROUND) ? ' style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat; background-color: white;"' : '' ?>>
 <div class="login_vertical_align">
+<div id="login_left">
+<img alt="" title="" src="<?php echo $urllogo; ?>" id="img_logo" />
+</div>
 
+<br>
 <form id="login" name="login" method="POST" action="<?php echo $php_self; ?>">
+
 <input type="hidden" name="token" value="<?php echo newToken(); ?>">
 <input type="hidden" name="action" value="buildnewpassword">
 
@@ -103,29 +108,44 @@ $title = 'BERP3';
 
 
 
-<div class="login_table">
-
+<div class="login_table" style="min-height: 355px;">
+<h2>Forgot Password</h2>
 <div id="login_line1">
-
-<div id="login_left">
-<img alt="" title="" src="<?php echo $urllogo; ?>" id="img_logo" />
-</div>
-
-<br>
-
 <div id="login_right">
 
 <div class="tagtable centpercent" title="Login pass" >
 
 <!-- Login -->
 <div class="trinputlogin">
-<div class="tagtd nowraponall center valignmiddle tdinputlogin">
+<div class="tagtd nowraponall center valignmiddle tdinputlogin" style="min-width: 450px;">
 <!-- <span class="span-icon-user">-->
-<span class="fa fa-user"></span>
-<input type="text" maxlength="255" placeholder="<?php echo $langs->trans("Login"); ?>" <?php echo $disabled; ?> id="username" name="username" class="flat input-icon-user minwidth150" value="<?php echo dol_escape_htmltag($username); ?>" tabindex="1" />
+<span class="span"  >Email Address</span>
+<input type="text" maxlength="255" placeholder="<?php echo $langs->trans("Email Address"); ?>" <?php echo $disabled; ?> id="username" name="username" class="input" value="<?php echo dol_escape_htmltag($username); ?>" tabindex="1" />
 </div>
 </div>
-
+<div class="trinputlogin">
+	<div class="tagtd nowraponall center valignmiddle tdinputlogin" style="min-width: 482px;">
+		<span class="span">Select Company</span>
+		<select class="input" name="company" id="company" style="display: block; width: 100%;height: calc(2.15rem + 2px);">
+            <option value="">Select Company</option>
+            <option value="22">JL Industry</option>
+            <option value="24">MeGoMega Ptd Ltd</option>
+            <option value="39">JLDesigns</option>
+            <option value="40">BioMedix Singapore Pte Ltd</option>
+            <option value="42">Bona Tech</option>
+            <option value="44">N-test</option>
+            <option value="49">MeGoMega Pte Ltd</option>
+            <option value="56">Gustin</option>
+            <option value="58">Singroll Pte Ltd</option>
+            <option value="62">TGB</option>
+            <option value="64">Coach Masters Academy</option>
+            <option value="65">ROSELTD</option>
+            <option value="68">SUNNY LTD</option>
+            <option value="69">New Testing</option>
+            <option value="74">ROSE2</option>            					  
+        </select>
+	</div>
+</div>
 <?php
 if (!empty($captcha)) {
 	// Add a variable param to force not using cache (jmobile)
@@ -179,10 +199,32 @@ if (!empty($morelogincontent)) {
 <div id="login_line2" style="clear: both">
 
 <!-- Button "Regenerate and Send password" -->
-<br><input type="submit" <?php echo $disabled; ?> class="button small" name="button_password" value="<?php echo $langs->trans('SendNewPassword'); ?>" tabindex="4" />
-
 <br>
-<div class="center" style="margin-top: 15px;">
+<!--
+<input type="submit" <?php echo $disabled; ?> class="button small" name="button_password" value="<?php echo $langs->trans('SendNewPassword'); ?>" tabindex="4" />
+-->
+<div id="login-submit-wrapper">
+    <div style="padding: 0 35px; max-width:50%; float:left">
+	  	<div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
+            <div class="g-recaptcha float-left" data-sitekey="6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm">
+				<div style="width: 304px; height: 78px;">
+					<div>
+						<iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm&amp;co=aHR0cHM6Ly9haW9zdy5jb206NDQz&amp;hl=vi&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=normal&amp;cb=5c2owwngl1x" width="304" height="78" role="presentation" name="a-53ql1hk758w5" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+			 		</div>
+					<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+				</div>
+				<iframe style="display: none;"></iframe>
+			</div>
+            <div class="invalid-feedback" id="err_g-recaptcha-response"></div>
+        </div>
+	</div>
+    <div style="padding: 0 35px; max-width:50%; float:right">
+		<button type="submit" class="" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" name="button_password" >Verify</button>
+		<button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Support</button>
+	</div>
+</div>
+<br>
+<div class="" style="margin-top: 5px;margin-left: 35px;float:left;width:100%;text-align:left;color:#0178c8;">
 	<?php
 	$moreparam = '';
 	if (!empty($conf->dol_hide_topmenu)) {
@@ -208,7 +250,14 @@ if (!empty($morelogincontent)) {
 
 </form>
 
-
+<div style="max-width:570px;background-color:white;margin:auto;">
+    <div>
+  	 <a href="https://bona.com.sg/" target="_blank" style="color: #343a40;font-weight: bold;font-size: .875rem;">Bona ERP by Bona Technologies</a>
+  	</div>
+	<div>
+		<img src="https://aiosw.com/user2/bonaforce/img/unnamed.png" alt="" class="img-fluid">
+	</div>
+</div>
 <div class="center login_main_home divpasswordmessagedesc paddingtopbottom<?php echo empty($conf->global->MAIN_LOGIN_BACKGROUND) ? '' : ' backgroundsemitransparent boxshadow'; ?>" style="max-width: 70%">
 <?php if ($mode == 'berp3' || !$disabled) { ?>
 	<span class="passwordmessagedesc">

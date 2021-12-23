@@ -46,6 +46,9 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/html.form.class.php';
 require_once DOL_DOCUMENT_ROOT.'/user/class/user.class.php';
 require_once DOL_DOCUMENT_ROOT.'/categories/class/categorie.class.php';
 
+// turn off warning reporting
+error_reporting(E_ERROR | E_PARSE);
+
 // Load translation files required by the page
 $langs->loadLangs(array('companies', 'users', 'other', 'commercial'));
 
@@ -655,27 +658,39 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 			// Name
 			print '<tr><td class="titlefieldcreate fieldrequired"><label for="lastname">'.$langs->trans("Lastname").' / '.$langs->trans("Label").'</label></td>';
-			print '<td colspan="3"><input name="lastname" id="lastname" type="text" class="maxwidth100onsmartphone" maxlength="80" value="'.dol_escape_htmltag(GETPOST("lastname", 'alpha') ?GETPOST("lastname", 'alpha') : $object->lastname).'" autofocus="autofocus"></td>';
+			print '<td colspan="3"><input name="lastname" id="lastname" type="text" class="maxwidth100onsmartphone width100p" maxlength="80" value="'.dol_escape_htmltag(GETPOST("lastname", 'alpha') ?GETPOST("lastname", 'alpha') : $object->lastname).'" autofocus="autofocus" ></td>';
 			print '</tr>';
 
 			print '<tr>';
 			print '<td><label for="firstname">';
 			print $form->textwithpicto($langs->trans("Firstname"), $langs->trans("KeepEmptyIfGenericAddress")).'</label></td>';
-			print '<td colspan="3"><input name="firstname" id="firstname"type="text" class="maxwidth100onsmartphone" maxlength="80" value="'.dol_escape_htmltag(GETPOST("firstname", 'alpha') ?GETPOST("firstname", 'alpha') : $object->firstname).'"></td>';
+			print '<td colspan="3"><input name="firstname" id="firstname"type="text" class="maxwidth100onsmartphone width100p" maxlength="80" value="'.dol_escape_htmltag(GETPOST("firstname", 'alpha') ?GETPOST("firstname", 'alpha') : $object->firstname).'"></td>';
 			print '</tr>';
 
 			// Company
+			if(GETPOST('type')=='c' || GETPOST('type')=='p' )
+			{
+				 $thirdparty = $langs->trans("CustomerProspect");
+				 $sl_thirdparty = $langs->trans("SelectCustomerProspect");
+			}
+
+			if(GETPOST('type')=='f' )
+			{
+				 $thirdparty = $langs->trans("Supplier");
+				 $sl_thirdparty = $langs->trans("SelectSupplier");
+			}
+
 			if (empty($conf->global->SOCIETE_DISABLE_CONTACTS)) {
 				if ($socid > 0) {
-					print '<tr><td><label for="socid">'.$langs->trans("ThirdParty").'</label></td>';
+					print '<tr><td><label ss for="socid">'.$thirdparty.'</label></td>';
 					print '<td colspan="3" class="maxwidthonsmartphone">';
 					print $objsoc->getNomUrl(1, 'contact');
 					print '</td>';
-					print '<input type="hidden" name="socid" id="socid" value="'.$objsoc->id.'">';
+					print '<input type="hidden" name="socid" id="socid" class="width100p" value="'.$objsoc->id.'">';
 					print '</td></tr>';
 				} else {
-					print '<tr><td><label for="socid">'.$langs->trans("ThirdParty").'</label></td><td colspan="3" class="maxwidthonsmartphone">';
-					print img_picto('', 'company').$form->select_company($socid, 'socid', '', 'SelectThirdParty');
+					print '<tr><td><label  for="socid">'.$thirdparty.'</label></td><td colspan="3"  class="maxwidthonsmartphone">';
+					print img_picto('', 'company').$form->select_company($socid, 'socid', '', $sl_thirdparty);
 					print '</td></tr>';
 				}
 			}
@@ -687,7 +702,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 			// Job position
 			print '<tr><td><label for="title">'.$langs->trans("PostOrFunction").'</label></td>';
-			print '<td colspan="3"><input name="poste" id="title" type="text" class="minwidth100" maxlength="255" value="'.dol_escape_htmltag(GETPOSTISSET("poste") ?GETPOST("poste", 'alphanohtml') : $object->poste).'"></td>';
+			print '<td colspan="3"><input name="poste" id="title" type="text" class="minwidth100 width100p" maxlength="255" value="'.dol_escape_htmltag(GETPOSTISSET("poste") ?GETPOST("poste", 'alphanohtml') : $object->poste).'"></td>';
 
 			$colspan = 3;
 			if ($conf->use_javascript_ajax && $socid > 0) {
@@ -699,7 +714,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				$object->address = $objsoc->address; // Predefined with third party
 			}
 			print '<tr><td><label for="address">'.$langs->trans("Address").'</label></td>';
-			print '<td colspan="'.$colspan.'"><textarea class="flat quatrevingtpercent" name="address" id="address" rows="'.ROWS_2.'">'.(GETPOST("address", 'alpha') ?GETPOST("address", 'alpha') : $object->address).'</textarea></td>';
+			print '<td colspan="'.$colspan.'"><textarea class="flat quatrevingtpercent width100p" name="address" id="address" rows="'.ROWS_2.'">'.(GETPOST("address", 'alpha') ?GETPOST("address", 'alpha') : $object->address).'</textarea></td>';
 
 			if ($conf->use_javascript_ajax && $socid > 0) {
 				$rowspan = 3;
@@ -726,9 +741,9 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			print '</td></tr>';
 
 			// Country
-			print '<tr><td><label for="selectcountry_id">'.$langs->trans("Country").'</label></td><td colspan="'.$colspan.'" class="maxwidthonsmartphone">';
+			print '<tr><td><label for="selectcountry_id">'.$langs->trans("Country").'</label></td><td colspan="'.$colspan.'"  class="maxwidthonsmartphone">';
 			print img_picto('', 'globe-americas', 'class="paddingrightonly"');
-			print $form->select_country((GETPOST("country_id", 'alpha') ? GETPOST("country_id", 'alpha') : $object->country_id), 'country_id');
+			print $form->select_country((GETPOST("country_id", 'alpha') ? GETPOST("country_id", 'alpha') : $object->country_id), 'country_id " style="width: 697.203px;');
 			if ($user->admin) {
 				print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
 			}
@@ -790,9 +805,9 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 			// Email
 			print '<tr><td>'.$form->editfieldkey('EMail', 'email', '', $object, 0, 'string', '').'</td>';
-			print '<td>';
+			print '<td colspan="3">';
 			print img_picto('', 'object_email');
-			print '<input type="text" name="email" id="email" value="'.(GETPOSTISSET('email') ? GETPOST('email', 'alpha') : $object->email).'"></td>';
+			print '<input type="email" class="width80p"  style="width:96.5%" name="email" id="email" value="'.(GETPOSTISSET('email') ? GETPOST('email', 'alpha') : $object->email).'" required></td>';
 			print '</tr>';
 
 			// Unsubscribe
@@ -851,7 +866,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 			// Categories
 			if (!empty($conf->categorie->enabled) && !empty($user->rights->categorie->lire)) {
-				print '<tr><td>'.$form->editfieldkey('Categories', 'contcats', '', $object, 0).'</td><td colspan="3">';
+				print '<tr><td>'.$form->editfieldkey('Categories', 'contcats', '', $object, 0).'</td><td  colspan="3">';
 				$cate_arbo = $form->select_all_categories(Categorie::TYPE_CONTACT, null, 'parent', null, null, 1);
 				print img_picto('', 'category').$form->multiselectarray('contcats', $cate_arbo, GETPOST('contcats', 'array'), null, null, null, null, '90%');
 				print "</td></tr>";

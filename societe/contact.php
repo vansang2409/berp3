@@ -159,7 +159,7 @@ if (!empty($object->id)) {
 
 
 $head = societe_prepare_head($object);
-
+//echo 'aa';
 print dol_get_fiche_head($head, 'contact', $langs->trans("ThirdParty"), 0, 'company');
 
 $linkback = '<a href="'.DOL_URL_ROOT.'/societe/list.php?restore_lastsearch_values=1">'.$langs->trans("BackToList").'</a>';

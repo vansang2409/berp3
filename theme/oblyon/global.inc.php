@@ -1440,6 +1440,7 @@ select.selectarrowonleft option {
 .width20p { width:20%; }
 .width25p { width:25%; }
 .width40p { width:40%; }
+.width48p { width:48%; }
 .width50p { width:50%; }
 .width60p { width:60%; }
 .width75p { width:75%; }
@@ -8180,7 +8181,7 @@ input#sew_keyword {
         margin-top: 0px;
     }
     li.tmenu, li.tmenusel {
-        min-width: 32px;
+        min-width: 100px !important;
     }
     div.mainmenu {
         min-width: auto;

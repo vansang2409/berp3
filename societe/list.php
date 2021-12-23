@@ -239,7 +239,7 @@ $arrayfields = array(
 	's.url'=>array('label'=>"Url", 'position'=>26, 'checked'=>0),
 	's.phone'=>array('label'=>"Phone", 'position'=>27, 'checked'=>1),
 	's.fax'=>array('label'=>"Fax", 'position'=>28, 'checked'=>0),
-	'typent.code'=>array('label'=>"ThirdPartyType", 'position'=>29, 'checked'=>$checkedtypetiers),
+	'typent.code'=>array('label'=>"Type", 'position'=>29, 'checked'=>$checkedtypetiers),
 	'staff.code'=>array('label'=>"Staff", 'position'=>31, 'checked'=>0),
 	's.siren'=>array('label'=>"ProfId1Short", 'position'=>40, 'checked'=>$checkedprofid1),
 	's.siret'=>array('label'=>"ProfId2Short", 'position'=>41, 'checked'=>$checkedprofid2),
@@ -419,15 +419,30 @@ $prospectstatic->client = 2;
 $prospectstatic->loadCacheOfProspStatus();
 
 
-$title = $langs->trans("ListOfThirdParties");
+$title =$langs->trans("Customers");
+if(GETPOST("type") == 'f')
+{
+	$title = $langs->trans("Suppliers");
+}
+
+if(GETPOST("type") == 'c')
+{
+	$title = $langs->trans("Customers");
+}
+
+if(GETPOST("type") == 'p')
+{
+	$title = $langs->trans("Prospects");
+}
+
 if ($type == 'c' && (empty($search_type) || ($search_type == '1,3'))) {
-	$title = $langs->trans("ListOfCustomers");
+	$title = $langs->trans("Customers");
 }
 if ($type == 'p' && (empty($search_type) || ($search_type == '2,3'))) {
-	$title = $langs->trans("ListOfProspects");
+	$title = $langs->trans("Prospects");
 }
 if ($type == 'f' && (empty($search_type) || ($search_type == '4'))) {
-	$title = $langs->trans("ListOfSuppliers");
+	$title = $langs->trans("Suppliers");
 }
 
 // Select every potentiels, and note each potentiels which fit in search parameters
@@ -720,8 +735,8 @@ if ($num == 1 && !empty($conf->global->MAIN_SEARCH_DIRECT_OPEN_IF_ONLY_ONE) && (
 }
 
 $help_url = 'EN:Module_Third_Parties|FR:Module_Tiers|ES:Empresas';
-llxHeader('', $langs->trans("ThirdParty"), $help_url);
-
+//llxHeader('', $langs->trans("ThirdParty"), $help_url);
+llxHeader('', $title, $help_url);
 $param = '';
 if (!empty($contextpage) && $contextpage != $_SERVER["PHP_SELF"]) {
 	$param .= '&contextpage='.urlencode($contextpage);
@@ -1247,6 +1262,7 @@ if (!empty($arrayfields['s.rowid']['checked'])) {
 }
 if (!empty($arrayfields['s.nom']['checked'])) {
 	print_liste_field_titre($arrayfields['s.nom']['label'], $_SERVER["PHP_SELF"], "s.nom", "", $param, ' data-key="ref"', $sortfield, $sortorder);
+	//echo $arrayfields['s.nom']['label'];
 }
 if (!empty($arrayfields['s.name_alias']['checked'])) {
 	print_liste_field_titre($arrayfields['s.name_alias']['label'], $_SERVER["PHP_SELF"], "s.name_alias", "", $param, "", $sortfield, $sortorder);

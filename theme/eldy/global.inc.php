@@ -1449,7 +1449,7 @@ table[summary="list_of_modules"] .fa-cog {
 .width75p { width:75%; }
 .width80p { width:80%; }
 .width100p { width:100%; }
-
+.width87p { width:87%; }
 
 /* Force values for small screen 1400 */
 @media only screen and (max-width: 1400px)
@@ -2658,7 +2658,7 @@ if (!empty($conf->global->MAIN_LOGIN_BACKGROUND)) {
 }
 div#login_left, div#login_right {
 	display: inline-block;
-	min-width: 245px;
+	min-width: 500px;
 	padding-top: 10px;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -2667,6 +2667,30 @@ div#login_left, div#login_right {
 }
 div#login_right select#entity {
 	margin-top: 10px;
+}
+div#login_right .span {
+    font-family:Century Gothic;
+    font-size: 14px !important;
+    display: block;
+    font-weight: 700;
+	text-align: left;
+}
+div#login_right .input {
+    display: block;
+    width: 100%;
+    height: calc(1.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem !important;
+    font-weight: 400;
+	font-family: inherit;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 table.login_table tr td table.none tr td {
 	padding: 2px;
@@ -2685,8 +2709,8 @@ table.login_table_securitycode tr td {
 	border: 1px solid #DDDDDD;
 }
 #img_logo, .img_logo {
-	max-width: 170px;
-	max-height: 90px;
+	max-width: 100%;
+	height: auto;
 }
 
 div.backgroundsemitransparent {

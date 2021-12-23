@@ -296,7 +296,7 @@ class FormCompany extends Form
 		$result = $this->db->query($sql);
 		if ($result) {
 			if (!empty($htmlname)) {
-				$out .= '<select id="'.$htmlname.'" class="flat maxwidth200onsmartphone minwidth300" name="'.$htmlname.'">';
+				$out .= '<select id="'.$htmlname.'" class="flat maxwidth200onsmartphone minwidth300 " style="width:93%" name="'.$htmlname.'">';
 			}
 			if ($country_codeid) {
 				$out .= '<option value="0">&nbsp;</option>';
@@ -435,7 +435,7 @@ class FormCompany extends Form
 	 *  @param	int		$addjscombo		Add js combo
 	 *  @return	string					String with HTML select
 	 */
-	public function select_civility($selected = '', $htmlname = 'civility_id', $morecss = 'maxwidth150', $addjscombo = 1)
+	public function select_civility($selected = '', $htmlname = 'civility_id', $morecss = 'width100p', $addjscombo = 1)
 	{
 		// phpcs:enable
 		global $conf, $langs, $user;
@@ -449,7 +449,7 @@ class FormCompany extends Form
 		dol_syslog("Form::select_civility", LOG_DEBUG);
 		$resql = $this->db->query($sql);
 		if ($resql) {
-			$out .= '<select class="flat'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'" id="'.$htmlname.'">';
+			$out .= '<select class="flat'.($morecss ? ' '.$morecss : '').' " name="'.$htmlname.'" id="'.$htmlname.'">';
 			$out .= '<option value="">&nbsp;</option>';
 			$num = $this->db->num_rows($resql);
 			$i = 0;
@@ -539,7 +539,7 @@ class FormCompany extends Form
 		$resql = $this->db->query($sql);
 		if ($resql) {
 			$out .= '<div id="particulier2" class="visible">';
-			$out .= '<select class="flat minwidth200'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'" id="'.$htmlname.'">';
+			$out .= '<select class="flat minwidth200 '.($morecss ? ' '.$morecss : '').'" style="width:98%" name="'.$htmlname.'" id="'.$htmlname.'">';
 			if ($country_codeid) {
 				$out .= '<option value="0">&nbsp;</option>'; // When country_codeid is set, we force to add an empty line because it does not appears from select. When not set, we already get the empty line from select.
 			}
@@ -886,7 +886,7 @@ class FormCompany extends Form
 			$out .= ajax_multiautocompleter($htmlname, $fields, DOL_URL_ROOT.'/core/ajax/ziptown.php')."\n";
 			$moreattrib .= ' autocomplete="off"';
 		}
-		$out .= '<input id="'.$htmlname.'" class="maxwidthonsmartphone'.($morecss ? ' '.$morecss : '').'" type="text"'.($moreattrib ? ' '.$moreattrib : '').' name="'.$htmlname.'" '.$size.' value="'.$selected.'">'."\n";
+		$out .= '<input id="'.$htmlname.'" class="maxwidthonsmartphone '.($morecss ? ' '.$morecss : '').'" style="width:48%;"type="text"'.($moreattrib ? ' '.$moreattrib : '').' name="'.$htmlname.'" '.$size.' value="'.$selected.'">'."\n";
 
 		return $out;
 	}
@@ -1024,7 +1024,7 @@ class FormCompany extends Form
 			return '' ;
 		}
 
-		$out = '<select class="flat '.$morecss.'" name="'.$htmlname.'" id="'.$htmlidname.'">';
+		$out = '<select class="flat width100p '.$morecss.'" name="'.$htmlname.'" id="'.$htmlidname.'">';
 		if ($typeinput == 'form') {
 			if ($allowempty || ($selected == '' || $selected == '-1')) {
 				$out .= '<option value="-1">';

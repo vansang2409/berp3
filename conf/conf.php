@@ -5,7 +5,7 @@
 // Take a look at conf.php.example file for an example of conf.php file
 // and explanations for all possibles parameters.
 //
-$berp3_main_url_root='https://localhost/berp3';
+$berp3_main_url_root='http://localhost/berp3';
 $berp3_main_document_root='C:/xampp/htdocs/berp3';
 $berp3_main_url_root_alt='/custom';
 $berp3_main_document_root_alt='C:/xampp/htdocs/berp3/custom';

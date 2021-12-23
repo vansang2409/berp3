@@ -333,7 +333,7 @@ if ($action == 'add' && ($user->rights->produit->creer || $user->rights->service
 	print '<tr><td class="tdtop titlefieldcreate fieldrequired">'.$langs->trans('Language').'</td><td>';
 	print $formadmin->select_language(GETPOST('forcelangprod'), 'forcelangprod', 0, $object->multilangs, 1);
 	print '</td></tr>';
-	print '<tr><td class="tdtop fieldrequired">'.$langs->trans('Label').'</td><td><input name="libelle" size="40"></td></tr>';
+	print '<tr><td class="tdtop fieldrequired">'.$langs->trans('Label').'</td><td><input  size="40"></td></tr>';
 	print '<tr><td class="tdtop">'.$langs->trans('Description').'</td><td>';
 	$doleditor = new DolEditor('desc', '', '', 160, 'berp3_notes', '', false, true, $conf->global->FCKEDITOR_ENABLE_PRODUCTDESC, ROWS_3, '90%');
 	$doleditor->Create();

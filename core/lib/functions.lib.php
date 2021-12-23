@@ -4786,11 +4786,22 @@ function getTitleFieldOfList($name, $thead = 0, $file = "", $field = "", $begin 
 			}
 		}
 		$sortordertouseinlink = preg_replace('/,$/', '', $sortordertouseinlink);
-		$out .= '<a class="reposition" href="'.$file.'?sortfield='.$field.'&sortorder='.$sortordertouseinlink.'&begin='.$begin.$options.'"';
+		$out .= '<a class="reposition"  href="'.$file.'?sortfield='.$field.'&sortorder='.$sortordertouseinlink.'&begin='.$begin.$options.'"';
 		//$out .= (empty($conf->global->MAIN_DISABLE_WRAPPING_ON_COLUMN_TITLE) ? ' title="'.dol_escape_htmltag($langs->trans($name)).'"' : '');
 		$out .= '>';
 	}
-
+    if(GETPOST('type')=='c' && $name=='ThirdPartyName')
+	{
+		$name = 'Customer';
+	}
+	if(GETPOST('type')=='p' && $name=='ThirdPartyName')
+	{
+		$name = 'Prospect';
+	}
+	if(GETPOST('type')=='f' && $name=='ThirdPartyName')
+	{
+		$name = 'Supplier';
+	}
 	if ($tooltip) {
 		// You can also use 'TranslationString:keyfortooltiponlick' for a tooltip on click.
 		$tmptooltip = explode(':', $tooltip);

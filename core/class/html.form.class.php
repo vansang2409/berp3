@@ -893,7 +893,7 @@ class Form
 		dol_syslog(get_class($this)."::select_country", LOG_DEBUG);
 		$resql = $this->db->query($sql);
 		if ($resql) {
-			$out .= '<select id="select'.$htmlname.'" class="flat maxwidth200onsmartphone selectcountry'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'" '.$htmloption.'>';
+			$out .= '<select  id="select'.$htmlname.'" class="flat maxwidth200onsmartphone selectcountry  '.($morecss ? ' '.$morecss : '').' width100p"  name="'.$htmlname.'" '.$htmloption.'>';
 			$num = $this->db->num_rows($resql);
 			$i = 0;
 			if ($num) {
@@ -1283,7 +1283,7 @@ class Form
 					$out .= img_picto($langs->trans("Search"), 'search');
 				}
 			}
-			$out .= '<input type="text" class="'.$morecss.'" name="search_'.$htmlname.'" id="search_'.$htmlname.'" value="'.$selected_input_value.'"'.($placeholder ? ' placeholder="'.dol_escape_htmltag($placeholder).'"' : '').' '.(!empty($conf->global->THIRDPARTY_SEARCH_AUTOFOCUS) ? 'autofocus' : '').' />';
+			$out .= '<input type="text" class="'.$morecss.' width100p" name="search_'.$htmlname.'" id="search_'.$htmlname.'" value="'.$selected_input_value.'"'.($placeholder ? ' placeholder="'.dol_escape_htmltag($placeholder).'"' : '').' '.(!empty($conf->global->THIRDPARTY_SEARCH_AUTOFOCUS) ? 'autofocus' : '').' />';
 			if ($hidelabel == 3) {
 				$out .= img_picto($langs->trans("Search"), 'search');
 			}
@@ -1407,7 +1407,7 @@ class Form
 			}
 
 			// Construct $out and $outarray
-			$out .= '<select id="'.$htmlname.'" class="flat'.($morecss ? ' '.$morecss : '').'"'.($moreparam ? ' '.$moreparam : '').' name="'.$htmlname.($multiple ? '[]' : '').'" '.($multiple ? 'multiple' : '').'>'."\n";
+			$out .= '<select id="'.$htmlname.'" class="flat'.($morecss ? ' '.$morecss : '').' width100p"'.($moreparam ? ' '.$moreparam : '').' name="'.$htmlname.($multiple ? '[]' : '').'" '.($multiple ? 'multiple' : '').'>'."\n";
 
 			$textifempty = (($showempty && !is_numeric($showempty)) ? $langs->trans($showempty) : '');
 			if (!empty($conf->global->COMPANY_USE_SEARCH_TO_SELECT)) {
@@ -5593,8 +5593,8 @@ class Form
 			$out .= '<form method="post" action="'.$page.'">';
 			$out .= '<input type="hidden" name="action" value="set_thirdparty">';
 			$out .= '<input type="hidden" name="token" value="'.newToken().'">';
-			$out .= $this->select_company($selected, $htmlname, $filter, $showempty, $showtype, $forcecombo, $events, 0, 'minwidth100', '', '', 1, array(), false, $excludeids);
-			$out .= '<input type="submit" class="button smallpaddingimp valignmiddle" value="'.$langs->trans("Modify").'">';
+			$out .= $this->select_company($selected, $htmlname, $filter, $showempty, $showtype, $forcecombo, $events, 0, 'minwidth100 width100p', '', '', 1, array(), false, $excludeids);
+			$out .= '<input type="submit" class="button smallpaddingimp valignmiddle width100p" value="'.$langs->trans("Modify").'">';
 			$out .= '</form>';
 		} else {
 			if ($selected) {
@@ -5709,7 +5709,7 @@ class Form
 		}
 
 		$out = '';
-		$out .= '<select class="flat" name="'.$htmlname.'" id="'.$htmlname.'">';
+		$out .= '<select class="flat width100p" name="'.$htmlname.'" id="'.$htmlname.'">';
 		if ($useempty) {
 			$out .= '<option value="">&nbsp;</option>';
 		}
@@ -5936,7 +5936,7 @@ class Form
 			}
 
 			if (!$options_only) {
-				$return .= '<select class="flat minwidth75imp" id="'.$htmlname.'" name="'.$htmlname.'"'.($disabled ? ' disabled' : '').$title.'>';
+				$return .= '<select class="flat minwidth75imp width100p" id="'.$htmlname.'" name="'.$htmlname.'"'.($disabled ? ' disabled' : '').$title.'>';
 			}
 
 			$selectedfound = false;
@@ -6268,7 +6268,7 @@ class Form
 			} else {
 				// Show date with combo selects
 				// Day
-				$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth50imp" id="'.$prefix.'day" name="'.$prefix.'day">';
+				$retstring .= '<select '.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth50imp" id="'.$prefix.'day" name="'.$prefix.'day">';
 
 				if ($emptydate || $set_time == -1) {
 					$retstring .= '<option value="0" selected>&nbsp;</option>';
@@ -7614,7 +7614,7 @@ class Form
 			$out .= ajax_combobox($htmlname, array(), 0, 0, 'resolve', $show_empty < 0 ? (string) $show_empty : '-1');
 		}
 
-		$out .= '<select id="'.preg_replace('/^\./', '', $htmlname).'" '.($disabled ? 'disabled="disabled" ' : '').'class="flat '.(preg_replace('/^\./', '', $htmlname)).($morecss ? ' '.$morecss : '').'"';
+		$out .= '<select  id="'.preg_replace('/^\./', '', $htmlname).'" '.($disabled ? 'disabled="disabled" ' : '').'class="flat width100p '.(preg_replace('/^\./', '', $htmlname)).($morecss ? ' '.$morecss : '').'"';
 		$out .= ' name="'.preg_replace('/^\./', '', $htmlname).'" '.($moreparam ? $moreparam : '');
 		$out .= '>';
 
@@ -7745,7 +7745,7 @@ class Form
 			return '';
 		}
 
-		$out = '<select type="text" class="'.$htmlname.($morecss ? ' '.$morecss : '').'" '.($moreparam ? $moreparam.' ' : '').'name="'.$htmlname.'"></select>';
+		$out = '<select type="text" class="'.$htmlname.($morecss ? ' '.$morecss : '').' width100p" '.($moreparam ? $moreparam.' ' : '').'name="'.$htmlname.'"></select>';
 
 		$outdelayed = '';
 		if (!empty($conf->use_javascript_ajax)) {
@@ -8028,7 +8028,9 @@ class Form
 		}
 
 		// Try also magic suggest
-		$out .= '<select id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').'" multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').($width ? ' style="width: '.(preg_match('/%/', $width) ? $width : $width.'px').'"' : '').'>'."\n";
+		//$out .= '<select  id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').' " multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').($width ? ' style="width: '.(preg_match('/%/', $width) ? $width : $width.'px').'"' : '').'>'."\n";
+		$out .= '<select  id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').' " multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').' style="width:95% !important">'."\n";
+		
 		if (is_array($array) && !empty($array)) {
 			if ($value_as_key) {
 				$array = array_combine($array, $array);
@@ -8594,7 +8596,7 @@ class Form
 
 		$disabled = ($disabled ? ' disabled' : '');
 
-		$resultyesno = '<select class="flat width75'.($morecss ? ' '.$morecss : '').'" id="'.$htmlname.'" name="'.$htmlname.'"'.$disabled.'>'."\n";
+		$resultyesno = '<select class="flat width100p'.($morecss ? ' '.$morecss : '').'" id="'.$htmlname.'" name="'.$htmlname.'"'.$disabled.'>'."\n";
 		if ($useempty) {
 			$resultyesno .= '<option value="-1"'.(($value < 0) ? ' selected' : '').'>&nbsp;</option>'."\n";
 		}

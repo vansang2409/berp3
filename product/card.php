@@ -1135,7 +1135,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			if (!empty($modCodeProduct->code_auto)) {
 				$tmpcode = $modCodeProduct->getNextValue($object, $type);
 			}
-			print '<td class="titlefieldcreate fieldrequired">'.$langs->trans("Ref").'</td><td><input id="ref" name="ref" class="maxwidth200" maxlength="128" value="'.dol_escape_htmltag(GETPOSTISSET('ref') ? GETPOST('ref', 'alphanohtml') : $tmpcode).'">';
+			print '<td class="titlefieldcreate fieldrequired">'.$langs->trans("Ref").'</td><td><input id="ref" name="ref" class="width100p" maxlength="128" value="'.dol_escape_htmltag(GETPOSTISSET('ref') ? GETPOST('ref', 'alphanohtml') : $tmpcode).'">';
 			if ($refalreadyexists) {
 				print $langs->trans("RefAlreadyExists");
 			}
@@ -1143,7 +1143,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		}
 
 		// Label
-		print '<tr><td class="fieldrequired">'.$langs->trans("Label").'</td><td><input name="label" class="minwidth300 maxwidth400onsmartphone" maxlength="255" value="'.dol_escape_htmltag(GETPOST('label', $label_security_check)).'"></td></tr>';
+		print '<tr><td class="fieldrequired">'.$langs->trans("Label").'</td><td><input name="label" class="minwidth300 maxwidth400onsmartphone width100p" maxlength="255" value="'.dol_escape_htmltag(GETPOST('label', $label_security_check)).'"></td></tr>';
 
 		// On sell
 		print '<tr><td class="fieldrequired">'.$langs->trans("Status").' ('.$langs->trans("Sell").')</td><td>';
@@ -1152,7 +1152,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		print '</td></tr>';
 
 		// To buy
-		print '<tr><td class="fieldrequired">'.$langs->trans("Status").' ('.$langs->trans("Buy").')</td><td>';
+		print '<tr><td class="fieldrequired ">'.$langs->trans("Status").' ('.$langs->trans("Buy").')</td><td>';
 		$statutarray = array('1' => $langs->trans("ProductStatusOnBuy"), '0' => $langs->trans("ProductStatusNotOnBuy"));
 		print $form->selectarray('statut_buy', $statutarray, GETPOST('statut_buy'));
 		print '</td></tr>';
@@ -1239,7 +1239,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			if (empty($tmpcode) && !empty($modBarCodeProduct->code_auto)) {
 				$tmpcode = $modBarCodeProduct->getNextValue($object, $fk_barcode_type);
 			}
-			print '<input class="maxwidth100" type="text" name="barcode" value="'.dol_escape_htmltag($tmpcode).'">';
+			print '<input class="width100p" type="text" name="barcode" value="'.dol_escape_htmltag($tmpcode).'">';
 			print '</td></tr>';
 		}
 
@@ -1255,7 +1255,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			// Public URL
 			print '<tr><td>'.$langs->trans("PublicUrl").'</td><td>';
 			print img_picto('', 'globe', 'class="pictofixedwidth"');
-			print '<input type="text" name="url" class="quatrevingtpercent" value="'.GETPOST('url').'">';
+			print '<input type="text" name="url" class="quatrevingtpercent " style="width: 96%" value="'.GETPOST('url').'">';
 			print '</td></tr>';
 		}
 
@@ -1263,7 +1263,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			// Default warehouse
 			print '<tr><td>'.$langs->trans("DefaultWarehouse").'</td><td>';
 			print img_picto($langs->trans("DefaultWarehouse"), 'stock', 'class="pictofixedwidth"');
-			print $formproduct->selectWarehouses(GETPOST('fk_default_warehouse', 'int'), 'fk_default_warehouse', 'warehouseopen', 1, 0, 0, '', 0, 0, array(), 'minwidth300 widthcentpercentminusxx maxwidth500');
+			print $formproduct->selectWarehouses(GETPOST('fk_default_warehouse', 'int'), 'fk_default_warehouse', 'warehouseopen', 1, 0, 0, '', 0, 0, array(), 'width100p');
 			print ' <a href="'.DOL_URL_ROOT.'/product/stock/card.php?action=create&token='.newToken().'&backtopage='.urlencode($_SERVER['PHP_SELF'].'?id='.$object->id.'&action=edit&token='.newToken()).'">';
 			print '<span class="fa fa-plus-circle valignmiddle paddingleft" title="'.$langs->trans("AddWarehouse").'"></span>';
 			print '</a>';
@@ -1273,13 +1273,13 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			if (empty($conf->global->PRODUCT_DISABLE_STOCK_LEVELS)) {
 				// Stock min level
 				print '<tr><td>'.$form->textwithpicto($langs->trans("StockLimit"), $langs->trans("StockLimitDesc"), 1).'</td><td>';
-				print '<input name="seuil_stock_alerte" class="maxwidth50" value="'.GETPOST('seuil_stock_alerte').'">';
+				print '<input name="seuil_stock_alerte" class="width100p" value="'.GETPOST('seuil_stock_alerte').'">';
 				print '</td>';
 				print '</tr>';
 
 				// Stock desired level
 				print '<tr><td>'.$form->textwithpicto($langs->trans("DesiredStock"), $langs->trans("DesiredStockDesc"), 1).'</td><td>';
-				print '<input name="desiredstock" class="maxwidth50" value="'.GETPOST('desiredstock').'">';
+				print '<input name="desiredstock" class="width100p" value="'.GETPOST('desiredstock').'">';
 				print '</td></tr>';
 			}
 		} else {
@@ -1292,12 +1292,12 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		// Duration
 		if ($type == 1) {
 			print '<tr><td>'.$langs->trans("Duration").'</td><td>';
-			print '<input name="duration_value" size="4" value="'.GETPOST('duration_value', 'int').'">';
+			print '<input name="duration_value" size="4" style="min-width:76%" value="'.GETPOST('duration_value', 'int').'">';
 			print $formproduct->selectMeasuringUnits("duration_unit", "time", (GETPOSTISSET('duration_value') ? GETPOSTISSET('duration_value', 'alpha') : 'h'), 0, 1);
 
 			// Mandatory period
 			print ' &nbsp; &nbsp; &nbsp; ';
-			print '<input type="checkbox" id="mandatoryperiod" name="mandatoryperiod"'.($object->mandatory_period == 1 ? ' checked="checked"' : '').'>';
+			print '<input type="checkbox" id="mandatoryperiod"  name="mandatoryperiod"'.($object->mandatory_period == 1 ? ' checked="checked"' : '').'>';
 			print '<label for="mandatoryperiod">';
 			$htmltooltip = $langs->trans("mandatoryHelper");
 			print $form->textwithpicto($langs->trans("mandatoryperiod"), $htmltooltip, 1, 0);
@@ -1319,7 +1319,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			if (empty($conf->global->PRODUCT_DISABLE_WEIGHT)) {
 				// Brut Weight
 				print '<tr><td>'.$langs->trans("Weight").'</td><td>';
-				print '<input name="weight" size="4" value="'.GETPOST('weight').'">';
+				print '<input name="weight" size="4" class="width87p" value="'.GETPOST('weight').'">';
 				print $formproduct->selectMeasuringUnits("weight_units", "weight", GETPOSTISSET('weight_units') ?GETPOST('weight_units', 'alpha') : (empty($conf->global->MAIN_WEIGHT_DEFAULT_UNIT) ? 0 : $conf->global->MAIN_WEIGHT_DEFAULT_UNIT), 0, 2);
 				print '</td></tr>';
 			}
@@ -1327,23 +1327,23 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			// Brut Length
 			if (empty($conf->global->PRODUCT_DISABLE_SIZE)) {
 				print '<tr><td>'.$langs->trans("Length").' x '.$langs->trans("Width").' x '.$langs->trans("Height").'</td><td>';
-				print '<input name="size" class="width50" value="'.GETPOST('size').'"> x ';
-				print '<input name="sizewidth" class="width50" value="'.GETPOST('sizewidth').'"> x ';
-				print '<input name="sizeheight" class="width50" value="'.GETPOST('sizeheight').'">';
+				print '<input name="size" class="width30p" value="'.GETPOST('size').'"> x ';
+				print '<input name="sizewidth" class="width30p" value="'.GETPOST('sizewidth').'"> x ';
+				print '<input name="sizeheight" class="width40p" value="'.GETPOST('sizeheight').'">';
 				print $formproduct->selectMeasuringUnits("size_units", "size", GETPOSTISSET('size_units') ?GETPOST('size_units', 'alpha') : '0', 0, 2);
 				print '</td></tr>';
 			}
 			if (empty($conf->global->PRODUCT_DISABLE_SURFACE)) {
 				// Brut Surface
 				print '<tr><td>'.$langs->trans("Surface").'</td><td>';
-				print '<input name="surface" size="4" value="'.GETPOST('surface').'">';
+				print '<input name="surface" size="4" class="width87p" value="'.GETPOST('surface').'">';
 				print $formproduct->selectMeasuringUnits("surface_units", "surface", GETPOSTISSET('surface_units') ?GETPOST('surface_units', 'alpha') : '0', 0, 2);
 				print '</td></tr>';
 			}
 			if (empty($conf->global->PRODUCT_DISABLE_VOLUME)) {
 				// Brut Volume
 				print '<tr><td>'.$langs->trans("Volume").'</td><td>';
-				print '<input name="volume" size="4" value="'.GETPOST('volume').'">';
+				print '<input name="volume" size="4" class="width87p" value="'.GETPOST('volume').'">';
 				print $formproduct->selectMeasuringUnits("volume_units", "volume", GETPOSTISSET('volume_units') ?GETPOST('volume_units', 'alpha') : '0', 0, 2);
 				print '</td></tr>';
 			}
@@ -1351,7 +1351,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			if (!empty($conf->global->PRODUCT_ADD_NET_MEASURE)) {
 				// Net Measure
 				print '<tr><td>'.$langs->trans("NetMeasure").'</td><td>';
-				print '<input name="net_measure" size="4" value="'.GETPOST('net_measure').'">';
+				print '<input name="net_measure" size="4" class="width100p" value="'.GETPOST('net_measure').'">';
 				print $formproduct->selectMeasuringUnits("net_measure_units", '', GETPOSTISSET('net_measure_units') ?GETPOST('net_measure_units', 'alpha') : (empty($conf->global->MAIN_WEIGHT_DEFAULT_UNIT) ? 0 : $conf->global->MAIN_WEIGHT_DEFAULT_UNIT), 0, 0);
 				print '</td></tr>';
 			}
@@ -1367,13 +1367,13 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 		// Custom code
 		if (empty($conf->global->PRODUCT_DISABLE_CUSTOM_INFO) && empty($type)) {
-			print '<tr><td class="wordbreak">'.$langs->trans("CustomCode").'</td><td><input name="customcode" class="maxwidth100onsmartphone" value="'.GETPOST('customcode').'"></td></tr>';
+			print '<tr><td class="wordbreak">'.$langs->trans("CustomCode").'</td><td><input name="customcode" class="maxwidth100onsmartphone width100p" value="'.GETPOST('customcode').'"></td></tr>';
 
 			// Origin country
 			print '<tr><td>'.$langs->trans("CountryOrigin").'</td>';
 			print '<td>';
 			print img_picto('', 'globe-americas', 'class="paddingrightonly"');
-			print $form->select_country((GETPOSTISSET('country_id') ? GETPOST('country_id') : $object->country_id), 'country_id', '', 0, 'minwidth300 widthcentpercentminusx maxwidth500');
+			print $form->select_country((GETPOSTISSET('country_id') ? GETPOST('country_id') : $object->country_id), 'country_id', '', 0, 'minwidth300 widthcentpercentminusx  width100p');
 			if ($user->admin) {
 				print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
 			}
@@ -1424,7 +1424,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			// Categories
 			print '<tr><td>'.$langs->trans("Categories").'</td><td>';
 			$cate_arbo = $form->select_all_categories(Categorie::TYPE_PRODUCT, '', 'parent', 64, 0, 1);
-			print img_picto('', 'category').$form->multiselectarray('categories', $cate_arbo, GETPOST('categories', 'array'), '', 0, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
+			print img_picto('', 'category').$form->multiselectarray('categories', $cate_arbo, GETPOST('categories', 'array'), '', 0, 'quatrevingtpercent widthcentpercentminusx width100p', 0, 0);
 			print "</td></tr>";
 		}
 
@@ -1451,13 +1451,13 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 				// Price
 				print '<tr><td class="titlefieldcreate">'.$langs->trans("SellingPrice").'</td>';
-				print '<td><input name="price" class="maxwidth50" value="'.$object->price.'">';
+				print '<td><input name="price" class="" style="width:86.5%" value="'.$object->price.'">';
 				print $form->selectPriceBaseType($conf->global->PRODUCT_PRICE_BASE_TYPE, "price_base_type");
 				print '</td></tr>';
 
 				// Min price
 				print '<tr><td>'.$langs->trans("MinPrice").'</td>';
-				print '<td><input name="price_min" class="maxwidth50" value="'.$object->price_min.'">';
+				print '<td><input name="price_min" class="width100p" value="'.$object->price_min.'">';
 				print '</td></tr>';
 
 				// VAT
@@ -1486,7 +1486,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				} else {
 					$accountancy_code_sell = (GETPOSTISSET('accountancy_code_sell') ? GETPOST('accountancy_code_sell', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_ACCOUNT);
 				}
-				print $formaccounting->select_account($accountancy_code_sell, 'accountancy_code_sell', 1, null, 1, 1, 'minwidth150 maxwidth300', 1);
+				print $formaccounting->select_account($accountancy_code_sell, 'accountancy_code_sell', 1, null, 1, 1, 'minwidth150 width100p', 1);
 				print '</td></tr>';
 
 				// Accountancy_code_sell_intra
@@ -1498,7 +1498,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 					} else {
 						$accountancy_code_sell_intra = (GETPOSTISSET('accountancy_code_sell_intra') ? GETPOST('accountancy_code_sell_intra', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_INTRA_ACCOUNT);
 					}
-					print $formaccounting->select_account($accountancy_code_sell_intra, 'accountancy_code_sell_intra', 1, null, 1, 1, 'minwidth150 maxwidth300', 1);
+					print $formaccounting->select_account($accountancy_code_sell_intra, 'accountancy_code_sell_intra', 1, null, 1, 1, 'minwidth150 width100p', 1);
 					print '</td></tr>';
 				}
 
@@ -1510,7 +1510,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				} else {
 					$accountancy_code_sell_export = (GETPOST('accountancy_code_sell_export') ? GETPOST('accountancy_code_sell_export', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_EXPORT_ACCOUNT);
 				}
-				print $formaccounting->select_account($accountancy_code_sell_export, 'accountancy_code_sell_export', 1, null, 1, 1, 'minwidth150 maxwidth300', 1);
+				print $formaccounting->select_account($accountancy_code_sell_export, 'accountancy_code_sell_export', 1, null, 1, 1, 'minwidth150 width100p', 1);
 				print '</td></tr>';
 
 				// Accountancy_code_buy
@@ -1521,7 +1521,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				} else {
 					$accountancy_code_buy = (GETPOST('accountancy_code_buy', 'alpha') ? (GETPOST('accountancy_code_buy', 'alpha')) : $conf->global->ACCOUNTING_SERVICE_BUY_ACCOUNT);
 				}
-				print $formaccounting->select_account($accountancy_code_buy, 'accountancy_code_buy', 1, null, 1, 1, 'minwidth150 maxwidth300', 1);
+				print $formaccounting->select_account($accountancy_code_buy, 'accountancy_code_buy', 1, null, 1, 1, 'minwidth150 width100p', 1);
 				print '</td></tr>';
 
 				// Accountancy_code_buy_intra
@@ -1533,7 +1533,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 					} else {
 						$accountancy_code_buy_intra = (GETPOSTISSET('accountancy_code_buy_intra') ? GETPOST('accountancy_code_buy_intra', 'alpha') : $conf->global->ACCOUNTING_SERVICE_BUY_INTRA_ACCOUNT);
 					}
-					print $formaccounting->select_account($accountancy_code_buy_intra, 'accountancy_code_buy_intra', 1, null, 1, 1, 'minwidth150 maxwidth300', 1);
+					print $formaccounting->select_account($accountancy_code_buy_intra, 'accountancy_code_buy_intra', 1, null, 1, 1, 'minwidth150 width100p', 1);
 					print '</td></tr>';
 				}
 
@@ -1545,7 +1545,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				} else {
 					$accountancy_code_buy_export = (GETPOST('accountancy_code_buy_export') ? GETPOST('accountancy_code_buy_export', 'alpha') : $conf->global->ACCOUNTING_SERVICE_BUY_EXPORT_ACCOUNT);
 				}
-				print $formaccounting->select_account($accountancy_code_buy_export, 'accountancy_code_buy_export', 1, null, 1, 1, 'minwidth150 maxwidth300', 1);
+				print $formaccounting->select_account($accountancy_code_buy_export, 'accountancy_code_buy_export', 1, null, 1, 1, 'minwidth150 width100p', 1);
 				print '</td></tr>';
 			} else {// For external software
 				if (!empty($accountancy_code_sell)) {

@@ -24,7 +24,7 @@
  *	\ingroup	propal
  *	\brief	Home page of proposal area
  */
-
+//error_reporting(0);
 require '../../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
 require_once DOL_DOCUMENT_ROOT.'/comm/propal/class/propal.class.php';
@@ -39,6 +39,7 @@ $langs->loadLangs(array('propal', 'companies'));
 
 $now = dol_now();
 $max = 5;
+$total = 0;
 
 // Security check
 $socid = GETPOST('socid', 'int');

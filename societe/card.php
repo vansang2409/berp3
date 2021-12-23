@@ -942,7 +942,22 @@ if ($socid > 0 && empty($object->id)) {
 	}
 }
 
-$title = $langs->trans("ThirdParty");
+//$title = (GETPOST("type") == 'f')?$langs->trans("Suppliers"):$langs->trans("Customers");
+if(GETPOST("type") == 'f')
+{
+	$title = $langs->trans("Suppliers");
+}
+
+if(GETPOST("type") == 'c')
+{
+	$title = $langs->trans("Customers");
+}
+
+if(GETPOST("type") == 'p')
+{
+	$title = $langs->trans("Prospects");
+}
+
 if (!empty($conf->global->MAIN_HTML_TITLE) && preg_match('/thirdpartynameonly/', $conf->global->MAIN_HTML_TITLE) && $object->name) {
 	$title = $object->name." - ".$langs->trans('Card');
 }
@@ -1137,7 +1152,22 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		/* Show create form */
 
 		$linkback = "";
-		print load_fiche_titre($langs->trans("NewThirdParty"), $linkback, 'building');
+		$fiche =''; //(GETPOST('type')=='f')?$langs->trans("NewSupplier"):$langs->trans("NewCustomer");//$langs->trans("NewThirdParty")
+        if(GETPOST("type") == 'f')
+		{
+			$fiche = $langs->trans("NewSupplier");
+		}
+
+		if(GETPOST("type") == 'c')
+		{
+			$fiche = $langs->trans("NewCustomer");
+		}
+
+		if(GETPOST("type") == 'p')
+		{
+			$fiche = $langs->trans("NewProspect");
+		}
+		print load_fiche_titre($fiche, $linkback, 'building');
 
 		if (!empty($conf->use_javascript_ajax)) {
 			if (!empty($conf->global->THIRDPARTY_SUGGEST_ALSO_ADDRESS_CREATION)) {
@@ -1280,12 +1310,14 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		// Name, firstname
 		print '<tr class="tr-field-thirdparty-name"><td class="titlefieldcreate">';
 		if ($object->particulier || $private) {
-			print '<span id="TypeName" class="fieldrequired">'.$langs->trans('ThirdPartyName').' / '.$langs->trans('LastName', 'name').'</span>';
+			//print '<span  id="TypeName" class="fieldrequired">'.$langs->trans('ThirdPartyName').' / '.$langs->trans('LastName', 'name').'</span>';
+			print '<span  id="TypeName" class="fieldrequired">'.$title.' / '.$langs->trans('LastName', 'name').'</span>';
 		} else {
-			print '<span id="TypeName" class="fieldrequired">'.$form->editfieldkey('ThirdPartyName', 'name', '', $object, 0).'</span>';
+			//print '<span  id="TypeName" class="fieldrequired">'.$form->editfieldkey('ThirdPartyName', 'name', '', $object, 0).'</span>';
+			print '<span  id="TypeName" class="fieldrequired">'.$title.' / '.$langs->trans('LastName', 'name').'</span>';
 		}
 		print '</td><td'.(empty($conf->global->SOCIETE_USEPREFIX) ? ' colspan="3"' : '').'>';
-		print '<input type="text" class="minwidth300" maxlength="128" name="name" id="name" value="'.dol_escape_htmltag($object->name).'" autofocus="autofocus">';
+		print '<input type="text" class="minwidth300 width100p" maxlength="128" name="name" id="name" value="'.dol_escape_htmltag($object->name).'" autofocus="autofocus">';
 		print $form->widgetForTranslation("name", $object, $permissiontoadd, 'string', 'alpahnohtml', 'minwidth300');
 		print '</td>';
 		if (!empty($conf->global->SOCIETE_USEPREFIX)) {  // Old not used prefix field
@@ -1310,67 +1342,74 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 		// Alias names (commercial, trademark or alias names)
 		print '<tr id="name_alias"><td><label for="name_alias_input">'.$langs->trans('AliasNames').'</label></td>';
-		print '<td colspan="3"><input type="text" class="minwidth300" name="name_alias" id="name_alias_input" value="'.dol_escape_htmltag($object->name_alias).'"></td></tr>';
+		print '<td colspan="3"><input type="text" class="minwidth300 width100p" name="name_alias" id="name_alias_input" value="'.dol_escape_htmltag($object->name_alias).'"></td></tr>';
 
 		// Prospect/Customer
-		print '<tr><td class="titlefieldcreate">'.$form->editfieldkey('ProspectCustomer', 'customerprospect', '', $object, 0, 'string', '', 1).'</td>';
-		print '<td class="maxwidthonsmartphone">';
-		$selected = (GETPOSTISSET('client') ?GETPOST('client', 'int') : $object->client);
-		print $formcompany->selectProspectCustomerType($selected);
-		print '</td>';
-
-		if ($conf->browser->layout == 'phone') {
-			print '</tr><tr>';
-		}
-
-		print '<td>'.$form->editfieldkey('CustomerCode', 'customer_code', '', $object, 0).'</td><td>';
-		print '<table class="nobordernopadding"><tr><td>';
-		$tmpcode = $object->code_client;
-		if (empty($tmpcode) && !empty($modCodeClient->code_auto)) {
-			$tmpcode = $modCodeClient->getNextValue($object, 0);
-		}
-		print '<input type="text" name="customer_code" id="customer_code" class="maxwidthonsmartphone" value="'.dol_escape_htmltag($tmpcode).'" maxlength="24">';
-		print '</td><td>';
-		$s = $modCodeClient->getToolTip($langs, $object, 0);
-		print $form->textwithpicto('', $s, 1);
-		print '</td></tr></table>';
-		print '</td></tr>';
-
-		if ((!empty($conf->fournisseur->enabled) && !empty($user->rights->fournisseur->lire) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || (!empty($conf->supplier_order->enabled) && !empty($user->rights->supplier_order->lire)) || (!empty($conf->supplier_invoice->enabled) && !empty($user->rights->supplier_invoice->lire))
-			|| (!empty($conf->supplier_proposal->enabled) && !empty($user->rights->supplier_proposal->lire))) {
-			// Supplier
-			print '<tr>';
-			print '<td>'.$form->editfieldkey('Vendor', 'fournisseur', '', $object, 0, 'string', '', 1).'</td><td>';
-			$default = -1;
-			if (!empty($conf->global->THIRDPARTY_SUPPLIER_BY_DEFAULT)) {
-				$default = 1;
-			}
-			print $form->selectyesno("fournisseur", (GETPOST('fournisseur', 'int') != '' ? GETPOST('fournisseur', 'int') : (GETPOST("type", 'alpha') == '' ? $default : $object->fournisseur)), 1, 0, (GETPOST("type", 'alpha') == '' ? 1 : 0), 1);
+		if(GETPOST('type')=='c' || GETPOST('type')=='p' )
+		{
+			print '<tr><td class="titlefieldcreate">'.$form->editfieldkey('ProspectCustomer', 'customerprospect', '', $object, 0, 'string', '', 1).'</td>';
+			print '<td class="maxwidthonsmartphone">';
+			$selected = (GETPOSTISSET('client') ?GETPOST('client', 'int') : $object->client);
+			print $formcompany->selectProspectCustomerType($selected);
 			print '</td>';
-
 
 			if ($conf->browser->layout == 'phone') {
 				print '</tr><tr>';
 			}
 
-			print '<td>';
-			if ((!empty($conf->fournisseur->enabled) && !empty($user->rights->fournisseur->lire) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || (!empty($conf->supplier_order->enabled) && !empty($user->rights->supplier_order->lire)) || (!empty($conf->supplier_invoice->enabled) && !empty($user->rights->supplier_invoice->lire))) {
-				print $form->editfieldkey('SupplierCode', 'supplier_code', '', $object, 0);
+			print '<td>'.$form->editfieldkey('CustomerCode', 'customer_code', '', $object, 0).'</td><td>';
+			print '<table class="nobordernopadding"><tr><td>';
+			$tmpcode = $object->code_client;
+			if (empty($tmpcode) && !empty($modCodeClient->code_auto)) {
+				$tmpcode = $modCodeClient->getNextValue($object, 0);
 			}
+			print '<input type="text" name="customer_code" id="customer_code" class="maxwidthonsmartphone" value="'.dol_escape_htmltag($tmpcode).'" maxlength="24">';
 			print '</td><td>';
-			if ((!empty($conf->fournisseur->enabled) && !empty($user->rights->fournisseur->lire) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || (!empty($conf->supplier_order->enabled) && !empty($user->rights->supplier_order->lire)) || (!empty($conf->supplier_invoice->enabled) && !empty($user->rights->supplier_invoice->lire))) {
-				print '<table class="nobordernopadding"><tr><td>';
-				$tmpcode = $object->code_fournisseur;
-				if (empty($tmpcode) && !empty($modCodeFournisseur->code_auto)) {
-					$tmpcode = $modCodeFournisseur->getNextValue($object, 1);
-				}
-				print '<input type="text" name="supplier_code" id="supplier_code" class="maxwidthonsmartphone" value="'.dol_escape_htmltag($tmpcode).'" maxlength="24">';
-				print '</td><td>';
-				$s = $modCodeFournisseur->getToolTip($langs, $object, 1);
-				print $form->textwithpicto('', $s, 1);
-				print '</td></tr></table>';
-			}
+			$s = $modCodeClient->getToolTip($langs, $object, 0);
+			print $form->textwithpicto('', $s, 1);
+			print '</td></tr></table>';
 			print '</td></tr>';
+		}
+			
+
+		if(GETPOST('type')=='f')
+		{
+			if ((!empty($conf->fournisseur->enabled) && !empty($user->rights->fournisseur->lire) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || (!empty($conf->supplier_order->enabled) && !empty($user->rights->supplier_order->lire)) || (!empty($conf->supplier_invoice->enabled) && !empty($user->rights->supplier_invoice->lire))
+			|| (!empty($conf->supplier_proposal->enabled) && !empty($user->rights->supplier_proposal->lire))) {
+			// Supplier
+				print '<tr>';
+				print '<td>'.$form->editfieldkey('Supplier', 'fournisseur', '', $object, 0, 'string', '', 1).'</td><td>';
+				$default = -1;
+				if (!empty($conf->global->THIRDPARTY_SUPPLIER_BY_DEFAULT)) {
+					$default = 1;
+				}
+				print $form->selectyesno("fournisseur", (GETPOST('fournisseur', 'int') != '' ? GETPOST('fournisseur', 'int') : (GETPOST("type", 'alpha') == '' ? $default : $object->fournisseur)), 1, 0, (GETPOST("type", 'alpha') == '' ? 1 : 0), 1);
+				print '</td>';
+
+
+				if ($conf->browser->layout == 'phone') {
+					print '</tr><tr>';
+				}
+
+				print '<td>';
+				if ((!empty($conf->fournisseur->enabled) && !empty($user->rights->fournisseur->lire) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || (!empty($conf->supplier_order->enabled) && !empty($user->rights->supplier_order->lire)) || (!empty($conf->supplier_invoice->enabled) && !empty($user->rights->supplier_invoice->lire))) {
+					print $form->editfieldkey('SupplierCode', 'supplier_code', '', $object, 0);
+				}
+				print '</td><td>';
+				if ((!empty($conf->fournisseur->enabled) && !empty($user->rights->fournisseur->lire) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || (!empty($conf->supplier_order->enabled) && !empty($user->rights->supplier_order->lire)) || (!empty($conf->supplier_invoice->enabled) && !empty($user->rights->supplier_invoice->lire))) {
+					print '<table class="nobordernopadding"><tr><td>';
+					$tmpcode = $object->code_fournisseur;
+					if (empty($tmpcode) && !empty($modCodeFournisseur->code_auto)) {
+						$tmpcode = $modCodeFournisseur->getNextValue($object, 1);
+					}
+					print '<input type="text" name="supplier_code" id="supplier_code" class="maxwidthonsmartphone" value="'.dol_escape_htmltag($tmpcode).'" maxlength="24">';
+					print '</td><td>';
+					$s = $modCodeFournisseur->getToolTip($langs, $object, 1);
+					print $form->textwithpicto('', $s, 1);
+					print '</td></tr></table>';
+				}
+				print '</td></tr>';
+		    }
 		}
 
 		// Status
@@ -1383,7 +1422,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			print '<tr><td>'.$form->editfieldkey('Gencod', 'barcode', '', $object, 0).'</td>';
 			print '<td colspan="3">';
 			print img_picto('', 'barcode');
-			print '<input type="text" name="barcode" id="barcode" value="'.dol_escape_htmltag($object->barcode).'">';
+			print '<input type="text" name="barcode" id="barcode" style="width:96% !important;margin-left:5px" value="'.dol_escape_htmltag($object->barcode).'">';
 			print '</td></tr>';
 		}
 
@@ -1392,7 +1431,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		print $form->editfieldkey('Address', 'address', '', $object, 0);
 		print '</td>';
 		print '<td colspan="3">';
-		print '<textarea name="address" id="address" class="quatrevingtpercent" rows="'.ROWS_2.'" wrap="soft">';
+		print '<textarea name="address" id="address" class="quatrevingtpercent width100p" rows="'.ROWS_2.'" wrap="soft">';
 		print dol_escape_htmltag($object->address, 0, 1);
 		print '</textarea>';
 		print $form->widgetForTranslation("address", $object, $permissiontoadd, 'textarea', 'alphanohtml', 'quatrevingtpercent');
@@ -1400,20 +1439,20 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 		// Zip / Town
 		print '<tr><td>'.$form->editfieldkey('Zip', 'zipcode', '', $object, 0).'</td><td>';
-		print $formcompany->select_ziptown($object->zip, 'zipcode', array('town', 'selectcountry_id', 'state_id'), 0, 0, '', 'maxwidth100');
+		print $formcompany->select_ziptown($object->zip, 'zipcode', array('town', 'selectcountry_id', 'state_id'), 0, 0, '', 'width100p');
 		print '</td>';
 		if ($conf->browser->layout == 'phone') {
 			print '</tr><tr>';
 		}
-		print '<td class="tdtop">'.$form->editfieldkey('Town', 'town', '', $object, 0).'</td><td>';
-		print $formcompany->select_ziptown($object->town, 'town', array('zipcode', 'selectcountry_id', 'state_id'), 0, 0, '', 'maxwidth150 quatrevingtpercent');
+		print '<td class="tdtop" style="text-align:center">'.$form->editfieldkey('Town', 'town', '', $object, 0).'</td><td>';
+		print $formcompany->select_ziptown($object->town, 'town', array('zipcode', 'selectcountry_id', 'state_id'), 0, 0, '', 'width100p quatrevingtpercent');
 		print $form->widgetForTranslation("town", $object, $permissiontoadd, 'string', 'alphanohtml', 'maxwidth100 quatrevingtpercent');
 		print '</td></tr>';
 
 		// Country
 		print '<tr><td>'.$form->editfieldkey('Country', 'selectcountry_id', '', $object, 0).'</td><td colspan="3" class="maxwidthonsmartphone">';
 		print img_picto('', 'country', 'class="paddingrightonly"');
-		print $form->select_country((GETPOSTISSET('country_id') ? GETPOST('country_id') : $object->country_id), 'country_id', '', 0, 'minwidth300 maxwidth500 widthcentpercentminusx');
+		print $form->select_country((GETPOSTISSET('country_id') ? GETPOST('country_id') : $object->country_id), 'country_id', '', 0, 'minwidth300  widthcentpercentminusx');
 		if ($user->admin) {
 			print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
 		}
@@ -1438,16 +1477,16 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 		// Phone / Fax
 		print '<tr><td>'.$form->editfieldkey('Phone', 'phone', '', $object, 0).'</td>';
-		print '<td'.($conf->browser->layout == 'phone' ? ' colspan="3"' : '').'>'.img_picto('', 'object_phoning').' <input type="text" name="phone" id="phone" class="maxwidth200 widthcentpercentminusx" value="'.(GETPOSTISSET('phone') ?GETPOST('phone', 'alpha') : $object->phone).'"></td>';
+		print '<td'.($conf->browser->layout == 'phone' ? ' colspan="3"' : '').'>'.img_picto('', 'object_phoning').' <input type="text" name="phone" id="phone" class="width100p widthcentpercentminusx" value="'.(GETPOSTISSET('phone') ?GETPOST('phone', 'alpha') : $object->phone).'"></td>';
 		if ($conf->browser->layout == 'phone') {
 			print '</tr><tr>';
 		}
-		print '<td>'.$form->editfieldkey('Fax', 'fax', '', $object, 0).'</td>';
-		print '<td'.($conf->browser->layout == 'phone' ? ' colspan="3"' : '').'>'.img_picto('', 'object_phoning_fax').' <input type="text" name="fax" id="fax" class="maxwidth200 widthcentpercentminusx" value="'.(GETPOSTISSET('fax') ?GETPOST('fax', 'alpha') : $object->fax).'"></td></tr>';
+		print '<td style="text-align:center">'.$form->editfieldkey('Fax', 'fax', '', $object, 0).'</td>';
+		print '<td'.($conf->browser->layout == 'phone' ? ' colspan="3"' : '').'>'.img_picto('', 'object_phoning_fax').' <input type="text" name="fax" id="fax" class="width100p widthcentpercentminusx" value="'.(GETPOSTISSET('fax') ?GETPOST('fax', 'alpha') : $object->fax).'"></td></tr>';
 
 		// Email / Web
 		print '<tr><td>'.$form->editfieldkey('EMail', 'email', '', $object, 0, 'string', '', empty($conf->global->SOCIETE_EMAIL_MANDATORY) ? '' : $conf->global->SOCIETE_EMAIL_MANDATORY).'</td>';
-		print '<td'.(($conf->browser->layout == 'phone') || empty($conf->mailing->enabled) ? ' colspan="3"' : '').'>'.img_picto('', 'object_email').' <input type="text" class="maxwidth200 widthcentpercentminusx" name="email" id="email" value="'.$object->email.'"></td>';
+		print '<td'.(($conf->browser->layout == 'phone') || empty($conf->mailing->enabled) ? ' colspan="3"' : '').'>'.img_picto('', 'object_email').' <input type="text" class="width100p widthcentpercentminusx" name="email" id="email" value="'.$object->email.'"></td>';
 		if (!empty($conf->mailing->enabled) && !empty($conf->global->THIRDPARTY_SUGGEST_ALSO_ADDRESS_CREATION)) {
 			if ($conf->browser->layout == 'phone') {
 				print '</tr><tr>';
@@ -1457,7 +1496,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		}
 		print '</tr>';
 		print '<tr><td>'.$form->editfieldkey('Web', 'url', '', $object, 0).'</td>';
-		print '<td colspan="3">'.img_picto('', 'globe').' <input type="text" class="maxwidth500 widthcentpercentminusx" name="url" id="url" value="'.$object->url.'"></td></tr>';
+		print '<td colspan="3">'.img_picto('', 'globe').' <input type="text" class="width100p widthcentpercentminusx" name="url" id="url" value="'.$object->url.'"></td></tr>';
 
 		if (!empty($conf->socialnetworks->enabled)) {
 			foreach ($socialnetworks as $key => $value) {
@@ -1565,7 +1604,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		}
 
 		// Type - Workforce/Staff
-		print '<tr><td>'.$form->editfieldkey('ThirdPartyType', 'typent_id', '', $object, 0).'</td><td class="maxwidthonsmartphone"'.( ($conf->browser->layout == 'phone' || !empty($conf->global->SOCIETE_DISABLE_WORKFORCE)) ? ' colspan="3"' : '').'>'."\n";
+		print '<tr><td>'.$form->editfieldkey('Type', 'typent_id', '', $object, 0).'</td><td class="maxwidthonsmartphone"'.( ($conf->browser->layout == 'phone' || !empty($conf->global->SOCIETE_DISABLE_WORKFORCE)) ? ' colspan="3"' : '').'>'."\n";
 		$sortparam = (empty($conf->global->SOCIETE_SORT_ON_TYPEENT) ? 'ASC' : $conf->global->SOCIETE_SORT_ON_TYPEENT); // NONE means we keep sort of original array, so we sort on position. ASC, means next function will sort on label.
 		print $form->selectarray("typent_id", $formcompany->typent_array(0), $object->typent_id, 1, 0, 0, '', 0, 0, 0, $sortparam, '', 1);
 		if ($user->admin) {
@@ -1598,7 +1637,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 		// Capital
 		print '<tr><td>'.$form->editfieldkey('Capital', 'capital', '', $object, 0).'</td>';
-		print '<td colspan="3"><input type="text" name="capital" id="capital" class="maxwidth100" value="'.$object->capital.'"> ';
+		print '<td colspan="3"><input type="text" name="capital" id="capital" class="width80p" value="'.$object->capital.'"> ';
 		print '<span class="hideonsmartphone">'.$langs->trans("Currency".$conf->currency).'</span></td></tr>';
 
 		if (!empty($conf->global->MAIN_MULTILANGS)) {
@@ -1623,32 +1662,38 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 
 			// Customer
 			//if ($object->prospect || $object->client || (! $object->fournisseur && ! empty($conf->global->THIRDPARTY_CAN_HAVE_CATEGORY_EVEN_IF_NOT_CUSTOMER_PROSPECT_SUPPLIER))) {
-			print '<tr class="visibleifcustomer"><td class="toptd">'.$form->editfieldkey('CustomersProspectsCategoriesShort', 'custcats', '', $object, 0).'</td><td colspan="3">';
-			$cate_arbo = $form->select_all_categories(Categorie::TYPE_CUSTOMER, null, 'parent', null, null, 1);
-			print img_picto('', 'category').$form->multiselectarray('custcats', $cate_arbo, GETPOST('custcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
-			print "</td></tr>";
-			//}
-
-			if (!empty($conf->global->THIRDPARTY_SUGGEST_ALSO_ADDRESS_CREATION)) {
-				print '<tr class="individualline"><td class="toptd">'.$form->editfieldkey('ContactCategoriesShort', 'contcats', '', $object, 0).'</td><td colspan="3">';
-				$cate_arbo = $form->select_all_categories(Categorie::TYPE_CONTACT, null, 'parent', null, null, 1);
-				print img_picto('', 'category').$form->multiselectarray('contcats', $cate_arbo, GETPOST('contcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
+			if(GETPOST('type')=='c' || GETPOST('type')=='p')
+			{
+				print '<tr class="visibleifcustomer"><td class="toptd">'.$form->editfieldkey('CustomersProspectsCategoriesShort', 'custcats', '', $object, 0).'</td><td colspan="3">';
+				$cate_arbo = $form->select_all_categories(Categorie::TYPE_CUSTOMER, null, 'parent', null, null, 1);
+				print img_picto('', 'category').$form->multiselectarray('custcats', $cate_arbo, GETPOST('custcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
 				print "</td></tr>";
-			}
+				//}
 
-			if (!empty($conf->global->THIRDPARTY_SUGGEST_ALSO_ADDRESS_CREATION)) {
-				print '<tr class="individualline"><td class="toptd">'.$form->editfieldkey('ContactCategoriesShort', 'contcats', '', $object, 0).'</td><td colspan="3">';
-				$cate_arbo = $form->select_all_categories(Categorie::TYPE_CONTACT, null, 'parent', null, null, 1);
-				print img_picto('', 'category').$form->multiselectarray('contcats', $cate_arbo, GETPOST('contcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
-				print "</td></tr>";
+				if (!empty($conf->global->THIRDPARTY_SUGGEST_ALSO_ADDRESS_CREATION)) {
+					print '<tr class="individualline"><td class="toptd">'.$form->editfieldkey('ContactCategoriesShort', 'contcats', '', $object, 0).'</td><td colspan="3">';
+					$cate_arbo = $form->select_all_categories(Categorie::TYPE_CONTACT, null, 'parent', null, null, 1);
+					print img_picto('', 'category').$form->multiselectarray('contcats', $cate_arbo, GETPOST('contcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
+					print "</td></tr>";
+				}
+
+				if (!empty($conf->global->THIRDPARTY_SUGGEST_ALSO_ADDRESS_CREATION)) {
+					print '<tr class="individualline"><td class="toptd">'.$form->editfieldkey('ContactCategoriesShort', 'contcats', '', $object, 0).'</td><td colspan="3">';
+					$cate_arbo = $form->select_all_categories(Categorie::TYPE_CONTACT, null, 'parent', null, null, 1);
+					print img_picto('', 'category').$form->multiselectarray('contcats', $cate_arbo, GETPOST('contcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
+					print "</td></tr>";
+				}
 			}
 
 			// Supplier
-			if ((!empty($conf->fournisseur->enabled) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || !empty($conf->supplier_order->enabled) || !empty($conf->supplier_invoice->enabled)) {
-				print '<tr class="visibleifsupplier"><td class="toptd">'.$form->editfieldkey('SuppliersCategoriesShort', 'suppcats', '', $object, 0).'</td><td colspan="3">';
-				$cate_arbo = $form->select_all_categories(Categorie::TYPE_SUPPLIER, null, 'parent', null, null, 1);
-				print img_picto('', 'category').$form->multiselectarray('suppcats', $cate_arbo, GETPOST('suppcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
-				print "</td></tr>";
+			if(GETPOST('type')=='f')
+			{
+				if ((!empty($conf->fournisseur->enabled) && empty($conf->global->MAIN_USE_NEW_SUPPLIERMOD)) || !empty($conf->supplier_order->enabled) || !empty($conf->supplier_invoice->enabled)) {
+					print '<tr class="visibleifsupplier"><td class="toptd">'.$form->editfieldkey('SuppliersCategoriesShort', 'suppcats', '', $object, 0).'</td><td colspan="3">';
+					$cate_arbo = $form->select_all_categories(Categorie::TYPE_SUPPLIER, null, 'parent', null, null, 1);
+					print img_picto('', 'category').$form->multiselectarray('suppcats', $cate_arbo, GETPOST('suppcats', 'array'), null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
+					print "</td></tr>";
+				}
 			}
 		}
 
@@ -1679,7 +1724,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		print '<tr class="hideonsmartphone">';
 		print '<td>'.$form->editfieldkey('Logo', 'photoinput', '', $object, 0).'</td>';
 		print '<td colspan="3">';
-		print '<input class="flat" type="file" name="photo" id="photoinput" />';
+		print '<input class="flat width100p" type="file" name="photo" id="photoinput" />';
 		print '</td>';
 		print '</tr>';
 
@@ -2067,7 +2112,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 				print '<tr><td class="tdtop">'.$form->editfieldkey('Gencod', 'barcode', '', $object, 0).'</td>';
 				print '<td colspan="3">';
 				print img_picto('', 'barcode');
-				print '<input type="text" name="barcode" id="barcode" value="'.dol_escape_htmltag($object->barcode).'">';
+				print '<input  type="text" name="barcode" id="barcode"  value="'.dol_escape_htmltag($object->barcode).'">';
 				print '</td></tr>';
 			}
 

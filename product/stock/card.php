@@ -298,9 +298,9 @@ if ($action == 'create') {
 	print '<table class="border centpercent">';
 
 	// Ref
-	print '<tr><td class="titlefieldcreate fieldrequired">'.$langs->trans("Ref").'</td><td><input name="libelle" size="20" value=""></td></tr>';
+	print '<tr><td class="titlefieldcreate fieldrequired">'.$langs->trans("Ref").'</td><td><input  name="libelle" size="20" class="width100p" value=""></td></tr>';
 
-	print '<tr><td>'.$langs->trans("LocationSummary").'</td><td><input name="lieu" size="40" value="'.(!empty($object->lieu) ? $object->lieu : '').'"></td></tr>';
+	print '<tr><td>'.$langs->trans("LocationSummary").'</td><td><input name="lieu" size="40" class="width100p" value="'.(!empty($object->lieu) ? $object->lieu : '').'"></td></tr>';
 
 	// Parent entrepot
 	print '<tr><td>'.$langs->trans("AddIn").'</td><td>';
@@ -311,7 +311,7 @@ if ($action == 'create') {
 	if (!empty($conf->projet->enabled)) {
 		$langs->load('projects');
 		print '<tr><td>'.$langs->trans('Project').'</td><td colspan="2">';
-		print img_picto('', 'project').$formproject->select_projects(($socid > 0 ? $socid : -1), $projectid, 'projectid', 0, 0, 1, 1, 0, 0, 0, '', 1, 0, 'maxwidth500');
+		print img_picto('', 'project').$formproject->select_projects(($socid > 0 ? $socid : -1), $projectid, 'projectid', 0, 0, 1, 1, 0, 0, 0, '', 1, 0, 'width100p');
 		print ' <a href="'.DOL_URL_ROOT.'/projet/card.php?socid='.$socid.'&action=create&status=1&backtopage='.urlencode($_SERVER["PHP_SELF"].'?action=create&socid='.$socid.(!empty($fac_rec) ? '&fac_rec='.$fac_rec : '')).'"><span class="fa fa-plus-circle valignmiddle" title="'.$langs->trans("AddProject").'"></span></a>';
 		print '</td></tr>';
 	}
@@ -324,7 +324,7 @@ if ($action == 'create') {
 	$doleditor->Create();
 	print '</td></tr>';
 
-	print '<tr><td>'.$langs->trans('Address').'</td><td><textarea name="address" class="quatrevingtpercent" rows="3" wrap="soft">';
+	print '<tr><td>'.$langs->trans('Address').'</td><td><textarea name="address" class="quatrevingtpercent width100p" rows="3" wrap="soft">';
 	print (!empty($object->address) ? $object->address : '');
 	print '</textarea></td></tr>';
 
@@ -835,7 +835,7 @@ if ($action == 'create') {
 			print '<table class="border centpercent">';
 
 			// Ref
-			print '<tr><td class="titlefieldcreate fieldrequired">'.$langs->trans("Ref").'</td><td><input name="libelle" size="20" value="'.$object->label.'"></td></tr>';
+			print '<tr><td class="titlefieldcreate fieldrequired">'.$langs->trans("Ref").'</td><td><input name="libelle"  size="20" value="'.$object->label.'"></td></tr>';
 
 			print '<tr><td>'.$langs->trans("LocationSummary").'</td><td><input name="lieu" class="minwidth300" value="'.$object->lieu.'"></td></tr>';
 
