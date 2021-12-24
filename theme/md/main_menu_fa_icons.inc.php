@@ -63,7 +63,7 @@ div.mainmenu.takepos::before {
 }
 
 div.mainmenu.companies::before {
-	content: "\f1ad";
+	content: "\f480";
 }
 
 div.mainmenu.customers::before {

@@ -26,7 +26,8 @@ require '../main.inc.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/html.formadmin.class.php';
-
+// turn off warning reporting
+error_reporting(E_ERROR | E_PARSE);
 // Load translation files required by the page
 $langs->loadLangs(array("companies", "products", "admin", "sms", "other", "errors"));
 

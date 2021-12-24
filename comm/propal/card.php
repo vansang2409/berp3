@@ -1470,7 +1470,7 @@ $now = dol_now();
 if ($action == 'create') {
 	$currency_code = $conf->currency;
 
-	print load_fiche_titre($langs->trans("NewProp"), '', 'propal');
+	print load_fiche_titre($langs->trans("NewQuotation"), '', 'propal');
 
 	$soc = new Societe($db);
 	if ($socid > 0) {

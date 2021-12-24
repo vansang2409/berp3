@@ -1192,14 +1192,14 @@ if (!empty($arrayfields['s.tva_intra']['checked'])) {
 }
 
 // Nature (customer/prospect/supplier)
-if (!empty($arrayfields['customerorsupplier']['checked'])) {
-	print '<td class="liste_titre maxwidthonsmartphone center">';
-	if ($type != '') {
-		print '<input type="hidden" name="type" value="'.$type.'">';
-	}
-	print $formcompany->selectProspectCustomerType($search_type, 'search_type', 'search_type', 'list');
-	print '</select></td>';
-}
+// if (!empty($arrayfields['customerorsupplier']['checked'])) {
+// 	print '<td class="liste_titre maxwidthonsmartphone center">';
+// 	if ($type != '') {
+// 		print '<input type="hidden" name="type" value="'.$type.'">';
+// 	}
+// 	print $formcompany->selectProspectCustomerType($search_type, 'search_type', 'search_type', 'list');
+// 	print '</select></td>';
+// }
 // Prospect level
 if (!empty($arrayfields['s.fk_prospectlevel']['checked'])) {
 	print '<td class="liste_titre center">';

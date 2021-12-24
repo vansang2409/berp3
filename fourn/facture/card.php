@@ -59,6 +59,8 @@ if (!empty($conf->accounting->enabled)) {
 	require_once DOL_DOCUMENT_ROOT.'/accountancy/class/accountingjournal.class.php';
 }
 
+// turn off warning reporting
+error_reporting(E_ERROR | E_PARSE);
 
 $langs->loadLangs(array('bills', 'compta', 'suppliers', 'companies', 'products', 'banks', 'admin'));
 if (!empty($conf->incoterm->enabled)) {

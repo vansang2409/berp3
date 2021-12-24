@@ -56,6 +56,9 @@ if (!empty($conf->commande->enabled)) {
 	require_once DOL_DOCUMENT_ROOT.'/commande/class/commande.class.php';
 }
 
+// turn off warning reporting
+error_reporting(E_ERROR | E_PARSE);
+
 // Load translation files required by the page
 $langs->loadLangs(array('bills', 'companies', 'products', 'categories'));
 

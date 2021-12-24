@@ -1472,137 +1472,137 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			}
 		}
 
-		// Accountancy codes
-		print '<!-- accountancy codes -->'."\n";
-		print '<table class="border centpercent">';
+		// // Accountancy codes
+		// print '<!-- accountancy codes -->'."\n";
+		// print '<table class="border centpercent">';
 
-		if (empty($conf->global->PRODUCT_DISABLE_ACCOUNTING)) {
-			if (!empty($conf->accounting->enabled)) {
-				// Accountancy_code_sell
-				print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellCode").'</td>';
-				print '<td>';
-				if ($type == 0) {
-					$accountancy_code_sell = (GETPOSTISSET('accountancy_code_sell') ? GETPOST('accountancy_code_sell', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_SOLD_ACCOUNT);
-				} else {
-					$accountancy_code_sell = (GETPOSTISSET('accountancy_code_sell') ? GETPOST('accountancy_code_sell', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_ACCOUNT);
-				}
-				print $formaccounting->select_account($accountancy_code_sell, 'accountancy_code_sell', 1, null, 1, 1, 'minwidth150 width100p', 1);
-				print '</td></tr>';
+		// if (empty($conf->global->PRODUCT_DISABLE_ACCOUNTING)) {
+		// 	if (!empty($conf->accounting->enabled)) {
+		// 		// Accountancy_code_sell
+		// 		print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellCode").'</td>';
+		// 		print '<td>';
+		// 		if ($type == 0) {
+		// 			$accountancy_code_sell = (GETPOSTISSET('accountancy_code_sell') ? GETPOST('accountancy_code_sell', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_SOLD_ACCOUNT);
+		// 		} else {
+		// 			$accountancy_code_sell = (GETPOSTISSET('accountancy_code_sell') ? GETPOST('accountancy_code_sell', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_ACCOUNT);
+		// 		}
+		// 		print $formaccounting->select_account($accountancy_code_sell, 'accountancy_code_sell', 1, null, 1, 1, 'minwidth150 width100p', 1);
+		// 		print '</td></tr>';
 
-				// Accountancy_code_sell_intra
-				if ($mysoc->isInEEC()) {
-					print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellIntraCode").'</td>';
-					print '<td>';
-					if ($type == 0) {
-						$accountancy_code_sell_intra = (GETPOSTISSET('accountancy_code_sell_intra') ? GETPOST('accountancy_code_sell_intra', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_SOLD_INTRA_ACCOUNT);
-					} else {
-						$accountancy_code_sell_intra = (GETPOSTISSET('accountancy_code_sell_intra') ? GETPOST('accountancy_code_sell_intra', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_INTRA_ACCOUNT);
-					}
-					print $formaccounting->select_account($accountancy_code_sell_intra, 'accountancy_code_sell_intra', 1, null, 1, 1, 'minwidth150 width100p', 1);
-					print '</td></tr>';
-				}
+		// 		// Accountancy_code_sell_intra
+		// 		if ($mysoc->isInEEC()) {
+		// 			print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellIntraCode").'</td>';
+		// 			print '<td>';
+		// 			if ($type == 0) {
+		// 				$accountancy_code_sell_intra = (GETPOSTISSET('accountancy_code_sell_intra') ? GETPOST('accountancy_code_sell_intra', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_SOLD_INTRA_ACCOUNT);
+		// 			} else {
+		// 				$accountancy_code_sell_intra = (GETPOSTISSET('accountancy_code_sell_intra') ? GETPOST('accountancy_code_sell_intra', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_INTRA_ACCOUNT);
+		// 			}
+		// 			print $formaccounting->select_account($accountancy_code_sell_intra, 'accountancy_code_sell_intra', 1, null, 1, 1, 'minwidth150 width100p', 1);
+		// 			print '</td></tr>';
+		// 		}
 
-				// Accountancy_code_sell_export
-				print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellExportCode").'</td>';
-				print '<td>';
-				if ($type == 0) {
-					$accountancy_code_sell_export = (GETPOST('accountancy_code_sell_export') ? GETPOST('accountancy_code_sell_export', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_SOLD_EXPORT_ACCOUNT);
-				} else {
-					$accountancy_code_sell_export = (GETPOST('accountancy_code_sell_export') ? GETPOST('accountancy_code_sell_export', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_EXPORT_ACCOUNT);
-				}
-				print $formaccounting->select_account($accountancy_code_sell_export, 'accountancy_code_sell_export', 1, null, 1, 1, 'minwidth150 width100p', 1);
-				print '</td></tr>';
+		// 		// Accountancy_code_sell_export
+		// 		print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellExportCode").'</td>';
+		// 		print '<td>';
+		// 		if ($type == 0) {
+		// 			$accountancy_code_sell_export = (GETPOST('accountancy_code_sell_export') ? GETPOST('accountancy_code_sell_export', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_SOLD_EXPORT_ACCOUNT);
+		// 		} else {
+		// 			$accountancy_code_sell_export = (GETPOST('accountancy_code_sell_export') ? GETPOST('accountancy_code_sell_export', 'alpha') : $conf->global->ACCOUNTING_SERVICE_SOLD_EXPORT_ACCOUNT);
+		// 		}
+		// 		print $formaccounting->select_account($accountancy_code_sell_export, 'accountancy_code_sell_export', 1, null, 1, 1, 'minwidth150 width100p', 1);
+		// 		print '</td></tr>';
 
-				// Accountancy_code_buy
-				print '<tr><td>'.$langs->trans("ProductAccountancyBuyCode").'</td>';
-				print '<td>';
-				if ($type == 0) {
-					$accountancy_code_buy = (GETPOST('accountancy_code_buy', 'alpha') ? (GETPOST('accountancy_code_buy', 'alpha')) : $conf->global->ACCOUNTING_PRODUCT_BUY_ACCOUNT);
-				} else {
-					$accountancy_code_buy = (GETPOST('accountancy_code_buy', 'alpha') ? (GETPOST('accountancy_code_buy', 'alpha')) : $conf->global->ACCOUNTING_SERVICE_BUY_ACCOUNT);
-				}
-				print $formaccounting->select_account($accountancy_code_buy, 'accountancy_code_buy', 1, null, 1, 1, 'minwidth150 width100p', 1);
-				print '</td></tr>';
+		// 		// Accountancy_code_buy
+		// 		print '<tr><td>'.$langs->trans("ProductAccountancyBuyCode").'</td>';
+		// 		print '<td>';
+		// 		if ($type == 0) {
+		// 			$accountancy_code_buy = (GETPOST('accountancy_code_buy', 'alpha') ? (GETPOST('accountancy_code_buy', 'alpha')) : $conf->global->ACCOUNTING_PRODUCT_BUY_ACCOUNT);
+		// 		} else {
+		// 			$accountancy_code_buy = (GETPOST('accountancy_code_buy', 'alpha') ? (GETPOST('accountancy_code_buy', 'alpha')) : $conf->global->ACCOUNTING_SERVICE_BUY_ACCOUNT);
+		// 		}
+		// 		print $formaccounting->select_account($accountancy_code_buy, 'accountancy_code_buy', 1, null, 1, 1, 'minwidth150 width100p', 1);
+		// 		print '</td></tr>';
 
-				// Accountancy_code_buy_intra
-				if ($mysoc->isInEEC()) {
-					print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyIntraCode").'</td>';
-					print '<td>';
-					if ($type == 0) {
-						$accountancy_code_buy_intra = (GETPOSTISSET('accountancy_code_buy_intra') ? GETPOST('accountancy_code_buy_intra', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_BUY_INTRA_ACCOUNT);
-					} else {
-						$accountancy_code_buy_intra = (GETPOSTISSET('accountancy_code_buy_intra') ? GETPOST('accountancy_code_buy_intra', 'alpha') : $conf->global->ACCOUNTING_SERVICE_BUY_INTRA_ACCOUNT);
-					}
-					print $formaccounting->select_account($accountancy_code_buy_intra, 'accountancy_code_buy_intra', 1, null, 1, 1, 'minwidth150 width100p', 1);
-					print '</td></tr>';
-				}
+		// 		// Accountancy_code_buy_intra
+		// 		if ($mysoc->isInEEC()) {
+		// 			print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyIntraCode").'</td>';
+		// 			print '<td>';
+		// 			if ($type == 0) {
+		// 				$accountancy_code_buy_intra = (GETPOSTISSET('accountancy_code_buy_intra') ? GETPOST('accountancy_code_buy_intra', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_BUY_INTRA_ACCOUNT);
+		// 			} else {
+		// 				$accountancy_code_buy_intra = (GETPOSTISSET('accountancy_code_buy_intra') ? GETPOST('accountancy_code_buy_intra', 'alpha') : $conf->global->ACCOUNTING_SERVICE_BUY_INTRA_ACCOUNT);
+		// 			}
+		// 			print $formaccounting->select_account($accountancy_code_buy_intra, 'accountancy_code_buy_intra', 1, null, 1, 1, 'minwidth150 width100p', 1);
+		// 			print '</td></tr>';
+		// 		}
 
-				// Accountancy_code_buy_export
-				print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyExportCode").'</td>';
-				print '<td>';
-				if ($type == 0) {
-					$accountancy_code_buy_export = (GETPOST('accountancy_code_buy_export') ? GETPOST('accountancy_code_buy_export', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_BUY_EXPORT_ACCOUNT);
-				} else {
-					$accountancy_code_buy_export = (GETPOST('accountancy_code_buy_export') ? GETPOST('accountancy_code_buy_export', 'alpha') : $conf->global->ACCOUNTING_SERVICE_BUY_EXPORT_ACCOUNT);
-				}
-				print $formaccounting->select_account($accountancy_code_buy_export, 'accountancy_code_buy_export', 1, null, 1, 1, 'minwidth150 width100p', 1);
-				print '</td></tr>';
-			} else {// For external software
-				if (!empty($accountancy_code_sell)) {
-					$object->accountancy_code_sell = $accountancy_code_sell;
-				}
-				if (!empty($accountancy_code_sell_intra)) {
-					$object->accountancy_code_sell_intra = $accountancy_code_sell_intra;
-				}
-				if (!empty($accountancy_code_sell_export)) {
-					$object->accountancy_code_sell_export = $accountancy_code_sell_export;
-				}
-				if (!empty($accountancy_code_buy)) {
-					$object->accountancy_code_buy = $accountancy_code_buy;
-				}
-				if (!empty($accountancy_code_buy_intra)) {
-					$object->accountancy_code_buy_intra = $accountancy_code_buy_intra;
-				}
-				if (!empty($accountancy_code_buy_export)) {
-					$object->accountancy_code_buy_export = $accountancy_code_buy_export;
-				}
+		// 		// Accountancy_code_buy_export
+		// 		print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyExportCode").'</td>';
+		// 		print '<td>';
+		// 		if ($type == 0) {
+		// 			$accountancy_code_buy_export = (GETPOST('accountancy_code_buy_export') ? GETPOST('accountancy_code_buy_export', 'alpha') : $conf->global->ACCOUNTING_PRODUCT_BUY_EXPORT_ACCOUNT);
+		// 		} else {
+		// 			$accountancy_code_buy_export = (GETPOST('accountancy_code_buy_export') ? GETPOST('accountancy_code_buy_export', 'alpha') : $conf->global->ACCOUNTING_SERVICE_BUY_EXPORT_ACCOUNT);
+		// 		}
+		// 		print $formaccounting->select_account($accountancy_code_buy_export, 'accountancy_code_buy_export', 1, null, 1, 1, 'minwidth150 width100p', 1);
+		// 		print '</td></tr>';
+		// 	} else {// For external software
+		// 		if (!empty($accountancy_code_sell)) {
+		// 			$object->accountancy_code_sell = $accountancy_code_sell;
+		// 		}
+		// 		if (!empty($accountancy_code_sell_intra)) {
+		// 			$object->accountancy_code_sell_intra = $accountancy_code_sell_intra;
+		// 		}
+		// 		if (!empty($accountancy_code_sell_export)) {
+		// 			$object->accountancy_code_sell_export = $accountancy_code_sell_export;
+		// 		}
+		// 		if (!empty($accountancy_code_buy)) {
+		// 			$object->accountancy_code_buy = $accountancy_code_buy;
+		// 		}
+		// 		if (!empty($accountancy_code_buy_intra)) {
+		// 			$object->accountancy_code_buy_intra = $accountancy_code_buy_intra;
+		// 		}
+		// 		if (!empty($accountancy_code_buy_export)) {
+		// 			$object->accountancy_code_buy_export = $accountancy_code_buy_export;
+		// 		}
 
-				// Accountancy_code_sell
-				print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellCode").'</td>';
-				print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_sell" value="'.$object->accountancy_code_sell.'">';
-				print '</td></tr>';
+		// 		// Accountancy_code_sell
+		// 		print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellCode").'</td>';
+		// 		print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_sell" value="'.$object->accountancy_code_sell.'">';
+		// 		print '</td></tr>';
 
-				// Accountancy_code_sell_intra
-				if ($mysoc->isInEEC()) {
-					print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellIntraCode").'</td>';
-					print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_sell_intra" value="'.$object->accountancy_code_sell_intra.'">';
-					print '</td></tr>';
-				}
+		// 		// Accountancy_code_sell_intra
+		// 		if ($mysoc->isInEEC()) {
+		// 			print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellIntraCode").'</td>';
+		// 			print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_sell_intra" value="'.$object->accountancy_code_sell_intra.'">';
+		// 			print '</td></tr>';
+		// 		}
 
-				// Accountancy_code_sell_export
-				print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellExportCode").'</td>';
-				print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_sell_export" value="'.$object->accountancy_code_sell_export.'">';
-				print '</td></tr>';
+		// 		// Accountancy_code_sell_export
+		// 		print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancySellExportCode").'</td>';
+		// 		print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_sell_export" value="'.$object->accountancy_code_sell_export.'">';
+		// 		print '</td></tr>';
 
-				// Accountancy_code_buy
-				print '<tr><td>'.$langs->trans("ProductAccountancyBuyCode").'</td>';
-				print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_buy" value="'.$object->accountancy_code_buy.'">';
-				print '</td></tr>';
+		// 		// Accountancy_code_buy
+		// 		print '<tr><td>'.$langs->trans("ProductAccountancyBuyCode").'</td>';
+		// 		print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_buy" value="'.$object->accountancy_code_buy.'">';
+		// 		print '</td></tr>';
 
-				// Accountancy_code_buy_intra
-				if ($mysoc->isInEEC()) {
-					print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyIntraCode").'</td>';
-					print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_buy_intra" value="'.$object->accountancy_code_buy_intra.'">';
-					print '</td></tr>';
-				}
+		// 		// Accountancy_code_buy_intra
+		// 		if ($mysoc->isInEEC()) {
+		// 			print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyIntraCode").'</td>';
+		// 			print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_buy_intra" value="'.$object->accountancy_code_buy_intra.'">';
+		// 			print '</td></tr>';
+		// 		}
 
-				// Accountancy_code_buy_export
-				print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyExportCode").'</td>';
-				print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_buy_export" value="'.$object->accountancy_code_buy_export.'">';
-				print '</td></tr>';
-			}
-		}
-		print '</table>';
+		// 		// Accountancy_code_buy_export
+		// 		print '<tr><td class="titlefieldcreate">'.$langs->trans("ProductAccountancyBuyExportCode").'</td>';
+		// 		print '<td class="maxwidthonsmartphone"><input class="minwidth150" name="accountancy_code_buy_export" value="'.$object->accountancy_code_buy_export.'">';
+		// 		print '</td></tr>';
+		// 	}
+		// }
+		// print '</table>';
 
 		print dol_get_fiche_end();
 

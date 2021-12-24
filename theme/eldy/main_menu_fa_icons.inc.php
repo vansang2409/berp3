@@ -36,7 +36,7 @@ div.mainmenu.home::before{
 }
 
 div.mainmenu.billing::before {
-	content: "\f51e";
+	content: "\f571";
 }
 
 div.mainmenu.accountancy::before {
@@ -83,7 +83,7 @@ div.mainmenu.takepos::before {
 }
 
 div.mainmenu.companies::before {
-	content: "\f1ad";
+	content: "\f494";
 }
 
 div.mainmenu.customers::before {
@@ -91,11 +91,11 @@ div.mainmenu.customers::before {
 }
 
 div.mainmenu.purchaseorders::before {
-	content: "\f53d";
+	content: "\f788";
 }
 
 div.mainmenu.commercial::before {
-	content: "\f0f2";
+	content: "\f4c0";
 }
 
 div.mainmenu.ecm::before {
@@ -119,7 +119,7 @@ div.mainmenu.members::before {
 }
 
 div.mainmenu.products::before {
-	content: "\f1b2";
+	content: "\f468";
 }
 
 div.mainmenu.mrp::before {
@@ -135,7 +135,7 @@ div.mainmenu.ticket::before {
 }
 
 div.mainmenu.tools::before {
-	content: "\f0ad";
+	content: "\f7d9";
 }
 
 div.mainmenu.website::before {

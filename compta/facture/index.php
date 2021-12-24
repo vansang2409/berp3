@@ -27,6 +27,9 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/dolgraph.class.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/invoice.lib.php';
 
+// turn off warning reporting
+error_reporting(E_ERROR | E_PARSE);
+
 // Security check
 restrictedArea($user, 'facture');
 
