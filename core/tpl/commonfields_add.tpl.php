@@ -61,9 +61,10 @@ foreach ($object->fields as $key => $val) {
 		print $langs->trans($val['label']);
 	}
 	print '</td>';
-	print '<td class="valuefieldcreate">';
+	print '<td class="valuefieldcreate" >';
 	if (!empty($val['picto'])) {
 		print img_picto('', $val['picto'], '', false, 0, 0, '', 'pictofixedwidth');
+		
 	}
 	if (in_array($val['type'], array('int', 'integer'))) {
 		$value = GETPOST($key, 'int');
@@ -86,14 +87,18 @@ foreach ($object->fields as $key => $val) {
 	}
 	if (!empty($val['noteditable'])) {
 		print $object->showOutputField($val, $key, $value, '', '', '', 0);
+		
 	} else {
 		if ($key == 'lang') {
 			print img_picto('', 'language', 'class="pictofixedwidth"');
 			print $formadmin->select_language($value, $key, 0, null, 1, 0, 0, 'minwidth300', 2);
+
 		} else {
-			print $object->showInputField($val, $key, $value, '', '', '', 0);
+			print $object->showInputField($val, $key, $value, '', '', '','width100p', 0);
+			
 		}
 	}
+	
 	print '</td>';
 	print '</tr>';
 }

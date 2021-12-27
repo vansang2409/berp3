@@ -1578,7 +1578,7 @@ if ($action == 'create') {
 
 	// Ref customer
 	print '<tr><td>'.$langs->trans('RefCustomer').'</td><td>';
-	print '<input type="text" name="ref_client" value="'.GETPOST('ref_client').'"></td>';
+	print '<input type="text" name="ref_client" class="width100p" value="'.GETPOST('ref_client').'"></td>';
 	print '</tr>';
 
 	// Third party
@@ -1595,7 +1595,7 @@ if ($action == 'create') {
 		//$warehouse_id       = $soc->warehouse_id;
 	} else {
 		print '<td>';
-		print img_picto('', 'company').$form->select_company('', 'socid', '(s.client = 1 OR s.client = 2 OR s.client = 3) AND status=1', 'SelectThirdParty', 0, 0, null, 0, 'minwidth300 maxwidth500 widthcentpercentminusxx');
+		print img_picto('', 'company').$form->select_company('', 'socid', '(s.client = 1 OR s.client = 2 OR s.client = 3) AND status=1', 'SelectCustomer', 0, 0, null, 0, 'minwidth300  widthcentpercentminusxx');
 		// reload page to retrieve customer informations
 		if (empty($conf->global->RELOAD_PAGE_ON_CUSTOMER_CHANGE_DISABLED)) {
 			print '<script type="text/javascript">
@@ -1640,7 +1640,7 @@ if ($action == 'create') {
 	print '</td></tr>';
 
 	// Validaty duration
-	print '<tr><td class="fieldrequired">'.$langs->trans("ValidityDuration").'</td><td>'.img_picto('', 'clock').'&ensp;<input name="duree_validite" class="width50" value="'.(GETPOSTISSET('duree_validite') ? GETPOST('duree_validite', 'alphanohtml') : $conf->global->PROPALE_VALIDITY_DURATION).'"> '.$langs->trans("days").'</td></tr>';
+	print '<tr><td class="fieldrequired">'.$langs->trans("ValidityDuration").'</td><td>'.img_picto('', 'clock').'&ensp;<input name="duree_validite" class="width90p" style="width:90%" value="'.(GETPOSTISSET('duree_validite') ? GETPOST('duree_validite', 'alphanohtml') : $conf->global->PROPALE_VALIDITY_DURATION).'"> '.$langs->trans("days").'</td></tr>';
 
 	// Terms of payment
 	print '<tr><td class="nowrap">'.$langs->trans('PaymentConditionsShort').'</td><td>';
@@ -1651,20 +1651,20 @@ if ($action == 'create') {
 	// Mode of payment
 	print '<tr><td>'.$langs->trans('PaymentMode').'</td><td>';
 	print img_picto('', 'bank').'&ensp;';
-	$form->select_types_paiements((GETPOSTISSET('mode_reglement_id') ? GETPOST('mode_reglement_id', 'int') : $soc->mode_reglement_id), 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, 'maxwidth200 widthcentpercentminusx');
+	$form->select_types_paiements((GETPOSTISSET('mode_reglement_id') ? GETPOST('mode_reglement_id', 'int') : $soc->mode_reglement_id), 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, ' widthcentpercentminusx width100p');
 	print '</td></tr>';
 
 	// Bank Account
 	if (!empty($conf->global->BANK_ASK_PAYMENT_BANK_DURING_PROPOSAL) && !empty($conf->banque->enabled)) {
 		print '<tr><td>'.$langs->trans('BankAccount').'</td><td>';
-		print img_picto('', 'bank_account', 'class="pictofixedwidth"').$form->select_comptes($soc->fk_account, 'fk_account', 0, '', 1, '', 0, 'maxwidth200 widthcentpercentminusx', 1);
+		print img_picto('', 'bank_account', 'class="pictofixedwidth" ').$form->select_comptes($soc->fk_account, 'fk_account', 0, '', 1, '', 0, ' widthcentpercentminusx width100p', 1);
 		print '</td></tr>';
 	}
 
 	// Source / Channel - What trigger creation
 	print '<tr><td>'.$langs->trans('Source').'</td><td>';
 	print img_picto('', 'question', 'class="pictofixedwidth"');
-	$form->selectInputReason('', 'demand_reason_id', "SRC_PROP", 1, 'maxwidth200 widthcentpercentminusx');
+	$form->selectInputReason('', 'demand_reason_id', "SRC_PROP", 1, 'widthcentpercentminusx');
 	print '</td></tr>';
 
 	// Delivery delay
@@ -1674,7 +1674,7 @@ if ($action == 'create') {
 	}
 	print '</td><td>';
 	print img_picto('', 'clock').'&ensp;';
-	$form->selectAvailabilityDelay('', 'availability_id', '', 1, 'maxwidth200 widthcentpercentminusx');
+	$form->selectAvailabilityDelay('', 'availability_id', '', 1, ' widthcentpercentminusx');
 	print '</td></tr>';
 
 	// Shipping Method
@@ -1684,7 +1684,7 @@ if ($action == 'create') {
 		}
 		print '<tr><td>'.$langs->trans('SendingMethod').'</td><td>';
 		print img_picto('', 'object_dollyrevert', 'class="pictofixedwidth"');
-		print $form->selectShippingMethod($shipping_method_id, 'shipping_method_id', '', 1, '', 0, 'maxwidth200 widthcentpercentminusx');
+		print $form->selectShippingMethod($shipping_method_id, 'shipping_method_id', '', 1, '', 0, 'widthcentpercentminusx');
 		print '</td></tr>';
 	}
 
@@ -1738,7 +1738,7 @@ if ($action == 'create') {
 	print img_picto('', 'pdf').'&ensp;';
 	$liste = ModelePDFPropales::liste_modeles($db);
 	$preselected = ($conf->global->PROPALE_ADDON_PDF_ODT_DEFAULT ? $conf->global->PROPALE_ADDON_PDF_ODT_DEFAULT : $conf->global->PROPALE_ADDON_PDF);
-	print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', 'maxwidth200 widthcentpercentminusx', 1);
+	print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', ' widthcentpercentminusx', 1);
 	print "</td></tr>";
 
 	// Multicurrency

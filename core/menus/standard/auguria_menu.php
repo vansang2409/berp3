@@ -140,10 +140,11 @@ class MenuManager
 
 		require_once DOL_DOCUMENT_ROOT.'/core/class/menu.class.php';
 		$this->menu = new Menu();
-
+          
 		if (empty($conf->global->MAIN_MENU_INVERT)) {
 			if ($mode == 'top') {
 				print_auguria_menu($this->db, $this->atarget, $this->type_user, $this->tabMenu, $this->menu, 0, $mode);
+				
 			}
 			if ($mode == 'left') {
 				print_left_auguria_menu($this->db, $this->menu_array, $this->menu_array_after, $this->tabMenu, $this->menu, 0, '', '', $moredata);

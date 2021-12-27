@@ -872,7 +872,7 @@ class FormOther
 				 });
 	             </script>';
 			}
-			$out .= '<input id="colorpicker'.$prefix.'" name="'.$prefix.'" size="6" maxlength="7" class="flat'.($morecss ? ' '.$morecss : '').'" type="text" value="'.dol_escape_htmltag($set_color).'" />';
+			$out .= '<input id="colorpicker'.$prefix.'" name="'.$prefix.'" size="100" maxlength="7" class="flat'.($morecss ? ' '.$morecss : '').'" type="text" value="'.dol_escape_htmltag($set_color).'" />';
 		} else // In most cases, this is not used. We used instead function with no specific list of colors
 		{
 			if (empty($conf->dol_use_jmobile) && !empty($conf->use_javascript_ajax)) {
@@ -888,7 +888,7 @@ class FormOther
 	             });
 	             </script>';
 			}
-			$out .= '<select id="colorpicker'.$prefix.'" class="flat'.($morecss ? ' '.$morecss : '').'" name="'.$prefix.'">';
+			$out .= '<select id="colorpicker'.$prefix.'" class="flat'.($morecss ? ' '.$morecss : '').' width100p" name="'.$prefix.'">';
 			//print '<option value="-1">&nbsp;</option>';
 			foreach ($arrayofcolors as $val) {
 				$out .= '<option value="'.$val.'"';

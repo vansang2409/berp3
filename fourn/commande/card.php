@@ -1669,7 +1669,7 @@ if ($action == 'create') {
 	}
 
 	// Ref supplier
-	print '<tr><td>'.$langs->trans('RefSupplier').'</td><td><input name="refsupplier" type="text"></td>';
+	print '<tr><td>'.$langs->trans('RefSupplier').'</td><td><input name="refsupplier" class="width100p" type="text"></td>';
 	print '</tr>';
 
 	// Payment term

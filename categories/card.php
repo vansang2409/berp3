@@ -240,7 +240,7 @@ if ($user->rights->categorie->creer) {
 
 		// Ref
 		print '<tr>';
-		print '<td class="titlefieldcreate fieldrequired">'.$langs->trans("Ref").'</td><td><input id="label" class="minwidth100" name="label" value="'.dol_escape_htmltag($label).'">';
+		print '<td class="titlefieldcreate fieldrequired ">'.$langs->trans("Ref").'</td><td><input id="label" class="minwidth100 width100p" name="label" value="'.dol_escape_htmltag($label).'">';
 		print'</td></tr>';
 
 		// Description

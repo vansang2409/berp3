@@ -1954,9 +1954,9 @@ if ($action == 'create') {
 	if ($societe->id > 0) {
 		$absolute_discount = $societe->getAvailableDiscounts('', '', 0, 1);
 		print $societe->getNomUrl(1, 'supplier');
-		print '<input type="hidden" name="socid" value="'.$societe->id.'">';
+		print '<input type="hidden"  name="socid" value="'.$societe->id.'">';
 	} else {
-		print img_picto('', 'company').$form->select_company($societe->id, 'socid', 's.fournisseur=1', 'SelectThirdParty', 0, 0, null, 0, 'minwidth300 widthcentpercentminusxx');
+		print img_picto('', 'company').$form->select_company($societe->id, 'socid', 's.fournisseur=1', 'SelectSupplier', 0, 0, null, 0, 'minwidth300 widthcentpercentminusxx');
 		// reload page to retrieve supplier informations
 		if (!empty($conf->global->RELOAD_PAGE_ON_SUPPLIER_CHANGE)) {
 			print '<script type="text/javascript">
@@ -1974,7 +1974,7 @@ if ($action == 'create') {
 	print '</td></tr>';
 
 	// Ref supplier
-	print '<tr><td class="fieldrequired">'.$langs->trans('RefSupplier').'</td><td><input name="ref_supplier" value="'.(isset($_POST['ref_supplier']) ? $_POST['ref_supplier'] : $objectsrc->ref_supplier).'" type="text"';
+	print '<tr><td class="fieldrequired">'.$langs->trans('RefSupplier').'</td><td><input name="ref_supplier" class="width100p"  value="'.(isset($_POST['ref_supplier']) ? $_POST['ref_supplier'] : $objectsrc->ref_supplier).'" type="text"';
 	if ($societe->id > 0) {
 		print ' autofocus';
 	}
@@ -2219,7 +2219,7 @@ if ($action == 'create') {
 	}
 
 	// Label
-	print '<tr><td>'.$langs->trans('Label').'</td><td><input class="minwidth200" name="label" value="'.dol_escape_htmltag(GETPOST('label')).'" type="text"></td></tr>';
+	print '<tr><td>'.$langs->trans('Label').'</td><td><input class="minwidth200 width100p" name="label" value="'.dol_escape_htmltag(GETPOST('label')).'" type="text"></td></tr>';
 
 	// Date invoice
 	print '<tr><td class="fieldrequired">'.$langs->trans('DateInvoice').'</td><td>';
@@ -2239,13 +2239,13 @@ if ($action == 'create') {
 	// Payment mode
 	print '<tr><td>'.$langs->trans('PaymentMode').'</td><td>';
 	print img_picto('', 'bank', 'class="pictofixedwidth"');
-	$form->select_types_paiements(GETPOSTISSET('mode_reglement_id') ?GETPOST('mode_reglement_id', 'int') : $mode_reglement_id, 'mode_reglement_id', 'DBIT', 0, 1, 0, 0, 1, 'maxwidth200 widthcentpercentminusx');
+	$form->select_types_paiements(GETPOSTISSET('mode_reglement_id') ?GETPOST('mode_reglement_id', 'int') : $mode_reglement_id, 'mode_reglement_id', 'DBIT', 0, 1, 0, 0, 1, ' widthcentpercentminusx');
 	print '</td></tr>';
 
 	// Bank Account
 	if (!empty($conf->banque->enabled)) {
 		print '<tr><td>'.$langs->trans('BankAccount').'</td><td>';
-		print img_picto('', 'bank_account', 'class="pictofixedwidth"').$form->select_comptes((GETPOSTISSET('fk_account') ?GETPOST('fk_account', 'alpha') : $fk_account), 'fk_account', 0, '', 1, '', 0, 'maxwidth200 widthcentpercentminusx', 1);
+		print img_picto('', 'bank_account', 'class="pictofixedwidth"').$form->select_comptes((GETPOSTISSET('fk_account') ?GETPOST('fk_account', 'alpha') : $fk_account), 'fk_account', 0, '', 1, '', 0, ' widthcentpercentminusx', 1);
 		print '</td></tr>';
 	}
 

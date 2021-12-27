@@ -368,11 +368,11 @@ if ($action == 'create') {
 
 	// Ref
 	print '<tr><td class="fieldrequired titlefieldcreate">'.$langs->trans("Ref").'</td>';
-	print '<td><input size="8" type="text" class="flat" name="ref" value="'.dol_escape_htmltag(GETPOST("ref") ?GETPOST("ref", 'alpha') : $object->ref).'" maxlength="12" autofocus></td></tr>';
+	print '<td><input size="8" type="text" class="flat width100p" name="ref" value="'.dol_escape_htmltag(GETPOST("ref") ?GETPOST("ref", 'alpha') : $object->ref).'" maxlength="12" autofocus></td></tr>';
 
 	// Label
-	print '<tr><td class="fieldrequired">'.$langs->trans("LabelBankCashAccount").'</td>';
-	print '<td><input type="text" class="flat maxwidth150onsmartphone" name="label" value="'.dol_escape_htmltag(GETPOST("label", 'alpha')).'"></td></tr>';
+	print '<tr><td class="fieldrequired ">'.$langs->trans("LabelBankCashAccount").'</td>';
+	print '<td><input type="text" class="flat maxwidth150onsmartphone width100p" name="label" value="'.dol_escape_htmltag(GETPOST("label", 'alpha')).'"></td></tr>';
 
 	// Type
 	print '<tr><td class="fieldrequired">'.$langs->trans("AccountType").'</td>';
@@ -409,7 +409,8 @@ if ($action == 'create') {
 
 	print '<tr><td class="fieldrequired">'.$langs->trans("BankAccountCountry").'</td>';
 	print '<td>';
-	print img_picto('', 'country', 'class="pictofixedwidth"').$form->select_country($selectedcode, 'account_country_id');
+	//print img_picto('', 'country', 'class="pictofixedwidth"').$form->select_country($selectedcode, 'account_country_id');
+	print $form->select_country($selectedcode, 'account_country_id');
 	if ($user->admin) {
 		print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
 	}
@@ -428,8 +429,8 @@ if ($action == 'create') {
 	// Web
 	print '<tr><td>'.$langs->trans("Web").'</td>';
 	print '<td>';
-	print img_picto('', 'globe', 'class="pictofixedwidth"');
-	print '<input class="minwidth300" type="text" class="flat" name="url" value="'.GETPOST("url").'">';
+	//print img_picto('', 'globe', 'class="pictofixedwidth"');
+	print '<input  type="text" class="flat minwidth300 width100p" name="url" value="'.GETPOST("url").'">';
 	print '</td></tr>';
 
 	// Tags-Categories
@@ -474,7 +475,7 @@ if ($action == 'create') {
 
 	// Sold
 	print '<tr><td class="titlefieldcreate">'.$langs->trans("InitialBankBalance").'</td>';
-	print '<td><input size="12" type="text" class="flat" name="solde" value="'.(GETPOST("solde") ?GETPOST("solde") : price2num($object->solde)).'"></td></tr>';
+	print '<td><input size="12" type="text" class="flat width100p" name="solde" value="'.(GETPOST("solde") ?GETPOST("solde") : price2num($object->solde)).'"></td></tr>';
 
 	print '<tr><td>'.$langs->trans("Date").'</td>';
 	print '<td>';
@@ -482,10 +483,10 @@ if ($action == 'create') {
 	print '</td></tr>';
 
 	print '<tr><td>'.$langs->trans("BalanceMinimalAllowed").'</td>';
-	print '<td><input size="12" type="text" class="flat" name="account_min_allowed" value="'.(GETPOST("account_min_allowed") ?GETPOST("account_min_allowed") : $object->min_allowed).'"></td></tr>';
+	print '<td><input size="12" type="text" class="flat width100p" name="account_min_allowed" value="'.(GETPOST("account_min_allowed") ?GETPOST("account_min_allowed") : $object->min_allowed).'"></td></tr>';
 
 	print '<tr><td>'.$langs->trans("BalanceMinimalDesired").'</td>';
-	print '<td><input size="12" type="text" class="flat" name="account_min_desired" value="'.(GETPOST("account_min_desired") ?GETPOST("account_min_desired") : $object->min_desired).'"></td></tr>';
+	print '<td><input size="12" type="text" class="flat width100p" name="account_min_desired" value="'.(GETPOST("account_min_desired") ?GETPOST("account_min_desired") : $object->min_desired).'"></td></tr>';
 
 	print '</table>';
 	print '<br>';
@@ -496,7 +497,7 @@ if ($action == 'create') {
 
 		// If bank account
 		print '<tr><td class="titlefieldcreate">'.$langs->trans("BankName").'</td>';
-		print '<td><input type="text" class="flat minwidth150" name="bank" value="'.(GETPOST('bank') ?GETPOST('bank', 'alpha') : $object->bank).'"></td>';
+		print '<td><input type="text" class="flat minwidth150 width100p" name="bank" value="'.(GETPOST('bank') ?GETPOST('bank', 'alpha') : $object->bank).'"></td>';
 		print '</tr>';
 
 		// Show fields of bank account
@@ -569,7 +570,7 @@ if ($action == 'create') {
 		print '</td></tr>';
 	} else {
 		print '<tr><td class="'.$fieldrequired.'titlefieldcreate">'.$langs->trans("AccountancyCode").'</td>';
-		print '<td><input type="text" name="account_number" value="'.(GETPOST("account_number") ?GETPOST('account_number', 'alpha') : $object->account_number).'"></td></tr>';
+		print '<td><input type="text" class="width100p" name="account_number" value="'.(GETPOST("account_number") ?GETPOST('account_number', 'alpha') : $object->account_number).'"></td></tr>';
 	}
 
 	// Accountancy journal

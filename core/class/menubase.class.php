@@ -411,7 +411,7 @@ class Menubase
 		$sql .= " t.tms";
 		$sql .= " FROM ".MAIN_DB_PREFIX."menu as t";
 		$sql .= " WHERE t.rowid = ".((int) $id);
-
+        
 		dol_syslog(get_class($this)."::fetch", LOG_DEBUG);
 		$resql = $this->db->query($sql);
 		if ($resql) {

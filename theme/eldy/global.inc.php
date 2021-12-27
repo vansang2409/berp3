@@ -4435,6 +4435,8 @@ div.boximport {
 	min-height: unset;
 }
 
+
+
 .product_line_stock_ok { color: var(--productlinestockok); }
 .product_line_stock_too_low { color: var(--productlinestocktoolow); }
 

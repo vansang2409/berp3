@@ -1482,6 +1482,7 @@ table[summary="list_of_modules"] .fa-cog {
 .width60p { width:60%; }
 .width75p { width:75%; }
 .width80p { width:80%; }
+.width90p { width:90%; }
 .width100p { width:100%; }
 
 

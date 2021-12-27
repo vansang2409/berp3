@@ -1430,16 +1430,18 @@ function top_htmlhead($head, $title = '', $disablejs = 0, $disablehead = 0, $arr
 		}
 		// Favicon
 		$favicon = DOL_URL_ROOT.'/theme/berp3_256x256_color.png';
-		if (!empty($mysoc->logo_squarred_mini)) {
-			$favicon = DOL_URL_ROOT.'/viewimage.php?cache=1&modulepart=mycompany&file='.urlencode('logos/thumbs/'.$mysoc->logo_squarred_mini);
-		}
-		if (!empty($conf->global->MAIN_FAVICON_URL)) {
-			$favicon = $conf->global->MAIN_FAVICON_URL;
-		}
-		if (empty($conf->dol_use_jmobile)) {
-			print '<link rel="shortcut icon" type="image/x-icon" href="'.$favicon.'"/>'."\n"; // Not required into an Android webview
-		}
-
+		//echo $favicon;
+		// if (!empty($mysoc->logo_squarred_mini)) {
+		// 	$favicon = DOL_URL_ROOT.'/viewimage.php?cache=1&modulepart=mycompany&file='.urlencode('logos/thumbs/'.$mysoc->logo_squarred_mini);
+		// }
+		// if (!empty($conf->global->MAIN_FAVICON_URL)) {
+		// 	$favicon = $conf->global->MAIN_FAVICON_URL;
+		// }
+		// if (empty($conf->dol_use_jmobile)) {
+		// 	print '<link rel="shortcut icon" type="image/x-icon" href="'.$favicon.'"/>'."\n"; // Not required into an Android webview
+		// }
+        // update use only logo - sang
+		print '<link rel="shortcut icon" type="image/x-icon" href="'.$favicon.'"/>'."\n";
 		// Mobile appli like icon
 		$manifest = DOL_URL_ROOT.'/theme/'.$conf->theme.'/manifest.json.php';
 		if (!empty($manifest)) {
@@ -1868,24 +1870,24 @@ function top_menu($head, $title = '', $target = '', $disablejs = 0, $disablehead
 			$toprightmenu .= $form->textwithtooltip('', $langs->trans("ModuleBuilder"), 2, 1, $text, 'login_block_elem', 2);
 		}
 
-		// Link to print main content area
-		if (empty($conf->global->MAIN_PRINT_DISABLELINK) && empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER)) {
-			$qs = dol_escape_htmltag($_SERVER["QUERY_STRING"]);
+		//Link to print main content area
+		// if (empty($conf->global->MAIN_PRINT_DISABLELINK) && empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER)) {
+		// 	$qs = dol_escape_htmltag($_SERVER["QUERY_STRING"]);
 
-			if (isset($_POST) && is_array($_POST)) {
-				foreach ($_POST as $key => $value) {
-					if ($key !== 'action' && $key !== 'password' && !is_array($value)) {
-						$qs .= '&'.$key.'='.urlencode($value);
-					}
-				}
-			}
-			$qs .= (($qs && $morequerystring) ? '&' : '').$morequerystring;
-			$text = '<a href="'.dol_escape_htmltag($_SERVER["PHP_SELF"]).'?'.$qs.($qs ? '&' : '').'optioncss=print" target="_blank">';
-			//$text.= img_picto(":".$langs->trans("PrintContentArea"), 'printer_top.png', 'class="printer"');
-			$text .= '<span class="fa fa-print atoplogin valignmiddle"></span>';
-			$text .= '</a>';
-			$toprightmenu .= $form->textwithtooltip('', $langs->trans("PrintContentArea"), 2, 1, $text, 'login_block_elem', 2);
-		}
+		// 	if (isset($_POST) && is_array($_POST)) {
+		// 		foreach ($_POST as $key => $value) {
+		// 			if ($key !== 'action' && $key !== 'password' && !is_array($value)) {
+		// 				$qs .= '&'.$key.'='.urlencode($value);
+		// 			}
+		// 		}
+		// 	}
+		// 	$qs .= (($qs && $morequerystring) ? '&' : '').$morequerystring;
+		// 	$text = '<a href="'.dol_escape_htmltag($_SERVER["PHP_SELF"]).'?'.$qs.($qs ? '&' : '').'optioncss=print" target="_blank">';
+		// 	//$text.= img_picto(":".$langs->trans("PrintContentArea"), 'printer_top.png', 'class="printer"');
+		// 	$text .= '<span class="fa fa-print atoplogin valignmiddle"></span>';
+		// 	$text .= '</a>';
+		// 	$toprightmenu .= $form->textwithtooltip('', $langs->trans("PrintContentArea"), 2, 1, $text, 'login_block_elem', 2);
+		// }
 
 		// Link to BERP3 wiki pages
 		if (empty($conf->global->MAIN_HELP_DISABLELINK) && empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER)) {

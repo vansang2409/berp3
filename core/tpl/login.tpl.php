@@ -73,9 +73,9 @@ $arrayofjs = array(
 if (!empty($conf->global->MAIN_APPLICATION_TITLE)) {
 	$titleofloginpage = $conf->global->MAIN_APPLICATION_TITLE;
 } else {
-	$titleofloginpage = $langs->trans('Login');
+	$titleofloginpage = $langs->trans('Berp3');
 }
-$titleofloginpage .= ' @ '.$titletrueberp3version; // $titletrueberp3version is defined by dol_loginfunction in security2.lib.php. We must keep the @, some tools use it to know it is login page and find true berp3 version.
+//$titleofloginpage .= ' @ '.$titletrueberp3version; // $titletrueberp3version is defined by dol_loginfunction in security2.lib.php. We must keep the @, some tools use it to know it is login page and find true berp3 version.
 
 $disablenofollow = 1;
 if (!preg_match('/'.constant('DOL_APPLICATION_TITLE').'/', $title)) {
@@ -239,9 +239,18 @@ if (!empty($morelogincontent)) {
 
 <!-- Button Connection -->
 <br>
+<?php 
+   $urlsp ="https://bona.com.sg/";
+   //echo dol_escape_htmltag($urlsp)
+?>
+<style>
+.disablehover:hover{
+	border: 0px !important;
+}
+</style>
 <div id="login-submit-wrapper">
     <div style="padding: 0 35px; max-width:50%; float:left">
-	  	<div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
+	  	<!-- <div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
             <div class="g-recaptcha float-left" data-sitekey="6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm">
 				<div style="width: 304px; height: 78px;">
 					<div>
@@ -252,11 +261,12 @@ if (!empty($morelogincontent)) {
 				<iframe style="display: none;"></iframe>
 			</div>
             <div class="invalid-feedback" id="err_g-recaptcha-response"></div>
-        </div>
+        </div> -->
+		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
 	</div>
     <div style="padding: 0 35px; max-width:50%; float:right">
 		<button type="submit" class="" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Login</button>
-		<button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Support</button>
+		<button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button>
 	</div>
 </div>
 
@@ -449,7 +459,7 @@ if (!empty($conf->google->enabled) && !empty($conf->global->MAIN_GOOGLE_AD_CLIEN
 
 
   
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
 <!-- END PHP TEMPLATE -->

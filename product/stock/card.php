@@ -338,7 +338,7 @@ if ($action == 'create') {
 
 	// Country
 	print '<tr><td>'.$langs->trans('Country').'</td><td>';
-	print img_picto('', 'globe-americas', 'class="paddingright"');
+	//print img_picto('', 'globe-americas', 'class="paddingright"');
 	print $form->select_country((!empty($object->country_id) ? $object->country_id : $mysoc->country_code), 'country_id');
 	if ($user->admin) {
 		print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
@@ -348,15 +348,15 @@ if ($action == 'create') {
 	// Phone / Fax
 	print '<tr><td class="titlefieldcreate">'.$form->editfieldkey('Phone', 'phone', '', $object, 0).'</td><td>';
 	print img_picto('', 'object_phoning', 'class="paddingright"');
-	print '<input name="phone" size="20" value="'.$object->phone.'"></td></tr>';
+	print '<input name="phone" size="100" value="'.$object->phone.'"></td></tr>';
 	print '<tr><td class="titlefieldcreate">'.$form->editfieldkey('Fax', 'fax', '', $object, 0).'</td>';
 	print '<td>';
 	print img_picto('', 'object_phoning_fax', 'class="paddingright"');
-	print '<input name="fax" size="20" value="'.$object->fax.'"></td></tr>';
+	print '<input name="fax" size="100" value="'.$object->fax.'"></td></tr>';
 
 	// Status
 	print '<tr><td>'.$langs->trans("Status").'</td><td>';
-	print '<select id="warehousestatus" name="statut" class="flat">';
+	print '<select id="warehousestatus" name="statut" class="flat width100p">';
 	foreach ($object->statuts as $key => $value) {
 		if ($key == 1) {
 			print '<option value="'.$key.'" selected>'.$langs->trans($value).'</option>';

@@ -3903,7 +3903,7 @@ class Form
 			$selected = $conf->global->MAIN_DEFAULT_PAYMENT_TERM_ID;
 		}
 
-		print '<select id="'.$htmlname.'" class="flat selectpaymentterms'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'">';
+		print '<select id="'.$htmlname.'" class="flat selectpaymentterms width100p'.($morecss ? ' '.$morecss : '').' " " name="'.$htmlname.'">';
 		if ($addempty) {
 			print '<option value="0">&nbsp;</option>';
 		}
@@ -3918,7 +3918,7 @@ class Form
 		}
 		print '</select>';
 		if ($user->admin && empty($noinfoadmin)) {
-			print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
+			//print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
 		}
 		print ajax_combobox($htmlname);
 	}
@@ -3966,7 +3966,7 @@ class Form
 			$selected = $conf->global->MAIN_DEFAULT_PAYMENT_TYPE_ID;
 		}
 
-		$out .= '<select id="select'.$htmlname.'" class="flat selectpaymenttypes'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'">';
+		$out .= '<select id="select'.$htmlname.'" class="flat selectpaymenttypes'.($morecss ? ' '.$morecss : '').' width100p"  name="'.$htmlname.'">';
 		if ($empty) {
 			$out .= '<option value="">&nbsp;</option>';
 		}
@@ -4020,7 +4020,7 @@ class Form
 		}
 		$out .= '</select>';
 		if ($user->admin && !$noadmininfo) {
-			$out .= info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
+			//$out .= info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
 		}
 		$out .= ajax_combobox('select'.$htmlname);
 
@@ -4217,7 +4217,7 @@ class Form
 			$num = $this->db->num_rows($result);
 			$i = 0;
 			if ($num) {
-				print '<select id="select'.$htmlname.'" class="flat selectshippingmethod'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'"'.($moreattrib ? ' '.$moreattrib : '').'>';
+				print '<select id="select'.$htmlname.'" class="flat selectshippingmethod'.($morecss ? ' '.$morecss : '').' width100p" name="'.$htmlname.'"'.($moreattrib ? ' '.$moreattrib : '').'>';
 				if ($useempty == 1 || ($useempty == 2 && $num > 1)) {
 					print '<option value="-1">&nbsp;</option>';
 				}
@@ -4234,7 +4234,7 @@ class Form
 				}
 				print "</select>";
 				if ($user->admin  && empty($noinfoadmin)) {
-					print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
+					//print info_admin($langs->trans("YouCanChangeValuesForThisListFromDictionarySetup"), 1);
 				}
 
 				print ajax_combobox('select'.$htmlname);
@@ -4421,7 +4421,7 @@ class Form
 			$num = $this->db->num_rows($result);
 			$i = 0;
 			if ($num) {
-				$out .= '<select id="select'.$htmlname.'" class="flat selectbankaccount'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'"'.($moreattrib ? ' '.$moreattrib : '').'>';
+				$out .= '<select id="select'.$htmlname.'" class="flat selectbankaccount'.($morecss ? ' '.$morecss : '').' width100p" name="'.$htmlname.'"'.($moreattrib ? ' '.$moreattrib : '').'>';
 				if ($useempty == 1 || ($useempty == 2 && $num > 1)) {
 					$out .= '<option value="-1">&nbsp;</option>';
 				}
@@ -4630,7 +4630,7 @@ class Form
 			$cate_arbo = $cat->get_full_arbo($type, $markafterid, $include);
 		}
 
-		$output = '<select class="flat'.($morecss ? ' '.$morecss : '').'" name="'.$htmlname.'" id="'.$htmlname.'">';
+		$output = '<select class="flat'.($morecss ? ' '.$morecss : '').' width100p" name="'.$htmlname.'" id="'.$htmlname.'">';
 		$outarray = array();
 		if (is_array($cate_arbo)) {
 			if (!count($cate_arbo)) {
@@ -5649,7 +5649,7 @@ class Form
 			$selected = 'EUR'; // Pour compatibilite
 		}
 
-		$out .= '<select class="flat maxwidth200onsmartphone minwidth300" name="'.$htmlname.'" id="'.$htmlname.'">';
+		$out .= '<select class="flat maxwidth200onsmartphone minwidth300 width100p" name="'.$htmlname.'" id="'.$htmlname.'">';
 		foreach ($langs->cache_currencies as $code_iso => $currency) {
 			$labeltoshow = $currency['label'];
 			if ($mode == 1) {
@@ -6184,7 +6184,7 @@ class Form
 				// Calendrier popup version eldy
 				if ($usecalendar == "eldy") {
 					// Input area to enter date manually
-					$retstring .= '<input id="'.$prefix.'" name="'.$prefix.'" type="text" class="maxwidthdate" maxlength="11" value="'.$formated_date.'"';
+					$retstring .= '<input id="'.$prefix.'" name="'.$prefix.'" type="text" class="maxwidthdate width100p" maxlength="11" value="'.$formated_date.'"';
 					$retstring .= ($disabled ? ' disabled' : '');
 					$retstring .= ' onChange="dpChangeDay(\''.$prefix.'\',\''.$langs->trans("FormatDateShortJavaInput").'\'); "'; // FormatDateShortInput for dol_print_date / FormatDateShortJavaInput that is same for javascript
 					$retstring .= '>';
@@ -6235,8 +6235,8 @@ class Form
 					}
 
 					// Zone de saisie manuelle de la date
-					$retstring .= '<div class="nowrap inline-block divfordateinput">';
-					$retstring .= '<input id="'.$prefix.'" name="'.$prefix.'" type="text" class="maxwidthdate" maxlength="11" value="'.$formated_date.'"';
+					$retstring .= '<div class="nowrap inline-block divfordateinput" style="width:96%">';
+					$retstring .= '<input id="'.$prefix.'" name="'.$prefix.'" type="text" class="" style="width:97% !important" maxlength="11" value="'.$formated_date.'"';
 					$retstring .= ($disabled ? ' disabled' : '');
 					$retstring .= ($placeholder ? ' placeholder="'.dol_escape_htmltag($placeholder).'"' : '');
 					$retstring .= ' onChange="dpChangeDay(\''.$prefix.'\',\''.$langs->trans("FormatDateShortJavaInput").'\'); "'; // FormatDateShortInput for dol_print_date / FormatDateShortJavaInput that is same for javascript
@@ -6268,7 +6268,7 @@ class Form
 			} else {
 				// Show date with combo selects
 				// Day
-				$retstring .= '<select '.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth50imp" id="'.$prefix.'day" name="'.$prefix.'day">';
+				$retstring .= '<select '.($disabled ? ' disabled' : '').' class="flat valignmiddle  width80p" id="'.$prefix.'day" name="'.$prefix.'day">';
 
 				if ($emptydate || $set_time == -1) {
 					$retstring .= '<option value="0" selected>&nbsp;</option>';
@@ -6280,7 +6280,7 @@ class Form
 
 				$retstring .= "</select>";
 
-				$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth75imp" id="'.$prefix.'month" name="'.$prefix.'month">';
+				$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth75imp width80p" id="'.$prefix.'month" name="'.$prefix.'month">';
 				if ($emptydate || $set_time == -1) {
 					$retstring .= '<option value="0" selected>&nbsp;</option>';
 				}
@@ -6295,9 +6295,9 @@ class Form
 
 				// Year
 				if ($emptydate || $set_time == -1) {
-					$retstring .= '<input'.($disabled ? ' disabled' : '').' placeholder="'.dol_escape_htmltag($langs->trans("Year")).'" class="flat maxwidth50imp valignmiddle" type="number" min="0" max="3000" maxlength="4" id="'.$prefix.'year" name="'.$prefix.'year" value="'.$syear.'">';
+					$retstring .= '<input'.($disabled ? ' disabled' : '').' placeholder="'.dol_escape_htmltag($langs->trans("Year")).'" class="flat maxwidth50imp valignmiddle width80p" type="number" min="0" max="3000" maxlength="4" id="'.$prefix.'year" name="'.$prefix.'year" value="'.$syear.'">';
 				} else {
-					$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth75imp" id="'.$prefix.'year" name="'.$prefix.'year">';
+					$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth75imp width80p" id="'.$prefix.'year" name="'.$prefix.'year">';
 
 					for ($year = $syear - 10; $year < $syear + 10; $year++) {
 						$retstring .= '<option value="'.$year.'"'.($year == $syear ? ' selected' : '').'>'.$year.'</option>';
@@ -6324,7 +6324,7 @@ class Form
 				}
 			}
 			// Show hour
-			$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth50 '.($fullday ? $fullday.'hour' : '').'" id="'.$prefix.'hour" name="'.$prefix.'hour">';
+			$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle  '.($fullday ? $fullday.'hour' : '').' width50p" id="'.$prefix.'hour" name="'.$prefix.'hour">';
 			if ($emptyhours) {
 				$retstring .= '<option value="-1">&nbsp;</option>';
 			}
@@ -6345,7 +6345,7 @@ class Form
 
 		if ($m) {
 			// Show minutes
-			$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle maxwidth50 '.($fullday ? $fullday.'min' : '').'" id="'.$prefix.'min" name="'.$prefix.'min">';
+			$retstring .= '<select'.($disabled ? ' disabled' : '').' class="flat valignmiddle  width50p'.($fullday ? $fullday.'min' : '').'" id="'.$prefix.'min " name="'.$prefix.'min">';
 			if ($emptyhours) {
 				$retstring .= '<option value="-1">&nbsp;</option>';
 			}
@@ -6585,7 +6585,7 @@ class Form
 			}
 			$retstring .= "</select>";
 		} elseif ($typehour == 'text' || $typehour == 'textselect') {
-			$retstring .= '<input placeholder="'.$langs->trans('HourShort').'" type="number" min="0" name="'.$prefix.'hour"'.($disabled ? ' disabled' : '').' class="flat maxwidth50 inputhour" value="'.(($hourSelected != '') ? ((int) $hourSelected) : '').'">';
+			$retstring .= '<input placeholder="'.$langs->trans('HourShort').'" type="number" min="0" name="'.$prefix.'hour"'.($disabled ? ' disabled' : '').' class="flat width50p inputhour" value="'.(($hourSelected != '') ? ((int) $hourSelected) : '').'">';
 		} else {
 			return 'BadValueForParameterTypeHour';
 		}
@@ -6614,7 +6614,7 @@ class Form
 			}
 			$retstring .= "</select>";
 		} elseif ($typehour == 'text') {
-			$retstring .= '<input placeholder="'.$langs->trans('MinuteShort').'" type="number" min="0" name="'.$prefix.'min"'.($disabled ? ' disabled' : '').' class="flat maxwidth50 inputminute" value="'.(($minSelected != '') ? ((int) $minSelected) : '').'">';
+			$retstring .= '<input placeholder="'.$langs->trans('MinuteShort').'" type="number" min="0" name="'.$prefix.'min"'.($disabled ? ' disabled' : '').' class="flat  inputminute" style="width:45%" value="'.(($minSelected != '') ? ((int) $minSelected) : '').'">';
 		}
 
 		if ($typehour != 'text') {
@@ -8029,7 +8029,7 @@ class Form
 
 		// Try also magic suggest
 		//$out .= '<select  id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').' " multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').($width ? ' style="width: '.(preg_match('/%/', $width) ? $width : $width.'px').'"' : '').'>'."\n";
-		$out .= '<select  id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').' " multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').' style="width:95% !important">'."\n";
+		$out .= '<select  id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').' width100p" multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').' >'."\n";
 		
 		if (is_array($array) && !empty($array)) {
 			if ($value_as_key) {

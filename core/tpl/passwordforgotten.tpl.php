@@ -108,7 +108,7 @@ $title = 'BERP3';
 
 
 
-<div class="login_table" style="min-height: 355px;">
+<div class="login_table" style="min-height: 280px;">
 <h2>Forgot Password</h2>
 <div id="login_line1">
 <div id="login_right">
@@ -123,7 +123,7 @@ $title = 'BERP3';
 <input type="text" maxlength="255" placeholder="<?php echo $langs->trans("Email Address"); ?>" <?php echo $disabled; ?> id="username" name="username" class="input" value="<?php echo dol_escape_htmltag($username); ?>" tabindex="1" />
 </div>
 </div>
-<div class="trinputlogin">
+<!-- <div class="trinputlogin">
 	<div class="tagtd nowraponall center valignmiddle tdinputlogin" style="min-width: 482px;">
 		<span class="span">Select Company</span>
 		<select class="input" name="company" id="company" style="display: block; width: 100%;height: calc(2.15rem + 2px);">
@@ -145,7 +145,7 @@ $title = 'BERP3';
             <option value="74">ROSE2</option>            					  
         </select>
 	</div>
-</div>
+</div> -->
 <?php
 if (!empty($captcha)) {
 	// Add a variable param to force not using cache (jmobile)
@@ -203,9 +203,13 @@ if (!empty($morelogincontent)) {
 <!--
 <input type="submit" <?php echo $disabled; ?> class="button small" name="button_password" value="<?php echo $langs->trans('SendNewPassword'); ?>" tabindex="4" />
 -->
+<?php 
+   $urlsp ="https://bona.com.sg/";
+   //echo dol_escape_htmltag($urlsp)
+?>
 <div id="login-submit-wrapper">
     <div style="padding: 0 35px; max-width:50%; float:left">
-	  	<div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
+	  	<!-- <div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
             <div class="g-recaptcha float-left" data-sitekey="6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm">
 				<div style="width: 304px; height: 78px;">
 					<div>
@@ -216,11 +220,12 @@ if (!empty($morelogincontent)) {
 				<iframe style="display: none;"></iframe>
 			</div>
             <div class="invalid-feedback" id="err_g-recaptcha-response"></div>
-        </div>
+        </div> -->
+		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
 	</div>
     <div style="padding: 0 35px; max-width:50%; float:right">
 		<button type="submit" class="" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" name="button_password" >Verify</button>
-		<button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Support</button>
+		<button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button>
 	</div>
 </div>
 <br>
@@ -344,7 +349,7 @@ if (!empty($conf->google->enabled) && !empty($conf->global->MAIN_GOOGLE_AD_CLIEN
 </div>
 </div>	<!-- end of center -->
 
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
 <!-- END PHP TEMPLATE -->

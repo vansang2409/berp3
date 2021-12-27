@@ -1579,9 +1579,9 @@ if ($action == 'create' && $usercancreate) {
 	// Reference client
 	print '<tr><td>'.$langs->trans('RefCustomer').'</td><td>';
 	if (!empty($conf->global->MAIN_USE_PROPAL_REFCLIENT_FOR_ORDER) && !empty($origin) && !empty($originid)) {
-		print '<input type="text" name="ref_client" value="'.$ref_client.'"></td>';
+		print '<input type="text" name="ref_client" class="width100p" value="'.$ref_client.'"></td>';
 	} else {
-		print '<input type="text" name="ref_client" value="'.GETPOST('ref_client').'"></td>';
+		print '<input type="text" name="ref_client" class="width100p" value="'.GETPOST('ref_client').'"></td>';
 	}
 	print '</tr>';
 
@@ -1595,7 +1595,7 @@ if ($action == 'create' && $usercancreate) {
 		print '</td>';
 	} else {
 		print '<td>';
-		print img_picto('', 'company').$form->select_company('', 'socid', '(s.client = 1 OR s.client = 2 OR s.client = 3)', 'SelectThirdParty', 0, 0, null, 0, 'minwidth175 maxwidth500 widthcentpercentminusxx');
+		print img_picto('', 'company').$form->select_company('', 'socid', '(s.client = 1 OR s.client = 2 OR s.client = 3)', 'SelectCustomer', 0, 0, null, 0, 'minwidth175  widthcentpercentminusxx');
 		// reload page to retrieve customer informations
 		if (empty($conf->global->RELOAD_PAGE_ON_CUSTOMER_CHANGE_DISABLED)) {
 			print '<script type="text/javascript">
@@ -1652,7 +1652,7 @@ if ($action == 'create' && $usercancreate) {
 	// Delivery delay
 	print '<tr class="fielddeliverydelay"><td>'.$langs->trans('AvailabilityPeriod').'</td><td>';
 	print img_picto('', 'clock', 'class="pictofixedwidth"');
-	$form->selectAvailabilityDelay($availability_id, 'availability_id', '', 1, 'maxwidth200 widthcentpercentminusx');
+	$form->selectAvailabilityDelay($availability_id, 'availability_id', '', 1, ' widthcentpercentminusx');
 	print '</td></tr>';
 
 	// Terms of the settlement
@@ -1664,13 +1664,13 @@ if ($action == 'create' && $usercancreate) {
 	// Payment mode
 	print '<tr><td>'.$langs->trans('PaymentMode').'</td><td>';
 	print img_picto('', 'bank', 'class="pictofixedwidth"');
-	$form->select_types_paiements($mode_reglement_id, 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, 'maxwidth200 widthcentpercentminusx');
+	$form->select_types_paiements($mode_reglement_id, 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, ' widthcentpercentminusx');
 	print '</td></tr>';
 
 	// Bank Account
 	if (!empty($conf->global->BANK_ASK_PAYMENT_BANK_DURING_ORDER) && !empty($conf->banque->enabled)) {
 		print '<tr><td>'.$langs->trans('BankAccount').'</td><td>';
-		print img_picto('', 'bank_account', 'class="pictofixedwidth"').$form->select_comptes($fk_account, 'fk_account', 0, '', 1, '', 0, 'maxwidth200 widthcentpercentminusx', 1);
+		print img_picto('', 'bank_account', 'class="pictofixedwidth"').$form->select_comptes($fk_account, 'fk_account', 0, '', 1, '', 0, ' widthcentpercentminusx', 1);
 		print '</td></tr>';
 	}
 
@@ -1678,7 +1678,7 @@ if ($action == 'create' && $usercancreate) {
 	if (!empty($conf->expedition->enabled)) {
 		print '<tr><td>'.$langs->trans('SendingMethod').'</td><td>';
 		print img_picto('', 'object_dollyrevert', 'class="pictofixedwidth"');
-		print $form->selectShippingMethod($shipping_method_id, 'shipping_method_id', '', 1, '', 0, 'maxwidth200 widthcentpercentminusx');
+		print $form->selectShippingMethod($shipping_method_id, 'shipping_method_id', '', 1, '', 0, ' widthcentpercentminusx');
 		print '</td></tr>';
 	}
 
@@ -1687,14 +1687,14 @@ if ($action == 'create' && $usercancreate) {
 		require_once DOL_DOCUMENT_ROOT.'/product/class/html.formproduct.class.php';
 		$formproduct = new FormProduct($db);
 		print '<tr><td>'.$langs->trans('Warehouse').'</td><td>';
-		print img_picto('', 'stock', 'class="pictofixedwidth"').$formproduct->selectWarehouses($warehouse_id, 'warehouse_id', '', 1, 0, 0, '', 0, 0, array(), 'maxwidth500 widthcentpercentminusxx');
+		print img_picto('', 'stock', 'class="pictofixedwidth"').$formproduct->selectWarehouses($warehouse_id, 'warehouse_id', '', 1, 0, 0, '', 0, 0, array(), ' widthcentpercentminusxx');
 		print '</td></tr>';
 	}
 
 	// Source / Channle - What trigger creation
 	print '<tr><td>'.$langs->trans('Channel').'</td><td>';
 	print img_picto('', 'question', 'class="pictofixedwidth"');
-	$form->selectInputReason($demand_reason_id, 'demand_reason_id', '', 1, 'maxwidth200 widthcentpercentminusx');
+	$form->selectInputReason($demand_reason_id, 'demand_reason_id', '', 1, ' widthcentpercentminusx');
 	print '</td></tr>';
 
 	// TODO How record was recorded OrderMode (llx_c_input_method)
@@ -1750,7 +1750,7 @@ if ($action == 'create' && $usercancreate) {
 	include_once DOL_DOCUMENT_ROOT.'/core/modules/commande/modules_commande.php';
 	$liste = ModelePDFCommandes::liste_modeles($db);
 	$preselected = $conf->global->COMMANDE_ADDON_PDF;
-	print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', 'maxwidth200 widthcentpercentminusx', 1);
+	print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', ' widthcentpercentminusx', 1);
 	print "</td></tr>";
 
 	// Multicurrency

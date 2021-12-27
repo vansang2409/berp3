@@ -1445,6 +1445,7 @@ select.selectarrowonleft option {
 .width60p { width:60%; }
 .width75p { width:75%; }
 .width80p { width:80%; }
+.width90p { width:90%; }
 .width100p { width:100%; }
 
 /* Force values for small screen 1400 */

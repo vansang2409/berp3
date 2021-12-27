@@ -230,7 +230,7 @@ class FormAdmin
 		ksort($menuarray);
 
 		// Output combo list of menus
-		print '<select class="flat" id="'.$htmlname.'" name="'.$htmlname.'"'.($moreattrib ? ' '.$moreattrib : '').'>';
+		print '<select class="flat" disabled id="'.$htmlname.'" name="'.$htmlname.'"'.($moreattrib ? ' '.$moreattrib : '').'>';
 		$oldprefix = '';
 		foreach ($menuarray as $key => $val) {
 			$tab = explode('_', $key);
