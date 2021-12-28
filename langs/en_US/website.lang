@@ -61,8 +61,8 @@ YouCanEditHtmlSource=<br><span class="fa fa-bug"></span> You can include PHP cod
 #YouCanEditHtmlSource2=<br><span class="fa fa-picture-o"></span> To include a <strong>image</strong> shared publicaly, use the <strong>viewimage.php</strong> wrapper:<br>Example with a shared key 123456789, syntax is:<br><strong>&lt;img src="/viewimage.php?hashp=12345679012..."&gt;</strong><br>
 YouCanEditHtmlSource2=For an image shared with a share link (open access using the sharing hash key of file), syntax is:<br><strong>&lt;img src="/viewimage.php?hashp=12345679012..."&gt;</strong><br>
 YouCanEditHtmlSourceMore=<br>More examples of HTML or dynamic code available on <a href="%s" target="_blank">the wiki documentation</a><br>.
-ClonePage=Clone page/container
-CloneSite=Clone site
+ClonePage=Duplicate page/container
+CloneSite=Duplicate site
 SiteAdded=Website added
 ConfirmClonePage=Please enter code/alias of new page and if it is a translation of the cloned page.
 PageIsANewTranslation=The new page is a translation of the current page ?

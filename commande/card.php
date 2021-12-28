@@ -1597,19 +1597,19 @@ if ($action == 'create' && $usercancreate) {
 		print '<td>';
 		print img_picto('', 'company').$form->select_company('', 'socid', '(s.client = 1 OR s.client = 2 OR s.client = 3)', 'SelectCustomer', 0, 0, null, 0, 'minwidth175  widthcentpercentminusxx');
 		// reload page to retrieve customer informations
-		if (empty($conf->global->RELOAD_PAGE_ON_CUSTOMER_CHANGE_DISABLED)) {
-			print '<script type="text/javascript">
-			$(document).ready(function() {
-				$("#socid").change(function() {
-					console.log("We have changed the company - Reload page");
-					var socid = $(this).val();
-					// reload page
-					$("input[name=action]").val("create");
-					$("form[name=crea_commande]").submit();
-				});
-			});
-			</script>';
-		}
+		// if (empty($conf->global->RELOAD_PAGE_ON_CUSTOMER_CHANGE_DISABLED)) {
+		// 	print '<script type="text/javascript">
+		// 	$(document).ready(function() {
+		// 		$("#socid").change(function() {
+		// 			console.log("We have changed the company - Reload page");
+		// 			var socid = $(this).val();
+		// 			// reload page
+		// 			$("input[name=action]").val("create");
+		// 			$("form[name=crea_commande]").submit();
+		// 		});
+		// 	});
+		// 	</script>';
+		// }
 		print ' <a href="'.DOL_URL_ROOT.'/societe/card.php?action=create&client=3&fournisseur=0&backtopage='.urlencode($_SERVER["PHP_SELF"].'?action=create').'"><span class="fa fa-plus-circle valignmiddle paddingleft" title="'.$langs->trans("AddThirdParty").'"></span></a>';
 		print '</td>';
 	}
@@ -2252,16 +2252,16 @@ if ($action == 'create' && $usercancreate) {
 		print '</tr>';
 
 		// Mode of payment
-		print '<tr><td>';
-		$editenable = $usercancreate;
-		print $form->editfieldkey("PaymentMode", 'mode', '', $object, $editenable);
-		print '</td><td class="valuefield">';
-		if ($action == 'editmode') {
-			$form->form_modes_reglement($_SERVER['PHP_SELF'].'?id='.$object->id, $object->mode_reglement_id, 'mode_reglement_id', 'CRDT', 1, 1);
-		} else {
-			$form->form_modes_reglement($_SERVER['PHP_SELF'].'?id='.$object->id, $object->mode_reglement_id, 'none');
-		}
-		print '</td></tr>';
+		// print '<tr><td>';
+		// $editenable = $usercancreate;
+		// print $form->editfieldkey("PaymentMode", 'mode', '', $object, $editenable);
+		// print '</td><td class="valuefield">';
+		// if ($action == 'editmode') {
+		// 	$form->form_modes_reglement($_SERVER['PHP_SELF'].'?id='.$object->id, $object->mode_reglement_id, 'mode_reglement_id', 'CRDT', 1, 1);
+		// } else {
+		// 	$form->form_modes_reglement($_SERVER['PHP_SELF'].'?id='.$object->id, $object->mode_reglement_id, 'none');
+		// }
+		// print '</td></tr>';
 
 		// Multicurrency
 		if (!empty($conf->multicurrency->enabled)) {
@@ -2489,7 +2489,7 @@ if ($action == 'create' && $usercancreate) {
 		print '</div>';
 
 		print "</form>\n";
-
+    
 		print dol_get_fiche_end();
 
 		/*

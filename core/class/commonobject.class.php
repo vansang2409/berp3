@@ -4606,6 +4606,7 @@ abstract class CommonObject
 
 			if (empty($conf->file->strict_mode)) {
 				$res = @include $tpl;
+				
 			} else {
 				$res = include $tpl; // for debug
 			}

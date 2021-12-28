@@ -262,10 +262,10 @@ if (!empty($morelogincontent)) {
 			</div>
             <div class="invalid-feedback" id="err_g-recaptcha-response"></div>
         </div> -->
-		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
+		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" data-callback="enableBtn"></div>
 	</div>
     <div style="padding: 0 35px; max-width:50%; float:right">
-		<button type="submit" class="" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Login</button>
+		<button type="submit" class="" id="btn_login" disabled="disabled" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Login</button>
 		<!-- <button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button> -->
 	</div>
 </div>
@@ -460,6 +460,11 @@ if (!empty($conf->google->enabled) && !empty($conf->global->MAIN_GOOGLE_AD_CLIEN
 
   
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+	function enableBtn(){
+   		document.getElementById("btn_login").disabled = false;
+    }
+</script>
 </body>
 </html>
 <!-- END PHP TEMPLATE -->

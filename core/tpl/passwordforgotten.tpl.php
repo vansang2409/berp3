@@ -149,16 +149,16 @@ $title = 'BERP3';
 <?php
 if (!empty($captcha)) {
 	// Add a variable param to force not using cache (jmobile)
-	$php_self = preg_replace('/[&\?]time=(\d+)/', '', $php_self); // Remove param time
-	if (preg_match('/\?/', $php_self)) {
-		$php_self .= '&time='.dol_print_date(dol_now(), 'dayhourlog');
-	} else {
-		$php_self .= '?time='.dol_print_date(dol_now(), 'dayhourlog');
-	}
+	// $php_self = preg_replace('/[&\?]time=(\d+)/', '', $php_self); // Remove param time
+	// if (preg_match('/\?/', $php_self)) {
+	// 	$php_self .= '&time='.dol_print_date(dol_now(), 'dayhourlog');
+	// } else {
+	// 	$php_self .= '?time='.dol_print_date(dol_now(), 'dayhourlog');
+	// }
 	// TODO: provide accessible captcha variants
 	?>
 	<!-- Captcha -->
-	<div class="trinputlogin">
+	<!-- <div class="trinputlogin">
 	<div class="tagtd tdinputlogin nowrap none valignmiddle">
 
 	<span class="fa fa-unlock"></span>
@@ -170,7 +170,7 @@ if (!empty($captcha)) {
 	<a class="inline-block valignmiddle" href="<?php echo $php_self; ?>" tabindex="4"><?php echo $captcha_refresh; ?></a>
 	</span>
 
-	</div></div>
+	</div></div> -->
 	<?php
 }
 
@@ -209,22 +209,11 @@ if (!empty($morelogincontent)) {
 ?>
 <div id="login-submit-wrapper">
     <div style="padding: 0 35px; max-width:50%; float:left">
-	  	<!-- <div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
-            <div class="g-recaptcha float-left" data-sitekey="6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm">
-				<div style="width: 304px; height: 78px;">
-					<div>
-						<iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm&amp;co=aHR0cHM6Ly9haW9zdy5jb206NDQz&amp;hl=vi&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=normal&amp;cb=5c2owwngl1x" width="304" height="78" role="presentation" name="a-53ql1hk758w5" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
-			 		</div>
-					<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-				</div>
-				<iframe style="display: none;"></iframe>
-			</div>
-            <div class="invalid-feedback" id="err_g-recaptcha-response"></div>
-        </div> -->
-		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
+	  	
+		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" data-callback="enableBtn"></div>
 	</div>
     <div style="padding: 0 35px; max-width:50%; float:right">
-		<button type="submit" class="" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" name="button_password" >Verify</button>
+		<button type="submit" class="" disabled="disabled" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" id="btn_pass" name="button_password" >Verify</button>
 		<!-- <button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button> -->
 	</div>
 </div>
@@ -350,6 +339,11 @@ if (!empty($conf->google->enabled) && !empty($conf->global->MAIN_GOOGLE_AD_CLIEN
 </div>	<!-- end of center -->
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+	function enableBtn(){
+   		document.getElementById("btn_pass").disabled = false;
+    }
+</script>
 </body>
 </html>
 <!-- END PHP TEMPLATE -->
