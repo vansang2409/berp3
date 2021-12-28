@@ -2087,7 +2087,7 @@ if ($action == 'create') {
 
 	print '</td></tr>';
 
-	// Date of proposal
+	// Date of quotation
 	print '<tr>';
 	print '<td>';
 	print '<table class="nobordernopadding" width="100%"><tr><td>';

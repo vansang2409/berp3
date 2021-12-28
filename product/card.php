@@ -1327,9 +1327,9 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 			// Brut Length
 			if (empty($conf->global->PRODUCT_DISABLE_SIZE)) {
 				print '<tr><td>'.$langs->trans("Length").' x '.$langs->trans("Width").' x '.$langs->trans("Height").'</td><td>';
-				print '<input name="size" class="width30p" value="'.GETPOST('size').'"> x ';
-				print '<input name="sizewidth" class="width30p" value="'.GETPOST('sizewidth').'"> x ';
-				print '<input name="sizeheight" class="width40p" value="'.GETPOST('sizeheight').'">';
+				print '<input name="size" class="" style="width:27%" value="'.GETPOST('size').'"> x ';
+				print '<input name="sizewidth" class="" style="width:27%" value="'.GETPOST('sizewidth').'"> x ';
+				print '<input name="sizeheight" class="" style="width:29%" value="'.GETPOST('sizeheight').'">';
 				print $formproduct->selectMeasuringUnits("size_units", "size", GETPOSTISSET('size_units') ?GETPOST('size_units', 'alpha') : '0', 0, 2);
 				print '</td></tr>';
 			}

@@ -90,7 +90,7 @@ div.mainmenu.customers::before {
 	content: "\f007";
 }
 
-div.mainmenu.purchaseorders::before {
+div.mainmenu.purchase::before {
 	content: "\f788";
 }
 

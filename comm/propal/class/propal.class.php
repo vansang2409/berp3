@@ -1054,7 +1054,7 @@ class Propal extends CommonObject
 		}
 
 		if (empty($this->date)) {
-			$this->error = "Date of proposal is required";
+			$this->error = "Date of quotation is required";
 			dol_syslog(get_class($this)."::create ".$this->error, LOG_ERR);
 			return -4;
 		}

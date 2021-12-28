@@ -47,7 +47,7 @@ ReferingWebsiteCheckDesc=You can enable a feature to check that your partners ha
 # Object
 #
 DeletePartnership=Delete a partnership
-PartnershipDedicatedToThisThirdParty=Partnership dedicated to this third party	
+PartnershipDedicatedToThisThirdParty=Partnership dedicated to this Customers / Suppliers	
 PartnershipDedicatedToThisMember=Partnership dedicated to this member	
 DatePartnershipStart=Start date
 DatePartnershipEnd=End date

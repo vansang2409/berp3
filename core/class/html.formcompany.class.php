@@ -296,7 +296,7 @@ class FormCompany extends Form
 		$result = $this->db->query($sql);
 		if ($result) {
 			if (!empty($htmlname)) {
-				$out .= '<select id="'.$htmlname.'" class="flat maxwidth200onsmartphone minwidth300 " style="width:93%" name="'.$htmlname.'">';
+				$out .= '<select id="'.$htmlname.'" class="flat maxwidth200onsmartphone minwidth300 "  style="width:96%" name="'.$htmlname.'">';
 			}
 			if ($country_codeid) {
 				$out .= '<option value="0">&nbsp;</option>';

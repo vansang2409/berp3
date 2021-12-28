@@ -1584,55 +1584,60 @@ if ($action == 'create') {
 	// Third party
 	print '<tr>';
 	print '<td class="fieldrequired">'.$langs->trans('Customer').'</td>';
-	if ($socid > 0) {
-		print '<td>';
-		print $soc->getNomUrl(1);
-		print '<input type="hidden" name="socid" value="'.$soc->id.'">';
-		print '</td>';
-		if (!empty($conf->global->SOCIETE_ASK_FOR_SHIPPING_METHOD) && !empty($soc->shipping_method_id)) {
-			$shipping_method_id = $soc->shipping_method_id;
-		}
-		//$warehouse_id       = $soc->warehouse_id;
-	} else {
+	// if ($socid > 0) {
+	// 	print '<td>';
+	// 	print $soc->getNomUrl(1);
+	// 	print '<input type="hidden" name="socid" value="'.$soc->id.'">';
+	// 	print '</td>';
+	// 	if (!empty($conf->global->SOCIETE_ASK_FOR_SHIPPING_METHOD) && !empty($soc->shipping_method_id)) {
+	// 		$shipping_method_id = $soc->shipping_method_id;
+	// 	}
+	// 	//$warehouse_id       = $soc->warehouse_id;
+	// } else {
+	// 	print '<td>';
+	// 	print img_picto('', 'company').$form->select_company('', 'socid', '(s.client = 1 OR s.client = 2 OR s.client = 3) AND status=1', 'SelectCustomer', 0, 0, null, 0, 'minwidth300  widthcentpercentminusxx');
+	// 	// reload page to retrieve customer informations
+	// 	if (empty($conf->global->RELOAD_PAGE_ON_CUSTOMER_CHANGE_DISABLED)) {
+	// 		print '<script type="text/javascript">
+	// 		$(document).ready(function() {
+	// 			$("#socid").change(function() {
+	// 				console.log("We have changed the company - Reload page");
+	// 				var socid = $(this).val();
+	// 				// reload page
+	// 				$("input[name=action]").val("create");
+	// 				$("form[name=addprop]").submit();
+	// 			});
+	// 		});
+	// 		</script>';
+	// 	}
+	// 	print ' <a href="'.DOL_URL_ROOT.'/societe/card.php?action=create&client=3&fournisseur=0&backtopage='.urlencode($_SERVER["PHP_SELF"].'?action=create').'"><span class="fa fa-plus-circle valignmiddle paddingleft" title="'.$langs->trans("AddThirdParty").'"></span></a>';
+	// 	print '</td>';
+	// }
+	// To allow to change customer after selecting / change by sang
 		print '<td>';
 		print img_picto('', 'company').$form->select_company('', 'socid', '(s.client = 1 OR s.client = 2 OR s.client = 3) AND status=1', 'SelectCustomer', 0, 0, null, 0, 'minwidth300  widthcentpercentminusxx');
-		// reload page to retrieve customer informations
-		if (empty($conf->global->RELOAD_PAGE_ON_CUSTOMER_CHANGE_DISABLED)) {
-			print '<script type="text/javascript">
-			$(document).ready(function() {
-				$("#socid").change(function() {
-					console.log("We have changed the company - Reload page");
-					var socid = $(this).val();
-					// reload page
-					$("input[name=action]").val("create");
-					$("form[name=addprop]").submit();
-				});
-			});
-			</script>';
-		}
 		print ' <a href="'.DOL_URL_ROOT.'/societe/card.php?action=create&client=3&fournisseur=0&backtopage='.urlencode($_SERVER["PHP_SELF"].'?action=create').'"><span class="fa fa-plus-circle valignmiddle paddingleft" title="'.$langs->trans("AddThirdParty").'"></span></a>';
 		print '</td>';
-	}
 	print '</tr>'."\n";
 
-	if ($socid > 0) {
-		// Contacts (ask contact only if thirdparty already defined).
-		print "<tr><td>".$langs->trans("DefaultContact").'</td><td>';
-		print img_picto('', 'contact');
-		print $form->selectcontacts($soc->id, $contactid, 'contactid', 1, '', '', 0, 'minwidth300');
-		print '</td></tr>';
+	// if ($socid > 0) {
+	// 	// Contacts (ask contact only if thirdparty already defined).
+	// 	print "<tr><td>".$langs->trans("DefaultContact").'</td><td>';
+	// 	print img_picto('', 'contact');
+	// 	print $form->selectcontacts($soc->id, $contactid, 'contactid', 1, '', '', 0, 'minwidth300');
+	// 	print '</td></tr>';
 
-		// Third party discounts info line
-		print '<tr><td>'.$langs->trans('Discounts').'</td><td>';
+	// 	// Third party discounts info line
+	// 	print '<tr><td>'.$langs->trans('Discounts').'</td><td>';
 
-		$absolute_discount = $soc->getAvailableDiscounts();
+	// 	$absolute_discount = $soc->getAvailableDiscounts();
 
-		$thirdparty = $soc;
-		$discount_type = 0;
-		$backtopage = urlencode($_SERVER["PHP_SELF"].'?socid='.$thirdparty->id.'&action='.$action.'&origin='.GETPOST('origin').'&originid='.GETPOST('originid'));
-		include DOL_DOCUMENT_ROOT.'/core/tpl/object_discounts.tpl.php';
-		print '</td></tr>';
-	}
+	// 	$thirdparty = $soc;
+	// 	$discount_type = 0;
+	// 	$backtopage = urlencode($_SERVER["PHP_SELF"].'?socid='.$thirdparty->id.'&action='.$action.'&origin='.GETPOST('origin').'&originid='.GETPOST('originid'));
+	// 	include DOL_DOCUMENT_ROOT.'/core/tpl/object_discounts.tpl.php';
+	// 	print '</td></tr>';
+	// }
 
 	// Date
 	print '<tr><td class="fieldrequired">'.$langs->trans('DatePropal').'</td><td>';
@@ -1648,11 +1653,11 @@ if ($action == 'create') {
 	$form->select_conditions_paiements((GETPOSTISSET('cond_reglement_id') ? GETPOST('cond_reglement_id', 'int') : $soc->cond_reglement_id), 'cond_reglement_id', -1, 1);
 	print '</td></tr>';
 
-	// Mode of payment
-	print '<tr><td>'.$langs->trans('PaymentMode').'</td><td>';
-	print img_picto('', 'bank').'&ensp;';
-	$form->select_types_paiements((GETPOSTISSET('mode_reglement_id') ? GETPOST('mode_reglement_id', 'int') : $soc->mode_reglement_id), 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, ' widthcentpercentminusx width100p');
-	print '</td></tr>';
+	// // Mode of payment
+	// print '<tr><td>'.$langs->trans('PaymentMode').'</td><td>';
+	// print img_picto('', 'bank').'&ensp;';
+	// $form->select_types_paiements((GETPOSTISSET('mode_reglement_id') ? GETPOST('mode_reglement_id', 'int') : $soc->mode_reglement_id), 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, ' widthcentpercentminusx width100p');
+	// print '</td></tr>';
 
 	// Bank Account
 	if (!empty($conf->global->BANK_ASK_PAYMENT_BANK_DURING_PROPOSAL) && !empty($conf->banque->enabled)) {
@@ -1731,15 +1736,15 @@ if ($action == 'create') {
 		print '</td></tr>';
 	}
 
-	// Template to use by default
-	print '<tr>';
-	print '<td>'.$langs->trans("DefaultModel").'</td>';
-	print '<td>';
-	print img_picto('', 'pdf').'&ensp;';
-	$liste = ModelePDFPropales::liste_modeles($db);
-	$preselected = ($conf->global->PROPALE_ADDON_PDF_ODT_DEFAULT ? $conf->global->PROPALE_ADDON_PDF_ODT_DEFAULT : $conf->global->PROPALE_ADDON_PDF);
-	print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', ' widthcentpercentminusx', 1);
-	print "</td></tr>";
+	// // Template to use by default
+	// print '<tr>';
+	// print '<td>'.$langs->trans("DefaultModel").'</td>';
+	// print '<td>';
+	// print img_picto('', 'pdf').'&ensp;';
+	// $liste = ModelePDFPropales::liste_modeles($db);
+	// $preselected = ($conf->global->PROPALE_ADDON_PDF_ODT_DEFAULT ? $conf->global->PROPALE_ADDON_PDF_ODT_DEFAULT : $conf->global->PROPALE_ADDON_PDF);
+	// print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', ' widthcentpercentminusx', 1);
+	// print "</td></tr>";
 
 	// Multicurrency
 	if (!empty($conf->multicurrency->enabled)) {
@@ -2087,7 +2092,7 @@ if ($action == 'create') {
 
 	print '</td></tr>';
 
-	// Date of proposal
+	// Date of quotation
 	print '<tr>';
 	print '<td>';
 	print '<table class="nobordernopadding" width="100%"><tr><td>';

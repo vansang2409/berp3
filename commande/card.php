@@ -1662,10 +1662,10 @@ if ($action == 'create' && $usercancreate) {
 	print '</td></tr>';
 
 	// Payment mode
-	print '<tr><td>'.$langs->trans('PaymentMode').'</td><td>';
-	print img_picto('', 'bank', 'class="pictofixedwidth"');
-	$form->select_types_paiements($mode_reglement_id, 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, ' widthcentpercentminusx');
-	print '</td></tr>';
+	// print '<tr><td>'.$langs->trans('PaymentMode').'</td><td>';
+	// print img_picto('', 'bank', 'class="pictofixedwidth"');
+	// $form->select_types_paiements($mode_reglement_id, 'mode_reglement_id', 'CRDT', 0, 1, 0, 0, 1, ' widthcentpercentminusx');
+	// print '</td></tr>';
 
 	// Bank Account
 	if (!empty($conf->global->BANK_ASK_PAYMENT_BANK_DURING_ORDER) && !empty($conf->banque->enabled)) {
@@ -1744,14 +1744,14 @@ if ($action == 'create' && $usercancreate) {
 	}
 
 	// Template to use by default
-	print '<tr><td>'.$langs->trans('DefaultModel').'</td>';
-	print '<td>';
-	print img_picto('', 'pdf', 'class="pictofixedwidth"');
-	include_once DOL_DOCUMENT_ROOT.'/core/modules/commande/modules_commande.php';
-	$liste = ModelePDFCommandes::liste_modeles($db);
-	$preselected = $conf->global->COMMANDE_ADDON_PDF;
-	print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', ' widthcentpercentminusx', 1);
-	print "</td></tr>";
+	// print '<tr><td>'.$langs->trans('DefaultModel').'</td>';
+	// print '<td>';
+	// print img_picto('', 'pdf', 'class="pictofixedwidth"');
+	// include_once DOL_DOCUMENT_ROOT.'/core/modules/commande/modules_commande.php';
+	// $liste = ModelePDFCommandes::liste_modeles($db);
+	// $preselected = $conf->global->COMMANDE_ADDON_PDF;
+	// print $form->selectarray('model', $liste, $preselected, 0, 0, 0, '', 0, 0, 0, '', ' widthcentpercentminusx', 1);
+	// print "</td></tr>";
 
 	// Multicurrency
 	if (!empty($conf->multicurrency->enabled)) {

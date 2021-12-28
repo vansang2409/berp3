@@ -219,7 +219,7 @@ function getCustomerProposalPieChart($socid = 0)
 		$result .= '<table class="noborder nohover centpercent">';
 
 		$result .=  '<tr class="liste_titre">';
-		$result .=  '<td colspan="2">'.$langs->trans("Statistics").' - '.$langs->trans("Proposals").'</td>';
+		$result .=  '<td colspan="2">'.$langs->trans("Statistics").' - '.$langs->trans("Quotations").'</td>';
 		$result .=  '</tr>';
 
 		foreach ($listofstatus as $status) {
