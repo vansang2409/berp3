@@ -168,7 +168,7 @@ $(document).ready(function () {
 	?><label for="username" class="hidden"><?php echo $langs->trans("Login"); ?></label><?php
 } ?>
 <!-- <span class="span-icon-user">-->
-<span class="span"  >Email Address</span>
+<span class="span" style="padding-left: 5px">Email Address</span>
 <input type="text" id="username" maxlength="255" placeholder="<?php echo $langs->trans("Email Address"); ?>" name="username" class="input" value="<?php echo dol_escape_htmltag($login); ?>" tabindex="1" autofocus="autofocus" />
 </div>
 </div>
@@ -180,7 +180,7 @@ $(document).ready(function () {
 	?><label for="password" class="hidden"><?php echo $langs->trans("Password"); ?></label><?php
 } ?>
 <!--<span class="span-icon-password">-->
-<span class="span">Password</span>
+<span class="span" style="padding-left: 5px">Password</span>
 <input type="password" id="password" maxlength="128" placeholder="<?php echo $langs->trans("Password"); ?>" name="password" class="input" value="<?php echo dol_escape_htmltag($password); ?>" tabindex="2" autocomplete="<?php echo empty($conf->global->MAIN_LOGIN_ENABLE_PASSWORD_AUTOCOMPLETE) ? 'off' : 'on'; ?>" />
 </div></div>
 
@@ -249,7 +249,7 @@ if (!empty($morelogincontent)) {
 }
 </style>
 <div id="login-submit-wrapper">
-    <div style="padding: 0 35px; max-width:50%; float:left">
+    <div style="padding: 0 42px; max-width:50%; float:left">
 	  	<!-- <div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
             <div class="g-recaptcha float-left" data-sitekey="6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm">
 				<div style="width: 304px; height: 78px;">
@@ -264,7 +264,7 @@ if (!empty($morelogincontent)) {
         </div> -->
 		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" data-callback="enableBtn"></div>
 	</div>
-    <div style="padding: 0 35px; max-width:50%; float:right">
+    <div style="padding: 0 42px; max-width:50%; float:right">
 		<button type="submit" class="" id="btn_login" disabled="disabled" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Login</button>
 		<!-- <button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button> -->
 	</div>
@@ -293,7 +293,7 @@ if ($forgetpasslink || $helpcenterlink) {
 		if (!empty($conf->global->MAIN_PASSWORD_FORGOTLINK)) {
 			$url = $conf->global->MAIN_PASSWORD_FORGOTLINK;
 		}
-		echo '<a class="alogin" style="color:#0178c8;" href="'.dol_escape_htmltag($url).'">';
+		echo '<a class="alogin" style="color:#0178c8;padding-left: 7px" href="'.dol_escape_htmltag($url).'">';
 		echo $langs->trans('PasswordForgotten');
 		echo '</a>';
 	}
@@ -307,7 +307,7 @@ if ($forgetpasslink || $helpcenterlink) {
 		if (!empty($conf->global->MAIN_HELPCENTER_LINKTOUSE)) {
 			$url = $conf->global->MAIN_HELPCENTER_LINKTOUSE;
 		}
-		echo '<a class="alogin" href="'.dol_escape_htmltag($url).'" target="_blank">';
+		echo '<a class="alogin" style="padding-left: 5px" href="'.dol_escape_htmltag($url).'" target="_blank">';
 		echo $langs->trans('NeedHelpCenter');
 		echo '</a>';
 	}

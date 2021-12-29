@@ -119,7 +119,7 @@ $title = 'BERP3';
 <div class="trinputlogin">
 <div class="tagtd nowraponall center valignmiddle tdinputlogin" style="min-width: 450px;">
 <!-- <span class="span-icon-user">-->
-<span class="span"  >Email Address</span>
+<span class="span" style="padding-left: 5px" >Email Address</span>
 <input type="text" maxlength="255" placeholder="<?php echo $langs->trans("Email Address"); ?>" <?php echo $disabled; ?> id="username" name="username" class="input" value="<?php echo dol_escape_htmltag($username); ?>" tabindex="1" />
 </div>
 </div>
@@ -208,11 +208,11 @@ if (!empty($morelogincontent)) {
    //echo dol_escape_htmltag($urlsp)
 ?>
 <div id="login-submit-wrapper">
-    <div style="padding: 0 35px; max-width:50%; float:left">
+    <div style="padding: 0 42px; max-width:50%; float:left">
 	  	
 		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" data-callback="enableBtn"></div>
 	</div>
-    <div style="padding: 0 35px; max-width:50%; float:right">
+    <div style="padding: 0 42px; max-width:50%; float:right">
 		<button type="submit" class="" disabled="disabled" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" id="btn_pass" name="button_password" >Verify</button>
 		<!-- <button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button> -->
 	</div>
@@ -234,7 +234,7 @@ if (!empty($morelogincontent)) {
 		$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_use_jmobile='.$conf->dol_use_jmobile;
 	}
 
-	print '<a class="alogin" href="'.$dol_url_root.'/index.php'.$moreparam.'">'.$langs->trans('BackToLoginPage').'</a>';
+	print '<a class="alogin" style="padding-left: 7px" href="'.$dol_url_root.'/index.php'.$moreparam.'">'.$langs->trans('BackToLoginPage').'</a>';
 	?>
 </div>
 
