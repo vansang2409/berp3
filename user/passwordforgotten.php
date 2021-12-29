@@ -113,12 +113,13 @@ if (empty($reshook)) {
 	// Action modif mot de passe
 	if ($action == 'buildnewpassword' && $username) {
 		$sessionkey = 'dol_antispam_value';
-
-		$ok = (array_key_exists($sessionkey, $_SESSION) === true && (strtolower($_SESSION[$sessionkey]) == strtolower($_POST['code'])));
-        $ok = true;
+		//$ok = (array_key_exists($sessionkey, $_SESSION) === true && (strtolower($_SESSION[$sessionkey]) == strtolower($_POST['code'])));
 		// Verify code
+		if(!empty($_POST['g-recaptcha-response'])) {
+		 $ok = true;
+		}
 		if (!$ok) {
-			$message = '<div class="error">'.$langs->trans("ErrorBadValueForCode").'</div>';
+			$message = '<div class="error">'.$langs->trans("ErrorBadCaptcha").'</div>';
 		} else {
 			$isanemail = preg_match('/@/', $username);
 

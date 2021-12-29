@@ -23,7 +23,7 @@
 
 //@ini_set('memory_limit', '128M');	// This may be useless if memory is hard limited by your PHP
 
-
+error_reporting(E_ERROR | E_PARSE);
 
 // For optional tuning. Enabled if environment variable MAIN_SHOW_TUNING_INFO is defined.
 $micro_start_time = 0;
@@ -709,11 +709,15 @@ if (!defined('NOLOGIN')) {
 		// If error, we will put error message in session under the name dol_loginmesg
 		if ($test && $goontestloop && (GETPOST('actionlogin', 'aZ09') == 'login' || $berp3_main_authentication != 'berp3')) {
 			$login = checkLoginPassEntity($usertotest, $passwordtotest, $entitytotest, $authmode);
-			if ($login === '--bad-login-validity--') {
+			if ($login === '--bad-login-validity--' || empty($_POST['g-recaptcha-response'])) {
 				$login = '';
 			}
+			
+            $dol_authmode = '';
 
 			if ($login) {
+
+				
 				$dol_authmode = $conf->authmode; // This properties is defined only when logged, to say what mode was successfully used
 				$dol_tz = $_POST["tz"];
 				$dol_tz_string = $_POST["tz_string"];
@@ -732,21 +736,34 @@ if (!defined('NOLOGIN')) {
 					}
 				}
 				//print $datefirst.'-'.$datesecond.'-'.$datenow.'-'.$dol_tz.'-'.$dol_tzstring.'-'.$dol_dst; exit;
+				
 			}
 
 			if (!$login) {
+				
 				dol_syslog('Bad password, connexion refused', LOG_DEBUG);
-				// Load translation files required by page
-				$langs->loadLangs(array('main', 'errors'));
+				// // Load translation files required by page
+				 $langs->loadLangs(array('main', 'errors'));
 
-				// Bad password. No authmode has found a good password.
-				// We set a generic message if not defined inside function checkLoginPassEntity or subfunctions
+				// // Bad password. No authmode has found a good password.
+				// // We set a generic message if not defined inside function checkLoginPassEntity or subfunctions
 				if (empty($_SESSION["dol_loginmesg"])) {
-					$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorBadLoginPassword");
-				}
 
+					if (empty($_POST['g-recaptcha-response'])) {
+						$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorBadCaptcha");
+					}else{
+						$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorBadLoginPassword");
+					}
+					
+				}
+                
 				// Call trigger for the "security events" log
-				$user->trigger_mesg = $langs->trans("ErrorBadLoginPassword").' - login='.GETPOST("username", "alpha", 2);
+				if (empty($_POST['g-recaptcha-response'])) {
+					$user->trigger_mesg = $langs->trans("ErrorBadCaptcha").' - login='.GETPOST("username", "alpha", 2);
+				}else{
+					$user->trigger_mesg = $langs->trans("ErrorBadLoginPassword").' - login='.GETPOST("username", "alpha", 2);
+				}
+				
 
 				// Call trigger
 				$result = $user->call_trigger('USER_LOGIN_FAILED', $user);
@@ -764,7 +781,7 @@ if (!defined('NOLOGIN')) {
 					$error++;
 				}
 
-				// Note: exit is done in next chapter
+				// //Note: exit is done in next chapter
 			}
 		}
 

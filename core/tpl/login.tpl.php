@@ -35,7 +35,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
 
 header('Cache-Control: Public, must-revalidate');
 header("Content-type: text/html; charset=".$conf->file->character_set_client);
-
+error_reporting(E_ERROR | E_PARSE);
 if (GETPOST('dol_hide_topmenu')) {
 	$conf->dol_hide_topmenu = 1;
 }
@@ -123,7 +123,7 @@ $(document).ready(function () {
 <div class="login_center center"<?php print empty($conf->global->MAIN_LOGIN_BACKGROUND) ? ' style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat;background-color: #ffffff;"' : '' ?>>
 <div class="login_vertical_align" style="background-color: #ffffff;">
 <div id="login_left">
-	<img alt="" src="<?php echo $urllogo; ?>" id="img_logo" />
+	<img alt="" src="<?php echo $urllogo; ?>" id="img_logo" style="width:50%" />
 </div>
 
 <br>
@@ -235,7 +235,7 @@ if (!empty($morelogincontent)) {
 </div> <!-- end div login_line1 -->
 
 
-<div id="login_line2" style="clear: both">
+<div id="login_line2" style="clear: both;margin-top: -20px;">
 
 <!-- Button Connection -->
 <br>
@@ -247,28 +247,27 @@ if (!empty($morelogincontent)) {
 .disablehover:hover{
 	border: 0px !important;
 }
+.captcha {
+	font-family: Century Gothic;
+    font-size: 14px !important;
+    display: block;
+    font-weight: 700;
+    text-align: left;
+}
 </style>
+<div class="login_right" style="text-align:left;padding:0px 0px 5px 43px;">
+<label for="Captcha" class="hidden captcha" ><?php echo $langs->trans("Captcha"); ?></label>
+</div>
 <div id="login-submit-wrapper">
+     
     <div style="padding: 0 42px; max-width:50%; float:left">
-	  	<!-- <div class="col-sm-9 col-12 col-10" style="padding-right: 30%;">
-            <div class="g-recaptcha float-left" data-sitekey="6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm">
-				<div style="width: 304px; height: 78px;">
-					<div>
-						<iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LfMaesbAAAAAH0N6RjBz3-IXFrX0GvFonKQ_OLm&amp;co=aHR0cHM6Ly9haW9zdy5jb206NDQz&amp;hl=vi&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=normal&amp;cb=5c2owwngl1x" width="304" height="78" role="presentation" name="a-53ql1hk758w5" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
-			 		</div>
-					<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-				</div>
-				<iframe style="display: none;"></iframe>
-			</div>
-            <div class="invalid-feedback" id="err_g-recaptcha-response"></div>
-        </div> -->
+	  	
 		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" data-callback="enableBtn"></div>
 	</div>
-    <div style="padding: 0 42px; max-width:50%; float:right">
-		<button type="submit" class="" id="btn_login" disabled="disabled" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Login</button>
+    <div style="padding: 0px 40px 0px 0px; max-width:50%; float:right">
+		<button type="submit" class="" id="btn_login" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:145px;height:45px;margin-bottom:10px;font-size: large;" value="&nbsp; <?php echo $langs->trans('Connection'); ?> &nbsp;" tabindex="5" >Login</button>
 		<!-- <button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button> -->
-	</div>
-</div>
+	
 
 <?php
 if ($forgetpasslink || $helpcenterlink) {
@@ -286,14 +285,14 @@ if ($forgetpasslink || $helpcenterlink) {
 		$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_use_jmobile='.$dol_use_jmobile;
 	}
 
-	echo '<br>';
-	echo '<div class="" style="margin-top: 5px;margin-left: 35px;float:left;width:100%;text-align:left;color:#0178c8;">';
+	//echo '<br>';
+	//echo '<div class="" style="margin-top: 5px;margin-left: 35px;float:left;width:100%;text-align:left;color:#0178c8;">';
 	if ($forgetpasslink) {
 		$url = DOL_URL_ROOT.'/user/passwordforgotten.php'.$moreparam;
 		if (!empty($conf->global->MAIN_PASSWORD_FORGOTLINK)) {
 			$url = $conf->global->MAIN_PASSWORD_FORGOTLINK;
 		}
-		echo '<a class="alogin" style="color:#0178c8;padding-left: 7px" href="'.dol_escape_htmltag($url).'">';
+		echo '<a class="alogin" style="color:#0178c8;font-family: Century Gothic;font-size: 14px !important;display: block;font-weight: 600 !important;" href="'.dol_escape_htmltag($url).'">';
 		echo $langs->trans('PasswordForgotten');
 		echo '</a>';
 	}
@@ -307,11 +306,11 @@ if ($forgetpasslink || $helpcenterlink) {
 		if (!empty($conf->global->MAIN_HELPCENTER_LINKTOUSE)) {
 			$url = $conf->global->MAIN_HELPCENTER_LINKTOUSE;
 		}
-		echo '<a class="alogin" style="padding-left: 5px" href="'.dol_escape_htmltag($url).'" target="_blank">';
+		echo '<a class="alogin" style="padding-left: 5px;" href="'.dol_escape_htmltag($url).'" target="_blank">';
 		echo $langs->trans('NeedHelpCenter');
 		echo '</a>';
 	}
-	echo '</div>';
+	//echo '</div>';
 }
 
 if (isset($conf->file->main_authentication) && preg_match('/openid/', $conf->file->main_authentication)) {
@@ -334,7 +333,8 @@ if (isset($conf->file->main_authentication) && preg_match('/openid/', $conf->fil
 
 
 ?>
-
+		</div>
+	</div>
 </div> <!-- end login line 2 -->
 
 	

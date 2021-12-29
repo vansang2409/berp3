@@ -219,8 +219,8 @@ if ($action == 'create' || $object->fetch($id, $ref) > 0) {
 		print '<table class="border centpercent">';
 
 		// Ref
-		print '<tr><td class="titlefieldcreate fieldrequired">'.$langs->trans("ResourceFormLabel_ref").'</td>';
-		print '<td><input class="minwidth200" name="ref" value="'.($ref ? $ref : $object->ref).'" autofocus="autofocus"></td></tr>';
+		print '<tr><td class="titlefieldcreate fieldrequired ">'.$langs->trans("ResourceFormLabel_ref").'</td>';
+		print '<td><input class="minwidth200 width100p" name="ref" value="'.($ref ? $ref : $object->ref).'" autofocus="autofocus"></td></tr>';
 
 		// Type
 		print '<tr><td>'.$langs->trans("ResourceType").'</td>';

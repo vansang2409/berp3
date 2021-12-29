@@ -90,7 +90,7 @@ $(document).ready(function () {
 <div class="login_center center"<?php print empty($conf->global->MAIN_LOGIN_BACKGROUND) ? ' style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat; background-color: white;"' : '' ?>>
 <div class="login_vertical_align">
 <div id="login_left">
-<img alt="" title="" src="<?php echo $urllogo; ?>" id="img_logo" />
+<img alt="" title="" src="<?php echo $urllogo; ?>" id="img_logo" style="width:50%" />
 </div>
 
 <br>
@@ -196,7 +196,7 @@ if (!empty($morelogincontent)) {
 </div> <!-- end div login_line1 -->
 
 
-<div id="login_line2" style="clear: both">
+<div id="login_line2" style="clear: both;margin-top: -20px;">
 
 <!-- Button "Regenerate and Send password" -->
 <br>
@@ -207,37 +207,48 @@ if (!empty($morelogincontent)) {
    $urlsp ="https://bona.com.sg/";
    //echo dol_escape_htmltag($urlsp)
 ?>
+<style>
+.disablehover:hover{
+	border: 0px !important;
+}
+.captcha {
+	font-family: Century Gothic;
+    font-size: 14px !important;
+    display: block;
+    font-weight: 700;
+    text-align: left;
+}
+</style>
+<div class="login_right" style="text-align:left;padding:0px 0px 5px 43px;">
+<label for="Captcha" class="hidden captcha" ><?php echo $langs->trans("Captcha"); ?></label>
+</div>
 <div id="login-submit-wrapper">
     <div style="padding: 0 42px; max-width:50%; float:left">
 	  	
 		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" data-callback="enableBtn"></div>
 	</div>
-    <div style="padding: 0 42px; max-width:50%; float:right">
-		<button type="submit" class="" disabled="disabled" style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" id="btn_pass" name="button_password" >Verify</button>
+    <div style="padding: 0 42px 0px 0px; max-width:50%; float:right">
+		<button type="submit" class=""  style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;width:145px;height:45px;margin-bottom:10px;font-size: large;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" id="btn_pass" name="button_password" >Verify</button>
 		<!-- <button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button> -->
+			<?php
+			$moreparam = '';
+			if (!empty($conf->dol_hide_topmenu)) {
+				$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_hide_topmenu='.$conf->dol_hide_topmenu;
+			}
+			if (!empty($conf->dol_hide_leftmenu)) {
+				$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_hide_leftmenu='.$conf->dol_hide_leftmenu;
+			}
+			if (!empty($conf->dol_no_mouse_hover)) {
+				$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_no_mouse_hover='.$conf->dol_no_mouse_hover;
+			}
+			if (!empty($conf->dol_use_jmobile)) {
+				$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_use_jmobile='.$conf->dol_use_jmobile;
+			}
+
+			print '<a class="alogin" style="color:#0178c8;font-family: Century Gothic;font-size: 14px !important;display: block;font-weight: 700 !important;" href="'.$dol_url_root.'/index.php'.$moreparam.'">'.$langs->trans('BackToLoginPage').'</a>';
+			?>
 	</div>
 </div>
-<br>
-<div class="" style="margin-top: 5px;margin-left: 35px;float:left;width:100%;text-align:left;color:#0178c8;">
-	<?php
-	$moreparam = '';
-	if (!empty($conf->dol_hide_topmenu)) {
-		$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_hide_topmenu='.$conf->dol_hide_topmenu;
-	}
-	if (!empty($conf->dol_hide_leftmenu)) {
-		$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_hide_leftmenu='.$conf->dol_hide_leftmenu;
-	}
-	if (!empty($conf->dol_no_mouse_hover)) {
-		$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_no_mouse_hover='.$conf->dol_no_mouse_hover;
-	}
-	if (!empty($conf->dol_use_jmobile)) {
-		$moreparam .= (strpos($moreparam, '?') === false ? '?' : '&').'dol_use_jmobile='.$conf->dol_use_jmobile;
-	}
-
-	print '<a class="alogin" style="padding-left: 7px" href="'.$dol_url_root.'/index.php'.$moreparam.'">'.$langs->trans('BackToLoginPage').'</a>';
-	?>
-</div>
-
 </div>
 
 </div>
