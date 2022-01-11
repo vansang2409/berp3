@@ -284,7 +284,7 @@ if ($canreadperms) {
 print '<div class="clearboth"></div>';
 print '<div class="fichecenter fichecenterbis">';
 
-$boxlist = '<div class="twocolumns">';
+$boxlist = '<div class="twocolumns" >';
 
 $boxlist .= '<div class="firstcolumn fichehalfleft boxhalfleft" id="boxhalfleft">';
 $boxlist .= $searchbox;

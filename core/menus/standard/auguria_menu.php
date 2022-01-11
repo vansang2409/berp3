@@ -145,17 +145,36 @@ class MenuManager
 			if ($mode == 'top') {
 				print_auguria_menu($this->db, $this->atarget, $this->type_user, $this->tabMenu, $this->menu, 0, $mode);
 				
+				
 			}
 			if ($mode == 'left') {
 				print_left_auguria_menu($this->db, $this->menu_array, $this->menu_array_after, $this->tabMenu, $this->menu, 0, '', '', $moredata);
+				//print_r($this->menu);
+			}
+            if ($mode == 'mobile') {
+				print_left_mobile_menu($this->db, $this->atarget, $this->type_user, $this->tabMenu, $this->menu, 0, $mode,$this->menu_array, $this->menu_array_after);
+				print'<script>
+						function showOrHide(id) {
+							var subID = "sub" + id;
+							var x = document.getElementById(subID);
+							//console.log(x.style.display);
+							if (x.style.display === "none" || x.style.display == "") {
+								x.style.display = "block";
+							} else {
+								x.style.display = "none";
+							}
+						}
+					  </script>';
 			}
 		} else {
 			$conf->global->MAIN_SHOW_LOGO = 0;
 			if ($mode == 'top') {
 				print_left_auguria_menu($this->db, $this->menu_array, $this->menu_array_after, $this->tabMenu, $this->menu, 0);
+				
 			}
 			if ($mode == 'left') {
 				print_auguria_menu($this->db, $this->atarget, $this->type_user, $this->tabMenu, $this->menu, 0, $mode);
+				
 			}
 		}
 
@@ -165,6 +184,7 @@ class MenuManager
 		}
 
 		if ($mode == 'jmobile') {     // Used to get menu in xml ul/li
+			
 			print_auguria_menu($this->db, $this->atarget, $this->type_user, $this->tabMenu, $this->menu, 1, $mode);
 
 			// $this->menu->liste is top menu

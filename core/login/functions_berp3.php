@@ -129,7 +129,7 @@ function check_user_password_berp3($usertotest, $passwordtotest, $entitytotest =
 					// Load translation files required by the page
 					$langs->loadLangs(array('main', 'errors'));
 
-					$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorBadLoginPassword");
+					$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorBadPassword");
 				}
 
 				// We must check entity
@@ -153,7 +153,7 @@ function check_user_password_berp3($usertotest, $passwordtotest, $entitytotest =
 				// Load translation files required by the page
 				$langs->loadLangs(array('main', 'errors'));
 
-				$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorBadLoginPassword");
+				$_SESSION["dol_loginmesg"] = $langs->transnoentitiesnoconv("ErrorBadUser");
 			}
 		} else {
 			dol_syslog("functions_berp3::check_user_password_berp3 Authentication KO db error for '".$usertotest."' error=".$db->lasterror(), LOG_ERR);

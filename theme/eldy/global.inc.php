@@ -1875,9 +1875,14 @@ div.vmenu, td.vmenu {
 */
 
 
-.menuhider { display: none !important; }
-
-
+.menuhider { display: none !important;}
+.menuhidden { display: block !important;}
+.vmenuhidden { display: block !important;}
+.showmobile { display: none !important; }
+.submenu {
+	background-color: #efeded;
+	display: none ;
+}
 /* rule to reduce top menu - 3rd reduction: The menu for user is on left */
 @media only screen and (max-width: <?php echo empty($conf->global->THEME_ELDY_WITDHOFFSET_FOR_REDUC3) ? round($nbtopmenuentries * 47, 0) + 130 : $conf->global->THEME_ELDY_WITDHOFFSET_FOR_REDUC3; ?>px)	/* reduction 3 */
 {
@@ -1898,6 +1903,9 @@ div.vmenu, td.vmenu {
 	}
 
 	.menuhider { display: block !important; }
+	.menuhidden { display: none !important;}
+	.vmenuhidden { display: none !important;}
+	.showmobile { display: block !important; }
 	.dropdown-user-image { display: none; }
 	.user-header { height: auto !important; color: var(--colorbackbody); }
 

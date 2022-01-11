@@ -448,7 +448,7 @@ class Menubase
 			return -1;
 		}
 	}
-
+   
 
 	/**
 	 *  Delete object in database
@@ -530,7 +530,24 @@ class Menubase
 
 		return $newTabMenu;
 	}
+    
+	public function menuRowID($mymainmenu,&$tabMenu)
+	{
+		global $langs, $user, $conf; // To export to dol_eval function
+		global $mainmenu, $leftmenu; // To export to dol_eval function
 
+		$mainmenu = $mymainmenu; // To export to dol_eval function
+		// Detect what is top mainmenu id
+		$menutopid = '';
+		foreach ($tabMenu as $key => $val) {
+			// Define menutopid of mainmenu
+			if (empty($menutopid) && $val['type'] == 'top' && $val['mainmenu'] == $mainmenu) {
+				$menutopid = $val['rowid'];
+				break;
+			}
+		}
+		return $menutopid;
+	}
 	/**
 	 * 	Load entries found from database (and stored into $tabMenu) in $this->newmenu array.
 	 *  Warning: Entries in $tabMenu must have child after parent
@@ -543,6 +560,7 @@ class Menubase
 	 * 	@param  array	$tabMenu       Array with menu entries already loaded
 	 * 	@return Menu    		       	Menu array for particular mainmenu value or full tabArray
 	 */
+
 	public function menuLeftCharger($newmenu, $mymainmenu, $myleftmenu, $type_user, $menu_handler, &$tabMenu)
 	{
 		global $langs, $user, $conf; // To export to dol_eval function

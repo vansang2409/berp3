@@ -4829,7 +4829,7 @@ table.cal_event td.cal_event_right { padding: 4px 4px !important; }
 .calendarviewcontainertr { height: 100px; }
 
 .topmenuimage {
-	background-size: 24px auto;
+	background-size: 54px auto;
 }
 
 td.cal_other_month {

@@ -301,11 +301,13 @@ div.mainmenu.menu {
 
 div.mainmenu.menu::before {
 	content: "\f0c9";
+    color: black;
 }
 
 
 div.mainmenu.home::before{
 	content: "\f015";
+    color: black;
 }
 
 div.mainmenu.billing::before {

@@ -1252,7 +1252,7 @@ class Form
 		global $conf, $user, $langs;
 
 		$out = '';
-
+         
 		if (!empty($conf->use_javascript_ajax) && !empty($conf->global->COMPANY_USE_SEARCH_TO_SELECT) && !$forcecombo) {
 			if (is_null($ajaxoptions)) {
 				$ajaxoptions = array();
@@ -1268,6 +1268,7 @@ class Form
 				$societetmp->fetch($selected);
 				$selected_input_value = $societetmp->name;
 				unset($societetmp);
+				echo $selected;
 			}
 
 			// mode 1
@@ -8029,7 +8030,7 @@ class Form
 
 		// Try also magic suggest
 		//$out .= '<select  id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').' " multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').($width ? ' style="width: '.(preg_match('/%/', $width) ? $width : $width.'px').'"' : '').'>'."\n";
-		$out .= '<select  id="'.$htmlname.'" class="multiselect'.($morecss ? ' '.$morecss : '').' width100p" multiple name="'.$htmlname.'[]"'.($moreattrib ? ' '.$moreattrib : '').' >'."\n";
+		$out .= '<select  id="'.$htmlname.'" class="multiselect '.($morecss ? ' '.$morecss : '').' width100p" multiple name="'.$htmlname.'[]" '.($moreattrib ? ' '.$moreattrib : '').' >'."\n";
 		
 		if (is_array($array) && !empty($array)) {
 			if ($value_as_key) {
@@ -8056,6 +8057,7 @@ class Form
 
 		return $out;
 	}
+   
 
 
 	/**

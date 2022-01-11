@@ -16,6 +16,7 @@
 	text-align:center;
 	text-decoration:none;
 	color: #<?php echo $colortextbackhmenu; ?>;
+	
 }
 
 .fa-15x {
@@ -33,24 +34,29 @@ div.mainmenu.menu::before {
 
 div.mainmenu.home::before{
 	content: "\f015";
+	color: black;
 }
 
 div.mainmenu.billing::before {
 	content: "\f571";
+	color: black;
 }
 
 div.mainmenu.accountancy::before {
 	/* content: "\f53d"; */
 	content: "\f688";
 	font-size: 1.2em;
+	color: black;
 }
 
 div.mainmenu.agenda::before {
 	content: "\f073";
+	color: black;
 }
 
 div.mainmenu.bank::before {
 	content: "\f19c";
+	color: black;
 }
 
 <?php if (getDolGlobalInt('MAIN_FEATURES_LEVEL') == 2) { ?>
@@ -73,6 +79,7 @@ div.mainmenu.cashdesk .tmenuimage {
 <?php } else { ?>
 div.mainmenu.cashdesk::before {
 	content: "\f788";
+	color: black;
 }
 
 <?php } ?>
@@ -80,66 +87,82 @@ div.mainmenu.cashdesk::before {
 
 div.mainmenu.takepos::before {
 	content: "\f788";
+	color: black;
 }
 
 div.mainmenu.companies::before {
 	content: "\f494";
+	color: black;
 }
 
 div.mainmenu.customers::before {
 	content: "\f007";
+	color: black;
 }
 
 div.mainmenu.purchase::before {
 	content: "\f788";
+	color: black;
 }
 
 div.mainmenu.commercial::before {
 	content: "\f4c0";
+	color: black;
 }
 
 div.mainmenu.ecm::before {
 	content: "\f07c";
+	color: black;
 }
 
 div.mainmenu.externalsite::before {
 	content: "\f360";
+	color: black;
 }
 
 div.mainmenu.ftp::before {
 	content: "\f362";
+	color: black;
 }
 
 div.mainmenu.hrm::before {
 	content: "\f508";
+	color: black;
 }
 
 div.mainmenu.members::before {
 	content: "\f007";
+	color: black;
 }
 
 div.mainmenu.products::before {
 	content: "\f468";
+	color: black;
 }
 
 div.mainmenu.mrp::before {
 	content: "\f1b3";
+	color: black;
 }
 
 div.mainmenu.project::before {
 	content: "\f542";
+	color: black;
 }
 
 div.mainmenu.ticket::before {
 	content: "\f3ff";
+	color: black;
 }
 
 div.mainmenu.tools::before {
 	content: "\f7d9";
+	color: black;
 }
 
 div.mainmenu.website::before {
 	content: "\f57d";
+	color: black;
 }
 
 div.mainmenu.generic1::before {
@@ -148,14 +171,17 @@ div.mainmenu.generic1::before {
 
 div.mainmenu.generic2::before {
 	content: "\f249";
+	color: black;
 }
 
 div.mainmenu.generic3::before {
 	content: "\f249";
+	color: black;
 }
 
 div.mainmenu.generic4::before {
 	content: "\f249";
+	color: black;
 }
 
 /* Define color of some picto */

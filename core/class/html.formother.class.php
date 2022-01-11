@@ -1140,7 +1140,7 @@ class FormOther
 
 		$selectboxlist = '';
 		$boxactivated = InfoBox::listBoxes($db, 'activated', $areacode, (empty($user->conf->$confuserzone) ?null:$user), array(), 0); // Search boxes of common+user (or common only if user has no specific setup)
-
+		//print_r($boxactivated);exit;
 		$boxidactivatedforuser = array();
 		foreach ($boxactivated as $box) {
 			if (empty($user->conf->$confuserzone) || $box->fk_user == $user->id) {
@@ -1285,6 +1285,7 @@ class FormOther
 			}
 
 			$ii = 0;
+			//print_r($boxactivated[1]);
 			foreach ($boxactivated as $key => $box) {
 				if ((!empty($user->conf->$confuserzone) && $box->fk_user == 0) || (empty($user->conf->$confuserzone) && $box->fk_user != 0)) {
 					continue;
@@ -1294,12 +1295,15 @@ class FormOther
 				}
 				if (preg_match('/^A/i', $box->box_order)) { // column A
 					$ii++;
+					//print_r($boxactivated[$ii]);
 					//print 'box_id '.$boxactivated[$ii]->box_id.' ';
-					//print 'box_order '.$boxactivated[$ii]->box_order.'<br>';
+					//print 'box_order '.$boxactivated[$ii]->box_order.'-'.$boxactivated[$ii]->boxlabel.'<br>';
 					// Show box
 					$box->loadBox($box_max_lines);
 					$boxlista .= $box->showBox(null, null, 1);
+					//print_r($box->showBox(null, null, 1));
 				}
+				
 			}
 
 			if ($conf->browser->layout != 'phone') {
@@ -1320,10 +1324,11 @@ class FormOther
 				if (empty($box->box_order) && $ii < ($nbboxactivated / 2)) {
 					$box->box_order = 'B'.sprintf("%02d", ($ii + 1)); // When box_order was not yet set to Axx or Bxx and is still 0
 				}
+				//echo $box->box_order.'-'.$box->box_id.'<br>';
 				if (preg_match('/^B/i', $box->box_order)) { // colonne B
 					$ii++;
 					//print 'box_id '.$boxactivated[$ii]->box_id.' ';
-					//print 'box_order '.$boxactivated[$ii]->box_order.'<br>';
+					//print 'box_order '.$boxactivated[$ii]->box_order.'-'.$boxactivated[$ii]->boxlabel.'<br>';
 					// Show box
 					$box->loadBox($box_max_lines);
 					$boxlistb .= $box->showBox(null, null, 1);
@@ -1339,7 +1344,7 @@ class FormOther
 
 			$boxlistb .= "<!-- End box right container -->\n";
 		}
-
+         
 		return array('selectboxlist'=>count($boxactivated) ? $selectboxlist : '', 'boxactivated'=>$boxactivated, 'boxlista'=>$boxlista, 'boxlistb'=>$boxlistb);
 	}
 

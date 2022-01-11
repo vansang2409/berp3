@@ -1009,7 +1009,7 @@ class Propal extends CommonObject
 		if (empty($this->date)) {
 			$this->date = $this->datep;
 		}
-		$this->fin_validite = $this->date + ($this->duree_validite * 24 * 3600);
+		$this->fin_validite = $this->date + ( (int)$this->duree_validite * 24 * 3600);
 		if (empty($this->availability_id)) {
 			$this->availability_id = 0;
 		}

@@ -86,11 +86,61 @@ $(document).ready(function () {
 </script>
 <?php } ?>
 
+<style>
+.img_logo {
+	  width:50%;
+  }
+.lr {
+	text-align:left;
+	padding:0px 0px 5px 43px;
+}
+.recaptcha {
+	padding: 0 42px; 
+	max-width:50%; 
+	float:left;
+}
+.btn-fg {
+	padding: 0px 40px 0px 0px;
+    max-width:50%; 
+	float:right;
+}
+@media only screen and (max-width: 553px) {
+  .img_logo {
+	  width:100%;
+  }
+  .login_table {
+	  max-width: 553px;
+  }
+  #login_line1 {
+	  text-align: left;
+  }
+  .trinputlogin input[type=text], input[type=password] {
+    max-width: 100%;
+  }
 
+  .login_table .tdinputlogin {
+    min-width: 450px !important;
+ }
+ .lr {
+	text-align:left;
+	padding:0px 0px 5px 20px;
+	}
+.recaptcha {
+	padding: 0 20px; 
+	max-width:50%; 
+	float:left;
+ }	
+.btn-fg {
+	padding: 0px 20px 0px 0px;
+    max-width:50%; 
+	float:right;
+ }
+}
+</style>
 <div class="login_center center"<?php print empty($conf->global->MAIN_LOGIN_BACKGROUND) ? ' style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat; background-color: white;"' : '' ?>>
 <div class="login_vertical_align">
 <div id="login_left">
-<img alt="" title="" src="<?php echo $urllogo; ?>" id="img_logo" style="width:50%" />
+<img alt="" title="" src="<?php echo $urllogo; ?>" id="img_logo" class ="img_logo" />
 </div>
 
 <br>
@@ -219,15 +269,15 @@ if (!empty($morelogincontent)) {
     text-align: left;
 }
 </style>
-<div class="login_right" style="text-align:left;padding:0px 0px 5px 43px;">
+<div class="login_right lr" >
 <label for="Captcha" class="hidden captcha" ><?php echo $langs->trans("Captcha"); ?></label>
 </div>
 <div id="login-submit-wrapper">
-    <div style="padding: 0 42px; max-width:50%; float:left">
+    <div class="recaptcha">
 	  	
 		<div class="g-recaptcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" data-callback="enableBtn"></div>
 	</div>
-    <div style="padding: 0 42px 0px 0px; max-width:50%; float:right">
+    <div class="btn-fg">
 		<button type="submit" class=""  style="border-radius: 5px;background-color: #0178c8 !important;border-color: #0178c8 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;width:145px;height:45px;margin-bottom:10px;font-size: large;" value="&nbsp; <?php echo $langs->trans('SendNewPassword'); ?> &nbsp;" tabindex="4" id="btn_pass" name="button_password" >Verify</button>
 		<!-- <button type="submit" class="" style="border-radius: 5px;background-color: #343a40 !important;border-color: #343a40 !important; color:white;display:block;padding: 0.25rem 0.5rem;width:90px;margin-bottom:10px;" value="&nbsp; <?php echo $langs->trans('Support'); ?> &nbsp;" tabindex="5" ><a class="disablehover" style="color:#ffffff" href="<?php echo dol_escape_htmltag($urlsp) ?>" target="_blank">Support</a></button> -->
 			<?php
@@ -260,7 +310,7 @@ if (!empty($morelogincontent)) {
   	 <a href="https://bona.com.sg/" target="_blank" style="color: #343a40;font-weight: bold;font-size: .875rem;">Bona ERP by Bona Technologies</a>
   	</div>
 	<div>
-		<img src="https://aiosw.com/user2/bonaforce/img/unnamed.png" alt="" class="img-fluid">
+		<img src="<?php echo DOL_URL_ROOT."/theme/berp3_login_footer.png"?>" alt="" class="img-fluid">
 	</div>
 </div>
 <div class="center login_main_home divpasswordmessagedesc paddingtopbottom<?php echo empty($conf->global->MAIN_LOGIN_BACKGROUND) ? '' : ' backgroundsemitransparent boxshadow'; ?>" style="max-width: 70%">

@@ -413,11 +413,11 @@ if (empty($reshook)) {
 			setEventMessages($langs->trans("ErrorFieldRequired", $langs->transnoentitiesnoconv("ThirdPartyName")), null, 'errors');
 			$error++;
 		}
-		if (GETPOST('client') < 0) {
+		if (GETPOST('client') < 0 && (GETPOST('type') == 'c' || GETPOST('type') == 'p')) {
 			setEventMessages($langs->trans("ErrorFieldRequired", $langs->transnoentitiesnoconv("ProspectCustomer")), null, 'errors');
 			$error++;
 		}
-		if (GETPOST('fournisseur') < 0) {
+		if (GETPOST('fournisseur') < 0 && GETPOST('type') == 'f') {
 			setEventMessages($langs->trans("ErrorFieldRequired", $langs->transnoentitiesnoconv("Supplier")), null, 'errors');
 			$error++;
 		}
@@ -1717,7 +1717,7 @@ if (is_object($objcanvas) && $objcanvas->displayCanvasExists($action)) {
 		$userlist = $form->select_dolusers('', '', 0, null, 0, '', '', 0, 0, 0, 'AND u.statut = 1', 0, '', '', 0, 1);
 		// Note: If user has no right to "see all thirdparties", we force selection of sale representative to him, so after creation he can see the record.
 		$selected = (count(GETPOST('commercial', 'array')) > 0 ? GETPOST('commercial', 'array') : (GETPOST('commercial', 'int') > 0 ? array(GETPOST('commercial', 'int')) : (empty($user->rights->societe->client->voir) ? array($user->id) : array())));
-		print img_picto('', 'user').$form->multiselectarray('commercial', $userlist, $selected, null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
+		print img_picto('', 'user').$form->multiselectarray('commercial', $userlist,$selected, null, null, 'quatrevingtpercent widthcentpercentminusx', 0, 0);
 		print '</td></tr>';
 
 		// Add logo

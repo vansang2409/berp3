@@ -22,7 +22,6 @@
  */
 
 //@ini_set('memory_limit', '128M');	// This may be useless if memory is hard limited by your PHP
-
 error_reporting(E_ERROR | E_PARSE);
 
 // For optional tuning. Enabled if environment variable MAIN_SHOW_TUNING_INFO is defined.
@@ -820,6 +819,7 @@ if (!defined('NOLOGIN')) {
 				$_SESSION["dol_loginmesg"] = $user->error;
 
 				$user->trigger_mesg = $user->error;
+				
 			}
 
 			// Call trigger
@@ -1825,6 +1825,7 @@ function top_menu($head, $title = '', $target = '', $disablejs = 0, $disablehead
 		$menumanager->atarget = $target;
 		$menumanager->showmenu('top', array('searchform'=>$searchform)); // This contains a \n
 		print "</div>\n";
+		
 
 		// Define link to login card
 		$appli = constant('DOL_APPLICATION_TITLE');
@@ -2000,12 +2001,13 @@ function top_menu($head, $title = '', $target = '', $disablejs = 0, $disablehead
 
 
 		print $toprightmenu;
-
+        
 		print "</div>\n"; // end div class="login_block"
-
+        print "<hr>";
 		print '</header>';
-
+         
 		print '<div style="clear: both;"></div>';
+		
 		print "<!-- End top horizontal menu -->\n\n";
 	}
 
@@ -2043,7 +2045,7 @@ function top_menu_user($hideloginname = 0, $urllogout = '')
 			$nophoto = '/public/theme/common/user_woman.png';
 		}
 
-		$userImage = '<img class="photo photouserphoto userphoto" alt="No photo" src="'.DOL_URL_ROOT.$nophoto.'">';
+		$userImage = '<img  class="photo photouserphoto userphoto" alt="No photo" src="'.DOL_URL_ROOT.$nophoto.'">';
 		$userDropDownImage = '<img class="photo dropdown-user-image" alt="No photo" src="'.DOL_URL_ROOT.$nophoto.'">';
 	}
 
@@ -2719,7 +2721,7 @@ function left_menu($menu_array_before, $helppagename = '', $notused = '', $menu_
 		// Instantiate hooks for external modules
 		$hookmanager->initHooks(array('searchform', 'leftblock'));
 
-		print "\n".'<!-- Begin side-nav id-left -->'."\n".'<div class="side-nav"><div id="id-left">'."\n";
+		print "\n".'<!-- Begin side-nav id-left -->'."\n".'<div class="side-nav" ><div id="id-left" style="position: sticky;top: 73px;">'."\n";
 
 		if ($conf->browser->layout == 'phone') {
 			$conf->global->MAIN_USE_OLD_SEARCH_FORM = 1; // Select into select2 is awfull on smartphone. TODO Is this still true with select2 v4 ?
@@ -2775,13 +2777,18 @@ function left_menu($menu_array_before, $helppagename = '', $notused = '', $menu_
 		// Left column
 		print '<!-- Begin left menu -->'."\n";
 
-		print '<div class="vmenu"'.(empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER) ? '' : ' title="Left menu"').'>'."\n\n";
+		print '<div class="vmenu"  '.(empty($conf->global->MAIN_OPTIMIZEFORTEXTBROWSER) ? '' : ' title="Left menu"').'>'."\n\n";
 
 		// Show left menu with other forms
 		$menumanager->menu_array = $menu_array_before;
 		$menumanager->menu_array_after = $menu_array_after;
 		$menumanager->showmenu('left', array('searchform'=>$searchform)); // output menu_array and menu found in database
-
+        
+		// // show left menu with responsive
+		$menumanager->menu_array = $menu_array_before;
+		$menumanager->menu_array_after = $menu_array_after;
+	 	$menumanager->showmenu('mobile', array('searchform'=>$searchform)); // output menu_array and menu found in database
+         
 		// BERP3 version + help + bug report link
 		print "\n";
 		print "<!-- Begin Help Block-->\n";

@@ -124,9 +124,9 @@ if (empty($conf->dol_optimize_smallscreen)) {
 }
 
 print '<div class="clearboth"></div>';
-print '<div class="fichecenter fichecenterbis">';
+print '<div class="fichecenter fichecenterbis" >';
 
-print '<div class="twocolumns">';
+print '<div class="twocolumns" >';
 
 print '<div class="firstcolumn fichehalfleft boxhalfleft" id="boxhalfleft">';
 

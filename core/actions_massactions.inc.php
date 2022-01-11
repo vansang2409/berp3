@@ -1288,8 +1288,10 @@ if (!$error && ($massaction == 'delete' || ($action == 'delete' && $confirm == '
 	$objecttmp = new $objectclass($db);
 	$nbok = 0;
 	$TMsg = array();
+	
 	foreach ($toselect as $toselectid) {
 		$result = $objecttmp->fetch($toselectid);
+		
 		if ($result > 0) {
 			// Refuse deletion for some objects/status
 			if ($objectclass == 'Facture' && empty($conf->global->INVOICE_CAN_ALWAYS_BE_REMOVED) && $objecttmp->status != Facture::STATUS_DRAFT) {
